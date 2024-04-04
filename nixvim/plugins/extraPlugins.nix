@@ -1,8 +1,12 @@
 { pkgs, ... }: {
   programs.nixvim = {
     extraPlugins = [
-#      { plugin = pkgs.triptych-nvim; }
- #     { plugin = pkgs.vimPlugins.marks-nvim; }
+
+      {
+        plugin = pkgs.callPackage ./triptych-nvim.nix { };
+      }
+      # { plugin = pkgs.triptych-nvim; }
+      # { plugin = pkgs.vimPlugins.marks-nvim; }
       # {plugin = pkgs.telescope-vim-bookmarks-nvim;}
       # {plugin = pkgs.vimPlugins.firenvim;}
       {
@@ -11,8 +15,8 @@
       }
     ];
     extraConfigLua = ''
-  --    require("triptych").setup({})
-   --   require("marks").setup({})
+        require("triptych").setup({})
+      --   require("marks").setup({})
     '';
   };
 }

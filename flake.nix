@@ -7,7 +7,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     impermanence.url = "github:nix-community/impermanence";
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     home-manager = {
@@ -24,7 +23,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/x230t/configuration.nix
-
             inputs.disko.nixosModules.default
             (import ./hosts/x230t/disko.nix { device = "/dev/sda"; })
           ];
@@ -36,6 +34,7 @@
 # inputs = {
 #   hardware.url = "github:nixos/nixos-hardware";
 
+# hyprland.url = "github:hyprwm/Hyprland";
 #   impermanence = {
 #     url = "github:nix-community/impermanence";
 #   };

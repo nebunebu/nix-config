@@ -5,11 +5,29 @@
     [
       ./hardware-configuration.nix
       ../../nixvim
-      ../../modules/nixosModules/desktop/hyprland/default.nix
+      ../../modules/nixosModules
       inputs.home-manager.nixosModules.default
     ];
 
-  # desktop.hyprland.enable = true;
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command flakes" ];
+      auto-optimise-store = true;
+      allowed-users = [ "@wheel" ];
+      trusted-users = [ "@wheel" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    nixPath = [
+      "nixpkgs=${pkgs.path}"
+    ];
+  };
+
+  desktop.hyprland.enable = true;
+  discord.enable = true;
 
   home-manager.users.nebu = import ./home.nix;
 
@@ -68,7 +86,8 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
-
+      git
+      waybar
     ];
   };
 

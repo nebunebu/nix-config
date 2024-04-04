@@ -5,13 +5,20 @@
 
   imports = [
     ../../modules/homeManagerModules
+    # inputs.nix-colors.homeManagerModules.default
   ];
 
   app.git.enable = true;
-  programs.nix-index = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  app.kitty.enable = true;
+  app.sioyek.enable = true;
+  app.hyprland.enable = true;
+  app.tmux.enable = true;
+  app.zsh.enable = true;
+
+  # programs.nix-index = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
 
   # colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
@@ -20,10 +27,13 @@
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
       tree
+      firefox
+      pavucontrol
+      nitch
+      ripgrep-all
       # krita
       # gimp
       # thunderbird
-      # tree
       # nix-output-monitor
       # nixpkgs-fmt
       # nurl
