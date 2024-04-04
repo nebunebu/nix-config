@@ -9,6 +9,9 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  desktop.hyprland.enable = true;
+  discord.enable = true;
+
   nix = {
     settings = {
       experimental-features = [ "nix-command flakes" ];
@@ -26,8 +29,6 @@
     ];
   };
 
-  desktop.hyprland.enable = true;
-  discord.enable = true;
 
   home-manager.users.nebu = import ./home.nix;
 
