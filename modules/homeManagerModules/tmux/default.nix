@@ -11,7 +11,7 @@ in
   config = lib.mkIf config.app.tmux.enable {
     programs.tmux = {
       enable = true;
-      # shell = "${pkgs.zsh}/bin/zsh";
+      shell = "${pkgs.zsh}/bin/zsh";
       prefix = "C-SPACE";
       keyMode = "vi";
       baseIndex = 1;
