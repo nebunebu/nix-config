@@ -6,5 +6,6 @@
     ./sioyek
     ./tmux
     ./zsh
+    ./theme
   ];
 }
