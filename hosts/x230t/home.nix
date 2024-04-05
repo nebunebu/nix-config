@@ -1,12 +1,12 @@
-{ inputs
-, pkgs
-, ...
-}: {
+{ inputs, pkgs, ... }:
 
+{
   imports = [
     ../../modules/homeManagerModules
-    # inputs.nix-colors.homeManagerModules.default
+    inputs.nix-colors.homeManagerModules.default
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   app.git.enable = true;
   app.kitty.enable = true;
@@ -14,13 +14,13 @@
   app.hyprland.enable = true;
   app.tmux.enable = true;
   app.zsh.enable = true;
+  app.theme.enable = true;
 
   # programs.nix-index = {
   #   enable = true;
   #   enableZshIntegration = true;
   # };
 
-  # colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   home = {
     username = "nebu";

@@ -1,19 +1,32 @@
 { pkgs, lib, config, ... }:
-
+let
+  c = config.colorScheme.palette;
+  c-gray = "0xff${c.base07}";
+  c-red = "0xff${c.base08}";
+  c-yellow = "0xff${c.base09}";
+  c-lteal = "0xff${c.base0C}";
+  c-purple = "0xff${c.base0D}";
+in
 {
   options = {
     app.hyprland.enable = lib.mkEnableOption "enable hyprland";
   };
 
   config = lib.mkIf config.app.hyprland.enable {
-    # imports = [
-    # ./settings
-    # ./pyprland
-    # ./plugins
-    # ];
+
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
+    home.packages = with pkgs; [
+      wl-clipboard
+      wf-recorder
+      grim
+      slurp
+      wev
+    ];
 
     wayland.windowManager.hyprland = {
-      # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       enable = true;
       xwayland.enable = true;
       systemd = {
@@ -49,10 +62,8 @@
         ];
 
         bind = [
-          # Move to /home-manager/t5610
           "$mainMod + SHIFT, N, movewindow, mon:DP-1"
           "$mainMod + SHIFT, M, movewindow, mon:DP-2"
-          ###########################################
 
           "$mainMod, INSERT, exec, power-menu"
           ",XF86KbdBrightnessDown, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
@@ -69,7 +80,6 @@
           "$mainMod, Return, exec, kitty zsh -c \"tmux new-session -A -s \"main\"\""
           "$mainMod, I, exec, firefox"
           "$mainMod, P, exec, fuzzel"
-          # "$mainMod, D, exec, distrobox enter arch -- discord-screenaudio"
 
           "$mainMod, H, movefocus, l"
           "$mainMod, L, movefocus, r"
@@ -100,31 +110,8 @@
           "$mainMod SHIFT, 7, movetoworkspace, 7"
           "$mainMod SHIFT, 8, movetoworkspace, 8"
           "$mainMod SHIFT, 9, movetoworkspace, 9"
-
-          # "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-          # "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-          # "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-          # "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-          # "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-          # "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-          # "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-          # "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-          # "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         ];
       };
     };
-
-    home.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-    };
-
-    home.packages = with pkgs; [
-      wl-clipboard
-      wf-recorder
-      grim
-      slurp
-      wev
-    ];
   };
-
 }
