@@ -34,6 +34,23 @@ in
         variables = [ "-all" ];
       };
       settings = {
+        decoration = {
+          "rounding" = "10";
+          "active_opacity" = "1";
+          "inactive_opacity" = "1";
+        };
+        windowrulev2 = [
+          "bordercolor ${c-purple}, fullscreen:1"
+          "bordercolor ${c-lteal}, floating:1"
+          "bordercolor ${c-red}, pinned:1"
+        ];
+        general = {
+          "gaps_in" = "7";
+          "gaps_out" = "8";
+          "border_size" = "2";
+          "col.active_border" = "${c-yellow}";
+          "col.inactive_border" = "${c-gray}";
+        };
         misc = {
           "disable_hyprland_logo" = "true";
           "disable_splash_rendering" = "true";
