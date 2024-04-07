@@ -107,8 +107,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  # ];
+  environment.systemPackages = with unstablePkgs; [
+    invidtui
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
