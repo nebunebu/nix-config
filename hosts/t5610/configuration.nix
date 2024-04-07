@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../nixvim
       ../../modules/nixosModules
       inputs.home-manager.nixosModules.default
     ];
