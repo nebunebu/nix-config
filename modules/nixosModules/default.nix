@@ -3,6 +3,6 @@
     ./desktop
     ./nixvim
     # ./discord
-    # ./impermanence
+    # ./boot
   ];
 }

@@ -5,12 +5,11 @@
     [
       ./hardware-configuration.nix
       ../../modules/nixosModules
+      ./impermanence/nixos.nix
       inputs.home-manager.nixosModules.default
     ];
 
   desktop.hyprland.enable = true;
-  # discord.enable = true;
-  # impermanence.enable = true;
 
   nix = {
     settings = {
