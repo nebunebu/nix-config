@@ -1,6 +1,7 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, unstablePkgs, lib, config, ... }:
 let
   t = pkgs.tmuxPlugins;
+  ut = unstablePkgs.tmuxPlugins;
 in
 
 {
@@ -75,17 +76,17 @@ in
         '';
 
       plugins = [
-        # {
-        #   plugin = pkgs.callPackage ./rose-pine { };
-        #   extraConfig = ''
-        #     set -g @rose_pine_variant 'main'
-        #     set -g @rose_pine_date_time '%_I:%M %a %D'
-        #     set -g @rose_pine_show_pane_directory 'on'
-        #     set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator}'
-        #     set -g @rose_pine_show_current_program 'on'
-        #     set -g @rose_pine_show_pane_directory 'on'
-        #   '';
-        # }
+        {
+          plugin = ut.rose-pine;
+          extraConfig = ''
+            set -g @rose_pine_variant 'main'
+            set -g @rose_pine_date_time '%_I:%M %a %D'
+            set -g @rose_pine_show_pane_directory 'on'
+            set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator}'
+            set -g @rose_pine_show_current_program 'on'
+            set -g @rose_pine_show_pane_directory 'on'
+          '';
+        }
         {
           plugin = t.continuum;
           extraConfig = '''';
