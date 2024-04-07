@@ -9,10 +9,11 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
+  # home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
 
   desktop.hyprland.enable = true;
   discord.enable = true;
+  # discord.enable = true;
   # impermanence.enable = true;
 
   nix = {
