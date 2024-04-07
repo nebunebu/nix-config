@@ -18,6 +18,15 @@
     {
       #test
       nixosConfigurations = {
+        t5610 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/t5610/configuration.nix
+            inputs.disko.nixosModules.default
+            (import ./hosts/t5610/disko.nix { device = "/dev/sda"; })
+          ];
+        };
         x230t = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
