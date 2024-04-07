@@ -20,34 +20,35 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        t5610 = nixpkgs.lib.nixosSystem {
+
+      mkHost = { hostName, devicePath, configPath, extraModules ? [ ] }:
+        nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [
-            ./hosts/t5610/configuration.nix
             inputs.disko.nixosModules.default
-            (import ./hosts/t5610/disko.nix { device = "/dev/sda"; })
+            (import ./disko.nix { device = devicePath; })
+            configPath
+          ] ++ extraModules ++ [
             {
-              home-manager.users.nebu = import ./hosts/t5610/home.nix;
+              home-manager.users.nebu = import ./hosts/${hostName}/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
             }
           ];
         };
-        x230t = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs pkgs unstablePkgs; };
-          modules = [
-            ./hosts/t5610/configuration.nix
-            inputs.disko.nixosModules.default
-            (import ./hosts/x230t/disko.nix { device = "/dev/sda"; })
-            {
-              home-manager.users.nebu = import ./hosts/x230t/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
-            }
-          ];
+    in
+    {
+      nixosConfigurations = {
+        t5610 = mkHost {
+          hostName = "t5610";
+          devicePath = "/dev/sda";
+          configPath = ./hosts/t5610/configuration.nix;
+          # extraModules = [ ];
+        };
+        x230t = mkHost {
+          hostName = "x230t";
+          devicePath = "/dev/sda";
+          configPath = ./hosts/x230t/configuration.nix;
         };
       };
     };
