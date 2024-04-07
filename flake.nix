@@ -43,7 +43,9 @@
           hostName = "t5610";
           devicePath = "/dev/sda";
           configPath = ./hosts/t5610/configuration.nix;
-          # extraModules = [ ];
+          # extraModules = [
+          # inputs.impermanence.nixosModules.impermanence
+          # ];
         };
         x230t = mkHost {
           hostName = "x230t";
