@@ -9,8 +9,6 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
-
   desktop.hyprland.enable = true;
   # discord.enable = true;
   # impermanence.enable = true;
@@ -37,7 +35,6 @@
       allowUnfree = true;
     };
   };
-
 
   environment.sessionVariables = {
     HOSTNAME = "t5610";
