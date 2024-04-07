@@ -94,7 +94,7 @@
       tree
       git
       waybar
-      # webcord
+      webcord
     ];
   };
 
