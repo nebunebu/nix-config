@@ -12,7 +12,6 @@
   # home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
 
   desktop.hyprland.enable = true;
-  discord.enable = true;
   # discord.enable = true;
   # impermanence.enable = true;
 
@@ -31,6 +30,12 @@
     nixPath = [
       "nixpkgs=${pkgs.path}"
     ];
+  };
+
+  nixpkgs.config = {
+    config = {
+      allowUnfree = true;
+    };
   };
 
 
@@ -92,7 +97,7 @@
       tree
       git
       waybar
-      webcord
+      # webcord
     ];
   };
 

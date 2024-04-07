@@ -12,7 +12,6 @@
   # home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
 
   desktop.hyprland.enable = true;
-  discord.enable = true;
   # discord.enable = true;
   # impermanence.enable = true;
 
@@ -32,6 +31,8 @@
       "nixpkgs=${pkgs.path}"
     ];
   };
+
+  nixpkgs.config.allowUnfree = true;
 
 
   environment.sessionVariables = {

@@ -1,7 +1,7 @@
 {
   imports = [
     ./desktop
-    ./discord
+    # ./discord
     # ./impermanence
   ];
 }
