@@ -26,6 +26,7 @@
   home = {
     username = "nebu";
     homeDirectory = "/home/nebu";
+    initialPassword = "password";
     packages = with pkgs; [
       tree
       firefox
