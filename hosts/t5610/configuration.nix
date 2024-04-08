@@ -5,38 +5,14 @@
     [
       ./hardware-configuration.nix
       ../../modules/nixosModules
-      ./impermanence/nixos.nix
+      # ./impermanence/nixos.nix
       inputs.home-manager.nixosModules.default
     ];
 
   desktop.hyprland.enable = true;
 
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command flakes" ];
-      auto-optimise-store = true;
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "@wheel" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-    nixPath = [
-      "nixpkgs=${pkgs.path}"
-    ];
-  };
-
-  nixpkgs.config = {
-    config = {
-      allowUnfree = true;
-    };
-  };
-
   environment.sessionVariables = {
     HOSTNAME = "t5610";
-    Editor = "nvim";
   };
 
   networking.hostName = "t5610";

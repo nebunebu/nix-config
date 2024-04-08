@@ -8,40 +8,18 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  environment.etc."machine-id" = {
-    text = "78565725a9e64e86b54c846719ef1aa4";
-    mode = "0444";
+  networking.hostName = "x230t";
+  environment = {
+    sessionVariables = {
+      HOSTNAME = "x230t";
+    };
+    etc."machine-id" = {
+      text = "78565725a9e64e86b54c846719ef1aa4";
+      mode = "0444";
+    };
   };
 
   desktop.hyprland.enable = true;
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command flakes" ];
-      auto-optimise-store = true;
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "@wheel" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-    nixPath = [
-      "nixpkgs=${pkgs.path}"
-    ];
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
-
-  environment.sessionVariables = {
-    HOSTNAME = "x230t";
-    # move to nixvim module
-    EDITOR = "nvim";
-  };
-
-  networking.hostName = "x230t";
 
   console.useXkbConfig = true;
   services.xserver = {

@@ -5,5 +5,6 @@
     ./nixvim
     # ./discord
     ./boot
+    ./nix
   ];
 }
