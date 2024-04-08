@@ -11,6 +11,7 @@
       tree
       git
       waybar
+      webcord
     ];
   };
 

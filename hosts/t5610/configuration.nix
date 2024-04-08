@@ -10,6 +10,7 @@
     ];
 
   desktop.hyprland.enable = true;
+  # discord.enable = true;
 
   environment.sessionVariables = {
     HOSTNAME = "t5610";
