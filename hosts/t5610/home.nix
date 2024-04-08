@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, unstablePkgs, ... }:
 
 {
   imports = [
@@ -27,12 +27,13 @@
     username = "nebu";
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
+      unstablePkgs.webcord
       tree
       firefox
       pavucontrol
       nitch
       ripgrep-all
-      webcord
+      waybar
       # krita
       # gimp
       # thunderbird
