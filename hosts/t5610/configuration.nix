@@ -9,16 +9,20 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  networking.hostName = "x230t";
+  environment = {
+    sessionVariables = {
+      HOSTNAME = "x230t";
+    };
+    etc."machine-id" = {
+      text = "4d1db5f3ed1d4094993faef0f4926a74";
+      mode = "0444";
+    };
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   desktop.hyprland.enable = true;
-  # discord.enable = true;
-
-  environment.sessionVariables = {
-    HOSTNAME = "t5610";
-  };
-
-  networking.hostName = "t5610";
 
   console.useXkbConfig = true;
   services.xserver = {
