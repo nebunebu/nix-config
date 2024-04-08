@@ -32,6 +32,7 @@
       pavucontrol
       nitch
       ripgrep-all
+      webcord
       # krita
       # gimp
       # thunderbird
