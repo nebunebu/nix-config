@@ -8,6 +8,11 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  environment.etc."machine-id" = {
+    text = "78565725a9e64e86b54c846719ef1aa4";
+    mode = "0444";
+  };
+
   desktop.hyprland.enable = true;
 
   nix = {
