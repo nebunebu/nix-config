@@ -4,7 +4,6 @@
     ./desktop
     ./nixvim
     ./discord
-    ./boot
     ./nix
   ];
 }
