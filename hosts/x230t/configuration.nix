@@ -8,11 +8,7 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # home-manager.users.nebu = import ./home.nix { inherit inputs pkgs; };
-
   desktop.hyprland.enable = true;
-  # discord.enable = true;
-  # impermanence.enable = true;
 
   nix = {
     settings = {
@@ -133,5 +129,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
