@@ -36,6 +36,8 @@
 
   environment.sessionVariables = {
     HOSTNAME = "x230t";
+    # move to nixvim module
+    EDITOR = "nvim";
   };
 
   # Use the GRUB 2 boot loader.
