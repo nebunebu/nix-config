@@ -11,7 +11,7 @@
   };
 
 
-  config = lib.mkIf config.desktop.hyprland.enable {
+  config = lib.mkIf config.discord.enable {
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = [
       (pkgs.discord.override {

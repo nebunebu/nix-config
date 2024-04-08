@@ -3,7 +3,7 @@
     ./users
     ./desktop
     ./nixvim
-    # ./discord
+    ./discord
     ./boot
     ./nix
   ];
