@@ -1,5 +1,6 @@
 {
   imports = [
+    ./users
     ./desktop
     ./nixvim
     # ./discord
