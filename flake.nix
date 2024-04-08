@@ -3,10 +3,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     impermanence.url = "github:nix-community/impermanence";
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     home-manager = {
@@ -21,13 +17,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
       unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
-      mkHost = { hostName, devicePath, configPath, extraModules ? [ ] }:
+      mkHost = { hostName, configPath, extraModules ? [ ] }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [
-            inputs.disko.nixosModules.default
-            (import ./disko.nix { device = devicePath; })
             configPath
           ] ++ extraModules ++ [
             {
@@ -41,12 +35,10 @@
       nixosConfigurations = {
         t5610 = mkHost {
           hostName = "t5610";
-          devicePath = "/dev/sda";
           configPath = ./hosts/t5610/configuration.nix;
         };
         x230t = mkHost {
           hostName = "x230t";
-          devicePath = "/dev/sda";
           configPath = ./hosts/x230t/configuration.nix;
         };
       };
