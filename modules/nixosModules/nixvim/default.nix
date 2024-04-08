@@ -12,6 +12,10 @@
     ./plugins/default.nix
   ];
 
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   programs.nixvim = {
     enable = true;
     enableMan = true;
