@@ -9,6 +9,8 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   desktop.hyprland.enable = true;
   # discord.enable = true;
 
