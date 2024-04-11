@@ -8,6 +8,15 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      # settings = { add virtual keyboard - archwiki instructions};
+    };
+  };
+
   networking.hostName = "x230t";
   environment = {
     sessionVariables = {
