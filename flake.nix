@@ -10,6 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    niri.url = "github:sodiboo/niri-flake";
   };
   outputs = { nixpkgs, nixpkgs-unstable, ... } @inputs:
     let
