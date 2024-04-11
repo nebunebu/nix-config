@@ -6,7 +6,9 @@
       ./hardware-configuration.nix
       ../../modules/nixosModules
       inputs.home-manager.nixosModules.default
+      inputs.niri.nixosModules.niri
     ];
+
 
   services.xserver = {
     enable = true;
