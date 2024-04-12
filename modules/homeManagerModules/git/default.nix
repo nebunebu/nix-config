@@ -14,6 +14,11 @@
       extraConfig = {
         init.defaultBranch = "main";
       };
+      # TODO: look up good aliases
+      # aliases = {
+      #   gs = "git status";
+      #   ga = "git add -p";
+      # };
     };
   };
 }
