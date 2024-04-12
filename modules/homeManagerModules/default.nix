@@ -7,5 +7,6 @@
     ./tmux
     ./zsh
     ./theme
+    ./taskwarrior
   ];
 }
