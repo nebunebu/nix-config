@@ -9,5 +9,6 @@
     ./theme
     ./taskwarrior
     ./waybar
+    ./fuzzel
   ];
 }
