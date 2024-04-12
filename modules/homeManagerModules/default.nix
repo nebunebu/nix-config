@@ -11,6 +11,6 @@
     ./waybar
     ./fuzzel
     # ./swww
-    ./wallpapers
+    # ./wallpapers
   ];
 }
