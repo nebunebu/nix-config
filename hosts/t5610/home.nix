@@ -33,7 +33,6 @@
       pavucontrol
       nitch
       ripgrep-all
-      waybar
       # krita
       # gimp
       # thunderbird
