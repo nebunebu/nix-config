@@ -1,9 +1,11 @@
-{ inputs, config, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];
+
+  environment.systemPackages = [ pkgs.sops ];
 
   sops = {
     defaultSopsFile = ../../../secrets/secrets.yaml;
