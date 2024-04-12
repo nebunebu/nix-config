@@ -8,5 +8,6 @@
     ./zsh
     ./theme
     ./taskwarrior
+    ./waybar
   ];
 }
