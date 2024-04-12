@@ -14,17 +14,29 @@ in
 
   config = lib.mkIf config.app.hyprland.enable {
 
+
+    home.packages = [
+      pkgs.wl-clipboard
+      pkgs.wf-recorder
+      pkgs.grim
+      pkgs.slurp
+      pkgs.wev
+      pkgs.swww
+      pkgs.cliphist
+      (pkgs.writeShellScriptBin "hypr-start" ''
+        # /nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1 &
+        ${pkgs.waybar}/bin/waybar &
+        ${config.home.homeDirectory}/.nix-profile/bin/pypr &
+        ${config.home.homeDirectory}/.nix-profile/bin/ags &
+        ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
+        ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
+        ${pkgs.swww}/bin/swww init
+      '')
+    ];
+
     home.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
-
-    home.packages = with pkgs; [
-      wl-clipboard
-      wf-recorder
-      grim
-      slurp
-      wev
-    ];
 
     wayland.windowManager.hyprland = {
       enable = true;
