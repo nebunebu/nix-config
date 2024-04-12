@@ -10,5 +10,7 @@
     ./taskwarrior
     ./waybar
     ./fuzzel
+    ./swww
+    ./wallpapers
   ];
 }

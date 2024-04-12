@@ -1,4 +1,4 @@
-{ inputs, pkgs, unstablePkgs, ... }:
+{ inputs, pkgs, unstablePkgs, config, ... }:
 
 {
   imports = [
@@ -17,6 +17,20 @@
   app.zsh.enable = true;
   app.theme.enable = true;
 
+  # FIX: rewrite with enable
+  # programs.swww = [
+  #   {
+  #     monitor = "DP-1";
+  #     # wallpaper = "${config.xdg.configHome}/wallpapers/wallhaven-3lerw3.jpg";
+  #     # wallpaper = "/home/nebu/.config/wallpapers/wallhaven-3lerw3.jpg";
+  #     wallpaper = "/home/nebu/.nix-config/modules/homeManagerModules/wallpapers/wps/wallhaven-3lerw3.jpg";
+  #   }
+  #   {
+  #     monitor = "DP-2";
+  #     wallpaper = "${config.xdg.configHome}/wallpapers/wallhaven-vqr50p.jpg";
+  #   }
+  # ];
+
   # programs.nix-index = {
   #   enable = true;
   #   enableZshIntegration = true;
@@ -33,6 +47,8 @@
       pavucontrol
       nitch
       ripgrep-all
+
+      swww
       # krita
       # gimp
       # thunderbird
