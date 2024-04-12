@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./style.nix
+    ./swaync
   ];
 
   home.packages = with pkgs; [
