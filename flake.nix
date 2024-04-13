@@ -14,6 +14,7 @@
     impermanence.url = "github:nix-community/impermanence";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     pyprland.url = "github:hyprland-community/pyprland";
+    # rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
