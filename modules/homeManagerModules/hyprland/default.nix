@@ -10,7 +10,6 @@ in
 {
   imports = [
     ./pyprland
-    # inputs.hyprland.homeManagerModules.default
   ];
 
   options = {
@@ -20,10 +19,7 @@ in
   config = lib.mkIf
     config.app.hyprland.enable
     {
-
-
       home.packages = [
-        # unstablePkgs.hyprcursor
         pkgs.wl-clipboard
         pkgs.wf-recorder
         pkgs.grim
@@ -56,7 +52,7 @@ in
         };
 
         extraConfig = ''
-          env = HYPRCURSOR_THEME,rose-pine-cursor-hyprcursor
+          env = HYPRCURSOR_THEME,rose-pine-hyprcursor
           env = HYPRCURSOR_SIZE,24
           exec-once = hypr-start
         '';
