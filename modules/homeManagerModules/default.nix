@@ -14,4 +14,8 @@
     # ./swww
     # ./wallpapers
   ];
+
+  home.packages = with pkgs; [
+    nerdfix
+  ];
 }
