@@ -10,7 +10,7 @@ in
 {
   imports = [
     ./pyprland
-    # inputs.rose-
+    # inputs.hyprland.homeManagerModules.default
   ];
 
   options = {
@@ -47,6 +47,7 @@ in
       };
 
       wayland.windowManager.hyprland = {
+        # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
         enable = true;
         xwayland.enable = true;
         systemd = {
