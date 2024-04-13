@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ unstablePkgs, ... }:
 {
   # discord
   # discourse
@@ -14,6 +14,7 @@
       [ workspaces_follow_focus ]
       max_workspaces = 9
 
+
       [scratchpads.btm]
       command = "kitty --class=\"kitty-btm\" zsh -c \"btm\""
       animation = "fromTop"
@@ -22,7 +23,7 @@
       size = "75% 65%"
 
       [scratchpads.spo]
-      command = "${pkgs.spotube}/bin/spotube"
+      command = "${unstablePkgs.spotube}/bin/spotube"
       animation = "fromTop"
       class = "spotube"
       lazy = true

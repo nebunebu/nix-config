@@ -1,6 +1,10 @@
-{ inputs, ... }:
+{ inputs, pkgs, unstablePkgs, ... }:
 {
-  home.packages = [ inputs.pyprland.packages.x86_64-linux.default ];
+  home.packages = [
+    inputs.pyprland.packages.x86_64-linux.default
+    unstablePkgs.spotube
+    pkgs.bottom
+  ];
 
   imports = [ ./pyprland.nix ];
 

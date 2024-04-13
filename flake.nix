@@ -12,6 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    pyprland.url = "github:hyprland-community/pyprland";
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
