@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ inputs, pkgs, lib, config, ... }:
 let
   c = config.colorScheme.palette;
   c-gray = "0xff${c.base07}";
@@ -8,6 +8,7 @@ let
   c-purple = "0xff${c.base0D}";
 in
 {
+  imports = [ ./pyprland ];
   options = {
     app.hyprland.enable = lib.mkEnableOption "enable hyprland";
   };
@@ -31,6 +32,7 @@ in
         ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
         ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
         ${pkgs.swww}/bin/swww init
+        ${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr
       '')
     ];
 
