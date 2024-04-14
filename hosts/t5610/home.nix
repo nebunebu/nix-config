@@ -13,6 +13,8 @@
   app.kitty.enable = true;
   app.sioyek.enable = true;
 
+  app.waybar.t5610.enable = true;
+
   app.hyprland = {
     enable = true;
     t5610.enable = true;
