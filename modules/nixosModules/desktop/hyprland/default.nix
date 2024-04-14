@@ -11,6 +11,7 @@
       programs.hyprland = {
         enable = true;
         package = unstablePkgs.hyprland;
+        # package = inputs.hyprland.packages.x86_64-linux.hyprland;
       };
 
       environment = {
