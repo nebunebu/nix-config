@@ -11,10 +11,14 @@
   app.git.enable = true;
   app.kitty.enable = true;
   app.sioyek.enable = true;
-  app.hyprland.enable = true;
   app.tmux.enable = true;
   app.zsh.enable = true;
   app.theme.enable = true;
+
+  app.hyprland = {
+    enable = true;
+    x230t.enable = true;
+  };
 
   # programs.nix-index = {
   #   enable = true;
