@@ -1,5 +1,5 @@
 { unstablePkgs, ... }:
 
 {
-  home.pkgs = [ unstablePkgs.webcord ];
+  home.packages = [ unstablePkgs.webcord ];
 }
