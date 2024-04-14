@@ -12,6 +12,8 @@ in
     ./pyprland
     ./t5610
     ./x230t
+    # ./plugins
+    # ./hyprgrass
   ];
 
   options = {
