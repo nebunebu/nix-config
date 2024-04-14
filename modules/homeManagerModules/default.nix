@@ -11,6 +11,7 @@
     ./taskwarrior
     ./waybar
     ./fuzzel
+    ./webcord
     # ./swww
     # ./wallpapers
   ];

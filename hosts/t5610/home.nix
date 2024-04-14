@@ -41,7 +41,6 @@
     username = "nebu";
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
-      unstablePkgs.webcord
       tree
       firefox
       pavucontrol
