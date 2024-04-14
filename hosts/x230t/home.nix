@@ -15,6 +15,7 @@
   app.zsh.enable = true;
   app.theme.enable = true;
 
+  app.waybar.x230t.enable = true;
   app.hyprland = {
     enable = true;
     x230t.enable = true;

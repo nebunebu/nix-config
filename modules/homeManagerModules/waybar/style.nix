@@ -94,6 +94,14 @@ in
         }
 
 
+        #battery.warning {
+            background-color: #${c.base08};
+        }
+
+        #battery.charging {
+            background-color: #${c.base0C};
+        }
+
         #custom-waybarmpris {
           font-family: "DroidSansMono Nerd Font", "Font Awesome 6 Free", "Source Code Pro";
           background: #${c.base0C};
