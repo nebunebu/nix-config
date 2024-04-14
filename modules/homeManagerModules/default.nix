@@ -17,5 +17,7 @@
 
   home.packages = with pkgs; [
     nerdfix
+    comma
+    usbutils
   ];
 }
