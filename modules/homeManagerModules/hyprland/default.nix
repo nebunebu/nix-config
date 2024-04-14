@@ -53,8 +53,8 @@ in
         };
 
         extraConfig = ''
-          env = HYPRCURSOR_THEME,rose-pine-hyprcursor
-          env = HYPRCURSOR_SIZE,24
+          # env = HYPRCURSOR_THEME,rose-pine-hyprcursor
+          # env = HYPRCURSOR_SIZE,24
           exec-once = hypr-start
         '';
 
