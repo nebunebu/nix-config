@@ -20,5 +20,6 @@
     nerdfix
     comma
     usbutils
+    python3
   ];
 }
