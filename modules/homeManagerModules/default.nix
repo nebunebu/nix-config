@@ -12,7 +12,7 @@
     ./waybar
     ./fuzzel
     ./webcord
-    # ./swww
+    ./swww
     # ./wallpapers
   ];
 
