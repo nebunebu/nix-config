@@ -37,6 +37,7 @@
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [
+            # ./hosts/${hostName}/nixOS/default.nix
             configPath
           ] ++ extraModules ++ [
             {
