@@ -1,7 +1,7 @@
 {
-  imports = [ ./wps ];
-  # xdg.configFile."wallpapers" = {
-  #   source = ./wps;
-  #   recursive = true;
-  # };
+  imports = [
+    ./wallhaven-d6vm2l.jpg
+    ./wallhaven-exvprr.jpg
+    ./wallhaven-qzpv5q.jpg
+  ];
 }
