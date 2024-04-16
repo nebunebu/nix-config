@@ -25,9 +25,7 @@
           header = "#c4a7e7";
           border = "#26233a";
         };
-        tmux = {
-          enableShellIntegration = true;
-        };
+        tmux.enableShellIntegration = true;
       };
       starship.enable = true;
       zsh = {
@@ -46,18 +44,15 @@
             # fi
           '';
 
-        localVariables = {
-          CLIPBOARD = "wlp";
-        };
+        localVariables.CLIPBOARD = "wlp";
+
         # initExtra =
         # builtins.readFile ./zsh-fzf-kill.zsh
         # + builtins.readFile ./zsh-clipboard.zsh
         # + builtins.readFile ./zsh-starship-fix.zsh
         # ;
 
-        history = {
-          path = "${config.xdg.configHome}/zsh/zsh_history";
-        };
+        history.path = "${config.xdg.configHome}/zsh/zsh_history";
 
         shellAliases = {
           svim = "sudo -Es nvim";

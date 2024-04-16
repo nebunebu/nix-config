@@ -12,20 +12,19 @@
   };
 
   config = lib.mkIf config.app.waybar.t5610.enable {
-    home.packages = with pkgs; [
-      waybar-mpris
-    ];
+    home.packages = [ pkgs.waybar-mpris ];
     programs.waybar = {
       enable = true;
-      settings = {
-        firstBar = {
+      settings = let
+        commonBar = {
           layer = "top";
           position = "top";
           height = 30;
-          output = [
-            "DP-1"
-          ];
           modules-left = [ "hyprland/workspaces" ];
+        };
+      in {
+        firstBar = {
+          output = [ "DP-1" ];
           modules-right = [
             "custom/waybarmpris"
             "custom/notification"
@@ -44,7 +43,7 @@
             "on-scroll-up" = "waybar-mpris --send next";
             "on-scroll-down" = "waybar-mpris --send prev";
             "escape" = true;
-          };
+          } // commonBar;
 
           "custom/notification" = {
             "tooltip" = false;
@@ -67,14 +66,9 @@
             "escape" = true;
           };
         };
+
         secondBar = {
-          layer = "top";
-          position = "top";
-          height = 30;
-          output = [
-            "DP-2"
-          ];
-          modules-left = [ "hyprland/workspaces" ];
+          output = [ "DP-2" ];
           modules-right = [ "pulseaudio" "clock" "tray" ];
 
           "pulseaudio" = {
@@ -112,7 +106,7 @@
               "mic-off" = ""; # Path to mic-off icon
               "default" = ""; # Path to mic-on icon
             };
-          };
+          } // commonBar;
 
           "clock" = {
             "format" = "{:%I:%M}";

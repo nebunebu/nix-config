@@ -5,7 +5,7 @@
     app.kitty.enable = lib.mkEnableOption "enable kitty";
   };
 
-  config = lib.mkIf config.app.git.enable {
+  config = lib.mkIf config.app.kitty.enable {
     programs.kitty = {
       enable = true;
       font = {
