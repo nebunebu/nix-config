@@ -21,5 +21,6 @@
     comma
     usbutils
     python3
+    vesktop
   ];
 }
