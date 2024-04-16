@@ -36,10 +36,10 @@
       in
       {
         "DP-1" = {
-          wallpaper = "${wp}/${w1}";
+          wallpaper = "${wp}/${w3}";
         };
         "DP-2" = {
-          wallpaper = "${wp}/${w2}";
+          wallpaper = "${wp}/${w1}";
         };
       };
   };
