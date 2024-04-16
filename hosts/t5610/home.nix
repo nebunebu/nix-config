@@ -24,6 +24,10 @@
   app.zsh.enable = true;
   app.theme.enable = true;
 
+  # app.swww = {
+  #   enable = true;
+  # };
+
   # FIX: rewrite with enable
   # programs.swww = [
   #   {
@@ -53,8 +57,6 @@
       pavucontrol
       nitch
       ripgrep-all
-
-      swww
       # krita
       # gimp
       # thunderbird
