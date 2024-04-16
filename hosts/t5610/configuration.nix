@@ -13,6 +13,9 @@
   #   ATTRS{idVendor}=="047f", ATTRS{idProduct}=="c056", ENV{ID_MODEL}="Plantronics Blackwire C3220", ENV{ID_MODEL_FROM_DATABASE}="Plantronics Blackwire C3220", ENV{ID_VENDOR}="Plantronics", ENV{ID_VENDOR_FROM_DATABASE}="Plantronics", NAME="Plantronics Blackwire C3220"
   # '';
 
+  app.virt-manager.enable = true;
+  # app.discord.enable = true;
+
   networking.hostName = "x230t";
   environment = {
     sessionVariables = {
