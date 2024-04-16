@@ -1,4 +1,5 @@
 { pkgs, ... }:
+
 {
   imports = [
     ./git
@@ -6,21 +7,22 @@
     ./hyprland
     ./sioyek
     ./tmux
-    ./zsh
+    ./zsh.nix
     ./theme
     ./taskwarrior
     ./waybar
     ./fuzzel
-    ./webcord
+    ./webcord.nix
     ./swww
     # ./wallpapers
   ];
 
-  home.packages = with pkgs; [
-    nerdfix
-    comma
-    usbutils
-    python3
-    vesktop
-  ];
+  home.packages = builtins.attrValues {
+    inherit (pkgs)
+      nerdfix
+      comma
+      usbutils
+      python3
+      vesktop;
+  };
 }

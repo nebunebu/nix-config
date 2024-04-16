@@ -24,13 +24,9 @@
           layer = "top";
           position = "top";
           height = 30;
-          output = [
-            "LVDS-1"
-          ];
+          output = [ "LVDS-1" ];
           modules-left = [ "hyprland/workspaces" ];
-          modules-center = [
-            "custom/waybarmpris"
-          ];
+          modules-center = [  "custom/waybarmpris" ];
           modules-right = [
             "pulseaudio"
             "custom/mic"
@@ -39,7 +35,6 @@
             "tray"
             "custom/notification"
           ];
-
 
           "battery" = {
             "bat" = "BAT0";

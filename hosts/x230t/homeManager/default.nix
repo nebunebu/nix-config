@@ -8,32 +8,31 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
-  app.git.enable = true;
-  app.kitty.enable = true;
-  app.sioyek.enable = true;
-  app.tmux.enable = true;
-  app.zsh.enable = true;
-  app.theme.enable = true;
-
-  app.waybar.x230t.enable = true;
-  app.hyprland = {
-    enable = true;
-    x230t.enable = true;
+  app = {
+    git.enable = true;
+    kitty.enable = true;
+    sioyek.enable = true;
+    tmux.enable = true;
+    zsh.enable = true;
+    theme.enable = true;
+    waybar.x230t.enable = true;
+    hyprland = {
+      enable = true;
+      x230t.enable = true;
+    };
   };
 
   programs.swww = {
     hyprlandIntegration.enable = true;
     enable = true;
-    monitors =
-      let
-        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
-        w1 = "wallhaven-d6vm2l.jpg";
-        w2 = "wallhaven-exvprr.jpg";
-        w3 = "wallhaven-qzpv5q.jpg";
-      in
-      {
-        "DP-1".wallpaper = "${wp}/${w2}";
-      };
+    monitors = let
+      wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
+      w1 = "wallhaven-d6vm2l.jpg";
+      w2 = "wallhaven-exvprr.jpg";
+      w3 = "wallhaven-qzpv5q.jpg";
+    in {
+      "DP-1".wallpaper = "${wp}/${w2}";
+    };
   };
 
   # programs.nix-index = {

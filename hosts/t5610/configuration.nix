@@ -29,14 +29,20 @@
     };
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
   desktop.hyprland.enable = true;
 
   console.useXkbConfig = true;
-  services.xserver = {
-    layout = "us";
-    xkbOptions = "caps:swapescape";
+  services = {
+    openssh.enable = true;
+    xserver = {
+      layout = "us";
+      xkbOptions = "caps:swapescape";
+    };
   };
 
   networking.wireless.enable = true;
@@ -68,9 +74,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  programs.zsh.enable = true;
-
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with unstablePkgs; [
@@ -79,16 +82,16 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  programs = {
+    zsh.enable = true;
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -118,5 +121,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
