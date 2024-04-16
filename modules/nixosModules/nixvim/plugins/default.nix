@@ -1,6 +1,6 @@
 {
   imports = [
     ./extraPlugins.nix
-    ./nixvim-plugins/default.nix
+    ./nixvim/default.nix
   ];
 }

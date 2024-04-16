@@ -4,23 +4,25 @@
 , ...
 }:
 with lib;
-with lib.custom; let
+with lib.custom;
+let
   cfg = config.impermanence;
-in
-{
-  options.impermanence = with types; {
-    enable = mkBoolOpt false "Enable impermanence";
-    removeTmpFilesOlderThan = mkOpt int 14 "Number of days to keep old btrfs_tmp files";
-  };
+in {
+  options = {
+    impermanence = with types; {
+      enable = mkBoolOpt false "Enable impermanence";
+      removeTmpFilesOlderThan = mkOpt int 14 "Number of days to keep old btrfs_tmp files";
+    };
 
-  options.environment = with types; {
-    persist = mkOpt attrs { } "Files and directories to persist in the home";
+    environment = with types; {
+      persist = mkOpt attrs { } "Files and directories to persist in the home";
+    };
   };
 
   config = {
     # This script does the actual wipe of the system
     # So if it doesn't run, the btrfs system effectively acts like a normal system
-    boot.initrd.postDeviceCommands = mkIf cfg.enable (lib.mkAfter ''
+    boot.initrd.postDeviceCommands = lib.mkIf cfg.enable (lib.mkAfter ''
       mkdir /btrfs_tmp
       mount /dev/pool/root /btrfs_tmp
       if [[ -e /btrfs_tmp/root ]]; then
@@ -45,6 +47,6 @@ in
       umount /btrfs_tmp
     '');
 
-    environment.persistence."/persist" = mkIf cfg.enable (mkAliasDefinitions options.environment.persist);
+    environment.persistence."/persist" = lib.mkIf cfg.enable (mkAliasDefinitions options.environment.persist);
   };
 }

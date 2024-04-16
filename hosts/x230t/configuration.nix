@@ -1,23 +1,12 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/nixosModules
-      inputs.home-manager.nixosModules.default
-      inputs.niri.nixosModules.niri
-    ];
-
-
-  services.xserver = {
-    enable = true;
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      # settings = { add virtual keyboard - archwiki instructions};
-    };
-  };
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nixosModules
+    inputs.home-manager.nixosModules.default
+    inputs.niri.nixosModules.niri
+  ];
 
   networking.hostName = "x230t";
   environment = {
@@ -31,19 +20,30 @@
   };
 
   # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "nodev"; # or "nodev" for efi only
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    # grub.efiInstallAsRemovable = true;
+    # efi.efiSysMountPoint = "/boot/efi";
+    # Define on which hard drive you want to install Grub.
+    device = "nodev"; # or "nodev" for efi only
+  };
 
   desktop.hyprland.enable = true;
 
   console.useXkbConfig = true;
-  services.xserver = {
-    layout = "us";
-    xkbOptions = "caps:swapescape";
+  services = {
+    openssh.enable = true;
+    xserver = {
+      enable = true;
+      displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+        # settings = { add virtual keyboard - archwiki instructions};
+      };
+      layout = "us";
+      xkbOptions = "caps:swapescape";
+    };
   };
 
   networking.wireless.enable = true;
@@ -89,11 +89,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
