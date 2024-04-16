@@ -2,9 +2,10 @@
   imports = [
     ./users
     ./nixvim
-    ./discord
+    # ./discord
     ./nix
     ./sops-nix
     ./hyprland
+    ./virtualisation
   ];
 }
