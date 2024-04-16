@@ -29,7 +29,6 @@
     enable = true;
     monitors =
       let
-
         wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
         w1 = "wallhaven-d6vm2l.jpg";
         w2 = "wallhaven-exvprr.jpg";
