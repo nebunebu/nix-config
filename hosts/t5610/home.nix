@@ -24,29 +24,25 @@
   app.zsh.enable = true;
   app.theme.enable = true;
 
-  # app.swww = {
-  #   enable = true;
-  # };
-
-  # FIX: rewrite with enable
-  # programs.swww = [
-  #   {
-  #     monitor = "DP-1";
-  #     # wallpaper = "${config.xdg.configHome}/wallpapers/wallhaven-3lerw3.jpg";
-  #     # wallpaper = "/home/nebu/.config/wallpapers/wallhaven-3lerw3.jpg";
-  #     wallpaper = "/home/nebu/.nix-config/modules/homeManagerModules/wallpapers/wps/wallhaven-3lerw3.jpg";
-  #   }
-  #   {
-  #     monitor = "DP-2";
-  #     wallpaper = "${config.xdg.configHome}/wallpapers/wallhaven-vqr50p.jpg";
-  #   }
-  # ];
-
-  # programs.nix-index = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
-
+  programs.swww = {
+    hyprlandIntegration.enable = true;
+    enable = true;
+    monitors =
+      let
+        wp = "${config.home.homeDirectory}/Downloads";
+        w1 = "wallhaven-d6vm2l.jpg";
+        w2 = "wallhaven-exvprr.jpg";
+        w3 = "wallhaven-qzpv5q.jpg";
+      in
+      {
+        "DP-1" = {
+          wallpaper = "${wp}/${w1}";
+        };
+        "DP-2" = {
+          wallpaper = "${wp}/${w2}";
+        };
+      };
+  };
 
   home = {
     username = "nebu";

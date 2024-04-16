@@ -1,29 +1,46 @@
-{ pkgs, config, lib, ... }:
+{ pkgs
+, config
+, lib
+, ...
+}:
 let
   cfg = config.programs.swww;
-  entryToStr = x: "${pkgs.swww}/bin/swww img -o ${x.monitor} ${x.wallpaper}";
+  entryToStr = monitor: entry: "${pkgs.swww}/bin/swww img -o ${monitor} ${entry.wallpaper}";
 in
 {
   options = {
-    # rewrite with enable to add package
-    programs.swww = lib.mkOption {
-      type = with lib.types;
-        listOf (submodule {
+    programs.swww = {
+      enable = lib.mkEnableOption "enable swww program";
+
+      monitors = lib.mkOption {
+        type = with lib.types; attrsOf (submodule {
           options = {
-            monitor = lib.mkOption { type = str; };
             wallpaper = lib.mkOption { type = str; };
           };
         });
+        default = { };
+      };
+
+      hyprlandIntegration = {
+        enable = lib.mkEnableOption "enable Hyprland integration";
+      };
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
+
+    home.packages = [ pkgs.swww ];
+
+    wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
+      "${pkgs.swww}/bin/swww init"
+    ];
+
     systemd.user.services.swww-wp = {
       Install.WantedBy = [ "default.target" ];
       Service = {
         Type = "simple";
         ExecStart = "${pkgs.writeShellScript "swww-wp" ''
-          ${lib.concatLines (map entryToStr cfg)}
+          ${lib.concatStringsSep "\n" (lib.mapAttrsToList entryToStr cfg.monitors)}
         ''}";
       };
     };
