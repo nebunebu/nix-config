@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/homeManagerModules
+    ../../../modules/homeManagerModules
     # ./impermanence/homeManager.nix
     inputs.nix-colors.homeManagerModules.default
   ];
