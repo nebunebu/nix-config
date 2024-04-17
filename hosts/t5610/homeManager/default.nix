@@ -29,58 +29,61 @@
   programs.swww = {
     hyprlandIntegration.enable = true;
     enable = true;
-    monitors = let
+    monitors =
+      let
         wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
         w1 = "wallhaven-d6vm2l.jpg";
         w2 = "wallhaven-exvprr.jpg";
         w3 = "wallhaven-qzpv5q.jpg";
-    in {
-      "DP-1" = {
-        wallpaper = "${wp}/${w3}";
+      in
+      {
+        "DP-1" = {
+          wallpaper = "${wp}/${w3}";
+        };
+        "DP-2" = {
+          wallpaper = "${wp}/${w1}";
+        };
       };
-      "DP-2" = {
-        wallpaper = "${wp}/${w1}";
-      };
-    };
   };
 
   home = {
     username = "nebu";
     homeDirectory = "/home/nebu";
-    packages = builtins.attrValues {
-      inherit (pkgs)
-        # krita
-        # gimp
-        # thunderbird
-        # nix-output-monitor
-        # nixpkgs-fmt
-        # nurl
-        # comma
-        # statix
-        # nix-search-cli
-        # nix-prefetch-github
-        # fd
-        # bottom
-        # ripgrep
-        # ripgrep-all
-        # ffmpeg
-        # yt-dlp
-        # jq
-        # distrobox
-        # pup
-        # lazygit
-        # nitch
-        #
-        # libnotify
-        # tree
-        # invidtui
-        # noto-fonts
-        tree
-        firefox
-        pavucontrol
-        nitch
-        ripgrep-all;
-    } ++ [
+    packages = builtins.attrValues
+      {
+        inherit (pkgs)
+          # krita
+          # gimp
+          # thunderbird
+          # nix-output-monitor
+          # nixpkgs-fmt
+          # nurl
+          # comma
+          # statix
+          # nix-search-cli
+          # nix-prefetch-github
+          # fd
+          # bottom
+          # ripgrep
+          # ripgrep-all
+          # ffmpeg
+          # yt-dlp
+          # jq
+          # distrobox
+          # pup
+          # lazygit
+          # nitch
+          #
+          # libnotify
+          # tree
+          # invidtui
+          # noto-fonts
+          tree
+          firefox
+          pavucontrol
+          nitch
+          ripgrep-all;
+      } ++ [
       (pkgs.nerdfonts.override {
         fonts = [
           "DroidSansMono"
