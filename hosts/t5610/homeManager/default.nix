@@ -30,16 +30,13 @@
     monitors =
       let
         wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
-        w1 = "wallhaven-d6vm2l.jpg";
-        w2 = "wallhaven-exvprr.jpg";
-        w3 = "wallhaven-qzpv5q.jpg";
       in
       {
         "DP-1" = {
-          wallpaper = "${wp}/${w3}";
+          wallpaper = "${wp}/liminal-tv.jpg";
         };
         "DP-2" = {
-          wallpaper = "${wp}/${w1}";
+          wallpaper = "${wp}/liminal-hall.jpg";
         };
       };
   };
