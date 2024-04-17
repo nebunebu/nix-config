@@ -45,35 +45,17 @@
     username = "nebu";
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
-      tree
       firefox
       pavucontrol
-      nitch
-      ripgrep-all
       # krita
       # gimp
       # thunderbird
-      # nix-output-monitor
-      # nixpkgs-fmt
-      # nurl
-      # comma
-      # statix
-      # nix-search-cli
-      # nix-prefetch-github
       # fd
       # bottom
-      # ripgrep
-      # ripgrep-all
       # ffmpeg
-      # yt-dlp
-      # jq
       # distrobox
-      # pup
       # lazygit
-      # nitch
-      #
       # libnotify
-      # tree
       # invidtui
       # noto-fonts
       (nerdfonts.override {
