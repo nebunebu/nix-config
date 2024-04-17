@@ -18,10 +18,10 @@
   app.virt-manager.enable = true;
   # app.discord.enable = true;
 
-  networking.hostName = "x230t";
+  networking.hostName = "t5610";
   environment = {
     sessionVariables = {
-      HOSTNAME = "x230t";
+      HOSTNAME = "t5610";
     };
     etc."machine-id" = {
       text = "4d1db5f3ed1d4094993faef0f4926a74";
