@@ -14,15 +14,16 @@
     ./fuzzel
     ./webcord.nix
     ./swww
+    ./nix-tools.nix
     # ./wallpapers
   ];
 
   home.packages = builtins.attrValues {
     inherit (pkgs)
       nerdfix
-      comma
       usbutils
       python3
       vesktop;
+      ;
   };
 }
