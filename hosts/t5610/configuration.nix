@@ -15,17 +15,17 @@
   #   ATTRS{idVendor}=="047f", ATTRS{idProduct}=="c056", ENV{ID_MODEL}="Plantronics Blackwire C3220", ENV{ID_MODEL_FROM_DATABASE}="Plantronics Blackwire C3220", ENV{ID_VENDOR}="Plantronics", ENV{ID_VENDOR_FROM_DATABASE}="Plantronics", NAME="Plantronics Blackwire C3220"
   # '';
 
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraRules = [{
-        users = [ "nebu" ];
-        keepEnv = true;
-        persist = true;
-      }];
-    };
-  };
+  # security = {
+  #   sudo.enable = false;
+  #   doas = {
+  #     enable = true;
+  #     extraRules = [{
+  #       users = [ "nebu" ];
+  #       keepEnv = true;
+  #       persist = true;
+  #     }];
+  #   };
+  # };
 
 
   app.virt-manager.enable = true;
