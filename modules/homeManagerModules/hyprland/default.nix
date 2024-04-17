@@ -33,7 +33,6 @@ in
         (pkgs.writeShellScriptBin "hypr-start" ''
           # /nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1 &
           # ${config.home.homeDirectory}/.nix-profile/bin/ags &
-          ${pkgs.waybar}/bin/waybar &
           ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
           ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
           ${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr

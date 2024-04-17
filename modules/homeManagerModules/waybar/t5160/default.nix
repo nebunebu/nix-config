@@ -2,6 +2,7 @@
 
 let
   modules = builtins.import ../modules.nix;
+  cfg = config.app.waybar;
 in
 {
   imports = [
@@ -14,7 +15,16 @@ in
   };
 
   config = lib.mkIf config.app.waybar.t5610.enable {
-    home.packages = [ pkgs.waybar-mpris ];
+
+    home.packages = [
+      pkgs.waybar
+      pkgs.waybar-mpris
+    ];
+
+    wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
+      "${pkgs.waybar}/bin/waybar &"
+    ];
+
     programs.waybar = {
       enable = true;
       settings = {
