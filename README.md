@@ -9,19 +9,19 @@ This is my personal flake. It is a work in progress.
 
 ## Programs
 
-|                 |           |
-| --------------- | --------- |
-| _Shell:_        | zsh + fzf |
-| _Multiplexer:_  | tmux      |
-| _Terminal:_     | kitty     |
-| _Launcher:_     | fuzzel    |
-| _Browser:_      | firefox   |
-| _Theme:_        | rose-pine |
-| _Video Player:_ | mpv       |
-| _Pdf Viewer:_   | sioyek    |
-| _WM:_           | hyprland  |
-| _Status Bar:_   | waybar    |
+|                   |           |
+| ----------------- | --------- |
+| **Shell:**        | zsh + fzf |
+| **Multiplexer:**  | tmux      |
+| **Terminal:**     | kitty     |
+| **Launcher:**     | fuzzel    |
+| **Browser:**      | firefox   |
+| **Theme:**        | rose-pine |
+| **Video Player:** | mpv       |
+| **Pdf Viewer:**   | sioyek    |
+| **WM:**           | hyprland  |
+| **Status Bar:**   | waybar    |
 
 ## Special Thanks
 
-All the helpful people on the **Nix/NixOs(unofficial)** discord server.
+All the helpful people on the _Nix/NixOs(unofficial)_ discord server.
