@@ -13,9 +13,7 @@
     git.enable = true;
     kitty.enable = true;
     sioyek.enable = true;
-
     waybar.t5610.enable = true;
-
     hyprland = {
       enable = true;
       t5610.enable = true;
