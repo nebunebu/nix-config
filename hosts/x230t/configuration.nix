@@ -34,16 +34,8 @@
   console.useXkbConfig = true;
   services = {
     openssh.enable = true;
-    xserver = {
-      enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        # settings = { add virtual keyboard - archwiki instructions};
-      };
-      layout = "us";
-      xkbOptions = "caps:swapescape";
-    };
+    layout = "us";
+    xkbOptions = "caps:swapescape";
   };
 
   networking.wireless.enable = true;
