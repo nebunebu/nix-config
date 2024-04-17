@@ -12,7 +12,12 @@
 
     inherit (unstablePkgs)
       nix-inspect
+      nh
       ;
+  };
+
+  home.sessionVariables = {
+    FLAKE = "/home/nebu/.nix-config";
   };
 
   programs.nix-index = {
