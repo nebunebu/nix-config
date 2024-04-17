@@ -4,8 +4,13 @@ This is my personal flake. It is a work in progress.
 
 ## Hosts
 
-- t5610
-- x230t
+### t5610
+
+My desktop
+
+### x230t
+
+My laptop
 
 ## Programs
 
