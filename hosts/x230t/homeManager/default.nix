@@ -25,14 +25,13 @@
   programs.swww = {
     hyprlandIntegration.enable = true;
     enable = true;
-    monitors = let
-      wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
-      w1 = "wallhaven-d6vm2l.jpg";
-      w2 = "wallhaven-exvprr.jpg";
-      w3 = "wallhaven-qzpv5q.jpg";
-    in {
-      "DP-1".wallpaper = "${wp}/${w2}";
-    };
+    monitors =
+      let
+        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
+      in
+      {
+        "DP-1".wallpaper = "${wp}/liminal-room.jpg";
+      };
   };
 
   # programs.nix-index = {
