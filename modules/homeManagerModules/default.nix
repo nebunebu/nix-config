@@ -15,13 +15,12 @@
     ./webcord.nix
     ./swww
     ./nix-tools.nix
+    ./cli-tools.nix
     # ./wallpapers
   ];
 
   home.packages = builtins.attrValues {
     inherit (pkgs)
-      nerdfix
-      usbutils
       python3
       ;
   };

@@ -50,37 +50,9 @@
     packages = builtins.attrValues
       {
         inherit (pkgs)
-          # krita
-          # gimp
-          # thunderbird
-          # nix-output-monitor
-          # nixpkgs-fmt
-          # nurl
-          # comma
-          # statix
-          # nix-search-cli
-          # nix-prefetch-github
-          # fd
-          # bottom
-          # ripgrep
-          # ripgrep-all
-          # ffmpeg
-          # yt-dlp
-          # jq
-          # distrobox
-          # pup
-          # lazygit
-          # nitch
-          #
-          # libnotify
-          # tree
-          # invidtui
-          # noto-fonts
-          tree
           firefox
           pavucontrol
-          nitch
-          ripgrep-all;
+          ;
       } ++ [
       (pkgs.nerdfonts.override {
         fonts = [
