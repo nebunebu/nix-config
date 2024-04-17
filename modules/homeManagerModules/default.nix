@@ -23,7 +23,6 @@
       nerdfix
       usbutils
       python3
-      vesktop;
       ;
   };
 }
