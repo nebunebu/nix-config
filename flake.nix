@@ -32,13 +32,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
       unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
-      mkHost = { hostName, configPath, extraModules ? [ ] }:
+      mkHost = { hostName, extraModules ? [ ] }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [
-            # ./hosts/${hostName}/nixOS/default.nix
-            configPath
+            ./hosts/${hostName}/nixOS/default.nix
           ] ++ extraModules ++ [
             {
               home-manager.users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
@@ -51,11 +50,9 @@
       nixosConfigurations = {
         t5610 = mkHost {
           hostName = "t5610";
-          configPath = ./hosts/t5610/configuration.nix;
         };
         x230t = mkHost {
           hostName = "x230t";
-          configPath = ./hosts/x230t/configuration.nix;
         };
       };
     };

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../modules/homeManagerModules
+    ../../../modules/homeManager
     inputs.nix-colors.homeManagerModules.default
   ];
 
@@ -27,18 +27,12 @@
     enable = true;
     monitors =
       let
-        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
+        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManager/wallpapers/";
       in
       {
         "DP-1".wallpaper = "${wp}/liminal-room.jpg";
       };
   };
-
-  # programs.nix-index = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
-
 
   home = {
     username = "nebu";
