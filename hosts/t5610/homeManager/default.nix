@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../../modules/homeManagerModules
-    # ./impermanence/homeManager.nix
+    ../../../modules/homeManager
     inputs.nix-colors.homeManagerModules.default
+    # ./impermanence/homeManager.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
@@ -29,7 +29,7 @@
     enable = true;
     monitors =
       let
-        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManagerModules/wallpapers/";
+        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManager/wallpapers/";
       in
       {
         "DP-1" = {
