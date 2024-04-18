@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/nixosModules
+      ../../../modules/nixOS
       # ./impermanence/nixos.nix
       inputs.home-manager.nixosModules.default
     ];
