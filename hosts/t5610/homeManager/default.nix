@@ -1,13 +1,10 @@
-{ inputs, pkgs, unstablePkgs, config, ... }:
-
+{ config, ... }:
 {
   imports = [
     ../../../modules/homeManager
-    inputs.nix-colors.homeManagerModules.default
+    ./swww.nix
     # ./impermanence/homeManager.nix
   ];
-
-  colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   app = {
     git.enable = true;
@@ -23,6 +20,7 @@
     zsh.enable = true;
     theme.enable = true;
   };
+
 
   programs.swww = {
     hyprlandIntegration.enable = true;
