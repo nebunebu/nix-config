@@ -2,7 +2,6 @@
 {
   imports = [
     ../../../modules/homeManager
-    ./swww.nix
     # ./impermanence/homeManager.nix
   ];
 
