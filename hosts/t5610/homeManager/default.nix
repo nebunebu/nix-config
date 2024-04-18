@@ -2,7 +2,6 @@
 {
   imports = [
     ../../../modules/homeManager
-    # ./impermanence/homeManager.nix
   ];
 
   app = {
