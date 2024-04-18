@@ -26,7 +26,7 @@
         wp = "${config.home.homeDirectory}/.nix-config/modules/homeManager/wallpapers/";
       in
       {
-        "DP-1".wallpaper = "${wp}/liminal-room.jpg";
+        "LVDS-1".wallpaper = "${wp}/liminal-room.jpg";
       };
   };
 }
