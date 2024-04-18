@@ -47,7 +47,7 @@ in
             modules-center = [ "custom/waybarmpris" ];
             modules-right = [
               "pulseaudio"
-              "custom/mic"
+              # "custom/mic"
               "battery"
               "clock"
               "tray"
