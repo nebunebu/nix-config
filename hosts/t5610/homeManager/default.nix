@@ -38,34 +38,4 @@
         };
       };
   };
-
-  home = {
-    username = "nebu";
-    homeDirectory = "/home/nebu";
-    packages = builtins.attrValues
-      {
-        inherit (pkgs)
-          firefox
-          pavucontrol
-          ;
-      } ++ [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "DroidSansMono"
-          "JetBrainsMono"
-          "HeavyData"
-        ];
-      })
-    ];
-
-    stateVersion = "23.11";
-  };
-
-  programs = {
-    home-manager.enable = true;
-    bash.enable = true;
-    zsh.enable = true;
-  };
-
-  systemd.user.startServices = "sd-switch";
 }
