@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+
   users.users.nebu = {
     isNormalUser = true;
     initialPassword = "password";
