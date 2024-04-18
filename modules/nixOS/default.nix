@@ -9,8 +9,6 @@
     ./sddm.nix
     ./hyprland.nix
     ./virtualisation
-
-    ./services
   ];
 
   networking.wireless.enable = true;
