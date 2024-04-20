@@ -4,6 +4,7 @@
     ./nixvim
     # ./discord.nix
     ./doas.nix
+    ./dotool.nix
     ./nix.nix
     ./sops.nix
     ./sddm.nix
