@@ -7,6 +7,7 @@
     ./kitty
     ./hyprland
     ./sioyek
+    ./mpv.nix
     ./tmux
     ./zsh.nix
     ./theme
