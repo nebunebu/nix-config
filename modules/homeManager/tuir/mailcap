@@ -1,0 +1,3 @@
+video/x-youtube; kitty --class="mpv-kitty" zsh -c "mpv --vo=kitty --profile=sw-fast --vo-kitty-use-shm=yes --loop \"%s\" 2> /dev/null"; test=test -n "$DISPLAY"
+image/*; kitty --class="mpv-kitty" zsh -c "mpv --vo=kitty --profile=sw-fast --vo-kitty-use-shm=yes --loop %s 2> /dev/null"; test=test -n "$DISPLAY"
+text/*; kitty --class="mpv-kitty" zsh -c "mpv --vo=kitty --profile=sw-fast --vo-kitty-use-shm=yes --loop \"%s\" 2> /dev/null"; test=test -n "$DISPLAY"
