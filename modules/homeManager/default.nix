@@ -3,19 +3,19 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./git
-    ./kitty
+    ./git.nix
+    ./kitty.nix
     ./hyprland
-    ./sioyek
+    ./sioyek.nix
     ./mpv.nix
-    ./tmux
+    ./tmux.nix
     ./zsh.nix
-    ./theme
-    ./taskwarrior
+    ./theme.nix
+    ./taskwarrior.nix
     ./waybar
     ./fuzzel
     ./webcord.nix
-    ./swww
+    ./swww.nix
     ./nix-tools.nix
     ./cli-tools.nix
     ./chromium
