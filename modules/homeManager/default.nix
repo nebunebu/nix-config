@@ -17,6 +17,7 @@
     ./swww
     ./nix-tools.nix
     ./cli-tools.nix
+    ./chromium
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
