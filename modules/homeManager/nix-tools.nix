@@ -13,6 +13,7 @@
     inherit (unstablePkgs)
       nix-inspect
       nh
+      nvd
       ;
   };
 
