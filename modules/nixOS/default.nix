@@ -9,6 +9,7 @@
     ./sddm.nix
     ./hyprland.nix
     ./virtualisation
+    ./tuir.nix
   ];
 
   networking.wireless.enable = true;
