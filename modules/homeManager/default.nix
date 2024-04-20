@@ -4,10 +4,10 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ./awscli.nix
+    ./bat.nix
     ./lf.nix
     ./mpv.nix
     ./fzf.nix
-    ./bat.nix
     ./newsboat
     ./firefox
     ./git.nix
