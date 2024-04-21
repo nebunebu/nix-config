@@ -21,6 +21,7 @@
         "ALT_L, p, exec, pypr toggle nixpkgs"
         "ALT_L, h, exec, pypr toggle hm-options"
         "ALT_L, l, exec, pypr toggle lichess"
+        "ALT_L, c, exec, pypr toggle claude"
       ];
 
     };
