@@ -95,6 +95,7 @@ in
             height = 30;
             output = [ "DP-2" ];
             modules-left = [ "hyprland/workspaces" ];
+            # modules-center = [ "hyprland/submap" ];
             modules-right = [ "pulseaudio" "clock" "tray" ];
           } // wbm;
         };

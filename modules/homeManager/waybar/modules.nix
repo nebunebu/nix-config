@@ -13,12 +13,14 @@
   };
 
   "custom/waybarmpris" = {
+    "max-length" = 50;
     "return-type" = "json";
-    "exec" = "waybar-mpris --position --autofocus";
+    "exec" = "waybar-mpris --position --autofocus --pause  \"⏸\" --play \"▶\"";
     "on-click" = "waybar-mpris --send toggle";
     "on-click-right" = "waybar-mpris --send player-next";
     "on-scroll-up" = "waybar-mpris --send next";
     "on-scroll-down" = "waybar-mpris --send prev";
+    "ignored-players" = [ "firefox" "chromium" ];
     "escape" = true;
   };
 
@@ -80,6 +82,14 @@
       "default" = ""; # Path to mic-on icon
     };
   };
+
+  "hyprland/workspaces" = {
+    "ignore-workspaces" = [
+      "(special:)"
+    ];
+  };
+
+  "tray" = { spacing = 10; };
 
   "clock" = {
     "format" = "{:%I:%M}";
