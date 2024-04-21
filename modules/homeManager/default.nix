@@ -36,8 +36,8 @@
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
       python3
-      firefox
       pavucontrol
+      libnotify
       # krita
       # gimp
       # thunderbird
@@ -46,7 +46,6 @@
       # ffmpeg
       # distrobox
       # lazygit
-      # libnotify
       # invidtui
       # noto-fonts
       (nerdfonts.override {
