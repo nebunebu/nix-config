@@ -55,7 +55,7 @@
 
       [scratchpads.claude]
       command = "firefox -P claude"
-      animation = "fromTop"
+      animation = "fromRight"
       lazy = true
       size = "80% 80%"
     '';
