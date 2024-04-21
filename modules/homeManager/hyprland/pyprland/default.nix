@@ -13,6 +13,7 @@
       windowrulev2 = [
         "float, class:^(kitty-btm)$"
         "float, class:^(spotube)$"
+        "float, class:^(firefox)$"
       ];
       bind = [
         "ALT_L, b, exec, pypr toggle btm"
