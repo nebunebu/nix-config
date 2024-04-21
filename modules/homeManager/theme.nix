@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, unstablePkgs, lib, config, ... }:
 
 {
   options = {
@@ -8,8 +8,8 @@
   config = lib.mkIf config.app.theme.enable {
     home.pointerCursor = {
       gtk.enable = true;
-      package = pkgs.vanilla-dmz;
-      name = "Vanilla-DMZ";
+      package = unstablePkgs.rose-pine-cursor;
+      name = "Rose-Pine";
     };
     gtk = {
       enable = true;
