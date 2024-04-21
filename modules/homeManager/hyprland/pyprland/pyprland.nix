@@ -52,6 +52,12 @@
       animation = "fromTop"
       lazy = true
       size = "80% 80%"
+
+      [scratchpads.claude]
+      command = "firefox -P claude"
+      animation = "fromTop"
+      lazy = true
+      size = "80% 80%"
     '';
   };
 }
