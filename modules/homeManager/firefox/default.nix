@@ -24,6 +24,16 @@ in
               font-family: "DroidSansM Nerd Font Mono" !important;
             };
           '';
+        bookmarks = [
+          {
+            name = "claude";
+            url = "https://claude.ai/chats";
+          }
+          {
+            name = "wiki.nixos";
+            url = "https://wiki.nixos.org";
+          }
+        ];
       };
       noogle = {
         id = 1;
@@ -50,6 +60,13 @@ in
         id = 4;
         settings = {
           "browser.startup.homepage" = "https://lichess.org/training";
+        };
+        extensions = ffao;
+      };
+      claude = {
+        id = 5;
+        settings = {
+          "browser.startup.homepage" = "https://claude.ai/chats";
         };
         extensions = ffao;
       };
