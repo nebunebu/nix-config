@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, modulesPath, ... }:
 
 {
   imports =
@@ -7,6 +7,7 @@
       ../../../modules/nixOS
       # ./impermanence/nixos.nix
       inputs.home-manager.nixosModules.default
+      # "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -29,5 +30,4 @@
   };
 
   desktop.hyprland.enable = true;
-
 }

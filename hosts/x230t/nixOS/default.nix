@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, modulesPath, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ../../../modules/nixOS
     inputs.home-manager.nixosModules.default
     inputs.niri.nixosModules.niri
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
   desktop.hyprland.enable = true;
