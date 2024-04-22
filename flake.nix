@@ -43,7 +43,6 @@
           modules = [ ./hosts/${hostName}/nixOS/default.nix ]
             ++ extraModules ++
             (if disableHomeManager then [ ] else [
-
               {
                 home-manager.users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
                 home-manager.extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
