@@ -14,6 +14,7 @@
   ];
 
   networking.wireless.enable = true;
+  # TODO: isolate console into module
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "US/Eastern";
   services = {
