@@ -13,8 +13,4 @@
     secrets.nebu-password.neededForUsers = true;
   };
 
-  users.users.nebu = {
-    isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets.nebu-password.path;
-  };
 }
