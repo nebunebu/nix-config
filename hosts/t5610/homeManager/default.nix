@@ -14,7 +14,7 @@
       t5610.enable = true;
     };
 
-    tmux.enable = true;
+    # tmux.enable = true;
     zsh.enable = true;
     theme.enable = true;
   };

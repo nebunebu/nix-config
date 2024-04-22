@@ -36,24 +36,29 @@
       pkgs = nixpkgs.legacyPackages.${system};
       unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
-      mkHost = { hostName, extraModules ? [ ] }:
+      mkHost = { hostName, extraModules ? [ ], disableHomeManager ? false }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [ ./hosts/${hostName}/nixOS/default.nix ]
             ++ extraModules ++
-            [
+            (if disableHomeManager then [ ] else [
+
               {
                 home-manager.users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
                 home-manager.extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
               }
-            ];
+            ]);
         };
     in
     {
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
+        nixISO = mkHost {
+          hostName = "nixISO";
+          disableHomeManager = true;
+        };
       };
     };
 }
