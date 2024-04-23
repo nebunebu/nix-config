@@ -11,6 +11,7 @@
     ./hyprland.nix
     ./virtualisation
     ./tuir.nix
+    ./pam.nix
   ];
 
   networking.wireless.enable = true;
