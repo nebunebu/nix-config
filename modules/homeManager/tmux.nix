@@ -82,18 +82,24 @@ in
             set -g @rose_pine_variant 'main'
             set -g @rose_pine_date_time '%_I:%M %a %D'
             set -g @rose_pine_show_pane_directory 'on'
-            set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator}'
+            set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
             set -g @rose_pine_show_current_program 'on'
             set -g @rose_pine_show_pane_directory 'on'
           '';
         }
         {
-          plugin = t.continuum;
-          extraConfig = '''';
+          plugin = t.resurrect;
+          extraConfig = ''
+            # set -g @ressurect-strategy-nvim 'session'
+            # set -g @resurrect-capture-pane-contents 'on'
+          '';
         }
         {
-          plugin = t.resurrect;
-          extraConfig = '''';
+          plugin = t.continuum;
+          extraConfig = ''
+            set -g @continuum-restore 'on'
+            set -g @continuum-save-interval '10'
+          '';
         }
         {
           plugin = t.mode-indicator;
