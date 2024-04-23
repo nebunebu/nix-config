@@ -22,18 +22,6 @@
         NIXOS_OZONE_WL = "1";
       };
     };
-    # hyprland
-    # fuzzel
-    # xdg-portal
-    # kitty
-    # sww
-    # ags
-    # hyprgrass
-    # pyprland
-    # monitors
-
-    # use home-manager
-
 
     hardware = {
       opengl = {
