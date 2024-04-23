@@ -6,7 +6,7 @@
     ../../../modules/nixOS
     inputs.home-manager.nixosModules.default
     inputs.niri.nixosModules.niri
-    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+    # "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
   desktop.hyprland.enable = true;
