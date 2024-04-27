@@ -35,7 +35,7 @@
     username = "nebu";
     homeDirectory = "/home/nebu";
     packages = with pkgs; [
-      python3
+      manix
       pavucontrol
       libnotify
       # krita
