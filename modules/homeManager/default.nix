@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, unstablePkgs, ... }:
 
 {
   imports = [
@@ -34,10 +34,11 @@
   home = {
     username = "nebu";
     homeDirectory = "/home/nebu";
-    packages = with pkgs; [
-      manix
-      pavucontrol
-      libnotify
+    packages = [
+      unstablePkgs.element-desktop-wayland
+      pkgs.manix
+      pkgs.pavucontrol
+      pkgs.libnotify
       # krita
       # gimp
       # thunderbird
@@ -48,7 +49,7 @@
       # lazygit
       # invidtui
       # noto-fonts
-      (nerdfonts.override {
+      (pkgs.nerdfonts.override {
         fonts = [
           "DroidSansMono"
           "JetBrainsMono"
