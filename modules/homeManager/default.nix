@@ -27,6 +27,7 @@
     ./cli-tools.nix
     ./chromium
     ./direnv.nix
+    ./yazi.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
