@@ -36,7 +36,6 @@
     homeDirectory = "/home/nebu";
     packages = [
       unstablePkgs.element-desktop-wayland
-      pkgs.manix
       pkgs.pavucontrol
       pkgs.libnotify
       # krita
