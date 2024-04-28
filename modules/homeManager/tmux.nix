@@ -12,6 +12,7 @@ in
   config = lib.mkIf config.app.tmux.enable {
     programs.tmux = {
       enable = true;
+      package = unstablePkgs.tmux;
       shell = "${pkgs.zsh}/bin/zsh";
       prefix = "C-SPACE";
       keyMode = "vi";
