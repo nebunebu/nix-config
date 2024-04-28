@@ -46,7 +46,7 @@
       # bottom
       # ffmpeg
       # distrobox
-      # lazygit
+      pkgs.lazygit
       # invidtui
       # noto-fonts
       (pkgs.nerdfonts.override {
