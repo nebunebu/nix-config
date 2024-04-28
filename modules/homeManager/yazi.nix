@@ -1,5 +1,8 @@
 {
   programs.yazi = {
+    # FIX: Images not always in correct panel
+    # FIX: Image remains when closed
+    # FIX: Add nix-colors
     enable = true;
     enableZshIntegration = true;
     # keymap = {};
