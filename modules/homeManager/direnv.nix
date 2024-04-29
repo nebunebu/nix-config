@@ -6,14 +6,9 @@
   };
 
   # programs.zsh.initExtra = /* bash */ ''
-  #   flakify() {
-  #     if [ ! -e flake.nix ]; then
-  #       nix flake new -t github:nix-community/nix-direnv .
-  #     elif [ ! -e .envrc ]; then
-  #       echo "use flake" > .envrc
-  #       direnv allow
-  #     fi
-  #     ${EDITOR:-vim} flake.nix
+  #   direnv_load() {
+  #     eval "$(direnv export bash)"
   #   }
+  #   direnv_load &> /dev/null
   # '';
 }
