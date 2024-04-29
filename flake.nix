@@ -56,6 +56,19 @@
     in
     {
       imports = [ ./pre-commit-hooks.nix ];
+
+      devShells.default = pkgs.mkShell {
+        packages = [
+          pkgs.nixpkgs-fmt
+          # deadnix.enable = true;
+          # nil.enable = true;
+          # nixpkgs-fmt.enable = true;
+          # statix.enable = true;
+        ];
+        name = "nix-config";
+        formatter = pkgs.nixpkgs-fmt;
+      };
+
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
