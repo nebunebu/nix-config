@@ -29,12 +29,20 @@
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
-  outputs = { nixpkgs, nixpkgs-unstable, ... } @inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-unstable
+    , pre-commit-hooks
+    , ...
+    } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
