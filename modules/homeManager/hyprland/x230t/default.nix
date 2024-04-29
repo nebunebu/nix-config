@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 let
   hypr-tab =
-    (pkgs.writeShellScript "hypr-tab" ''
+    pkgs.writeShellScript "hypr-tab" ''
       if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
         hyprctl keyword input:touchdevice:transform 1
         hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 1
@@ -9,7 +9,7 @@ let
         hyprctl keyword input:touchdevice:transform 0
         hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 0
       fi
-    '');
+    '';
 in
 {
 

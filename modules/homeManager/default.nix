@@ -33,6 +33,7 @@
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   home = {
+    stateVersion = "23.11";
     username = "nebu";
     homeDirectory = "/home/nebu";
     packages = [
@@ -59,9 +60,11 @@
     ];
   };
 
-  programs.home-manager.enable = true;
-  programs.bash.enable = true;
-  programs.zsh.enable = true;
+  programs = {
+    home-manager.enable = true;
+    bash.enable = true;
+    zsh.enable = true;
+  };
+
   systemd.user.startServices = "sd-switch";
-  home.stateVersion = "23.11";
 }

@@ -75,8 +75,8 @@
       };
       devShells.${system}.default = pkgs.mkShell {
         # packages = [ pkgs.cowsay ];
-        inherit (self.checks.${system}.pre-commit-check) shellHook;
-        buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+        inherit (self.checks.pre-commit-check) shellHook;
+        buildInputs = self.checks.pre-commit-check.enabledPackages;
       };
 
       nixosConfigurations = {
