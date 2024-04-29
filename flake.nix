@@ -57,7 +57,7 @@
     {
       imports = [ ./pre-commit-hooks.nix ];
 
-      devShells.default = pkgs.mkShell {
+      devShells.${system}.default = pkgs.mkShell {
         packages = [
           pkgs.nixpkgs-fmt
           # deadnix.enable = true;
