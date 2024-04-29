@@ -34,7 +34,6 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
   outputs =
     { self
@@ -63,18 +62,21 @@
         };
     in
     {
-      imports = [ ./pre-commit-hooks.nix ];
-
+      checks = {
+        pre-commit-check = pre-commit-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            nixpkgs-fmt.enable = true;
+            deadnix.enable = true;
+            nil.enable = true;
+            statix.enable = true;
+          };
+        };
+      };
       devShells.${system}.default = pkgs.mkShell {
-        packages = [
-          pkgs.nixpkgs-fmt
-          # deadnix.enable = true;
-          # nil.enable = true;
-          # nixpkgs-fmt.enable = true;
-          # statix.enable = true;
-        ];
-        name = "nix-config";
-        formatter = pkgs.nixpkgs-fmt;
+        # packages = [ pkgs.cowsay ];
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+        buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
       };
 
       nixosConfigurations = {
@@ -87,3 +89,17 @@
       };
     };
 }
+
+
+# imports = [ ./pre-commit-hooks.nix ];
+# devShells.${system}.default = pkgs.mkShell {
+#   packages = [
+#     pkgs.nixpkgs-fmt
+#   ];
+#   name = "nix-config";
+#   DIRENV_LOG_FORMAT = "";
+#   formatter = pkgs.nixpkgs-fmt;
+#   shellHook = ''
+#     ${config.pre-commit.installationScript}
+#   '';
+# };
