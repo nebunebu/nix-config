@@ -79,6 +79,7 @@
             deadnix.enable = true;
             nil.enable = true;
             statix.enable = true;
+            trailing_whitespace_fixer.enable = true;
           };
         };
       };
