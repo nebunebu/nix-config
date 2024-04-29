@@ -29,6 +29,10 @@
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { nixpkgs, nixpkgs-unstable, ... } @inputs:
     let
@@ -51,6 +55,7 @@
         };
     in
     {
+      imports = [ ./pre-commit-hooks.nix ];
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
