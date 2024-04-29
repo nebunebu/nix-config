@@ -62,6 +62,15 @@
         };
     in
     {
+      nixosConfigurations = {
+        t5610 = mkHost { hostName = "t5610"; };
+        x230t = mkHost { hostName = "x230t"; };
+        nixISO = mkHost {
+          hostName = "nixISO";
+          disableHomeManager = true;
+        };
+      };
+
       checks = {
         pre-commit-check = pre-commit-hooks.lib.${system}.run {
           src = ./.;
@@ -74,32 +83,9 @@
         };
       };
       devShells.${system}.default = pkgs.mkShell {
-        # packages = [ pkgs.cowsay ];
+        name = "nix-config";
         inherit (self.checks.pre-commit-check) shellHook;
         buildInputs = self.checks.pre-commit-check.enabledPackages;
       };
-
-      nixosConfigurations = {
-        t5610 = mkHost { hostName = "t5610"; };
-        x230t = mkHost { hostName = "x230t"; };
-        nixISO = mkHost {
-          hostName = "nixISO";
-          disableHomeManager = true;
-        };
-      };
     };
 }
-
-
-# imports = [ ./pre-commit-hooks.nix ];
-# devShells.${system}.default = pkgs.mkShell {
-#   packages = [
-#     pkgs.nixpkgs-fmt
-#   ];
-#   name = "nix-config";
-#   DIRENV_LOG_FORMAT = "";
-#   formatter = pkgs.nixpkgs-fmt;
-#   shellHook = ''
-#     ${config.pre-commit.installationScript}
-#   '';
-# };
