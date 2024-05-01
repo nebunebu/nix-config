@@ -14,7 +14,7 @@ vimUtils.buildVimPlugin {
   meta.homepage = "https://github.com/simonmclean/triptych.nvim";
 }
 
-# vimUtils.buildVimPlugin {
+#vimUtils.buildVimPlugin {
 #   pname = "triptych.nvim";
 #   version = "2023-02-10";
 #   src = pkgs.fetchFromGitHub {
