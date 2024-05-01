@@ -1,9 +1,10 @@
 {
   imports = [
+    ./boot.nix
     ./users
     ./nixvim
     # ./discord.nix
-    ./doas.nix
+    # ./doas.nix
     ./dotool.nix
     ./nix.nix
     ./sops.nix
