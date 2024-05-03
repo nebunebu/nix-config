@@ -19,6 +19,7 @@
     ./mpv.nix
     ./newsboat
     ./nix-tools.nix
+    ./password-store.nix
     ./sioyek.nix
     ./swww.nix
     ./syncthing.nix
