@@ -5,29 +5,30 @@
     inputs.nix-colors.homeManagerModules.default
     ./awscli.nix
     ./bat.nix
+    ./chromium
+    ./cli-tools.nix
+    ./direnv.nix
+    ./firefox
+    ./fuzzel
+    ./fzf.nix
+    ./git.nix
+    ./hyprland
+    ./kitty.nix
     ./lf.nix
     ./mpv.nix
-    ./fzf.nix
-    ./newsboat
-    ./firefox
-    ./git.nix
-    ./kitty.nix
-    ./hyprland
-    ./sioyek.nix
     ./mpv.nix
-    ./tmux.nix
-    ./zsh.nix
-    ./theme.nix
-    ./taskwarrior.nix
-    ./waybar
-    ./fuzzel
-    ./webcord.nix
-    ./swww.nix
+    ./newsboat
     ./nix-tools.nix
-    ./cli-tools.nix
-    ./chromium
-    ./direnv.nix
+    ./sioyek.nix
+    ./swww.nix
+    ./syncthing.nix
+    ./taskwarrior.nix
+    ./theme.nix
+    ./tmux.nix
+    ./waybar
+    ./webcord.nix
     ./yazi.nix
+    ./zsh.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
