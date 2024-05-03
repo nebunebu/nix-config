@@ -10,6 +10,7 @@
 
   desktop.hyprland.enable = true;
 
+
   networking.hostName = "x230t";
   environment = {
     sessionVariables = {
