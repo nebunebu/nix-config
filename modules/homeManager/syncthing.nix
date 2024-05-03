@@ -1,7 +1,7 @@
 {
-  services.synthing = {
+  services.syncthing = {
     enable = true;
     tray = true;
-    sytembus-notify.enable = true;
+    # sytembus-notify.enable = true;
   };
 }
