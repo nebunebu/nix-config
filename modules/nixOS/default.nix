@@ -11,7 +11,7 @@
     ./pam.nix
     ./sddm.nix
     ./sops.nix
-    ./syncthing.nix
+    # ./syncthing.nix
     ./system.nix
     ./tuir.nix
     ./users
