@@ -1,45 +1,19 @@
 {
   imports = [
-    ./boot.nix
-    ./users
-    ./nixvim
     # ./discord.nix
-    # ./doas.nix
+    ./boot.nix
     ./dotool.nix
-    ./nix.nix
-    ./sops.nix
-    ./sddm.nix
+    ./console.nix
     ./hyprland.nix
-    ./virtualisation
-    ./tuir.nix
+    ./nix.nix
+    ./nixvim
+    ./networking.nix
     ./pam.nix
+    ./sddm.nix
+    ./sops.nix
+    ./system.nix
+    ./tuir.nix
+    ./users
+    ./virtualisation
   ];
-
-  networking.wireless.enable = true;
-  # TODO: isolate console into module
-  i18n.defaultLocale = "en_US.UTF-8";
-  time.timeZone = "US/Eastern";
-  services = {
-    openssh.enable = true;
-    xserver = {
-      layout = "us";
-      xkbOptions = "caps:swapescape";
-    };
-  };
-  console = {
-    useXkbConfig = true;
-    font = "Lat2-Terminus16";
-    # keyMap = "us";
-  };
-
-  programs = {
-    zsh.enable = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-  };
-
-  system.stateVersion = "23.11";
 }
