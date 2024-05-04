@@ -1,14 +1,14 @@
 { inputs, ... }: {
   imports = [
     inputs.nixvim.nixosModules.nixvim
-    ./core/globals.nix
-    ./core/options.nix
-    # ./core/autoGroups
-    #   ./core/autoCmd.nix
     #   ./core/customFunctions.nix
-    #   ./core/userCommands.nix
     #   ./core/filetype.nim
+    #   ./core/userCommands.nix
+    # ./core/autoGroups
+    ./core/autoCmd.nix
+    ./core/globals.nix
     ./core/highlight.nix
+    ./core/options.nix
     ./plugins/default.nix
   ];
 
