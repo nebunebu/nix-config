@@ -2,6 +2,7 @@
   imports = [
     ./cliphist-menu.nix
     ./power-menu.nix
+    ./pass-menu.nix
     # ./screen-capture.sh
   ];
 
