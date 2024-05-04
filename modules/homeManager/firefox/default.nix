@@ -16,6 +16,7 @@ in
           i-dont-care-about-cookies
           reddit-enhancement-suite
           old-reddit-redirect
+          passff
         ] ++ ffao;
         userChrome = /* css */
           ''
