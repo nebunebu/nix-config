@@ -532,7 +532,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {
@@ -1036,6 +1036,26 @@
       "original": {
         "owner": "nix-community",
         "repo": "nix-github-actions",
+        "type": "github"
+      }
+    },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714878592,
+        "narHash": "sha256-E68C03sYRsYFsK7wiGHUIJm8IsyPRALOrFoTL0glXnI=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "a362555e9dbd4ecff3bb98969bbdb8f79fe87f10",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
         "type": "github"
       }
     },
@@ -1575,6 +1595,7 @@
         "impermanence": "impermanence",
         "niri": "niri",
         "nix-colors": "nix-colors",
+        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_6",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
