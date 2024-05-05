@@ -56,26 +56,7 @@
             ]);
         };
     in
-    rec
     {
-
-      # packages.x86_64-linux.default = nixosConfigurations.t5610.config.home-manager.users.nebu.home.activationPackage;
-
-      packages.x86_64-linux.t5610 = builtins.listToAttrs (map
-        (x: {
-          name = x.meta.mainProgram or x.pname or x.name or "dummy";
-          value = x;
-        })
-        nixosConfigurations.t5610.config.home-manager.users.nebu.home.packages);
-
-      packages.x86_64-linux.x230t = builtins.listToAttrs (map
-        (x: {
-          name = x.meta.mainProgram or x.pname or x.name or "dummy";
-          value = x;
-        })
-        nixosConfigurations.x230t.config.home-manager.users.nebu.home.packages);
-      # packages.x86_64-linux = builtins.listToAttrs nixosConfigurations.t5610.config.home-manager.users.nebu.home.packages;
-
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
