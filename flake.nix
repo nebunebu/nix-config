@@ -56,7 +56,11 @@
             ]);
         };
     in
+    rec
     {
+
+      packages.x86_64-linux.default = nixosConfigurations.t5610.config.home-manager.users.nebu.home.activationPackage;
+
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
