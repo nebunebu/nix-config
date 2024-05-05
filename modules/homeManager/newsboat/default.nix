@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./scripts/linkhandler.nix
     # ./scripts/redbar-dl.nix

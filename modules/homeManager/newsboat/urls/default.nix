@@ -1,7 +1,3 @@
-{ config, ... }:
-let
-  nbxmls = "${config.xdg.configHome}/newsboat/xmls";
-in
 {
   imports = [
     ./full-yt/default.nix

@@ -1,4 +1,4 @@
-{ inputs, unstablePkgs, ... }:
+{ unstablePkgs, ... }:
 {
   programs.yazi = {
     # FIX: Images not always in correct panel

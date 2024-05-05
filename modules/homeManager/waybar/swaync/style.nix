@@ -1,7 +1,5 @@
 { config, ... }:
 let
-  c = config.colorScheme.palette;
-  background = "${c.base00}ff";
   c-red = config.colorScheme.palette.base08;
 in
 {

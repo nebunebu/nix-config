@@ -1,36 +1,37 @@
 {
   imports = [
-    ./telescope.nix
-    ./lualine.nix
     ./alpha.nix
+    ./cmp.nix
+    ./floaterm.nix
+    ./lsp.nix
+    ./lualine.nix
+    ./luasnip.nix
+    ./mkdnflow.nix
+    ./none-ls.nix
+    ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
     ./which-key.nix
-    ./lsp.nix
-    ./cmp.nix
-    ./none-ls.nix
-    ./mkdnflow.nix
-    ./luasnip.nix
   ];
 
   programs.nixvim.plugins = {
-    navic.enable = true;
-    project-nvim.enable = true;
-    nix.enable = true;
-    oil.enable = true;
-    indent-blankline.enable = true;
-    indent-blankline.scope.enabled = true;
-    rainbow-delimiters.enable = true;
-    nvim-autopairs.enable = true;
+    barbecue.enable = true;
+    comment-nvim.enable = true;
     endwise.enable = true;
     fidget.enable = true;
-    nix-develop.enable = true;
-    tmux-navigator.enable = true;
-    comment-nvim.enable = true;
-    barbecue.enable = true;
-    surround.enable = true;
-    todo-comments.enable = true;
+    indent-blankline.enable = true;
+    indent-blankline.scope.enabled = true;
     navbuddy.enable = true;
+    navic.enable = true;
+    nix-develop.enable = true;
+    nix.enable = true;
+    nvim-autopairs.enable = true;
     nvim-colorizer.enable = true;
+    oil.enable = true;
+    project-nvim.enable = true;
+    rainbow-delimiters.enable = true;
+    surround.enable = true;
+    tmux-navigator.enable = true;
+    todo-comments.enable = true;
   };
 }

@@ -18,6 +18,10 @@
             "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>",
             "Toggle Line Comment"
           },
+          [" "] = {
+            "<cmd>FloatermToggle<CR>",
+            "Toggle Floatterm"
+          },
           p = {
             "<cmd>lua vim.lsp.buf.format()<CR>",
             "Format Buffer"

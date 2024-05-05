@@ -1,4 +1,4 @@
-{ pkgs, modulesPath, inputs, ... }:
+{ pkgs, modulesPath, ... }:
 
 # NOTE: Build with:
 # NOTE:   nix run nixpkgs#nixos-generators --\
