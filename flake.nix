@@ -25,6 +25,8 @@
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
 
+    xremap-flake.url = "github:xremap/nix-flake";
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
