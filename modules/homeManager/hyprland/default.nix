@@ -1,4 +1,4 @@
-{ inputs, pkgs, unstablePkgs, lib, config, ... }:
+{ inputs, pkgs, lib, config, ... }:
 let
   c = config.colorScheme.palette;
   c-gray = "0xff${c.base07}";
@@ -110,6 +110,8 @@ in
           ];
 
           bind = [
+            ", ALT_L + K, exec, pass-menu"
+
             "$mainMod + SHIFT, N, movewindow, mon:DP-1"
             "$mainMod + SHIFT, M, movewindow, mon:DP-2"
 
