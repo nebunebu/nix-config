@@ -59,7 +59,16 @@
     rec
     {
 
-      packages.x86_64-linux.default = nixosConfigurations.t5610.config.home-manager.users.nebu.home.activationPackage;
+      # packages.x86_64-linux.default = nixosConfigurations.t5610.config.home-manager.users.nebu.home.activationPackage;
+
+      packages.x86_64-linux = builtins.listToAttrs (map
+        (x: {
+          name = x.pname or x.name or "dummy";
+          value = x;
+        })
+        nixosConfigurations.t5610.config.home-manager.users.nebu.home.packages);
+
+      # packages.x86_64-linux = builtins.listToAttrs nixosConfigurations.t5610.config.home-manager.users.nebu.home.packages;
 
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
