@@ -58,8 +58,12 @@
             ++ extraModules ++
             (if disableHomeManager then [ ] else [
               {
-                home-manager.users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                home-manager.extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
+                  extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
+                };
               }
             ]);
         };
