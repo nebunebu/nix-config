@@ -38,13 +38,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-unstable
-    , pre-commit-hooks
-    , ...
-    } @inputs:
+  outputs = inputs: with inputs;
+    # { self
+    # , nixpkgs
+    # , nixpkgs-unstable
+    # , pre-commit-hooks
+    # , ...
+    # } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
