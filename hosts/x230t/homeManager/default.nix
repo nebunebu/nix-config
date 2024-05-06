@@ -1,4 +1,9 @@
-{ config, ... }:
+# let
+#   liminalRoom = pkgs.copyFile {
+#     name = "liminal-room.jpg";
+#     src = ../../../modules/homeManager/wallpapers/liminal-room.jpg;
+#   };
+# in
 {
   imports = [
     ../../../modules/homeManager
@@ -22,11 +27,12 @@
     hyprlandIntegration.enable = true;
     enable = true;
     monitors =
-      let
-        wp = "${config.home.homeDirectory}/.nix-config/modules/homeManager/wallpapers/";
-      in
+      # let
+      #   wp = "${config.home.homeDirectory}/.nix-config/modules/homeManager/wallpapers/";
+      # in
       {
-        "LVDS-1".wallpaper = "${wp}/liminal-room.jpg";
+        # "LVDS-1".wallpaper = "${wp}/liminal-room.jpg";
+        "LVDS-1".wallpaper = "liminalRoom";
       };
   };
 }
