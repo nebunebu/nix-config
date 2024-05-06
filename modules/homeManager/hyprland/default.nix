@@ -54,6 +54,8 @@ in
         };
 
         extraConfig = ''
+
+          bind = , ALT_L, exec, kitty
           # env = HYPRCURSOR_THEME,rose-pine-hyprcursor
           # env = HYPRCURSOR_SIZE,24
           exec-once = hypr-start
@@ -110,7 +112,7 @@ in
           ];
 
           bind = [
-            ", ALT_L + K, exec, pass-menu"
+            # ", ALT_L + K, exec, pass-menu"
             "$mainMod + Shift, Q, exec, hyprctl dispatch exit"
 
             "$mainMod + SHIFT, N, movewindow, mon:DP-1"

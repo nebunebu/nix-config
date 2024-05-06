@@ -9,7 +9,7 @@
     kitty.enable = true;
     sioyek.enable = true;
     tmux.enable = true;
-    zsh.enable = true;
+    # zsh.enable = true;
     theme.enable = true;
     waybar.x230t.enable = true;
     hyprland = {
