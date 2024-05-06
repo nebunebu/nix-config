@@ -1,5 +1,4 @@
 { inputs, pkgs, unstablePkgs, lib, ... }:
-
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -26,6 +25,7 @@
     ./taskwarrior.nix
     ./theme.nix
     ./tmux.nix
+    ./wallpapers
     ./waybar
     ./webcord.nix
     ./yazi.nix
