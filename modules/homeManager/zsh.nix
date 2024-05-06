@@ -1,19 +1,17 @@
 { pkgs, config, ... }:
 
 {
-  # options = {
-  #   app.zsh.enable = lib.mkEnableOption "enable zsh";
-  # };
-  #
-  # config = lib.mkIf config.app.zsh.enable {
   programs = {
-    starship.enable = true;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zsh = {
       enable = true;
       enableAutosuggestions = true;
       enableCompletion = true;
       enableVteIntegration = true;
-      dotDir = ".config/zsh";
+      # dotDir = ".config/zsh";
       loginExtra =
         /*
         bash
@@ -39,7 +37,6 @@
         grep = "grep --color=\"auto\"";
         ip = "ip --color=\"auto\"";
         ol = "docker exec -it ollama ollama";
-        # cat = "bat";
       };
 
       plugins = [
