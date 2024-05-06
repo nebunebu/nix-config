@@ -55,7 +55,6 @@ in
 
         extraConfig = ''
 
-          bind = , ALT_L, exec, kitty
           # env = HYPRCURSOR_THEME,rose-pine-hyprcursor
           # env = HYPRCURSOR_SIZE,24
           exec-once = hypr-start
