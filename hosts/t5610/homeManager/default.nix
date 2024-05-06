@@ -15,7 +15,7 @@
     };
 
     tmux.enable = true;
-    zsh.enable = true;
+    # zsh.enable = true;
     theme.enable = true;
   };
 
