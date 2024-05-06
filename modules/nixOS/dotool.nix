@@ -7,7 +7,6 @@
   };
 
   users.users.nebu = {
-    isNormalUser = true;
     extraGroups = [ "input" "uinput" ];
   };
 

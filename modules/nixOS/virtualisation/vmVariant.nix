@@ -1,22 +1,21 @@
 {
   services.qemuGuest.enable = true;
 
-  xdg.portal.wlr.enable = true;
-
   virtualisation = {
     # qemu = {
-    #   package = pkgs.qemu;
-    #   options = [ "-device virtio-vga" ];
-    #   # guestAgent.enable = true;
+    # options = [ "-device virtio-vga" ];
+    # guestAgent.enable = true;
     # };
     # drives = [];
 
     vmVariant = {
       # following configuration is added only when building VM with build-vm
+      # home-manager.users.nebu.home.homeDirectory = "/home/nebu";
       virtualisation = {
-        memorySize = 20000;
-        cores = 10;
+        memorySize = 8096;
+        cores = 8;
       };
     };
   };
+
 }

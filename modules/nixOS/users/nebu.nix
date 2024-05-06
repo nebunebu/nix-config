@@ -7,6 +7,7 @@
   users = {
     mutableUsers = false;
     users.nebu = {
+      name = "nebu";
       isNormalUser = true;
       shell = pkgs.zsh;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.

@@ -1,4 +1,4 @@
-{ inputs, pkgs, unstablePkgs, ... }:
+{ inputs, pkgs, unstablePkgs, lib, ... }:
 
 {
   imports = [
@@ -29,7 +29,7 @@
     ./waybar
     ./webcord.nix
     ./yazi.nix
-    ./zsh.nix
+    # ./zsh.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
@@ -37,7 +37,7 @@
   home = {
     stateVersion = "23.11";
     username = "nebu";
-    homeDirectory = "/home/nebu";
+    homeDirectory = lib.mkForce "/home/nebu";
     packages = [
       unstablePkgs.element-desktop-wayland
       pkgs.pavucontrol
