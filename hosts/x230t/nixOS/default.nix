@@ -8,8 +8,12 @@
     inputs.niri.nixosModules.niri
   ];
 
-  desktop.hyprland.enable = true;
+  services.xserver.windowManager.awesome.enable = true;
 
+  # desktop.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+  };
 
   networking.hostName = "x230t";
   environment = {

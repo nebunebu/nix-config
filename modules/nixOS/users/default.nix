@@ -1,3 +1,5 @@
 {
-  imports = [ ./nebu.nix ];
+  imports = [
+    ./nebu.nix
+  ];
 }
