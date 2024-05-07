@@ -44,6 +44,7 @@ in
 
       wayland.windowManager.hyprland = {
         enable = true;
+        # package = unstablePkgs.hyprland;
         xwayland.enable = true;
         systemd = {
           enable = true;

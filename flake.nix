@@ -26,7 +26,11 @@
     };
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
-    pyprland.url = "github:hyprland-community/pyprland";
+
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
+      # inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
@@ -77,7 +81,10 @@
           src = ./.;
           hooks = {
             nixpkgs-fmt.enable = true;
-            deadnix.enable = true;
+            deadnix = {
+              enable = true;
+              settings.noLambdaArg = true;
+            };
             nil.enable = true;
             statix.enable = true;
             # trailing_whitespace_fixer.enable = true;
