@@ -39,12 +39,6 @@
     };
   };
   outputs = inputs: with inputs;
-    # { self
-    # , nixpkgs
-    # , nixpkgs-unstable
-    # , pre-commit-hooks
-    # , ...
-    # } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
