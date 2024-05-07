@@ -1,19 +1,26 @@
+# { pkgs, ... }:
 {
   imports = [
     # ./discord.nix
-    ./boot.nix
     # ./dotool.nix
+    # ./sops.nix
+    # ./tuir.nix
+    ./boot.nix
     ./console.nix
     ./hyprland.nix
+    ./networking.nix
     ./nix.nix
     ./nixvim
-    ./networking.nix
     ./pam.nix
     ./sddm.nix
-    # ./sops.nix
     ./system.nix
-    # ./tuir.nix
     ./users
     ./virtualisation
   ];
+
+  # environment.systemPackages = [
+  #   # (pkgs.callPackage ../../pkgs/wshowkeys.nix { })
+  # ];
+  #
+  # programs.wshowkeys.enable = true;
 }

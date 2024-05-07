@@ -17,6 +17,8 @@
     ];
 
     bind = [
+      # "$mainMod + Shift, W, exec, wshowkeys -b #31748f -f #e0def4 -s #f6c177 -a bottom -F \"Droid Sans Mono 24\""
+
       "$mainMod + Shift, Q, exec, hyprctl dispatch exit"
       "$mainMod + SHIFT, N, movewindow, mon:DP-1"
       "$mainMod + SHIFT, M, movewindow, mon:DP-2"
