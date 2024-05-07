@@ -44,7 +44,10 @@ in
             height = 30;
             output = [ "LVDS-1" ];
             modules-left = [ "hyprland/workspaces" ];
-            modules-center = [ "custom/waybarmpris" ];
+            modules-center = [
+              "custom/waybarmpris"
+              "hyprland/submap"
+            ];
             modules-right = [
               "pulseaudio"
               # "custom/mic"
@@ -82,6 +85,7 @@ in
             modules-left = [ "hyprland/workspaces" ];
             modules-center = [
               "custom/waybarmpris"
+              "hyprland/submap"
             ];
             modules-right = [
               "custom/notification"
@@ -95,7 +99,7 @@ in
             height = 30;
             output = [ "DP-2" ];
             modules-left = [ "hyprland/workspaces" ];
-            # modules-center = [ "hyprland/submap" ];
+            modules-center = [ "hyprland/submap" ];
             modules-right = [ "pulseaudio" "clock" "tray" ];
           } // wbm;
         };

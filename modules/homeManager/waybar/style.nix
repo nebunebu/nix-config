@@ -82,6 +82,7 @@ in
         #custom-notification,
         #custom-waybarmpris,
         #custom-mic,
+        #submap,
         #pulseaudio,
         #battery,
         #tray,
