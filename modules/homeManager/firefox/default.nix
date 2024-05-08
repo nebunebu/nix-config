@@ -24,6 +24,7 @@ in
               font-family: "DroidSansM Nerd Font" !important;
               font-family: "DroidSansM Nerd Font Mono" !important;
             };
+
           '';
         bookmarks = [
           {
@@ -35,6 +36,9 @@ in
             url = "https://wiki.nixos.org";
           }
         ];
+        settings = {
+          "ui.key.menuAccessKeyFocuses" = false;
+        };
       };
       noogle = {
         id = 1;
