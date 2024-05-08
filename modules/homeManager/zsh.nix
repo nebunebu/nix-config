@@ -11,17 +11,6 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       enableVteIntegration = true;
-      # dotDir = ".config/zsh";
-      loginExtra =
-        /*
-        bash
-          */
-        ''
-          # if [ "$(tty)" = "/dev/tty1" ]; then
-          #   exec Hyprland
-          # fi
-        '';
-
       localVariables.CLIPBOARD = "wlp";
 
       # initExtra =
