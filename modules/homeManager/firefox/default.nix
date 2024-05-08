@@ -40,6 +40,7 @@ in
         id = 1;
         settings = {
           "browser.startup.homepage" = "https://noogle.dev";
+          "browser.startup.page" = 1;
         };
         extensions = ffao;
       };
@@ -47,6 +48,7 @@ in
         id = 2;
         settings = {
           "browser.startup.homepage" = "https://search.nixos.org/packages";
+          "browser.startup.page" = 1;
         };
         extensions = ffao;
       };
@@ -54,6 +56,7 @@ in
         id = 3;
         settings = {
           "browser.startup.homepage" = "https://mipmip.github.io/home-manager-option-search";
+          "browser.startup.page" = 1;
         };
         extensions = ffao;
       };
@@ -61,6 +64,7 @@ in
         id = 4;
         settings = {
           "browser.startup.homepage" = "https://lichess.org/training";
+          "browser.startup.page" = 1;
         };
         extensions = ffao;
       };
@@ -68,6 +72,7 @@ in
         id = 5;
         settings = {
           "browser.startup.homepage" = "https://claude.ai/chats";
+          "browser.startup.page" = 1;
         };
         extensions = ffao;
       };
