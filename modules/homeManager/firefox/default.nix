@@ -45,6 +45,7 @@ in
         settings = {
           "browser.startup.homepage" = "https://noogle.dev";
           "browser.startup.page" = 1;
+          # "ui.window_class_override" = "FirefoxNoogle";
         };
         extensions = ffao;
       };
