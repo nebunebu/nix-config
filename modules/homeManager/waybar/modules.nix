@@ -84,9 +84,9 @@
   };
 
   "hyprland/workspaces" = {
-    "ignore-workspaces" = [
-      "(special:)"
-    ];
+    # "ignore-workspaces" = [
+    #   "(special:)"
+    # ];
   };
 
   "tray" = { spacing = 10; };

@@ -18,7 +18,9 @@
       bind = [
         "ALT_L, b, exec, pypr toggle btm"
         "ALT_L, s, exec, pypr toggle spo"
+        "ALT_L, b, exec, export MOZ_DBUS_WINDOW_CLASS=noogleFirefox"
         "ALT_L, n, exec, pypr toggle noogle"
+        "ALT_L, b, exec, export MOZ_DBUS_WINDOW_CLASS=firefox"
         "ALT_L, p, exec, pypr toggle nixpkgs"
         "ALT_L, h, exec, pypr toggle hm-options"
         "ALT_L, l, exec, pypr toggle lichess"
