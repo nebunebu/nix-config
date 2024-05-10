@@ -14,9 +14,9 @@
       localVariables.CLIPBOARD = "wlp";
 
       # initExtra =
-      # builtins.readFile ./zsh-fzf-kill.zsh
-      # + builtins.readFile ./zsh-clipboard.zsh
-      # + builtins.readFile ./zsh-starship-fix.zsh
+      #   builtins.readFile ./zsh-fzf-kill.zsh
+      #   # + builtins.readFile ./zsh-clipboard.zsh
+      #   # + builtins.readFile ./zsh-starship-fix.zsh
       # ;
 
       history.path = "${config.xdg.configHome}/zsh/zsh_history";
@@ -80,15 +80,6 @@
             owner = "jeffreytse";
             repo = "zsh-vi-mode";
             rev = "v0.11.0";
-            sha256 = "sha256-xbchXJTFWeABTwq6h4KWLh+EvydDrDzcY9AQVK65RS8=";
-          };
-        }
-        {
-          name = "zsh-fzf-kill";
-          src = pkgs.fetchFromGitHub {
-            owner = "gessen";
-            repo = "zsh-fzf-kill";
-            rev = "HEAD";
             sha256 = "sha256-xbchXJTFWeABTwq6h4KWLh+EvydDrDzcY9AQVK65RS8=";
           };
         }
