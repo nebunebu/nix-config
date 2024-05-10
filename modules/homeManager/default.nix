@@ -29,7 +29,7 @@
     ./waybar
     ./webcord.nix
     ./yazi.nix
-    ./zsh.nix
+    ./zsh
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
