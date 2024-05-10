@@ -12,6 +12,7 @@
       enableCompletion = true;
       enableVteIntegration = true;
       localVariables.CLIPBOARD = "wlp";
+      history.path = "${config.xdg.configHome}/zsh/zsh_history";
 
       # initExtra =
       #   builtins.readFile ./zsh-fzf-kill.zsh
@@ -19,7 +20,6 @@
       #   # + builtins.readFile ./zsh-starship-fix.zsh
       # ;
 
-      history.path = "${config.xdg.configHome}/zsh/zsh_history";
 
       shellAliases = {
         svim = "sudo -Es nvim";
