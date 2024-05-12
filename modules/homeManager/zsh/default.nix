@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 {
+  # imports = [ ./plugins ];
   programs = {
     starship = {
       enable = true;
