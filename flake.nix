@@ -31,7 +31,6 @@
       url = "github:hyprland-community/pyprland";
       # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    nixvim.url = "github:nix-community/nixvim/nixos-23.11";
     nix-colors.url = "github:misterio77/nix-colors";
     niri.url = "github:sodiboo/niri-flake";
 

@@ -14,13 +14,6 @@
       localVariables.CLIPBOARD = "wlp";
       history.path = "${config.xdg.configHome}/zsh/zsh_history";
 
-      # initExtra =
-      #   builtins.readFile ./zsh-fzf-kill.zsh
-      #   # + builtins.readFile ./zsh-clipboard.zsh
-      #   # + builtins.readFile ./zsh-starship-fix.zsh
-      # ;
-
-
       shellAliases = {
         svim = "sudo -Es nvim";
         grep = "grep --color=\"auto\"";

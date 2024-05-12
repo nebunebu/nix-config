@@ -10,7 +10,6 @@
     ./hyprland.nix
     ./networking.nix
     ./nix.nix
-    ./nixvim
     ./pam.nix
     ./sddm.nix
     ./system.nix
