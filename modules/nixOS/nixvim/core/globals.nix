@@ -1,5 +1,0 @@
-{
-  programs.nixvim.globals = {
-    mapleader = " ";
-  };
-}
