@@ -19,6 +19,17 @@
     theme.enable = true;
   };
 
+  #  services.git-sync = {
+  #    enable = true;
+  #    repositories = {
+  #      test-git-sync = {
+  #        path = "/home/nebu/test-git-sync";
+  # uri = "git@github.com:nebunebu/test-git-sync.git";
+  # interval = 60;
+  #      };
+  #    };
+  #  };
+
 
   programs.swww = {
     hyprlandIntegration.enable = true;
