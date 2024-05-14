@@ -1,4 +1,10 @@
 {
+  # imports = [
+  #   inputs.sddm-sugar-candy-nix.nixosModules.default
+  # ];
+  # services.displayManager.sddm.sugarCandyNix = {
+  #   enable = true;
+  # };
   services.xserver = {
     enable = true;
     displayManager.sddm = {
