@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  # imports = [ ./plugins ];
   programs = {
     starship = {
       enable = true;
@@ -14,6 +13,9 @@
       enableVteIntegration = true;
       localVariables.CLIPBOARD = "wlp";
       history.path = "${config.xdg.configHome}/zsh/zsh_history";
+      sessionVariables = {
+        FUNCNEST = 100000;
+      };
 
       shellAliases = {
         nvim-test = "nix run ${config.home.homeDirectory}/.nixvim";
@@ -22,6 +24,29 @@
         ip = "ip --color=\"auto\"";
         ol = "docker exec -it ollama ollama";
       };
+
+      initExtra = /* bash */ ''
+        # Function to kill processes using fzf
+        function fzf-kill-process() {
+          local pid
+          pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+          if [ "x$pid" != "x" ]; then
+            echo $pid | xargs kill -9
+          fi
+          zle reset-prompt
+        }
+        zle -N fzf-kill-process
+
+        function zvm_after_lazy_keybindings() {
+          zvm_bindkey vicmd '^r' fzf-history-widget
+          zvm_bindkey viins '^r' fzf-history-widget
+          zvm_bindkey vicmd '^x' fzf-kill-process
+          zvm_bindkey viins '^x' fzf-kill-process
+          zvm_bindkey vicmd ':' undefined-key
+        }
+
+      '';
 
       plugins = [
         {
