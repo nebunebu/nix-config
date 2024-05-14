@@ -16,6 +16,7 @@
       history.path = "${config.xdg.configHome}/zsh/zsh_history";
 
       shellAliases = {
+        nvim-test = "nix run ${config.home.homeDirectory}/.nixvim";
         svim = "sudo -Es nvim";
         grep = "grep --color=\"auto\"";
         ip = "ip --color=\"auto\"";

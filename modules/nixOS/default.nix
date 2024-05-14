@@ -1,4 +1,5 @@
-# { pkgs, ... }:
+{ inputs, ... }:
+
 {
   imports = [
     # ./discord.nix
@@ -16,6 +17,9 @@
     ./users
     ./virtualisation
   ];
+
+  # TODO: move elsewhere
+  environment.systemPackages = [ inputs.nixvim-flake.packages.x86_64-linux.default ];
 
   # environment.systemPackages = [
   #   # (pkgs.callPackage ../../pkgs/wshowkeys.nix { })

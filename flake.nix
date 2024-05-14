@@ -13,6 +13,9 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    nixvim-flake.url = "github:nebunebu/nixvim";
+    # sddm-sugar-candy-nix.url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +35,7 @@
       # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    niri.url = "github:sodiboo/niri-flake";
+    # niri.url = "github:sodiboo/niri-flake";
 
     xremap-flake.url = "github:xremap/nix-flake";
 
@@ -51,18 +54,20 @@
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs unstablePkgs; };
-          modules = [ ./hosts/${hostName}/nixOS/default.nix ]
-            ++ extraModules ++
-            (if disableHomeManager then [ ] else [
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                  extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
-                };
-              }
-            ]);
+          modules = [
+            ./hosts/${hostName}/nixOS/default.nix
+          ]
+          ++ extraModules ++
+          (if disableHomeManager then [ ] else [
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
+                extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
+              };
+            }
+          ]);
         };
     in
     {
