@@ -52,7 +52,7 @@
       pkgs.lazygit
       # invidtui
       # noto-fonts
-      (pkgs.nerdfonts.override {
+      (unstablePkgs.nerdfonts.override {
         fonts = [
           "DroidSansMono"
           "JetBrainsMono"
