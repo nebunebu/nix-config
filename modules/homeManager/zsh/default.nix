@@ -15,6 +15,7 @@
       history.path = "${config.xdg.configHome}/zsh/zsh_history";
       sessionVariables = {
         FUNCNEST = 100000;
+        EDITOR = "nvim";
       };
 
       shellAliases = {
