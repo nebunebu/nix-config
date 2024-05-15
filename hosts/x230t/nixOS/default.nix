@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ../../../modules/nixOS
     inputs.home-manager.nixosModules.default
-    inputs.niri.nixosModules.niri
+    # inputs.niri.nixosModules.niri
   ];
 
   services.xserver.windowManager.awesome.enable = true;
