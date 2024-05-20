@@ -21,6 +21,6 @@
   programs.swww = {
     hyprlandIntegration.enable = true;
     enable = true;
-    monitors."DP-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
+    monitors."LVDS-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
   };
 }
