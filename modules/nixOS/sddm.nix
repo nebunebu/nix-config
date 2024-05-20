@@ -1,21 +1,32 @@
+{ inputs, lib, pkgs, ... }:
+
 {
-  # imports = [
-  #   inputs.sddm-sugar-candy-nix.nixosModules.default
-  # ];
-  # services.displayManager.sddm.sugarCandyNix = {
-  #   enable = true;
-  # };
+  imports = [ inputs.sddm-sugar-candy-nix.nixosModules.default ];
+
+  environment.systemPackages = [ pkgs.qt5.qtvirtualkeyboard ];
+
   services.xserver = {
     enable = true;
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
-      # theme = "${import /path/to/config}";
-      # services.xserver.displayManager.sddm.theme = fetchTarball {
-      #        url = "https://github.com/AlfredoRamos/urbanlifestyle-sddm-theme/archive/0.4.3.tar.gz";
-      #        sha256 = "1l1352in9djzj79mf3lr3w0m7miyg0my0ics7hpizgwqm1l7ppm2";
-      #    };
-      # theme = "sddm-chili-theme";
+      theme = "sddm-sugar-candy-nix";
+      sugarCandyNix = {
+        enable = true;
+        settings = {
+          Background = lib.cleanSource ../homeManager/wallpapers/wps/nixos-rose-pine.png;
+          HaveFormBackground = false;
+          HeaderText = "Welcome!";
+          FormPosition = "left";
+          PartialBlur = true;
+          MainColor = "#e0def4";
+          AccentColor = "#f6c177";
+          BackgroundColor = "#191724";
+          HourFormat = "hh:mm";
+          OverrideLoginButtonTextColor = "white";
+          Font = "Droid Sans";
+        };
+      };
     };
   };
 }

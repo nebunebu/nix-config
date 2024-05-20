@@ -1377,8 +1377,29 @@
         "nixvim-flake": "nixvim-flake",
         "pre-commit-hooks": "pre-commit-hooks_2",
         "pyprland": "pyprland",
+        "sddm-sugar-candy-nix": "sddm-sugar-candy-nix",
         "sops-nix": "sops-nix",
         "xremap-flake": "xremap-flake"
+      }
+    },
+    "sddm-sugar-candy-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1715646979,
+        "narHash": "sha256-I7Dg+SvVxLZ8jA7XV8ClWp6D/FGtLKOiwaWsGeq7lmc=",
+        "owner": "Zhaith-Izaliel",
+        "repo": "sddm-sugar-candy-nix",
+        "rev": "17960eb3b17863802737361a0e76050c556d7166",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "Zhaith-Izaliel",
+        "repo": "sddm-sugar-candy-nix",
+        "type": "gitlab"
       }
     },
     "sops-nix": {
