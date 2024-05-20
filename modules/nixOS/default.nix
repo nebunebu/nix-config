@@ -8,6 +8,7 @@
     # ./tuir.nix
     ./boot.nix
     ./console.nix
+    ./documentation.nix
     ./hyprland.nix
     ./networking.nix
     ./nix.nix
