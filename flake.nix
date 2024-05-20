@@ -14,7 +14,10 @@
     };
 
     nixvim-flake.url = "github:nebunebu/nixvim";
-    # sddm-sugar-candy-nix.url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -32,13 +35,9 @@
 
     pyprland = {
       url = "github:hyprland-community/pyprland";
-      # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    # niri.url = "github:sodiboo/niri-flake";
-
     xremap-flake.url = "github:xremap/nix-flake";
-
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -91,7 +90,6 @@
             };
             nil.enable = true;
             statix.enable = true;
-            # trailing_whitespace_fixer.enable = true;
             convco.enable = true;
           };
         };
