@@ -5,6 +5,9 @@
 
   environment.systemPackages = [ pkgs.qt5.qtvirtualkeyboard ];
 
+
+  # `services.displayManager.sddm.sugarCandyNix.settings'.
+
   services.xserver = {
     enable = true;
     displayManager.sddm = {
