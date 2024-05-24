@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../../../modules/nixOS
+      ../../../modules/nixOS/virtualisation/jellyfin.nix
       inputs.home-manager.nixosModules.default
     ];
 
