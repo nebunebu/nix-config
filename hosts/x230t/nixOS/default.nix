@@ -35,6 +35,8 @@
     };
   };
 
+  sops.enable = true;
+
   desktop.hyprland.enable = true;
 
   networking.hostName = "x230t";
