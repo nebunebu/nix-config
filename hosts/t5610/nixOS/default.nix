@@ -1,13 +1,11 @@
 { inputs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../../modules/nixOS
-      # ../../../modules/nixOS/virtualisation/jellyfin.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../../modules/nixOS
+    inputs.home-manager.nixosModules.default
+  ];
 
   services.jellyfin = {
     enable = true;
