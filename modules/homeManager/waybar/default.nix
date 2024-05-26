@@ -2,7 +2,6 @@
 let
   cfg = config.app.waybar;
   wbm = builtins.import ./modules.nix;
-  # common = ;
 in
 {
   imports = [
