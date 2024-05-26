@@ -5,11 +5,19 @@
     [
       ./hardware-configuration.nix
       ../../../modules/nixOS
-      ../../../modules/nixOS/virtualisation/jellyfin.nix
+      # ../../../modules/nixOS/virtualisation/jellyfin.nix
       inputs.home-manager.nixosModules.default
     ];
 
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
+
+  sops.enable = true;
+  tuir.enable = true;
 
   app.virt-manager.enable = true;
   networking.hostName = "t5610";
