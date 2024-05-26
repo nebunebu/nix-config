@@ -8,6 +8,7 @@
     # inputs.niri.nixosModules.niri
   ];
 
+  sops.enable = true;
   # services = {
   #   pipewire = {
   #     enable = true;
