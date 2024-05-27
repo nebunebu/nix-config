@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,8 @@
     ./builder.nix
     ./jellyfin.nix
   ];
+
+  environment.systemPackages = [ pkgs.qbittorrent ];
 
   # NOTE: probably duplicate
   nixpkgs.config.allowUnfree = true;
