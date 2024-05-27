@@ -9,7 +9,7 @@
     ./hyprland.nix
     ./networking.nix
     ./nix.nix
-    ./sddm.nix
+    ./sddm
     ./system.nix
     ./users
     ./virtualisation
