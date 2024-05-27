@@ -10,14 +10,6 @@ It is a work in progress.
 
 My desktop
 
-<!-- <details> -->
-<!---->
-<!-- <summary>sddm preview</summary> -->
-<!---->
-<!-- #### SDDM Preview -->
-<!---->
-<!-- </details> -->
-
 ### x230t
 
 My laptop.
@@ -48,13 +40,14 @@ Swaps caps and escape keys.
 
 ## Programs
 
+
 | Category               | Programs         | Config           |
 |------------------------|------------------|------------------|
 | **Shell:**             | zsh              |                  |
 | **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) | [sddm.nix](./modules/nixOS/sddm.nix) |
 | **Multiplexer:**       | tmux             |                  |
 | **Terminal:**          | kitty            |                  |
-| **Launcher:**          | fuzzel           |                  |
+| **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel) | [fuzzel/README.md](./modules/homeManager/fuzzel/README.md) |
 | **Browser:**           | firefox          |                  |
 | **Theme:**             | rose-pine        |                  |
 | **Video Player:**      | mpv              |                  |
@@ -63,21 +56,6 @@ Swaps caps and escape keys.
 | **WM:**                | hyprland         |                  |
 | **Status Bar:**        | waybar           |                  |
 <!-- | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)         |                  | -->
-
-<!-- |                        |                  | -->
-<!-- |-----------------------|------------------| -->
-<!-- | **Shell:**             | zsh              | -->
-<!-- | **Display Manager:**   | sddm             | -->
-<!-- | **Multiplexer:**       | tmux             | -->
-<!-- | **Terminal:**          | kitty            | -->
-<!-- | **Launcher:**          | fuzzel           | -->
-<!-- | **Browser:**           | firefox          | -->
-<!-- | **Theme:**             | rose-pine        | -->
-<!-- | **Video Player:**      | mpv              | -->
-<!-- | **Pdf Viewer:**        | sioyek/xournalpp | -->
-<!-- | **WM:**                | hyprland         | -->
-<!-- | **Status Bar:**        | waybar           | -->
-<!-- | **Secrets provision:** | sops-nix         | -->
 
 ## TODO
 
