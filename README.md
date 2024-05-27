@@ -6,13 +6,9 @@ It is a work in progress.
 
 ## Previews
 
-<!-- <details> -->
-<!--     <summary>sddm</summary> -->
-<!--     ![preview](https://github.com/nebunebu/nix-config/blob/main/.assets/sddm.png) -->
-<!-- </details> -->
 <details>
     <summary>sddm</summary>
-    ![preview](https://raw.githubusercontent.com/nebunebu/nix-config/main/.assets/sddm.png)
+    <img src="https://raw.githubusercontent.com/nebunebu/nix-config/main/.assets/sddm.png" alt="preview">
 </details>
 
 ## Hosts
