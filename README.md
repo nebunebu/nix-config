@@ -7,10 +7,8 @@ It is a work in progress.
 ## Previews
 
 <details>
-
     <summary>sddm</summary>
     ![preview](./.assets/sddm.png)
-
 </details>
 
 ## Hosts
