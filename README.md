@@ -28,23 +28,6 @@ Minimal config for iso-installer.
 
 Swaps caps and escape keys.
 
-## Programs
-
-|                        |                  |
-|-----------------------|------------------|
-| **Shell:**             | zsh              |
-| **Display Manager:**   | sddm             |
-| **Multiplexer:**       | tmux             |
-| **Terminal:**          | kitty            |
-| **Launcher:**          | fuzzel           |
-| **Browser:**           | firefox          |
-| **Theme:**             | rose-pine        |
-| **Video Player:**      | mpv              |
-| **Pdf Viewer:**        | sioyek/xournalpp |
-| **WM:**                | hyprland         |
-| **Status Bar:**        | waybar           |
-| **Secrets provision:** | sops-nix         |
-
 ## Directory Structure
 
 ```txt
@@ -62,6 +45,39 @@ Swaps caps and escape keys.
 └── secrets
     └── secrets.yaml
 ```
+
+## Programs
+
+| Category               | Programs         | Config           |
+|------------------------|------------------|------------------|
+| **Shell:**             | zsh              |                  |
+| **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) | [sddm.nix](./modules/nixOS/sddm.nix) |
+| **Multiplexer:**       | tmux             |                  |
+| **Terminal:**          | kitty            |                  |
+| **Launcher:**          | fuzzel           |                  |
+| **Browser:**           | firefox          |                  |
+| **Theme:**             | rose-pine        |                  |
+| **Video Player:**      | mpv              |                  |
+| **Pdf Viewer:**        | sioyek           |                  |
+|                        | xournalpp        |                  |
+| **WM:**                | hyprland         |                  |
+| **Status Bar:**        | waybar           |                  |
+<!-- | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)         |                  | -->
+
+<!-- |                        |                  | -->
+<!-- |-----------------------|------------------| -->
+<!-- | **Shell:**             | zsh              | -->
+<!-- | **Display Manager:**   | sddm             | -->
+<!-- | **Multiplexer:**       | tmux             | -->
+<!-- | **Terminal:**          | kitty            | -->
+<!-- | **Launcher:**          | fuzzel           | -->
+<!-- | **Browser:**           | firefox          | -->
+<!-- | **Theme:**             | rose-pine        | -->
+<!-- | **Video Player:**      | mpv              | -->
+<!-- | **Pdf Viewer:**        | sioyek/xournalpp | -->
+<!-- | **WM:**                | hyprland         | -->
+<!-- | **Status Bar:**        | waybar           | -->
+<!-- | **Secrets provision:** | sops-nix         | -->
 
 ## TODO
 
