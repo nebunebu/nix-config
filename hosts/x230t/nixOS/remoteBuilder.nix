@@ -5,10 +5,11 @@
       hostName = "t5610";
       system = "x86_64-linux";
       protocol = "ssh-ng";
-      # publicHostKey = "hostkey";
-      maxJobs = 4194304;
+      sshKey = "/root/.ssh/builder_key";
+      sshUser = "builder";
+      publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUJ3QmY1ZjNOMndaTHgzbkRzbDVFVVZSdUxpWUpwVWVOYXNPV0p6bXltanIK";
+      maxJobs = 4;
       speedFactor = 6;
-      # sshKey = "/path/to/sshkey";
       supportedFeatures = [
         "nixos-test"
         "benchmark"
