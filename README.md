@@ -44,7 +44,7 @@ Swaps caps and escape keys.
 | ---------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------- |
 | **Theme:**             | [rose-pine](https://rosepinetheme.com)                                         |                                                                 |
 | **Shell:**             | [zsh](https://www.zsh.org)                                                     | [zsh/README.md](./modules/homeManager/zsh/README.md)            |
-| **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) | [sddm.nix](./modules/nixOS/sddm.nix)                            |
+| **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) | [sddm.nix](./modules/nixOS/sddm/README.md)                            |
 | **Multiplexer:**       | [tmux](https://github.com/tmux/tmux)                                           | [tmux/README.md](./modules/homeManager/tmux/README.md)          |
 | **Terminal:**          | [kitty](https://github.com/kovidgoyal/kitty)                                   | [kitty/README.md](./modules/homeManager/kitty/README.md)        |
 | **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                     | [fuzzel/README.md](./modules/homeManager/fuzzel/README.md)      |
