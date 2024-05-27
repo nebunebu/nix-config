@@ -8,7 +8,7 @@ It is a work in progress.
 
 <details>
     <summary>sddm</summary>
-    ![preview](./.assets/sddm.png)
+    ![preview](.assets/sddm.png)
 </details>
 
 ## Hosts
