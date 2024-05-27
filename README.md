@@ -4,6 +4,15 @@ This is my personal flake for my nix-configs.
 
 It is a work in progress.
 
+## Previews
+
+<details>
+
+    <summary>sddm</summary>
+    ![preview](./.assets/sddm.png)
+
+</details>
+
 ## Hosts
 
 ### t5610
