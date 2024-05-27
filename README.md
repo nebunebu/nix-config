@@ -8,7 +8,7 @@ It is a work in progress.
 
 <details>
     <summary>sddm</summary>
-    ![preview](.assets/sddm.png)
+    ![preview](https://github.com/nebunebu/nix-config/blob/main/.assets/sddm.png)
 </details>
 
 ## Hosts
