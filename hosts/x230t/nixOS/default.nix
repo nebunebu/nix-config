@@ -2,39 +2,11 @@
 
 {
   imports = [
+    inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     ../../../modules/nixOS
-    inputs.home-manager.nixosModules.default
+    ./remoteBuilder.nix
   ];
-
-  nix = {
-    buildMachines = [{
-      hostName = "t5610";
-      system = "x86_64-linux";
-      protocol = "ssh-ng";
-      maxJobs = 3;
-      speedFactor = 2;
-      supportedFeatures = [
-        "nixos-test"
-        "benchmark"
-        "big-parallel"
-        "kvm"
-      ];
-    }];
-
-    distributedBuilds = true;
-    extraOptions = ''
-      builders-use-substitutes = true
-    '';
-  };
-
-  programs.ssh.knownHosts = {
-    t5610 = {
-      hostNames = [ "t5610" ];
-      publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBwBf5f3N2wZLx3nDsl5EUVRuLiYJpUeNasOWJzmymjr";
-    };
-  };
-
   sops.enable = true;
 
   desktop.hyprland.enable = true;
