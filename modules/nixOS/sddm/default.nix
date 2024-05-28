@@ -17,7 +17,7 @@
       sugarCandyNix = {
         enable = true;
         settings = {
-          Background = lib.cleanSource ../homeManager/wallpapers/wps/nixos-rose-pine.png;
+          Background = lib.cleanSource ../../homeManager/wallpapers/wps/nixos-rose-pine.png;
           HaveFormBackground = false;
           HeaderText = "Welcome!";
           FormPosition = "left";
