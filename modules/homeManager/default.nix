@@ -28,6 +28,7 @@
     ./wallpapers
     ./waybar
     ./webcord.nix
+    ./xournalpp.nix
     ./yazi.nix
     ./zsh
   ];
