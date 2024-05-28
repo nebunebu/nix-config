@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../modules/homeManager
+    ../../../modules/homeManager/wvkbd.nix
   ];
 
   app = {
