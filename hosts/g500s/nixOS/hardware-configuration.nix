@@ -1,43 +1,43 @@
 { config, lib, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_usb_sdmmc" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_usb_sdmmc" ];
+      kernelModules = [ "dm-snapshot" ];
+    };
+    kernelModules = [ ];
+    extraModulePackages = [ ];
+  };
 
-  fileSystems."/" =
-    {
+  fileSystems = {
+    "/" = {
       device = "/dev/disk/by-uuid/17d4b436-cfc8-47ee-8f77-50ddd48663e6";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
-
-  fileSystems."/boot" =
-    {
+    "/boot" = {
       device = "/dev/disk/by-uuid/B134-069D";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/nix" =
-    {
+    "/nix" = {
       device = "/dev/disk/by-uuid/17d4b436-cfc8-47ee-8f77-50ddd48663e6";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
-  fileSystems."/persist" =
-    {
+    "/persist" = {
       device = "/dev/disk/by-uuid/17d4b436-cfc8-47ee-8f77-50ddd48663e6";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
+  };
 
   swapDevices = [ ];
 

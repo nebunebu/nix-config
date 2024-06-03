@@ -91,11 +91,12 @@
               settings.noLambdaArg = true;
             };
             nil.enable = true;
-            statix.enable = true;
+            # statix.enable = true;
             convco.enable = true;
           };
         };
       };
+
       devShells.${system}.default = pkgs.mkShell {
         name = "nix-config";
         packages = [ pkgs.convco ];
