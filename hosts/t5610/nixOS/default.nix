@@ -6,7 +6,6 @@
     ./hardware-configuration.nix
     ../../../modules/nixOS
     ./builder.nix
-    ./jellyfin.nix
   ];
 
   environment.systemPackages = [ pkgs.qbittorrent ];
