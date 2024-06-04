@@ -32,7 +32,7 @@ in
     home.packages = [ pkgs.swww ];
 
     wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
-      "${pkgs.swww}/bin/swww init"
+      "${pkgs.swww}/bin/swww-daemon --format xrgb"
     ];
 
     systemd.user.services.swww-wp = {

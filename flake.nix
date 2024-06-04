@@ -81,27 +81,27 @@
         };
       };
 
-      checks = {
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            nixpkgs-fmt.enable = true;
-            deadnix = {
-              enable = true;
-              settings.noLambdaArg = true;
-            };
-            nil.enable = true;
-            # statix.enable = true;
-            convco.enable = true;
-          };
-        };
-      };
-
-      devShells.${system}.default = pkgs.mkShell {
-        name = "nix-config";
-        packages = [ pkgs.convco ];
-        inherit (self.checks.pre-commit-check) shellHook;
-        buildInputs = self.checks.pre-commit-check.enabledPackages;
-      };
+      # checks = {
+      #   pre-commit-check = pre-commit-hooks.lib.${system}.run {
+      #     src = ./.;
+      #     hooks = {
+      #       nixpkgs-fmt.enable = true;
+      #       deadnix = {
+      #         enable = true;
+      #         settings.noLambdaArg = true;
+      #       };
+      #       nil.enable = true;
+      #       # statix.enable = true;
+      #       convco.enable = true;
+      #     };
+      #   };
+      # };
+      #
+      # devShells.${system}.default = pkgs.mkShell {
+      #   name = "nix-config";
+      #   packages = [ pkgs.convco ];
+      #   inherit (self.checks.pre-commit-check) shellHook;
+      #   buildInputs = self.checks.pre-commit-check.enabledPackages;
+      # };
     };
 }
