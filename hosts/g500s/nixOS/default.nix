@@ -3,14 +3,15 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    ./hardware-configuration.nix
-    ../../../modules/nixOS/nix.nix
-    ../../../modules/nixOS/console.nix
     ../../../modules/nixOS/boot.nix
-    ../../../modules/nixOS/system.nix
-    ../../../modules/nixOS/networking.nix
+    ../../../modules/nixOS/console.nix
     ../../../modules/nixOS/documentation.nix
+    ../../../modules/nixOS/networking.nix
+    ../../../modules/nixOS/nix.nix
+    ../../../modules/nixOS/system.nix
     ../../../modules/nixOS/users/nebu.nix
+    ./hardware-configuration.nix
+    ./jellyfin.nix
   ];
 
   environment.systemPackages = [
@@ -20,9 +21,11 @@
     # '')
   ];
 
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
+  services = {
+    logind = {
+      lidSwitch = "ignore";
+      lidSwitchExternalPower = "ignore";
+    };
   };
 
   networking.hostName = "g500s";
