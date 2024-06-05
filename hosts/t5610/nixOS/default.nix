@@ -8,7 +8,11 @@
     ./builder.nix
   ];
 
-  environment.systemPackages = [ pkgs.qbittorrent ];
+  environment.systemPackages = [
+    pkgs.qbittorrent
+    # https://flozz.github.io/rivalcfg/devices/rival3.html
+    pkgs.rivalcfg
+  ];
 
   # NOTE: probably duplicate
   nixpkgs.config.allowUnfree = true;
