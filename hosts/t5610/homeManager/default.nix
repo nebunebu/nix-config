@@ -14,7 +14,7 @@
       t5610.enable = true;
     };
     tmux.enable = true;
-    theme.enable = true;
+    # theme.enable = true;
   };
 
   programs.swww = {

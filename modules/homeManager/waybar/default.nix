@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    # ./style.nix
+    ./style.nix
     ./swaync
   ];
 

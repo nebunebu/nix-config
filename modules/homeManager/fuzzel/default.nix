@@ -10,9 +10,9 @@
     enable = true;
     settings = {
       main = {
-        font = "DroidSansM Nerd Font";
+        # font = "DroidSansM Nerd Font";
         prompt = "󰁔";
-        dpi-aware = "auto";
+        # dpi-aware = "auto";
         fuzzy = "yes";
         inner-pad = 10;
         icons-enabled = "no";

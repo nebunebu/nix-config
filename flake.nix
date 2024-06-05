@@ -37,6 +37,8 @@
     pyprland = {
       url = "github:hyprland-community/pyprland";
     };
+
+    stylix.url = "github:danth/stylix";
     # nix-colors.url = "github:misterio77/nix-colors";
     # xremap-flake.url = "github:xremap/nix-flake";
     # pre-commit-hooks = {
@@ -56,6 +58,7 @@
           specialArgs = { inherit inputs pkgs unstablePkgs; };
           modules = [
             ./hosts/${hostName}/nixOS/default.nix
+            inputs.stylix.nixosModules.stylix
           ]
           ++ extraModules ++
           (if disableHomeManager then [ ] else [
