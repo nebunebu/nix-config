@@ -92,7 +92,7 @@
             nixpkgs-fmt.enable = true;
             deadnix = {
               enable = true;
-              settings.noLambdaArg = true;
+              settings.noLambdaPatternNames = true;
             };
             nil.enable = true;
             statix.enable = true;
