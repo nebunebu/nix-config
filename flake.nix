@@ -31,20 +31,20 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
-
     pyprland = {
       url = "github:hyprland-community/pyprland";
     };
 
     stylix.url = "github:danth/stylix";
-    # nix-colors.url = "github:misterio77/nix-colors";
     # xremap-flake.url = "github:xremap/nix-flake";
-    # pre-commit-hooks = {
-    #   url = "github:cachix/pre-commit-hooks.nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs: with inputs;
     let
@@ -84,27 +84,27 @@
         };
       };
 
-      # checks = {
-      #   pre-commit-check = pre-commit-hooks.lib.${system}.run {
-      #     src = ./.;
-      #     hooks = {
-      #       nixpkgs-fmt.enable = true;
-      #       deadnix = {
-      #         enable = true;
-      #         settings.noLambdaArg = true;
-      #       };
-      #       nil.enable = true;
-      #       # statix.enable = true;
-      #       convco.enable = true;
-      #     };
-      #   };
-      # };
-      #
-      # devShells.${system}.default = pkgs.mkShell {
-      #   name = "nix-config";
-      #   packages = [ pkgs.convco ];
-      #   inherit (self.checks.pre-commit-check) shellHook;
-      #   buildInputs = self.checks.pre-commit-check.enabledPackages;
-      # };
+      checks = {
+        pre-commit-check = pre-commit-hooks.lib.${system}.run {
+          src = ./.;
+          # hooks = {
+          # nixpkgs-fmt.enable = true;
+          # deadnix = {
+          #   enable = true;
+          #   settings.noLambdaArg = true;
+          # };
+          # nil.enable = true;
+          # statix.enable = true;
+          # convco.enable = true;
+          # };
+        };
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        name = "nix-config";
+        # packages = [ pkgs.convco ];
+        inherit (self.checks.pre-commit-check) shellHook;
+        buildInputs = self.checks.pre-commit-check.enabledPackages;
+      };
     };
 }
