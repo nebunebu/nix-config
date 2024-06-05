@@ -1,10 +1,10 @@
 {
   programs.bat = {
     enable = true;
-    config = {
-      theme = "ansi";
-      style = "plain";
-    };
+    # config = {
+    #   theme = "ansi";
+    #   style = "plain";
+    # };
     # extraPackages = [];
   };
 }

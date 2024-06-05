@@ -23,7 +23,7 @@
     ./swww.nix
     ./syncthing.nix
     ./taskwarrior.nix
-    ./theme.nix
+    # ./theme.nix
     ./tmux.nix
     ./wallpapers
     ./waybar

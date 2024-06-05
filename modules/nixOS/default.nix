@@ -10,6 +10,7 @@
     ./networking.nix
     ./nix.nix
     ./sddm
+    ./stylix.nix
     ./system.nix
     ./users
     ./virtualisation
