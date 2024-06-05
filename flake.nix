@@ -38,11 +38,11 @@
       url = "github:hyprland-community/pyprland";
     };
     nix-colors.url = "github:misterio77/nix-colors";
-    xremap-flake.url = "github:xremap/nix-flake";
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # xremap-flake.url = "github:xremap/nix-flake";
+    # pre-commit-hooks = {
+    #   url = "github:cachix/pre-commit-hooks.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   outputs = inputs: with inputs;
     let
