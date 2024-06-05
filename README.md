@@ -21,6 +21,10 @@ My desktop
 
 My laptop.
 
+### g500s
+
+Server.
+
 ### nixISO
 
 Minimal config for iso-installer.
