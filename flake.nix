@@ -37,7 +37,7 @@
     pyprland = {
       url = "github:hyprland-community/pyprland";
     };
-    nix-colors.url = "github:misterio77/nix-colors";
+    # nix-colors.url = "github:misterio77/nix-colors";
     # xremap-flake.url = "github:xremap/nix-flake";
     # pre-commit-hooks = {
     #   url = "github:cachix/pre-commit-hooks.nix";

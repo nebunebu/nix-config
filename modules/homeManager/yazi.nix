@@ -1,12 +1,12 @@
 { config, unstablePkgs, ... }:
-let
-  c = config.colorScheme.palette;
-  # c-gray = "${c.base07}";
-  # c-red = c.base08}";
-  # c-yellow = "#${c.base09}";
-  c-lteal = "#${c.base0C}";
-  # c-purple = "0xff${c.base0D}";
-in
+# let
+#   c = config.colorScheme.palette;
+#   # c-gray = "${c.base07}";
+#   # c-red = c.base08}";
+#   # c-yellow = "#${c.base09}";
+#   c-lteal = "#${c.base0C}";
+#   # c-purple = "0xff${c.base0D}";
+# in
 {
   # xdg.configFile."yazi/plugins/smart-enter.yazi/init.lua" = /* lua */ ''
   #   return {
@@ -45,10 +45,10 @@ in
     theme = {
       filetype = {
         rules = [
-          { fg = "${c-lteal}"; mime = "image/*"; }
-          { fg = "#F3D398"; mime = "video/*"; }
-          { fg = "#F3D398"; mime = "audio/*"; }
-          { fg = "#CD9EFC"; mime = "application/x-bzip"; }
+          # { fg = "${c-lteal}"; mime = "image/*"; }
+          # { fg = "#F3D398"; mime = "video/*"; }
+          # { fg = "#F3D398"; mime = "audio/*"; }
+          # { fg = "#CD9EFC"; mime = "application/x-bzip"; }
         ];
       };
     };

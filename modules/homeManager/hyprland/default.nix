@@ -1,12 +1,12 @@
 { inputs, pkgs, lib, config, ... }:
-let
-  c = config.colorScheme.palette;
-  c-gray = "0xff${c.base07}";
-  c-red = "0xff${c.base08}";
-  c-yellow = "0xff${c.base09}";
-  c-lteal = "0xff${c.base0C}";
-  c-purple = "0xff${c.base0D}";
-in
+# let
+#   c = config.colorScheme.palette;
+#   c-gray = "0xff${c.base07}";
+#   c-red = "0xff${c.base08}";
+#   c-yellow = "0xff${c.base09}";
+#   c-lteal = "0xff${c.base0C}";
+#   c-purple = "0xff${c.base0D}";
+# in
 {
   imports = [
     ./keybinds
@@ -62,16 +62,16 @@ in
             "inactive_opacity" = "1";
           };
           windowrulev2 = [
-            "bordercolor ${c-purple}, fullscreen:1"
-            "bordercolor ${c-lteal}, floating:1"
-            "bordercolor ${c-red}, pinned:1"
+            # "bordercolor ${c-purple}, fullscreen:1"
+            # "bordercolor ${c-lteal}, floating:1"
+            # "bordercolor ${c-red}, pinned:1"
           ];
           general = {
             "gaps_in" = "7";
             "gaps_out" = "8";
             "border_size" = "2";
-            "col.active_border" = "${c-yellow}";
-            "col.inactive_border" = "${c-gray}";
+            # "col.active_border" = "${c-yellow}";
+            # "col.inactive_border" = "${c-gray}";
           };
           misc = {
             "disable_hyprland_logo" = "true";
