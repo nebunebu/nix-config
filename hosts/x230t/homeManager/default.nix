@@ -11,7 +11,7 @@
     kitty.enable = true;
     sioyek.enable = true;
     tmux.enable = true;
-    theme.enable = true;
+    # theme.enable = true;
     waybar.x230t.enable = true;
     hyprland = {
       enable = true;
