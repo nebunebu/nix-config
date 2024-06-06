@@ -43,6 +43,9 @@
       };
 
       wayland.windowManager.hyprland = {
+        plugins = [
+          # inputs.hyprgrass.packages.x86_64-linux.default
+        ];
         enable = true;
         # package = unstablePkgs.hyprland;
         xwayland.enable = true;
