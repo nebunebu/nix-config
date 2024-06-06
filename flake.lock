@@ -564,6 +564,27 @@
         "type": "github"
       }
     },
+    "hyprgrass": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717713154,
+        "narHash": "sha256-t4tguCzd8s2B6A5C/hQ8z/ICydNoqnl3L77YcdYMYes=",
+        "owner": "nebunebu",
+        "repo": "hyprgrass",
+        "rev": "ee83020b3ef2e3e5a4cf330ba3e7915d5a3b5606",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nebunebu",
+        "ref": "nixOS",
+        "repo": "hyprgrass",
+        "type": "github"
+      }
+    },
     "hyprland": {
       "inputs": {
         "hyprcursor": "hyprcursor",
@@ -1178,11 +1199,11 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1717688916,
-        "narHash": "sha256-E7lOD/TYwf3vpCgBPqFY1RM15LWOWl+qNJ480TlfyEk=",
+        "lastModified": 1717713286,
+        "narHash": "sha256-83uzkUAZmUMYgqcXGkISSLxIByAnuUTs1Rfnm/UJG+c=",
         "owner": "hyprland-community",
         "repo": "pyprland",
-        "rev": "156380b6f9bf4af30795b81f284a473a53614fb6",
+        "rev": "145c3b9445d54cf84204bee7efdebec5bad0f468",
         "type": "github"
       },
       "original": {
@@ -1195,6 +1216,7 @@
       "inputs": {
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
+        "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "impermanence": "impermanence",
