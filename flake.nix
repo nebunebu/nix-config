@@ -34,6 +34,10 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    # hyprgrass = {
+    #   url = "github:horriblename/hyprgrass";
+    #   inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    # };
     pyprland = {
       url = "github:hyprland-community/pyprland";
     };
