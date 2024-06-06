@@ -11,6 +11,7 @@
   imports = [
     ./keybinds
     ./pyprland
+    ./hyprgrass.nix
     ./t5610
     ./x230t
   ];
@@ -43,9 +44,6 @@
       };
 
       wayland.windowManager.hyprland = {
-        plugins = [
-          # inputs.hyprgrass.packages.x86_64-linux.default
-        ];
         enable = true;
         # package = unstablePkgs.hyprland;
         xwayland.enable = true;
