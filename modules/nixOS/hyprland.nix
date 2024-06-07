@@ -1,16 +1,31 @@
 { inputs, pkgs, lib, config, ... }:
-
+let
+  cfg = config.desktop.hyprland;
+in
 {
-  options = {
-    desktop.hyprland.enable = lib.mkEnableOption "enable hyprland";
+  options.desktop.hyprland = {
+    enable = lib.mkEnableOption "enable hyprland";
+
+    package = lib.mkPackageOption pkgs "hyprland" {
+      default = [ "" ];
+    };
   };
 
-  config = lib.mkIf config.desktop.hyprland.enable {
+  config = lib.mkIf cfg.enable {
 
-    programs.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    };
+    # home-manager.users.nebu.wayland.windowManager.hyprland.package =
+    #   lib.mkIf (cfg.package != null)
+    #     {
+    #       # cfg.package;
+    #     };
+    #
+    # programs.hyprland.package =
+    #   lib.mkIf (cfg.package != null)
+    #     {
+    #       # cfg.package;
+    #     };
+
+    programs.hyprland.enable = true;
 
     environment = {
       systemPackages = [
