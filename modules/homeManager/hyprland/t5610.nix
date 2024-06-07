@@ -1,10 +1,13 @@
 { lib, config, ... }:
+let
+  cfg = config.desktop.hyprland.t5610;
+in
 {
   options = {
-    app.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
+    desktop.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
   };
 
-  config = lib.mkIf config.app.hyprland.t5610.enable {
+  config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {
       monitor = [
         "DP-1, 1920x1080, 0x0, 1"

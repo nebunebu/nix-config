@@ -17,8 +17,6 @@
   environment.systemPackages = [
     inputs.nixvim-flake.packages.x86_64-linux.default
     pkgs.vbetool
-    # (pkgs.writeShellScriptBin "lid-switch" ''
-    # '')
   ];
 
   services = {

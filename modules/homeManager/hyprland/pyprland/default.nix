@@ -1,44 +1,32 @@
-{ inputs, pkgs, unstablePkgs, ... }:
+{ inputs, config, lib, ... }:
+let
+  cfg = config.desktop.hyprland.pyprland;
+in
 {
-  home.packages = [
-    inputs.pyprland.packages.x86_64-linux.default
-    unstablePkgs.spotube
-    pkgs.bottom
+  imports = [
+    ./dropdowns/btm.nix
+    ./dropdowns/claude.nix
+    ./dropdowns/hmOptions.nix
+    ./dropdowns/nixpkgs.nix
+    ./dropdowns/noogle.nix
+    ./dropdowns/spotube.nix
   ];
 
-  imports = [ ./pyprland.nix ];
+  options.desktop.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
 
-  wayland.windowManager.hyprland = {
-    settings = {
-      windowrulev2 = [
-        "float, class:^(kitty-btm)$"
-        "float, class:^(spotube)$"
-        # "float, class:^(firefox)$"
-      ];
-      bind = [
-        "ALT_L, b, exec, pypr toggle btm"
-        "ALT_L, s, exec, pypr toggle spo"
-        "ALT_L, b, exec, export MOZ_DBUS_WINDOW_CLASS=noogleFirefox"
-        "ALT_L, n, exec, pypr toggle noogle"
-        "ALT_L, b, exec, export MOZ_DBUS_WINDOW_CLASS=firefox"
-        "ALT_L, p, exec, pypr toggle nixpkgs"
-        "ALT_L, h, exec, pypr toggle hm-options"
-        "ALT_L, l, exec, pypr toggle lichess"
-        "ALT_L, c, exec, pypr toggle claude"
-      ];
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      inputs.pyprland.packages.x86_64-linux.default
+    ];
+    xdg.configFile."pyprland.toml" = {
+      target = "hypr/pyprland.toml";
+      text = /*toml*/ ''
+        [pyprland]
+        plugins = [ "scratchpads" ]
 
+        [ workspaces_follow_focus ]
+        max_workspaces = 9
+      '';
     };
-
-    # NOTE: for creating a submap
-    #   extraConfig = ''
-    #     bind = $mainMod, S, submap, scratchpad
-    #     submap = scratchpad
-    #     bind = , B, exec, pypr show btm
-    #     bind = , S, exec, pypr show spo
-    #     bind = , escape, exec, pypr hide btm
-    #     bind = , escape, exec, pypr hide spo
-    #     bind = , escape, submap, reset
-    #     submap = reset
-    #   '';
   };
 }

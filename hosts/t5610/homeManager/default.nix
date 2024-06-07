@@ -7,14 +7,26 @@
   app = {
     git.enable = true;
     kitty.enable = true;
+    tmux.enable = true;
     sioyek.enable = true;
     waybar.t5610.enable = true;
+  };
+
+  desktop = {
+    # kitty.enable = true;
     hyprland = {
       enable = true;
       t5610.enable = true;
+      pyprland = {
+        enable = true;
+        btm.enable = true;
+        claude.enable = true;
+        hmOptions.enable = true;
+        nixpkgs.enable = true;
+        noogle.enable = true;
+        spotube.enable = true;
+      };
     };
-    tmux.enable = true;
-    # theme.enable = true;
   };
 
   programs.swww = {

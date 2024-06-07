@@ -31,8 +31,6 @@
         pkgs.wev
         pkgs.cliphist
         (pkgs.writeShellScriptBin "hypr-start" ''
-          # /nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1 &
-          # ${config.home.homeDirectory}/.nix-profile/bin/ags &
           ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
           ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
           ${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr
@@ -62,17 +60,13 @@
             "active_opacity" = "1";
             "inactive_opacity" = "1";
           };
-          windowrulev2 = [
-            # "bordercolor ${c-purple}, fullscreen:1"
-            # "bordercolor ${c-lteal}, floating:1"
-            # "bordercolor ${c-red}, pinned:1"
-          ];
+
+          windowrulev2 = [ ];
+
           general = {
             "gaps_in" = "7";
             "gaps_out" = "8";
             "border_size" = "2";
-            # "col.active_border" = "${c-yellow}";
-            # "col.inactive_border" = "${c-gray}";
           };
           misc = {
             "disable_hyprland_logo" = "true";

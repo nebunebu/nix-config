@@ -1,5 +1,4 @@
 {
-
   users.users.builder = {
     name = "builder";
     createHome = true;
@@ -24,5 +23,4 @@
       ];
     }
   ];
-
 }
