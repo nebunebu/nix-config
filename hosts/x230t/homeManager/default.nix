@@ -19,6 +19,17 @@
     };
   };
 
+  desktop.hyprland.hyprgrass.enable = true;
+
+  # desktop = {
+  #   hyprland = {
+  #     enable = true;
+  #     hyprgrass.enable = true;
+  #     x230t.enable = true;
+  #   };
+  #   waybar.x230t.enable = true;
+  # };
+
   programs.swww = {
     hyprlandIntegration.enable = true;
     enable = true;
