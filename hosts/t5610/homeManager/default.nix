@@ -1,7 +1,9 @@
-{ config, ... }:
+{ self, config, ... }:
+
 {
   imports = [
-    ../../../modules/homeManager
+    "${self}/modules/homeManager"
+    "${self}/custom/homeManager"
   ];
 
   app = {
