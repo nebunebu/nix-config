@@ -1,7 +1,6 @@
 { inputs, pkgs, unstablePkgs, lib, ... }:
 {
   imports = [
-    # inputs.nix-colors.homeManagerModules.default
     ./awscli.nix
     ./bat.nix
     ./chromium
@@ -31,8 +30,6 @@
     ./yazi.nix
     ./zsh
   ];
-
-  # colorScheme = inputs.nix-colors.colorSchemes.rose-pine;
 
   home = {
     stateVersion = "23.11";
