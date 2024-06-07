@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ inputs, pkgs, lib, config, ... }:
 
 {
   options = {
@@ -9,7 +9,7 @@
 
     programs.hyprland = {
       enable = true;
-      # package = unstablePkgs.hyprland;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
 
     environment = {

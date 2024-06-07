@@ -32,10 +32,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     hyprgrass = {
-      url = "github:nebunebu/hyprgrass/nixOS";
+      # url = "github:nebunebu/hyprgrass/nixOS";
+      url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland";
     };
     pyprland = {
