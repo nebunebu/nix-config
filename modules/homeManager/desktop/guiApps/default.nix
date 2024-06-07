@@ -5,7 +5,7 @@
     ./wvkbd.nix
     ./sioyek.nix
     ./webcord.nix
-    ./xournalpp.nix
+    # ./xournalpp.nix
     ./firefox
     ./chromium
   ];
