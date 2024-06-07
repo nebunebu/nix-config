@@ -20,7 +20,7 @@ in
     wayland.windowManager.hyprland = {
       settings = {
         bind = [
-          "ALT_L, c, exec, pypr toggle nixpkgs"
+          "ALT_L, p, exec, pypr toggle nixpkgs"
         ];
       };
     };
