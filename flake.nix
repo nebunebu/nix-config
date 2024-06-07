@@ -79,7 +79,15 @@
       mkHost = { hostName, extraModules ? [ ], disableHomeManager ? false }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs unstablePkgs; };
+          specialArgs = {
+            inherit
+              inputs
+              self
+              system
+              pkgs
+              unstablePkgs
+              ;
+          };
           modules = [
             ./hosts/${hostName}/nixOS/default.nix
             inputs.stylix.nixosModules.stylix
@@ -91,7 +99,15 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                extraSpecialArgs = { inherit inputs pkgs unstablePkgs; };
+                extraSpecialArgs = {
+                  inherit
+                    inputs
+                    self
+                    system
+                    pkgs
+                    unstablePkgs
+                    ;
+                };
               };
             }
           ]);
