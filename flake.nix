@@ -37,7 +37,6 @@
 
     impermanence = {
       url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {
