@@ -20,6 +20,8 @@
         p = "push";
         b = "branch";
         sw = "switch";
+        # git rm --cached $(git ls-files --deleted)
+        rma = "rm --cached $(git ls-file --deleted)";
       };
     };
   };
