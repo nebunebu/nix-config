@@ -10,7 +10,7 @@
       ripgrep-all
       jq
       pup
-      # fd
+      fd
       # bottom
       # ripgrep
       # ffmpeg
