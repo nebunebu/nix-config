@@ -31,12 +31,12 @@
     };
   };
 
-  programs.swww = {
-    hyprlandIntegration.enable = true;
-    enable = true;
-    monitors = {
-      "DP-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
-      "DP-2".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-hall.jpg";
-    };
-  };
+  # programs.swww = {
+  #   hyprlandIntegration.enable = true;
+  #   enable = true;
+  #   monitors = {
+  #     "DP-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
+  #     "DP-2".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-hall.jpg";
+  #   };
+  # };
 }
