@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, self, ... }:
 
 {
   stylix = {
-    image = /home/nebu/.config/wallpapers/liminal-tv.jpg;
-    polarity = "dark";
+    image = "${self}/modules/homeManager/desktop/wallpapers/liminal-tv.jpg";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.rose-pine-cursor;
