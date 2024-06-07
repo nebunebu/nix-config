@@ -1,62 +1,43 @@
-{ inputs, pkgs, unstablePkgs, lib, ... }:
+{ lib, ... }:
 {
   imports = [
-    ./awscli.nix
-    ./bat.nix
-    ./chromium
-    ./cli-tools.nix
-    ./direnv.nix
-    ./firefox
-    ./fuzzel
-    ./fzf.nix
-    ./git.nix
-    ./hyprland
-    ./kitty.nix
-    ./lf.nix
-    ./mpv.nix
-    ./mpv.nix
-    ./newsboat
-    ./nix-tools.nix
+    # ./awscli.nix
+    # ./bat.nix
+    # ./chromium
+    # ./cli-tools.nix
+    ./desktop
+    ./development
+    ./terminal
+    # ./direnv.nix
+    # ./firefox
+    # ./fuzzel
+    # ./fzf.nix
+    # ./git.nix
+    # ./hyprland
+    # ./kitty.nix
+    # ./lf.nix
+    # ./mpv.nix
+    # ./mpv.nix
+    # ./newsboat
+    # ./nix-tools.nix
     ./password-store.nix
-    ./sioyek.nix
-    ./swww.nix
+    # ./sioyek.nix
+    # ./swww.nix
     ./syncthing.nix
-    ./taskwarrior.nix
-    ./tmux.nix
-    ./wallpapers
-    ./waybar
-    ./webcord.nix
-    ./xournalpp.nix
-    ./yazi.nix
-    ./zsh
+    # ./taskwarrior.nix
+    # ./tmux.nix
+    # ./wallpapers
+    # ./waybar
+    # ./webcord.nix
+    # ./xournalpp.nix
+    # ./yazi.nix
+    # ./zsh
   ];
 
   home = {
     stateVersion = "23.11";
     username = "nebu";
     homeDirectory = lib.mkForce "/home/nebu";
-    packages = [
-      unstablePkgs.element-desktop-wayland
-      pkgs.pavucontrol
-      pkgs.libnotify
-      # krita
-      # gimp
-      # thunderbird
-      # fd
-      # bottom
-      # ffmpeg
-      # distrobox
-      pkgs.lazygit
-      # invidtui
-      # noto-fonts
-      (unstablePkgs.nerdfonts.override {
-        fonts = [
-          "DroidSansMono"
-          "JetBrainsMono"
-          "HeavyData"
-        ];
-      })
-    ];
   };
 
   programs = {
