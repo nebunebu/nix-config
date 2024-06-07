@@ -12,7 +12,7 @@ in
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
       text = /*toml*/ ''
-        [scratchpads.spo]
+        [scratchpads.spotube]
         command = "${unstablePkgs.spotube}/bin/spotube"
         animation = "fromTop"
         class = "spotube"

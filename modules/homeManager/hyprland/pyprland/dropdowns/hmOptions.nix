@@ -20,7 +20,7 @@ in
     wayland.windowManager.hyprland = {
       settings = {
         bind = [
-          "ALT_L, c, exec, pypr toggle hm-options"
+          "ALT_L, h, exec, pypr toggle hm-options"
         ];
       };
     };
