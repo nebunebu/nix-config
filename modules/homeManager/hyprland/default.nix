@@ -1,27 +1,20 @@
 { inputs, pkgs, lib, config, ... }:
-# let
-#   c = config.colorScheme.palette;
-#   c-gray = "0xff${c.base07}";
-#   c-red = "0xff${c.base08}";
-#   c-yellow = "0xff${c.base09}";
-#   c-lteal = "0xff${c.base0C}";
-#   c-purple = "0xff${c.base0D}";
-# in
+let
+  cfg = config.desktop.hyprland;
+in
 {
   imports = [
     ./keybinds
     ./pyprland
     ./hyprgrass.nix
-    ./t5610
-    ./x230t
+    ./t5610.nix
+    ./x230t.nix
   ];
 
-  options = {
-    app.hyprland.enable = lib.mkEnableOption "enable hyprland";
-  };
+  options.desktop.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf
-    config.app.hyprland.enable
+    cfg.enable
     {
       home.packages = [
         pkgs.wl-clipboard
