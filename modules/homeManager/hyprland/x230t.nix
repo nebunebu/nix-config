@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }:
 let
+  cfg = config.desktop.hyprland.x230t;
   hypr-tab =
     pkgs.writeShellScript "hypr-tab" ''
       if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
@@ -16,11 +17,10 @@ in
 {
 
   options = {
-    app.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
+    desktop.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
   };
 
-  config = lib.mkIf config.app.hyprland.x230t.enable {
-    home.packages = [ pkgs.jq ];
+  config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       settings = {
         monitor = [
@@ -42,7 +42,6 @@ in
 
         bind = [
           ",XF86RotateWindows, exec, ${hypr-tab}"
-          # ",XF86TaskPane, exec, ${hypr-tab}"
         ];
       };
     };

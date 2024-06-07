@@ -29,7 +29,6 @@
   console = {
     useXkbConfig = true;
     font = "Lat2-Terminus16";
-    # keyMap = "us";
   };
   system.stateVersion = "23.11";
 }
