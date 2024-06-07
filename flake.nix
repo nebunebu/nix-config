@@ -3,17 +3,26 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    nixvim-flake.url = "github:nebunebu/nixvim";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim-flake = {
+      url = "github:nebunebu/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
@@ -23,9 +32,13 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -44,16 +57,14 @@
     };
 
     hyprgrass = {
-      # url = "github:nebunebu/hyprgrass/nixOS";
       url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland";
     };
+
     pyprland = {
       url = "github:hyprland-community/pyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    stylix.url = "github:danth/stylix";
-    # xremap-flake.url = "github:xremap/nix-flake";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
