@@ -13,7 +13,7 @@
   };
 
   desktop = {
-    # waybar.x230t.enable = true;
+    waybar.x230t.enable = true;
     hyprland = {
       enable = true;
       hyprgrass.enable = true;
