@@ -1,9 +1,8 @@
-{ self, config, ... }:
+{ self, ... }:
 
 {
   imports = [
     "${self}/modules/homeManager"
-    # ../../../modules/homeManager/wvkbd.nix
   ];
 
   app = {
