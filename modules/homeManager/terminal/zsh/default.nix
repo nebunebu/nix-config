@@ -1,6 +1,16 @@
-{ pkgs, config, ... }:
+{ pkgs, unstablePkgs, config, ... }:
 
 {
+
+  home.packages = [
+    (unstablePkgs.nerdfonts.override {
+      fonts = [
+        "DroidSansMono"
+        "JetBrainsMono"
+      ];
+    })
+  ];
+
   programs = {
     starship = {
       enable = true;

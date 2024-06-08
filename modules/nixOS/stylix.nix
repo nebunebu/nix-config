@@ -1,6 +1,15 @@
-{ pkgs, self, ... }:
+{ self, pkgs, unstablePkgs, ... }:
 
 {
+  environment.systemPackages = [
+    (unstablePkgs.nerdfonts.override {
+      fonts = [
+        "DroidSansMono"
+        "JetBrainsMono"
+      ];
+    })
+  ];
+
   stylix = {
     image = "${self}/modules/homeManager/desktop/wallpapers/liminal-tv.jpg";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
