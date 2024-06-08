@@ -1,9 +1,9 @@
-{ config, ... }:
+{ self, config, ... }:
 
 {
   imports = [
-    ../../../modules/homeManager
-    ../../../modules/homeManager/wvkbd.nix
+    "${self}/modules/homeManager"
+    # ../../../modules/homeManager/wvkbd.nix
   ];
 
   app = {
@@ -14,7 +14,7 @@
   };
 
   desktop = {
-    waybar.x230t.enable = true;
+    # waybar.x230t.enable = true;
     hyprland = {
       enable = true;
       hyprgrass.enable = true;
@@ -22,9 +22,9 @@
     };
   };
 
-  programs.swww = {
-    hyprlandIntegration.enable = true;
-    enable = true;
-    monitors."LVDS-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
-  };
+  # programs.swww = {
+  #   hyprlandIntegration.enable = true;
+  #   enable = true;
+  #   monitors."LVDS-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
+  # };
 }
