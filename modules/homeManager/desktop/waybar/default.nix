@@ -1,6 +1,6 @@
 { pkgs, config, lib, ... }:
 let
-  cfg = config.app.waybar;
+  cfg = config.desktop.waybar;
   wbm = builtins.import ./modules.nix;
 in
 {
@@ -10,7 +10,7 @@ in
   ];
 
   options = {
-    app.waybar = {
+    desktop.waybar = {
       device = lib.mkOption {
         type = lib.types.nullOr (lib.types.enum [ "x230t" "t5610" ]);
         default = null;
