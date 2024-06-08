@@ -41,7 +41,8 @@ in
         ];
 
         bind = [
-          ",XF86RotateWindows, exec, ${hypr-tab}"
+          ", XF86RotateWindows, exec, ${hypr-tab}"
+          ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ];
       };
     };
