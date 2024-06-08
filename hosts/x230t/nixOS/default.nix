@@ -9,6 +9,9 @@
   ];
   sops.enable = true;
 
+  # programs.hyprland.package = inputs.hyprland."${.hyprland-unwrapped;
+  # home-manager.users.nebu.wayland.windowManager.hyprland.package = inputs.hyprland."${pkgs.system}".hyprland;
+
   desktop.hyprland.enable = true;
 
   networking.hostName = "x230t";
