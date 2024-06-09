@@ -1,5 +1,14 @@
-{ self, pkgs, unstablePkgs, ... }:
+{ self, lib, pkgs, unstablePkgs, ... }:
 
+let
+  fromYAML = file:
+    let
+      json = pkgs.runCommand "converted.json" { } ''
+        ${lib.meta.getExe pkgs.yj} < ${file} > $out
+      '';
+    in
+    builtins.fromJSON (builtins.readFile json);
+in
 {
   environment.systemPackages = [
     (unstablePkgs.nerdfonts.override {
@@ -12,7 +21,8 @@
 
   stylix = {
     image = "${self}/modules/homeManager/desktop/wallpapers/liminal-tv.jpg";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    base16Scheme =
+      fromYAML "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePineDawn-Linux";
