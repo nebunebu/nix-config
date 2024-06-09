@@ -3,6 +3,7 @@
 {
   imports = [
     "${self}/modules/homeManager"
+    "${self}/custom/homeManager"
   ];
 
   app = {
@@ -21,9 +22,11 @@
     };
   };
 
-  # programs.swww = {
-  #   hyprlandIntegration.enable = true;
-  #   enable = true;
-  #   monitors."LVDS-1".wallpaper = "${config.xdg.configHome}/wallpapers/liminal-tv.jpg";
-  # };
+  programs.swww = {
+    hyprlandIntegration.enable = true;
+    enable = true;
+    monitors."LVDS-1".wallpaper =
+      "../../../modules/homeManager/desktop/wallpapers/liminal-room.jpg";
+    # "${self}/modules/homeManager/desktop/wallpapers/liminal-room.jpg";
+  };
 }
