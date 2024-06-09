@@ -48,11 +48,12 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
-      # ref = "refs/tags/v0.40.0";
+      rev = "af5f24929d83cc7a97a77de516bc665e38acfa12";
+      # ref = "refs/heads/main";
     };
 
     hyprgrass = {
-      url = "github:horriblename/hyprgrass";
+      url = "github:horriblename/hyprgrass/e3aec570d87e015bcac3041da1a85728edf0bd70";
       inputs.hyprland.follows = "hyprland";
     };
 
