@@ -11,10 +11,10 @@
     kitty.enable = true;
     tmux.enable = true;
     sioyek.enable = true;
-    waybar.t5610.enable = true;
   };
 
   desktop = {
+    waybar.t5610.enable = true;
     # kitty.enable = true;
     hyprland = {
       enable = true;
