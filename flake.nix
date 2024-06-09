@@ -51,13 +51,13 @@
       # ref = "refs/tags/v0.40.0";
     };
 
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland";
     };
 
-    hyprgrass = {
-      url = "github:horriblename/hyprgrass";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
 
