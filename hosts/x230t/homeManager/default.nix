@@ -1,4 +1,4 @@
-{ self, inputs, pkgs, ... }:
+{ self, pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,10 @@
     kitty.enable = true;
     sioyek.enable = true;
     tmux.enable = true;
+  };
+
+  tablet = {
+    wvkbd.enable = true;
   };
 
   desktop = {
