@@ -7,6 +7,7 @@
     # ./cli-tools.nix
     ./desktop
     ./development
+    ./tablet
     ./terminal
     # ./direnv.nix
     # ./firefox
