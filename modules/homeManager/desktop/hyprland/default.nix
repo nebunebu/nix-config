@@ -55,7 +55,10 @@ in
             "inactive_opacity" = "1";
           };
 
-          windowrulev2 = [ ];
+          windowrulev2 = lib.mkForce [
+            "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
+            "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+          ];
 
           general = {
             "gaps_in" = "7";
