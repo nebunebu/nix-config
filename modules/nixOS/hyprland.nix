@@ -5,27 +5,14 @@ in
 {
   options.desktop.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
-
-    package = lib.mkPackageOption pkgs "hyprland" {
-      default = [ "" ];
-    };
   };
 
   config = lib.mkIf cfg.enable {
 
-    # home-manager.users.nebu.wayland.windowManager.hyprland.package =
-    #   lib.mkIf (cfg.package != null)
-    #     {
-    #       # cfg.package;
-    #     };
-    #
-    # programs.hyprland.package =
-    #   lib.mkIf (cfg.package != null)
-    #     {
-    #       # cfg.package;
-    #     };
-
-    programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      # package = inputs.hyprland.packages.x86_64-linux.hyprland;
+    };
 
     environment = {
       systemPackages = [
