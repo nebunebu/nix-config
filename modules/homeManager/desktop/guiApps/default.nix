@@ -2,7 +2,6 @@
 {
   imports = [
     ./mpv.nix
-    ./wvkbd.nix
     ./sioyek.nix
     ./webcord.nix
     # ./xournalpp.nix
