@@ -19,7 +19,7 @@
     waybar.x230t.enable = true;
     hyprland = {
       enable = true;
-      # hyprgrass.enable = true;
+      hyprgrass.enable = true;
       x230t.enable = true;
     };
   };
