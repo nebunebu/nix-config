@@ -1,6 +1,5 @@
 { inputs, pkgs, lib, config, ... }:
 let
-  # stylixColors = builtins.fromJSON (builtins.readFile stylix/palette.json);
   cfg = config.desktop.hyprland;
 in
 {
@@ -62,7 +61,7 @@ in
             "gaps_in" = "7";
             "gaps_out" = "8";
             "border_size" = "2";
-            # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base09})";
+            "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
           };
           misc = {
             "disable_hyprland_logo" = "true";
