@@ -6,6 +6,8 @@
     "${self}/custom/homeManager"
   ];
 
+  home.packages = [ pkgs.swww ];
+
   app = {
     git.enable = true;
     kitty.enable = true;
@@ -22,11 +24,15 @@
     };
   };
 
-  programs.swww = {
-    hyprlandIntegration.enable = true;
-    enable = true;
-    monitors."LVDS-1".wallpaper =
-      "../../../modules/homeManager/desktop/wallpapers/liminal-room.jpg";
-    # "${self}/modules/homeManager/desktop/wallpapers/liminal-room.jpg";
-  };
+  wayland.windowManager.hyprland.settings.exec-once = [
+    "${pkgs.swww}/bin/swww-daemon --format xrgb"
+  ];
+
+  # programs.swww = {
+  #   hyprlandIntegration.enable = true;
+  #   enable = true;
+  #   monitors."LVDS-1".wallpaper =
+  #     "../../../modules/homeManager/desktop/wallpapers/liminal-room.jpg";
+  #   # "${self}/modules/homeManager/desktop/wallpapers/liminal-room.jpg";
+  # };
 }
