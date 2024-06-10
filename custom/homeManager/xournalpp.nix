@@ -52,7 +52,12 @@ in
       description = "color palette";
     };
 
-    # pagetemplate = {};
+    pagetemplate = lib.mkOption {
+      type = lib.types.lines;
+      default = /* ini */ ''''';
+      # example = /* ini */ ''''';
+      description = "page template";
+    };
     # conf = {};
     # cache
   };
@@ -65,5 +70,7 @@ in
 
 
     xdg.configFile."xournalpp/palette.gpl".text = lib.mkDefault cfg.palette;
+
+    xdg.configFile."xournalpp/pagetemplate.ini".text = lib.mkDefault cfg.pagetemplate;
   };
 }
