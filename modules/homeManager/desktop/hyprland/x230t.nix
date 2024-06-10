@@ -17,7 +17,6 @@ let
     '';
 in
 {
-
   options = {
     desktop.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
   };
