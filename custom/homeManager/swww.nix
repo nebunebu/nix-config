@@ -29,7 +29,9 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    home.packages = [ pkgs.swww ];
+    home.packages = [
+      pkgs.swww 
+  ];
 
     wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
       "${pkgs.swww}/bin/swww-daemon --format xrgb"
