@@ -7,6 +7,7 @@
   ];
 
   home.packages = [ pkgs.swww ];
+  programs.xournalpp.enable = true;
 
   app = {
     git.enable = true;
