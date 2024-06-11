@@ -1,10 +1,10 @@
-{ inputs, pkgs, ... }:
+{ self, inputs, pkgs, ... }:
 
 {
   imports = [
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
-    ../../../modules/nixOS
+    "${self}/modules/nixOS"
     ./builder.nix
   ];
 
