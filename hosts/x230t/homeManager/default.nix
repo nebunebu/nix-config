@@ -9,22 +9,37 @@
   home.packages = [ pkgs.swww ];
   programs.xournalpp = {
     enable = true;
-    palette = /* gpl */ ''
-      GIMP Palette
-      Name: Xournal Default Palette
-      #
-      156 207 216 Teal
-      235 111 146 Red
-      235 188 186 Pink
-      49 116 143 Green
-      246 193 119 Yellow
-      224 222 244 White
-      196 167 231 Purple
-      144 140 170 Gray
-      82 79 103 Dark Gray
-      25 23 36 Black
-      38 35 58 Black Alt
-    '';
+    palette =
+      with config.stylix.base16Scheme.palette;
+      {
+        "Teal" = "${base0C}";
+        "D Teal" = "${base0B}";
+        "Pink" = "${base0A}";
+        "Yellow" = "${base09}";
+        "Purple" = "${base0D}";
+        "Red" = "${base08}";
+        "White" = "${base05}";
+        "L Gray" = "${base04}";
+        "Gray" = "${base03}";
+        "D Gray" = "${base0F}";
+        "Black" = "${base00}";
+      };
+    # palette = /* gpl */ ''
+    #   GIMP Palette
+    #   Name: Xournal Default Palette
+    #   #
+    #   156 207 216 Teal
+    #   235 111 146 Red
+    #   235 188 186 Pink
+    #   49 116 143 Green
+    #   246 193 119 Yellow
+    #   224 222 244 White
+    #   196 167 231 Purple
+    #   144 140 170 Gray
+    #   82 79 103 Dark Gray
+    #   25 23 36 Black
+    #   38 35 58 Black Alt
+    # '';
     pagetemplate = /* ini */ ''
       [myBackgroundName]
       name=Ruled with vertical line, custom colors
