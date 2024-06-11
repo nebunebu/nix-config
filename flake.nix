@@ -54,7 +54,6 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
       rev = "af5f24929d83cc7a97a77de516bc665e38acfa12";
-      # ref = "refs/heads/main";
     };
 
     hyprgrass = {
@@ -110,7 +109,6 @@
                   inherit
                     inputs
                     self
-                    system
                     pkgs
                     unstablePkgs
                     ;

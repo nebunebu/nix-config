@@ -3,7 +3,7 @@
 {
   imports = [
     "${self}/modules/homeManager"
-    "${self}/custom/homeManager"
+    # "${self}/custom/homeManager"
   ];
 
   app = {
