@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+{ self, inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -6,7 +6,11 @@
     "${self}/custom/homeManager"
   ];
 
-  home.packages = [ pkgs.swww ];
+  home.packages = [
+    inputs.swww.packages.x86_64-linux.default
+    # pkgs.swww 
+  ];
+
   programs.xournalpp = {
     enable = true;
 
