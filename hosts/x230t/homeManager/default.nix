@@ -8,7 +8,6 @@
 
   home.packages = [
     inputs.swww.packages.x86_64-linux.default
-    # pkgs.swww 
   ];
 
   programs.xournalpp = {
@@ -53,7 +52,7 @@
   };
 
   wayland.windowManager.hyprland.settings.exec-once = [
-    "${pkgs.swww}/bin/swww-daemon --format xrgb"
+    "${inputs.swww.packages.x86_64-linux.default}/bin/swww-daemon --format xrgb"
   ];
 
   # programs.swww = {
