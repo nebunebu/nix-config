@@ -31,22 +31,6 @@ in
         "Yellow" = "FFFF00";
         "White" = "FFFFFF";
       };
-      # default = /* gpl */ ''
-      #   GIMP Palette
-      #   Name: Xournal Default Palette
-      #   #
-      #   0 0 0 Black
-      #   0 128 0 Green
-      #   0 192 255 Light Blue
-      #   0 255 0 Light Green
-      #   51 51 204 Blue
-      #   128 128 128 Gray
-      #   255 0 0 Red
-      #   255 0 255 Magenta
-      #   255 128 0 Orange
-      #   255 255 0 Yellow
-      #   255 255 255 White
-      # '';
       example = {
         "Black" = "000000";
         "Green" = "008000";
@@ -60,7 +44,7 @@ in
         "Yellow" = "FFFF00";
         "White" = "FFFFFF";
       };
-      description = "color palette";
+      description = "color palette (recommended to use at least 11 colors)";
     };
 
     pagetemplate = lib.mkOption {
