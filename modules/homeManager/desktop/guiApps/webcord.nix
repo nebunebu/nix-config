@@ -1,5 +1,10 @@
 { unstablePkgs, ... }:
 
 {
-  home.packages = [ unstablePkgs.webcord ];
+  home.packages = [
+    unstablePkgs.vesktop
+    unstablePkgs.webcord
+    unstablePkgs.discover-overlay
+  ];
+  services.arrpc.enable = true;
 }
