@@ -2,6 +2,7 @@
 let
   t = pkgs.tmuxPlugins;
   ut = unstablePkgs.tmuxPlugins;
+  palette = config.stylix.base16Scheme.palette;
 in
 
 {
@@ -22,13 +23,16 @@ in
       newSession = true;
       sensibleOnTop = true;
       terminal = "xterm-kitty";
-      extraConfig =
+      extraConfig = lib.mkForce
         ''
           set -g allow-passthrough on
           set -ga update-environment TERM
           set -ga update-environment TERM_PROGRAM
           set -g status-position top
           set -g status-interval 1
+
+          set -g status-bg "#${palette.base00}"
+
 
            bind r source-file ~/.config/tmux/tmux.conf
 
@@ -109,10 +113,9 @@ in
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
-            set -g @mode_indicator_prefix_mode_style 'bg=#191724,fg=blue'
-            set -g @mode_indicator_copy_mode_style 'bg=#191724,fg=yellow'
-            set -g @mode_indicator_sync_mode_style 'bg=#191724,fg=red'
-            set -g @mode_indicator_empty_mode_style 'bg=#191724,fg=cyan'
+            set -g @mode_indicator_copy_mode_style 'bg=#${palette.base00},fg=#${palette.base09}'
+            set -g @mode_indicator_sync_mode_style 'bg=#${palette.base00},fg=#${palette.base08}'
+            set -g @mode_indicator_empty_mode_style 'bg=#${palette.base00},fg=#${palette.base0C}'
           '';
         }
         {
