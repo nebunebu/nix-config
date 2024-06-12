@@ -32,7 +32,7 @@ in
           set -g status-interval 1
 
           set -g status-bg "#${palette.base00}"
-          set-option -g pane-active-border-style fg='${palette.base09}'
+          set-option -g pane-active-border-style fg='#${palette.base09}'
 
           bind r source-file ~/.config/tmux/tmux.conf
 
