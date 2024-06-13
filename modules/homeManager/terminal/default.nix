@@ -3,6 +3,7 @@
   imports = [
     ./lf.nix
     ./bat.nix
+    ./buku.nix
     ./fzf.nix
     ./tmux.nix
     ./yazi.nix

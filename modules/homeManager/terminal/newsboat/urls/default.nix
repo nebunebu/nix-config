@@ -497,6 +497,11 @@
         url = "https://lifehacker.com/feed/rss";
       }
       {
+        tags = [ "blogs" ];
+        title = "Brian McGee";
+        url = "https://bmcgee.ie/posts/index.xml";
+      }
+      {
         tags = [ "articles" ];
         title = "longreads";
         url = "https://longreads.com/feed/";
