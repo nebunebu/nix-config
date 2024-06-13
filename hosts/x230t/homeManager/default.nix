@@ -8,6 +8,7 @@
 
   home.packages = [
     inputs.swww.packages.x86_64-linux.default
+    pkgs.buku
     # (pkgs.callPackage "${self}/custom/pkgs/kebihelp.nix" { })
   ];
 
