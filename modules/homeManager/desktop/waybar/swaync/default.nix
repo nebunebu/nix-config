@@ -4,6 +4,6 @@
   imports = [
     ./config.nix
     ./configSchema.nix
-    # ./style.nix
+    ./style.nix
   ];
 }
