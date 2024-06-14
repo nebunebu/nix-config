@@ -6,6 +6,7 @@
       comma
       nix-output-monitor
       nixpkgs-fmt
+      nix-init
       nurl
       statix
       ;

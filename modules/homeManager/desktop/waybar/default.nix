@@ -52,8 +52,8 @@ in
               # "custom/mic"
               "battery"
               "clock"
-              "tray"
               "custom/notification"
+              "tray"
             ];
           } // wbm;
         };
