@@ -1,6 +1,11 @@
-{ config, ... }:
+{ lib, config, ... }:
+/* background-color: #${config.stylix.base16Scheme.palette.base0C}; */
+let
+  palette = config.stylix.base16Scheme.palette;
+  transparent = "rgba(0, 0, 0, 0.0)";
+in
 {
-  programs.waybar = {
+  programs.waybar = lib.mkForce {
     style =
       /*
       css
@@ -30,7 +35,7 @@
         }
 
         window#waybar {
-           background-color: rgba(0, 0, 0, 0.0);
+           background-color: ${transparent};
         }
 
         button {
@@ -43,21 +48,27 @@
         }
 
         #workspaces button {
-            padding: 0px 5px;
-            margin: 0 1px;
+          padding: 0px 5px;
+          margin: 0 1px;
+          background-color: #${palette.base0B};
+          color: #${palette.base02};
         }
 
         #workspaces button:hover {
-        		box-shadow: inherit;
-        		text-shadow: inherit;
+          background-color: #${palette.base0C};
+        	box-shadow: inherit;
+        	text-shadow: inherit;
         }
 
         #workspaces button.urgent {
+          background-color: #${palette.base08};
         }
 
         #workspaces button.focused,
         #workspaces button.active
         {
+          background-color: #${palette.base0D};
+          color: #${palette.base02};
         }
 
         #custom-notification,
@@ -68,16 +79,22 @@
         #battery,
         #tray,
         #clock {
-            padding: 0 10px;
-            border-radius: 5px;
-            margin: 0 1px;
+          background-color: #${palette.base05};
+          color: #${palette.base02};
+          padding: 0 10px;
+          border-radius: 5px;
+          margin: 0 1px;
         }
 
 
         #battery.warning {
+          background-color: #${palette.base08};
+          color: #${palette.base02};
         }
 
         #battery.charging {
+          background-color: #${palette.base0D};
+          color: #${palette.base02};
         }
 
         #custom-waybarmpris {
@@ -88,13 +105,16 @@
         }
 
         #tray {
+          background-color: #${palette.base03};
         }
 
 
         #pulseaudio.source-muted {
+          background-color: #${palette.base08};
         }
 
         #pulseaudio.muted {
+          background-color: #${palette.base08};
         }
 
         .modules-left > widget:first-child > #workspaces {

@@ -5,6 +5,7 @@ in
 {
   imports = [
     ./keybinds
+    ./plugins
     ./pyprland
     ./hyprgrass.nix
     ./t5610.nix
