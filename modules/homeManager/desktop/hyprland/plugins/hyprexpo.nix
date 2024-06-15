@@ -19,6 +19,7 @@ in
           "$mainMod, e, hyprexpo:expo, toggle"
         ];
         "plugin:hyprexpo" = {
+          # FIX: incorrect orientation on vertical screen
           columns = 3;
           gap_size = 2;
           bg_col = "0x${config.stylix.base16Scheme.palette.base00}";
