@@ -1,20 +1,21 @@
-{ pkgs, unstablePkgs, lib, config, ... }:
+{ lib, config, pkgs, unstablePkgs, ... }:
 let
   t = pkgs.tmuxPlugins;
   ut = unstablePkgs.tmuxPlugins;
-  palette = config.stylix.base16Scheme.palette;
+  palette = config.stylix.base16Scheme.palette; # use inherit instead of this bs
+  cfg = config.terminal.tmux;
 in
 
 {
-  options = {
-    app.tmux.enable = lib.mkEnableOption "enable tmux";
+  options.terminal.tmux = {
+    enable = lib.mkEnableOption "enable tmux";
   };
 
-  config = lib.mkIf config.app.tmux.enable {
+  config = lib.mkIf cfg.enable {
     programs.tmux = {
       enable = true;
       package = unstablePkgs.tmux;
-      shell = "${pkgs.zsh}/bin/zsh";
+      shell = "${pkgs.zsh}/bin/zsh"; #set with user shell
       prefix = "C-SPACE";
       keyMode = "vi";
       baseIndex = 1;
@@ -22,7 +23,7 @@ in
       mouse = true;
       newSession = true;
       sensibleOnTop = true;
-      terminal = "xterm-kitty";
+      terminal = "xterm-kitty"; #maybe set with term???
       extraConfig = lib.mkForce
         ''
           set -g allow-passthrough on
