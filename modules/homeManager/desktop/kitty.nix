@@ -1,11 +1,14 @@
 { lib, config, ... }:
+let
+  cfg = config.desktop.kitty;
+in
 
 {
-  options = {
-    app.kitty.enable = lib.mkEnableOption "enable kitty";
+  options.desktop.kitty = {
+    enable = lib.mkEnableOption "enable kitty";
   };
 
-  config = lib.mkIf config.app.kitty.enable {
+  config = lib.mkIf cfg.enable {
     programs = {
       kitty = {
         enable = true;

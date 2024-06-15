@@ -11,7 +11,6 @@
 
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     swww = {
@@ -26,7 +25,6 @@
 
     nixvim-flake = {
       url = "github:nebunebu/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     sddm-sugar-candy-nix = {

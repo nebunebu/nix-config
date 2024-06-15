@@ -20,6 +20,7 @@ in
   ];
 
   stylix = {
+    enable = true;
     image = "${self}/modules/homeManager/desktop/wallpapers/liminal-tv.jpg";
     # base16Scheme =
     #   fromYAML "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
