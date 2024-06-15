@@ -37,7 +37,6 @@ Most styling is done via stylix.
 
 ## TODO
 
-- fix md tab to be 2 spaces in nvim
 - add better explanations of dropdowns
 - maybe consolidate firefox profiles to dropdowns or enable profile when dropdown is enabled
 - would be good to not have term dropdowns depend on term
@@ -66,7 +65,7 @@ emulator
 - [x] chromium
 - [x] firefox
   - [ ] modularize profiles
-- [ ] fuzzel
+- [x] fuzzel
 - [x] hyprland
 - [x] kitty.nix
 - [x] mpv.nix
@@ -81,8 +80,6 @@ emulator
 
 ## Issues
 
-If you know how to fix any of these feel free to send
-a pr.
-
 - [ ] `wallpaper does not change on screen rotation`
 - [ ] `swaync css reload fails`
+- [ ] `fix swaync to specific output`
