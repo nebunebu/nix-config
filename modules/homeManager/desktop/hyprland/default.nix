@@ -50,6 +50,9 @@ in
         '';
 
         settings = {
+          dwindle = {
+            preserve_split = true;
+          };
           decoration = {
             "rounding" = "10";
             "active_opacity" = "1";
@@ -60,6 +63,7 @@ in
             "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
             "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
           ];
+
 
           general = {
             "gaps_in" = "7";

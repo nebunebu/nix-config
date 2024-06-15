@@ -1,10 +1,20 @@
+{ pkgs, ... }:
+
 {
   imports = [
+    # ./swww.nix
+    ./chromium.nix
+    ./firefox
     ./fuzzel
-    ./guiApps
     ./hyprland
     ./kitty.nix
-    # ./swww.nix
+    ./sioyek.nix
+    ./vesktop.nix
     ./waybar
+  ];
+
+  home.packages = [
+    pkgs.pavucontrol
+    pkgs.xournalpp
   ];
 }

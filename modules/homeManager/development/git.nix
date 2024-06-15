@@ -1,11 +1,14 @@
 { lib, config, ... }:
-
+let
+  cfg = config.development.git;
+in
 {
-  options = {
-    app.git.enable = lib.mkEnableOption "enable git";
+  options.development.git = {
+    enable = lib.mkEnableOption "enable git";
   };
 
-  config = lib.mkIf config.app.git.enable {
+  config = lib.mkIf cfg.enable {
+    # NOTE: def lot could be added for qol
     programs.git = {
       enable = true;
       userEmail = "nebu.nebuchadnezzar@gmail.com";

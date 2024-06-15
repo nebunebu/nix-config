@@ -1,11 +1,13 @@
 { lib, config, ... }:
-
+let
+  cfg = config.desktop.sioyek;
+in
 {
   options = {
-    app.sioyek.enable = lib.mkEnableOption "enable sioyek";
+    desktop.sioyek.enable = lib.mkEnableOption "enable sioyek";
   };
 
-  config = lib.mkIf config.app.sioyek.enable
+  config = lib.mkIf cfg.enable
     {
       programs.sioyek = {
         enable = true;
