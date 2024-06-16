@@ -15,9 +15,6 @@
     pkgs.rivalcfg
   ];
 
-  # NOTE: probably duplicate
-  nixpkgs.config.allowUnfree = true;
-
   sops.enable = true;
   tuir.enable = true;
   app.virt-manager.enable = true;
