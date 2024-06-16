@@ -12,8 +12,8 @@
     fuzzel.enable = true;
     hyprland = {
       enable = true;
-      # hyprexpo.enable = true;
-      # t5610.enable = true;
+    #   hyprexpo.enable = true;
+      t5610.enable = true;
     };
     kitty.enable = true;
     sioyek.enable = true;
@@ -27,7 +27,7 @@
 
   terminal = {
     bat.enable = true;
-    # tmux.enable = true;
+    tmux.enable = true;
   };
 
   # app = {
