@@ -60,8 +60,8 @@ in
           };
 
           windowrulev2 = lib.mkForce [
-            # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
-            # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+            "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
+            "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
           ];
 
 
@@ -69,7 +69,7 @@ in
             "gaps_in" = "7";
             "gaps_out" = "8";
             "border_size" = "2";
-            # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
+            "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
           };
           misc = {
             "disable_hyprland_logo" = "true";
