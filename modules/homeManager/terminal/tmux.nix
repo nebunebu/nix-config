@@ -2,7 +2,7 @@
 let
   t = pkgs.tmuxPlugins;
   ut = unstablePkgs.tmuxPlugins;
-  # palette = config.stylix.base16Scheme.palette; # use inherit instead of this bs
+  palette = config.stylix.base16Scheme.palette; # use inherit instead of this bs
   cfg = config.terminal.tmux;
 in
 
@@ -32,6 +32,8 @@ in
           set -g status-position top
           set -g status-interval 1
 
+          set -g status-bg "#${palette.base00}"
+          set-option -g pane-active-border-style fg='#${palette.base09}'
 
           bind r source-file ~/.config/tmux/tmux.conf
 
@@ -79,8 +81,6 @@ in
           bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
         '';
 
-          # set -g status-bg "#${palette.base00}"
-          # set-option -g pane-active-border-style fg='#${palette.base09}'
       plugins = [
         {
           plugin = ut.rose-pine;
@@ -114,11 +114,11 @@ in
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
+            set -g @mode_indicator_copy_mode_style 'bg=#${palette.base00},fg=#${palette.base09}'
+            set -g @mode_indicator_sync_mode_style 'bg=#${palette.base00},fg=#${palette.base08}'
+            set -g @mode_indicator_empty_mode_style 'bg=#${palette.base00},fg=#${palette.base0C}'
           '';
 
-            # set -g @mode_indicator_copy_mode_style 'bg=#${palette.base00},fg=#${palette.base09}'
-            # set -g @mode_indicator_sync_mode_style 'bg=#${palette.base00},fg=#${palette.base08}'
-            # set -g @mode_indicator_empty_mode_style 'bg=#${palette.base00},fg=#${palette.base0C}'
         }
         {
           plugin = t.extrakto;
