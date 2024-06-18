@@ -17,7 +17,6 @@
       # yt-dlp
       # distrobox
       # lazygit
-      # libnotify
       # invidtui
       ;
   };
