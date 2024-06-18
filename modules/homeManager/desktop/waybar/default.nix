@@ -6,7 +6,6 @@ in
 {
   imports = [
     ./style.nix
-    ./swaync
   ];
 
   options = {
@@ -27,7 +26,7 @@ in
       home.packages = [
         pkgs.waybar
         pkgs.waybar-mpris
-        pkgs.libnotify
+        # pkgs.libnotify
       ];
 
       wayland.windowManager.hyprland.settings.exec-once = [
@@ -64,7 +63,7 @@ in
       home.packages = [
         pkgs.waybar
         pkgs.waybar-mpris
-        pkgs.libnotify
+        # pkgs.libnotify
       ];
 
       wayland.windowManager.hyprland.settings.exec-once = [

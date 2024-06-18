@@ -19,7 +19,6 @@ in
     {
       home.packages = [
         pkgs.wl-clipboard
-        pkgs.libnotify
         pkgs.wf-recorder
         pkgs.grim
         pkgs.slurp
