@@ -9,7 +9,7 @@
     ./hyprland
     ./kitty.nix
     ./sioyek.nix
-    ./swaync.nix
+    ./swaync
     ./vesktop.nix
     ./waybar
   ];
