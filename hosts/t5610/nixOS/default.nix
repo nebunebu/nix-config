@@ -10,6 +10,7 @@
 
   environment.systemPackages = [
     pkgs.qbittorrent
+    pkgs.calibre
 
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
