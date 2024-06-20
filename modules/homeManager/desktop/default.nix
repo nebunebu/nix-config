@@ -2,7 +2,6 @@
 
 {
   imports = [
-    # ./swww.nix
     ./chromium.nix
     ./firefox
     ./fuzzel
@@ -10,6 +9,7 @@
     ./kitty.nix
     ./sioyek.nix
     ./swaync
+    ./swww
     ./vesktop.nix
     ./waybar
   ];

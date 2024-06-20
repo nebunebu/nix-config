@@ -3,6 +3,12 @@
 , lib
 , ...
 }:
+
+# TODO: activate daemon if not running
+# TODO: add package option
+# TODO: add transitions
+# TODO: add fill
+
 let
   cfg = config.programs.swww;
   entryToStr = monitor: entry: "${pkgs.swww}/bin/swww img -o ${monitor} ${entry.wallpaper}";
@@ -28,10 +34,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-
     home.packages = [
-      pkgs.swww 
-  ];
+      pkgs.swww
+    ];
 
     wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
       "${pkgs.swww}/bin/swww-daemon --format xrgb"

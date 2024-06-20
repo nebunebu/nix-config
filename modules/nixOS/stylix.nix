@@ -21,10 +21,9 @@ in
 
   stylix = {
     enable = true;
-    image = "${self}/modules/homeManager/desktop/wallpapers/liminal-tv.jpg";
+    image = "${self}/modules/homeManager/desktop/swww/liminal-tv.jpg";
     base16Scheme =
       fromYAML "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePineDawn-Linux";
