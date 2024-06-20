@@ -1,17 +1,21 @@
-{ config, ... }:
-let
-  palette = config.stylix.base16Scheme.palette;
-in
 {
   services.swaync.style = #css
     ''
-      /* Dracula Theme */
-      @define-color foreground rgb(224, 222, 244);
-      @define-color background rgb(25, 23, 36);
-      @define-color background-alpha rgba(38, 35, 58, 0.8);
-      @define-color accent rgba(156, 207, 216, 0.8);
-      @define-color current-line rgb(196, 167, 231);
-      @define-color comment rgb(98, 114, 164);
+      @define-color base rgb(25, 23, 36);
+      @define-color surface rgb(31, 29, 46);
+      @define-color overlay rgb(38, 35, 58);
+      @define-color muted rgb(110, 106, 134);
+      @define-color subtle rgb(144, 140, 170);
+      @define-color text rgb(224, 222, 244);
+      @define-color love rgb(235, 111, 146);
+      @define-color gold rgb(246, 193, 119);
+      @define-color rose rgb(235, 188, 186);
+      @define-color pine rgb(49, 116, 143);
+      @define-color foam rgb(156, 207, 216);
+      @define-color iris rgb(196, 167, 231);
+      @define-color highlight-low rgb(33, 32, 46);
+      @define-color highlight-med rgb(64, 61, 82);
+      @define-color highlight-high rgb(82, 79, 103);
 
       .notification-row {
         transition: all 200ms ease;
@@ -24,15 +28,15 @@ in
 
       .control-center .notification-row:focus,
       .control-center .notification-row:hover {
-      	opacity: 1;
-      	background: transparent;
+        opacity: 1;
+        background: @overlay;
       }
 
       .notification-row:focus .notification,
       .notification-row:hover .notification {
         box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
-        border: 0px solid @accent;
-        background: @current-line;
+        border: 0px solid @foam;
+        background: @base;
       }
 
       .control-center .notification {
@@ -40,8 +44,8 @@ in
       }
 
       .control-center .notification-row {
-      	opacity: 0.5;
-      	margin: -5px;
+        opacity: 0.5;
+        margin: -5px;
       }
 
       .notification {
@@ -53,12 +57,12 @@ in
       }
 
       .low {
-        background: #${palette.base09};
+        background: #f6c177;
         padding: 6px;
         border-radius: 12px;
       }
 
-      /* Uncomment to enable specific urgency colors
+      /*
       .normal {
         background: green;
         padding: 6px;
@@ -70,17 +74,17 @@ in
         padding: 6px;
         border-radius: 12px;
       }
-      */
 
       .notification-content {
         background: transparent;
         padding: 6px;
         border-radius: 8px;
       }
+      */
 
       .close-button {
-        background: @current-line;
-        color: @foreground;
+        background: @base;
+        color: @text;
         text-shadow: none;
         padding: 0;
         border-radius: 100%;
@@ -94,7 +98,7 @@ in
 
       .close-button:hover {
         box-shadow: none;
-        background: @comment;
+        background: @base;
         transition: all 0.15s ease-in-out;
         border: none;
       }
@@ -104,15 +108,15 @@ in
         padding: 4px;
         margin: 0;
         box-shadow: none;
-        background: @current-line;
-        border: 2px solid @accent;
-        color: @foreground;
+        background: @base;
+        border: 2px solid @gold;
+        color: @text;
       }
 
       .notification-default-action:hover,
       .notification-action:hover {
         -gtk-icon-effect: none;
-        background: @current-line;
+        background: @base;
       }
 
       .notification-default-action {
@@ -138,15 +142,14 @@ in
 
       .notification-action:last-child {
         border-bottom-right-radius: 8px;
-        border-right: 1px solid @accent;
+        border-right: 1px solid @gold;
       }
 
-      .image {
-      }
+      .image {}
 
       .body-image {
         margin-top: 6px;
-        background-color: @foreground;
+        background-color: @text;
         border-radius: 8px;
       }
 
@@ -154,7 +157,7 @@ in
         font-size: 16px;
         font-weight: bold;
         background: transparent;
-        color: @foreground;
+        color: @text;
         text-shadow: none;
       }
 
@@ -171,54 +174,55 @@ in
         font-size: 15px;
         font-weight: normal;
         background: transparent;
-        color: @foreground;
+        color: @text;
         text-shadow: none;
       }
 
       /* The "Notifications" and "Do Not Disturb" text widget */
       .top-action-title {
-        color: @foreground;
+        color: @text;
         text-shadow: none;
       }
 
       .control-center-clear-all {
-        color: @foreground;
+        color: @text;
         text-shadow: none;
-        background: @background;
-        border: 2px solid @accent;
+        background: @base;
+        border: 2px solid @gold;
         box-shadow: none;
         border-radius: 8px;
       }
 
       .control-center-clear-all:hover {
-        background: @background;
+        background: @base;
       }
 
       .control-center-dnd {
         border-radius: 8px;
-        background: @background;
-        border: 1px solid @accent;
+        background: @base;
+        border: 1px solid @gold;
         box-shadow: none;
       }
 
       .control-center-dnd:checked {
-        background: @accent;
+        background: @gold;
       }
 
       .control-center-dnd slider {
-        background: @background;
+        background: @base;
         border-radius: 8px;
       }
 
       .control-center {
-        background: @background-alpha;
+        background: @surface;
         border-radius: 10px;
         background-clip: border-box;
         padding: 4px;
+        margin: 12px;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
-      			  0 2px 6px 2px rgba(0, 0, 0, 0.3);
-        color: @foreground;
-        border: 2px solid @accent;
+          0 2px 6px 2px rgba(0, 0, 0, 0.3);
+        color: @text;
+        border: 2px solid @gold;
       }
 
       .control-center-list {
@@ -241,17 +245,24 @@ in
         margin: 8px;
         font-size: 1.5rem;
       }
-      .widget-title > button {
+
+      .widget-title>button {
         font-size: initial;
-        color: @foreground;
+        color: @text;
         text-shadow: none;
-        background: @background;
-        border: 2px solid @accent;
+        background: @base;
+        border: 2px solid @gold;
         box-shadow: none;
         border-radius: 8px;
       }
-      .widget-title > button:hover {
-        background: @background;
+
+      .widget-title>button:hover {
+        background: @base;
+      }
+
+      /* volume widget */
+      .volume {
+        background: @overlay;
       }
 
       /* DND widget */
@@ -259,27 +270,31 @@ in
         margin: 8px;
         font-size: 1.1rem;
       }
-      .widget-dnd > switch {
+
+      .widget-dnd>switch {
         font-size: initial;
         border-radius: 8px;
-        background: @background;
-        border: 1px solid @accent;
+        background: @base;
+        border: 1px solid @gold;
         box-shadow: none;
       }
-      .widget-dnd > switch:checked {
-        background: @accent;
+
+      .widget-dnd>switch:checked {
+        background: @gold;
       }
-      .widget-dnd > switch slider {
-        background: @background;
+
+      .widget-dnd>switch slider {
+        background: @base;
         border-radius: 8px;
-        border: 1px solid @foreground;
+        border: 1px solid @text;
       }
 
       /* Label widget */
       .widget-label {
         margin: 8px;
       }
-      .widget-label > label {
+
+      .widget-label>label {
         font-size: 1.1rem;
       }
 
@@ -287,38 +302,23 @@ in
       .widget-mpris {
         /* The parent to all players */
       }
+
       .widget-mpris-player {
         padding: 8px;
         margin: 8px;
-        background-color: @background;
+        background-color: @base;
         border-radius: 8px;
-        border: 2px solid @accent;
-        color: @foreground;
+        border: 2px solid @gold;
+        color: @text;
       }
+
       .widget-mpris-title {
         font-weight: bold;
         font-size: 1.25rem;
       }
+
       .widget-mpris-subtitle {
         font-size: 1.1rem;
       }
     '';
 }
-
-# .notification-row {
-#   outline: none;
-# }
-#
-# .notification-row:focus,
-# .notification-row:hover {
-#   background-color: #${palette.base0C};
-# }
-#
-# .notification {
-#   background-color: #${palette.base00};
-#   border-radius: 12px;
-#   margin: 6px 12px;
-#   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
-#     0 2px 6px 2px rgba(0, 0, 0, 0.3);
-#   padding: 0;
-# }
