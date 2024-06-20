@@ -1,8 +1,15 @@
+{ pkgs, ... }:
+
 {
   imports = [ ./style.nix ];
+
+  home.packages = [
+    pkgs.libnotify
+    pkgs.gnome.adwaita-icon-theme
+  ];
+
   services.swaync = {
     enable = true;
-    # package = ;
     settings = {
       positionX = "right";
       positionY = "top";
