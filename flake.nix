@@ -49,14 +49,26 @@
 
     hyprland = {
       type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
+      url = "https://github.com/hyprwm/Hyprland?ref=v0.41.0";
       submodules = true;
-      rev = "af5f24929d83cc7a97a77de516bc665e38acfa12";
+    };
+
+    # hyprland = {
+    #   type = "git";
+    #   url = "https://github.com/hyprwm/Hyprland";
+    #   submodules = true;
+    #   ref = "v0.41.0";
+    # };
+
+    hyprwayland-scanner = {
+      url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
+      inputs.hyprland.follows = "hyprland";
     };
 
     hyprgrass = {
-      url = "github:horriblename/hyprgrass/e3aec570d87e015bcac3041da1a85728edf0bd70";
+      url = "github:horriblename/hyprgrass?ref=v0.7.0";
       inputs.hyprland.follows = "hyprland";
+      # ref = "v0.7.0";
     };
 
     hyprland-plugins = {

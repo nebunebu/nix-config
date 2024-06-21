@@ -21,7 +21,7 @@
     fuzzel.enable = true;
     hyprland = {
       enable = true;
-      #   hyprexpo.enable = true;
+        hyprexpo.enable = true;
       t5610.enable = true;
     };
     kitty.enable = true;
