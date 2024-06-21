@@ -18,6 +18,7 @@ in
     cfg.enable
     {
       home.packages = [
+        inputs.hyprwayland-scanner.packages."${pkgs.system}".default
         pkgs.wl-clipboard
         pkgs.wf-recorder
         pkgs.grim
@@ -37,7 +38,7 @@ in
 
       wayland.windowManager.hyprland = {
         enable = true;
-        # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+        package = inputs.hyprland.packages."${pkgs.system}".hyprland;
         xwayland.enable = true;
         systemd = {
           enable = true;
