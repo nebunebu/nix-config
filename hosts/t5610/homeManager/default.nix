@@ -5,6 +5,16 @@
     "${self}/modules/homeManager"
   ];
 
+  # home.file."test.txt".text =
+  #   let
+  #     colors = import "${self}/custom/functions/color.nix";
+  #     # hexToRGBWithCommas = (import "${self}/custom/functions/color.nix").hexToRGBWithCommas;
+  #     # hextoRGBWithCommas gold #f6177 rgb(${hexToRGBWithCommas "f6177"})
+  #   in
+  #   ''
+  #     hextoRGB gold #f6177 ${colors.hexToRGB "f6177"}
+  #   '';
+
   desktop = {
     chromium.enable = true;
     firefox.enable = true;
