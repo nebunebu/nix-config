@@ -62,7 +62,6 @@
 
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
-      inputs.hyprland.follows = "hyprland";
     };
 
     hyprgrass = {
