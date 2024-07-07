@@ -23,9 +23,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim-flake = {
-      url = "github:nebunebu/nixvim";
-    };
+    # nixvim-flake = {
+    #   url = "github:nebunebu/nixvim";
+    # };
+    #
+    # my-nvim = {
+    #   url = "github:nebunebu/my-nvim";
+    # };
+    nebvim.url = "github:nebunebu/nebvim";
 
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
