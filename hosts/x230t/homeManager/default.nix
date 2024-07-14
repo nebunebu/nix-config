@@ -1,9 +1,13 @@
-{ self, inputs, config, pkgs, ... }:
+{
+  self,
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [
-    "${self}/modules/homeManager"
-  ];
+  imports = [ "${self}/modules/homeManager" ];
 
   home.packages = [
     pkgs.zoom
@@ -25,8 +29,8 @@
     fuzzel.enable = true;
     hyprland = {
       enable = true;
-      hyprgrass.enable = true;
-      hyprexpo.enable = true;
+      hyprgrass.enable = false;
+      hyprexpo.enable = false;
       x230t.enable = true;
     };
     kitty.enable = true;
