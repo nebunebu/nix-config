@@ -1,9 +1,7 @@
 { self, config, ... }:
 
 {
-  imports = [
-    "${self}/modules/homeManager"
-  ];
+  imports = [ "${self}/modules/homeManager" ];
 
   # home.file."test.txt".text =
   #   let
@@ -21,7 +19,7 @@
     fuzzel.enable = true;
     hyprland = {
       enable = true;
-        hyprexpo.enable = true;
+      hyprexpo.enable = false;
       t5610.enable = true;
     };
     kitty.enable = true;
