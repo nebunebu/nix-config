@@ -5,6 +5,11 @@
     "${self}/modules/homeManager"
   ];
 
+  home.packages = [
+    pkgs.zoom
+    pkgs.aileron
+  ];
+
   tablet = {
     wvkbd.enable = true;
   };
