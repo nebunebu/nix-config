@@ -735,6 +735,22 @@
         "type": "github"
       }
     },
+    "img-clip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1717612998,
+        "narHash": "sha256-z8gqQWbM0jFXSsv7I5eB2Yo1Lq2UsIcSm3AhxZbZi2A=",
+        "owner": "HakonHarnes",
+        "repo": "img-clip.nvim",
+        "rev": "1924e20ab19afec9779109d083b6e5f8bee8fb17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HakonHarnes",
+        "repo": "img-clip.nvim",
+        "type": "github"
+      }
+    },
     "impermanence": {
       "locked": {
         "lastModified": 1719091691,
@@ -785,6 +801,7 @@
     "nebvim": {
       "inputs": {
         "direnv-nvim": "direnv-nvim",
+        "img-clip": "img-clip",
         "markdown-toc": "markdown-toc",
         "markview": "markview",
         "nixpkgs": "nixpkgs_3",
@@ -792,11 +809,11 @@
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
-        "lastModified": 1720924950,
-        "narHash": "sha256-0gXV7rJxwdnC9NEK2WWPkf6HFLIy3B0Db6bNYNygQoQ=",
+        "lastModified": 1721186686,
+        "narHash": "sha256-TfOhMGSe/S06ROjOg7z7mjx3/uqkGlhy1EApxO67BAM=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "592a2ed189eb52500446e1d6692d7d5be9a71183",
+        "rev": "e0b53e41e32de7f74ac65273b8ba720c036e0119",
         "type": "github"
       },
       "original": {
