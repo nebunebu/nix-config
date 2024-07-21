@@ -6,7 +6,7 @@
       "warning" = 30;
       "critical" = 15;
     };
-    "format" = "{capacity} {icon} ";
+    "format" = "{capacity} {icon}";
     "format-charging" = "{capacity}<span font='Font Awesome 5 Free'></span>";
     "format-icons" = [
       ""
