@@ -34,6 +34,7 @@
       x230t.enable = true;
     };
     kitty.enable = true;
+    mpv.enable = true;
     sioyek.enable = true;
     swww.x230t.enable = true;
     vesktop.enable = true;
