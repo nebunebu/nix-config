@@ -10,8 +10,8 @@
   imports = [ "${self}/modules/homeManager" ];
 
   home.packages = [
-    pkgs.zoom
-    pkgs.aileron
+    # pkgs.zoom
+    # pkgs.aileron
   ];
 
   tablet = {
