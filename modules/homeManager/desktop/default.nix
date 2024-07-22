@@ -7,6 +7,7 @@
     ./fuzzel
     ./hyprland
     ./kitty.nix
+    ./mpv.nix
     ./sioyek.nix
     ./swaync
     ./swww

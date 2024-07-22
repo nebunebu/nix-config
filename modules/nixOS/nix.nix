@@ -4,6 +4,9 @@
   nix = {
     settings = {
       experimental-features = [ "nix-command flakes" ];
+      # substituters = [
+      #   ""
+      # ];
       auto-optimise-store = true;
       allowed-users = [ "@wheel" ];
       trusted-users = [ "@wheel" ];
@@ -13,9 +16,7 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    nixPath = [
-      "nixpkgs=${pkgs.path}"
-    ];
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
   };
   nixpkgs.config.allowUnfree = true;
 }

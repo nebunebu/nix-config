@@ -1,4 +1,9 @@
-{ pkgs, unstablePkgs, config, ... }:
+{
+  pkgs,
+  unstablePkgs,
+  config,
+  ...
+}:
 
 {
 
@@ -29,40 +34,41 @@
       };
 
       shellAliases = {
-        nvim-test = "nix run ${config.home.homeDirectory}/.nixvim";
+        nt = "nix run ${config.home.homeDirectory}/.nebvim";
         svim = "sudo -Es nvim";
         grep = "grep --color=\"auto\"";
         ip = "ip --color=\"auto\"";
         ol = "docker exec -it ollama ollama";
       };
 
-      initExtra = /* bash */ ''
-        # Function to use nvim as manpager
-        function nman() {
-          man "$1" 2>/dev/null | sed 's/\x1B\[[0-9;]*m//g' | nvim -c 'set ft=man' -
-        }
+      initExtra = # bash
+        ''
+          # Function to use nvim as manpager
+          function nman() {
+            man "$1" 2>/dev/null | sed 's/\x1B\[[0-9;]*m//g' | nvim -c 'set ft=man' -
+          }
 
-        # Function to kill processes using fzf
-        function fzf-kill-process() {
-          local pid
-          pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+          # Function to kill processes using fzf
+          function fzf-kill-process() {
+            local pid
+            pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
-          if [ "x$pid" != "x" ]; then
-            echo $pid | xargs kill -9
-          fi
-          zle reset-prompt
-        }
-        zle -N fzf-kill-process
+            if [ "x$pid" != "x" ]; then
+              echo $pid | xargs kill -9
+            fi
+            zle reset-prompt
+          }
+          zle -N fzf-kill-process
 
-        function zvm_after_lazy_keybindings() {
-          zvm_bindkey vicmd '^r' fzf-history-widget
-          zvm_bindkey viins '^r' fzf-history-widget
-          zvm_bindkey vicmd '^x' fzf-kill-process
-          zvm_bindkey viins '^x' fzf-kill-process
-          zvm_bindkey vicmd ':' undefined-key
-        }
+          function zvm_after_lazy_keybindings() {
+            zvm_bindkey vicmd '^r' fzf-history-widget
+            zvm_bindkey viins '^r' fzf-history-widget
+            zvm_bindkey vicmd '^x' fzf-kill-process
+            zvm_bindkey viins '^x' fzf-kill-process
+            zvm_bindkey vicmd ':' undefined-key
+          }
 
-      '';
+        '';
 
       plugins = [
         {
