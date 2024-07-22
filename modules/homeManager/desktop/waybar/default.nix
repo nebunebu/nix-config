@@ -1,17 +1,25 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.desktop.waybar;
   wbm = builtins.import ./modules.nix;
 in
 {
-  imports = [
-    ./style.nix
-  ];
+  imports = [ ./style.nix ];
 
   options = {
     desktop.waybar = {
       device = lib.mkOption {
-        type = lib.types.nullOr (lib.types.enum [ "x230t" "t5610" ]);
+        type = lib.types.nullOr (
+          lib.types.enum [
+            "x230t"
+            "t5610"
+          ]
+        );
         default = null;
         description = "Select the device configuration for waybar";
       };
@@ -29,9 +37,7 @@ in
         # pkgs.libnotify
       ];
 
-      wayland.windowManager.hyprland.settings.exec-once = [
-        "${pkgs.waybar}/bin/waybar &"
-      ];
+      wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.waybar}/bin/waybar &" ];
 
       programs.waybar = {
         enable = true;
@@ -66,9 +72,7 @@ in
         # pkgs.libnotify
       ];
 
-      wayland.windowManager.hyprland.settings.exec-once = [
-        "${pkgs.waybar}/bin/waybar &"
-      ];
+      wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.waybar}/bin/waybar &" ];
 
       programs.waybar = {
         enable = true;
@@ -77,17 +81,13 @@ in
             layer = "top";
             position = "top";
             height = 30;
-            output = [
-              "DP-1"
-            ];
+            output = [ "DP-1" ];
             modules-left = [ "hyprland/workspaces" ];
             modules-center = [
               "custom/waybarmpris"
               "hyprland/submap"
             ];
-            modules-right = [
-              "custom/notification"
-            ];
+            modules-right = [ "custom/notification" ];
           } // wbm;
 
           secondBar = {
@@ -95,10 +95,14 @@ in
 
             position = "top";
             height = 30;
-            output = [ "DP-2" ];
+            output = [ "HDMI-A-1" ];
             modules-left = [ "hyprland/workspaces" ];
             modules-center = [ "hyprland/submap" ];
-            modules-right = [ "pulseaudio" "clock" "tray" ];
+            modules-right = [
+              "pulseaudio"
+              "clock"
+              "tray"
+            ];
           } // wbm;
         };
       };
