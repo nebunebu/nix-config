@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.desktop.mpv;
 in
@@ -9,17 +14,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = builtins.attrValues {
-      inherit
-        (pkgs)
-        jellyfin-mpv-shim
-        ;
-    };
+    home.packages = builtins.attrValues { inherit (pkgs) jellyfin-mpv-shim; };
     programs.mpv = {
       enable = true;
       scripts = builtins.attrValues {
-        inherit
-          (pkgs.mpvScripts)
+        inherit (pkgs.mpvScripts)
           sponsorblock
           thumbfast
           mpv-webm

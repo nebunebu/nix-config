@@ -122,6 +122,11 @@
         "owner": "axkirillov",
         "repo": "easypick.nvim",
         "rev": "3ce209d05d402ba40e29e6b69b759eb8421b145a",
+        "lastModified": 1720449552,
+        "narHash": "sha256-nWdAIchqGsWiF0cQ7NwePRa1fpugE8duZKqdBaisrAc=",
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim",
+        "rev": "3e38d855c764bb1bec230130ed0e026fca54e4c8",
         "type": "github"
       },
       "original": {
@@ -816,7 +821,11 @@
     },
     "nebvim": {
       "inputs": {
+<<<<<<< HEAD
         "easypick-nvim": "easypick-nvim",
+=======
+        "direnv-nvim": "direnv-nvim",
+>>>>>>> cbe160a99a16bfe10820dc68acbd873b74ddfbf2
         "fortune": "fortune",
         "img-clip": "img-clip",
         "markdown-toc": "markdown-toc",
@@ -829,11 +838,19 @@
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1721689685,
         "narHash": "sha256-ayVZ4vmSZpNPKsC3SU2oc+KJfNJATmjmHtgK2RSQVPg=",
         "owner": "nebunebu",
         "repo": "nebvim",
         "rev": "eaba52b12711e0a6241d8f11f6c3ee765f4867a2",
+=======
+        "lastModified": 1721601084,
+        "narHash": "sha256-2GtnxjB/dbaGRr/xPlVwGV4xzheSSIlUIH5ugiWzfvY=",
+        "owner": "nebunebu",
+        "repo": "nebvim",
+        "rev": "48d82fc56dedaeae1429ad9875f551f588536525",
+>>>>>>> cbe160a99a16bfe10820dc68acbd873b74ddfbf2
         "type": "github"
       },
       "original": {

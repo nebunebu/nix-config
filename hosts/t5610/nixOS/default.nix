@@ -1,4 +1,9 @@
-{ self, inputs, pkgs, ... }:
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -21,6 +26,7 @@
   app.virt-manager.enable = true;
 
   networking.hostName = "t5610";
+
   environment = {
     sessionVariables = {
       HOSTNAME = "t5610";

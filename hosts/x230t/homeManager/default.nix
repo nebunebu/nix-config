@@ -10,8 +10,8 @@
   imports = [ "${self}/modules/homeManager" ];
 
   home.packages = [
-    pkgs.zoom
-    pkgs.aileron
+    # pkgs.zoom
+    # pkgs.aileron
   ];
 
   tablet = {
@@ -34,6 +34,7 @@
       x230t.enable = true;
     };
     kitty.enable = true;
+    mpv.enable = true;
     sioyek.enable = true;
     swww.x230t.enable = true;
     vesktop.enable = true;

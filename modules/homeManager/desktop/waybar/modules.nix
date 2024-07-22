@@ -8,7 +8,13 @@
     };
     "format" = "{capacity} {icon}";
     "format-charging" = "{capacity}<span font='Font Awesome 5 Free'></span>";
-    "format-icons" = [ "" "" "" "" "" ];
+    "format-icons" = [
+      ""
+      ""
+      ""
+      ""
+      ""
+    ];
     "max-length" = 25;
   };
 
@@ -20,7 +26,10 @@
     "on-click-right" = "waybar-mpris --send player-next";
     "on-scroll-up" = "waybar-mpris --send next";
     "on-scroll-down" = "waybar-mpris --send prev";
-    "ignored-players" = [ "firefox" "chromium" ];
+    "ignored-players" = [
+      "firefox"
+      "chromium"
+    ];
     "escape" = true;
   };
 
@@ -60,7 +69,11 @@
       "phone" = "";
       "portable" = "";
       "car" = "";
-      "default" = [ "" "" "" ];
+      "default" = [
+        ""
+        ""
+        ""
+      ];
     };
     "on-click" = "pavucontrol";
   };
@@ -89,7 +102,9 @@
     # ];
   };
 
-  "tray" = { spacing = 10; };
+  "tray" = {
+    spacing = 10;
+  };
 
   "clock" = {
     "format" = "{:%I:%M}";
