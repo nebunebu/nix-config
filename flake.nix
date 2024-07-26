@@ -54,16 +54,15 @@
 
     hyprland = {
       type = "git";
-      url = "https://github.com/hyprwm/Hyprland?ref=v0.41.0";
+      url = "https://github.com/hyprwm/Hyprland";
+      # rev = "918d8340afd652b011b937d29d5eea0be08467f5"; # v0.41.2
+      # rev = "9e781040d9067c2711ec2e9f5b47b76ef70762b3"; # v0.41.1
+      # rev = "cba1ade848feac44b2eda677503900639581c3f4"; # v0.41.0
+      # rev = "fe7b748eb668136dd0558b7c8279bfcd7ab4d759"; # v0.39.1
+      rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
+
       submodules = true;
     };
-
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   submodules = true;
-    #   ref = "v0.41.0";
-    # };
 
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
@@ -90,13 +89,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: with inputs;
+  outputs =
+    inputs:
+    with inputs;
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
 
-      mkHost = { hostName, extraModules ? [ ], disableHomeManager ? false }:
+      mkHost =
+        {
+          hostName,
+          extraModules ? [ ],
+          disableHomeManager ? false,
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
@@ -108,28 +114,34 @@
               unstablePkgs
               ;
           };
-          modules = [
-            ./hosts/${hostName}/nixOS/default.nix
-            inputs.stylix.nixosModules.stylix
-          ]
-          ++ extraModules ++
-          (if disableHomeManager then [ ] else [
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                extraSpecialArgs = {
-                  inherit
-                    inputs
-                    self
-                    pkgs
-                    unstablePkgs
-                    ;
-                };
-              };
-            }
-          ]);
+          modules =
+            [
+              ./hosts/${hostName}/nixOS/default.nix
+              inputs.stylix.nixosModules.stylix
+            ]
+            ++ extraModules
+            ++ (
+              if disableHomeManager then
+                [ ]
+              else
+                [
+                  {
+                    home-manager = {
+                      useGlobalPkgs = true;
+                      useUserPackages = true;
+                      users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
+                      extraSpecialArgs = {
+                        inherit
+                          inputs
+                          self
+                          pkgs
+                          unstablePkgs
+                          ;
+                      };
+                    };
+                  }
+                ]
+            );
         };
     in
     {
