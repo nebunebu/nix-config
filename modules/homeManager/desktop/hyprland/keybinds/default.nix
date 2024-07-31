@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./submaps
-  ];
+  imports = [ ./submaps ];
 
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
@@ -21,7 +19,6 @@
 
       "$mainMod, S, layoutmsg, swapsplit"
       "$mainMod, T, layoutmsg, togglesplit"
-
       "$mainMod + Shift, Q, exec, hyprctl dispatch exit"
       "$mainMod + SHIFT, N, movewindow, mon:DP-1"
       "$mainMod + SHIFT, M, movewindow, mon:DP-2"
