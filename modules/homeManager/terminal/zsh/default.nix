@@ -1,21 +1,6 @@
-{
-  pkgs,
-  unstablePkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 
 {
-
-  home.packages = [
-    (unstablePkgs.nerdfonts.override {
-      fonts = [
-        "DroidSansMono"
-        "JetBrainsMono"
-      ];
-    })
-  ];
-
   programs = {
     starship = {
       enable = true;
@@ -34,7 +19,8 @@
       };
 
       shellAliases = {
-        nt = "nix run ${config.home.homeDirectory}/.nebvim";
+        nt = "nix run ${config.home.homeDirectory}/.nebvim"; # nebvim test
+        at = "nix develop ${config.home.homeDirectory}/Projects/ags#default --command ags -c ${config.home.homeDirectory}/Projects/ags/config.js"; # ags config test
         svim = "sudo -Es nvim";
         grep = "grep --color=\"auto\"";
         ip = "ip --color=\"auto\"";
