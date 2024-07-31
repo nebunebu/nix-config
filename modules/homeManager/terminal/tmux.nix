@@ -1,4 +1,10 @@
-{ lib, config, pkgs, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  unstablePkgs,
+  ...
+}:
 let
   t = pkgs.tmuxPlugins;
   ut = unstablePkgs.tmuxPlugins;
@@ -15,7 +21,7 @@ in
     programs.tmux = {
       enable = true;
       package = unstablePkgs.tmux;
-      shell = "${pkgs.zsh}/bin/zsh"; #set with user shell
+      shell = "${pkgs.zsh}/bin/zsh"; # set with user shell
       prefix = "C-SPACE";
       keyMode = "vi";
       baseIndex = 1;
@@ -23,65 +29,79 @@ in
       mouse = true;
       newSession = true;
       sensibleOnTop = true;
-      terminal = "xterm-kitty"; #maybe set with term???
-      extraConfig = lib.mkForce
-        ''
-          set -g allow-passthrough on
-          set -ga update-environment TERM
-          set -ga update-environment TERM_PROGRAM
-          set -g status-position top
-          set -g status-interval 1
+      terminal = "xterm-kitty"; # maybe set with term???
+      extraConfig = lib.mkForce ''
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
+        set -g status-position top
+        set -g status-interval 1
 
-          set -g status-bg "#${palette.base00}"
-          set-option -g pane-active-border-style fg='#${palette.base09}'
+        set -g status-bg "#${palette.base00}"
+        set-option -g pane-active-border-style fg='#${palette.base09}'
 
-          bind r source-file ~/.config/tmux/tmux.conf
+        bind r source-file ~/.config/tmux/tmux.conf
 
-          # Open panes in current directory
-          bind '"' split-window -v -c "#{pane_current_path}"
-          bind % split-window -h -c "#{pane_current_path}"
+        # Open panes in current directory
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
 
-          bind ' ' display-popup -d "#{pane_current_path}"
+        bind ' ' display-popup -d "#{pane_current_path}"
 
-          # Ctrl+Alt  vim keys to resize panes
-          bind-key -n C-M-k resize-pane -U 5
-          bind-key -n C-M-j resize-pane -D 5
-          bind-key -n C-M-h resize-pane -L 5
-          bind-key -n C-M-l resize-pane -R 5
+        # Ctrl+Alt  vim keys to resize panes
+        bind-key -n C-M-k resize-pane -U 5
+        bind-key -n C-M-j resize-pane -D 5
+        bind-key -n C-M-h resize-pane -L 5
+        bind-key -n C-M-l resize-pane -R 5
 
-          # Shift Alt vim keys to switch windows
-          bind -n M-H previous-window
-          bind -n M-L next-window
+        # Shift Alt vim keys to switch windows
+        bind -n M-H previous-window
+        bind -n M-L next-window
 
-          # Smart pane switching with awareness of Vim splits.
-          # See: https://github.com/christoomey/vim-tmux-navigator
-          is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
-              | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
+        # Smart pane switching with awareness of Vim splits.
+        # See: https://github.com/christoomey/vim-tmux-navigator
+        is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+            | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
 
-          bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
-          bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
-          bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
-          bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
+        bind-key -n 'C-h' if-shell "$is_vim" 'send-keys C-h'  'select-pane -L'
+        bind-key -n 'C-j' if-shell "$is_vim" 'send-keys C-j'  'select-pane -D'
+        bind-key -n 'C-k' if-shell "$is_vim" 'send-keys C-k'  'select-pane -U'
+        bind-key -n 'C-l' if-shell "$is_vim" 'send-keys C-l'  'select-pane -R'
 
-          tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
-          if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
-              "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
-          if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
-              "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+        tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
+        if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
+            "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
+        if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
+            "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
 
-          bind-key -T copy-mode-vi 'C-h' select-pane -L
-          bind-key -T copy-mode-vi 'C-j' select-pane -D
-          bind-key -T copy-mode-vi 'C-k' select-pane -U
-          bind-key -T copy-mode-vi 'C-l' select-pane -R
-          bind-key -T copy-mode-vi 'C-\' select-pane -l
+        bind-key -T copy-mode-vi 'C-h' select-pane -L
+        bind-key -T copy-mode-vi 'C-j' select-pane -D
+        bind-key -T copy-mode-vi 'C-k' select-pane -U
+        bind-key -T copy-mode-vi 'C-l' select-pane -R
+        bind-key -T copy-mode-vi 'C-\' select-pane -l
 
-          # Keybindings
-          bind-key -T copy-mode-vi v send-keys -X begin-selection
-          bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-          bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-        '';
+        # Keybindings
+        bind-key -T copy-mode-vi v send-keys -X begin-selection
+        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+        bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+      '';
 
       plugins = [
+        # NOTE: prob should not use
+        # NOTE: relies on having certain prompt suffixes
+        # {
+        #   plugin = pkgs.tmuxPlugins.mkTmuxPlugin {
+        #     pluginName = "tmux-notify";
+        #     version = "unstable-2024-07-30";
+        #     src = pkgs.fetchFromGitHub {
+        #       owner = "rickstaa";
+        #       repo = "tmux-notify";
+        #       rev = "4e37358be51b22078e9361fd6ad0ae199cf03587";
+        #       sha256 = "sha256-0+Rydx4cVVHC916skJTXFZy0zHFaftB2p9ei6xS3MWY=";
+        #     };
+        #     rtpFilePath = "tmux-notify.tmux";
+        #   };
+        # }
         {
           plugin = ut.rose-pine;
           extraConfig = ''
@@ -131,7 +151,7 @@ in
         }
         t.sensible
         t.vim-tmux-navigator
-        t.yank
+        t.yank # don't think this is working
       ];
     };
   };
