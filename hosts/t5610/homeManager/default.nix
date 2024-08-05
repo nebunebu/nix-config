@@ -21,6 +21,15 @@
       enable = true;
       hyprexpo.enable = false;
       t5610.enable = true;
+      pyprland = {
+        enable = true;
+        btm.enable = true;
+        claude.enable = true;
+        hmOptions.enable = true;
+        nixpkgs.enable = true;
+        noogle.enable = true;
+        spotube.enable = true;
+      };
     };
     kitty.enable = true;
     sioyek.enable = true;
@@ -47,18 +56,6 @@
   # desktop = {
   #   waybar.t5610.enable = true;
   #   # kitty.enable = true;
-  #   hyprland = {
-  #     enable = true;
-  #     t5610.enable = true;
-  #     pyprland = {
-  #       enable = true;
-  #       btm.enable = true;
-  #       claude.enable = true;
-  #       hmOptions.enable = true;
-  #       nixpkgs.enable = true;
-  #       noogle.enable = true;
-  #       spotube.enable = true;
-  #     };
   #   };
   # };
 }
