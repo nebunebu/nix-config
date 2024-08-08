@@ -328,6 +328,22 @@
         "type": "github"
       }
     },
+    "flow-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1721741746,
+        "narHash": "sha256-9/bAKR2n/AQOvp0wwgmL75pzE6V4yKupSAP6/rLnH/E=",
+        "owner": "0xstepit",
+        "repo": "flow.nvim",
+        "rev": "3af4d4d1b8a99c34e060de6fdaa5babc596a50c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xstepit",
+        "repo": "flow.nvim",
+        "type": "github"
+      }
+    },
     "fortune": {
       "flake": false,
       "locked": {
@@ -818,6 +834,7 @@
     "nebvim": {
       "inputs": {
         "easypick-nvim": "easypick-nvim",
+        "flow-nvim": "flow-nvim",
         "fortune": "fortune",
         "img-clip": "img-clip",
         "markdown-toc": "markdown-toc",
@@ -830,11 +847,11 @@
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
-        "lastModified": 1722199250,
-        "narHash": "sha256-Oq3xLQU2jDJW9oBKvLWBA5dmxGnN2jbMaErmtXcnc4s=",
+        "lastModified": 1723075814,
+        "narHash": "sha256-zNmsSDVZGss3WtXiyIaisw0Mnn+tW09/gZUQdkYRLNc=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "02d556dc2621a590258c7f09c18b8292601b28d7",
+        "rev": "348d99db93a38193db242a211be1930036ba89de",
         "type": "github"
       },
       "original": {
