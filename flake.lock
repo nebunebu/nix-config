@@ -847,11 +847,11 @@
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
-        "lastModified": 1723078966,
-        "narHash": "sha256-ixk6Z74bGhOdcCfm6xYnceVZ2xhhoZqbxBEPZOfc9Jc=",
+        "lastModified": 1723169806,
+        "narHash": "sha256-rX9go/kvrDCMbImmRjn27jPEtDROKy35gER98K/WGO0=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "5aee409a7eacc902a0d27720614dce110270dc03",
+        "rev": "72664054826eaaf3e799ae591d97a250a2fd505e",
         "type": "github"
       },
       "original": {
