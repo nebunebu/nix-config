@@ -1,8 +1,7 @@
-{
-  pkgs,
-  unstablePkgs,
-  config,
-  ...
+{ pkgs
+, unstablePkgs
+, config
+, ...
 }:
 
 {
