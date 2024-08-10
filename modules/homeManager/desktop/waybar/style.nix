@@ -1,5 +1,4 @@
 { lib, config, ... }:
-# background-color: #${config.stylix.base16Scheme.palette.base0C};
 let
   palette = config.stylix.base16Scheme.palette;
   transparent = "rgba(0, 0, 0, 0.0)";
