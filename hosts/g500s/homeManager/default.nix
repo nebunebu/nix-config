@@ -1,9 +1,15 @@
 {
   imports = [ ../../../modules/homeManager ];
 
-  app = {
-    git.enable = true;
+  desktop = {
     kitty.enable = true;
+  };
+
+  terminal = {
     tmux.enable = true;
+  };
+
+  development = {
+    git.enable = true;
   };
 }
