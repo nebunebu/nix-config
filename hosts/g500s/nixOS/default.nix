@@ -10,12 +10,12 @@
     ../../../modules/nixOS/nix.nix
     ../../../modules/nixOS/system.nix
     ../../../modules/nixOS/users/nebu.nix
+    ../../../modules/nixOS/stylix.nix
     ./hardware-configuration.nix
     ./jellyfin.nix
   ];
 
   environment.systemPackages = [
-    inputs.nixvim-flake.packages.x86_64-linux.default
     pkgs.vbetool
   ];
 
