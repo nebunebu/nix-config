@@ -1,20 +1,26 @@
-{ self, lib, inputs, config, pkgs, ... }:
+{
+  self,
+  lib,
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.desktop.hyprland.x230t;
-  hypr-tab =
-    pkgs.writeShellScript "hypr-tab" ''
-      if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
-        hyprctl keyword input:touchdevice:transform 1
-        hyprctl keyword input:tablet:transform 1
-        hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 1
-        # ${inputs.swww.packages.x86_64-linux.default}/bin/swww img "${self}/modules/homeManager/desktop/wallpapers/palmtrees.jpg"
-      else
-        hyprctl keyword input:touchdevice:transform 0
-        hyprctl keyword input:tablet:transform 0
-        hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 0
-        # ${inputs.swww.packages.x86_64-linux.default}/bin/swww img "${self}/modules/homeManager/desktop/wallpapers/liminal-room.jpg"
-      fi
-    '';
+  hypr-tab = pkgs.writeShellScript "hypr-tab" ''
+    if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
+      hyprctl keyword input:touchdevice:transform 1
+      hyprctl keyword input:tablet:transform 1
+      hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 1
+      # ${inputs.swww.packages.x86_64-linux.default}/bin/swww img "${self}/modules/homeManager/desktop/wallpapers/palmtrees.jpg"
+    else
+      hyprctl keyword input:touchdevice:transform 0
+      hyprctl keyword input:tablet:transform 0
+      hyprctl keyword monitor LVDS-1, preferred, auto, 1, transform, 0
+      # ${inputs.swww.packages.x86_64-linux.default}/bin/swww img "${self}/modules/homeManager/desktop/wallpapers/liminal-room.jpg"
+    fi
+  '';
 in
 {
   options = {
@@ -24,9 +30,7 @@ in
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       settings = {
-        monitor = [
-          "LVDS-1, 1366x768, 0x0, 1"
-        ];
+        monitor = [ "LVDS-1, 1366x768, 0x0, 1" ];
 
         workspace = [
           "1, monitor:LVDS-1"

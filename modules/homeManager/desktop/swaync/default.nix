@@ -21,7 +21,15 @@
       control-center-margin-bottom = 0;
       control-center-margin-right = 0;
       control-center-margin-left = 0;
-      widgets = [ "title" "dnd" "inhibitors" "label" "buttons-grid" "mpris" "volume" ];
+      widgets = [
+        "title"
+        "dnd"
+        "inhibitors"
+        "label"
+        "buttons-grid"
+        "mpris"
+        "volume"
+      ];
       mpris = {
         image-size = 96;
         image-radius = 7;

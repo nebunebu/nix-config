@@ -1,9 +1,13 @@
-{ inputs, pkgs, lib, config, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
-  imports = [
-    inputs.sops-nix.nixosModules.sops
-  ];
+  imports = [ inputs.sops-nix.nixosModules.sops ];
 
   options = {
     sops.enable = lib.mkEnableOption "enable sops";

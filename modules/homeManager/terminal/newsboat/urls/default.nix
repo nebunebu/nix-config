@@ -1,7 +1,5 @@
 {
-  imports = [
-    ./full-yt/default.nix
-  ];
+  imports = [ ./full-yt/default.nix ];
 
   programs.newsboat = {
     urls = [
@@ -487,7 +485,10 @@
         title = "Ben S Chess";
       }
       {
-        tags = [ "neovim" "articles" ];
+        tags = [
+          "neovim"
+          "articles"
+        ];
         title = "This Week in Neovim";
         url = "https://dotfyle.com/this-week-in-neovim/rss.xml ";
       }
@@ -522,12 +523,18 @@
         url = "https://www.openculture.com/feed/rss2";
       }
       {
-        tags = [ "yt" "nix" ];
+        tags = [
+          "yt"
+          "nix"
+        ];
         title = "IogaMaster";
         url = "https://www.scriptbarrel.com/xml.cgi?channel_id=UCFzUEe9XUlkDLp6AmtNzmOA";
       }
       {
-        tags = [ "yt" "nix" ];
+        tags = [
+          "yt"
+          "nix"
+        ];
         title = "RubberDuck";
         url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCs_xdqtQHTkl7LxazKIjKCg";
       }

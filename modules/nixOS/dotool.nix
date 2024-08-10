@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
   environment.systemPackages = [ pkgs.dotool ];
 
@@ -7,7 +8,10 @@
   };
 
   users.users.nebu = {
-    extraGroups = [ "input" "uinput" ];
+    extraGroups = [
+      "input"
+      "uinput"
+    ];
   };
 
   # makes dotool work
@@ -24,17 +28,19 @@
       Service = {
         Environment = [
           "PATH=$PATH:${
-          lib.makeBinPath [
-            pkgs.coreutils
-            pkgs.procps
-          ]
-        }"
+            lib.makeBinPath [
+              pkgs.coreutils
+              pkgs.procps
+            ]
+          }"
         ];
         ExecStart = "${pkgs.dotool}/bin/dotoold";
         Restart = "always";
         RestartSec = 10;
       };
-      Install = { WantedBy = [ "default.target" ]; };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
     };
   };
 }

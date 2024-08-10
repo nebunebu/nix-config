@@ -1,9 +1,10 @@
 # NOTE: needs new version of prettytable and qtpy
-{ lib
-, pkgs
-, buildPythonApplication
-, fetchPypi
-, ...
+{
+  lib,
+  pkgs,
+  buildPythonApplication,
+  fetchPypi,
+  ...
 }:
 
 buildPythonApplication rec {

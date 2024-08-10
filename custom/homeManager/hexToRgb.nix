@@ -25,15 +25,18 @@ let
     "F" = 15;
   };
 
-  hexCharList = x:
-    lib.stringToCharacters x;
+  hexCharList = x: lib.stringToCharacters x;
 
-  rgbHelper = str: i: j:
+  rgbHelper =
+    str: i: j:
     (base16AttrSet.${lib.strings.elemAt (hexCharList str) i} * 16)
     + (base16AttrSet.${lib.strings.elemAt (hexCharList str) j});
 
-  hexToRGB = x:
-    "${builtins.toString (rgbHelper x 0 1)} ${builtins.toString (rgbHelper x 2 3)} ${builtins.toString (rgbHelper x 4 5)}";
+  hexToRGB =
+    x:
+    "${builtins.toString (rgbHelper x 0 1)} ${builtins.toString (rgbHelper x 2 3)} ${
+      builtins.toString (rgbHelper x 4 5)
+    }";
 
 in
 hexToRGB hex

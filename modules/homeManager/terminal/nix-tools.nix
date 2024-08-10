@@ -11,11 +11,7 @@
       statix
       ;
 
-    inherit (unstablePkgs)
-      nix-inspect
-      nh
-      nvd
-      ;
+    inherit (unstablePkgs) nix-inspect nh nvd;
   };
 
   home.sessionVariables = {

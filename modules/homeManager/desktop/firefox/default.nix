@@ -1,4 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   cfg = config.desktop.firefox;
   ffao = [
@@ -18,13 +24,16 @@ in
         nebu = {
           isDefault = true;
           id = 0;
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-            i-dont-care-about-cookies
-            reddit-enhancement-suite
-            old-reddit-redirect
-            passff
-          ] ++ ffao;
-          userChrome = /* css */
+          extensions =
+            with inputs.firefox-addons.packages."x86_64-linux";
+            [
+              i-dont-care-about-cookies
+              reddit-enhancement-suite
+              old-reddit-redirect
+              passff
+            ]
+            ++ ffao;
+          userChrome = # css
             ''
               * {
                 font-family: "DroidSansM Nerd Font" !important;

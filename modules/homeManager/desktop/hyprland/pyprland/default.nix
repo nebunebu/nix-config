@@ -1,4 +1,9 @@
-{ inputs, config, lib, ... }:
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.desktop.hyprland.pyprland;
 in
@@ -15,18 +20,17 @@ in
   options.desktop.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      inputs.pyprland.packages.x86_64-linux.default
-    ];
+    home.packages = [ inputs.pyprland.packages.x86_64-linux.default ];
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
-      text = /*toml*/ ''
-        [pyprland]
-        plugins = [ "scratchpads" ]
+      text = # toml
+        ''
+          [pyprland]
+          plugins = [ "scratchpads" ]
 
-        [ workspaces_follow_focus ]
-        max_workspaces = 9
-      '';
+          [ workspaces_follow_focus ]
+          max_workspaces = 9
+        '';
     };
   };
 }

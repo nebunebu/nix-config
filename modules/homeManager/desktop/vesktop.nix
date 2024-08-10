@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 # TODO: override systray icon
 # TODO: put style in seperate file
 let
@@ -22,8 +27,17 @@ in
             icon = "discord";
             startupWMClass = "VencordDesktop";
             genericName = "Internet Messenger";
-            keywords = [ "discord" "vencord" "electron" "chat" ];
-            categories = [ "Network" "InstantMessaging" "Chat" ];
+            keywords = [
+              "discord"
+              "vencord"
+              "electron"
+              "chat"
+            ];
+            categories = [
+              "Network"
+              "InstantMessaging"
+              "Chat"
+            ];
           })
         ];
       })
