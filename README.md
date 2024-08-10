@@ -8,7 +8,7 @@ It is a work in progress.
 
 <details>
     <summary>sddm</summary>
-    <img src="https://raw.githubusercontent.com/nebunebu/nix-config/main/.assets/sddm.png" alt="preview">
+    <img src="https://github.com/nebunebu/imgs/raw/main/repos/nix-config/sddm.png" alt="preview">
 </details>
 
 ## Hosts
