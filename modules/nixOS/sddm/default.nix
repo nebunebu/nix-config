@@ -1,9 +1,8 @@
-{
-  self,
-  inputs,
-  lib,
-  pkgs,
-  ...
+{ self
+, inputs
+, lib
+, pkgs
+, ...
 }:
 
 {
@@ -11,10 +10,7 @@
 
   environment.systemPackages = [ pkgs.qt5.qtvirtualkeyboard ];
 
-  # `services.displayManager.sddm.sugarCandyNix.settings'.
-
-  services.xserver = {
-    enable = true;
+  services = {
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
@@ -22,7 +18,6 @@
       sugarCandyNix = {
         enable = true;
         settings = {
-          # Background = lib.cleanSource ", ${./nixos-rose-pine.png}";
           Background = lib.cleanSource "${self}/modules/nixOS/sddm/nixos-rose-pine.png";
           HaveFormBackground = false;
           HeaderText = "Welcome!";
