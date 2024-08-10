@@ -1,5 +1,5 @@
 { lib, config, ... }:
-/* background-color: #${config.stylix.base16Scheme.palette.base0C}; */
+# background-color: #${config.stylix.base16Scheme.palette.base0C};
 let
   palette = config.stylix.base16Scheme.palette;
   transparent = "rgba(0, 0, 0, 0.0)";
@@ -7,9 +7,7 @@ in
 {
   programs.waybar = lib.mkForce {
     style =
-      /*
-      css
-      */
+      # css
       ''
         * {
           border: none;

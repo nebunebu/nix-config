@@ -1,5 +1,5 @@
 {
-  services.swaync.style = #css
+  services.swaync.style = # css
     ''
       @define-color base rgb(25, 23, 36);
       @define-color surface rgb(31, 29, 46);

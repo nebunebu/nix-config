@@ -1,10 +1,15 @@
-{ self, inputs, lib, pkgs, ... }:
+{
+  self,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [ inputs.sddm-sugar-candy-nix.nixosModules.default ];
 
   environment.systemPackages = [ pkgs.qt5.qtvirtualkeyboard ];
-
 
   # `services.displayManager.sddm.sugarCandyNix.settings'.
 

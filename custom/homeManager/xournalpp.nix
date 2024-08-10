@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.programs.xournalpp;
 in
@@ -49,8 +54,10 @@ in
 
     pagetemplate = lib.mkOption {
       type = lib.types.lines;
-      default = /* ini */ ''''';
-      # example = /* ini */ ''''';
+      default = # ini
+        ''
+          ''';
+                # example = /* ini */ ''''';
       description = "page template";
     };
     # conf = {};
@@ -90,17 +97,24 @@ in
           "F" = 15;
         };
 
-        hexCharList = x:
-          lib.stringToCharacters x;
+        hexCharList = x: lib.stringToCharacters x;
 
-        rgbHelper = str: i: j:
+        rgbHelper =
+          str: i: j:
           (base16AttrSet.${lib.strings.elemAt (hexCharList str) i} * 16)
           + (base16AttrSet.${lib.strings.elemAt (hexCharList str) j});
 
-        hexToRGB = x:
-          "${builtins.toString (rgbHelper x 0 1)} ${builtins.toString (rgbHelper x 2 3)} ${builtins.toString (rgbHelper x 4 5)}";
+        hexToRGB =
+          x:
+          "${builtins.toString (rgbHelper x 0 1)} ${builtins.toString (rgbHelper x 2 3)} ${
+            builtins.toString (rgbHelper x 4 5)
+          }";
 
-        header = [ "GIMP Palette" "Name: Xournal Default Palette" "#" ];
+        header = [
+          "GIMP Palette"
+          "Name: Xournal Default Palette"
+          "#"
+        ];
       in
       lib.concatLines (header ++ (lib.attrsets.mapAttrsToList (n: v: "${hexToRGB v} ${n}") cfg.palette));
 

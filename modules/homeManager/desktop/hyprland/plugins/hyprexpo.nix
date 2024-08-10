@@ -1,4 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   cfg = config.desktop.hyprland.hyprexpo;
 in
@@ -11,13 +17,9 @@ in
     # NOTE: needs modification to work on
     # NOTE: rotated screen
     wayland.windowManager.hyprland = {
-      plugins = [
-        inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo
-      ];
+      plugins = [ inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo ];
       settings = {
-        bind = [
-          "$mainMod, e, hyprexpo:expo, toggle"
-        ];
+        bind = [ "$mainMod, e, hyprexpo:expo, toggle" ];
         "plugin:hyprexpo" = {
           # FIX: incorrect orientation on vertical screen
           columns = 3;

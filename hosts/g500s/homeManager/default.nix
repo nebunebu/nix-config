@@ -1,7 +1,5 @@
 {
-  imports = [
-    ../../../modules/homeManager
-  ];
+  imports = [ ../../../modules/homeManager ];
 
   app = {
     git.enable = true;

@@ -2,9 +2,7 @@
 
 {
   home = {
-    packages = [
-      pkgs.buku
-    ];
+    packages = [ pkgs.buku ];
 
     sessionVariables = {
       BUKU_COLORS = "MCexm";

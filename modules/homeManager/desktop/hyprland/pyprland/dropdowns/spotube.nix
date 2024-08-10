@@ -1,4 +1,9 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  unstablePkgs,
+  ...
+}:
 let
   cfg = config.desktop.hyprland.pyprland.spotube;
 in
@@ -11,21 +16,20 @@ in
 
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
-      text = /*toml*/ ''
-        [scratchpads.spotube]
-        command = "${unstablePkgs.spotube}/bin/spotube"
-        animation = "fromTop"
-        class = "spotube"
-        lazy = true
-        size = "80% 80%"
-      '';
+      text = # toml
+        ''
+          [scratchpads.spotube]
+          command = "${unstablePkgs.spotube}/bin/spotube"
+          animation = "fromTop"
+          class = "spotube"
+          lazy = true
+          size = "80% 80%"
+        '';
     };
 
     wayland.windowManager.hyprland = {
       settings = {
-        bind = [
-          "ALT_L, s, exec, pypr toggle spotube"
-        ];
+        bind = [ "ALT_L, s, exec, pypr toggle spotube" ];
       };
     };
   };

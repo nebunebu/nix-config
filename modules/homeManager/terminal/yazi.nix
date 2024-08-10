@@ -19,8 +19,7 @@
     };
     theme = {
       filetype = {
-        rules = [
-        ];
+        rules = [ ];
       };
     };
   };

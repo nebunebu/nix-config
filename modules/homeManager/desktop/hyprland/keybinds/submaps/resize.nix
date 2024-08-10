@@ -16,7 +16,7 @@
     binde = SHIFT, J, moveactive, 0 10
     binde = SHIFT, K, moveactive, 0 -10
     binde = SHIFT, L, moveactive, 10 0
-    
+
     bind = , SPACE, centerwindow
 
     bind = , escape, exec, hyprctl keyword input:follow_mouse 0

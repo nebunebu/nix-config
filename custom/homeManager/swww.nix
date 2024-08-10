@@ -1,7 +1,8 @@
-{ pkgs
-, config
-, lib
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  ...
 }:
 
 # TODO: activate daemon if not running
@@ -19,11 +20,13 @@ in
       enable = lib.mkEnableOption "enable swww program";
 
       monitors = lib.mkOption {
-        type = with lib.types; attrsOf (submodule {
-          options = {
-            wallpaper = lib.mkOption { type = str; };
-          };
-        });
+        type =
+          with lib.types;
+          attrsOf (submodule {
+            options = {
+              wallpaper = lib.mkOption { type = str; };
+            };
+          });
         default = { };
       };
 
@@ -34,9 +37,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.swww
-    ];
+    home.packages = [ pkgs.swww ];
 
     wayland.windowManager.hyprland.settings.exec-once = lib.mkIf cfg.hyprlandIntegration.enable [
       "${pkgs.swww}/bin/swww-daemon --format xrgb"
