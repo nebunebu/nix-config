@@ -105,12 +105,12 @@ in
           } ++
         [
           (useUnstablePlugin "rose-pine" ''
-            set -g @rose_pine_variant 'main'
-            set -g @rose_pine_date_time '%_I:%M %a %D'
-            set -g @rose_pine_show_pane_directory 'on'
-            set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
-            set -g @rose_pine_show_current_program 'on'
-            set -g @rose_pine_show_pane_directory 'on'
+            set - g @rose_pine_variant 'main'
+                  set -g @rose_pine_date_time '%_I:%M %a %D'
+                  set -g @rose_pine_show_pane_directory 'on'
+                  set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
+                  set -g @rose_pine_show_current_program 'on'
+                  set -g @rose_pine_show_pane_directory 'on'
           '')
           (usePlugin "continuum" ''
             set -g @continuum-restore 'on'
@@ -125,8 +125,8 @@ in
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
-            set -g @mode_indicator_copy_mode_style 'bg=#${palette "base00"},fg=#${palette "base09"}'
-            set -g @mode_indicator_sync_mode_style 'bg=#${palette "base00"},fg=#${palette "base08"}'
+            # set -g @mode_indicator_copy_mode_style 'bg=#${palette "base00"},fg=#${palette "base09"}'
+            # set -g @mode_indicator_sync_mode_style 'bg=#${palette "base00"},fg=#${palette "base08"}'
             set -g @mode_indicator_empty_mode_style 'bg=#${palette "base00"},fg=#${palette "base0C"}'
           '')
           (usePlugin "extrakto" ''
