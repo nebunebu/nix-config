@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  palette = config.stylix.base16Scheme.palette;
+  palette = base: config.stylix.base16Scheme.palette.${base};
   transparent = "rgba(0, 0, 0, 0.0)";
 in
 {
@@ -47,25 +47,25 @@ in
         #workspaces button {
           padding: 0px 5px;
           margin: 0 1px;
-          background-color: #${palette.base0B};
-          color: #${palette.base02};
+          background-color: #${palette "base0B"};
+          color: #${palette "base02"};
         }
 
         #workspaces button:hover {
-          background-color: #${palette.base0C};
+          background-color: #${palette "base0C"};
         	box-shadow: inherit;
         	text-shadow: inherit;
         }
 
         #workspaces button.urgent {
-          background-color: #${palette.base08};
+          background-color: #${palette "base08"};
         }
 
         #workspaces button.focused,
         #workspaces button.active
         {
-          background-color: #${palette.base0D};
-          color: #${palette.base02};
+          background-color: #${palette "base0D"};
+          color: #${palette "base02"};
         }
 
         #custom-notification,
@@ -76,8 +76,8 @@ in
         #battery,
         #tray,
         #clock {
-          background-color: #${palette.base05};
-          color: #${palette.base02};
+          background-color: #${palette "base05"};
+          color: #${palette "base02"};
           padding: 0 10px;
           border-radius: 5px;
           margin: 0 1px;
@@ -85,13 +85,13 @@ in
 
 
         #battery.warning {
-          background-color: #${palette.base08};
-          color: #${palette.base02};
+          background-color: #${palette "base08"};
+          color: #${palette "base02"};
         }
 
         #battery.charging {
-          background-color: #${palette.base0D};
-          color: #${palette.base02};
+          background-color: #${palette "base0D"};
+          color: #${palette "base02"};
         }
 
         #custom-waybarmpris {
@@ -102,16 +102,16 @@ in
         }
 
         #tray {
-          background-color: #${palette.base03};
+          background-color: #${palette "base03"};
         }
 
 
         #pulseaudio.source-muted {
-          background-color: #${palette.base08};
+          background-color: #${palette "base08"};
         }
 
         #pulseaudio.muted {
-          background-color: #${palette.base08};
+          background-color: #${palette "base08"};
         }
 
         .modules-left > widget:first-child > #workspaces {
