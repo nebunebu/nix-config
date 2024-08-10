@@ -1,6 +1,4 @@
-{ self
-, inputs
-, lib
+{ inputs
 , pkgs
 , ...
 }:
@@ -18,7 +16,10 @@
       sugarCandyNix = {
         enable = true;
         settings = {
-          Background = lib.cleanSource "${self}/modules/nixOS/sddm/nixos-rose-pine.png";
+          Background = builtins.fetchurl {
+            url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/nixos-rose-pine.png";
+            sha256 = "084qgbicqiqwprb9m6l5jwij26rv8r73h76vba523z6q9rz0snlw";
+          };
           HaveFormBackground = false;
           HeaderText = "Welcome!";
           FormPosition = "left";
