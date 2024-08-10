@@ -16,7 +16,7 @@
     };
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       enableVteIntegration = true;
       localVariables.CLIPBOARD = "wlp";
