@@ -1,5 +1,6 @@
+{ self, ... }:
 {
-  imports = [ ../../../modules/homeManager ];
+  imports = [ "${self}/modules/homeManager" ];
 
   desktop = {
     kitty.enable = true;
