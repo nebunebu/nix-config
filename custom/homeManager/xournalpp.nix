@@ -1,8 +1,7 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
+{ lib
+, config
+, pkgs
+, ...
 }:
 let
   cfg = config.programs.xournalpp;
@@ -101,8 +100,8 @@ in
 
         rgbHelper =
           str: i: j:
-          (base16AttrSet.${lib.strings.elemAt (hexCharList str) i} * 16)
-          + (base16AttrSet.${lib.strings.elemAt (hexCharList str) j});
+          base16AttrSet.${lib.strings.elemAt (hexCharList str) i} * 16
+          + base16AttrSet.${lib.strings.elemAt (hexCharList str) j};
 
         hexToRGB =
           x:
