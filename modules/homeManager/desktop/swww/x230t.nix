@@ -1,8 +1,7 @@
-{
-  self,
-  lib,
-  config,
-  ...
+{ self
+, lib
+, config
+, ...
 }:
 let
   cfg = config.desktop.swww.x230t;
@@ -19,7 +18,10 @@ in
       enable = true;
       hyprlandIntegration.enable = true;
       monitors = {
-        "LVDS-1".wallpaper = ", ${./liminal-room.jpg}";
+        "LVDS-1".wallpaper = builtins.fetchurl {
+          url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/liminal-room.jpg";
+          sha256 = "03nd06pc57zs2vwns1zq6b2rzczpqxxqcax1pffp0gzcx66nmgmr";
+        };
       };
     };
   };
