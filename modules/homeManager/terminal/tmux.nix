@@ -1,14 +1,11 @@
-{
-  lib,
-  config,
-  pkgs,
-  unstablePkgs,
-  ...
+{ lib
+, config
+, pkgs
+, unstablePkgs
+, ...
 }:
 let
-  t = pkgs.tmuxPlugins;
-  ut = unstablePkgs.tmuxPlugins;
-  palette = config.stylix.base16Scheme.palette; # use inherit instead of this bs
+  palette = base: config.stylix.base16Scheme.palette.${base};
   cfg = config.terminal.tmux;
 in
 
@@ -37,8 +34,8 @@ in
         set -g status-position top
         set -g status-interval 1
 
-        set -g status-bg "#${palette.base00}"
-        set-option -g pane-active-border-style fg='#${palette.base09}'
+        set -g status-bg "#${palette "base00"}"
+        set-option -g pane-active-border-style fg='#${palette "base09"}'
 
         bind r source-file ~/.config/tmux/tmux.conf
 
@@ -86,73 +83,59 @@ in
         bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
       '';
 
-      plugins = [
-        # NOTE: prob should not use
-        # NOTE: relies on having certain prompt suffixes
-        # {
-        #   plugin = pkgs.tmuxPlugins.mkTmuxPlugin {
-        #     pluginName = "tmux-notify";
-        #     version = "unstable-2024-07-30";
-        #     src = pkgs.fetchFromGitHub {
-        #       owner = "rickstaa";
-        #       repo = "tmux-notify";
-        #       rev = "4e37358be51b22078e9361fd6ad0ae199cf03587";
-        #       sha256 = "sha256-0+Rydx4cVVHC916skJTXFZy0zHFaftB2p9ei6xS3MWY=";
-        #     };
-        #     rtpFilePath = "tmux-notify.tmux";
-        #   };
-        # }
-        {
-          plugin = ut.rose-pine;
-          extraConfig = ''
+
+      plugins =
+        let
+          usePlugin = name: extraConfig: {
+            inherit (pkgs.tmuxPlugins.${name}) plugin;
+            inherit extraConfig;
+          };
+          useUnstablePlugin = name: extraConfig: {
+            inherit (unstablePkgs.tmuxPlugins.${name}) plugin;
+            inherit extraConfig;
+          };
+        in
+        builtins.attrValues
+          {
+            inherit (pkgs.tmuxPlugins)
+              sensible
+              vim-tmux-navigator
+              yank
+              ;
+          } ++
+        [
+          (useUnstablePlugin "rose-pine" ''
             set -g @rose_pine_variant 'main'
             set -g @rose_pine_date_time '%_I:%M %a %D'
             set -g @rose_pine_show_pane_directory 'on'
             set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
             set -g @rose_pine_show_current_program 'on'
             set -g @rose_pine_show_pane_directory 'on'
-          '';
-        }
-        {
-          plugin = t.resurrect;
-          extraConfig = ''
-            # set -g @ressurect-strategy-nvim 'session'
-            # set -g @resurrect-capture-pane-contents 'on'
-          '';
-        }
-        {
-          plugin = t.continuum;
-          extraConfig = ''
+          '')
+          (usePlugin "continuum" ''
             set -g @continuum-restore 'on'
             set -g @continuum-save-interval '10'
-          '';
-        }
-        {
-          plugin = t.mode-indicator;
-          extraConfig = ''
+          '')
+          (usePlugin "resurrect" ''
+            set -g @ressurect-strategy-nvim 'session'
+            set -g @resurrect-capture-pane-contents 'on'
+          '')
+          (usePlugin "mode-indicator" ''
             set -g @mode_indicator_prefix_prompt ' WAIT '
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
-            set -g @mode_indicator_copy_mode_style 'bg=#${palette.base00},fg=#${palette.base09}'
-            set -g @mode_indicator_sync_mode_style 'bg=#${palette.base00},fg=#${palette.base08}'
-            set -g @mode_indicator_empty_mode_style 'bg=#${palette.base00},fg=#${palette.base0C}'
-          '';
-
-        }
-        {
-          plugin = t.extrakto;
-          extraConfig = ''
+            set -g @mode_indicator_copy_mode_style 'bg=#${palette "base00"},fg=#${palette "base09"}'
+            set -g @mode_indicator_sync_mode_style 'bg=#${palette "base00"},fg=#${palette "base08"}'
+            set -g @mode_indicator_empty_mode_style 'bg=#${palette "base00"},fg=#${palette "base0C"}'
+          '')
+          (usePlugin "extracto" ''
             set -g @extrakto_clip_tool wl-copy
             set -g @extrakto_editor nvim
             set -g @extrakto_open_tool firefox
             set -g @extrakto_filter_order 'url path line word'
-          '';
-        }
-        t.sensible
-        t.vim-tmux-navigator
-        t.yank # don't think this is working
-      ];
+          '')
+        ];
     };
   };
 }
