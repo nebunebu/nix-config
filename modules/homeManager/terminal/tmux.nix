@@ -87,11 +87,11 @@ in
       plugins =
         let
           usePlugin = name: extraConfig: {
-            inherit (pkgs.tmuxPlugins.${name}) plugin;
+            plugin = pkgs.tmuxPlugins.${name};
             inherit extraConfig;
           };
           useUnstablePlugin = name: extraConfig: {
-            inherit (unstablePkgs.tmuxPlugins.${name}) plugin;
+            plugin = unstablePkgs.tmuxPlugins.${name};
             inherit extraConfig;
           };
         in
@@ -129,7 +129,7 @@ in
             set -g @mode_indicator_sync_mode_style 'bg=#${palette "base00"},fg=#${palette "base08"}'
             set -g @mode_indicator_empty_mode_style 'bg=#${palette "base00"},fg=#${palette "base0C"}'
           '')
-          (usePlugin "extracto" ''
+          (usePlugin "extrakto" ''
             set -g @extrakto_clip_tool wl-copy
             set -g @extrakto_editor nvim
             set -g @extrakto_open_tool firefox
