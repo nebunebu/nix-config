@@ -84,97 +84,96 @@
   };
   outputs =
     inputs:
-      with inputs;
-      let
-        system = "x86_64-linux";
-        pkgs = nixpkgs.legacyPackages.${system};
-        unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
+    let
+      system = "x86_64-linux";
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
 
-        mkHost =
-          { hostName
-          , extraModules ? [ ]
-          , disableHomeManager ? false
-          ,
-          }:
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = {
-              inherit
-                inputs
-                self
-                system
-                pkgs
-                unstablePkgs
-                ;
-            };
-            modules =
-              [
-                ./hosts/${hostName}/nixOS/default.nix
-                inputs.stylix.nixosModules.stylix
-              ]
-              ++ extraModules
-              ++ (
-                if disableHomeManager then
-                  [ ]
-                else
-                  [
-                    {
-                      home-manager = {
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                        extraSpecialArgs = {
-                          inherit
-                            inputs
-                            self
-                            pkgs
-                            unstablePkgs
-                            ;
-                        };
+      mkHost =
+        { hostName
+        , extraModules ? [ ]
+        , disableHomeManager ? false
+        ,
+        }:
+        inputs.nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit
+              inputs
+              system
+              pkgs
+              unstablePkgs
+              ;
+            inherit (inputs) self;
+          };
+          modules =
+            [
+              ./hosts/${hostName}/nixOS/default.nix
+              inputs.stylix.nixosModules.stylix
+            ]
+            ++ extraModules
+            ++ (
+              if disableHomeManager then
+                [ ]
+              else
+                [
+                  {
+                    home-manager = {
+                      useGlobalPkgs = true;
+                      useUserPackages = true;
+                      users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
+                      extraSpecialArgs = {
+                        inherit
+                          inputs
+                          pkgs
+                          unstablePkgs
+                          ;
+                        inherit (inputs) self;
                       };
-                    }
-                  ]
-              );
-          };
-      in
-      {
-        nixosConfigurations = {
-          t5610 = mkHost { hostName = "t5610"; };
-          x230t = mkHost { hostName = "x230t"; };
-          g500s = mkHost { hostName = "g500s"; };
-          nixISO = mkHost {
-            hostName = "nixISO";
-            disableHomeManager = true;
-          };
+                    };
+                  }
+                ]
+            );
         };
-
-        checks = {
-          # NOTE: run `nix develop` to update hooks
-          pre-commit-check = pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              nixpkgs-fmt.enable = false;
-              deadnix = {
-                enable = true;
-                settings.noLambdaPatternNames = true;
-              };
-              nil.enable = false;
-              statix.enable = false;
-              # convco.enable = true;
-            };
-          };
-        };
-
-        devShells.${system}.default = pkgs.mkShell {
-          name = "nix-config";
-          packages = [
-            pkgs.convco
-            pkgs.nixfmt-rfc-style
-            pkgs.deadnix
-            pkgs.statix
-          ];
-          inherit (self.checks.pre-commit-check) shellHook;
-          buildInputs = self.checks.pre-commit-check.enabledPackages;
+    in
+    {
+      nixosConfigurations = {
+        t5610 = mkHost { hostName = "t5610"; };
+        x230t = mkHost { hostName = "x230t"; };
+        g500s = mkHost { hostName = "g500s"; };
+        nixISO = mkHost {
+          hostName = "nixISO";
+          disableHomeManager = true;
         };
       };
+
+      checks = {
+        # NOTE: run `nix develop` to update hooks
+        pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            nixpkgs-fmt.enable = false;
+            deadnix = {
+              enable = true;
+              settings.noLambdaPatternNames = true;
+            };
+            nil.enable = false;
+            statix.enable = false;
+            # convco.enable = true;
+          };
+        };
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        name = "nix-config";
+        packages = [
+          pkgs.convco
+          pkgs.nixfmt-rfc-style
+          pkgs.deadnix
+          pkgs.statix
+        ];
+        inherit (inputs.self.checks.pre-commit-check) shellHook;
+        buildInputs = inputs.self.checks.pre-commit-check.enabledPackages;
+      };
+    };
 }
