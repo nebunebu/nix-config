@@ -843,15 +843,18 @@
         "nixpkgs": "nixpkgs_3",
         "telescope-emoji-nvim": "telescope-emoji-nvim",
         "telescope-git-conflicts-nvim": "telescope-git-conflicts-nvim",
+        "tiny-code-action-nvim": "tiny-code-action-nvim",
+        "tiny-devicons-auto-colors-nvim": "tiny-devicons-auto-colors-nvim",
+        "tiny-inline-diagnostic-nvim": "tiny-inline-diagnostic-nvim",
         "tolerable": "tolerable",
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
-        "lastModified": 1723254819,
-        "narHash": "sha256-s0N/I5yRPG/81/CXrUdS21T2lVIwKGYzAaur+dw+XNs=",
+        "lastModified": 1723413456,
+        "narHash": "sha256-wOq07V/usyCZ7cbB3oTiBTqAzYiDwh0zK4PJWqDkTYM=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "d5d2a71d0355ac39648515c128b22f739b215e38",
+        "rev": "31a5c72e02d1e6d22cb12a9cb58e182d99892e53",
         "type": "github"
       },
       "original": {
@@ -1388,6 +1391,54 @@
       "original": {
         "owner": "Snikimonkd",
         "repo": "telescope-git-conflicts.nvim",
+        "type": "github"
+      }
+    },
+    "tiny-code-action-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722604456,
+        "narHash": "sha256-p1Q0j+cpOg/vDik2p/eO+6U2z58jJVFBUe40lHHjEac=",
+        "owner": "rachartier",
+        "repo": "tiny-code-action.nvim",
+        "rev": "57d7f97924859a14b089146bd97b84058a500cfb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rachartier",
+        "repo": "tiny-code-action.nvim",
+        "type": "github"
+      }
+    },
+    "tiny-devicons-auto-colors-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718559020,
+        "narHash": "sha256-JGI9y5Y0AocTO2M1Lt28UxVP0rZv20ZHJw0wKurJsh8=",
+        "owner": "rachartier",
+        "repo": "tiny-devicons-auto-colors.nvim",
+        "rev": "9be4af5b1bc1f26a11206ed7ce8bf44312e7941a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rachartier",
+        "repo": "tiny-devicons-auto-colors.nvim",
+        "type": "github"
+      }
+    },
+    "tiny-inline-diagnostic-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723294442,
+        "narHash": "sha256-Y2Suu8ISSKRvgVTEYo9Fl8+Z4d6ZjhtFGXjt0x2iw30=",
+        "owner": "rachartier",
+        "repo": "tiny-inline-diagnostic.nvim",
+        "rev": "7b212b214aed37d8ae1a26ac6ca9593223a23ddb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rachartier",
+        "repo": "tiny-inline-diagnostic.nvim",
         "type": "github"
       }
     },
