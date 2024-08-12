@@ -9,7 +9,7 @@
       nix-init
       nurl
       statix
-      vim-plugin-updater
+      vimPluginsUpdater
       ;
 
     inherit (unstablePkgs) nix-inspect nh nvd;
