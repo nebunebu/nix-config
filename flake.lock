@@ -818,11 +818,11 @@
     "markview": {
       "flake": false,
       "locked": {
-        "lastModified": 1721182264,
-        "narHash": "sha256-4fXdQWQwmMkzBIkXFvBlV352k6Df7LR4ib6wZhK7rfo=",
+        "lastModified": 1723400991,
+        "narHash": "sha256-dx6xydpLm0mg3QkZFPBT2Uc/14gu2yJWt0SFv95ccUg=",
         "owner": "OXY2DEV",
         "repo": "markview.nvim",
-        "rev": "316cafc79490f8b79c288bbe6638838d6d68e227",
+        "rev": "03290ce2e0c9e426c53dc9a1efabd8a6ee1f4904",
         "type": "github"
       },
       "original": {
@@ -850,11 +850,11 @@
         "triptych-nvim": "triptych-nvim"
       },
       "locked": {
-        "lastModified": 1723413456,
-        "narHash": "sha256-wOq07V/usyCZ7cbB3oTiBTqAzYiDwh0zK4PJWqDkTYM=",
+        "lastModified": 1723431458,
+        "narHash": "sha256-WEWEDUfMRhIgHwCdF7BAJ7cwPOD7ns8n7BBELG5LRjQ=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "31a5c72e02d1e6d22cb12a9cb58e182d99892e53",
+        "rev": "d953b732969bf428ea07b39315362a7aeb70c00f",
         "type": "github"
       },
       "original": {
