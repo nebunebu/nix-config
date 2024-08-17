@@ -900,11 +900,11 @@
         "tolerable": "tolerable"
       },
       "locked": {
-        "lastModified": 1723861793,
-        "narHash": "sha256-GbmHcD41lRuCGuMjqUTl5WQj4sohUk20iHeMfbm3VYs=",
+        "lastModified": 1723863656,
+        "narHash": "sha256-llaZYBHvEgRa2aGwY6avWGH4GNbZD03qDUuWa4JrueY=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "697dce85e66919d157dadd2df3738d7e8b9f5080",
+        "rev": "2f3f77ac4dc95920c8cc94eb323bb3af72481dc3",
         "type": "github"
       },
       "original": {
