@@ -41,6 +41,10 @@
             man "$1" 2>/dev/null | sed 's/\x1B\[[0-9;]*m//g' | nvim -c 'set ft=man' -
           }
 
+          function nfd() {
+            nvim $(fd "$1" | fzf)
+          }
+
           # Function to kill processes using fzf
           function fzf-kill-process() {
             local pid
