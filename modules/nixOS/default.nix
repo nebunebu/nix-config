@@ -18,5 +18,6 @@
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.system}".default
+    # pkgs.hyprpanel
   ];
 }
