@@ -57,6 +57,10 @@
       submodules = true;
     };
 
+    tool-suites.url = "github:nebunebu/tool-suites";
+
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
     };
@@ -82,11 +86,51 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+
+  # outputs = inputs: {
+
+
+  #   devShells = builtins.mapAttrs
+  #     (
+  #       system: _:
+  #         let
+  #           pkgs = import inputs.nixpkgs {
+  #             inherit system;
+  #             overlays = [
+  #               inputs.tool-suites.overlays.default
+  #             ];
+  #           };
+  #         in
+  #         {
+  #           default = pkgs.mkShell {
+  #             name = "testShell";
+  #             packages = [
+  #               pkgs.tool-suite.bash
+  #               pkgs.tool-suite.html
+  #               pkgs.tool-suite.lua
+  #               pkgs.tool-suite.latex
+  #               pkgs.tool-suite.nix
+  #               pkgs.tool-suite.yaml
+  #             ];
+  #           };
+  #         }
+  #     )
+  #     inputs.nixpkgs.legacyPackages;
+  # };
+
   outputs =
     inputs:
     let
       system = "x86_64-linux";
-      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      # pkgs = inputs.nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        overlays = [
+          inputs.tool-suites.overlays.default
+          # inputs.hyprpanel.overlay
+        ];
+      };
       unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
 
       mkHost =

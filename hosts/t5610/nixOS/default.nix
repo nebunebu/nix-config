@@ -1,8 +1,7 @@
-{
-  self,
-  inputs,
-  pkgs,
-  ...
+{ self
+, inputs
+, pkgs
+, ...
 }:
 
 {

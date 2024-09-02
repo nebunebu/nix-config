@@ -1,7 +1,9 @@
 { self, ... }:
 
 {
-  imports = [ "${self}/modules/homeManager" ];
+  imports = [
+    "${self}/modules/homeManager"
+  ];
 
   desktop = {
     chromium.enable = true;
