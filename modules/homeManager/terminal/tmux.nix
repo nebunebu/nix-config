@@ -105,12 +105,12 @@ in
           } ++
         [
           (useUnstablePlugin "rose-pine" ''
-            set - g @rose_pine_variant 'main'
-                  set -g @rose_pine_date_time '%_I:%M %a %D'
-                  set -g @rose_pine_show_pane_directory 'on'
-                  set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
-                  set -g @rose_pine_show_current_program 'on'
-                  set -g @rose_pine_show_pane_directory 'on'
+            set -g @rose_pine_variant 'main'
+            set -g @rose_pine_date_time '%_I:%M %a %D'
+            set -g @rose_pine_show_pane_directory 'on'
+            set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator} #{continuum_status} '
+            set -g @rose_pine_show_current_program 'on'
+            set -g @rose_pine_show_pane_directory 'on'
           '')
           (usePlugin "continuum" ''
             set -g @continuum-restore 'on'
