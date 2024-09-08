@@ -1,14 +1,17 @@
 # nix-config
 
 > [!Warning]
-> These configs are always evolving so the READEME.md
-> may not accurately reflect the codebase.
+> This codebase is constantly evolving and may (very likely) not
+> be accurately reflected in its README.md
 >
 > Don't expect to be able to clone this repo and use.
 > Not having the key for sops-nix will prevent you from
 > doing so.
 
-This is my personal flake for my nix-configs.
+This is my personal flake for my NixOS configurations. It aims to be
+modular, navigable, comprehensible, worthy of at least 6 upvotes
+on [/r/unixporn](https://reddit.com/r/unixporn), convenient (for me)
+to use, and bereft of jankiness.
 
 ## Features
 
@@ -84,12 +87,32 @@ The devShell and checks configuration are under `./nix` as `./nix/shell.nix` and
 
 Secrets are under `./secrets`
 
+## Usage
+
+In theory you should be able to clone, disable sops-nix and the applications that
+depend on it (tuir for instance), change the user password, and run a `sudo
+nixos-rebuild switch --flake ./[pathtoclone]#host` and use, but I have not
+confirmed this.
+
+I have some intention to set up a guest user and amend this readme with a simple
+installation guide, although it may be a long time until I get around to it.
+
+## Showcase
+
+- Desktop
+- Terminal
+- Launcher
+- Pdf Viewer
+- Neovim
+
 ## TODO
 
 - [ ] add installation instructions
 - [ ] add image previews
 - [ ] migrate to ags
 - [ ] set up pkg overlays
+- [ ] add host for nix-droid
+- [ ] set up impermanence
 
 ## Contributing
 
