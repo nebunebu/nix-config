@@ -1,52 +1,64 @@
-{ pkgs, lib, config, ... }:
+{ lib, pkgs, ... }:
+
 {
-  # import = [
-  #   ../modules/nixOS/stylix.nix
-  # ];
+  isEven = n: n lib.mod 2 == 0;
 
-  palette = base: config.stylix.base16Scheme.palette.${base};
-
-  # hexToRGB =
+  # fromYAML = file:
   #   let
-  #     base16AttrSet = {
-  #       "0" = 0;
-  #       "1" = 1;
-  #       "2" = 2;
-  #       "3" = 3;
-  #       "4" = 4;
-  #       "5" = 5;
-  #       "6" = 6;
-  #       "7" = 7;
-  #       "8" = 8;
-  #       "9" = 9;
-  #       "a" = 10;
-  #       "A" = 10;
-  #       "b" = 11;
-  #       "B" = 11;
-  #       "c" = 12;
-  #       "C" = 12;
-  #       "d" = 13;
-  #       "D" = 13;
-  #       "e" = 14;
-  #       "E" = 14;
-  #       "f" = 15;
-  #       "F" = 15;
-  #     };
-  #
-  #     hexCharList = lib: x: lib.stringToCharacters x;
-  #     rgbHelper =
-  #       lib: str: i: j:
-  #       base16AttrSet.${lib.strings.elemAt (hexCharList str) i} * 16
-  #       + base16AttrSet.${lib.strings.elemAt (hexCharList str) j};
+  #     json = pkgs.runCommand "converted.json" { } ''
+  #       ${lib.meta.getExe pkgs.yj} < ${file} > $out
+  #     '';
   #   in
-  #   x:
-  #   "${builtins.toString (rgbHelper x 0 1)} ${builtins.toString (rgbHelper x 2 3)} ${
-  # builtins.toString (rgbHelper x 4 5)
-  # }";
+  #   builtins.fromJSON (builtins.readFile json);
   #
-  # hexToRGBWithCommas =
-  #   x:
-  #   "${builtins.toString (rgbHelper x 0 1)}, ${builtins.toString (rgbHelper x 2 3)}, ${
-  #     builtins.toString (rgbHelper x 4 5)
-  #   }";
+  # TODO: add
+  # mkHost
+  # mapSystems
+
+  mkHost =
+    { hostName
+    , extraModules ? [ ]
+    , disableHomeManager ? false
+    ,
+    }:
+    inputs.nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit
+          inputs
+          system
+          pkgs
+          unstablePkgs
+          ;
+        inherit (inputs) self;
+      };
+      modules =
+        [
+          ./hosts/${hostName}/nixOS/default.nix
+          inputs.stylix.nixosModules.stylix
+        ]
+        ++ extraModules
+        ++ (
+          if disableHomeManager then
+            [ ]
+          else
+            [
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
+                  extraSpecialArgs = {
+                    inherit
+                      inputs
+                      pkgs
+                      unstablePkgs
+                      ;
+                    inherit (inputs) self;
+                  };
+                };
+              }
+            ]
+        );
+    };
 }
