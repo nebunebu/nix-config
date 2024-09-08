@@ -94,16 +94,25 @@ depend on it (tuir for instance), change the user password, and run a `sudo
 nixos-rebuild switch --flake ./[pathtoclone]#host` and use, but I have not
 confirmed this.
 
-I have some intention to set up a guest user and amend this readme with a simple
+I have some intention to set up a guest user and amending this readme with a simple
 installation guide, although it may be a long time until I get around to it.
 
 ## Showcase
 
-- Desktop
-- Terminal
-- Launcher
-- Pdf Viewer
-- Neovim
+### Desktop
+
+![Display Manager](https://private-user-images.githubusercontent.com/87451010/365465304-090c9ffa-8217-4916-922b-ee6a5e7c6af8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4Mjc2NjIsIm5iZiI6MTcyNTgyNzM2MiwicGF0aCI6Ii84NzQ1MTAxMC8zNjU0NjUzMDQtMDkwYzlmZmEtODIxNy00OTE2LTkyMmItZWU2YTVlN2M2YWY4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTA4VDIwMjkyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNlMTMxYTg4YmE2YmFlMjFhYWUyMTk2NzM4OTMwOWUzZjliNmMzNmJiNzQ1OTVmNzdmM2MzNDViMjBiOGFiZTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.ngO4L_T5rR6cW0e8t15m1oxYw1xepVjv5ZZB6Fc_Obo)
+
+![Desktop](https://private-user-images.githubusercontent.com/87451010/365465233-4c6dd083-683a-41ec-8f7e-ab0b53d07fc7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4Mjc2NjIsIm5iZiI6MTcyNTgyNzM2MiwicGF0aCI6Ii84NzQ1MTAxMC8zNjU0NjUyMzMtNGM2ZGQwODMtNjgzYS00MWVjLThmN2UtYWIwYjUzZDA3ZmM3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTA4VDIwMjkyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE3OGJjNDE2NTQ2YWRkYmYzMTkzZjk5NWQyMjNlZTc5MTVkMzllOTM2NTM1YThjOTAzMDRmYTFhMjVlNTE2YmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Bx727_dtq_JG2qiB4JltdAMWASmtZcq82zDme2EeFFk)
+
+![Terminal](https://private-user-images.githubusercontent.com/87451010/365465242-e8d8394f-c079-4818-9fa9-107218585516.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4Mjc2NjIsIm5iZiI6MTcyNTgyNzM2MiwicGF0aCI6Ii84NzQ1MTAxMC8zNjU0NjUyNDItZThkODM5NGYtYzA3OS00ODE4LTlmYTktMTA3MjE4NTg1NTE2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTA4VDIwMjkyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5Yzg5YjM4NjUwNTM2MTBhZWYxYmQxY2EzZGY5NWVmMGI5MDllZjg0ODI5YjQxYjg4NDFkNThmNjM3MTU2YzEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jrk0zcTVXHOa-cDw3KM26Uur6X7afjfczlONPk0bt2Q)
+
+<!-- - Launcher -->
+<!-- - Pdf Viewer -->
+<!-- - Neovim -->
+<!-- - pyprland dropdowns -->
+<!-- - actually using tuir with popup mpv -->
+<!-- - actually using newsboat with popups -->
 
 ## TODO
 
@@ -113,6 +122,7 @@ installation guide, although it may be a long time until I get around to it.
 - [ ] set up pkg overlays
 - [ ] add host for nix-droid
 - [ ] set up impermanence
+- [ ] add substituters
 
 ## Contributing
 
