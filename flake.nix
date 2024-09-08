@@ -89,62 +89,18 @@
     inputs:
     let
       system = "x86_64-linux";
-      # pkgs = inputs.nixpkgs.legacyPackages.${system};
+      self = ./.;
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
           inputs.tool-suites.overlays.default
-          # inputs.hyprpanel.overlay
+          # (import ./overlays/default.nix { inherit inputs; })
         ];
       };
       unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
-
-      mkHost =
-        { hostName
-        , extraModules ? [ ]
-        , disableHomeManager ? false
-        ,
-        }:
-        inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              system
-              pkgs
-              unstablePkgs
-              ;
-            inherit (inputs) self;
-          };
-          modules =
-            [
-              ./hosts/${hostName}/nixOS/default.nix
-              inputs.stylix.nixosModules.stylix
-            ]
-            ++ extraModules
-            ++ (
-              if disableHomeManager then
-                [ ]
-              else
-                [
-                  {
-                    home-manager = {
-                      useGlobalPkgs = true;
-                      useUserPackages = true;
-                      users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                      extraSpecialArgs = {
-                        inherit
-                          inputs
-                          pkgs
-                          unstablePkgs
-                          ;
-                        inherit (inputs) self;
-                      };
-                    };
-                  }
-                ]
-            );
-        };
+      mkHost = import ./lib/mkHost.nix {
+        inherit inputs self system pkgs unstablePkgs;
+      };
     in
     {
       nixosConfigurations = {
