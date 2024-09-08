@@ -17,6 +17,6 @@
 
   home.packages = [
     pkgs.pavucontrol
-    pkgs.xournalpp
+    # pkgs.xournalpp
   ];
 }

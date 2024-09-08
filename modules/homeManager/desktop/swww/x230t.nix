@@ -7,7 +7,7 @@ let
   cfg = config.desktop.swww.x230t;
 in
 {
-  imports = [ "${self}/custom/homeManager/swww.nix" ];
+  imports = [ "${self}/extModules/homeManager/swww.nix" ];
 
   options.desktop.swww = {
     x230t.enable = lib.mkEnableOption "enable swww settings for x230t";
