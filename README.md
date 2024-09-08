@@ -11,6 +11,7 @@ It is a work in progress.
   - t5610 (desktop)
   - x230t (laptop with tablet functionality)
   - g500s (server)
+  - nixISO (iso image)
 - Home Manager Integration
 - Custom Packages
 - Secrets Management with `sops-nix`
