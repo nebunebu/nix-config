@@ -1,7 +1,7 @@
 {
   imports = [
     ./core
-    ./file-expolorers
+    ./file-navigation
     ./media
     ./productivity
     ./utilities
