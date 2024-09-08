@@ -119,11 +119,7 @@ installation guide, although it may be a long time until I get around to it.
 
 ![Terminal](https://private-user-images.githubusercontent.com/87451010/365465242-e8d8394f-c079-4818-9fa9-107218585516.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU4Mjc2NjIsIm5iZiI6MTcyNTgyNzM2MiwicGF0aCI6Ii84NzQ1MTAxMC8zNjU0NjUyNDItZThkODM5NGYtYzA3OS00ODE4LTlmYTktMTA3MjE4NTg1NTE2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA5MDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwOTA4VDIwMjkyMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5Yzg5YjM4NjUwNTM2MTBhZWYxYmQxY2EzZGY5NWVmMGI5MDllZjg0ODI5YjQxYjg4NDFkNThmNjM3MTU2YzEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.jrk0zcTVXHOa-cDw3KM26Uur6X7afjfczlONPk0bt2Q)
 
-- tmux bar and panes
-- newsboat
-- nitch
-- tuir
-- fzf completion
+ tmux bar and panes - newsboat - nitch - tuir - fzf completion
 
 <!-- - Launcher -->
 <!-- - Pdf Viewer -->
