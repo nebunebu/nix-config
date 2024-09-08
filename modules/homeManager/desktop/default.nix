@@ -2,17 +2,12 @@
 
 {
   imports = [
-    ./chromium.nix
-    ./firefox
-    ./fuzzel
-    ./hyprland
-    ./kitty.nix
-    ./mpv.nix
-    ./sioyek.nix
-    ./swaync
-    ./swww
-    ./vesktop.nix
-    ./waybar
+    ./browsers
+    ./communication
+    ./core
+    ./media
+    ./productivity
+    ./utilities
   ];
 
   home.packages = [
