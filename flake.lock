@@ -1056,6 +1056,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1724819573,
+        "narHash": "sha256-GnR7/ibgIH1vhoy8cYdmXE6iyZqKqFxQSVkFgosBh6w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "71e91c409d1e654808b2621f28a327acfdad8dc2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -1146,7 +1162,8 @@
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "swww": "swww",
-        "tool-suites": "tool-suites_2"
+        "tool-suites": "tool-suites_2",
+        "zen-browser": "zen-browser"
       }
     },
     "sddm-sugar-candy-nix": {
