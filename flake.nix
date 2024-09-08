@@ -13,6 +13,8 @@
       url = "github:danth/stylix";
     };
 
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+
     swww = {
       url = "github:LGFae/swww";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
