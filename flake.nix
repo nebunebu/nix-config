@@ -89,38 +89,6 @@
     };
   };
 
-
-  # outputs = inputs: {
-
-
-  #   devShells = builtins.mapAttrs
-  #     (
-  #       system: _:
-  #         let
-  #           pkgs = import inputs.nixpkgs {
-  #             inherit system;
-  #             overlays = [
-  #               inputs.tool-suites.overlays.default
-  #             ];
-  #           };
-  #         in
-  #         {
-  #           default = pkgs.mkShell {
-  #             name = "testShell";
-  #             packages = [
-  #               pkgs.tool-suite.bash
-  #               pkgs.tool-suite.html
-  #               pkgs.tool-suite.lua
-  #               pkgs.tool-suite.latex
-  #               pkgs.tool-suite.nix
-  #               pkgs.tool-suite.yaml
-  #             ];
-  #           };
-  #         }
-  #     )
-  #     inputs.nixpkgs.legacyPackages;
-  # };
-
   outputs =
     inputs:
     let
@@ -193,18 +161,18 @@
         };
       };
 
-      checks = builtins.mapAttrs (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }) inputs.nixpkgs.legacyPackages;
+      checks = builtins.mapAttrs
+        (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; })
+        inputs.nixpkgs.legacyPackages;
 
-      devShells.${system}.default = pkgs.mkShell {
-        name = "nix-config";
-        packages = [
-          pkgs.convco
-          pkgs.nixfmt-rfc-style
-          pkgs.deadnix
-          pkgs.statix
-        ];
-        inherit (inputs.self.checks.pre-commit-check) shellHook;
-        buildInputs = inputs.self.checks.pre-commit-check.enabledPackages;
-      };
+      devShells = builtins.mapAttrs
+        (system: pkgs: {
+          default = import ./nix/shell.nix {
+            inherit pkgs;
+            checks = inputs.self.checks.${system};
+          };
+        })
+        inputs.nixpkgs.legacyPackages;
+
     };
 }

@@ -1,4 +1,4 @@
-{ inputs, system, ... }:
+{ inputs, system, pkgs, ... }:
 
 {
   # NOTE: run `nix develop` to update hooks
