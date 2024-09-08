@@ -41,8 +41,9 @@ to use, and bereft of jankiness.
 | **Terminal:**          | [kitty](https://github.com/kovidgoyal/kitty)                                   |
 | **Multiplexer:**       | [tmux](https://github.com/tmux/tmux)                                           |
 |                        |                                                                                |
-| **Browser:**           | [firefox](https://firefox-source-docs.mozilla.org/contributing/index.html)     |
+| **Browser:**           | [firefox](https://firefox-source-docs.mozilla.org/contributing/index.html), chromium, zen     |
 | **Video Player:**      | [mpv](https://mpv.io/)                                                         |
+| **Music:**      | spotube |
 | **Pdf Viewer:**        | [sioyek](https://sioyek.info)                                                  |
 |                        | [xournalpp](https://github.com/xournalpp/xournalpp)                            |
 | **WM:**                | [hyprland](https://github.com/hyprwm/Hyprland)                                 |
