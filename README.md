@@ -138,6 +138,7 @@ installation guide, although it may be a long time until I get around to it.
 - [ ] add host for nix-droid
 - [ ] set up impermanence
 - [ ] add substituters
+- [ ] add CI/CD
 
 ## Contributing
 
