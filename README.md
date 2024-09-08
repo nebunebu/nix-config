@@ -1,8 +1,14 @@
 # nix-config
 
-This is my personal flake for my nix-configs.
+> [!Warning]
+> These configs are always evolving so the READEME.md
+> may not accurately reflect the codebase.
+>
+> Don't expect to be able to clone this repo and use
+> Not having the key for sops-nix will prevent you from
+> doing so.
 
-It is a work in progress.
+This is my personal flake for my nix-configs.
 
 ## Features
 
@@ -39,6 +45,12 @@ It is a work in progress.
 | **Status Bar:**        | [waybar](https://github.com/Alexays/Waybar)                                    |
 | **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                     |
 | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)                                  |
+
+# TODO
+
+- [ ] add installation instructions
+- [ ] add image previews
+- [ ] migrate to ags
 
 ## Special Thanks
 
