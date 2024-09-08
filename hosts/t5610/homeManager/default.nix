@@ -3,6 +3,7 @@
 {
   imports = [
     "${self}/modules/homeManager"
+    ../../../modules/homeManager/development/repopack.nix
   ];
 
   desktop = {
