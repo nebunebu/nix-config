@@ -4,10 +4,14 @@
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
 
-    bindm = [
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
+    bindmd = [
+      "$mainMod, mouse:272, Move Window, movewindow"
+      "$mainMod, mouse:273, Resize Window, resizewindow"
     ];
+
+    # bindd = [
+    #   "$mainMod, F, fullscreen,fullscreen, 3"
+    # ];
 
     binde = [
       ",XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%-"
@@ -31,6 +35,7 @@
 
       "$mainMod, X, killactive"
       "$mainMod, M, fullscreen, 1"
+      "$mainMod + SHIFT, M, fullscreen, 2"
       "$mainMod, F, togglefloating"
       "$mainMod, V, exec, cliphist-menu"
 

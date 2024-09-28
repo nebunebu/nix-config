@@ -1,8 +1,9 @@
-{
-  lib,
-  config,
-  unstablePkgs,
-  ...
+{ lib
+, pkgs
+, self
+, config
+, unstablePkgs
+, ...
 }:
 let
   cfg = config.desktop.hyprland.pyprland.spotube;
@@ -12,14 +13,16 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    home.packages = [ unstablePkgs.spotube ];
+    home.packages = [
+      (pkgs.callPackage ../../../../../../../pkgs/spotube.nix { })
+    ];
 
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
       text = # toml
         ''
           [scratchpads.spotube]
-          command = "${unstablePkgs.spotube}/bin/spotube"
+          command = "${(pkgs.callPackage ../../../../../../../pkgs/spotube.nix { })}/bin/spotube"
           animation = "fromTop"
           class = "spotube"
           lazy = true

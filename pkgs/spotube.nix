@@ -7,16 +7,15 @@
 , makeWrapper
 , undmg
 , wrapGAppsHook3
+, gtk3
+, libsoup_3
+, webkitgtk_4_1
+, glib-networking
 , libappindicator
 , libnotify
 , mpv-unwrapped
 , xdg-user-dirs
-, webkitgtk_4_1
-, libsoup_3
-, gtk3
-, glib
-, mesa
-, libGL
+,
 }:
 
 let
@@ -55,7 +54,7 @@ let
 
     src = fetchArtifact {
       filename = "Spotube-macos-universal.dmg";
-      hash = "sha256-XqVH1xsOWMzry9zeUu1t5EuEWxXTn5TSYdZYgN3c4vg=";
+      hash = "sha256-qQDbGRnia8JAclm2AgT2FCxhYS6WoNuDWIMbG76pDB0=";
     };
 
     sourceRoot = ".";
@@ -90,16 +89,13 @@ let
     ];
 
     buildInputs = [
-      # glib
       gtk3
-      # libGL
       libappindicator
       libnotify
-      # libsecret
       libsoup_3
-      mesa
       mpv-unwrapped
       webkitgtk_4_1
+      glib-networking
     ];
 
     dontWrapGApps = true;
@@ -119,17 +115,8 @@ let
     postFixup = ''
       makeWrapper $out/share/spotube/spotube $out/bin/spotube \
           "''${gappsWrapperArgs[@]}" \
-          --prefix LD_LIBRARY_PATH : $out/share/spotube/lib:${lib.makeLibraryPath [ 
-            mpv-unwrapped 
-            webkitgtk_4_1 
-            libsoup_3 
-            gtk3 
-            glib 
-            mesa 
-            libGL 
-          ]} \
-          --prefix PATH : ${lib.makeBinPath [ xdg-user-dirs ]} \
-          --set LIBGL_ALWAYS_SOFTWARE 1
+          --prefix LD_LIBRARY_PATH : $out/share/spotube/lib:${lib.makeLibraryPath [ mpv-unwrapped ]} \
+          --prefix PATH : ${lib.makeBinPath [ xdg-user-dirs ]}
     '';
   };
 in
