@@ -30,6 +30,7 @@
     swww.t5610.enable = true;
     vesktop.enable = true;
     waybar.t5610.enable = true;
+    productivity.obsidian.enable = true;
   };
 
   development = {
