@@ -92,12 +92,20 @@
       self = ./.;
       pkgs = import inputs.nixpkgs {
         inherit system;
+        config = { allowUnfree = true; };
         overlays = [
           inputs.tool-suites.overlays.default
           # (import ./overlays/default.nix { inherit inputs; })
         ];
       };
-      unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
+      # unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
+      unstablePkgs = import inputs.nixpkgs-unstable {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
+
       mkHost = import ./lib/mkHost.nix {
         inherit inputs self system pkgs unstablePkgs;
       };
