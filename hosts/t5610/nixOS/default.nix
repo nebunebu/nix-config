@@ -12,6 +12,8 @@
     ./builder.nix
   ];
 
+  services.gvfs.enable = true;
+
   environment.systemPackages = [
     pkgs.qbittorrent
     pkgs.calibre
