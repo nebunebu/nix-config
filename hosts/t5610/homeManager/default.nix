@@ -1,8 +1,8 @@
-{ self, ... }:
+{ inputs, self, ... }:
 
 {
   imports = [
-    "${self}/modules/homeManager"
+    "${inputs.self}/modules/homeManager"
     ../../../modules/homeManager/development/repopack.nix
   ];
 
