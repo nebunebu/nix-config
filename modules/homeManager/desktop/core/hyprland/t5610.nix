@@ -9,10 +9,10 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    home.sessionVariables = {
-      AQ_DRM_DEVICES = "/dev/dri/by-path/pci-0000:02:00.0-card:/dev/dri/card1:/dev/dri/renderD128";
-      HYPRLAND_TRACE = 1;
-    };
+    # home.sessionVariables = {
+    #   AQ_DRM_DEVICES = "/dev/dri/by-path/pci-0000:02:00.0-card:/dev/dri/card1:/dev/dri/renderD128";
+    #   HYPRLAND_TRACE = 1;
+    # };
 
     wayland.windowManager.hyprland.settings = {
       monitor = [
