@@ -10,7 +10,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.05";
     };
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
