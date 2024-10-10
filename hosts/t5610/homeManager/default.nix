@@ -1,8 +1,8 @@
-{ self, ... }:
+{ inputs, self, ... }:
 
 {
   imports = [
-    "${self}/modules/homeManager"
+    "${inputs.self}/modules/homeManager"
     ../../../modules/homeManager/development/repopack.nix
   ];
 
@@ -30,6 +30,7 @@
     swww.t5610.enable = true;
     vesktop.enable = true;
     waybar.t5610.enable = true;
+    productivity.obsidian.enable = true;
   };
 
   development = {
