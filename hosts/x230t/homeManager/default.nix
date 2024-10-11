@@ -12,6 +12,7 @@
   home.packages = [
     # pkgs.zoom
     # pkgs.aileron
+
   ];
 
   tablet = {
