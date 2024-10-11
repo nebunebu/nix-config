@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.hyprland.pyprland.noogle;
+  cfg = config.desktop.core.hyprland.pyprland.noogle;
 in
 {
-  options.desktop.hyprland.pyprland.noogle.enable = lib.mkEnableOption "enable pyprland noogle dropdown";
+  options.desktop.core.hyprland.pyprland.noogle.enable = lib.mkEnableOption "enable pyprland noogle dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {

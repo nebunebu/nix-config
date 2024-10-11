@@ -1,18 +1,17 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
+{ pkgs
+, config
+, lib
+, ...
 }:
 let
-  cfg = config.desktop.waybar;
+  cfg = config.desktop.core.waybar;
   wbm = builtins.import ./modules.nix;
 in
 {
   imports = [ ./style.nix ];
 
   options = {
-    desktop.waybar = {
+    desktop.core.waybar = {
       device = lib.mkOption {
         type = lib.types.nullOr (
           lib.types.enum [

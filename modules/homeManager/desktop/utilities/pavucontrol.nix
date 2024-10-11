@@ -1,6 +1,14 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
+let
+  cfg = config.desktop.utilities.pavucontrol;
+in
+
 {
-  home.packages = [
-    pkgs.pavucontrol
-  ];
+  options.desktop.utilities.pavucontrol = {
+    enable = lib.mkEnableOption "enable pavucontrol";
+  };
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.pavucontrol ];
+  };
 }

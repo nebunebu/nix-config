@@ -7,34 +7,53 @@
   ];
 
   desktop = {
-    chromium.enable = true;
-    firefox.enable = true;
-    fuzzel.enable = true;
-    mpv.enable = true;
-    media = {
-      obs-studio.enable = true;
-      spotube.enable = true;
+    browsers = {
+      chromium.enable = true;
+      firefox.enable = true;
+      # zen.enable = true;
     };
-    hyprland = {
-      enable = true;
-      hyprexpo.enable = false;
-      t5610.enable = true;
-      pyprland = {
+    communications = {
+      vesktop.enable = true;
+    };
+    core = {
+      hyprland = {
         enable = true;
-        btm.enable = true;
-        claude.enable = true;
-        hmOptions.enable = true;
-        nixpkgs.enable = true;
-        noogle.enable = true;
-        # spotube.enable = true;
+        t5610.enable = true;
+        pyprland = {
+          enable = true;
+          btm.enable = true;
+          claude.enable = true;
+          hmOptions.enable = true;
+          nixpkgs.enable = true;
+          noogle.enable = true;
+          # spotube.enable = true;
+        };
+        # hyprexpo.enable = true;
+      };
+      swaync.enable = true;
+      waybar = {
+        t5610.enable = true;
       };
     };
-    kitty.enable = true;
-    sioyek.enable = true;
-    swww.t5610.enable = true;
-    vesktop.enable = true;
-    waybar.t5610.enable = true;
-    productivity.obsidian.enable = true;
+    media = {
+      # follow.enable = true;
+      mpv.enable = true;
+      obs-studio.enable = true;
+      sioyek.enable = true;
+      spotube.enable = true;
+      # xournalpp.enable = true;
+    };
+    productivity = {
+      obsidian.enable = true;
+      # pomodoro-logger = true;
+      # super-productivity = true;
+    };
+    utilities = {
+      fuzzel.enable = true;
+      kitty.enable = true;
+      pavucontrol.enable = true;
+      swww.t5610.enable = true;
+    };
   };
 
   development = {
