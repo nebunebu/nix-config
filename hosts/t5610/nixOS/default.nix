@@ -1,8 +1,7 @@
-{
-  self,
-  inputs,
-  pkgs,
-  ...
+{ self
+, inputs
+, pkgs
+, ...
 }:
 
 {
@@ -13,12 +12,16 @@
     ./builder.nix
   ];
 
+  services.gvfs.enable = true;
+
   environment.systemPackages = [
     pkgs.qbittorrent
     pkgs.calibre
 
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
+
+    (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
   ];
 
   sops.enable = true;

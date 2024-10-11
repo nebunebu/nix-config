@@ -1,9 +1,7 @@
-{
-  self,
-  lib,
-  pkgs,
-  unstablePkgs,
-  ...
+{ lib
+, pkgs
+, unstablePkgs
+, ...
 }:
 
 let
@@ -28,7 +26,10 @@ in
 
   stylix = {
     enable = true;
-    image = "${self}/modules/homeManager/desktop/swww/liminal-tv.jpg";
+    image = builtins.fetchurl {
+      url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/liminal-tv.jpg";
+      sha256 = "1mvvmc5nj45apbiqlia02vnnmmjpzb88v921zl2pjddkzsdhzi3s";
+    };
     base16Scheme = fromYAML "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.rose-pine-cursor;

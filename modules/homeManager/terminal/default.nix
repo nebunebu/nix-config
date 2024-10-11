@@ -1,23 +1,17 @@
-{ pkgs, ... }:
 {
   imports = [
-    ./lf.nix
-    ./bat.nix
-    ./buku.nix
-    ./fzf.nix
-    ./tmux.nix
-    ./yazi.nix
-    ./cli-tools.nix
-    ./nix-tools.nix
-    ./taskwarrior.nix
-    ./zsh
-    ./newsboat
+    ./core
+    ./file-navigation
+    ./media
+    ./productivity
+    ./utilities
   ];
 
   home.packages = [
-    # ffmpeg
-    # distrobox
-    pkgs.lazygit
-    # invidtui
+    # TODO:
+    # ffmpeg -> media
+    # distrobox -> virtualisation
+    # pkgs.lazygit -> development
+    # invidtui -> media
   ];
 }

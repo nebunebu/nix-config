@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkg, ... }:
 {
   imports = [
     # ./awscli.nix
@@ -46,6 +46,8 @@
     bash.enable = true;
     zsh.enable = true;
   };
+
+  nixpkgs.config = { allowUnfree = true; };
 
   systemd.user.startServices = "sd-switch";
 }

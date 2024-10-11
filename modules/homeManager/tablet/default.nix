@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./wvkbd.nix
-  ];
-}
+{ imports = [ ./wvkbd.nix ]; }

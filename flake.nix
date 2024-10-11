@@ -10,8 +10,10 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.05";
     };
+
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     swww = {
       url = "github:LGFae/swww";
@@ -23,13 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim-flake = {
-    #   url = "github:nebunebu/nixvim";
-    # };
-    #
-    # my-nvim = {
-    #   url = "github:nebunebu/my-nvim";
-    # };
     nebvim.url = "github:nebunebu/nebvim";
 
     sddm-sugar-candy-nix = {
@@ -55,14 +50,14 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      # rev = "918d8340afd652b011b937d29d5eea0be08467f5"; # v0.41.2
-      # rev = "9e781040d9067c2711ec2e9f5b47b76ef70762b3"; # v0.41.1
-      # rev = "cba1ade848feac44b2eda677503900639581c3f4"; # v0.41.0
-      # rev = "fe7b748eb668136dd0558b7c8279bfcd7ab4d759"; # v0.39.1
       rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
 
       submodules = true;
     };
+
+    tool-suites.url = "github:nebunebu/tool-suites";
+
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
@@ -89,60 +84,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     inputs:
-    with inputs;
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      unstablePkgs = nixpkgs-unstable.legacyPackages.${system};
-
-      mkHost =
-        {
-          hostName,
-          extraModules ? [ ],
-          disableHomeManager ? false,
-        }:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              self
-              system
-              pkgs
-              unstablePkgs
-              ;
-          };
-          modules =
-            [
-              ./hosts/${hostName}/nixOS/default.nix
-              inputs.stylix.nixosModules.stylix
-            ]
-            ++ extraModules
-            ++ (
-              if disableHomeManager then
-                [ ]
-              else
-                [
-                  {
-                    home-manager = {
-                      useGlobalPkgs = true;
-                      useUserPackages = true;
-                      users.nebu = import ./hosts/${hostName}/homeManager/default.nix;
-                      extraSpecialArgs = {
-                        inherit
-                          inputs
-                          self
-                          pkgs
-                          unstablePkgs
-                          ;
-                      };
-                    };
-                  }
-                ]
-            );
+      self = ./.;
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+        overlays = [
+          inputs.tool-suites.overlays.default
+          # (import ./overlays/default.nix { inherit inputs; })
+        ];
+      };
+      # unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
+      unstablePkgs = import inputs.nixpkgs-unstable {
+        inherit system;
+        config = {
+          allowUnfree = true;
         };
+      };
+
+      mkHost = import ./lib/mkHost.nix {
+        inherit inputs self system pkgs unstablePkgs;
+      };
     in
     {
       nixosConfigurations = {
@@ -155,28 +121,18 @@
         };
       };
 
-      checks = {
-        # NOTE: run `nix develop` to update hooks
-        pre-commit-check = pre-commit-hooks.lib.${system}.run {
-          src = ./.;
-          hooks = {
-            nixpkgs-fmt.enable = true;
-            deadnix = {
-              enable = true;
-              settings.noLambdaPatternNames = true;
-            };
-            nil.enable = true;
-            statix.enable = true;
-            # convco.enable = true;
-          };
-        };
-      };
+      checks = builtins.mapAttrs
+        (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; })
+        inputs.nixpkgs.legacyPackages;
 
-      devShells.${system}.default = pkgs.mkShell {
-        name = "nix-config";
-        packages = [ pkgs.convco ];
-        inherit (self.checks.pre-commit-check) shellHook;
-        buildInputs = self.checks.pre-commit-check.enabledPackages;
-      };
+      devShells = builtins.mapAttrs
+        (system: pkgs: {
+          default = import ./nix/shell.nix {
+            inherit pkgs;
+            checks = inputs.self.checks.${system};
+          };
+        })
+        inputs.nixpkgs.legacyPackages;
+
     };
 }
