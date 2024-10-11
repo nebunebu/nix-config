@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.sioyek;
+  cfg = config.desktop.media.sioyek;
 in
 {
   options = {
-    desktop.sioyek.enable = lib.mkEnableOption "enable sioyek";
+    desktop.media.sioyek.enable = lib.mkEnableOption "enable sioyek";
   };
 
   config = lib.mkIf cfg.enable {

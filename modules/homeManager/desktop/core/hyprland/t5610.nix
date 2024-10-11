@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.hyprland.t5610;
+  cfg = config.desktop.core.hyprland.t5610;
 in
 {
   options = {
-    desktop.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
+    desktop.core.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
   };
 
   config = lib.mkIf cfg.enable {

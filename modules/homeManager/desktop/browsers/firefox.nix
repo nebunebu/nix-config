@@ -1,19 +1,18 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
+{ lib
+, config
+, inputs
+, pkgs
+, ...
 }:
 let
-  cfg = config.desktop.firefox;
+  cfg = config.desktop.browsers.firefox;
   ffao = [
     inputs.firefox-addons.packages."${pkgs.system}".ublock-origin
     inputs.firefox-addons.packages."${pkgs.system}".vimium
   ];
 in
 {
-  options.desktop.firefox = {
+  options.desktop.browsers.firefox = {
     enable = lib.mkEnableOption "enable firefox";
   };
 

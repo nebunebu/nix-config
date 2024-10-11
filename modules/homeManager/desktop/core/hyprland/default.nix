@@ -1,12 +1,11 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
+{ inputs
+, pkgs
+, lib
+, config
+, ...
 }:
 let
-  cfg = config.desktop.hyprland;
+  cfg = config.desktop.core.hyprland;
 in
 {
   imports = [
@@ -20,7 +19,7 @@ in
     ./x230t.nix
   ];
 
-  options.desktop.hyprland.enable = lib.mkEnableOption "enable hyprland";
+  options.desktop.core.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf cfg.enable {
     home.packages = [

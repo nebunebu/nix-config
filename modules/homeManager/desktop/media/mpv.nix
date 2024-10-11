@@ -1,16 +1,15 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
+{ lib
+, config
+, pkgs
+, ...
 }:
 let
-  cfg = config.desktop.mpv;
+  cfg = config.desktop.media.mpv;
 in
 {
 
   options = {
-    desktop.mpv.enable = lib.mkEnableOption "enable mpv";
+    desktop.media.mpv.enable = lib.mkEnableOption "enable mpv";
   };
 
   config = lib.mkIf cfg.enable {

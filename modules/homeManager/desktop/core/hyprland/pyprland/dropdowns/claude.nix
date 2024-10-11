@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.hyprland.pyprland.claude;
+  cfg = config.desktop.core.hyprland.pyprland.claude;
 in
 {
-  options.desktop.hyprland.pyprland.claude.enable = lib.mkEnableOption "enable pyprland claude dropdown";
+  options.desktop.core.hyprland.pyprland.claude.enable = lib.mkEnableOption "enable pyprland claude dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {
