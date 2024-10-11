@@ -1,4 +1,10 @@
-{ lib, config, pkgs, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  unstablePkgs,
+  ...
+}:
 let
   cfg = config.tablet.wvkbd;
 in
@@ -11,9 +17,7 @@ in
 
     wayland.windowManager.hyprland.settings = {
       exec-once = [ "wvkbd-start" ];
-      bind = [
-        ",XF86TaskPane, exec, pkill -SIGRTMIN wvkbd-mobintl"
-      ];
+      bind = [ ",XF86TaskPane, exec, pkill -SIGRTMIN wvkbd-mobintl" ];
     };
 
     home.packages = [

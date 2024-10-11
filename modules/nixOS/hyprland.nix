@@ -1,4 +1,10 @@
-{ inputs, pkgs, lib, config, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.desktop.hyprland;
 in
@@ -15,9 +21,7 @@ in
     };
 
     environment = {
-      systemPackages = [
-        pkgs.wl-clipboard
-      ];
+      systemPackages = [ pkgs.wl-clipboard ];
 
       sessionVariables = {
         NIXOS_OZONE_WL = "1";
@@ -56,9 +60,7 @@ in
     xdg.portal = {
       enable = true;
       wlr.enable = true;
-      configPackages = [
-        pkgs.xdg-desktop-portal-hyprland
-      ];
+      configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
     };
   };
 }

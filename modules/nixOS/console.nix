@@ -4,13 +4,14 @@
   services = {
     openssh.enable = true;
     xserver = {
-      layout = "us";
-      xkbOptions = "caps:swapescape";
+      xkb = {
+        layout = "us";
+        options = "caps:swapescape";
+      };
     };
   };
   console = {
     useXkbConfig = true;
     font = "Lat2-Terminus16";
-    # keyMap = "us";
   };
 }

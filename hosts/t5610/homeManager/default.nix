@@ -1,22 +1,19 @@
-{ self, config, ... }:
+{ inputs, self, ... }:
 
 {
-  imports = [ "${self}/modules/homeManager" ];
-
-  # home.file."test.txt".text =
-  #   let
-  #     colors = import "${self}/custom/functions/color.nix";
-  #     # hexToRGBWithCommas = (import "${self}/custom/functions/color.nix").hexToRGBWithCommas;
-  #     # hextoRGBWithCommas gold #f6177 rgb(${hexToRGBWithCommas "f6177"})
-  #   in
-  #   ''
-  #     hextoRGB gold #f6177 ${colors.hexToRGB "f6177"}
-  #   '';
+  imports = [
+    "${inputs.self}/modules/homeManager"
+    ../../../modules/homeManager/development/repopack.nix
+  ];
 
   desktop = {
     chromium.enable = true;
     firefox.enable = true;
     fuzzel.enable = true;
+    mpv.enable = true;
+    media = {
+      obs-studio.enable = true;
+    };
     hyprland = {
       enable = true;
       hyprexpo.enable = false;
@@ -36,6 +33,7 @@
     swww.t5610.enable = true;
     vesktop.enable = true;
     waybar.t5610.enable = true;
+    productivity.obsidian.enable = true;
   };
 
   development = {
@@ -46,16 +44,4 @@
     bat.enable = true;
     tmux.enable = true;
   };
-
-  # app = {
-  #   kitty.enable = true;
-  #   tmux.enable = true;
-  #   sioyek.enable = true;
-  # };
-  #
-  # desktop = {
-  #   waybar.t5610.enable = true;
-  #   # kitty.enable = true;
-  #   };
-  # };
 }
