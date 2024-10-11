@@ -5,6 +5,6 @@
     ./obs-studio.nix
     # TODO: add
     # ./xournalpp
-    # ./spotube.nix
+    ./spotube.nix
   ];
 }

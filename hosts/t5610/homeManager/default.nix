@@ -13,6 +13,7 @@
     mpv.enable = true;
     media = {
       obs-studio.enable = true;
+      spotube.enable = true;
     };
     hyprland = {
       enable = true;
@@ -25,7 +26,7 @@
         hmOptions.enable = true;
         nixpkgs.enable = true;
         noogle.enable = true;
-        spotube.enable = true;
+        # spotube.enable = true;
       };
     };
     kitty.enable = true;

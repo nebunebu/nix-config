@@ -1,8 +1,7 @@
-{
-  inputs,
-  config,
-  lib,
-  ...
+{ inputs
+, config
+, lib
+, ...
 }:
 let
   cfg = config.desktop.hyprland.pyprland;
@@ -14,7 +13,7 @@ in
     ./dropdowns/hmOptions.nix
     ./dropdowns/nixpkgs.nix
     ./dropdowns/noogle.nix
-    ./dropdowns/spotube.nix
+    # ./dropdowns/spotube.nix
   ];
 
   options.desktop.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
