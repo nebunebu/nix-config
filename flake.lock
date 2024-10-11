@@ -344,6 +344,22 @@
         "type": "github"
       }
     },
+    "git-dev-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719255840,
+        "narHash": "sha256-xzXW5rkvDQsS+XjA8E3/Kmjf5yb4tf6q14Ge7mnfjzM=",
+        "owner": "moyiz",
+        "repo": "git-dev.nvim",
+        "rev": "57c62bdccbe35eba19532791218fc8fcc24d0d82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moyiz",
+        "repo": "git-dev.nvim",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -766,10 +782,28 @@
         "type": "github"
       }
     },
+    "minty-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728543984,
+        "narHash": "sha256-kfma58G0txmyi3tUs6RajMwpN7xu/jo08uooytnkUKI=",
+        "owner": "NvChad",
+        "repo": "minty",
+        "rev": "7c2a6452922313e10ff46aea49a4bb5e50e1ac68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NvChad",
+        "repo": "minty",
+        "type": "github"
+      }
+    },
     "nebvim": {
       "inputs": {
         "easypick-nvim": "easypick-nvim",
+        "git-dev-nvim": "git-dev-nvim",
         "haunt-nvim": "haunt-nvim",
+        "minty-nvim": "minty-nvim",
         "nerdy-nvim": "nerdy-nvim",
         "nixpkgs": "nixpkgs_3",
         "telescope-emoji-nvim": "telescope-emoji-nvim",
@@ -778,14 +812,15 @@
         "tiny-devicons-auto-colors-nvim": "tiny-devicons-auto-colors-nvim",
         "tolerable": "tolerable",
         "tool-suites": "tool-suites",
+        "volt-nvim": "volt-nvim",
         "yamlmatter-nvim": "yamlmatter-nvim"
       },
       "locked": {
-        "lastModified": 1728517903,
-        "narHash": "sha256-ZJAKz74Hmex2lyHwgOFsmuZeKlifisugj1QjI7iOiRE=",
+        "lastModified": 1728629335,
+        "narHash": "sha256-1vs93fMu5BSPqQ27xcT+IczDwf4qtESvZHNSUNlINKU=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "cf9c7196da17b962c105673b85f8cab536663874",
+        "rev": "c659a7b7bfdd6d5d555dba7e8ffcd2028ad70a42",
         "type": "github"
       },
       "original": {
@@ -1465,6 +1500,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "volt-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1728090995,
+        "narHash": "sha256-Pa0Ra9s+N6Hcy4L1j6GHEgbk8jQWzpQYfSYmDG/UnaY=",
+        "owner": "NvChad",
+        "repo": "volt",
+        "rev": "43f72b49037c191eb3cfe26ba7a5574b4bfce226",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NvChad",
+        "repo": "volt",
         "type": "github"
       }
     },
