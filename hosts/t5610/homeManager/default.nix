@@ -11,6 +11,9 @@
     firefox.enable = true;
     fuzzel.enable = true;
     mpv.enable = true;
+    media = {
+      obs-studio.enable = true;
+    };
     hyprland = {
       enable = true;
       hyprexpo.enable = false;
