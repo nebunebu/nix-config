@@ -12,7 +12,10 @@
     ./builder.nix
   ];
 
-  services.gvfs.enable = true;
+  services = {
+    gvfs.enable = true;
+    gnome.at-spi2-core.enable = true;
+  };
 
   environment.systemPackages = [
     pkgs.qbittorrent
