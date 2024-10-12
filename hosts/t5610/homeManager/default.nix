@@ -1,4 +1,4 @@
-{ inputs, self, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -61,7 +61,26 @@
   };
 
   terminal = {
-    bat.enable = true;
-    tmux.enable = true;
+    core = {
+      fzf.enable = true;
+      tmux.enable = true;
+      zsh.enable = true;
+    };
+    file-navigation = {
+      lf.enable = true;
+      yazi.enable = true;
+    };
+    media = {
+      buku.enable = true;
+      newsboat.enable = true;
+    };
+    productivity = {
+      taskwarrior.enable = true;
+    };
+    utilities = {
+      bat.enable = true;
+      cli-tools.enable = true;
+      nix-tools.enable = true;
+    };
   };
 }

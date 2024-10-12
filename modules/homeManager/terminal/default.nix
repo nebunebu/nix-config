@@ -7,11 +7,9 @@
     ./utilities
   ];
 
-  home.packages = [
-    # TODO:
-    # ffmpeg -> media
-    # distrobox -> virtualisation
-    # pkgs.lazygit -> development
-    # invidtui -> media
-  ];
+  # TODO:
+  # ffmpeg -> media
+  # distrobox -> virtualisation
+  # pkgs.lazygit -> development
+  # invidtui -> media
 }

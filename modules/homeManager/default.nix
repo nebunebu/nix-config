@@ -1,35 +1,23 @@
 { lib, pkg, ... }:
 {
   imports = [
-    # ./awscli.nix
-    # ./bat.nix
-    # ./chromium
-    # ./cli-tools.nix
     ./desktop
     ./development
     ./tablet
     ./terminal
+    ./password-store.nix
+    ./syncthing.nix
+    # ./awscli.nix
+    # ./bat.nix
+    # ./cli-tools.nix
     # ./direnv.nix
-    # ./firefox
-    # ./fuzzel
     # ./fzf.nix
     # ./git.nix
-    # ./hyprland
-    # ./kitty.nix
     # ./lf.nix
-    # ./mpv.nix
-    # ./mpv.nix
     # ./newsboat
     # ./nix-tools.nix
-    ./password-store.nix
-    # ./sioyek.nix
-    # ./swww.nix
-    ./syncthing.nix
     # ./taskwarrior.nix
     # ./tmux.nix
-    # ./wallpapers
-    # ./waybar
-    # ./webcord.nix
     # ./xournalpp.nix
     # ./yazi.nix
     # ./zsh
