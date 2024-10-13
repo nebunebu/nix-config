@@ -101,9 +101,7 @@
       # unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
       unstablePkgs = import inputs.nixpkgs-unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config = { allowUnfree = true; };
       };
 
       mkHost = import ./lib/mkHost.nix {
