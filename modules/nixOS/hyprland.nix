@@ -1,9 +1,8 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
+{ inputs
+, pkgs
+, lib
+, config
+, ...
 }:
 let
   cfg = config.desktop.hyprland;
@@ -61,6 +60,7 @@ in
       enable = true;
       wlr.enable = true;
       configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
   };
 }
