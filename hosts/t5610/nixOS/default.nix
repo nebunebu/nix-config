@@ -14,6 +14,7 @@
 
   services = {
     gvfs.enable = true;
+    # NOTE: required for spotube
     gnome.at-spi2-core.enable = true;
   };
 
@@ -21,10 +22,8 @@
     # TODO: move this to its own modules
     pkgs.qbittorrent
     pkgs.calibre
-
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
-
     (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
   ];
 
