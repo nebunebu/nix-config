@@ -18,6 +18,7 @@
   };
 
   environment.systemPackages = [
+    # TODO: move this to its own modules
     pkgs.qbittorrent
     pkgs.calibre
 
@@ -30,6 +31,13 @@
   sops.enable = true;
   tuir.enable = true;
   app.virt-manager.enable = true;
+  neb = {
+    desktop = {
+      sddm.enable = true;
+      # stylix.enable = true;
+      hyprland.enable = true;
+    };
+  };
 
   networking.hostName = "t5610";
 
@@ -43,5 +51,4 @@
     };
   };
 
-  desktop.hyprland.enable = true;
 }

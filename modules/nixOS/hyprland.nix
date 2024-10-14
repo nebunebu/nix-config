@@ -5,10 +5,10 @@
 , ...
 }:
 let
-  cfg = config.desktop.hyprland;
+  cfg = config.neb.desktop.hyprland;
 in
 {
-  options.desktop.hyprland = {
+  options.neb.desktop.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
   };
 
