@@ -26,7 +26,8 @@
           hmOptions.enable = true;
           nixpkgs.enable = true;
           noogle.enable = true;
-          # spotube.enable = true;
+          obsidian.enable = true;
+          spotube.enable = true;
         };
         # hyprexpo.enable = true;
       };
