@@ -13,7 +13,8 @@ in
     ./dropdowns/hmOptions.nix
     ./dropdowns/nixpkgs.nix
     ./dropdowns/noogle.nix
-    # ./dropdowns/spotube.nix
+    ./dropdowns/obsidian.nix
+    ./dropdowns/spotube.nix
   ];
 
   options.desktop.core.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
