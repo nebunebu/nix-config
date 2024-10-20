@@ -12,24 +12,25 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = builtins.attrValues {
-      inherit (pkgs)
-        nerdfix
-        usbutils
-        tree
-        nitch
-        ripgrep-all
-        jq
-        pup
-        fd
-        # bottom
-        # ripgrep
-        # ffmpeg
-        # yt-dlp
-        # distrobox
-        # lazygit
-        # invidtui
-        ;
-    };
+    home.packages =
+      builtins.attrValues {
+        inherit (pkgs)
+          nerdfix
+          usbutils
+          tree
+          nitch
+          ripgrep-all
+          jq
+          pup
+          fd
+          # bottom
+          # ripgrep
+          # ffmpeg
+          # yt-dlp
+          # distrobox
+          # lazygit
+          # invidtui
+          ;
+      };
   };
 }
