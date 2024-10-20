@@ -15,7 +15,8 @@ let
     builtins.fromJSON (builtins.readFile json);
 in
 {
-  environment.systemPackages = [
+  fonts.packages = [
+    unstablePkgs.ibm-plex
     (unstablePkgs.nerdfonts.override {
       fonts = [
         "DroidSansMono"
@@ -38,18 +39,18 @@ in
 
     fonts = {
       serif = {
-        package = pkgs.inriafonts;
-        name = "Inria Serif";
+        package = unstablePkgs.ibm-plex;
+        name = "IBM Plex Serif";
       };
 
       sansSerif = {
-        package = pkgs.inriafonts;
-        name = "Inria Sans";
+        package = unstablePkgs.ibm-plex;
+        name = "IBM Plex Sans";
       };
 
       monospace = {
-        package = pkgs.borg-sans-mono;
-        name = "Borg Sans Mono";
+        package = unstablePkgs.ibm-plex;
+        name = "IBM Plex Mono";
       };
 
       emoji = {
