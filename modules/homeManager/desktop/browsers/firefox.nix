@@ -32,7 +32,7 @@ in
               passff
             ]
             ++ ffao;
-          userChrome = # css
+          userChrome = lib.mkForce # css
             ''
               * {
                 font-family: "DroidSansM Nerd Font" !important;
@@ -56,6 +56,32 @@ in
         };
         noogle = {
           id = 1;
+          userChrome = /* css  */ ''
+            :root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) {
+              max-height: 1px;
+              min-height: calc(0px);
+              overflow: hidden;
+            }
+            #TabsToolbar:not(:hover) #alltabs-button {display:none !important;}
+
+            #navigator-toolbox::after {
+              display: none !important;
+            }
+
+            #titlebar { appearance: none !important }
+
+            #tabbrowser-tabs { 
+              visibility: collapse !important;
+            }
+            #sidebar-header {
+              visibility: collapse !important;
+            }
+
+            #main-window[sizemode="maximized"] #content-deck {
+              padding-top: 8px;
+            }
+          '';
+
           settings = {
             "browser.startup.homepage" = "https://noogle.dev";
             "browser.startup.page" = 1;
