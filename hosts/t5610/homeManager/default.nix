@@ -1,9 +1,19 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
     "${inputs.self}/modules/homeManager"
     ../../../modules/homeManager/development/repopack.nix
+  ];
+
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "roseify";
+      runtimeInputs = [ pkgs.lutgen ];
+      text = /* sh */ ''
+        lutgen apply "$1" -o "roseified-$1" -p rose-pine
+      '';
+    })
   ];
 
   desktop = {
