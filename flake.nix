@@ -15,10 +15,10 @@
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
 
-    swww = {
-      url = "github:LGFae/swww";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    # swww = {
+    #   url = "github:LGFae/swww";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # };
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -51,7 +51,6 @@
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
       rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
-
       submodules = true;
     };
 

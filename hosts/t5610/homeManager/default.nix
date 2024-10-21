@@ -16,6 +16,8 @@
     })
   ];
 
+  # TODO: rename gates with custom namespace
+  neb.desktop.core.hyprland.hyprpaper.t5610.enable = true;
   desktop = {
     browsers = {
       chromium.enable = true;
@@ -63,7 +65,7 @@
       fuzzel.enable = true;
       kitty.enable = true;
       pavucontrol.enable = true;
-      swww.t5610.enable = true;
+      swww.t5610.enable = false;
     };
   };
 

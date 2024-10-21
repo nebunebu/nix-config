@@ -17,6 +17,7 @@ in
     ./hyprgrass.nix
     ./t5610.nix
     ./x230t.nix
+    ./hyprpaper.nix
   ];
 
   options.desktop.core.hyprland.enable = lib.mkEnableOption "enable hyprland";
