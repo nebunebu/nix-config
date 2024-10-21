@@ -37,7 +37,7 @@
     kitty.enable = true;
     mpv.enable = true;
     sioyek.enable = true;
-    swww.x230t.enable = true;
+    swww.x230t.enable = false;
     vesktop.enable = true;
     waybar.x230t.enable = true;
   };
