@@ -1,11 +1,10 @@
-{
-  inputs,
-  config,
-  lib,
-  ...
+{ inputs
+, config
+, lib
+, ...
 }:
 let
-  cfg = config.desktop.hyprland.pyprland;
+  cfg = config.desktop.core.hyprland.pyprland;
 in
 {
   imports = [
@@ -14,10 +13,11 @@ in
     ./dropdowns/hmOptions.nix
     ./dropdowns/nixpkgs.nix
     ./dropdowns/noogle.nix
+    ./dropdowns/obsidian.nix
     ./dropdowns/spotube.nix
   ];
 
-  options.desktop.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
+  options.desktop.core.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
 
   config = lib.mkIf cfg.enable {
     home.packages = [ inputs.pyprland.packages.x86_64-linux.default ];

@@ -7,20 +7,20 @@
 , makeWrapper
 , undmg
 , wrapGAppsHook3
-, gtk3
-, libsoup_3
-, webkitgtk_4_1
 , glib-networking
+, gtk3
 , libappindicator
 , libnotify
+, libsoup_3
 , mpv-unwrapped
 , xdg-user-dirs
+, webkitgtk_4_1
 ,
 }:
 
 let
   pname = "spotube";
-  version = "3.8.0";
+  version = "3.8.3";
 
   meta = {
     description = "Open source, cross-platform Spotify client compatible across multiple platforms";
@@ -54,7 +54,7 @@ let
 
     src = fetchArtifact {
       filename = "Spotube-macos-universal.dmg";
-      hash = "sha256-qQDbGRnia8JAclm2AgT2FCxhYS6WoNuDWIMbG76pDB0=";
+      hash = "sha256-N1H/Vy5QQi8zAqiqAi5aTnUQcKC/EgL3GUhEfnCkaAQ=";
     };
 
     sourceRoot = ".";
@@ -78,7 +78,7 @@ let
 
     src = fetchArtifact {
       filename = "Spotube-linux-x86_64.deb";
-      hash = "sha256-xgwHRaFeQ182kRhUzCEvMx56WyPnHu8aCDyQ5wzVKRw=";
+      hash = "sha256-x75ie9FXunClMT+YZVFlvl2VSDl933QYMRpEYjJ8YhY=";
     };
 
     nativeBuildInputs = [
@@ -89,13 +89,13 @@ let
     ];
 
     buildInputs = [
+      glib-networking
       gtk3
       libappindicator
       libnotify
       libsoup_3
       mpv-unwrapped
       webkitgtk_4_1
-      glib-networking
     ];
 
     dontWrapGApps = true;
@@ -120,4 +120,4 @@ let
     '';
   };
 in
-if stdenv.isDarwin then darwin else linux
+if stdenv.hostPlatform.isDarwin then darwin else linux

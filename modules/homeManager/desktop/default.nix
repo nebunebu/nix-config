@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./browsers
@@ -8,10 +6,5 @@
     ./media
     ./productivity
     ./utilities
-  ];
-
-  home.packages = [
-    pkgs.pavucontrol
-    # pkgs.xournalpp
   ];
 }

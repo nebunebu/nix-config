@@ -6,11 +6,11 @@
 }:
 let
   palette = base: config.stylix.base16Scheme.palette.${base};
-  cfg = config.terminal.tmux;
+  cfg = config.terminal.core.tmux;
 in
 
 {
-  options.terminal.tmux = {
+  options.terminal.core.tmux = {
     enable = lib.mkEnableOption "enable tmux";
   };
 

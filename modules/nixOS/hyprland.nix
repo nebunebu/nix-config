@@ -1,15 +1,14 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
+{ inputs
+, pkgs
+, lib
+, config
+, ...
 }:
 let
-  cfg = config.desktop.hyprland;
+  cfg = config.neb.desktop.hyprland;
 in
 {
-  options.desktop.hyprland = {
+  options.neb.desktop.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
   };
 
@@ -61,6 +60,7 @@ in
       enable = true;
       wlr.enable = true;
       configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
   };
 }

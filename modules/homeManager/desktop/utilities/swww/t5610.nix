@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.desktop.swww.t5610;
+  cfg = config.desktop.utilities.swww.t5610;
 in
 {
   imports = [ "${self}/extModules/homeManager/swww.nix" ];
 
-  options.desktop.swww = {
+  options.desktop.utilities.swww = {
     t5610.enable = lib.mkEnableOption "enable swww settings for t5610";
   };
 

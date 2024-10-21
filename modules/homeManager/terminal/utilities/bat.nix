@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.terminal.bat;
+  cfg = config.terminal.utilities.bat;
 in
 {
-  options.terminal.bat = {
+  options.terminal.utilities.bat = {
     enable = lib.mkEnableOption "enablt bat";
   };
 

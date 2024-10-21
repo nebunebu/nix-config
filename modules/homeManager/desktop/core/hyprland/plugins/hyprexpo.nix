@@ -1,15 +1,14 @@
-{
-  lib,
-  config,
-  inputs,
-  pkgs,
-  ...
+{ lib
+, config
+, inputs
+, pkgs
+, ...
 }:
 let
-  cfg = config.desktop.hyprland.hyprexpo;
+  cfg = config.core.desktop.hyprland.hyprexpo;
 in
 {
-  options.desktop.hyprland.hyprexpo = {
+  options.core.desktop.hyprland.hyprexpo = {
     enable = lib.mkEnableOption "enable hyplrand hyprexpo plugin";
   };
 
