@@ -12,21 +12,31 @@
     ./builder.nix
   ];
 
-  services.gvfs.enable = true;
+  services = {
+    gvfs.enable = true;
+    # NOTE: required for spotube
+    gnome.at-spi2-core.enable = true;
+  };
 
   environment.systemPackages = [
+    # TODO: move this to its own modules
     pkgs.qbittorrent
     pkgs.calibre
-
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
-
     (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
   ];
 
   sops.enable = true;
   tuir.enable = true;
   app.virt-manager.enable = true;
+  neb = {
+    desktop = {
+      sddm.enable = true;
+      # stylix.enable = true;
+      hyprland.enable = true;
+    };
+  };
 
   networking.hostName = "t5610";
 
@@ -40,5 +50,4 @@
     };
   };
 
-  desktop.hyprland.enable = true;
 }

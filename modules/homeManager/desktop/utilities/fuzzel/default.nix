@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.fuzzel;
+  cfg = config.desktop.utilities.fuzzel;
 in
 {
   imports = [
@@ -8,9 +8,7 @@ in
     ./scripts/default.nix
   ];
 
-  options.desktop.fuzzel = {
-    enable = lib.mkEnableOption "enable fuzzel";
-  };
+  options.desktop.utilities.fuzzel.enable = lib.mkEnableOption "enable fuzzel";
 
   config = lib.mkIf cfg.enable {
     programs.fuzzel = {

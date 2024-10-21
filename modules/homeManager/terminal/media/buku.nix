@@ -1,11 +1,23 @@
-{ pkgs, ... }:
-
+{ lib
+, config
+, pkgs
+, ...
+}:
+let
+  cfg = config.terminal.media.buku;
+in
 {
-  home = {
-    packages = [ pkgs.buku ];
+  options = {
+    terminal.media.buku.enable = lib.mkEnableOption "enable buku";
+  };
 
-    sessionVariables = {
-      BUKU_COLORS = "MCexm";
+  config = lib.mkIf cfg.enable {
+    home = {
+      packages = [ pkgs.buku ];
+
+      sessionVariables = {
+        BUKU_COLORS = "MCexm";
+      };
     };
   };
 }

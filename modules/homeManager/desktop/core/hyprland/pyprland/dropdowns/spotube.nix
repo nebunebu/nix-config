@@ -6,10 +6,10 @@
 , ...
 }:
 let
-  cfg = config.desktop.hyprland.pyprland.spotube;
+  cfg = config.desktop.core.hyprland.pyprland.spotube;
 in
 {
-  options.desktop.hyprland.pyprland.spotube.enable = lib.mkEnableOption "enable pyprland spotube dropdown";
+  options.desktop.core.hyprland.pyprland.spotube.enable = lib.mkEnableOption "enable pyprland spotube dropdown";
 
   config = lib.mkIf cfg.enable {
 

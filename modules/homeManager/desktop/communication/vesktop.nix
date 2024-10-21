@@ -6,10 +6,10 @@
 # TODO: override systray icon
 # TODO: put style in seperate file
 let
-  cfg = config.desktop.vesktop;
+  cfg = config.desktop.communications.vesktop;
 in
 {
-  options.desktop.vesktop = {
+  options.desktop.communications.vesktop = {
     enable = lib.mkEnableOption "enable vesktop";
   };
 

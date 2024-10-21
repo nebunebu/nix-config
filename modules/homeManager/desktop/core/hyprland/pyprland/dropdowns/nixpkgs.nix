@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.hyprland.pyprland.nixpkgs;
+  cfg = config.desktop.core.hyprland.pyprland.nixpkgs;
 in
 {
-  options.desktop.hyprland.pyprland.nixpkgs.enable = lib.mkEnableOption "enable pyprland nipkgs dropdown";
+  options.desktop.core.hyprland.pyprland.nixpkgs.enable = lib.mkEnableOption "enable pyprland nipkgs dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {

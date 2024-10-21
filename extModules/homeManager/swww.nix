@@ -1,10 +1,10 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
+{ pkgs
+, config
+, lib
+, ...
 }:
 
+# NOTE: note in use
 # TODO: activate daemon if not running
 # TODO: add package option
 # TODO: add transitions

@@ -1,14 +1,13 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
+{ lib
+, config
+, pkgs
+, ...
 }:
 let
-  cfg = config.desktop.hyprland.pyprland.btm;
+  cfg = config.desktop.core.hyprland.pyprland.btm;
 in
 {
-  options.desktop.hyprland.pyprland.btm.enable = lib.mkEnableOption "enable pyprland btm dropdown";
+  options.desktop.core.hyprland.pyprland.btm.enable = lib.mkEnableOption "enable pyprland btm dropdown";
 
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.bottom ];
