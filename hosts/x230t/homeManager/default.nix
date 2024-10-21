@@ -1,9 +1,8 @@
-{
-  self,
-  inputs,
-  config,
-  pkgs,
-  ...
+{ self
+, inputs
+, config
+, pkgs
+, ...
 }:
 
 {
@@ -23,6 +22,8 @@
     tmux.enable = true;
   };
 
+  # TODO: rename gates with custom namespace
+  neb.desktop.core.hyprland.hyprpaper.t5610.enable = true;
   desktop = {
     chromium.enable = true;
     firefox.enable = true;
