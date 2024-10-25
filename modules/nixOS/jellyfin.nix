@@ -1,6 +1,12 @@
-{
+{ pkgs, ... }:
 
+{
   users.users.nebu.extraGroups = [ "jellyfin" ];
+
+  environment.systemPackages = [
+    pkgs.jellyfin-media-player
+    pkgs.jellyfin-mpv-shim
+  ];
 
   services = {
     jellyfin = {
