@@ -1,7 +1,6 @@
 {
   imports = [
-    # ./xournalpp
-    # TODO: add
+    ./glance.nix
     ./mpv.nix
     ./obs-studio.nix
     ./sioyek.nix
