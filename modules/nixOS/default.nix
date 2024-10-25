@@ -19,7 +19,7 @@
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.system}".default
-    inputs.zen-browser.packages."${pkgs.system}".generic
+    # inputs.zen-browser.packages."${pkgs.system}".generic
     # pkgs.hyprpanel
   ];
 }
