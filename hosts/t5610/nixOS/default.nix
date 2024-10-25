@@ -12,6 +12,8 @@
     ./builder.nix
   ];
 
+  programs.river.enable = true;
+
   services = {
     gvfs.enable = true;
     # NOTE: required for spotube
