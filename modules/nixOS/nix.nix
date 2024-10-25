@@ -13,7 +13,7 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
   nixpkgs.config.allowUnfree = true;
 }
