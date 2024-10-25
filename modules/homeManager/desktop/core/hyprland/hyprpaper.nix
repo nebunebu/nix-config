@@ -1,5 +1,6 @@
 { config
 , lib
+, pkgs
 , ...
 }:
 let
@@ -25,6 +26,8 @@ in
 
   config = lib.mkMerge [
     (lib.mkIf cfg.x230t.enable {
+      wayland.windowManager.hyprland.settings.exec-once = [ "${lib.getExe pkgs.hyprpaper}" ];
+
       services.hyprpaper = {
         enable = true;
         settings =
@@ -48,6 +51,9 @@ in
     })
 
     (lib.mkIf cfg.t5610.enable {
+
+      wayland.windowManager.hyprland.settings.exec-once = [ "${lib.getExe pkgs.hyprpaper}" ];
+
       services.hyprpaper = {
         enable = true;
         settings =
