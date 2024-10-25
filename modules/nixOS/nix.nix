@@ -1,12 +1,9 @@
-{ pkgs, ... }:
+{ inputs, ... }:
 
 {
   nix = {
     settings = {
       experimental-features = [ "nix-command flakes" ];
-      # substituters = [
-      #   ""
-      # ];
       auto-optimise-store = true;
       allowed-users = [ "@wheel" ];
       trusted-users = [ "@wheel" ];
