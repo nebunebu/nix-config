@@ -12,13 +12,13 @@ in
 
   options = {
     neb.desktop.core.astal = {
-      # x230t.enable = lib.mkEnableOption "enable x230t waybar setup";
+      x230t.enable = lib.mkEnableOption "enable x230t waybar setup";
       t5610.enable = lib.mkEnableOption "enable t5610 astal setup";
     };
   };
 
   config = lib.mkMerge [
-    (lib.mkIf cfg.x230t.enable {
+    (lib.mkIf cfg.t5610.enable {
       home.packages = [
         inputs.ags.packages.${pkgs.system}.io
         inputs.ags.packages.${pkgs.system}.ags
@@ -38,7 +38,7 @@ in
       };
     })
 
-    (lib.mkIf cfg.t5610.enable {
+    (lib.mkIf cfg.x230t.enable {
       programs.ags = {
         enable = true;
       };
