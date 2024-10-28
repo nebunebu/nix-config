@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ags.url = "github:aylur/ags/v2";
+
     stylix = {
       url = "github:danth/stylix/release-24.05";
     };
