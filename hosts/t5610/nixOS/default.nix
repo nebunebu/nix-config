@@ -33,6 +33,7 @@
   tuir.enable = true;
   app.virt-manager.enable = true;
   neb = {
+    amdgpu.enable = true;
     desktop = {
       sddm.enable = true;
       # stylix.enable = true;
