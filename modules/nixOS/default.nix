@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./amdgpu.nix
     ./boot.nix
     ./console.nix
     ./documentation.nix
