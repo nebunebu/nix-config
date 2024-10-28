@@ -14,7 +14,9 @@ in
   config = lib.mkIf cfg.enable {
     environment = {
       systemPackages = [ pkgs.lact ];
-      ROC_ENABLE_PRE_VEGA = "1";
+      variables = {
+        ROC_ENABLE_PRE_VEGA = "1";
+      };
     };
 
     systemd = {
