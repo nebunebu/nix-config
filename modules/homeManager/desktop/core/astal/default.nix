@@ -21,7 +21,6 @@ in
     (lib.mkIf cfg.t5610.enable {
       home.packages = [
         inputs.ags.packages.${pkgs.system}.io
-        inputs.ags.packages.${pkgs.system}.ags
       ];
       programs.ags = {
         enable = true;
