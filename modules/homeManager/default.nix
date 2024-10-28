@@ -32,7 +32,6 @@
   programs = {
     home-manager = {
       enable = true;
-      backupFileExtension = "backup";
     };
     bash.enable = true;
     zsh.enable = true;
