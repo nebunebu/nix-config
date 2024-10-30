@@ -12,6 +12,8 @@
     ./builder.nix
   ];
 
+  programs.river.enable = true;
+
   services = {
     gvfs.enable = true;
     # NOTE: required for spotube
@@ -31,6 +33,7 @@
   tuir.enable = true;
   app.virt-manager.enable = true;
   neb = {
+    amdgpu.enable = true;
     desktop = {
       sddm.enable = true;
       # stylix.enable = true;

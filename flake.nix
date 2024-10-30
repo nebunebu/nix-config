@@ -15,11 +15,6 @@
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
 
-    # swww = {
-    #   url = "github:LGFae/swww";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # };
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,8 +51,6 @@
 
     tool-suites.url = "github:nebunebu/tool-suites";
 
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
     };
@@ -65,7 +58,6 @@
     hyprgrass = {
       url = "github:horriblename/hyprgrass?ref=v0.7.0";
       inputs.hyprland.follows = "hyprland";
-      # ref = "v0.7.0";
     };
 
     hyprland-plugins = {
@@ -94,10 +86,8 @@
         config = { allowUnfree = true; };
         overlays = [
           inputs.tool-suites.overlays.default
-          # (import ./overlays/default.nix { inherit inputs; })
         ];
       };
-      # unstablePkgs = inputs.nixpkgs-unstable.legacyPackages.${system};
       unstablePkgs = import inputs.nixpkgs-unstable {
         inherit system;
         config = { allowUnfree = true; };
