@@ -54,6 +54,7 @@
       obs-studio.enable = true;
       sioyek.enable = true;
       spotube.enable = true;
+      glance.enable = true;
       # xournalpp.enable = true;
     };
     productivity = {
