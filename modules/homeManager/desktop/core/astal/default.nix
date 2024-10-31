@@ -26,6 +26,7 @@ in
         enable = true;
         extraPackages = with pkgs; [
           fzf
+          dart-sass
           inputs.ags.packages.${pkgs.system}.notifd
           inputs.ags.packages.${pkgs.system}.apps
           inputs.ags.packages.${pkgs.system}.gjs
