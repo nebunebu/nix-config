@@ -21,10 +21,16 @@ in
     (lib.mkIf cfg.t5610.enable {
       home.packages = [
         inputs.ags.packages.${pkgs.system}.io
+        pkgs.rose-pine-icon-theme
+        pkgs.gnome.adwaita-icon-theme
+        pkgs.morewaita-icon-theme
+        pkgs.libdbusmenu-gtk3
       ];
       programs.ags = {
         enable = true;
         extraPackages = with pkgs; [
+          pkgs.rose-pine-icon-theme
+          pkgs.libdbusmenu-gtk3
           fzf
           dart-sass
           inputs.ags.packages.${pkgs.system}.notifd
