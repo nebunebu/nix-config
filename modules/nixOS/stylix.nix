@@ -19,8 +19,9 @@ in
     unstablePkgs.ibm-plex
     (unstablePkgs.nerdfonts.override {
       fonts = [
-        "DroidSansMono"
-        "JetBrainsMono"
+        "NerdFontsSymbolsOnly"
+        # "DroidSansMono"
+        # "JetBrainsMono"
       ];
     })
   ];

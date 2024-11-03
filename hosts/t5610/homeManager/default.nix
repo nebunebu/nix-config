@@ -16,8 +16,22 @@
     })
   ];
 
+
+  # gtk = pkgs.lib.mkForce {
+  #   enable = true;
+  #   theme = {
+  #     package = pkgs.rose-pine-gtk-theme;
+  #     name = "rose-pine-theme";
+  #   };
+  #   iconTheme = {
+  #     package = pkgs.rose-pine-icon-theme;
+  #     name = "rose-pine-icon-theme";
+  #   };
+  # };
+
   # TODO: rename gates with custom namespace
   neb.desktop.core.hyprland.hyprpaper.t5610.enable = true;
+  neb.desktop.core.astal.t5610.enable = true;
   desktop = {
     browsers = {
       chromium.enable = true;
@@ -43,9 +57,9 @@
         };
         # hyprexpo.enable = true;
       };
-      swaync.enable = true;
+      swaync.enable = false;
       waybar = {
-        t5610.enable = true;
+        t5610.enable = false;
       };
     };
     media = {
