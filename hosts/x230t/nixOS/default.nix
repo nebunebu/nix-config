@@ -11,7 +11,7 @@
 
   sops.enable = true;
 
-  desktop.hyprland.enable = true;
+  neb.desktop.hyprland.enable = true;
 
   networking.hostName = "x230t";
   environment = {
