@@ -3,6 +3,6 @@
     ./fuzzel
     ./kitty.nix
     ./pavucontrol.nix
-    ./swww
+    # ./swww
   ];
 }

@@ -4,10 +4,10 @@
 , ...
 }:
 let
-  cfg = config.terminal.utilities.cli-tools;
+  cfg = config.neb.terminal.utilities.cli-tools;
 in
 {
-  options.terminal.utilities.cli-tools = {
+  options.neb.terminal.utilities.cli-tools = {
     enable = lib.mkEnableOption "enable cli-tools";
   };
 

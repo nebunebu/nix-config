@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.media.sioyek;
+  cfg = config.neb.desktop.media.sioyek;
 in
 {
   options = {
-    desktop.media.sioyek.enable = lib.mkEnableOption "enable sioyek";
+    neb.desktop.media.sioyek.enable = lib.mkEnableOption "enable sioyek";
   };
 
   config = lib.mkIf cfg.enable {

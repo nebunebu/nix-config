@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.development.git;
+  cfg = config.neb.development.git;
 in
 {
-  options.development.git = {
+  options.neb.development.git = {
     enable = lib.mkEnableOption "enable git";
   };
 

@@ -4,13 +4,13 @@
 , ...
 }:
 let
-  cfg = config.desktop.core.swaync;
+  cfg = config.neb.desktop.core.swaync;
 in
 {
   imports = [ ./style.nix ];
 
   options = {
-    desktop.core.swaync.enable = lib.mkEnableOption "enable swaync";
+    neb.desktop.core.swaync.enable = lib.mkEnableOption "enable swaync";
   };
 
   config = lib.mkIf cfg.enable {

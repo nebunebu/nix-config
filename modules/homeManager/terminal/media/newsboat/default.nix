@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  cfg = config.terminal.media.newsboat;
+  cfg = config.neb.terminal.media.newsboat;
 in
 {
   imports = [
@@ -13,7 +13,7 @@ in
   ];
 
   options = {
-    terminal.media.newsboat.enable = lib.mkEnableOption "enable newsboat";
+    neb.terminal.media.newsboat.enable = lib.mkEnableOption "enable newsboat";
   };
 
   config = lib.mkIf cfg.enable {

@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.desktop.media.mpv;
+  cfg = config.neb.desktop.media.mpv;
 in
 {
 
   options = {
-    desktop.media.mpv.enable = lib.mkEnableOption "enable mpv";
+    neb.desktop.media.mpv.enable = lib.mkEnableOption "enable mpv";
   };
 
   config = lib.mkIf cfg.enable {
