@@ -103,11 +103,11 @@
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost { hostName = "x230t"; };
-        g500s = mkHost { hostName = "g500s"; };
-        nixISO = mkHost {
-          hostName = "nixISO";
-          disableHomeManager = true;
-        };
+        # g500s = mkHost { hostName = "g500s"; };
+        # nixISO = mkHost {
+        #   hostName = "nixISO";
+        #   disableHomeManager = true;
+        # };
       };
 
       checks = builtins.mapAttrs
