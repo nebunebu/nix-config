@@ -839,11 +839,11 @@
         "yamlmatter-nvim": "yamlmatter-nvim"
       },
       "locked": {
-        "lastModified": 1731360627,
-        "narHash": "sha256-b0hk4KpzEmMhrTqYChX6g+6L7+5cNq4uXAEKZOSxdTE=",
+        "lastModified": 1731361887,
+        "narHash": "sha256-SuPibKX/VlDLJr7KwkS66SUT+1rYztBpC/eiYAoP8kE=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "79101386d634be95f68071a27cd5c981682fd606",
+        "rev": "24408c95c83a369a2646f68545975e307df2ec81",
         "type": "github"
       },
       "original": {
@@ -1484,11 +1484,11 @@
     },
     "tool-suites_2": {
       "locked": {
-        "lastModified": 1724614869,
-        "narHash": "sha256-Z6aBbVyuoWE1MwKB11tu3bhi/4g8NnAEI5mPkPA2i4U=",
+        "lastModified": 1731360350,
+        "narHash": "sha256-f6fKxJL64+fC+thMUUt/aQDhG8ahvUHm9s1bBEQN9GE=",
         "owner": "nebunebu",
         "repo": "tool-suites",
-        "rev": "2814d1f5a4bdf8614fa9acf9fb0b01b0712593cb",
+        "rev": "fb2fbc1c04de2203b663ae390194f975da87f43d",
         "type": "github"
       },
       "original": {
