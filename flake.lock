@@ -839,11 +839,11 @@
         "yamlmatter-nvim": "yamlmatter-nvim"
       },
       "locked": {
-        "lastModified": 1731361887,
-        "narHash": "sha256-SuPibKX/VlDLJr7KwkS66SUT+1rYztBpC/eiYAoP8kE=",
+        "lastModified": 1731363416,
+        "narHash": "sha256-2HmBBF4ie+THFq+OTHOVshV1XtHmLE+G72cOvjrploM=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "24408c95c83a369a2646f68545975e307df2ec81",
+        "rev": "60e954129fd1d9ec93296e577da1a5bae8d30dca",
         "type": "github"
       },
       "original": {
