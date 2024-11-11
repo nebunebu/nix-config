@@ -5,10 +5,10 @@
 , ...
 }:
 let
-  cfg = config.terminal.utilities.nix-tools;
+  cfg = config.neb.terminal.utilities.nix-tools;
 in
 {
-  options.terminal.utilities.nix-tools = {
+  options.neb.terminal.utilities.nix-tools = {
     enable = lib.mkEnableOption "enable nix-tools";
   };
 

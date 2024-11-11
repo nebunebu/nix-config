@@ -1,10 +1,10 @@
 { lib, config, unstablePkgs, ... }:
 let
-  cfg = config.desktop.productivity.obsidian;
+  cfg = config.neb.desktop.productivity.obsidian;
 in
 {
   options = {
-    desktop.productivity.obsidian.enable = lib.mkEnableOption "enable obsidian";
+    neb.desktop.productivity.obsidian.enable = lib.mkEnableOption "enable obsidian";
   };
 
   config = lib.mkIf cfg.enable {

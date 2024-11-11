@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.utilities.kitty;
+  cfg = config.neb.desktop.utilities.kitty;
 in
 
 {
-  options.desktop.utilities.kitty = {
+  options.neb.desktop.utilities.kitty = {
     enable = lib.mkEnableOption "enable kitty";
   };
 

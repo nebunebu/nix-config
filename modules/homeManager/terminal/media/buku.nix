@@ -4,11 +4,11 @@
 , ...
 }:
 let
-  cfg = config.terminal.media.buku;
+  cfg = config.neb.terminal.media.buku;
 in
 {
   options = {
-    terminal.media.buku.enable = lib.mkEnableOption "enable buku";
+    neb.terminal.media.buku.enable = lib.mkEnableOption "enable buku";
   };
 
   config = lib.mkIf cfg.enable {

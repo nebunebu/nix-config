@@ -4,14 +4,14 @@
 , ...
 }:
 let
-  cfg = config.desktop.core.waybar;
+  cfg = config.neb.desktop.core.waybar;
   wbm = builtins.import ./modules.nix;
 in
 {
   imports = [ ./style.nix ];
 
   options = {
-    desktop.core.waybar = {
+    neb.desktop.core.waybar = {
       device = lib.mkOption {
         type = lib.types.nullOr (
           lib.types.enum [

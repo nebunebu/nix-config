@@ -5,14 +5,14 @@
 , ...
 }:
 let
-  cfg = config.desktop.browsers.firefox;
+  cfg = config.neb.desktop.browsers.firefox;
   ffao = [
     inputs.firefox-addons.packages."${pkgs.system}".ublock-origin
     inputs.firefox-addons.packages."${pkgs.system}".vimium
   ];
 in
 {
-  options.desktop.browsers.firefox = {
+  options.neb.desktop.browsers.firefox = {
     enable = lib.mkEnableOption "enable firefox";
   };
 

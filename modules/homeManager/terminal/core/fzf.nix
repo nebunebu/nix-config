@@ -3,12 +3,12 @@
 , ...
 }:
 let
-  cfg = config.terminal.core.fzf;
+  cfg = config.neb.terminal.core.fzf;
 in
 {
 
   options = {
-    terminal.core.fzf.enable = lib.mkEnableOption "enable fzf";
+    neb.terminal.core.fzf.enable = lib.mkEnableOption "enable fzf";
   };
 
   config = lib.mkIf cfg.enable

@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.desktop.media.glance;
+  cfg = config.neb.desktop.media.glance;
 in
 {
 
   options = {
-    desktop.media.glance.enable = lib.mkEnableOption "enable glance";
+    neb.desktop.media.glance.enable = lib.mkEnableOption "enable glance";
   };
 
   config = lib.mkIf cfg.enable {

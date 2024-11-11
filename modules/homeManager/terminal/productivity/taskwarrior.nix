@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.terminal.productivity.taskwarrior;
+  cfg = config.neb.terminal.productivity.taskwarrior;
 in
 {
 
   options = {
-    terminal.productivity.taskwarrior.enable = lib.mkEnableOption "enable taskwarrior";
+    neb.terminal.productivity.taskwarrior.enable = lib.mkEnableOption "enable taskwarrior";
   };
 
   config = lib.mkIf cfg.enable {
