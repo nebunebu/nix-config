@@ -12,7 +12,7 @@ in
 
   options = {
     neb.desktop.core.astal = {
-      x230t.enable = lib.mkEnableOption "enable x230t waybar setup";
+      x230t.enable = lib.mkEnableOption "enable x230t astal setup";
       t5610.enable = lib.mkEnableOption "enable t5610 astal setup";
     };
   };
@@ -24,13 +24,21 @@ in
         pkgs.rose-pine-icon-theme
         pkgs.gnome.adwaita-icon-theme
         pkgs.morewaita-icon-theme
-        pkgs.libdbusmenu-gtk3
       ];
+
+      #NOTE: move to system module
+      # services.dbus = {
+      #   enable = true;
+      #   packages = [ pkgs.libdbusmenu-gtk3 ];
+      # };
       programs.ags = {
         enable = true;
         extraPackages = with pkgs; [
-          pkgs.rose-pine-icon-theme
-          pkgs.libdbusmenu-gtk3
+          rose-pine-icon-theme
+          libdbusmenu-gtk3
+          glib
+          gtk3
+          gobject-introspection
           fzf
           dart-sass
           inputs.ags.packages.${pkgs.system}.notifd
