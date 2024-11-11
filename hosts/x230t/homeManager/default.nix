@@ -8,41 +8,86 @@
 {
   imports = [ "${self}/modules/homeManager" ];
 
-  home.packages = [
-    # pkgs.zoom
-    # pkgs.aileron
-  ];
 
-  tablet = {
-    wvkbd.enable = true;
-  };
-
-  terminal = {
-    bat.enable = true;
-    tmux.enable = true;
-  };
-
-  # TODO: rename gates with custom namespace
-  neb.desktop.core.hyprland.hyprpaper.t5610.enable = true;
+  neb.desktop.core.hyprland.hyprpaper.x230t.enable = true;
+  neb.desktop.core.astal.x230t.enable = true;
   desktop = {
-    chromium.enable = true;
-    firefox.enable = true;
-    fuzzel.enable = true;
-    hyprland = {
-      enable = true;
-      hyprgrass.enable = false;
-      hyprexpo.enable = false;
-      x230t.enable = true;
+    browsers = {
+      chromium.enable = true;
+      firefox.enable = true;
     };
-    kitty.enable = true;
-    mpv.enable = true;
-    sioyek.enable = true;
-    swww.x230t.enable = false;
-    vesktop.enable = true;
-    waybar.x230t.enable = true;
+    communications = {
+      vesktop.enable = true;
+    };
+    core = {
+      hyprland = {
+        enable = true;
+        x230t.enable = true;
+        # pyprland = {
+        #   enable = false;
+        #   btm.enable = true;
+        #   claude.enable = true;
+        #   hmOptions.enable = true;
+        #   nixpkgs.enable = true;
+        #   noogle.enable = true;
+        #   obsidian.enable = true;
+        #   spotube.enable = true;
+        # };
+        # hyprexpo.enable = true;
+      };
+      # swaync.enable = false;
+      # waybar = {
+      #   x230t.enable = false;
+      # };
+    };
+    media = {
+      # follow.enable = true;
+      mpv.enable = true;
+      obs-studio.enable = true;
+      sioyek.enable = true;
+      spotube.enable = true;
+      glance.enable = true;
+      # xournalpp.enable = true;
+    };
+    productivity = {
+      obsidian.enable = true;
+      # pomodoro-logger = true;
+      # super-productivity = true;
+    };
+    utilities = {
+      fuzzel.enable = true;
+      kitty.enable = true;
+      pavucontrol.enable = true;
+      swww.x230t.enable = false;
+    };
   };
 
   development = {
     git.enable = true;
   };
+
+  terminal = {
+    core = {
+      fzf.enable = true;
+      tmux.enable = true;
+      zsh.enable = true;
+    };
+    file-navigation = {
+      lf.enable = true;
+      yazi.enable = true;
+    };
+    media = {
+      buku.enable = true;
+      newsboat.enable = true;
+    };
+    productivity = {
+      taskwarrior.enable = true;
+    };
+    utilities = {
+      bat.enable = true;
+      cli-tools.enable = true;
+      nix-tools.enable = true;
+    };
+  };
+
 }
