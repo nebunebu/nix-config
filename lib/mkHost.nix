@@ -1,4 +1,4 @@
-{ inputs, self, system, pkgs, unstablePkgs }:
+{ inputs, system, pkgs, unstablePkgs }:
 
 { hostName
 , extraModules ? [ ]
@@ -18,7 +18,7 @@ inputs.nixpkgs.lib.nixosSystem {
   };
   modules =
     [
-      (self + "/hosts/${hostName}/nixOS/default.nix")
+      (inputs.self + "/hosts/${hostName}/nixOS/default.nix")
       inputs.stylix.nixosModules.stylix
     ]
     ++ extraModules
@@ -31,7 +31,7 @@ inputs.nixpkgs.lib.nixosSystem {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.nebu = import (self + "/hosts/${hostName}/homeManager/default.nix");
+              users.nebu = import (inputs.self + "/hosts/${hostName}/homeManager/default.nix");
               extraSpecialArgs = {
                 inherit
                   inputs

@@ -1,4 +1,4 @@
-{ self
+{ inputs
 , lib
 , config
 , ...
@@ -7,7 +7,7 @@ let
   cfg = config.desktop.utilities.swww.x230t;
 in
 {
-  imports = [ "${self}/extModules/homeManager/swww.nix" ];
+  imports = [ "${inputs.self}/extModules/homeManager/swww.nix" ];
 
   options.desktop.utilities.swww = {
     x230t.enable = lib.mkEnableOption "enable swww settings for x230t";
