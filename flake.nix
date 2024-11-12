@@ -82,7 +82,6 @@
     inputs:
     let
       system = "x86_64-linux";
-      self = ./.;
       pkgs = import inputs.nixpkgs {
         inherit system;
         config = { allowUnfree = true; };
@@ -96,7 +95,7 @@
       };
 
       mkHost = import ./lib/mkHost.nix {
-        inherit inputs self system pkgs unstablePkgs;
+        inherit inputs system pkgs unstablePkgs;
       };
     in
     {
