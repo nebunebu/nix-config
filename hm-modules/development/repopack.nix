@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    (pkgs.callPackage ../../../pkgs/repopack.nix { })
+    (pkgs.callPackage ../../pkgs/repopack.nix { })
   ];
 
   xdg.configFile."repopack/repopack.config.json".text = builtins.toJSON {

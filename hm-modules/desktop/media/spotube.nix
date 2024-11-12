@@ -9,7 +9,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      (pkgs.callPackage ../../../../pkgs/spotube.nix { })
+      (pkgs.callPackage ../../../pkgs/spotube.nix { })
     ];
   };
 }

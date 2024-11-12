@@ -3,8 +3,8 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    "${self}/modules/nixOS"
-    ../../../modules/nixOS/stylix.nix
+    "${self}/nixos-modules"
+    "${self}/nixos-modules/stylix.nix"
     ./hardware-configuration.nix
     ./remoteBuilder.nix
   ];
