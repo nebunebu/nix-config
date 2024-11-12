@@ -3,7 +3,7 @@
 }:
 
 {
-  imports = [ "${self}/modules/homeManager" ];
+  imports = [ "${self}/hm-modules" ];
 
   neb = {
     development = {
@@ -51,7 +51,7 @@
         mpv.enable = true;
         obs-studio.enable = true;
         sioyek.enable = true;
-        spotube.enable = true;
+        # spotube.enable = true;
         glance.enable = true;
         # xournalpp.enable = true;
       };

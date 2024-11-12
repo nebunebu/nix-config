@@ -2,8 +2,8 @@
 
 {
   imports = [
-    "${inputs.self}/modules/homeManager"
-    ../../../modules/homeManager/development/repopack.nix
+    "${inputs.self}/hm-modules"
+    # ../../../modules/homeManager/development/repopack.nix
   ];
 
   home.packages = [
@@ -42,7 +42,7 @@
           nixpkgs.enable = true;
           noogle.enable = true;
           obsidian.enable = true;
-          spotube.enable = true;
+          # spotube.enable = true;
         };
         # hyprexpo.enable = true;
       };

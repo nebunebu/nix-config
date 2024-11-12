@@ -1,9 +1,8 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  config,
-  ...
+{ inputs
+, pkgs
+, lib
+, config
+, ...
 }:
 
 {
@@ -17,7 +16,7 @@
     environment.systemPackages = [ pkgs.sops ];
 
     sops = {
-      defaultSopsFile = ../../../secrets/secrets.yaml;
+      defaultSopsFile = ../../secrets/secrets.yaml;
       age.keyFile = "${config.home-manager.users.nebu.xdg.configHome}/sops/age/keys.txt";
     };
   };

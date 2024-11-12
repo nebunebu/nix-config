@@ -13,16 +13,12 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    home.packages = [
-      (pkgs.callPackage ../../../../../../../pkgs/spotube.nix { })
-    ];
-
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
       text = # toml
         ''
           [scratchpads.spotube]
-          command = "${(pkgs.callPackage ../../../../../../../pkgs/spotube.nix { })}/bin/spotube"
+          command = "${lib.getExe pkgs.spotube}"
           animation = "fromTop"
           class = "spotube"
           lazy = true
