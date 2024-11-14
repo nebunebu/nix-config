@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprland
+    # ./hyprland
     ./swaync
     ./waybar
     ./astal
