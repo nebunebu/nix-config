@@ -14,21 +14,30 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    environment.systemPackages = [ unstablePkgs.glxinfo ];
+
+    nix = {
+      settings = {
+        substituters = [
+          "https://hyprland.cachix.org"
+          "https://cache.nixos.org/"
+        ];
+        trusted-public-keys = [
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        ];
+      };
+    };
+
     programs.hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    };
-
-    environment = {
-      systemPackages = [ pkgs.wl-clipboard ];
-
-      sessionVariables = {
-        NIXOS_OZONE_WL = "1";
-      };
+      # package = unstablePkgs.hyprland;
     };
 
     hardware = {
       opengl = {
+        package = unstablePkgs.mesa.drivers;
         enable = true;
         driSupport = true;
         driSupport32Bit = true;
@@ -48,17 +57,9 @@ in
       };
     };
 
-    # security = {
-    #   rtkit.enable = true;
-    #   polkit = {
-    #     enable = true;
-    #     adminIdentities = [ "unix-group:wheel" ];
-    #   };
-    # };
-
     xdg.portal = {
       enable = true;
-      wlr.enable = true;
+      wlr.enable = false;
       configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };

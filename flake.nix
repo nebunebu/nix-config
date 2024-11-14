@@ -44,14 +44,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tool-suites.url = "github:nebunebu/tool-suites";
+
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
+      # rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
+      ref = "refs/tags/v0.45.0";
       submodules = true;
     };
-
-    tool-suites.url = "github:nebunebu/tool-suites";
 
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";

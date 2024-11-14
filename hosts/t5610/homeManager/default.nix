@@ -83,6 +83,7 @@
     };
 
     desktop = {
+      window-managers.hyprland.enable = true;
       core = {
         hyprland.hyprpaper.t5610.enable = true;
         astal.t5610.enable = true;

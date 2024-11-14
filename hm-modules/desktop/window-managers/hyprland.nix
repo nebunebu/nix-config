@@ -1,60 +1,30 @@
 { inputs
 , pkgs
+, unstablePkgs
 , lib
 , config
 , ...
 }:
 let
-  cfg = config.neb.desktop.window-mangers.hyprland;
+  cfg = config.neb.desktop.window-managers.hyprland;
 in
 {
-  imports = [
-    # ./keybinds
-    # ./plugins
-    # ./pyprland
-    # ./hypridle.nix
-    # ./hyprlock.nix
-    # ./hyprgrass.nix
-    # ./t5610.nix
-    # ./x230t.nix
-    # ./hyprpaper.nix
-  ];
-
   options.neb.desktop.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      inputs.hyprwayland-scanner.packages."${pkgs.system}".default
-      pkgs.wl-clipboard
-      pkgs.wf-recorder
-      pkgs.grim
-      pkgs.slurp
-      pkgs.wev
-      pkgs.cliphist
-      (pkgs.writeShellScriptBin "hypr-start" ''
-        ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
-        ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
-        ${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr
-      '')
-    ];
-
-    home.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-    };
-
     wayland.windowManager.hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-      xwayland.enable = true;
-      systemd = {
-        enable = true;
-        variables = [ "-all" ];
-      };
-
-      extraConfig = ''
-        exec-once = hypr-start
-        exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
+      # package = unstablePkgs.hyprland;
+      extraConfig = /* conf */ ''
+        env = HYPRLAND_TRACE,1
+        env = AQ_TRACE,1
+        env = AQ_DRM_DEVICES,/dev/dri/card1
       '';
+      # extraConfig = ''
+      #   exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
+      #   debug:disable_logs = false 
+      # '';
 
       settings = {
         dwindle = {
