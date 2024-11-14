@@ -1,19 +1,13 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.core.hyprland.t5610;
+  cfg = config.neb.desktop.window-managers.hyprland.t5610;
 in
 {
   options = {
-    desktop.core.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
+    neb.desktop.window-managers.hyprland.t5610.enable = lib.mkEnableOption "enable hyprland settings for t5610";
   };
 
   config = lib.mkIf cfg.enable {
-
-    # home.sessionVariables = {
-    #   AQ_DRM_DEVICES = "/dev/dri/by-path/pci-0000:02:00.0-card:/dev/dri/card1:/dev/dri/renderD128";
-    #   HYPRLAND_TRACE = 1;
-    # };
-
     wayland.windowManager.hyprland.settings = {
       monitor = [
         "DP-1, 1920x1080, 0x0, 1"
