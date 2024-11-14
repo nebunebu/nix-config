@@ -34,11 +34,11 @@
   tuir.enable = true;
   app.virt-manager.enable = true;
   neb = {
+    stylix.enable = true;
     amdgpu.enable = true;
     desktop = {
       sddm.enable = false;
       hyprland.enable = true;
-      # stylix.enable = true;
       pipewire.enable = true;
     };
   };
