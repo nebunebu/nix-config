@@ -60,14 +60,25 @@ in
       '';
 
       settings = {
+
         dwindle = {
           preserve_split = true;
         };
-        decoration = {
-          "rounding" = "10";
-          "active_opacity" = "1";
-          "inactive_opacity" = "1";
-        };
+
+        # tmp until styix fix
+        decoration = lib.mkForce (removeAttrs
+          {
+            col.shadow = null;
+            shadow = {
+              enabled = true;
+              range = 4;
+              render_power = 3;
+              color = "rgba(1a1a1aee)";
+            };
+            rounding = "10";
+            "active_opacity" = "1";
+            "inactive_opacity" = "1";
+          } [ "col" ]);
 
         windowrulev2 = lib.mkForce [
           "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
