@@ -1,8 +1,8 @@
 {
   imports = [
     # ./hyprland
-    ./swaync
-    ./waybar
+    # ./swaync
+    # ./waybar
     ./astal
   ];
 }
