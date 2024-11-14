@@ -13,6 +13,7 @@
 
     stylix = {
       url = "github:danth/stylix/release-24.05";
+      # url = "github:diniamo/stylix/fix-hyprland";
     };
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
