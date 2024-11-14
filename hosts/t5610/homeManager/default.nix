@@ -17,18 +17,12 @@
   ];
 
   # NOTE: Tmp fix for hyprland error stylix causes by setting "col.shadow"
-  wayland.windowManager.hyprland.settings = {
-    decoration = lib.mkForce (lib.filterAttrs
-      (name: _: name != "col.shadow")
-      (config.stylix.targets.hyprland.settings.decoration or { })
-    );
-    # shadow = {
-    #   enabled = true;
-    #   range = 4;
-    #   render_power = 3;
-    #   color = "rgba(1a1a1aee)";
-    # };
-  };
+  # wayland.windowManager.hyprland.settings = {
+  #   decoration = lib.mkForce (lib.filterAttrs
+  #     (name: _: name != "col.shadow")
+  #     (config.stylix.targets.hyprland.settings.decoration or { })
+  #   );
+  # };
 
 
   # desktop = {
