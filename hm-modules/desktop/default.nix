@@ -6,5 +6,6 @@
     ./media
     ./productivity
     ./utilities
+    ./window-managers
   ];
 }
