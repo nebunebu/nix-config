@@ -4,11 +4,11 @@
 , ...
 }:
 let
-  cfg = config.neb.desktop.core.hyprland.hyprpaper;
+  cfg = config.neb.desktop.window-managers.hyprland.hyprpaper;
 in
 {
   options = {
-    neb.desktop.core.hyprland.hyprpaper = {
+    neb.desktop.window-managers.hyprland.hyprpaper = {
       device = lib.mkOption {
         type = lib.types.nullOr (
           lib.types.enum [
