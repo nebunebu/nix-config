@@ -5,11 +5,11 @@
 , ...
 }:
 let
-  cfg = config.desktop.core.hyprland;
+  cfg = config.neb.desktop.window-managers.hyprland;
 in
 {
   imports = [
-    # ./keybinds
+    ./keybinds
     ./plugins
     ./pyprland
     ./hypridle.nix
@@ -20,7 +20,7 @@ in
     ./hyprpaper.nix
   ];
 
-  options.desktop.core.hyprland.enable = lib.mkEnableOption "enable hyprland";
+  options.neb.desktop.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf cfg.enable {
     home.packages = [
@@ -40,6 +40,9 @@ in
 
     home.sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      HYPRLAND_TRACE = "1";
+      AQ_TRACE = "1";
+      AQ_DRM_DEVICES = "/dev/dri/card1";
     };
 
     wayland.windowManager.hyprland = {
