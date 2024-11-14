@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    ./keybinds
+    # ./keybinds
     ./plugins
     ./pyprland
     ./hypridle.nix

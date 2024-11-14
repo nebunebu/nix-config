@@ -12,7 +12,7 @@
     ./builder.nix
   ];
 
-  programs.river.enable = true;
+  # programs.river.enable = true;
 
   services = {
     gvfs.enable = true;
@@ -22,11 +22,12 @@
 
   environment.systemPackages = [
     # TODO: move this to its own modules
-    pkgs.qbittorrent
+    # pkgs.qbittorrent
     pkgs.calibre
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
-    (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
+    # (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
+    pkgs.foot
   ];
 
   sops.enable = true;
@@ -35,9 +36,9 @@
   neb = {
     amdgpu.enable = true;
     desktop = {
-      sddm.enable = true;
-      # stylix.enable = true;
+      sddm.enable = false;
       hyprland.enable = true;
+      # stylix.enable = true;
     };
   };
 

@@ -28,6 +28,7 @@ in
 
   stylix = {
     enable = true;
+
     image = builtins.fetchurl {
       url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/liminal-tv.jpg";
       sha256 = "1mvvmc5nj45apbiqlia02vnnmmjpzb88v921zl2pjddkzsdhzi3s";
@@ -37,6 +38,7 @@ in
       package = pkgs.rose-pine-cursor;
       name = "BreezeX-RosePineDawn-Linux";
     };
+
 
     fonts = {
       serif = {
