@@ -39,6 +39,7 @@
       sddm.enable = false;
       hyprland.enable = true;
       # stylix.enable = true;
+      pipewire.enable = true;
     };
   };
 

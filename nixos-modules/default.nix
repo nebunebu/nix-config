@@ -9,6 +9,7 @@
     ./hasSecrets
     ./hyprland.nix
     # ./jellyfin.nix
+    ./pipewire.nix
     ./networking.nix
     ./nix.nix
     ./sddm.nix
