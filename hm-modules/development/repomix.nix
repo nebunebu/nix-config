@@ -12,7 +12,7 @@ in
       (pkgs.callPackage ../../pkgs/repomix.nix { })
     ];
 
-    xdg.configFile."repopack/repopack.config.json".text = builtins.toJSON {
+    xdg.configFile."repomix/repomix.config.json".text = builtins.toJSON {
       output = {
         style = "xml";
         removeComments = false;
@@ -29,7 +29,7 @@ in
       };
     };
 
-    home.shellAliases.repopack =
-      "repopack -o ${config.home.homeDirectory}/Documents/repopacks/$(basename $(pwd) | sed 's/^\\./').xml";
+    home.shellAliases.repomix =
+      "repomix -o '${config.home.homeDirectory}/Documents/repomixes/'\"$(basename \"$PWD\" | sed 's/^\\.//')\".xml";
   };
 }

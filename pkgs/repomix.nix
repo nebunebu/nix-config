@@ -27,7 +27,7 @@ rec {
     mkdir -p $out/lib/node_modules/${pname}
     cp -r . $out/lib/node_modules/${pname}
     mkdir -p $out/bin
-    ln -s $out/lib/node_modules/${pname}/bin/${pname}.js $out/bin/${pname}
+    ln -s $out/lib/node_modules/${pname}/bin/${pname}.cjs $out/bin/${pname}
     runHook postInstall
   '';
 
