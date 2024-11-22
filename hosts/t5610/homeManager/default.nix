@@ -24,10 +24,8 @@
         t5610.enable = true;
         hyprpaper.t5610.enable = true;
       };
-      # core = {
-      #   hyprland.hyprpaper.t5610.enable = true;
-      #   astal.t5610.enable = true;
-      # };
+
+      ui.astal.t5610.enable = true;
 
       browsers = {
         chromium.enable = true;
