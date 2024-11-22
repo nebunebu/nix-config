@@ -22,6 +22,11 @@
         enable = true;
         t5610.enable = true;
         hyprpaper.t5610.enable = true;
+        pyprland = {
+          enable = true;
+          # btm.enable = true;
+          spotube.enable = true;
+        };
       };
 
       ui.astal.t5610.enable = true;

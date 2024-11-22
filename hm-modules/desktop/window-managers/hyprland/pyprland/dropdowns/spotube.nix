@@ -4,10 +4,11 @@
 , ...
 }:
 let
-  cfg = config.desktop.core.hyprland.pyprland.spotube;
+  cfg = config.neb.desktop.window-managers.hyprland.pyprland.spotube;
+  spotubePkg = pkgs.callPackage ../../../../../../pkgs/spotube.nix { };
 in
 {
-  options.desktop.core.hyprland.pyprland.spotube.enable = lib.mkEnableOption "enable pyprland spotube dropdown";
+  options.neb.desktop.window-managers.hyprland.pyprland.spotube.enable = lib.mkEnableOption "enable pyprland spotube dropdown";
 
   config = lib.mkIf cfg.enable {
 
@@ -16,7 +17,7 @@ in
       text = # toml
         ''
           [scratchpads.spotube]
-          command = "${lib.getExe pkgs.spotube}"
+          command = "${lib.getExe spotubePkg}"
           animation = "fromTop"
           class = "spotube"
           lazy = true
