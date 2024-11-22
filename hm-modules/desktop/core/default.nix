@@ -3,6 +3,6 @@
     # ./hyprland
     # ./swaync
     # ./waybar
-    ./astal
+    # ./astal
   ];
 }
