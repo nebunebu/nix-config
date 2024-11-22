@@ -46,14 +46,12 @@ in
       };
     };
 
-    boot = {
-      kernelParams = [
-        "video=DP-1:1920x1080@60"
-        "video=HDMI-A-1:1920x1080@60"
-        # "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
-        # "amdgpu.dc=1" # Enable display core
-      ];
-    };
+    # boot = {
+    #   kernelParams = [
+    #     "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
+    #     "amdgpu.dc=1" # Enable display core
+    #   ];
+    # };
 
   };
 }
