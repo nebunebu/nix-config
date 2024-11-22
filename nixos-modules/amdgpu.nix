@@ -1,4 +1,5 @@
 { pkgs
+, unstablePkgs
 , lib
 , config
 , ...
@@ -13,9 +14,11 @@ in
 
   config = lib.mkIf cfg.enable {
     environment = {
-      systemPackages = [ pkgs.lact ];
+      systemPackages = [ pkgs.lact pkgs.glxinfo ];
       variables = {
         ROC_ENABLE_PRE_VEGA = "1";
+        # WLR_DRM_NO_ATOMIC = "1";
+        # GDM_BACKEND = "amdgpu";
       };
     };
 
@@ -27,9 +30,18 @@ in
     hardware = {
       opengl = {
         enable = true;
+        package = unstablePkgs.mesa.drivers;
         driSupport = true;
         driSupport32Bit = true;
-        extraPackages = [ pkgs.rocmPackages.clr.icd pkgs.amdvlk ];
+        extraPackages = [
+          # unstablePkgs.mesa.drivers
+          pkgs.rocmPackages.clr.icd
+          pkgs.amdvlk
+          # pkgs.libva
+          # pkgs.libva-utils
+          # pkgs.vaaiVdpau
+          # pkgs.libvdpau-va-gl
+        ];
         extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
       };
     };
@@ -38,6 +50,8 @@ in
       kernelParams = [
         "video=DP-1:1920x1080@60"
         "video=HDMI-A-1:1920x1080@60"
+        # "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
+        # "amdgpu.dc=1" # Enable display core
       ];
     };
 
