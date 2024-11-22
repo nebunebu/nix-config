@@ -3,7 +3,6 @@
 {
   imports = [
     "${inputs.self}/hm-modules"
-    # ../../../modules/homeManager/development/repopack.nix
   ];
 
   home.packages = [
@@ -62,6 +61,7 @@
 
     development = {
       git.enable = true;
+      repomix.enable = true;
     };
 
     terminal = {

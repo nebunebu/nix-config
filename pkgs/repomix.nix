@@ -9,10 +9,10 @@ rec {
     owner = "yamadashy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-bdJSN1sd6b8jkj9VwPWyOCPqRYouDD0icAUyytTaiDQ=";
+    hash = "sha256-HTBlAne4pkfsy8+bAKIf9Mj1t11PWCFowJr/+i4yZ20=";
   };
 
-  npmDepsHash = "sha256-xgSEWBeIL5XMIKs2PMPWfGS/XxO9Jv/6OqVBbJER6Hc=";
+  npmDepsHash = "sha256-VWV1Cl4KSl0t7Gmj7L8n0bJDY6A7qHWVKEyXAr2LDdY=";
   npmPackFlags = [ "--ignore-scripts " ];
   NODE_OPTIONS = "--openssl-legacy-provider ";
 
