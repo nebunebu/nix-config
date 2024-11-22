@@ -4,6 +4,6 @@
     ./direnv.nix
     ./git.nix
     ./go.nix
-    ./repopack.nix
+    ./repomix.nix
   ];
 }
