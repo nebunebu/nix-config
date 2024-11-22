@@ -23,4 +23,10 @@
       mode = "0444";
     };
   };
+
+  # boot = {
+  #   kernelParams = [
+  #     # "video=DP-1:1920x1080@60" # replace with actual monitor
+  #   ];
+  # };
 }
