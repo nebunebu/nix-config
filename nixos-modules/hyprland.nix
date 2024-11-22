@@ -1,6 +1,5 @@
 { inputs
 , pkgs
-, unstablePkgs
 , lib
 , config
 , ...
@@ -14,8 +13,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-
-    environment.systemPackages = [ unstablePkgs.glxinfo ];
 
     nix = {
       settings = {
@@ -34,15 +31,6 @@ in
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       # package = unstablePkgs.hyprland;
-    };
-
-    hardware = {
-      opengl = {
-        package = unstablePkgs.mesa.drivers;
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-      };
     };
 
     xdg.portal = {
