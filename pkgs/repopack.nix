@@ -2,8 +2,8 @@
 
 buildNpmPackage
 rec {
-  pname = "repopack";
-  version = "0.1.35";
+  pname = "repomix";
+  version = "0.2.3";
 
   src = fetchFromGitHub {
     owner = "yamadashy";
@@ -13,9 +13,7 @@ rec {
   };
 
   npmDepsHash = "sha256-xgSEWBeIL5XMIKs2PMPWfGS/XxO9Jv/6OqVBbJER6Hc=";
-
   npmPackFlags = [ "--ignore-scripts " ];
-
   NODE_OPTIONS = "--openssl-legacy-provider ";
 
   buildPhase = ''
