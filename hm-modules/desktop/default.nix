@@ -5,6 +5,7 @@
     ./core
     ./media
     ./productivity
+    ./ui
     ./utilities
     ./window-managers
   ];
