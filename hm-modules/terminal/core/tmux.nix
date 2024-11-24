@@ -27,7 +27,7 @@ in
       newSession = true;
       sensibleOnTop = true;
       terminal = "xterm-kitty"; # maybe set with term???
-      extraConfig = lib.mkForce ''
+      extraConfig = lib.mkForce /* tmux */ ''
         set -g allow-passthrough on
         set -ga update-environment TERM
         set -ga update-environment TERM_PROGRAM
@@ -43,7 +43,13 @@ in
         bind '"' split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
 
-        bind ' ' display-popup -d "#{pane_current_path}"
+        # bind ' ' display-popup -d "#{pane_current_path}" -w 90% -h 90% -E -x P
+
+        bind ' ' if-shell -F '#{==:#{session_name},popup}' {
+            detach-client
+        } {
+            display-popup -d "#{pane_current_path}" -w 90% -h 90% -E -x C -y C "tmux new -A -s popup"
+        }
 
         # Ctrl+Alt  vim keys to resize panes
         bind-key -n C-M-k resize-pane -U 5
