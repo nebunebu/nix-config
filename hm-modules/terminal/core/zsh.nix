@@ -77,6 +77,7 @@ in
               zvm_bindkey vicmd ':' undefined-key
             }
 
+            ZVM_CURSOR_STYLE_ENABLED=false  # Disable zsh-vi-mode's cursor shape control
           '';
 
         plugins = [
