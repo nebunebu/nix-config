@@ -16,6 +16,7 @@ in
     ./hypridle.nix
     # ./hyprlock.nix
     ./hyprgrass.nix
+    ./hyprpicker.nix
     ./t5610.nix
     ./x230t.nix
     ./hyprpaper.nix

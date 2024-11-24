@@ -21,6 +21,7 @@
     bind = [
       # "$mainMod + Shift, W, exec, wshowkeys -b #31748f -f #e0def4 -s #f6c177 -a bottom -F \"Droid Sans Mono 24\""
 
+      "$mainMod, C, exec, hyprpicker-wl-copy"
       "$mainMod, S, layoutmsg, swapsplit"
       "$mainMod, T, layoutmsg, togglesplit"
       "$mainMod + Shift, Q, exec, hyprctl dispatch exit"
