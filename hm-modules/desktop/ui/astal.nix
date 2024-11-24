@@ -24,6 +24,7 @@ in
         pkgs.rose-pine-icon-theme
         pkgs.gnome.adwaita-icon-theme
         pkgs.morewaita-icon-theme
+        pkgs.libnotify
       ];
 
       #NOTE: move to system module
