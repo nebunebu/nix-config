@@ -16,7 +16,6 @@
   ];
 
   neb = {
-
     desktop = {
       window-managers.hyprland = {
         enable = true;

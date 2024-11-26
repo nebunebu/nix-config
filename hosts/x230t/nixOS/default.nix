@@ -1,17 +1,24 @@
-{ self, inputs, ... }:
+{ self, pkgs, unstablePkgs, inputs, ... }:
 
 {
   imports = [
     inputs.home-manager.nixosModules.default
     "${self}/nixos-modules"
-    "${self}/nixos-modules/stylix.nix"
     ./hardware-configuration.nix
     ./remoteBuilder.nix
   ];
 
   sops.enable = true;
 
-  neb.desktop.hyprland.enable = true;
+  neb = {
+    stylix.enable = true;
+    #   amdgpu.enable = true;
+    desktop = {
+      sddm.enable = false;
+      hyprland.enable = true;
+      pipewire.enable = true;
+    };
+  };
 
   networking.hostName = "x230t";
   environment = {
@@ -24,9 +31,24 @@
     };
   };
 
-  # boot = {
-  #   kernelParams = [
-  #     # "video=DP-1:1920x1080@60" # replace with actual monitor
-  #   ];
-  # };
+  hardware = {
+    opengl = {
+      enable = true;
+      package = unstablePkgs.mesa.drivers;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = [
+        pkgs.intel-media-driver
+        pkgs.vaapiIntel
+        pkgs.libvdpau-va-gl
+        pkgs.intel-compute-runtime
+      ];
+      extraPackages32 = [ pkgs.vaapiIntel pkgs.intel-media-driver ];
+    };
+  };
+  boot.kernelParams = [
+    "i915.enable_fbc=1" # Enable frame buffer compression
+    "i915.enable_psr=2" # Enable panel self-refresh
+    "i915.fastboot=1" # Enable fast boot
+  ];
 }
