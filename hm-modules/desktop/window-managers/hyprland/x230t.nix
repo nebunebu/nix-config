@@ -6,7 +6,7 @@
 , ...
 }:
 let
-  cfg = config.desktop.core.hyprland.x230t;
+  cfg = config.neb.desktop.window-managers.hyprland.x230t;
   hypr-tab = pkgs.writeShellScript "hypr-tab" ''
     if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
       hyprctl keyword input:touchdevice:transform 1
@@ -21,7 +21,7 @@ let
 in
 {
   options = {
-    desktop.core.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
+    neb.desktop.window-managers.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
   };
 
   config = lib.mkIf cfg.enable {
