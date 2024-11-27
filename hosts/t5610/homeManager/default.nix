@@ -15,8 +15,9 @@
     })
   ];
 
-  neb = {
+  programs.lazygit.enable = true;
 
+  neb = {
     desktop = {
       window-managers.hyprland = {
         enable = true;
