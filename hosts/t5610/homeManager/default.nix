@@ -59,6 +59,7 @@
       };
 
       utilities = {
+        foot.enable = true;
         fuzzel.enable = true;
         kitty.enable = true;
         pavucontrol.enable = true;
