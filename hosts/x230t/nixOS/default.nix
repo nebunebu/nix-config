@@ -32,11 +32,9 @@
   };
 
   hardware = {
-    opengl = {
+    hardware = {
       enable = true;
       package = unstablePkgs.mesa.drivers;
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = [
         pkgs.intel-media-driver
         pkgs.vaapiIntel
