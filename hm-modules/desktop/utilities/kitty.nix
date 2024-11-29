@@ -22,6 +22,7 @@ in
           cursor_beam_thickness = "1.5";
           cursor_blink_interval = "0";
           shell_integration = "enabled";
+          linux_display_server = "wayland";
         };
         shellIntegration = {
           enableZshIntegration = true;
