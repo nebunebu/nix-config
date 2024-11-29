@@ -60,6 +60,8 @@
       "video=DP-1:1920x1080@60"
       "video=HDMI-A-1:1920x1080@60"
     ];
+    extraModprobeConfig = ''
+      options hid_apple fnmode=1
+    '';
   };
-
 }
