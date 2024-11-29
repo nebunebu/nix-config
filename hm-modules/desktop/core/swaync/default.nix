@@ -17,7 +17,7 @@ in
 
     home.packages = [
       pkgs.libnotify
-      pkgs.gnome.adwaita-icon-theme
+      pkgs.adwaita-icon-theme
     ];
 
     services.swaync = {

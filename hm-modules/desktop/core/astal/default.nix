@@ -22,7 +22,7 @@ in
       home.packages = [
         inputs.ags.packages.${pkgs.system}.io
         pkgs.rose-pine-icon-theme
-        pkgs.gnome.adwaita-icon-theme
+        pkgs.adwaita-icon-theme
         pkgs.morewaita-icon-theme
       ];
 

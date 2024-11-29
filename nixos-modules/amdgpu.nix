@@ -28,11 +28,9 @@ in
     };
 
     hardware = {
-      opengl = {
+      graphics = {
         enable = true;
         package = unstablePkgs.mesa.drivers;
-        driSupport = true;
-        driSupport32Bit = true;
         extraPackages = [
           # unstablePkgs.mesa.drivers
           pkgs.rocmPackages.clr.icd
