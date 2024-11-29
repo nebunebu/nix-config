@@ -17,7 +17,6 @@ in
 
   config = lib.mkIf cfg.enable
     {
-      environment.systemPackages = [ pkgs.qt5.qtvirtualkeyboard ];
 
       services = {
         displayManager.sddm = {
@@ -40,7 +39,7 @@ in
               BackgroundColor = "#191724";
               HourFormat = "hh:mm";
               OverrideLoginButtonTextColor = "white";
-              Font = "Droid Sans";
+              Font = "IBM Plex";
             };
           };
         };
