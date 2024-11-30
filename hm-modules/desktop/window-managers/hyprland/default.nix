@@ -36,7 +36,6 @@ in
       (pkgs.writeShellScriptBin "hypr-start" ''
         ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
         ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
-        ${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr
       '')
     ];
 
