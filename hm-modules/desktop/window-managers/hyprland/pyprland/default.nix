@@ -21,6 +21,9 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [ inputs.pyprland.packages.x86_64-linux.default ];
+
+    wayland.windowManager.hyprland.settings.exec-once = [ "${inputs.pyprland.packages.x86_64-linux.default}/bin/pypr" ];
+
     xdg.configFile."pyprland.toml" = {
       target = "hypr/pyprland.toml";
       text = # toml

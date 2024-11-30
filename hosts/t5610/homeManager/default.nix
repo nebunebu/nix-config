@@ -26,7 +26,12 @@
         hyprpicker.enable = true;
         pyprland = {
           enable = true;
-          # btm.enable = true;
+          btm.enable = true;
+          claude.enable = true;
+          hmOptions.enable = true;
+          nixpkgs.enable = true;
+          noogle.enable = true;
+          obsidian.enable = true;
           spotube.enable = true;
         };
       };
