@@ -59,6 +59,7 @@
       };
       productivity = {
         obsidian.enable = true;
+        keycombiner.enable = true;
         # pomodoro-logger = true;
         # super-productivity = true;
       };
