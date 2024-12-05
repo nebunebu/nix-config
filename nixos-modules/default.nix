@@ -8,7 +8,7 @@
     ./documentation.nix
     ./hasSecrets
     ./hyprland.nix
-    # ./jellyfin.nix
+    ./jellyfin.nix
     ./pipewire.nix
     ./networking.nix
     ./nix.nix
