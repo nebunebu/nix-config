@@ -21,7 +21,7 @@ in
     (lib.mkIf cfg.t5610.enable {
 
       wayland.windowManager.hyprland.settings.exec-once = [
-        "${inputs.ags.homeManagerModules.default}/bin/ags run"
+        "ags run"
       ];
 
       home.packages = [
@@ -59,11 +59,6 @@ in
     })
 
     (lib.mkIf cfg.x230t.enable {
-
-      wayland.windowManager.hyprland.settings.exec-once = [
-        "${inputs.ags.homeManagerModules.default}/bin/ags run"
-      ];
-
       programs.ags = {
         enable = true;
       };
