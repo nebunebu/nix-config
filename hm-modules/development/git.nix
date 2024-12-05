@@ -14,6 +14,10 @@ in
         enable = true;
         userEmail = "nebu.nebuchadnezzar@gmail.com";
         userName = "nebunebu";
+        signing = {
+          key = "B5BA1CD101FE0178F1067A10483003E1477212AE";
+          signByDefault = true;
+        };
         delta.enable = true;
         extraConfig = {
           init.defaultBranch = "main";
