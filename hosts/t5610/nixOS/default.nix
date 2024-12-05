@@ -36,6 +36,7 @@
   neb = {
     stylix.enable = true;
     amdgpu.enable = true;
+    jellyfin.enable = true;
     desktop = {
       sddm.enable = false;
       hyprland.enable = true;
