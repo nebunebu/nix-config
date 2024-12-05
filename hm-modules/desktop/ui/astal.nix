@@ -19,6 +19,11 @@ in
 
   config = lib.mkMerge [
     (lib.mkIf cfg.t5610.enable {
+
+      wayland.windowManager.hyprland.settings.exec-once = [
+        "${inputs.ags.homeManagerModules.default}/bin/ags run"
+      ];
+
       home.packages = [
         inputs.ags.packages.${pkgs.system}.io
         pkgs.rose-pine-icon-theme
@@ -54,6 +59,11 @@ in
     })
 
     (lib.mkIf cfg.x230t.enable {
+
+      wayland.windowManager.hyprland.settings.exec-once = [
+        "${inputs.ags.homeManagerModules.default}/bin/ags run"
+      ];
+
       programs.ags = {
         enable = true;
       };
