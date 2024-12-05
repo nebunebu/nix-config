@@ -32,7 +32,7 @@
   };
 
   hardware = {
-    hardware = {
+    graphics = {
       enable = true;
       package = unstablePkgs.mesa.drivers;
       extraPackages = [
@@ -44,6 +44,7 @@
       extraPackages32 = [ pkgs.vaapiIntel pkgs.intel-media-driver ];
     };
   };
+
   boot.kernelParams = [
     "i915.enable_fbc=1" # Enable frame buffer compression
     "i915.enable_psr=2" # Enable panel self-refresh
