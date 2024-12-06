@@ -6,10 +6,11 @@
 {
   imports = [ "${self}/hm-modules" ];
 
-  home.packages = [ pkgs.foot ];
+  home.packages = [ pkgs.foot pkgs.libnotify ];
 
   neb = {
     desktop = {
+      ui.astal.x230t.enable = true;
       window-managers.hyprland = {
         enable = true;
         x230t.enable = true;
@@ -22,7 +23,6 @@
         };
       };
 
-      # ui.astal.t5610.enable = true;
 
       browsers = {
         chromium.enable = true;
