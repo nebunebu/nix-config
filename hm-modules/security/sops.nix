@@ -19,7 +19,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.sops ];
     sops = {
-      defaultSopsFile = ../secrets/secrets.yaml;
+      defaultSopsFile = ../../secrets/secrets.yaml;
       age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     };
   };
