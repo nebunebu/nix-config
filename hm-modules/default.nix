@@ -1,4 +1,4 @@
-{ lib, pkg, ... }:
+{ lib, ... }:
 {
   imports = [
     ./desktop
@@ -6,6 +6,7 @@
     ./tablet
     ./terminal
     ./password-store.nix
+    ./security
     ./sops.nix
     ./syncthing.nix
     # ./awscli.nix

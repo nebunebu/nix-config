@@ -18,7 +18,14 @@
   programs.lazygit.enable = true;
 
   neb = {
-    security.sops.enable = true;
+    security = {
+      sops.enable = true;
+      gpg = {
+        enable = true;
+        host = "t5610";
+      };
+    };
+
     desktop = {
       window-managers.hyprland = {
         enable = true;
