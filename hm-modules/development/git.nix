@@ -1,11 +1,14 @@
 { lib, config, ... }:
 let
   cfg = config.neb.development.git;
+  gpgCfg = config.neb.security.gpg;
 in
 {
   options.neb.development.git = {
     enable = lib.mkEnableOption "enable git";
+
   };
+
 
   config = lib.mkIf cfg.enable {
     # NOTE: def lot could be added for qol
@@ -14,11 +17,13 @@ in
         enable = true;
         userEmail = "nebu.nebuchadnezzar@gmail.com";
         userName = "nebunebu";
+        delta.enable = true;
+
         signing = {
-          key = "B5BA1CD101FE0178F1067A10483003E1477212AE";
+          key = lib.mkIf gpgCfg.enable gpgCfg.key;
           signByDefault = true;
         };
-        delta.enable = true;
+
         extraConfig = {
           init.defaultBranch = "main";
         };
