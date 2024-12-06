@@ -6,6 +6,7 @@
     ./tablet
     ./terminal
     ./password-store.nix
+    ./sops.nix
     ./syncthing.nix
     # ./awscli.nix
     # ./bat.nix

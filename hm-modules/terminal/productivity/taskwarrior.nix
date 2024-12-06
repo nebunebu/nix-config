@@ -8,16 +8,56 @@ let
 in
 {
   options = {
-    neb.terminal.productivity.taskwarrior.enable = lib.mkEnableOption "enable taskwarrior";
+    neb.terminal.productivity.taskwarrior = {
+      enable = lib.mkEnableOption "enable taskwarrior";
+      recurrence.disable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Disable recurrence for non-primary syn clients";
+      };
+    };
   };
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.taskwarrior-tui ];
+
+    sops = {
+      secrets = {
+        "taskwarrior_client_id" = {
+          path = "%r/taskwarrior_client_id";
+          sopsFile = ../../../secrets/secrets.yaml;
+        };
+        "taskwarrior_encryption_secret" = {
+          path = "%r/taskwarrior_encryption_secret";
+          sopsFile = ../../../secrets/secrets.yaml;
+        };
+      };
+    };
+
+    home.activation = {
+      generateTaskwarriorSecrets = lib.hm.dag.entryAfter [ "writeBoundary" ] /* bash */ ''
+        # Ensure the task config directory exists
+        mkdir -p "$HOME/.config/task"
+    
+        # Create the secrets config file
+        secret_config="$HOME/.config/task/secrets.rc"
+        uuid=$(cat "$XDG_RUNTIME_DIR/taskwarrior_client_id")
+        encryption_secret=$(cat "$XDG_RUNTIME_DIR/taskwarrior_encryption_secret")
+
+        echo "# TaskChampion secrets configuration - auto-generated" > "$secret_config"
+        echo "sync.server.client_id=$uuid" >> "$secret_config"
+        echo "sync.encryption_secret=$encryption_secret" >> "$secret_config"
+        echo "sync.server.url=http://127.0.0.1:10222" >> "$secret_config"
+      '';
+    };
+
+
     programs = {
       taskwarrior = {
         enable = true;
+        package = pkgs.taskwarrior3;
         config = {
           color = "on";
           rule.precedence.color = "deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.";
+          "recurrence" = if cfg.recurrence.disable then "off" else "on";
         };
 
         # base00: "#191724" color0
@@ -38,6 +78,8 @@ in
         # base0F: "#524f67" color15
 
         extraConfig = /* ini */ ''
+          include ~/.config/task/secrets.rc
+
           # General decoration
           color.label=color7 on color0          # base05 on base00: Light text on dark background
           color.label.sort=color8               # base04: Muted sort indicators
@@ -109,10 +151,6 @@ in
           color.undo.after=color6               # base0C: After state
           color.undo.before=color1              # base08: Before state
         '';
-      };
-      zsh.shellAliases = {
-        tadd = "task add +capture";
-        taskt = "taskwarrior-tui";
       };
     };
   };

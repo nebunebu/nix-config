@@ -15,6 +15,7 @@
     ./sddm.nix
     ./stylix.nix
     ./system.nix
+    ./taskchampion.nix
     ./users
     ./virtualisation
   ];
