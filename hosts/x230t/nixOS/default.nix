@@ -10,6 +10,8 @@
 
   sops.enable = true;
 
+  services.upower.enable = true;
+
   neb = {
     stylix.enable = true;
     #   amdgpu.enable = true;
