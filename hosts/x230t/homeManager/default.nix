@@ -43,10 +43,14 @@
         glance.enable = true;
         # xournalpp.enable = true;
       };
+
       productivity = {
         obsidian.enable = true;
-        # pomodoro-logger = true;
-        # super-productivity = true;
+
+        # taskwarrior = {
+        #   enable = true;
+        #   recurrence.disable = true;
+        # };
       };
 
       utilities = {

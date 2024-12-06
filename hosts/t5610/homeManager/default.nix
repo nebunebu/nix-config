@@ -18,6 +18,7 @@
   programs.lazygit.enable = true;
 
   neb = {
+    security.sops.enable = true;
     desktop = {
       window-managers.hyprland = {
         enable = true;
