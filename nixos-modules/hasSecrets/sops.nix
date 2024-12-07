@@ -17,7 +17,8 @@
 
     sops = {
       defaultSopsFile = ../../secrets/secrets.yaml;
-      age.keyFile = "${config.home-manager.users.nebu.xdg.configHome}/sops/age/keys.txt";
+      # age.keyFile = "${config.home-manager.users.nebu.xdg.configHome}/sops/age/keys.txt";
+      age.keyFile = "/home/nebu/.config/sops/age/keys.txt";
     };
   };
 }

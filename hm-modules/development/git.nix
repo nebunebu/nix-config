@@ -1,7 +1,7 @@
 { lib, config, ... }:
 let
   cfg = config.neb.development.git;
-  gpgCfg = config.neb.security.gpg;
+  # gpgCfg = config.neb.security.gpg;
 in
 {
   options.neb.development.git = {
@@ -19,10 +19,10 @@ in
         userName = "nebunebu";
         delta.enable = true;
 
-        signing = {
-          key = lib.mkIf gpgCfg.enable gpgCfg.key;
-          signByDefault = true;
-        };
+        # signing = {
+        #   key = lib.mkIf gpgCfg.enable gpgCfg.key;
+        #   signByDefault = true;
+        # };
 
         extraConfig = {
           init.defaultBranch = "main";
