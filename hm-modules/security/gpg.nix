@@ -20,7 +20,6 @@ in
       example = "t5610";
     };
 
-
     key = lib.mkOption {
       type = lib.types.str;
       description = "The GPG key for the current host";
@@ -31,27 +30,17 @@ in
   config = lib.mkIf cfg.enable {
     programs.gpg = {
       enable = true;
-
       settings = {
         default-key = hostKeys.${cfg.host};
       };
     };
-    systemd.user.services.gpg-agent = {
-      Unit = {
-        Description = "GnuPG private key agent";
-        IgnoreOnIsolate = true;
-      };
 
-      Service = {
-        Type = "forking";
-        ExecStart = "${config.programs.gpg.package}/bin/gpg-agent --daemon";
-        Restart = "on-failure";
-        RestartSec = "5s";
-      };
-
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+    services.gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      # pinentryFlavor = "gnome3"; # Or use "qt" if you prefer
+      defaultCacheTtl = 1800; # 30 minutes
+      maxCacheTtl = 7200; # 2 hours
     };
   };
 }
