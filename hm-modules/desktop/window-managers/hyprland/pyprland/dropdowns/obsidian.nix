@@ -11,11 +11,10 @@ in
       text = # toml
         ''
           [scratchpads.obsidian]
-          # command = "obsidian --disable-gpu"
           command = "${unstablePkgs.obsidian}/bin/obsidian --disable-gpu"
           animation = "fromTop"
           lazy = true
-          floating = true
+          class = "obsidian"
           size = "80% 80%"
         '';
     };
@@ -24,6 +23,14 @@ in
       settings = {
         bind = [ "ALT_L, o, exec, pypr toggle obsidian" ];
       };
+      settings = {
+        windowrulev2 = [
+          "float,class:^(obsidian)$"
+          "center,class:^(obsidian)$"
+          "size 80% 80%,class:^(obsidian)$"
+        ];
+      };
+
     };
   };
 }

@@ -17,6 +17,7 @@ in
     ./dropdowns/spotube.nix
   ];
 
+
   options.neb.desktop.window-managers.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";
 
   config = lib.mkIf cfg.enable {

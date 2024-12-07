@@ -11,8 +11,9 @@ in
       text = # toml
         ''
           [scratchpads.nixpkgs]
-          command = "firefox -P nixpkgs"
+          command = "hyprctl dispatch exec \"[float] firefox -P nixpkgs\""
           animation = "fromTop"
+          floating = true
           lazy = true
           size = "80% 80%"
         '';

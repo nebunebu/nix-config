@@ -45,7 +45,13 @@
     };
   };
 
-  networking.hostName = "t5610";
+  networking = {
+    hostName = "t5610";
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 3000 ];
+    };
+  };
 
   environment = {
     sessionVariables = {
