@@ -55,7 +55,6 @@
 
       productivity = {
         obsidian.enable = true;
-
         taskwarrior = {
           enable = true;
           recurrence.disable = true;
