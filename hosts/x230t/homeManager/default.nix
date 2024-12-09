@@ -9,6 +9,15 @@
   home.packages = [ pkgs.foot pkgs.libnotify ];
 
   neb = {
+
+    security = {
+      sops.enable = true;
+      gpg = {
+        enable = true;
+        host = "x230t";
+      };
+    };
+
     desktop = {
       ui.astal.x230t.enable = true;
       window-managers.hyprland = {
