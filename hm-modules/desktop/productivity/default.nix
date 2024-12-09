@@ -4,5 +4,6 @@
     # ./pomodoro-logger.nix
     ./obsidian.nix
     ./keycombiner.nix
+    ./activitywatch.nix
   ];
 }
