@@ -56,10 +56,10 @@
       productivity = {
         obsidian.enable = true;
 
-        # taskwarrior = {
-        #   enable = true;
-        #   recurrence.disable = true;
-        # };
+        taskwarrior = {
+          enable = true;
+          recurrence.disable = true;
+        };
       };
 
       utilities = {
@@ -88,9 +88,6 @@
       media = {
         buku.enable = true;
         newsboat.enable = true;
-      };
-      productivity = {
-        taskwarrior.enable = true;
       };
       utilities = {
         bat.enable = true;
