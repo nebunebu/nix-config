@@ -112,9 +112,9 @@
         # };
       };
 
-      # checks = builtins.mapAttrs
-      #   (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; })
-      #   inputs.nixpkgs.legacyPackages;
+      checks = builtins.mapAttrs
+        (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; })
+        inputs.nixpkgs.legacyPackages;
 
       devShells = builtins.mapAttrs
         (system: pkgs: {
