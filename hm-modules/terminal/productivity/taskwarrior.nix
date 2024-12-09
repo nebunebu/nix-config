@@ -80,6 +80,13 @@ in
         extraConfig = /* ini */ ''
           include ~/.config/task/secrets.rc
 
+          # Hidden tag context configuration
+          context.hide.read=-hidden
+          context.hide.write=+hidden
+      
+          # Make the hide context the default
+          context=hide
+
           # General decoration
           color.label=color7 on color0          # base05 on base00: Light text on dark background
           color.label.sort=color8               # base04: Muted sort indicators
