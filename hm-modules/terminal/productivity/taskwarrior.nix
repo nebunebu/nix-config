@@ -32,6 +32,10 @@ in
       };
     };
 
+    home.sessionVariables = {
+      XDG_RUNTIME_DIR = "/run/user/1000";
+    };
+
     home.activation = {
       generateTaskwarriorSecrets = lib.hm.dag.entryAfter [ "writeBoundary" ] /* bash */ ''
         # Ensure the task config directory exists
