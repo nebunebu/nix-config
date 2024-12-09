@@ -28,7 +28,10 @@
             render_power = 4;
             sharp = true;
             # color = "rgba(${config.stylix.base16Scheme.palette.base00}), 0.9"; # base
-            color = "rgb(${config.stylix.base16Scheme.palette.base00})"; # base
+            # color = "rgb(${config.stylix.base16Scheme.palette.base00})"; # base
+            # color = "rgb(${config.stylix.base16Scheme.palette.base02})"; # overlay
+            # color = "rgb(${config.stylix.base16Scheme.palette.base0F})"; # highlight medium
+            color = "rgb(33,32,46)"; # highlight low
             ignore_window = false;
             offset = "8 8"; # shadow offset
           };
