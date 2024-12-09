@@ -82,7 +82,7 @@ in
 
           # Hidden tag context configuration
           context.hide.read=-hidden
-          context.hide.write=+hidden
+          context.hide.write=none
       
           # Make the hide context the default
           context=hide
