@@ -32,26 +32,22 @@ in
       };
     };
 
-    home.sessionVariables = {
-      XDG_RUNTIME_DIR = "/run/user/1000";
-    };
-
-    home.activation = {
-      generateTaskwarriorSecrets = lib.hm.dag.entryAfter [ "writeBoundary" ] /* bash */ ''
-        # Ensure the task config directory exists
-        mkdir -p "$HOME/.config/task"
-    
-        # Create the secrets config file
-        secret_config="$HOME/.config/task/secrets.rc"
-        uuid=$(cat "$XDG_RUNTIME_DIR/taskwarrior_client_id")
-        encryption_secret=$(cat "$XDG_RUNTIME_DIR/taskwarrior_encryption_secret")
-
-        echo "# TaskChampion secrets configuration - auto-generated" > "$secret_config"
-        echo "sync.server.client_id=$uuid" >> "$secret_config"
-        echo "sync.encryption_secret=$encryption_secret" >> "$secret_config"
-        echo "sync.server.url=http://127.0.0.1:10222" >> "$secret_config"
-      '';
-    };
+    # home.activation = {
+    #   generateTaskwarriorSecrets = lib.hm.dag.entryAfter [ "writeBoundary" ] /* bash */ ''
+    #     # Ensure the task config directory exists
+    #     mkdir -p "${config.home.homeDirectory}/.config/task"
+    # 
+    #     # Create the secrets config file
+    #     secret_config="${config.home.homeDirectory}/.config/task/secrets.rc"
+    #     uuid=$(cat "${runtimeDir}/taskwarrior_client_id")
+    #     encryption_secret=$(cat "${runtimeDir}/taskwarrior_encryption_secret")
+    #
+    #     echo "# TaskChampion secrets configuration - auto-generated" > "$secret_config"
+    #     echo "sync.server.client_id=$uuid" >> "$secret_config"
+    #     echo "sync.encryption_secret=$encryption_secret" >> "$secret_config"
+    #     echo "sync.server.url=http://127.0.0.1:10222" >> "$secret_config"
+    #   '';
+    # };
 
 
     programs = {
