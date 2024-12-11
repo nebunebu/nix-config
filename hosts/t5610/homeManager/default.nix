@@ -91,7 +91,7 @@
     };
 
     terminal = {
-      core = {
+      shell = {
         fzf.enable = true;
         tmux.enable = true;
         zsh.enable = true;

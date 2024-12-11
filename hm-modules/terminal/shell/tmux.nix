@@ -6,11 +6,11 @@
 }:
 let
   palette = base: config.stylix.base16Scheme.palette.${base};
-  cfg = config.neb.terminal.core.tmux;
+  cfg = config.neb.terminal.shell.tmux;
 in
 
 {
-  options.neb.terminal.core.tmux = {
+  options.neb.terminal.shell.tmux = {
     enable = lib.mkEnableOption "enable tmux";
   };
 

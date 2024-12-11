@@ -1,9 +1,9 @@
 {
   imports = [
-    ./core
     ./file-navigation
     ./media
     ./productivity
+    ./shell
     ./utilities
   ];
 
