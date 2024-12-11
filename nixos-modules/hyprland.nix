@@ -37,7 +37,9 @@ in
       enable = true;
       wlr.enable = false;
       configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
     };
   };
 }
