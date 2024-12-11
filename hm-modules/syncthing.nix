@@ -1,7 +1,16 @@
+{ lib, config, ... }:
+
+let
+  cfg = config.neb.services.syncthing;
+in
 {
-  services.syncthing = {
-    enable = true;
-    tray.enable = true;
-    # sytembus-notify.enable = true;
+  options.neb.services.syncthing = {
+    enable = lib.mkEnableOption "enable syncthing";
+  };
+
+  config = lib.mkIf cfg.enable {
+    services.syncthing = {
+      enable = true;
+    };
   };
 }
