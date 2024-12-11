@@ -7,7 +7,6 @@
     ./terminal
     ./security
     ./syncthing.nix
-    # ./awscli.nix
     # ./bat.nix
     # ./cli-tools.nix
     # ./direnv.nix

@@ -84,6 +84,7 @@
     };
 
     development = {
+      awscli.enable = true;
       git.enable = true;
       go.enable = true;
       repomix.enable = true;
