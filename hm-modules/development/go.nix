@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.developemnt.go;
+  cfg = config.neb.development.go;
 in
 {
-  options.neb.developemnt.go = {
+  options.neb.development.go = {
     enable = lib.mkEnableOption "enable go";
   };
 
