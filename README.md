@@ -19,7 +19,6 @@ to use, and bereft of jankiness.
 - Multiple Host Configurations
   - t5610 (desktop)
   - x230t (laptop with tablet functionality)
-  - g500s (server)
   - nixISO (bootable iso image)
 - Home Manager Integration
 - Custom Package Definitions
@@ -103,6 +102,7 @@ installation guide, although it may be a long time until I get around to it.
 ### Display Manager
 
 ![Display Manager](https://i.imgur.com/6DCnnKD.png)
+
 - Some gold accenting is not captured in preview
 
 ### Desktop
