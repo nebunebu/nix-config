@@ -85,6 +85,7 @@
 
     development = {
       git.enable = true;
+      go.enable = true;
       repomix.enable = true;
     };
 
