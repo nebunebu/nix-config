@@ -6,12 +6,12 @@
 }:
 
 let
-  cfg = config.neb.terminal.core.zsh;
+  cfg = config.neb.terminal.shell.zsh;
 in
 {
 
   options = {
-    neb.terminal.core.zsh.enable = lib.mkEnableOption "enable zsh";
+    neb.terminal.shell.zsh.enable = lib.mkEnableOption "enable zsh";
   };
 
   config = lib.mkIf cfg.enable {
