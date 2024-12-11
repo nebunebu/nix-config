@@ -18,6 +18,7 @@
   programs.lazygit.enable = true;
 
   neb = {
+    services.syncthing.enable = true;
     security = {
       sops.enable = true;
       gpg = {
