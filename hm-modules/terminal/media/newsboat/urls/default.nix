@@ -1,5 +1,5 @@
 {
-  imports = [ ./full-yt/default.nix ];
+  # imports = [ ./full-yt/default.nix ];
 
   programs.newsboat = {
     urls = [
