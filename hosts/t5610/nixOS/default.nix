@@ -32,7 +32,6 @@
 
   sops.enable = true;
   tuir.enable = true;
-  app.virt-manager.enable = true;
   neb = {
     stylix.enable = true;
     amdgpu.enable = true;
@@ -42,6 +41,10 @@
       sddm.enable = false;
       hyprland.enable = true;
       pipewire.enable = true;
+    };
+
+    virtualisation = {
+      virt-manager.enable = true;
     };
   };
 

@@ -1,11 +1,14 @@
-{ config, lib, ... }:
+{ lib, config, ... }:
 
+let
+  cfg = config.neb.virtualisation.virt-manager;
+in
 {
-  options = {
-    app.virt-manager.enable = lib.mkEnableOption "enable virt-manager";
+  options.neb.virtualisation.virt-manager = {
+    enable = lib.mkEnableOption "enable virt-manager";
   };
 
-  config = lib.mkIf config.app.virt-manager.enable {
+  config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
     users.users.nebu.extraGroups = [ "libvirtd" ];
