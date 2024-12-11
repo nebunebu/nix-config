@@ -17,8 +17,12 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     programs.firefox = {
       enable = true;
+      nativeMessagingHosts = [
+        pkgs.tridactyl-native
+      ];
       profiles = {
         nebu = {
           isDefault = true;
@@ -30,6 +34,7 @@ in
               reddit-enhancement-suite
               old-reddit-redirect
               passff
+              tridactyl
             ]
             ++ ffao;
           userChrome = lib.mkForce # css
