@@ -55,6 +55,12 @@
         "float, class:^(firefox)$, initialTitle:^(Library)$"
         "center 1, class:^(firefox)$, initialTitle:^(Library)$"
         "size 90% 70%, class:^(firefox)$, initialTitle:^(Library)$"
+
+        # NOTE: Tridactyl Editor
+        "float, class:^(tridactyl)$"
+        "center 1, class:^(tridactyl)$"
+        "size 38% 87%, class:^(tridactyl)$"
+        "move 60% 5%, class:^(tridactyl)$"
       ];
     };
   };
