@@ -19,7 +19,6 @@ to use, and bereft of jankiness.
 - Multiple Host Configurations
   - t5610 (desktop)
   - x230t (laptop with tablet functionality)
-  - nixISO (bootable iso image)
 - Home Manager Integration
 - Custom Package Definitions
 - Secrets Management with `sops-nix`
