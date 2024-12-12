@@ -16,6 +16,23 @@ in
     enable = lib.mkEnableOption "enable firefox";
   };
 
+  # TODO:  Extensions Add or Keep:
+  # ActivityWatch Web Watcher
+  # Get RSS Feed Url
+  # I don't care about cookies
+  # Old reddit redirect
+  # Passff or alternative
+  # Private Internet Access
+  # Reddit Enhancement Suite
+  # Stylebot
+  # Stylus
+  # Tridactyl
+  # ublockorigin
+  # bukubrowse
+  # Maybe sideberry and terminal like styling
+  # can probably remove multiple profiles
+  # vimium
+
   config = lib.mkIf cfg.enable {
 
     programs.firefox = {
