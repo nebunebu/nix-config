@@ -2,7 +2,6 @@
   imports = [
     ./browsers
     ./communication
-    ./core
     ./media
     ./productivity
     ./ui
