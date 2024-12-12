@@ -39,7 +39,7 @@ to use, and bereft of jankiness.
 | **Terminal:**          | [kitty](https://github.com/kovidgoyal/kitty)                                   |
 | **Multiplexer:**       | [tmux](https://github.com/tmux/tmux)                                           |
 |                        |                                                                                |
-| **Browser:**           | [firefox](https://firefox-source-docs.mozilla.org/contributing/index.html), chromium, zen     |
+| **Browser:**           | [firefox](https://firefox-source-docs.mozilla.org/contributing/index.html), chromium, |
 | **Video Player:**      | [mpv](https://mpv.io/)                                                         |
 | **Music:**      | spotube |
 | **Pdf Viewer:**        | [sioyek](https://sioyek.info)                                                  |

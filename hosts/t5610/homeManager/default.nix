@@ -50,7 +50,6 @@
       browsers = {
         chromium.enable = true;
         firefox.enable = true;
-        # zen.enable = true;
       };
 
       communications = {

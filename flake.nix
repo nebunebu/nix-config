@@ -17,8 +17,6 @@
       # url = "github:diniamo/stylix/fix-hyprland";
     };
 
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
