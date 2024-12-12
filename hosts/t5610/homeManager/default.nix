@@ -79,7 +79,6 @@
         fuzzel.enable = true;
         kitty.enable = true;
         pavucontrol.enable = true;
-        # swww.t5610.enable = false;
       };
     };
 
