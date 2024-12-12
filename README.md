@@ -46,7 +46,6 @@ to use, and bereft of jankiness.
 | **Pdf Viewer:**        | [sioyek](https://sioyek.info)                                                  |
 |                        | [xournalpp](https://github.com/xournalpp/xournalpp)                            |
 | **WM:**                | [hyprland](https://github.com/hyprwm/Hyprland)                                 |
-| **Status Bar:**        | [waybar](https://github.com/Alexays/Waybar)                                    |
 | **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                     |
 | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)                                  |
 
