@@ -44,6 +44,8 @@
       windowrulev2 = lib.mkForce [
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+        # none create window rule so that title:Sign in - Google Accounts — Mozilla Firefox floats 1.
+        "float, center, size 50% 50%, class:^(firefox)$, title:^(Sign in - Google Accounts.*)$"
       ];
     };
   };
