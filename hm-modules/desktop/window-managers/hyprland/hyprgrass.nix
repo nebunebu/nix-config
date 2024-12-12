@@ -1,15 +1,14 @@
-{
-  lib,
-  inputs,
-  config,
-  pkgs,
-  ...
+{ lib
+, inputs
+, config
+, pkgs
+, ...
 }:
 let
-  cfg = config.desktop.hyprland.hyprgrass;
+  cfg = config.neb.desktop.hyprland.hyprgrass;
 in
 {
-  options.desktop.hyprland.hyprgrass.enable = lib.mkEnableOption "enable hyprgrass";
+  options.neb.desktop.hyprland.hyprgrass.enable = lib.mkEnableOption "enable hyprgrass";
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
