@@ -42,10 +42,19 @@
         } [ "col" ]);
 
       windowrulev2 = lib.mkForce [
+        # NOTE: Border Colors
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
-        # none create window rule so that title:Sign in - Google Accounts — Mozilla Firefox floats 1.
-        "float, center, size 50% 50%, class:^(firefox)$, title:^(Sign in - Google Accounts.*)$"
+
+        # NOTE: Firefox Google Sign In
+        "float, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
+        "center 1, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
+        "size 70% 70%, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
+
+        # NOTE: Firefox history manager and others
+        "float, class:^(firefox)$, initialTitle:^(Library)$"
+        "center 1, class:^(firefox)$, initialTitle:^(Library)$"
+        "size 90% 70%, class:^(firefox)$, initialTitle:^(Library)$"
       ];
     };
   };
