@@ -5,10 +5,10 @@
 , ...
 }:
 let
-  cfg = config.core.desktop.hyprland.hyprexpo;
+  cfg = config.neb.desktop.hyprland.hyprexpo;
 in
 {
-  options.core.desktop.hyprland.hyprexpo = {
+  options.neb.desktop.hyprland.hyprexpo = {
     enable = lib.mkEnableOption "enable hyplrand hyprexpo plugin";
   };
 
