@@ -30,7 +30,6 @@ inputs.nixpkgs.lib.nixosSystem {
           {
             home-manager = {
               useGlobalPkgs = true;
-              useUserPackages = true;
               users.nebu = import (inputs.self + "/hosts/${hostName}/homeManager/default.nix");
               extraSpecialArgs = {
                 inherit
