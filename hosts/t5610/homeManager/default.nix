@@ -13,6 +13,8 @@
         lutgen apply "$1" -o "roseified-$1" -p rose-pine
       '';
     })
+
+    pkgs.texlivePackages.latexmk
   ];
 
   programs.lazygit.enable = true;
