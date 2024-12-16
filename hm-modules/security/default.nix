@@ -1,8 +1,8 @@
 {
   imports = [
     ./gpg.nix
-    ./pass.nix
+    # ./pass.nix
     # ./ssh.nix
-    ./sops.nix
+    # ./sops.nix
   ];
 }

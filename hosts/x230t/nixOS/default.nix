@@ -4,6 +4,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     "${self}/nixos-modules"
+    ../../../sops
     ./hardware-configuration.nix
     ./remoteBuilder.nix
   ];

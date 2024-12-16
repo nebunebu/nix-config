@@ -10,13 +10,13 @@
 
   neb = {
 
-    security = {
-      sops.enable = true;
-      gpg = {
-        enable = true;
-        host = "x230t";
-      };
-    };
+    # security = {
+    #   sops.enable = true;
+    #   gpg = {
+    #     enable = true;
+    #     host = "x230t";
+    #   };
+    # };
 
     desktop = {
       ui.astal.x230t.enable = true;

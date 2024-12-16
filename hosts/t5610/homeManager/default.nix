@@ -21,13 +21,13 @@
 
   neb = {
     services.syncthing.enable = true;
-    security = {
-      sops.enable = true;
-      gpg = {
-        enable = true;
-        host = "t5610";
-      };
-    };
+    # security = {
+    #   sops.enable = true;
+    #   gpg = {
+    #     enable = true;
+    #     host = "t5610";
+    #   };
+    # };
 
     desktop = {
       window-managers.hyprland = {
@@ -104,9 +104,9 @@
         buku.enable = true;
         newsboat.enable = true;
       };
-      productivity = {
-        taskwarrior.enable = true;
-      };
+      # productivity = {
+      #   taskwarrior.enable = true;
+      # };
       utilities = {
         bat.enable = true;
         cli-tools.enable = true;

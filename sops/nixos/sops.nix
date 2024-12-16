@@ -16,8 +16,7 @@
     environment.systemPackages = [ pkgs.sops ];
 
     sops = {
-      defaultSopsFile = ../../secrets/secrets.yaml;
-      # age.keyFile = "${config.home-manager.users.nebu.xdg.configHome}/sops/age/keys.txt";
+      defaultSopsFile = ../secrets/secrets.yaml;
       age.keyFile = "/home/nebu/.config/sops/age/keys.txt";
     };
   };

@@ -5,7 +5,7 @@
     ./development
     ./tablet
     ./terminal
-    ./security
+    # ./security
     ./syncthing.nix
     # ./bat.nix
     # ./cli-tools.nix

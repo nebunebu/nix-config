@@ -8,6 +8,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
+    ../../../sops
     "${self}/nixos-modules"
     ./builder.nix
   ];
