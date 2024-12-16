@@ -2,7 +2,6 @@
   imports = [
     ./file-navigation
     ./media
-    ./productivity
     ./shell
     ./utilities
   ];
