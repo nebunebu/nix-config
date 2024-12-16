@@ -505,6 +505,22 @@
         "type": "github"
       }
     },
+    "global-note-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707927069,
+        "narHash": "sha256-fp5V2rKoyQwYPF1/cDbL+j+KC7VLPh6iWt92NkPkgOY=",
+        "owner": "backdround",
+        "repo": "global-note.nvim",
+        "rev": "1e0d4bba425d971ed3ce40d182c574a25507115c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "backdround",
+        "repo": "global-note.nvim",
+        "type": "github"
+      }
+    },
     "gnome-shell": {
       "flake": false,
       "locked": {
@@ -873,14 +889,17 @@
       "inputs": {
         "easypick-nvim": "easypick-nvim",
         "git-dev-nvim": "git-dev-nvim",
+        "global-note-nvim": "global-note-nvim",
         "haunt-nvim": "haunt-nvim",
         "minty-nvim": "minty-nvim",
         "nerdy-nvim": "nerdy-nvim",
         "nixpkgs": "nixpkgs_4",
         "px-to-rem-nvim": "px-to-rem-nvim",
         "snacks-nvim": "snacks-nvim",
+        "taskwarrior-nvim": "taskwarrior-nvim",
         "telescope-emoji-nvim": "telescope-emoji-nvim",
         "telescope-git-conflicts-nvim": "telescope-git-conflicts-nvim",
+        "telescope-heading-nvim": "telescope-heading-nvim",
         "telescope-repo-nvim": "telescope-repo-nvim",
         "tiny-code-action-nvim": "tiny-code-action-nvim",
         "tiny-devicons-auto-colors-nvim": "tiny-devicons-auto-colors-nvim",
@@ -890,11 +909,11 @@
         "yamlmatter-nvim": "yamlmatter-nvim"
       },
       "locked": {
-        "lastModified": 1733207131,
-        "narHash": "sha256-3nkz2TEbq5odZXukxVK/cUO9bcTI1X2qW6C4HLxwn4s=",
+        "lastModified": 1734123252,
+        "narHash": "sha256-7NV6pPPByKaD81/qtKl1m07FKtU2Q/3Rg3pPwUoLsNQ=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "d6f9039d044e0aa55b2ad33b91c9db23c26a1cbb",
+        "rev": "f2fe404fb8db1877ddeff6e71e05bfa35d6b3a1c",
         "type": "github"
       },
       "original": {
@@ -1472,6 +1491,22 @@
         "type": "github"
       }
     },
+    "taskwarrior-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710976454,
+        "narHash": "sha256-KwUnAoPDlDMYL2KZo94yyNqwwhXLstt2Fy95RB7rZpw=",
+        "owner": "ribelo",
+        "repo": "taskwarrior.nvim",
+        "rev": "5383427b88912ff3c37653d76e48b1fc197844dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ribelo",
+        "repo": "taskwarrior.nvim",
+        "type": "github"
+      }
+    },
     "telescope-emoji-nvim": {
       "flake": false,
       "locked": {
@@ -1501,6 +1536,22 @@
       "original": {
         "owner": "Snikimonkd",
         "repo": "telescope-git-conflicts.nvim",
+        "type": "github"
+      }
+    },
+    "telescope-heading-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718109830,
+        "narHash": "sha256-29nSqK4sWI3m5hHviGBfiSN/GPh8oXGiYrrTmN2okRk=",
+        "owner": "crispgm",
+        "repo": "telescope-heading.nvim",
+        "rev": "e85c0f69cb64048f56e76548dcb2f10277576df9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crispgm",
+        "repo": "telescope-heading.nvim",
         "type": "github"
       }
     },
