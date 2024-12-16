@@ -20,6 +20,7 @@
   programs.lazygit.enable = true;
 
   neb = {
+
     services.syncthing.enable = true;
     # security = {
     #   sops.enable = true;
@@ -104,9 +105,7 @@
         buku.enable = true;
         newsboat.enable = true;
       };
-      # productivity = {
-      #   taskwarrior.enable = true;
-      # };
+
       utilities = {
         bat.enable = true;
         cli-tools.enable = true;

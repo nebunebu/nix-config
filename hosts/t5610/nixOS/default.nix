@@ -13,7 +13,7 @@
     ./builder.nix
   ];
 
-  # programs.river.enable = true;
+  sops.enable = true;
 
   services = {
     gvfs.enable = true;
@@ -31,8 +31,8 @@
     pkgs.foot
   ];
 
-  sops.enable = true;
-  tuir.enable = true;
+  # sops.enable = true;
+  # tuir.enable = true;
   neb = {
     stylix.enable = true;
     amdgpu.enable = true;
