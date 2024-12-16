@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./hm
+    ./nixos
+  ];
+}

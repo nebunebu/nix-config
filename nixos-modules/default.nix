@@ -6,7 +6,6 @@
     ./boot.nix
     ./console.nix
     ./documentation.nix
-    ./hasSecrets
     ./hyprland.nix
     ./jellyfin.nix
     ./pipewire.nix
