@@ -3,16 +3,18 @@
 buildNpmPackage
 rec {
   pname = "repomix";
-  version = "0.2.3";
+  version = "0.2.6";
 
   src = fetchFromGitHub {
     owner = "yamadashy";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-HTBlAne4pkfsy8+bAKIf9Mj1t11PWCFowJr/+i4yZ20=";
+    hash = "sha256-ZYU85782Z6O69KkKu4h3OqJqAgaxktEgHkcfs2ms9xg=";
+
+
   };
 
-  npmDepsHash = "sha256-VWV1Cl4KSl0t7Gmj7L8n0bJDY6A7qHWVKEyXAr2LDdY=";
+  npmDepsHash = "sha256-r+RIa7ACXJv4/CutnN/3S36US6r7w0EkM9dA4ShWPdU=";
   npmPackFlags = [ "--ignore-scripts " ];
   NODE_OPTIONS = "--openssl-legacy-provider ";
 
