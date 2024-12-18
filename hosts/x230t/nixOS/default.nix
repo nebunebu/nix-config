@@ -9,7 +9,7 @@
     ./remoteBuilder.nix
   ];
 
-  sops.enable = true;
+  # sops.enable = true;
 
   services.upower.enable = true;
 

@@ -36,6 +36,10 @@
       enable = true;
       taskwarrior.enable = true;
       tuir.enable = true;
+      gpg = {
+        enable = true;
+      };
+      pass.enable = true;
     };
     stylix.enable = true;
     amdgpu.enable = true;
