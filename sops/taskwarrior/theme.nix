@@ -1,21 +1,24 @@
 {
-  programs.taskwarrior.extraConfig = /* ini */ ''
-    # base00: "#191724" color0
-    # base01: "#1f1d2e" color10
-    # base02: "#26233a" color11
-    # base03: "#6e6a86" color12
-    # base04: "#908caa" color8
-    # base05: "#e0def4" color7
-    # base06: "#e0def4" color13
-    # base07: "#524f67" color14
-    # base08: "#eb6f92" color1
-    # base09: "#f6c177" color5
-    # base0A: "#ebbcba" color3
-    # base0B: "#31748f" color2
-    # base0C: "#9ccfd8" color6
-    # base0D: "#c4a7e7" color4
-    # base0E: "#f6c177" color9
-    # base0F: "#524f67" color15
+
+  # base00: "#191724" color0
+  # base01: "#1f1d2e" color10
+  # base02: "#26233a" color11
+  # base03: "#6e6a86" color12
+  # base04: "#908caa" color8
+  # base05: "#e0def4" color7
+  # base06: "#e0def4" color13
+  # base07: "#524f67" color14
+  # base08: "#eb6f92" color1
+  # base09: "#f6c177" color5
+  # base0A: "#ebbcba" color3
+  # base0B: "#31748f" color2
+  # base0C: "#9ccfd8" color6
+  # base0D: "#c4a7e7" color4
+  # base0E: "#f6c177" color9
+  # base0F: "#524f67" color15
+
+  home-manager.users.nebu.programs.taskwarrior.extraConfig = /* ini */ ''
+    rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
 
       # General decoration
       color.label=color7 on color0          # base05 on base00: Light text on dark background

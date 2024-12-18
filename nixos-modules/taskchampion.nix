@@ -3,8 +3,6 @@ let
   cfg = config.neb.taskchampion;
 in
 {
-
-
   options.neb.taskchampion = {
     enable = lib.mkEnableOption "enable taskchampion sync server";
   };

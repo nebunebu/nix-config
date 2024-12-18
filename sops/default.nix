@@ -2,7 +2,7 @@
   imports = [
     # ./openvpn.nix
     ./sops.nix
-    # ./taskwarrior
+    ./taskwarrior
     # ./tuir
   ];
 }
