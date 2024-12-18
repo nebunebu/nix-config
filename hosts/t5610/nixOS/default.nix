@@ -35,6 +35,7 @@
     sops = {
       enable = true;
       taskwarrior.enable = true;
+      tuir.enable = true;
     };
     stylix.enable = true;
     amdgpu.enable = true;
