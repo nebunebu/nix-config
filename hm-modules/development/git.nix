@@ -9,7 +9,6 @@ in
 
   };
 
-
   config = lib.mkIf cfg.enable {
     # NOTE: def lot could be added for qol
     programs = {
