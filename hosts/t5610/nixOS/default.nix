@@ -13,8 +13,6 @@
     ./builder.nix
   ];
 
-  sops.enable = true;
-
   services = {
     gvfs.enable = true;
     # NOTE: required for spotube
@@ -34,6 +32,10 @@
   # sops.enable = true;
   # tuir.enable = true;
   neb = {
+    sops = {
+      enable = true;
+      taskwarrior.enable = true;
+    };
     stylix.enable = true;
     amdgpu.enable = true;
     jellyfin.enable = true;
