@@ -23,7 +23,7 @@
         {
           col.shadow = null;
           shadow = {
-            enabled = true;
+            enabled = false;
             range = 1;
             render_power = 4;
             sharp = true;
