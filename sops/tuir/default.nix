@@ -1,16 +1,18 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
+{ lib
+, pkgs
+, config
+, ...
 }:
+let
+  cfg = config.neb.sops.tuir;
+in
 {
 
   options = {
-    tuir.enable = lib.mkEnableOption "enable tuir";
+    neb.sops.tuir.enable = lib.mkEnableOption "enable tuir";
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     home-manager.users.nebu = {
       home = {
         packages = [ pkgs.tuir ];
