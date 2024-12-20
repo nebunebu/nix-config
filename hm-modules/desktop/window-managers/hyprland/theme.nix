@@ -13,8 +13,9 @@
   wayland.windowManager.hyprland = {
     settings = {
       general = {
-        "gaps_in" = "8";
-        "gaps_out" = "0,12,12,10"; #top,right,bottom,left
+        "gaps_in" = "4";
+        # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
+        "gaps_out" = "0,2,2,2"; #top,right,bottom,left
         "border_size" = "3";
         "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
       };
