@@ -21,7 +21,7 @@
 
   environment.systemPackages = [
     # TODO: move this to its own modules
-    # pkgs.qbittorrent
+    pkgs.qbittorrent
     pkgs.calibre
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
