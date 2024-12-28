@@ -1,5 +1,6 @@
 {
   imports = [
+    ./follow.nix
     ./glance.nix
     ./mpv.nix
     ./obs-studio.nix
