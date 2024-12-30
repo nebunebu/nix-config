@@ -10,6 +10,7 @@
     };
 
     ags.url = "github:aylur/ags/v2";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     stylix = {
       # NOTE: set to 24.11 when released
