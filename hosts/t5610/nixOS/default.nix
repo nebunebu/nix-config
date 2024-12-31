@@ -41,6 +41,7 @@
       };
       pass.enable = true;
     };
+    beaverhabits.enable = true;
     stylix.enable = true;
     amdgpu.enable = true;
     jellyfin.enable = true;
