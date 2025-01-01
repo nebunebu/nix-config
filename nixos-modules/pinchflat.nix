@@ -9,14 +9,24 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    virtualisation.podman = {
+      enable = true;
+      autoPrune.enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+
+    networking.firewall.interfaces."podman+".allowedUDPPorts = [ 53 ];
+
     systemd.tmpfiles.rules = [
       "d /srv/pinchflat 0770 pinchflat jellyfin -"
       "d /srv/pinchflat/config 0770 pinchflat jellyfin -"
+      "d /srv/jellyfin/Youtube 0770 jellyfin jellyfin -"
     ];
 
     users.users.pinchflat = {
       isSystemUser = true;
-      group = "jellyfin";
+      group = "pinchflat";
       extraGroups = [ "jellyfin" ];
     };
     users.groups.pinchflat = { };
@@ -29,15 +39,16 @@ in
           TZ = config.time.timeZone;
         };
         ports = [
-          "8945:8945"
+          "8945:8945/tcp"
         ];
         volumes = [
-          "/srv/pinchflat/config:/config"
-          "/srv/jellyfin/Youtube:/downloads"
+          "/srv/pinchflat/config:/config:rw"
+          "/srv/jellyfin/Youtube:/downloads:rw"
         ];
+        log-driver = "journald";
         autoStart = true;
-        user = "pinchflat";
       };
     };
+    networking.firewall.allowedTCPPorts = [ 8945 ];
   };
 }
