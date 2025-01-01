@@ -9,6 +9,7 @@
     ./documentation.nix
     ./hyprland.nix
     ./jellyfin.nix
+    ./pinchflat.nix
     ./pipewire.nix
     ./networking.nix
     ./nix.nix
