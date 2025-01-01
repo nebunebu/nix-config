@@ -71,7 +71,7 @@
       productivity = {
         obsidian.enable = true;
         keycombiner.enable = true;
-        activitywatch.enable = true;
+        # activitywatch.enable = true;
         # pomodoro-logger = true;
         # super-productivity = true;
       };
