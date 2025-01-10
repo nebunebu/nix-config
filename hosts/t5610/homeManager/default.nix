@@ -14,6 +14,7 @@
       '';
     })
 
+    pkgs.drawio
     pkgs.texlivePackages.latexmk
   ];
 
