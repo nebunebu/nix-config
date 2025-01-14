@@ -57,6 +57,8 @@
       submodules = true;
     };
 
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
     };
@@ -91,6 +93,7 @@
         config = { allowUnfree = true; };
         overlays = [
           inputs.tool-suites.overlays.default
+          inputs.hyprpanel.overlay
         ];
       };
       unstablePkgs = import inputs.nixpkgs-unstable {

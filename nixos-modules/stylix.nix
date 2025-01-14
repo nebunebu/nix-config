@@ -23,7 +23,7 @@ in
   config = lib.mkIf cfg.enable {
 
     fonts.packages = [
-      unstablePkgs.ibm-plex
+      # unstablePkgs.ibm-plex
       unstablePkgs.nerd-fonts.im-writing
       unstablePkgs.nerd-fonts.blex-mono
       # unstablePkgs.nerd-fonts.symbols-only

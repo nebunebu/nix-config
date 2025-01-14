@@ -54,7 +54,8 @@
         };
       };
 
-      ui.astal.t5610.enable = true;
+      # ui.astal.t5610.enable = true;
+      ui.hyprpanel.t5610.enable = true;
 
       browsers = {
         chromium.enable = true;
