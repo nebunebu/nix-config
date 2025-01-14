@@ -9,10 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     ags.url = "github:aylur/ags";
 
     ghostty.url = "github:ghostty-org/ghostty";
-
     stylix = {
       # NOTE: set to 24.11 when released
       url = "github:danth/stylix/master";
@@ -108,7 +109,7 @@
     {
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
-        x230t = mkHost { hostName = "x230t"; };
+        x230t = mkHost { hostName = "x230t"; extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-think-pad-x230 ]; };
       };
 
       checks = builtins.mapAttrs
