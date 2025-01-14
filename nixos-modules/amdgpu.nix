@@ -14,7 +14,7 @@ in
 
   config = lib.mkIf cfg.enable {
     environment = {
-      systemPackages = [ pkgs.lact pkgs.glxinfo ];
+      systemPackages = [ pkgs.lact pkgs.glxinfo pkgs.libdrm ];
       variables = {
         ROC_ENABLE_PRE_VEGA = "1";
         # WLR_DRM_NO_ATOMIC = "1";
@@ -28,13 +28,18 @@ in
     };
 
     hardware = {
+      amdgpu = {
+        amdvlk.enable = true;
+      };
       graphics = {
         enable = true;
-        package = unstablePkgs.mesa.drivers;
+        # package = unstablePkgs.mesa.drivers;
         extraPackages = [
           # unstablePkgs.mesa.drivers
           pkgs.rocmPackages.clr.icd
           pkgs.amdvlk
+          pkgs.vulkan-loader
+          pkgs.vulkan-validation-layers
           # pkgs.libva
           # pkgs.libva-utils
           # pkgs.vaaiVdpau
@@ -44,12 +49,12 @@ in
       };
     };
 
-    # boot = {
-    #   kernelParams = [
-    #     "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
-    #     "amdgpu.dc=1" # Enable display core
-    #   ];
-    # };
+    boot = {
+      kernelParams = [
+        # "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
+        # "amdgpu.dc=1" # Enable display core
+      ];
+    };
 
   };
 }

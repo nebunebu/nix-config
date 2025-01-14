@@ -28,6 +28,7 @@
     # (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
     pkgs.foot
   ];
+  programs.river.enable = true;
 
   # sops.enable = true;
   # tuir.enable = true;

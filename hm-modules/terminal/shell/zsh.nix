@@ -15,8 +15,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ (unstablePkgs.nerdfonts.override { fonts = [ "DroidSansMono" ]; }) ];
-
+    # home.packages = [ (unstablePkgs.nerdfonts.override { fonts = [ "DroidSansMono" ]; }) ];
+    #
     programs = {
       starship = {
         enable = true;

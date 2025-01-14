@@ -32,20 +32,25 @@
     # };
 
     desktop = {
-      window-managers.hyprland = {
-        enable = true;
-        t5610.enable = true;
-        hyprpaper.t5610.enable = true;
-        hyprpicker.enable = true;
-        pyprland = {
+
+      window-managers = {
+        river.enable = true;
+        hyprland = {
           enable = true;
-          btm.enable = true;
-          claude.enable = true;
-          hmOptions.enable = true;
-          nixpkgs.enable = true;
-          noogle.enable = true;
-          obsidian.enable = true;
-          spotube.enable = true;
+          t5610.enable = true;
+          hyprpaper.t5610.enable = true;
+          hyprpicker.enable = true;
+          pyprland = {
+            enable = true;
+            btm.enable = true;
+            claude.enable = true;
+            hmOptions.enable = true;
+            nixpkgs.enable = true;
+            noogle.enable = true;
+            obsidian.enable = true;
+            spotube.enable = true;
+          };
+
         };
       };
 

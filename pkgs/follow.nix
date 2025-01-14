@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     owner = "RSSNext";
     repo = "Follow";
     rev = "v${version}";
-    hash = "sha256-QsLovBoWGPk7zJxCNfkZMUbGJomg7/OeGiXmDT+WIhE=";
+    hash = "sha256-X5jB6HzHVJYQ9GJt5x1UUEU8AV+UDk2suV7/4oYb+uc=";
   };
 
   nativeBuildInputs = [
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
 
   pnpmDeps = pnpm.fetchDeps {
     inherit pname version src;
-    hash = "sha256-5PwLe7jPj163kTPmAPm03C/ULDjr7+wvRhGI9yv4fk4=";
+    hash = "sha256-wMYw5mLvXAvtnSDS5TDVOENdbHSWEnZg+Rj5lpnGz9w=";
   };
 
   env = {

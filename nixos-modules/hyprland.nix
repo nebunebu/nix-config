@@ -1,5 +1,6 @@
 { inputs
 , pkgs
+, unstablePkgs
 , lib
 , config
 , ...
@@ -14,6 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    environment.systemPackages = [ unstablePkgs.glaze unstablePkgs.hyprgraphics ];
     nix = {
       settings = {
         substituters = [
@@ -26,16 +28,22 @@ in
         ];
       };
     };
+    # environment.sessionVariables = {
+    #   WLR_RENDERER = "vulkan";
+    #   AMD_VULKAN_ICD = "RADV";
+    #   LIBVA_DRIVER_NAME = "radeonsi";
+    # };
 
     programs.hyprland = {
       enable = true;
+      # withUWSM = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
       # package = unstablePkgs.hyprland;
     };
 
     xdg.portal = {
       enable = true;
-      wlr.enable = false;
+      # wlr.enable = false;
       configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
       extraPortals = [
         pkgs.xdg-desktop-portal-gtk

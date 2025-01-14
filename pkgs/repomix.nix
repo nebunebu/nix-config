@@ -10,8 +10,6 @@ rec {
     repo = pname;
     rev = "v${version}";
     hash = "sha256-ZYU85782Z6O69KkKu4h3OqJqAgaxktEgHkcfs2ms9xg=";
-
-
   };
 
   npmDepsHash = "sha256-r+RIa7ACXJv4/CutnN/3S36US6r7w0EkM9dA4ShWPdU=";
