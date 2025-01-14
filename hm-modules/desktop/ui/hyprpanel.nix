@@ -29,10 +29,6 @@ in
         hyprland.enable = true;
         overwrite.enable = true;
         theme = "rose_pine";
-        override = {
-          # theme.bar.menus.text = "#777333";
-        };
-
         layout = {
           "bar.layouts" = {
             "0" = {
@@ -84,38 +80,75 @@ in
 
         };
       };
-
-
-      # menus.dashboard.directories.enabled = false;
-      # menus.dashboard.stats.enable_gpu = true;
-
-      # theme = {
-      #   matugen = false;
-      #   font = {
-      #     name = "IBM Plex Mono";
-      #     size = "16px";
-      #     weight = 800;
-      #   };
-      #   bar = {
-      #     transparent = true;
-      #   };
-      # };
-
-
-      #   theme.font = {
-      #     name = "
-      #         Blex
-      #         Mono ";
-      #     size = " 16
-      #         px ";
-      #   };
-
-      # wallpaper.enable = false;
     })
 
 
     (lib.mkIf cfg.x230t.enable {
-      programs.hyprpanel = { };
+
+      wayland.windowManager.hyprland.settings.exec-once = [
+        "hyprpanel"
+      ];
+      home.packages = [ pkgs.bluez pkgs.bluez-tools ];
+
+      programs.hyprpanel = {
+        enable = true;
+        hyprland.enable = true;
+        overwrite.enable = true;
+        theme = "rose_pine";
+        override = {
+          bar.workspaces.showWsIcons = true;
+          theme.bar.buttons.y_margins = "0.2rem";
+          theme.bar.outer_spacing = "0.2rem";
+          theme.bar.transparent = true;
+          theme.font.size = "1rem";
+          wallpaper.enable = false;
+        };
+
+        layout = {
+          "bar.layouts" = {
+            "0" = {
+              # "media"
+              # "submap"
+              left = [ "dashboard" "workspaces" ];
+              middle = [ ];
+              right = [ "volume" "battery" "notifications" "systray" ];
+            };
+          };
+        };
+
+        settings = {
+          bar.launcher.autoDetectIcon = true;
+          bar = { };
+
+          menus = {
+            clock = {
+              time = {
+                military = false;
+                hideSeconds = true;
+              };
+              weather.unit = "imperial";
+            };
+
+            dashboard = {
+              directories = {
+                left = {
+                  directory1 = {
+                    command = "bash -c \"ghostty -e yazi $HOME/Media/\"";
+                    label = "Media";
+                  };
+                };
+              };
+              powermenu = {
+                avatar = {
+                  # image = "$HOME/Media/Images/yak_shaving_magpie.png";
+                  name = "nebu";
+                  # confirmation = true;
+                };
+              };
+            };
+          };
+        };
+      };
     })
   ];
 }
