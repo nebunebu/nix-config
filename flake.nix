@@ -109,7 +109,7 @@
     {
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
-        x230t = mkHost { hostName = "x230t"; extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-think-pad-x230 ]; };
+        x230t = mkHost { hostName = "x230t"; extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230 ]; };
       };
 
       checks = builtins.mapAttrs
