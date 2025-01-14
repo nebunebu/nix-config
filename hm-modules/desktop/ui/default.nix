@@ -1,3 +1,6 @@
 {
-  imports = [ ./astal.nix ];
+  imports = [
+    ./astal.nix
+    ./hyprpanel.nix
+  ];
 }
