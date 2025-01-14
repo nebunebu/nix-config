@@ -24,13 +24,7 @@ in
 
     fonts.packages = [
       unstablePkgs.ibm-plex
-      (unstablePkgs.nerdfonts.override {
-        fonts = [
-          "NerdFontsSymbolsOnly"
-          # "DroidSansMono"
-          # "JetBrainsMono"
-        ];
-      })
+      unstablePkgs.nerd-fonts.symbols-only
     ];
 
     stylix = {

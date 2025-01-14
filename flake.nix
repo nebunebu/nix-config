@@ -9,7 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags.url = "github:aylur/ags/v2";
+    ags.url = "github:aylur/ags";
+
     ghostty.url = "github:ghostty-org/ghostty";
 
     stylix = {
@@ -50,8 +51,9 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
+      ref = "refs/tags/v0.46.2";
+      # ref = "refs/tags/v0.45.0";
       # rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
-      ref = "refs/tags/v0.45.0";
       submodules = true;
     };
 
