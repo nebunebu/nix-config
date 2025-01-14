@@ -37,12 +37,13 @@
   hardware = {
     graphics = {
       enable = true;
-      package = unstablePkgs.mesa.drivers;
+      # package = unstablePkgs.mesa.drivers;
       extraPackages = [
         pkgs.intel-media-driver
         pkgs.vaapiIntel
         pkgs.libvdpau-va-gl
         pkgs.intel-compute-runtime
+        pkgs.vpl-gpu-rt
       ];
       extraPackages32 = [ pkgs.vaapiIntel pkgs.intel-media-driver ];
     };
