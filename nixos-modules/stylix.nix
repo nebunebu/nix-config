@@ -24,7 +24,9 @@ in
 
     fonts.packages = [
       unstablePkgs.ibm-plex
-      unstablePkgs.nerd-fonts.symbols-only
+      unstablePkgs.nerd-fonts.im-writing
+      unstablePkgs.nerd-fonts.blex-mono
+      # unstablePkgs.nerd-fonts.symbols-only
     ];
 
     stylix = {
