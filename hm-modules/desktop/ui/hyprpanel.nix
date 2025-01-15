@@ -100,6 +100,7 @@ in
           theme.bar.buttons.y_margins = "0.2rem";
           theme.bar.outer_spacing = "0.2rem";
           theme.bar.transparent = true;
+          theme.bar.layer = "bottom";
           theme.font.size = "1rem";
           wallpaper.enable = false;
         };
@@ -110,8 +111,8 @@ in
               # "media"
               # "submap"
               left = [ "dashboard" "workspaces" ];
-              middle = [ ];
-              right = [ "volume" "battery" "notifications" "systray" ];
+              middle = [ "clock" ];
+              right = [ "battery" "volume" "notifications" "systray" ];
             };
           };
         };

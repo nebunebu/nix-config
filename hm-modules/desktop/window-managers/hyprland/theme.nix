@@ -47,6 +47,13 @@
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
         "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
 
+        "center,floating:1"
+        "maxsize 70% 70%, floating:1"
+
+        # Hyprpanel
+        "size 90% 90%,class:^(gjs)$,title:^(hyprpanel-settings)$"
+        "center,class:^(gjs)$,title:^(hyprpanel-settings)$"
+
         # NOTE: Firefox Google Sign In
         "float, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
         "center 1, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
