@@ -1,12 +1,18 @@
 { self
 , pkgs
+, unstablePkgs
 , ...
 }:
 
 {
   imports = [ "${self}/hm-modules" ];
 
-  home.packages = [ pkgs.foot pkgs.libnotify ];
+  home.packages = [
+    unstablePkgs.aichat
+    pkgs.foot
+    pkgs.libnotify
+    pkgs.jellyfin-media-player
+  ];
 
   neb = {
 
@@ -64,6 +70,7 @@
       utilities = {
         fuzzel.enable = true;
         kitty.enable = true;
+        ghostty.enable = true;
         pavucontrol.enable = true;
       };
     };
