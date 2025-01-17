@@ -1,9 +1,8 @@
 {
   programs.hyprpanel = {
-    enable = true;
-    hyprland.enable = true;
-    overwrite.enable = true;
-    theme = "rose_pine";
+    # override = {
+    # };
+
     layout = {
       "bar.layouts" = {
         "0" = {
@@ -13,46 +12,88 @@
         };
         "1" = {
           left = [ "workspaces" ];
-          middle = [ ];
-          right = [ "clock" "volume" "systray" ];
+          middle = [ "clock" ];
+          right = [ "volume" "systray" ];
         };
       };
     };
 
     settings = {
-      bar.launcher.autoDetectIcon = true;
-      bar = {
-        workspaces = { };
-      };
-
-      menus = {
-        clock = {
-          time = {
-            military = false;
-            hideSeconds = true;
-          };
-          weather.unit = "imperial";
+      theme = {
+        font = {
+          size = "1rem";
         };
-
+      };
+      menus = {
         dashboard = {
-          directories = {
+          shortcuts = {
             left = {
-              directory1 = {
-                command = "bash -c \"ghostty -e yazi $HOME/Media/\"";
-                label = "Media";
+              shortcut1 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
+              };
+              shortcut2 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
+              };
+              shortcut3 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
+              };
+              shortcut4 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
+              };
+            };
+            right = {
+              shortcut1 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
+              };
+              shortcut3 = {
+                command = "firefox";
+                icon = "";
+                tooltip = "Firefox";
               };
             };
           };
-          powermenu = {
-            avatar = {
-              image = "$HOME/Media/Images/yak_shaving_magpie.png";
-              name = "nebu";
-              # confirmation = true;
+          directories = {
+            left = {
+              directory1 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
+              directory2 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
+              directory3 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
+            };
+            right = {
+              directory1 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
+              directory2 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
+              directory3 = {
+                command = "bash -c \"xdg-open $HOME/Downloads/\"";
+                label = "󰉍 Downloads";
+              };
             };
           };
         };
       };
-
     };
   };
 }

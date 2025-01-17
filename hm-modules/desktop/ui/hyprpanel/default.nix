@@ -1,15 +1,13 @@
 { inputs
-, pkgs
 , config
 , lib
 , ...
 }:
 let
   cfg = config.neb.desktop.ui.hyprpanel;
-  # Probably need to inherit pkgs to these
   common = import ./common.nix;
   t5610 = import ./t5610.nix;
-  x230t = import ./x230t.nix;
+  # x230t = import ./x230t.nix;
 in
 {
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
@@ -22,7 +20,9 @@ in
   };
 
   config = lib.mkMerge [
-    (lib.mkIf cfg.t5610.enable common // t5610)
-    (lib.mkIf cfg.x230t.enable common // x230t)
+    (lib.mkIf cfg.t5610.enable common)
+    (lib.mkIf cfg.t5610.enable t5610)
+    # (lib.mkIf cfg.x230t.enable common)
+    # (lib.mkIf cfg.x230t.enable x230t)
   ];
 }
