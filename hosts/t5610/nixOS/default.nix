@@ -49,7 +49,7 @@
     # pinchflat.enable = true;
     taskchampion.enable = true;
     desktop = {
-      sddm.enable = false;
+      sddm.enable = true;
       hyprland.enable = true;
       pipewire.enable = true;
     };
@@ -80,6 +80,9 @@
   boot = {
     supportedFilesystems = [ "fuse" ];
     kernelParams = [
+      "raid=noautodetect"
+      "quiet"
+      "plymouth.enable-quit-progress=1"
       "video=DP-1:1920x1080@60"
       "video=HDMI-A-1:1920x1080@60"
     ];
