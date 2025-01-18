@@ -63,6 +63,7 @@ in
       settings = {
         dwindle = {
           preserve_split = true;
+          force_split = 2;
         };
 
         misc = {
