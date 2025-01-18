@@ -24,6 +24,7 @@
     #   };
     # };
 
+    services.syncthing.enable = true;
     desktop = {
       # ui.astal.x230t.enable = true;
       ui.hyprpanel.x230t.enable = true;
