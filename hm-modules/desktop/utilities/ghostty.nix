@@ -36,9 +36,6 @@ in
         window-decoration = false;
         adjust-cursor-thickness = 1;
 
-        # link-url = true;
-        # selection-invert-fg-bg = false;
-
         # Clipboard
         clipboard-read = "allow";
         clipboard-write = "allow";
