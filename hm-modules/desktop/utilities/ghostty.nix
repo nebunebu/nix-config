@@ -28,9 +28,9 @@ in
         # TODO: add keybinds
 
         theme = "custom-rose-pine";
-
         font-family = "IBM Plex Mono";
         font-style = "Medium";
+        font-style-italic = "Medium Italic";
         font-feature = "-ss01";
 
         window-decoration = false;
