@@ -59,12 +59,13 @@ in
             "7=#e0def4"
             "8=#6e6a86"
             "9=#eb6f92"
-            "10=#31748f"
+            "10=#26233a"
             "11=#ebbcba"
             "12=#9ccfd8"
             "13=#908caa"
             "14=#c4a7e7"
             "15=#524f67"
+            # "0=#FF6600"
           ];
           selection-background = "353749";
           selection-foreground = "f6c177";
