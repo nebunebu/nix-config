@@ -1,7 +1,10 @@
-{ inputs, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
+let
+in
 {
-  system.nixos.label = "${inputs.self.rev or "unknown"}-${inputs.self.shortRev or "dev"}";
+
   stylix.targets.grub.useImage = true;
+
   boot = {
     plymouth = {
       enable = true;
