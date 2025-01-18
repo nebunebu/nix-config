@@ -1,10 +1,6 @@
 { pkgs, lib, ... }:
-let
-in
 {
-
   stylix.targets.grub.useImage = true;
-
   boot = {
     plymouth = {
       enable = true;
@@ -22,7 +18,7 @@ in
         # TODO: use a different font
         # font = lib.mkForce "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexMono-Text.otf";
         fontSize = lib.mkForce 16;
-        gfxmodeEfi = "1366x768";
+        # gfxmodeEfi = "1366x768";
         gfxpayloadEfi = "keep";
         efiSupport = true;
         device = "nodev";
