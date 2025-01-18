@@ -13,7 +13,6 @@
 
     ags.url = "github:aylur/ags";
 
-    ghostty.url = "github:ghostty-org/ghostty";
     stylix = {
       # NOTE: set to 24.11 when released
       url = "github:danth/stylix/master";

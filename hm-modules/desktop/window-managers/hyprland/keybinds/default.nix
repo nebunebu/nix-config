@@ -40,8 +40,11 @@
       "$mainMod, F, togglefloating"
       "$mainMod, V, exec, cliphist-menu"
 
-      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; dimaround; animation slide] kitty\""
-      "$mainMod, Return, exec, kitty zsh -c \"tmux new-session -A -s \"main\"\""
+      # "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; dimaround; animation slide] kitty\""
+      # "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; dimaround; animation slide] ghostty\""
+      # "$mainMod, Return, exec, kitty zsh -c \"tmux new-session -A -s \"main\"\""
+      # "$mainMod, Return, exec, ghostty -e \"tmux new-session -A -s \"main\"\""
+      # "$mainMod, Return, exec, ghostty"
       "$mainMod, I, exec, firefox"
       "$mainMod, P, exec, fuzzel"
 

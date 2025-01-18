@@ -26,7 +26,8 @@ in
       mouse = true;
       newSession = true;
       sensibleOnTop = true;
-      terminal = "xterm-kitty"; # maybe set with term???
+      # terminal = "xterm-kitty"; # maybe set with term???
+      # terminal = "xterm-ghostty"; # maybe set with term???
       extraConfig = lib.mkForce /* tmux */ ''
         set -g allow-passthrough on
         set -ga update-environment TERM
