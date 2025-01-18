@@ -5,7 +5,7 @@
         "0" = {
           left = [ "dashboard" "workspaces" ];
           middle = [ "media" "clock" ];
-          right = [ "network" "battery" "volume" "notifications" "systray" ];
+          right = [ "battery" "volume" "notifications" "systray" ];
         };
       };
     };
