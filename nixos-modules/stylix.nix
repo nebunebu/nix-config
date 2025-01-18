@@ -23,7 +23,7 @@ in
   config = lib.mkIf cfg.enable {
 
     fonts.packages = [
-      # unstablePkgs.ibm-plex
+      unstablePkgs.ibm-plex
       unstablePkgs.nerd-fonts.im-writing
       unstablePkgs.nerd-fonts.blex-mono
       # unstablePkgs.nerd-fonts.symbols-only
@@ -32,8 +32,8 @@ in
     stylix = {
       enable = true;
       image = builtins.fetchurl {
-        url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/liminal-tv.jpg";
-        sha256 = "1mvvmc5nj45apbiqlia02vnnmmjpzb88v921zl2pjddkzsdhzi3s";
+        url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/nixos-rose-pine.png";
+        sha256 = "084qgbicqiqwprb9m6l5jwij26rv8r73h76vba523z6q9rz0snlw";
       };
       base16Scheme = fromYAML "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
       cursor = {
