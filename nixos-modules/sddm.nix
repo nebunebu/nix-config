@@ -17,7 +17,7 @@ in
 
   config = lib.mkIf cfg.enable
     {
-
+      environment.systemPackages = [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
       services = {
         displayManager.sddm = {
           enable = true;
