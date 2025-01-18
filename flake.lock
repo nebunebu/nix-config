@@ -1507,7 +1507,7 @@
     "sddm-sugar-candy-nix": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {

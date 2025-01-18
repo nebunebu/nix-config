@@ -15,9 +15,8 @@
 
   neb = {
     stylix.enable = true;
-    #   amdgpu.enable = true;
     desktop = {
-      sddm.enable = false;
+      sddm.enable = true;
       hyprland.enable = true;
       pipewire.enable = true;
     };
