@@ -86,6 +86,7 @@
       "plymouth.enable-quit-progress=1"
       "video=DP-1:1920x1080@60"
       "video=HDMI-A-1:1920x1080@60"
+      "tsc=reliable"
     ];
     extraModprobeConfig = ''
       options hid_apple fnmode=1
