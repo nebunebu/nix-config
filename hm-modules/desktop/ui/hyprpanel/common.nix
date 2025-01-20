@@ -31,6 +31,7 @@
         };
         clock.format = "%a %b %d  %-I:%M:%S %p";
       };
+
       theme = {
         font = {
           name = "IBM Plex Sans Thai Looped";
@@ -40,6 +41,7 @@
           transparent = true;
         };
       };
+
       menus = {
         clock = {
           time = {
@@ -63,6 +65,9 @@
           };
         };
       };
+
+      notifications.active_monitor = false;
+
       wallpaper = {
         enable = false;
         pywal = false;
