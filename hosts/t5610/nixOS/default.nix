@@ -42,11 +42,12 @@
       };
       pass.enable = true;
     };
-    beaverhabits.enable = true;
-    stylix.enable = true;
-    amdgpu.enable = true;
-    jellyfin.enable = true;
     # pinchflat.enable = true;
+    amdgpu.enable = true;
+    beaverhabits.enable = true;
+    jellyfin.enable = true;
+    ollama.enable = true;
+    stylix.enable = true;
     taskchampion.enable = true;
     desktop = {
       sddm.enable = true;
