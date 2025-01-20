@@ -1,7 +1,6 @@
 { lib
 , config
 , pkgs
-, unstablePkgs
 , ...
 }:
 
@@ -15,8 +14,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # home.packages = [ (unstablePkgs.nerdfonts.override { fonts = [ "DroidSansMono" ]; }) ];
-    #
     programs = {
       starship = {
         enable = true;
@@ -39,12 +36,22 @@ in
 
         shellAliases = {
           nt = "nix run ${config.home.homeDirectory}/.nebvim"; # nebvim test
-          at = "nix develop ${config.home.homeDirectory}/Projects/ags#default --command ags -c ${config.home.homeDirectory}/Projects/ags/config.js"; # ags config test
           svim = "sudo -Es nvim";
           grep = "grep --color=\"auto\"";
           ip = "ip --color=\"auto\"";
-          ol = "docker exec -it ollama ollama";
+          diff = "diff --color=\"auto\"";
         };
+
+        completionInit = ''
+          # Add aichat completion to fpath
+          fpath+=${pkgs.fetchFromGitHub {
+            owner = "sigoden";
+            repo = "aichat";
+            rev = "v0.26.0";
+            sha256 = "sha256-02v4nnQTKkX7ssZ2it7YfDtx6w/vVWG5crMhwdv3tmM=";
+            sparseCheckout = [ "scripts/completions" ];
+          }}/scripts/completions
+        '';
 
         initExtra = # bash
           ''
