@@ -27,6 +27,7 @@
         workspaces = {
           showWsIcons = true;
           workspaces = 9;
+          ignored = "-";
         };
         clock.format = "%a %b %d  %-I:%M:%S %p";
       };
