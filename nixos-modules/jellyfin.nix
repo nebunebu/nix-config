@@ -14,12 +14,23 @@ in
 
 
   config = lib.mkIf cfg.enable {
-    users.users.nebu.extraGroups = [ "jellyfin" ];
 
     environment.systemPackages = [
       pkgs.jellyfin-media-player
       pkgs.jellyfin-mpv-shim
     ];
+
+    users = {
+      users = {
+        nebu.extraGroups = [ "jellyfin" ];
+        jellyfin = {
+          isSystemUser = true;
+          group = "jellyfin";
+          extraGroups = [ "video" "render" ];
+        };
+      };
+      groups.jellyfin = { };
+    };
 
     services = {
       jellyfin = {
