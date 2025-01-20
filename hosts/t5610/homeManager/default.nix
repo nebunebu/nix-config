@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, unstablePkgs, ... }:
 
 {
   imports = [
@@ -14,6 +14,8 @@
       '';
     })
 
+
+    unstablePkgs.aichat
     pkgs.drawio
     pkgs.texlivePackages.latexmk
   ];
