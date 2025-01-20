@@ -21,7 +21,7 @@ in
       enable = true;
       enableBashIntegration = false;
       enableZshIntegration = true;
-      clearDefaultKeybinds = false;
+      clearDefaultKeybinds = true;
       installBatSyntax = true;
       installVimSyntax = true;
       settings = lib.mkForce {
