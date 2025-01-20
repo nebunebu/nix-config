@@ -13,12 +13,24 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    nixpkgs.config.rocmSupport = true;
+
     environment = {
-      systemPackages = [ pkgs.lact pkgs.glxinfo pkgs.libdrm ];
+      systemPackages = with pkgs; [
+        clinfo
+        glxinfo
+        lact
+        libdrm
+        rocmPackages.rocm-device-libs
+        rocmPackages.rocm-runtime
+        rocmPackages.rocm-smi
+        rocmPackages.rocminfo
+      ];
       variables = {
         ROC_ENABLE_PRE_VEGA = "1";
-        # WLR_DRM_NO_ATOMIC = "1";
-        # GDM_BACKEND = "amdgpu";
+        GPU_MAX_HEAP_SIZE = "100%";
+        GPU_USE_SYNC_OBJECTS = "1";
+        HSA_ENABLE_SDMA = "0";
       };
     };
 
@@ -30,20 +42,21 @@ in
     hardware = {
       amdgpu = {
         amdvlk.enable = true;
+        opencl.enable = true;
+        initrd.enable = true;
       };
       graphics = {
         enable = true;
-        extraPackages = [
-          pkgs.rocmPackages.clr.icd
-          pkgs.amdvlk
-          pkgs.vulkan-loader
-          pkgs.vulkan-validation-layers
-
-          # NOTE: Hardware Acceleration
-          pkgs.libva
-          pkgs.libva-utils
-          pkgs.vaapiVdpau
-          pkgs.libvdpau-va-gl
+        extraPackages = with pkgs; [
+          rocmPackages.clr.icd
+          rocmPackages.clr
+          amdvlk
+          vulkan-loader
+          vulkan-validation-layers
+          libva
+          libva-utils
+          vaapiVdpau
+          libvdpau-va-gl
         ];
         extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
       };
@@ -51,10 +64,11 @@ in
 
     boot = {
       kernelParams = [
-        # "amdgpu.ppfeaturemask=0xffffffff" # Enable all powerplay features
-        # "amdgpu.dc=1" # Enable display core
+        "amdgpu.ppfeaturemask=0xffffffff"
+        "amdgpu.dc=1"
+        "amdgpu.gpu_recovery=1"
       ];
+      kernelModules = [ "amdgpu" ];
     };
-
   };
 }
