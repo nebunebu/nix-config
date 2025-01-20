@@ -33,17 +33,17 @@ in
       };
       graphics = {
         enable = true;
-        # package = unstablePkgs.mesa.drivers;
         extraPackages = [
-          # unstablePkgs.mesa.drivers
           pkgs.rocmPackages.clr.icd
           pkgs.amdvlk
           pkgs.vulkan-loader
           pkgs.vulkan-validation-layers
-          # pkgs.libva
-          # pkgs.libva-utils
-          # pkgs.vaaiVdpau
-          # pkgs.libvdpau-va-gl
+
+          # NOTE: Hardware Acceleration
+          pkgs.libva
+          pkgs.libva-utils
+          pkgs.vaapiVdpau
+          pkgs.libvdpau-va-gl
         ];
         extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
       };
