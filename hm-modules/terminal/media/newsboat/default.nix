@@ -8,8 +8,6 @@ in
 {
   imports = [
     ./scripts/linkhandler.nix
-    # ./scripts/redbar-dl.nix
-    # ./urls/default.nix
   ];
 
   options = {
@@ -20,8 +18,15 @@ in
     programs.newsboat = {
       enable = true;
       browser = "linkhandler";
-      extraConfig =
-        builtins.readFile ./confs/keybinds.conf + builtins.readFile ./confs/colors.conf
+      extraConfig = ''
+        urls-source "freshrss"
+        freshrss-url "http://192.168.1.177/api/greader.php"
+        freshrss-login "admin"
+        freshrss-flag-star "s"
+        freshrss-passwordeval "pass show freshrss/nebu"
+      ''
+      + builtins.readFile ./confs/keybinds.conf
+      + builtins.readFile ./confs/colors.conf
         # + builtins.readFile ./confs/browser.conf
       ;
     };
