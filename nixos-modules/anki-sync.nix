@@ -11,16 +11,18 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    sops.secrets.anki-sync = { };
     services.anki-sync-server = {
       enable = true;
-      # address = "::1"; # default
-      # port = 27701; # default
+      address = "0.0.0.0";
+      port = 27701;
       openFirewall = true;
-      users = {
-        nebu = {
-          passwordFile = ;
-            };
-        };
-      };
+      users = [
+        {
+          username = "nebu";
+          passwordFile = config.sops.secrets.anki-sync.path;
+        }
+      ];
     };
-  }
+  };
+}
