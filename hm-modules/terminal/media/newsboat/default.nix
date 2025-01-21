@@ -23,11 +23,10 @@ in
         freshrss-url "http://192.168.1.177/api/greader.php"
         freshrss-login "admin"
         freshrss-flag-star "s"
-        freshrss-passwordeval "pass show freshrss/nebu"
+        freshrss-passworfile "~/.freshrss_key"
       ''
-      + builtins.readFile ./confs/keybinds.conf
-      + builtins.readFile ./confs/colors.conf
-        # + builtins.readFile ./confs/browser.conf
+      + builtins.readFile ./keybinds.conf
+      + builtins.readFile ./colors.conf
       ;
     };
   };
