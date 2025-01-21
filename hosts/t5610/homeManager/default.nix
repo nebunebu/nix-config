@@ -14,7 +14,7 @@
       '';
     })
 
-
+    unstablePkgs.anki-bin
     unstablePkgs.aichat
     pkgs.drawio
     pkgs.texlivePackages.latexmk
@@ -23,7 +23,6 @@
   programs.lazygit.enable = true;
 
   neb = {
-
     services.syncthing.enable = true;
     # security = {
     #   sops.enable = true;
@@ -34,7 +33,6 @@
     # };
 
     desktop = {
-
       window-managers = {
         river.enable = true;
         hyprland = {
@@ -80,6 +78,7 @@
       productivity = {
         obsidian.enable = true;
         keycombiner.enable = true;
+        anki.enable = true;
         # activitywatch.enable = true;
         # pomodoro-logger = true;
         # super-productivity = true;

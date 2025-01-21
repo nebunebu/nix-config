@@ -44,6 +44,7 @@
     };
     # pinchflat.enable = true;
     amdgpu.enable = true;
+    anki-sync.enable = true;
     beaverhabits.enable = true;
     jellyfin.enable = true;
     ollama.enable = true;
