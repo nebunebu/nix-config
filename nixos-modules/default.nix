@@ -3,17 +3,18 @@
 {
   imports = [
     ./amdgpu.nix
+    ./anki-sync.nix
     ./beaverhabits.nix
     ./boot.nix
     ./console.nix
     ./documentation.nix
     ./hyprland.nix
     ./jellyfin.nix
+    ./networking.nix
+    ./nix.nix
     ./ollama.nix
     ./pinchflat.nix
     ./pipewire.nix
-    ./networking.nix
-    ./nix.nix
     ./sddm.nix
     ./stylix.nix
     ./system.nix
