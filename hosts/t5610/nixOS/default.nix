@@ -46,6 +46,7 @@
     amdgpu.enable = true;
     anki-sync.enable = true;
     beaverhabits.enable = true;
+    freshrss.enable = true;
     jellyfin.enable = true;
     ollama.enable = true;
     stylix.enable = true;
