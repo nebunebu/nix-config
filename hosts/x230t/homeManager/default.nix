@@ -98,6 +98,7 @@
       utilities = {
         bat.enable = true;
         cli-tools.enable = true;
+        eza.enable = true;
         fd.enable = true;
         jq.enable = true;
         nix-tools.enable = true;
