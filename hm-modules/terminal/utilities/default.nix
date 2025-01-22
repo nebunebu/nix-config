@@ -9,5 +9,6 @@
     ./ripgrep.nix
     ./tealdeer.nix
     ./yt-dlp.nix
+    ./zoxide.nix
   ];
 }

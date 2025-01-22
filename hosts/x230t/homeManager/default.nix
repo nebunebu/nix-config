@@ -105,6 +105,7 @@
         ripgrep.enable = true;
         tealdeer.enable = true;
         yt-dlp.enable = true;
+        zoxide.enable = true;
       };
     };
   };
