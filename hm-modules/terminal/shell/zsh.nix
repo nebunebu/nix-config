@@ -26,6 +26,7 @@ in
         enable = true;
         autosuggestion.enable = true;
         enableCompletion = true;
+        zprof.enable = true;
         enableVteIntegration = true;
         localVariables.CLIPBOARD = "wlp";
         history.path = "${config.xdg.configHome}/zsh/zsh_history";
