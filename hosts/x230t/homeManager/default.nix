@@ -97,8 +97,10 @@
       };
       utilities = {
         bat.enable = true;
+        fd.enable = true;
         cli-tools.enable = true;
         nix-tools.enable = true;
+        ripgrep.enable = true;
       };
     };
   };
