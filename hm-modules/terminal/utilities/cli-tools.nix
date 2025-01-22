@@ -19,7 +19,6 @@ in
           usbutils
           tree
           nitch
-          jq
           pup
           # bottom
           # ripgrep
