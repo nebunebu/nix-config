@@ -99,6 +99,7 @@
         bat.enable = true;
         cli-tools.enable = true;
         eza.enable = true;
+        fastfetch.enable = true;
         fd.enable = true;
         jq.enable = true;
         nix-tools.enable = true;
