@@ -12,7 +12,7 @@ in
       enable = true;
       settings = {
         display = {
-          compact = true;
+          # compact = true;
         };
         update.auto_update = true;
       };

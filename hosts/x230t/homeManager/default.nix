@@ -103,6 +103,7 @@
         nix-tools.enable = true;
         ripgrep.enable = true;
         tealdeer.enable = true;
+        yt-dlp.enable = true;
       };
     };
   };
