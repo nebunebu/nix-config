@@ -6,5 +6,6 @@
     ./jq.nix
     ./nix-tools.nix
     ./ripgrep.nix
+    ./tealdeer.nix
   ];
 }
