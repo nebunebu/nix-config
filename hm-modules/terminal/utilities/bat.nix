@@ -4,7 +4,7 @@ let
 in
 {
   options.neb.terminal.utilities.bat = {
-    enable = lib.mkEnableOption "enablt bat";
+    enable = lib.mkEnableOption "enable bat";
   };
 
   config = lib.mkIf cfg.enable {

@@ -1,6 +1,7 @@
 {
   imports = [
     ./bat.nix
+    ./cava.nix
     ./cli-tools.nix
     ./eza.nix
     ./fd.nix
