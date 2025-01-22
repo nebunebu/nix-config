@@ -103,6 +103,7 @@
         jq.enable = true;
         nix-tools.enable = true;
         ripgrep.enable = true;
+        cava.enable = true;
         tealdeer.enable = true;
         yt-dlp.enable = true;
         zoxide.enable = true;
