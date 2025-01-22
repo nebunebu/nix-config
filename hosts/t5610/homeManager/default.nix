@@ -118,7 +118,16 @@
       utilities = {
         bat.enable = true;
         cli-tools.enable = true;
+        eza.enable = true;
+        fastfetch.enable = true;
+        fd.enable = true;
+        jq.enable = true;
         nix-tools.enable = true;
+        ripgrep.enable = true;
+        cava.enable = true;
+        tealdeer.enable = true;
+        yt-dlp.enable = true;
+        zoxide.enable = true;
       };
     };
 
