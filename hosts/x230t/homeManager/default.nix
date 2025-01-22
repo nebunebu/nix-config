@@ -97,11 +97,12 @@
       };
       utilities = {
         bat.enable = true;
-        fd.enable = true;
         cli-tools.enable = true;
+        fd.enable = true;
+        jq.enable = true;
         nix-tools.enable = true;
         ripgrep.enable = true;
-        jq.enable = true;
+        tealdeer.enable = true;
       };
     };
   };
