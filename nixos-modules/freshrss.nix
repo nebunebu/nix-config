@@ -17,7 +17,7 @@ in
       group = "freshrss";
       mode = "0400";
     };
-    networking.firewall.allowedTCPPorts = [ 8083 ];
+    networking.firewall.allowedTCPPorts = [ 80 ];
     services.freshrss = {
       enable = true;
       authType = "form";
