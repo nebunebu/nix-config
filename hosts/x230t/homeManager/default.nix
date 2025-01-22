@@ -101,6 +101,7 @@
         cli-tools.enable = true;
         nix-tools.enable = true;
         ripgrep.enable = true;
+        jq.enable = true;
       };
     };
   };

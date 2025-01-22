@@ -1,8 +1,9 @@
 {
   imports = [
     ./bat.nix
-    ./fd.nix
     ./cli-tools.nix
+    ./fd.nix
+    ./jq.nix
     ./nix-tools.nix
     ./ripgrep.nix
   ];
