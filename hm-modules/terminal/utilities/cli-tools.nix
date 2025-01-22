@@ -19,10 +19,8 @@ in
           usbutils
           tree
           nitch
-          ripgrep-all
           jq
           pup
-          fd
           # bottom
           # ripgrep
           # ffmpeg
