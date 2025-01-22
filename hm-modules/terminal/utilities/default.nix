@@ -4,6 +4,7 @@
     ./cava.nix
     ./cli-tools.nix
     ./eza.nix
+    ./fastfetch.nix
     ./fd.nix
     ./jq.nix
     ./nix-tools.nix
