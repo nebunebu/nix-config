@@ -17,16 +17,12 @@ in
         inherit (pkgs)
           nerdfix
           usbutils
-          tree
-          nitch
           pup
           # bottom
           # ripgrep
           # ffmpeg
-          # yt-dlp
           # distrobox
           # lazygit
-          # invidtui
           ;
       };
   };
