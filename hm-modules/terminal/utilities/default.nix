@@ -7,5 +7,6 @@
     ./nix-tools.nix
     ./ripgrep.nix
     ./tealdeer.nix
+    ./yt-dlp.nix
   ];
 }
