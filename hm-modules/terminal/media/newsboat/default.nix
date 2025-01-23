@@ -51,18 +51,18 @@ in
         color article             color7    default
 
         # Article highlighting
-        # highlight all "---.*---" color5
-        # highlight feedlist ".*(0/0))" color8
-        # highlight article "(^Feed:.*|^Title:.*|^Author:.*)" color6 default bold
-        # highlight article "(^Link:.*|^Date:.*)" color7 default
-        # highlight article "https?://[^ ]+" color4 default
-        # highlight article "^(Title):.*$" color5 default
-        # highlight article "\\[[0-9][0-9]*\\]" color6 default bold
-        # highlight article "\\[image\\ [0-9]+\\]" color4 default bold
-        # highlight article "\\[embedded flash: [0-9][0-9]*\\]" color4 default bold
-        # highlight article ":.*\\(link\\)$" color6 default
-        # highlight article ":.*\\(image\\)$" color5 default
-        # highlight article ":.*\\(embedded flash\\)$" color6 default
+        highlight all "---.*---" color5
+        highlight feedlist ".*(0/0))" color8
+        highlight article "(^Feed:.*|^Title:.*|^Author:.*)" color6 default bold
+        highlight article "(^Link:.*|^Date:.*)" color7 default
+        highlight article "https?://[^ ]+" color4 default
+        highlight article "^(Title):.*$" color5 default
+        highlight article "\\[[0-9][0-9]*\\]" color6 default bold
+        highlight article "\\[image\\ [0-9]+\\]" color4 default bold
+        highlight article "\\[embedded flash: [0-9][0-9]*\\]" color4 default bold
+        highlight article ":.*\\(link\\)$" color6 default
+        highlight article ":.*\\(image\\)$" color5 default
+        highlight article ":.*\\(embedded flash\\)$" color6 default
       ''
       ;
     };
