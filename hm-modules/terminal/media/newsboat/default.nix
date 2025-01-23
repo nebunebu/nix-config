@@ -1,5 +1,7 @@
 { lib
 , config
+, pkgs
+, unstablePkgs
 , ...
 }:
 let
@@ -13,6 +15,9 @@ in
   config = lib.mkIf cfg.enable {
     programs.newsboat = {
       enable = true;
+      autoReload = true;
+      maxItems = 0;
+      # browser = "";
       extraConfig = /* gitconfig */ ''
         urls-source "freshrss"
         freshrss-url "http://192.168.1.177/api/greader.php"
@@ -34,6 +39,9 @@ in
         bind-key n next-unread
         bind-key N prev-unread
         bind-key U show-urls
+
+        macro y set browser "notify-send 'Newsboat' 'Starting download...' && setsid -f ${lib.getExe unstablePkgs.yt-dlp} %u 2>/dev/null"; open-in-browser ; set browser "$BROWSER %u"
+        macro m set browser "notify-send 'Newsboat' 'Opening in mpv...' && setsid -f ${lib.getExe pkgs.mpv} %u 2>/dev/null"; open-in-browser ; set browser "$BROWSER %u"
 
         # Base interface colors
         color listfocus           color5    color10

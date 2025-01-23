@@ -16,7 +16,6 @@ in
         embed-chapters = true;
         embed-metadata = true;
         sponsorblock-remove = "sponsor,selfpromo";
-        concurrent-fragmants = 5;
         retries = 3;
         throttled-rate = "100k";
         extractor-args = "youtube:player_client=tv";
