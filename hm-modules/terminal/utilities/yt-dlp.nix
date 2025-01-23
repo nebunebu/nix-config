@@ -11,8 +11,19 @@ in
     programs.yt-dlp = {
       enable = true;
       package = unstablePkgs.yt-dlp;
-      # extraConfig = '''';
-      # settings = '''';
+      settings = {
+        embed-thumbnail = true;
+        embed-chapters = true;
+        embed-metadata = true;
+        sponsorblock-remove = "sponsor,selfpromo";
+        concurrent-fragmants = 5;
+        retries = 3;
+        throttled-rate = "100k";
+        extractor-args = "youtube:player_client=tv";
+        format = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best";
+        cookies = "~/.cookies-youtube-com.txt";
+        output = "\"~/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s\"";
+      };
     };
   };
 }
