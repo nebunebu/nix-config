@@ -25,12 +25,5 @@ in
         inherit (unstablePkgs) nix-inspect nvd;
       };
     };
-
-    programs.direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-      # silent = true;
-    };
   };
 }

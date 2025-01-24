@@ -1,20 +1,21 @@
-{ inputs
-, lib
+{ lib
 , config
 , ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nh;
+  cfg = config.neb.terminal.utilities.direnv;
 in
 {
-  options.neb.terminal.utilities.nh = {
-    enable = lib.mkEnableOption "enable nh";
+  options.neb.terminal.utilities.direnv = {
+    enable = lib.mkEnableOption "enable direnv";
   };
 
   config = lib.mkIf cfg.enable {
-    programs.nh = {
+    programs.direnv = {
       enable = true;
-      flake = inputs.self;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      # silent = true;
     };
   };
 }
