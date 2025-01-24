@@ -17,7 +17,6 @@ in
       packages = builtins.attrValues {
         inherit (pkgs)
           nixpkgs-fmt
-          nix-init
           nurl
           statix
           vimPluginsUpdater
