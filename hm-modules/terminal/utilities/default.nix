@@ -7,6 +7,7 @@
     ./fastfetch.nix
     ./fd.nix
     ./jq.nix
+    ./nh.nix
     ./nix-index.nix
     ./nix-tools.nix
     ./ripgrep.nix

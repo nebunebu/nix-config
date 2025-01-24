@@ -16,35 +16,21 @@ in
     home = {
       packages = builtins.attrValues {
         inherit (pkgs)
-          comma
-          nix-output-monitor
           nixpkgs-fmt
           nix-init
           nurl
           statix
           vimPluginsUpdater
           ;
-
-        inherit (unstablePkgs) nix-inspect nh nvd;
-      };
-
-      sessionVariables = {
-        FLAKE = "/home/nebu/.nix-config"; # Should be isolated with nh
+        inherit (unstablePkgs) nix-inspect nvd;
       };
     };
 
-    programs = {
-      nix-index = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-
-      direnv = {
-        enable = true;
-        enableZshIntegration = true;
-        nix-direnv.enable = true;
-        # silent = true;
-      };
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+      # silent = true;
     };
   };
 }
