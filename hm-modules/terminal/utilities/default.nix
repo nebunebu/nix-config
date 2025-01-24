@@ -1,6 +1,14 @@
+{ lib
+, config
+, ...
+}:
+let
+  cfg = config.neb.terminal.utilities.profile;
+in
 {
   imports = [
     ./bat.nix
+    ./bottom.nix
     ./cava.nix
     ./cli-tools.nix
     ./direnv.nix
@@ -16,4 +24,29 @@
     ./yt-dlp.nix
     ./zoxide.nix
   ];
+
+  options.neb.terminal.utilities.profile = {
+    enable = lib.mkEnableOption "enable terminal utilities profile";
+  };
+
+  config = lib.mkIf cfg.enable {
+    neb.terminal.utilities = {
+      bat.enable = true;
+      bottom.enable = true;
+      cava.enable = true;
+      cli-tools.enable = true;
+      direnv.enable = true;
+      eza.enable = true;
+      fastfetch.enable = true;
+      fd.enable = true;
+      jq.enable = true;
+      nh.enable = true;
+      nix-index.enable = true;
+      nix-tools.enable = true;
+      ripgrep.enable = true;
+      tealdeer.enable = true;
+      yt-dlp.enable = true;
+      zoxide.enable = true;
+    };
+  };
 }

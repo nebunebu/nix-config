@@ -95,23 +95,7 @@
         buku.enable = true;
         newsboat.enable = true;
       };
-      utilities = {
-        bat.enable = true;
-        cava.enable = true;
-        cli-tools.enable = true;
-        direnv.enable = true;
-        eza.enable = true;
-        fastfetch.enable = true;
-        fd.enable = true;
-        jq.enable = true;
-        nh.enable = true;
-        nix-index.enable = true;
-        nix-tools.enable = true;
-        ripgrep.enable = true;
-        tealdeer.enable = true;
-        yt-dlp.enable = true;
-        zoxide.enable = true;
-      };
+      utilities.profile.enable = true;
     };
   };
 }
