@@ -19,7 +19,6 @@ in
           usbutils
           pup
           # bottom
-          # ripgrep
           # ffmpeg
           # distrobox
           # lazygit
