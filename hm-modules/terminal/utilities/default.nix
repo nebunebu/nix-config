@@ -3,6 +3,7 @@
     ./bat.nix
     ./cava.nix
     ./cli-tools.nix
+    ./direnv.nix
     ./eza.nix
     ./fastfetch.nix
     ./fd.nix
