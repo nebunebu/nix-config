@@ -102,6 +102,7 @@
         fastfetch.enable = true;
         fd.enable = true;
         jq.enable = true;
+        nix-index.enable = true;
         nix-tools.enable = true;
         ripgrep.enable = true;
         cava.enable = true;
