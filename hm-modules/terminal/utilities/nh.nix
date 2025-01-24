@@ -12,9 +12,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.nh = {
-      enable = true;
-      flake = inputs.self;
+    programs = {
+      nh = {
+        enable = true;
+        flake = inputs.self;
+      };
+      zsh.completionInit =
+        builtins.readFile ./nh_completions.zsh;
     };
   };
 }
