@@ -24,19 +24,22 @@ in
         x = { fraction = 0.5; };
         y = { fraction = 0.3; };
         width = { fraction = 0.3; };
+        height = { fraction = 0.3; };
         hideIcons = false;
         ignoreExclusiveZones = false;
-        layer = "overlay";
+        layer = "top";
         hidePluginInfo = false;
         closeOnClick = false;
         showResultsImmediately = false;
         maxEntries = null;
 
         plugins = [
-          # An array of all the plugins you want, which either can be paths to the .so files, or their packages
-          # inputs.anyrun.packages.${pkgs.system}.applications
-          # ./some_plugin.so
-          # "${inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins}/lib/kidex"
+          inputs.anyrun.packages.${pkgs.system}.applications
+          inputs.anyrun.packages.${pkgs.system}.dictionary
+          inputs.anyrun.packages.${pkgs.system}.shell
+          inputs.anyrun.packages.${pkgs.system}.symbols
+          inputs.anyrun.packages.${pkgs.system}.translate
+          inputs.anyrun.packages.${pkgs.system}.websearch
         ];
       };
 

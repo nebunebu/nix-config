@@ -25,7 +25,7 @@ in
     neb.desktop.utilities = {
       anyrun.enable = true;
       foot.enable = false;
-      fuzzel.enable = false;
+      fuzzel.enable = true;
       ghostty.enable = true;
       kitty.enable = false;
       pavucontrol.enable = true;
