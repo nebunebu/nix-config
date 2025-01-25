@@ -1,4 +1,5 @@
-{ self
+{ inputs
+, self
 , pkgs
 , unstablePkgs
 , ...
@@ -14,6 +15,7 @@
   ];
 
 
+  programs.nh.flake = "${inputs.self}#x230t";
   neb = {
     services.syncthing.enable = true;
     profile = {
