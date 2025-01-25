@@ -21,8 +21,6 @@ in
   config = lib.mkIf cfg.enable {
     neb.development = {
       awscli.nix = false;
-      # FIX: direnv duplicated in terminal.utilities
-      direnv.nix = false;
       git.nix = true;
       go.nix = false;
       repomix.nix = true;
