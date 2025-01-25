@@ -41,6 +41,7 @@ in
           grep = "grep --color=\"auto\"";
           ip = "ip --color=\"auto\"";
           diff = "diff --color=\"auto\"";
+          tree = "eza --tree";
         };
 
         completionInit = ''
