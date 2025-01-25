@@ -14,13 +14,14 @@
       '';
     })
 
-    unstablePkgs.anki-bin
+    # unstablePkgs.anki-bin
     unstablePkgs.aichat
-    pkgs.drawio
+    # pkgs.drawio
     pkgs.texlivePackages.latexmk
   ];
 
   programs.lazygit.enable = true;
+  programs.nh.flake = "${inputs.self}#t5610";
 
   neb = {
     services.syncthing.enable = true;
