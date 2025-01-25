@@ -1,5 +1,4 @@
-{ inputs
-, lib
+{ lib
 , config
 , ...
 }:
@@ -12,6 +11,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    home.sessionVariables = { FLAKE = "/home/nebu/.nix-config"; };
     programs = {
       nh.enable = true;
       zsh.completionInit =
