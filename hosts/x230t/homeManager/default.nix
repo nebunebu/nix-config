@@ -13,8 +13,22 @@
     pkgs.jellyfin-media-player
   ];
 
+
   neb = {
     services.syncthing.enable = true;
+
+    profile = {
+      desktop = {
+        enable = true;
+        # NOTE: not sure how I want to handle this
+        # x230t.enable = true;
+      };
+      development.enable = true;
+      terminal.enable = true;
+      # NOTE: not set up
+      # tablet.enable = false;
+    };
+
     desktop = {
       # ui.astal.x230t.enable = true;
       ui.hyprpanel.x230t.enable = true;
@@ -29,22 +43,6 @@
           spotube.enable = true;
         };
       };
-
-      communications = {
-        vesktop.enable = true;
-      };
-    };
-
-    profile = {
-      desktop = {
-        enable = true;
-        # NOTE: not sure how I want to handle this
-        # x230t.enable = true;
-      };
-      development.enable = true;
-      terminal.enable = true;
-      # NOTE: not set up
-      # tablet.enable = false;
     };
   };
 }
