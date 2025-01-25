@@ -21,7 +21,6 @@ in
           # bottom
           # ffmpeg
           # distrobox
-          # lazygit
           ;
       };
   };
