@@ -1,4 +1,4 @@
-{ inputs, pkgs, unstablePkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -20,9 +20,7 @@
   ];
 
   programs.lazygit.enable = true;
-  programs.zsh.sessionVariables = {
-    FLAKE = "/home/nebu/.nix-config#t5610";
-  };
+  home.sessionVariables = { FLAKE = "/home/nebu/.nix-config"; };
   # programs.nh.flake = "/home/nebu/.nix-config#t5610";
 
   neb = {
