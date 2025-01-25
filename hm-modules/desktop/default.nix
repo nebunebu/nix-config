@@ -11,7 +11,6 @@ in
     ./communication
     ./media
     ./productivity
-    ./ui
     ./utilities
     ./window-managers
   ];
@@ -27,6 +26,7 @@ in
       media.enable = true;
       productivity.enable = true;
       utilities.enable = true;
+      # window-managers.enable = true;
     };
   };
 }
