@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.neb.terminal.file-navigation.yazi;
+  cfg = config.neb.terminal.utilities.yazi;
 in
 {
 
   options = {
-    neb.terminal.file-navigation.yazi.enable = lib.mkEnableOption "enable yazi";
+    neb.terminal.utilities.yazi.enable = lib.mkEnableOption "enable yazi";
   };
 
   config = lib.mkIf cfg.enable

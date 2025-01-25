@@ -21,6 +21,7 @@ in
     ./nix-tools.nix
     ./ripgrep.nix
     ./tealdeer.nix
+    ./yazi.nix
     ./yt-dlp.nix
     ./zoxide.nix
   ];
@@ -45,6 +46,7 @@ in
       nix-tools.enable = true;
       ripgrep.enable = true;
       tealdeer.enable = true;
+      yazi.enable = true;
       yt-dlp.enable = true;
       zoxide.enable = true;
     };

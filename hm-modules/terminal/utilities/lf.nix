@@ -4,12 +4,12 @@
 , ...
 }:
 let
-  cfg = config.neb.terminal.file-navigation.lf;
+  cfg = config.neb.terminal.utilities.lf;
 in
 {
 
   options = {
-    neb.terminal.file-navigation.lf.enable = lib.mkEnableOption "enable lf";
+    neb.terminal.utilities.lf.enable = lib.mkEnableOption "enable lf";
   };
 
   config = lib.mkIf cfg.enable
