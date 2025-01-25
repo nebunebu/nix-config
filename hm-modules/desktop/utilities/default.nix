@@ -12,6 +12,8 @@ in
     ./ghostty.nix
     ./kitty.nix
     ./pavucontrol.nix
+    ./astal.nix
+    ./hyprpanel
   ];
 
   options.neb.desktop.utilities = {

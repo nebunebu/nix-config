@@ -1,6 +1,0 @@
-{
-  imports = [
-    ./astal.nix
-    ./hyprpanel
-  ];
-}
