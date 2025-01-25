@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  cfg = config.neb.terminal.utilities.profile;
+  cfg = config.neb.terminal.utilities;
 in
 {
   imports = [
@@ -25,8 +25,8 @@ in
     ./zoxide.nix
   ];
 
-  options.neb.terminal.utilities.profile = {
-    enable = lib.mkEnableOption "enable terminal utilities profile";
+  options.neb.terminal.utilities = {
+    enable = lib.mkEnableOption "enable terminal utilities";
   };
 
   config = lib.mkIf cfg.enable {
