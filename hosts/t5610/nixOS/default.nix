@@ -26,7 +26,6 @@
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
     # (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
-    pkgs.foot
   ];
   programs.river.enable = true;
 
