@@ -5,13 +5,13 @@
 , ...
 }:
 let
-  cfg = config.neb.desktop.ui.astal;
+  cfg = config.neb.desktop.astal;
 in
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
   options = {
-    neb.desktop.ui.astal = {
+    neb.desktop.astal = {
       x230t.enable = lib.mkEnableOption "enable x230t astal setup";
       t5610.enable = lib.mkEnableOption "enable t5610 astal setup";
     };
