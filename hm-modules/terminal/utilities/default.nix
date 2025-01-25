@@ -7,6 +7,7 @@ let
 in
 {
   imports = [
+    ./aichat.nix
     ./bat.nix
     ./bottom.nix
     ./cava.nix
@@ -32,6 +33,7 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.terminal.utilities = {
+      aichat.enable = true;
       bat.enable = true;
       bottom.enable = true;
       cava.enable = true;

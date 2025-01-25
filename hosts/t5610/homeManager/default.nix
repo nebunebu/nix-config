@@ -15,7 +15,6 @@
     })
 
     # unstablePkgs.anki-bin
-    unstablePkgs.aichat
     # pkgs.drawio
     pkgs.texlivePackages.latexmk
   ];
