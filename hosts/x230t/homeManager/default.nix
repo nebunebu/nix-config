@@ -67,16 +67,14 @@
         #   recurrence.disable = true;
         # };
       };
-
-      utilities = {
-        fuzzel.enable = true;
-        # kitty.enable = true;
-        ghostty.enable = true;
-        pavucontrol.enable = true;
-      };
     };
 
     profile = {
+      desktop = {
+        enable = true;
+        # NOTE: not sure how I want to handle this
+        # x230t.enable = true;
+      };
       development.enable = true;
       terminal.enable = true;
       # NOTE: not set up
