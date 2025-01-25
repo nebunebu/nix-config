@@ -24,15 +24,17 @@
 
   neb = {
     services.syncthing.enable = true;
-    # security = {
-    #   sops.enable = true;
-    #   gpg = {
-    #     enable = true;
-    #     host = "t5610";
-    #   };
-    # };
+
+    profile = {
+      desktop = {
+        enable = true;
+      };
+      development.enable = true;
+      terminal.enable = true;
+    };
 
     desktop = {
+      hyprpanel.t5610.enable = true;
       window-managers = {
         river.enable = true;
         hyprland = {
@@ -42,94 +44,16 @@
           hyprpicker.enable = true;
           pyprland = {
             enable = true;
-            btm.enable = true;
-            claude.enable = true;
-            hmOptions.enable = true;
-            nixpkgs.enable = true;
-            noogle.enable = true;
+            # btm.enable = true;
+            # claude.enable = true;
+            # hmOptions.enable = true;
+            # nixpkgs.enable = true;
+            # noogle.enable = true;
             obsidian.enable = true;
-            spotube.enable = true;
+            # spotube.enable = true;
           };
-
         };
       };
-
-      # ui.astal.t5610.enable = true;
-      ui.hyprpanel.t5610.enable = true;
-
-      browsers = {
-        chromium.enable = true;
-        firefox.enable = true;
-      };
-
-      communications = {
-        vesktop.enable = true;
-      };
-
-      media = {
-        follow.enable = true;
-        glance.enable = true;
-        mpv.enable = true;
-        obs-studio.enable = true;
-        sioyek.enable = true;
-        spotube.enable = true;
-        # xournalpp.enable = true;
-      };
-      productivity = {
-        obsidian.enable = true;
-        keycombiner.enable = true;
-        anki.enable = true;
-        # activitywatch.enable = true;
-        # pomodoro-logger = true;
-        # super-productivity = true;
-      };
-
-      utilities = {
-        foot.enable = true;
-        fuzzel.enable = true;
-        # kitty.enable = true;
-        ghostty.enable = true;
-        pavucontrol.enable = true;
-      };
     };
-
-    development = {
-      awscli.enable = true;
-      git.enable = true;
-      go.enable = true;
-      repomix.enable = true;
-    };
-
-    terminal = {
-      shell = {
-        fzf.enable = true;
-        tmux.enable = true;
-        zsh.enable = true;
-      };
-      file-navigation = {
-        lf.enable = true;
-        yazi.enable = true;
-      };
-      media = {
-        buku.enable = true;
-        newsboat.enable = true;
-      };
-
-      utilities = {
-        bat.enable = true;
-        cli-tools.enable = true;
-        eza.enable = true;
-        fastfetch.enable = true;
-        fd.enable = true;
-        jq.enable = true;
-        nix-tools.enable = true;
-        ripgrep.enable = true;
-        cava.enable = true;
-        tealdeer.enable = true;
-        yt-dlp.enable = true;
-        zoxide.enable = true;
-      };
-    };
-
   };
 }
