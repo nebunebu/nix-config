@@ -31,7 +31,8 @@
 
     desktop = {
       # ui.astal.x230t.enable = true;
-      ui.hyprpanel.x230t.enable = true;
+      hyprpanel.x230t.enable = true;
+
       window-managers.hyprland = {
         enable = true;
         x230t.enable = true;
