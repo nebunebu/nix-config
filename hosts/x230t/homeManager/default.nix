@@ -14,15 +14,6 @@
   ];
 
   neb = {
-
-    # security = {
-    #   sops.enable = true;
-    #   gpg = {
-    #     enable = true;
-    #     host = "x230t";
-    #   };
-    # };
-
     services.syncthing.enable = true;
     desktop = {
       # ui.astal.x230t.enable = true;
@@ -41,14 +32,6 @@
 
       communications = {
         vesktop.enable = true;
-      };
-
-      productivity = {
-        obsidian.enable = true;
-        # taskwarrior = {
-        #   enable = true;
-        #   recurrence.disable = true;
-        # };
       };
     };
 
