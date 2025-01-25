@@ -3,12 +3,12 @@
 , ...
 }:
 let
-  cfg = config.neb.desktop;
+  cfg = config.neb.profile.desktop;
 in
 {
   imports = [
     ./browsers
-    ./communication
+    ./communications
     ./media
     ./productivity
     ./utilities
@@ -22,7 +22,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop = {
       browsers.enable = true;
-      communication.enable = true;
+      communications.enable = true;
       media.enable = true;
       productivity.enable = true;
       utilities.enable = true;
