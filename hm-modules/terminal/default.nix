@@ -7,7 +7,6 @@ let
 in
 {
   imports = [
-    ./file-navigation
     ./media
     ./shell
     ./utilities
@@ -19,7 +18,6 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.terminal = {
-      file-navigation.enable = true;
       media.enable = true;
       shell.enable = true;
       utilities.enable = true;
