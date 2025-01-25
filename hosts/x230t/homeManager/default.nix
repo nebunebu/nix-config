@@ -9,7 +9,6 @@
 
   home.packages = [
     unstablePkgs.aichat
-    pkgs.foot
     pkgs.libnotify
     pkgs.jellyfin-media-player
   ];
@@ -38,12 +37,6 @@
           # btm.enable = true;
           spotube.enable = true;
         };
-      };
-
-
-      browsers = {
-        chromium.enable = true;
-        firefox.enable = true;
       };
 
       communications = {
