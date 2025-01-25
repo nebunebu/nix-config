@@ -19,7 +19,6 @@
     pkgs.texlivePackages.latexmk
   ];
 
-  programs.lazygit.enable = true;
   home.sessionVariables = { FLAKE = "/home/nebu/.nix-config"; };
   # programs.nh.flake = "/home/nebu/.nix-config#t5610";
 

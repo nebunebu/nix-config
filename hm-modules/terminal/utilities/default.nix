@@ -17,6 +17,7 @@ in
     ./fastfetch.nix
     ./fd.nix
     ./jq.nix
+    ./lazygit.nix
     ./nh.nix
     ./nix-index.nix
     ./nix-tools.nix
@@ -43,6 +44,7 @@ in
       fastfetch.enable = true;
       fd.enable = true;
       jq.enable = true;
+      lazygit.enable = true;
       nh.enable = true;
       nix-index.enable = true;
       nix-tools.enable = true;
