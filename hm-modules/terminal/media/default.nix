@@ -8,6 +8,7 @@ in
 {
   imports = [
     ./buku.nix
+    ./pyradio.nix
     ./newsboat
   ];
 
@@ -18,6 +19,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.terminal.media = {
       buku.enable = true;
+      pyradio.enable = true;
       newsboat.enable = true;
     };
   };
