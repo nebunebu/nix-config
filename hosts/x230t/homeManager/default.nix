@@ -2,6 +2,7 @@
 , self
 , pkgs
 , unstablePkgs
+, config
 , ...
 }:
 
@@ -15,7 +16,8 @@
   ];
 
 
-  programs.nh.flake = "${inputs.self}#x230t";
+
+  programs.nh.flake = "${config.home.homeDirectory}/.nix-config#x230t";
   neb = {
     services.syncthing.enable = true;
     profile = {

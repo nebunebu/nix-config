@@ -1,4 +1,4 @@
-{ inputs, pkgs, unstablePkgs, ... }:
+{ inputs, pkgs, unstablePkgs, config, ... }:
 
 {
   imports = [
@@ -21,7 +21,7 @@
   ];
 
   programs.lazygit.enable = true;
-  programs.nh.flake = "${inputs.self}#t5610";
+  programs.nh.flake = "${config.home.homeDirectory}/.nix-config#t5610";
 
   neb = {
     services.syncthing.enable = true;
