@@ -79,6 +79,8 @@
     profile = {
       development.enable = true;
       terminal.enable = true;
+      # NOTE: not set up
+      # tablet.enable = false;
     };
   };
 }
