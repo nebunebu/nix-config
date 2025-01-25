@@ -16,6 +16,7 @@ in
   config = lib.mkIf cfg.enable {
 
     environment.systemPackages = [ unstablePkgs.glaze unstablePkgs.hyprgraphics ];
+
     nix = {
       settings = {
         substituters = [

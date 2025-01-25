@@ -11,7 +11,7 @@ in
     ./newsboat
   ];
 
-  options.neb.profile.terminal.media = {
+  options.neb.terminal.media = {
     enable = lib.mkEnableOption "enable terminal media profile";
   };
 

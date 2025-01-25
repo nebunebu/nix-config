@@ -11,7 +11,7 @@ in
     ./yazi.nix
   ];
 
-  options.neb.profile.terminal.file-navigation = {
+  options.neb.terminal.file-navigation = {
     enable = lib.mkEnableOption "enable terminal file-navigation profile";
   };
 

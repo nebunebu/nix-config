@@ -15,7 +15,7 @@ in
     ./activitywatch.nix
   ];
 
-  options.neb.profile.terminal = {
+  options.neb.desktop.productivity = {
     enable = lib.mkEnableOption "enable dektop productivity";
   };
 

@@ -3,12 +3,11 @@
 , ...
 }:
 let
-  cfg = config.neb.development;
+  cfg = config.neb.profile.development;
 in
 {
   imports = [
     ./awscli.nix
-    ./direnv.nix
     ./git.nix
     ./go.nix
     ./repomix.nix
@@ -20,10 +19,10 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.development = {
-      awscli.nix = false;
-      git.nix = true;
-      go.nix = false;
-      repomix.nix = true;
+      awscli.enable = false;
+      git.enable = true;
+      go.enable = false;
+      repomix.enable = true;
     };
   };
 }

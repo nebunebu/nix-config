@@ -11,6 +11,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ags.url = "github:aylur/ags";
 
     stylix = {

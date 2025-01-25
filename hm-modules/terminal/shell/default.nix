@@ -12,12 +12,12 @@ in
     ./zsh.nix
   ];
 
-  options.neb.profile.terminal.shell = {
+  options.neb.terminal.shell = {
     enable = lib.mkEnableOption "enable shell profile";
   };
 
   config = lib.mkIf cfg.enable {
-    neb.terminal = {
+    neb.terminal.shell = {
       fzf.enable = true;
       tmux.enable = true;
       zsh.enable = true;

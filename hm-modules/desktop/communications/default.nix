@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  cfg = config.neb.desktop.communication;
+  cfg = config.neb.desktop.communications;
 in
 {
   imports = [
@@ -13,12 +13,12 @@ in
     # something irc
   ];
 
-  options.neb.profile.terminal = {
-    enable = lib.mkEnableOption "enable communication profile";
+  options.neb.desktop.communications = {
+    enable = lib.mkEnableOption "enable communications profile";
   };
 
   config = lib.mkIf cfg.enable {
-    neb.desktop.communication = {
+    neb.desktop.communications = {
       vesktop.enable = true;
     };
   };
