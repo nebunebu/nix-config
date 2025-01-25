@@ -81,21 +81,23 @@
       repomix.enable = true;
     };
 
-    terminal = {
-      shell = {
-        fzf.enable = true;
-        tmux.enable = true;
-        zsh.enable = true;
-      };
-      file-navigation = {
-        lf.enable = true;
-        yazi.enable = true;
-      };
-      media = {
-        buku.enable = true;
-        newsboat.enable = true;
-      };
-      utilities.profile.enable = true;
-    };
+    profile.terminal.enable = true;
+
+    # terminal = {
+    #   shell = {
+    #     fzf.enable = true;
+    #     tmux.enable = true;
+    #     zsh.enable = true;
+    #   };
+    #   file-navigation = {
+    #     lf.enable = true;
+    #     yazi.enable = true;
+    #   };
+    #   media = {
+    #     buku.enable = true;
+    #     newsboat.enable = true;
+    #   };
+    #   utilities.profile.enable = true;
+    # };
   };
 }
