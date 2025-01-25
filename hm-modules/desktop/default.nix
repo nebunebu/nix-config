@@ -23,7 +23,9 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop = {
       browsers.enable = true;
+      communication.enable = true;
       media.enable = true;
+      productivity.enable = true;
       utilities.enable = true;
     };
   };
