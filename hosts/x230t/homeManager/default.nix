@@ -1,9 +1,8 @@
-{ inputs
-, self
-, pkgs
-, unstablePkgs
-, config
-, ...
+{
+  self,
+  pkgs,
+  unstablePkgs,
+  ...
 }:
 
 {
@@ -15,9 +14,6 @@
     pkgs.jellyfin-media-player
   ];
 
-
-
-  programs.nh.flake = "${config.home.homeDirectory}/.nix-config#x230t";
   neb = {
     services.syncthing.enable = true;
     profile = {
