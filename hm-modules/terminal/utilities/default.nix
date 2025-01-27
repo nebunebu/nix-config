@@ -1,6 +1,7 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.terminal.utilities;
@@ -18,6 +19,7 @@ in
     ./fd.nix
     ./jq.nix
     ./lazygit.nix
+    ./manix.nix
     ./nh.nix
     ./nix-index.nix
     ./nix-tools.nix
@@ -45,6 +47,7 @@ in
       fd.enable = true;
       jq.enable = true;
       lazygit.enable = true;
+      manix.enable = true;
       nh.enable = true;
       nix-index.enable = true;
       nix-tools.enable = true;

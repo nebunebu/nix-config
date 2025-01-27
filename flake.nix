@@ -95,39 +95,71 @@
       system = "x86_64-linux";
       pkgs = import inputs.nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+        };
         overlays = [
           inputs.tool-suites.overlays.default
           inputs.hyprpanel.overlay
+
+          (_: prev: {
+            manix = prev.manix.override (old: {
+              rustPlatform = old.rustPlatform // {
+                buildRustPackage =
+                  args:
+                  old.rustPlatform.buildRustPackage (
+                    args
+                    // {
+                      version = "0.8.0-pr20";
+                      src = prev.fetchFromGitHub {
+                        owner = "nix-community";
+                        repo = "manix";
+                        rev = "c532d14b0b59d92c4fab156fc8acd0565a0836af";
+                        sha256 = "sha256-Uo+4/be6rT0W8Z1dvCRXOANvoct6gJ4714flhyFzmKU=";
+                      };
+                      cargoHash = "sha256-ey8nXMCFnDSlJl+2uYYFm1YrhJ+r0sq48qtCwhqI0mo=";
+                    }
+                  );
+              };
+            });
+          })
         ];
       };
       unstablePkgs = import inputs.nixpkgs-unstable {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+        };
       };
 
       mkHost = import ./lib/mkHost.nix {
-        inherit inputs system pkgs unstablePkgs;
+        inherit
+          inputs
+          system
+          pkgs
+          unstablePkgs
+          ;
       };
     in
     {
       nixosConfigurations = {
         t5610 = mkHost { hostName = "t5610"; };
-        x230t = mkHost { hostName = "x230t"; extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230 ]; };
+        x230t = mkHost {
+          hostName = "x230t";
+          extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230 ];
+        };
       };
 
-      checks = builtins.mapAttrs
-        (system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; })
-        inputs.nixpkgs.legacyPackages;
+      checks = builtins.mapAttrs (
+        system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }
+      ) inputs.nixpkgs.legacyPackages;
 
-      devShells = builtins.mapAttrs
-        (system: pkgs: {
-          default = import ./nix/shell.nix {
-            inherit pkgs;
-            checks = inputs.self.checks.${system};
-          };
-        })
-        inputs.nixpkgs.legacyPackages;
+      devShells = builtins.mapAttrs (system: pkgs: {
+        default = import ./nix/shell.nix {
+          inherit pkgs;
+          checks = inputs.self.checks.${system};
+        };
+      }) inputs.nixpkgs.legacyPackages;
 
     };
 }
