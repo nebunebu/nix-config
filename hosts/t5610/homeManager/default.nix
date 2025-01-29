@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -9,9 +14,10 @@
     (pkgs.writeShellApplication {
       name = "roseify";
       runtimeInputs = [ pkgs.lutgen ];
-      text = /* sh */ ''
-        lutgen apply "$1" -o "roseified-$1" -p rose-pine
-      '';
+      text = # sh
+        ''
+          lutgen apply "$1" -o "roseified-$1" -p rose-pine
+        '';
     })
 
     # unstablePkgs.anki-bin
@@ -33,6 +39,8 @@
 
     desktop = {
       hyprpanel.t5610.enable = true;
+
+      media.spotube.enable = lib.mkForce true;
       window-managers = {
         river.enable = true;
         hyprland = {
@@ -48,7 +56,7 @@
             # nixpkgs.enable = true;
             # noogle.enable = true;
             obsidian.enable = true;
-            # spotube.enable = true;
+            spotube.enable = true;
           };
         };
       };
