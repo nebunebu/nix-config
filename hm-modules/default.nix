@@ -5,6 +5,7 @@
     ./development
     ./tablet
     ./terminal
+    ./xdg.nix
     # ./security
     ./syncthing.nix
     # ./bat.nix
