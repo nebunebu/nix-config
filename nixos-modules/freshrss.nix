@@ -1,7 +1,8 @@
-{ lib
-, config
-, pkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.freshrss;
@@ -62,6 +63,18 @@ in
             rev = "878fb05675a90ddb8ab308b472ad2139d5725de8";
             hash = "sha256-tKe2Ix+VE56p5zkjfsdU9AiRw3s4jDoJJufYXci6jdY=";
             sparseCheckout = [ "xExtension-YouTubeChannel2RssFeed" ];
+          };
+        })
+        (pkgs.freshrss-extensions.buildFreshRssExtension {
+          FreshRssExtUniqueId = "CustomCSS";
+          pname = "custom-css";
+          version = "0.6.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "Siphalor";
+            repo = "FreshRSS-Extensions";
+            rev = "c2d7f195b68075116984a141a59cfeecff4c7ae1";
+            hash = "sha256-HfZBzZxYv4zbgoBzViGm/KhrY1o7PVBeCNj80/inaw4=";
+            sparseCheckout = [ "xExtension-CustomCSS" ];
           };
         })
         (pkgs.freshrss-extensions.buildFreshRssExtension {
