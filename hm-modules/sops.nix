@@ -7,5 +7,5 @@
       path = "%r/hm_test.txt";
     };
   };
-  # systemd.user.services.mbsync.Unit.After = [ "sops-nix.service" ];
+  # systemd.user.services."${some-service}".Unit.After = [ "sops-nix.service" ];
 }
