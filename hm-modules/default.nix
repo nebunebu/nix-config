@@ -6,21 +6,8 @@
     ./tablet
     ./terminal
     ./xdg.nix
-    # ./security
     ./syncthing.nix
-    # ./bat.nix
-    # ./cli-tools.nix
-    # ./direnv.nix
-    # ./fzf.nix
-    # ./git.nix
-    # ./lf.nix
-    # ./newsboat
-    # ./nix-tools.nix
-    # ./taskwarrior.nix
-    # ./tmux.nix
-    # ./xournalpp.nix
-    # ./yazi.nix
-    # ./zsh
+    ./sops.nix
   ];
 
   home = {
@@ -38,6 +25,5 @@
   };
 
   # nixpkgs.config = { allowUnfree = true; };
-
   systemd.user.startServices = "sd-switch";
 }

@@ -1,9 +1,14 @@
-{ inputs, system, pkgs, unstablePkgs }:
+{
+  inputs,
+  system,
+  pkgs,
+  unstablePkgs,
+}:
 
-{ hostName
-, extraModules ? [ ]
-, disableHomeManager ? false
-,
+{
+  hostName,
+  extraModules ? [ ],
+  disableHomeManager ? false,
 }:
 inputs.nixpkgs.lib.nixosSystem {
   inherit system;
@@ -20,6 +25,7 @@ inputs.nixpkgs.lib.nixosSystem {
     [
       (inputs.self + "/hosts/${hostName}/nixOS/default.nix")
       inputs.stylix.nixosModules.stylix
+      inputs.sops-nix.nixosModules.sops
     ]
     ++ extraModules
     ++ (
@@ -40,6 +46,9 @@ inputs.nixpkgs.lib.nixosSystem {
                   ;
                 inherit (inputs) self;
               };
+              sharedModules = [
+                inputs.sops-nix.homeManagerModules.sops
+              ];
             };
           }
         ]
