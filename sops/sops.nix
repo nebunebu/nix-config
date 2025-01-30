@@ -1,15 +1,13 @@
-{ inputs
-, pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.sops;
 in
 {
-  imports = [ inputs.sops-nix.nixosModules.sops ];
-
   options = {
     neb.sops.enable = lib.mkEnableOption "enable sops";
   };
