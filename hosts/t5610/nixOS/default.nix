@@ -1,7 +1,8 @@
-{ self
-, inputs
-, pkgs
-, ...
+{
+  self,
+  inputs,
+  pkgs,
+  ...
 }:
 
 {
@@ -45,6 +46,7 @@
     amdgpu.enable = true;
     anki-sync.enable = true;
     beaverhabits.enable = true;
+    dumbkan.enable = true;
     freshrss.enable = true;
     jellyfin.enable = true;
     ollama.enable = true;
