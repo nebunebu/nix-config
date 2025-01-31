@@ -8,6 +8,7 @@
     ./boot.nix
     ./console.nix
     ./documentation.nix
+    ./dumbkan.nix
     ./freshrss.nix
     ./hyprland.nix
     ./jellyfin.nix
