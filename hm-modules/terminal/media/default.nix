@@ -1,6 +1,7 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.terminal.media;
@@ -10,6 +11,7 @@ in
     ./buku.nix
     ./pyradio.nix
     ./newsboat
+    ./tuir
   ];
 
   options.neb.terminal.media = {
@@ -21,6 +23,7 @@ in
       buku.enable = true;
       pyradio.enable = true;
       newsboat.enable = true;
+      tuir.enable = true;
     };
   };
 }
