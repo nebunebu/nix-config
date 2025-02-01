@@ -1,8 +1,8 @@
-{ pkgs
-, unstablePkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.amdgpu;
@@ -13,21 +13,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    nixpkgs.config.rocmSupport = true;
-
     environment = {
       systemPackages = with pkgs; [
         clinfo
         glxinfo
         lact
         libdrm
-        rocmPackages.rocm-device-libs
-        rocmPackages.rocm-runtime
-        rocmPackages.rocm-smi
-        rocmPackages.rocminfo
       ];
       variables = {
-        ROC_ENABLE_PRE_VEGA = "1";
         GPU_MAX_HEAP_SIZE = "100%";
         GPU_USE_SYNC_OBJECTS = "1";
         HSA_ENABLE_SDMA = "0";
@@ -48,8 +41,6 @@ in
       graphics = {
         enable = true;
         extraPackages = with pkgs; [
-          rocmPackages.clr.icd
-          rocmPackages.clr
           amdvlk
           vulkan-loader
           vulkan-validation-layers
