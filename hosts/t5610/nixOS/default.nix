@@ -31,12 +31,10 @@
   programs.river.enable = true;
 
   # sops.enable = true;
-  # tuir.enable = true;
   neb = {
     sops = {
       enable = true;
       taskwarrior.enable = true;
-      tuir.enable = true;
       gpg = {
         enable = true;
       };

@@ -5,7 +5,6 @@
     ./pass.nix
     ./sops.nix
     ./taskwarrior
-    ./tuir
 
     # TODO:
     # add ssh
