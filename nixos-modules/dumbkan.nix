@@ -22,7 +22,7 @@ in
       autoStart = true;
 
       ports = [ "8082:3000" ];
-      volumes = [ "/var/lib/dumbkan:/app/data/tasks.json" ];
+      volumes = [ "/var/lib/dumbkan:/app/data" ];
     };
   };
 }
