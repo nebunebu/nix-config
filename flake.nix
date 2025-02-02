@@ -57,14 +57,17 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      ref = "refs/tags/v0.47.2";
+      ref = "refs/tags/v0.47.0";
       submodules = true;
     };
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     hyprwayland-scanner = {
-      url = "github:hyprwm/hyprwayland-scanner?ref=v0.4.4";
+      url = "github:hyprwm/hyprwayland-scanner";
+      # url = "github:hyprwm/hyprwayland-scanner?ref=v0.4.4";
+      # url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprgrass = {
