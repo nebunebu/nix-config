@@ -46,18 +46,10 @@
 
     # NOTE: Hyprland
     # {{{
-
-    # Tag: v0.47.0, commits: 5777
-    # built against:
-    #  aquamarine 0.7.2
-    #  hyprlang 0.6.0
-    #  hyprutils 0.5.0
-    #  hyprcursor 0.1.11
-    #  hyprgraphics 0.1.1
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      ref = "refs/tags/v0.47.0";
+      ref = "refs/tags/v0.47.1";
       submodules = true;
     };
 
