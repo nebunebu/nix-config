@@ -17,6 +17,7 @@ in
     programs.zsh.completionInit = ''
       # nh completions
       ${builtins.readFile ./nh_completions.zsh}
+      ${builtins.readFile ./television_completions.zsh}
       # Add aichat completion to fpath
       fpath+=${
         pkgs.fetchFromGitHub {
