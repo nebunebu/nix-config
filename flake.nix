@@ -11,17 +11,11 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ags.url = "github:aylur/ags";
 
     stylix = {
       # NOTE: set to 24.11 when released
       url = "github:danth/stylix/master";
-      # url = "github:diniamo/stylix/fix-hyprland";
     };
 
     nix-index-database = {
@@ -50,8 +44,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    tool-suites.url = "github:nebunebu/tool-suites";
-
+    # NOTE: Hyprland
+    # {{{
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -81,6 +75,7 @@
       url = "github:hyprland-community/pyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # }}}
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
@@ -98,9 +93,7 @@
           allowUnfree = true;
         };
         overlays = [
-          inputs.tool-suites.overlays.default
           inputs.hyprpanel.overlay
-
           (_: prev: {
             manix = prev.manix.override (old: {
               rustPlatform = old.rustPlatform // {
