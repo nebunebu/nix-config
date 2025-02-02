@@ -15,13 +15,13 @@
       general = {
         "gaps_in" = "4";
         # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
-        "gaps_out" = "0,2,2,2"; #top,right,bottom,left
+        "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
-        "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
+        # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
       };
 
-      decoration = lib.mkForce (removeAttrs
-        {
+      decoration = lib.mkForce (
+        removeAttrs {
           col.shadow = null;
           shadow = {
             enabled = false;
@@ -40,12 +40,13 @@
           rounding = "1";
           "active_opacity" = "1";
           "inactive_opacity" = "1";
-        } [ "col" ]);
+        } [ "col" ]
+      );
 
       windowrulev2 = lib.mkForce [
         # NOTE: Border Colors
-        "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
-        "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+        # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
+        # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"
