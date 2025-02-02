@@ -61,7 +61,8 @@ in
             owner = "cn-tools";
             repo = "cntools_FreshRssExtensions";
             rev = "878fb05675a90ddb8ab308b472ad2139d5725de8";
-            hash = "sha256-tKe2Ix+VE56p5zkjfsdU9AiRw3s4jDoJJufYXci6jdY=";
+            # hash = "sha256-tKe2Ix+VE56p5zkjfsdU9AiRw3s4jDoJJufYXci6jdY=";
+            hash = "sha256-WTtqMEYF/R6i60SAhwO4JOVf3tc/Qq7jtnUaeaJ4opQ=";
             sparseCheckout = [ "xExtension-YouTubeChannel2RssFeed" ];
           };
         })
