@@ -13,6 +13,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.television ];
+    home.packages = [
+      pkgs.television
+      pkgs.nix-search-tv
+    ];
   };
 }
