@@ -46,19 +46,25 @@
 
     # NOTE: Hyprland
     # {{{
+
+    # Tag: v0.47.0, commits: 5777
+    # built against:
+    #  aquamarine 0.7.2
+    #  hyprlang 0.6.0
+    #  hyprutils 0.5.0
+    #  hyprcursor 0.1.11
+    #  hyprgraphics 0.1.1
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      # ref = "refs/tags/v0.46.2";
-      # ref = "refs/tags/v0.45.0";
-      # rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
+      ref = "refs/tags/v0.47.2";
       submodules = true;
     };
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     hyprwayland-scanner = {
-      url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
+      url = "github:hyprwm/hyprwayland-scanner?ref=v0.4.4";
     };
 
     hyprgrass = {
