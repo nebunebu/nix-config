@@ -1,4 +1,9 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.terminal.utilities.aichat;
 in
@@ -8,6 +13,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ unstablePkgs.aichat ];
+    home.packages = [ pkgs.aichat ];
   };
 }

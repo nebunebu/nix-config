@@ -1,4 +1,9 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.desktop.productivity.anki;
 in
@@ -9,11 +14,10 @@ in
 
   config = lib.mkIf cfg.enable {
     home = {
-      packages = [ unstablePkgs.anki-bin ];
+      packages = [ pkgs.anki-bin ];
       sessionVariables = {
         ANKI_WAYLAND = 1;
       };
     };
-
   };
 }

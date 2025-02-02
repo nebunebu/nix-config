@@ -1,4 +1,9 @@
-{ self, pkgs, unstablePkgs, inputs, ... }:
+{
+  self,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -36,7 +41,6 @@
   hardware = {
     graphics = {
       enable = true;
-      # package = unstablePkgs.mesa.drivers;
       extraPackages = [
         pkgs.intel-media-driver
         pkgs.vaapiIntel
@@ -44,7 +48,10 @@
         pkgs.intel-compute-runtime
         pkgs.vpl-gpu-rt
       ];
-      extraPackages32 = [ pkgs.vaapiIntel pkgs.intel-media-driver ];
+      extraPackages32 = [
+        pkgs.vaapiIntel
+        pkgs.intel-media-driver
+      ];
     };
   };
 

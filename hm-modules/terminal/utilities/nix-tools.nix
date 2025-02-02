@@ -1,8 +1,8 @@
-{ lib
-, config
-, pkgs
-, unstablePkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.terminal.utilities.nix-tools;
@@ -20,8 +20,9 @@ in
           nurl
           statix
           vimPluginsUpdater
+          nix-inspect
+          nvd
           ;
-        inherit (unstablePkgs) nix-inspect nvd;
       };
     };
   };

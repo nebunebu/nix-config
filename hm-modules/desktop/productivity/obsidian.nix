@@ -1,4 +1,9 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.desktop.productivity.obsidian;
 in
@@ -8,6 +13,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ unstablePkgs.obsidian ];
+    home.packages = [ pkgs.obsidian ];
   };
 }

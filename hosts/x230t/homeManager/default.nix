@@ -1,7 +1,6 @@
 {
   self,
   pkgs,
-  unstablePkgs,
   ...
 }:
 
@@ -9,7 +8,7 @@
   imports = [ "${self}/hm-modules" ];
 
   home.packages = [
-    unstablePkgs.aichat
+    pkgs.aichat
     pkgs.libnotify
     pkgs.jellyfin-media-player
   ];

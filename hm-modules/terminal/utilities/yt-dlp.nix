@@ -1,4 +1,8 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  ...
+}:
 let
   cfg = config.neb.terminal.utilities.yt-dlp;
 in
@@ -10,7 +14,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.yt-dlp = {
       enable = true;
-      package = unstablePkgs.yt-dlp;
       settings = {
         embed-thumbnail = true;
         embed-chapters = true;

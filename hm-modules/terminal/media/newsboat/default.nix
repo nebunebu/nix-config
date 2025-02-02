@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  unstablePkgs,
   ...
 }:
 let
@@ -42,7 +41,7 @@ in
           bind-key N prev-unread
           bind-key U show-urls
 
-          macro y set browser "notify-send 'Newsboat' 'Starting download...' && setsid -f ${lib.getExe unstablePkgs.yt-dlp} %u 2>/dev/null"; open-in-browser ; set browser "$BROWSER %u"
+          macro y set browser "notify-send 'Newsboat' 'Starting download...' && setsid -f ${lib.getExe pkgs.yt-dlp} %u 2>/dev/null"; open-in-browser ; set browser "$BROWSER %u"
           macro m set browser "notify-send 'Newsboat' 'Opening in mpv...' && setsid -f ${lib.getExe config.programs.mpv.finalPackage} %u > /dev/null 2>&1"; open-in-browser ; set browser "$BROWSER %u"
 
           # Base interface colors
