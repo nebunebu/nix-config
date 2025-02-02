@@ -21,6 +21,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.rose-pine-icon-theme # needs to be updated
+      pkgs.morewaita-icon-theme
+    ];
+
     fonts.packages = [
       pkgs.ibm-plex
       pkgs.nerd-fonts.im-writing
