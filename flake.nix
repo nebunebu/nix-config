@@ -1,11 +1,11 @@
 {
   description = "nebu's NixOS configs";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -49,7 +49,7 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      ref = "refs/tags/v0.46.2";
+      # ref = "refs/tags/v0.46.2";
       # ref = "refs/tags/v0.45.0";
       # rev = "f642fb97df5c69267a03452533de383ff8023570"; # fix chromium crash, pre-aquamarine
       submodules = true;
