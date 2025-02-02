@@ -1,13 +1,15 @@
-{ lib
-, config
-, pkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 
 let
   cfg = config.neb.terminal.shell.zsh;
 in
 {
+  imports = [ ./completions ];
 
   options = {
     neb.terminal.shell.zsh.enable = lib.mkEnableOption "enable zsh";
@@ -15,13 +17,6 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
-      starship = {
-        enable = true;
-        enableZshIntegration = true;
-        settings = {
-          aws = { disabled = true; };
-        };
-      };
       zsh = {
         enable = true;
         autosuggestion.enable = true;
@@ -42,17 +37,20 @@ in
           ip = "ip --color=\"auto\"";
           diff = "diff --color=\"auto\"";
           tree = "eza --tree";
+          cat = "bat";
         };
 
         completionInit = ''
           # Add aichat completion to fpath
-          fpath+=${pkgs.fetchFromGitHub {
-            owner = "sigoden";
-            repo = "aichat";
-            rev = "v0.26.0";
-            sha256 = "sha256-02v4nnQTKkX7ssZ2it7YfDtx6w/vVWG5crMhwdv3tmM=";
-            sparseCheckout = [ "scripts/completions" ];
-          }}/scripts/completions
+          fpath+=${
+            pkgs.fetchFromGitHub {
+              owner = "sigoden";
+              repo = "aichat";
+              rev = "v0.26.0";
+              sha256 = "sha256-02v4nnQTKkX7ssZ2it7YfDtx6w/vVWG5crMhwdv3tmM=";
+              sparseCheckout = [ "scripts/completions" ];
+            }
+          }/scripts/completions
         '';
 
         initExtra = # bash

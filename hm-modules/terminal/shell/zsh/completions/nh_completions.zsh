@@ -447,8 +447,7 @@ _nh__os__info_commands() {
     local commands; commands=()
     _describe -t commands 'nh os info commands' commands "$@"
 }
-(( $+functions[_nh__os__switch_commands] )) ||
-_nh__os__switch_commands() {
+(( $+functions[_nh__os__switch_commands] )) || _nh__os__switch_commands() {
     local commands; commands=()
     _describe -t commands 'nh os switch commands' commands "$@"
 }
