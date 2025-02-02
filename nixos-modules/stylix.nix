@@ -1,8 +1,8 @@
-{ lib
-, config
-, pkgs
-, unstablePkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.stylix;
@@ -21,12 +21,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-
     fonts.packages = [
-      unstablePkgs.ibm-plex
-      unstablePkgs.nerd-fonts.im-writing
-      unstablePkgs.nerd-fonts.blex-mono
-      # unstablePkgs.nerd-fonts.symbols-only
+      pkgs.ibm-plex
+      pkgs.nerd-fonts.im-writing
+      pkgs.nerd-fonts.blex-mono
+      pkgs.nerd-fonts.jetbrains-mono # needed for hyprpanel
     ];
 
     stylix = {
@@ -41,20 +40,19 @@ in
         name = "BreezeX-RosePineDawn-Linux";
       };
 
-
       fonts = {
         serif = {
-          package = unstablePkgs.ibm-plex;
+          package = pkgs.ibm-plex;
           name = "IBM Plex Serif";
         };
 
         sansSerif = {
-          package = unstablePkgs.ibm-plex;
+          package = pkgs.ibm-plex;
           name = "IBM Plex Sans";
         };
 
         monospace = {
-          package = unstablePkgs.ibm-plex;
+          package = pkgs.ibm-plex;
           name = "IBM Plex Mono";
         };
 
