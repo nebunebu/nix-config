@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  unstablePkgs,
   ...
 }:
 let
@@ -21,7 +20,7 @@ in
     };
 
     home.packages = [
-      unstablePkgs.wvkbd
+      pkgs.wvkbd
       pkgs.clickclack
       # NOTE: not in nixpkgs
       # https://git.sr.ht/~earboxer/swipeGuess

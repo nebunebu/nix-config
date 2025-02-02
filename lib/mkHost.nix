@@ -2,7 +2,6 @@
   inputs,
   system,
   pkgs,
-  unstablePkgs,
 }:
 
 {
@@ -17,7 +16,6 @@ inputs.nixpkgs.lib.nixosSystem {
       inputs
       system
       pkgs
-      unstablePkgs
       ;
     inherit (inputs) self;
   };
@@ -42,7 +40,6 @@ inputs.nixpkgs.lib.nixosSystem {
                 inherit
                   inputs
                   pkgs
-                  unstablePkgs
                   ;
                 inherit (inputs) self;
               };

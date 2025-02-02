@@ -2,20 +2,24 @@
   description = "nebu's NixOS configs";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
 
-    ags.url = "github:aylur/ags";
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix = {
-      # NOTE: set to 24.11 when released
       url = "github:danth/stylix/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-index-database = {
@@ -23,11 +27,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nebvim.url = "github:nebunebu/nebvim";
+    nebvim = {
+      url = "github:nebunebu/nebvim";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sops-nix = {
@@ -51,14 +58,16 @@
       url = "https://github.com/hyprwm/Hyprland";
       ref = "refs/tags/v0.47.1";
       submodules = true;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner";
-      # url = "github:hyprwm/hyprwayland-scanner?ref=v0.4.4";
-      # url = "github:hyprwm/hyprwayland-scanner?ref=v0.3.10";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -118,19 +127,12 @@
           })
         ];
       };
-      unstablePkgs = import inputs.nixpkgs-unstable {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
 
       mkHost = import ./lib/mkHost.nix {
         inherit
           inputs
           system
           pkgs
-          unstablePkgs
           ;
       };
     in

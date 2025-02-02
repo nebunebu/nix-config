@@ -1,9 +1,9 @@
-{ inputs
-, pkgs
-, unstablePkgs
-, lib
-, config
-, ...
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.desktop.hyprland;
@@ -15,7 +15,10 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    environment.systemPackages = [ unstablePkgs.glaze unstablePkgs.hyprgraphics ];
+    environment.systemPackages = [
+      pkgs.glaze
+      pkgs.hyprgraphics
+    ];
 
     nix = {
       settings = {
@@ -39,7 +42,6 @@ in
       enable = true;
       # withUWSM = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-      # package = unstablePkgs.hyprland;
     };
 
     xdg.portal = {

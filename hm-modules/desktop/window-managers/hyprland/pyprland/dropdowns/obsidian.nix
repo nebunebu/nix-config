@@ -1,9 +1,15 @@
-{ lib, config, unstablePkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.desktop.window-managers.hyprland.pyprland.obsidian;
 in
 {
-  options.neb.desktop.window-managers.hyprland.pyprland.obsidian.enable = lib.mkEnableOption "enable pyprland obsidian dropdown";
+  options.neb.desktop.window-managers.hyprland.pyprland.obsidian.enable =
+    lib.mkEnableOption "enable pyprland obsidian dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {
@@ -11,7 +17,7 @@ in
       text = # toml
         ''
           [scratchpads.obsidian]
-          command = "${unstablePkgs.obsidian}/bin/obsidian --disable-gpu"
+          command = "${pkgs.obsidian}/bin/obsidian --disable-gpu"
           animation = "fromTop"
           lazy = true
           class = "obsidian"

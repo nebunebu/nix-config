@@ -1,9 +1,9 @@
-{ lib
-, config
-, unstablePkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
-# NOTE: all this should be under browsers
 let
   cfg = config.neb.desktop.media.glance;
 in
@@ -14,13 +14,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ unstablePkgs.glance ];
+    home.packages = [ pkgs.glance ];
 
     wayland.windowManager.hyprland.settings.exec-once = [
-      "${unstablePkgs.glance}/bin/glance -config ${config.xdg.configHome}/glance/glance.yaml"
+      "${pkgs.glance}/bin/glance -config ${config.xdg.configHome}/glance/glance.yaml"
     ];
 
   };
 }
-
-

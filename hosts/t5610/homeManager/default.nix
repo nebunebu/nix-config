@@ -20,7 +20,6 @@
         '';
     })
 
-    # unstablePkgs.anki-bin
     # pkgs.drawio
     pkgs.texlivePackages.latexmk
     pkgs.libnotify
