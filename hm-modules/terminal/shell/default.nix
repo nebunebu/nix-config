@@ -1,6 +1,7 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.terminal.shell;
@@ -9,7 +10,8 @@ in
   imports = [
     ./fzf.nix
     ./tmux.nix
-    ./zsh.nix
+    ./starship.nix
+    ./zsh
   ];
 
   options.neb.terminal.shell = {
@@ -20,7 +22,11 @@ in
     neb.terminal.shell = {
       fzf.enable = true;
       tmux.enable = true;
-      zsh.enable = true;
+      starship.enable = true;
+      zsh = {
+        enable = true;
+        completions.enable = true;
+      };
     };
   };
 }
