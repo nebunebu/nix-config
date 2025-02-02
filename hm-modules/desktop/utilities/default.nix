@@ -1,13 +1,13 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.desktop.utilities;
 in
 {
   imports = [
-    ./anyrun.nix
     ./astal.nix
     ./foot.nix
     ./fuzzel
@@ -23,7 +23,6 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.desktop.utilities = {
-      anyrun.enable = false;
       foot.enable = false;
       fuzzel.enable = true;
       ghostty.enable = true;
