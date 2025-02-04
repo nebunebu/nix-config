@@ -1,8 +1,10 @@
 { lib, config, ... }:
-# getBase16 = b: config.stylix.base16Scheme.palette.${b};
-removeOctothrope = s: (builtins.substring 1 6 s);
-# mkColor = b: b |> getBase16 |> removeOctothrope;
-# gold = "base09" |> mkColor;
+let
+  getBase16 = b: config.stylix.base16Scheme.palette.${b};
+  removeOctothrope = s: builtins.substring 1 6 s;
+  mkColorFromBase = base: base |> getBase16 |> removeOctothrope;
+  gold = mkColorFromBase "base09";
+in
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -11,9 +13,7 @@ removeOctothrope = s: (builtins.substring 1 6 s);
         # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
         "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
-        "col.active_border" = lib.mkForce "rgb(${
-          builtins.substring 1 6 config.stylix.base16Scheme.palette.base09
-        })";
+        "col.active_border" = lib.mkForce "rgb(${gold})";
       };
 
       decoration = lib.mkForce (
