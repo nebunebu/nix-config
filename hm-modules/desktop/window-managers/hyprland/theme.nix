@@ -1,14 +1,8 @@
 { lib, config, ... }:
-# let
-#   borderEdgeGradient = col: (
-#     let
-#       colorString = c: "rgb(${c}) ";
-#       firstColor = lib.concatStrings (lib.replicate 5 (colorString col));
-#       secondColor = lib.concatStrings (lib.replicate 5 (colorString config.stylix.base16Scheme.palette.base00));
-#     in
-#     firstColor + secondColor + "211deg"
-#   );
-# in
+# getBase16 = b: config.stylix.base16Scheme.palette.${b};
+removeOctothrope = s: (builtins.substring 1 6 s);
+# mkColor = b: b |> getBase16 |> removeOctothrope;
+# gold = "base09" |> mkColor;
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -17,7 +11,9 @@
         # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
         "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
-        # "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.palette.base09})";
+        "col.active_border" = lib.mkForce "rgb(${
+          builtins.substring 1 6 config.stylix.base16Scheme.palette.base09
+        })";
       };
 
       decoration = lib.mkForce (
@@ -45,8 +41,8 @@
 
       windowrulev2 = lib.mkForce [
         # NOTE: Border Colors
-        # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0D}), floating:1"
-        # "bordercolor rgb(${config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+        "bordercolor rgb(${builtins.substring 1 6 config.stylix.base16Scheme.palette.base0D}), floating:1"
+        "bordercolor rgb(${builtins.substring 1 6 config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"
