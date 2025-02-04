@@ -4,6 +4,8 @@ let
   removeOctothrope = s: builtins.substring 1 6 s;
   mkColorFromBase = base: base |> getBase16 |> removeOctothrope;
   gold = mkColorFromBase "base09";
+  iris = mkColorFromBase "base0D";
+  pine = mkColorFromBase "base0B";
 in
 {
   wayland.windowManager.hyprland = {
@@ -41,8 +43,8 @@ in
 
       windowrulev2 = lib.mkForce [
         # NOTE: Border Colors
-        "bordercolor rgb(${builtins.substring 1 6 config.stylix.base16Scheme.palette.base0D}), floating:1"
-        "bordercolor rgb(${builtins.substring 1 6 config.stylix.base16Scheme.palette.base0B}), fullscreen:1"
+        "bordercolor rgb(${iris}), floating:1"
+        "bordercolor rgb(${pine}), fullscreen:1"
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"

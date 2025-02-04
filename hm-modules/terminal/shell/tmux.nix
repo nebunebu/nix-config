@@ -5,8 +5,15 @@
   ...
 }:
 let
-  palette = base: config.stylix.base16Scheme.palette.${base};
   cfg = config.neb.terminal.shell.tmux;
+
+  getBase16 = b: config.stylix.base16Scheme.palette.${b};
+  removeOctothrope = s: builtins.substring 1 6 s;
+  mkColorFromBase = base: base |> getBase16 |> removeOctothrope;
+  base = mkColorFromBase "base00";
+  love = mkColorFromBase "base08";
+  gold = mkColorFromBase "base09";
+  foam = mkColorFromBase "base0C";
 in
 
 {
@@ -36,8 +43,8 @@ in
             set -g status-position top
             set -g status-interval 1
 
-            set -g status-bg "#${palette "base00"}"
-            set-option -g pane-active-border-style fg='#${palette "base09"}'
+            set -g status-bg "#${base}"
+            set-option -g pane-active-border-style fg='#${gold}'
 
             bind r source-file ~/.config/tmux/tmux.conf
 
@@ -127,9 +134,9 @@ in
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
-            # set -g @mode_indicator_copy_mode_style 'bg=#${palette "base00"},fg=#${palette "base09"}'
-            # set -g @mode_indicator_sync_mode_style 'bg=#${palette "base00"},fg=#${palette "base08"}'
-            set -g @mode_indicator_empty_mode_style 'bg=#${palette "base00"},fg=#${palette "base0C"}'
+            # set -g @mode_indicator_copy_mode_style 'bg=#${base},fg=#${gold}'
+            # set -g @mode_indicator_sync_mode_style 'bg=#${base},fg=#${love}'
+            set -g @mode_indicator_empty_mode_style 'bg=#${base},fg=#${foam}'
           '')
           (usePlugin "extrakto" ''
             set -g @extrakto_clip_tool wl-copy
