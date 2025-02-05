@@ -1,13 +1,12 @@
-{ lib, config, ... }:
-let
-  getBase16 = b: config.stylix.base16Scheme.palette.${b};
-  removeOctothrope = s: builtins.substring 1 6 s;
-  mkColorFromBase = base: base |> getBase16 |> removeOctothrope;
-  gold = mkColorFromBase "base09";
-  iris = mkColorFromBase "base0D";
-  pine = mkColorFromBase "base0B";
-in
 {
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
+  imports = [ inputs.rosepine.homeManagerModule.rosePine ];
+
   wayland.windowManager.hyprland = {
     settings = {
       general = {
@@ -15,7 +14,7 @@ in
         # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
         "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
-        "col.active_border" = lib.mkForce "rgb(${gold})";
+        "col.active_border" = lib.mkForce "rgb(${config.rosePine.main.gold})";
       };
 
       decoration = lib.mkForce (
@@ -43,8 +42,8 @@ in
 
       windowrulev2 = lib.mkForce [
         # NOTE: Border Colors
-        "bordercolor rgb(${iris}), floating:1"
-        "bordercolor rgb(${pine}), fullscreen:1"
+        # "bordercolor rgb(${iris}), floating:1"
+        # "bordercolor rgb(${pine}), fullscreen:1"
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"
