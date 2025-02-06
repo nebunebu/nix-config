@@ -1,7 +1,8 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 let
   cfg = config.neb.sops.taskwarrior;
@@ -31,18 +32,18 @@ in
         "taskrc" = {
           owner = "nebu";
           path = "/home/nebu/.config/task/secrets.rc";
-          content = /* ini */ ''
-            uuid=${config.sops.placeholder.taskwarrior_client_id}
-            encryption_secret=${config.sops.placeholder.taskwarrior_encryption_secret}
+          content = # ini
+            ''
+              uuid=${config.sops.placeholder.taskwarrior_client_id}
+              encryption_secret=${config.sops.placeholder.taskwarrior_encryption_secret}
 
-            sync.server.client_id=${config.sops.placeholder.taskwarrior_client_id}
-            sync.encryption_secret=${config.sops.placeholder.taskwarrior_encryption_secret}
-            sync.server.url=http://127.0.0.1:10222
-          '';
+              sync.server.client_id=${config.sops.placeholder.taskwarrior_client_id}
+              sync.encryption_secret=${config.sops.placeholder.taskwarrior_encryption_secret}
+              sync.server.url=http://127.0.0.1:10222
+            '';
         };
       };
     };
-
 
     home-manager.users.nebu = {
       programs = {
@@ -51,25 +52,24 @@ in
           package = pkgs.taskwarrior3;
           config = {
             color = "on";
-            rule.precedence.color =
-              "deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.";
+            rule.precedence.color = "deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.";
             "recurrence" = if cfg.recurrence.disable then "off" else "on";
           };
 
           # news.version=3.1.0
-          extraConfig = /* ini */ ''
-            include ~/.config/task/secrets.rc
-            include ~/.config/task/rose-pine.rc
+          extraConfig = # ini
+            ''
+              include ~/.config/task/secrets.rc
+              include ~/.config/task/rose-pine.rc
 
-            news.version=3.1.0
+              news.version=3.1.0
 
-            context.hide.read=-hidden
-            context.hide.write=none
-            context=hide
-          '';
+              context.hide.read=-hidden
+              context.hide.write=none
+              context=hide
+            '';
         };
       };
     };
   };
 }
-

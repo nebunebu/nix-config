@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   cfg = config.neb.development.repomix;
 in
@@ -29,7 +34,6 @@ in
       };
     };
 
-    home.shellAliases.repomix =
-      "repomix -o '${config.home.homeDirectory}/Documents/repomixes/'\"$(basename \"$PWD\" | sed 's/^\\.//')\".xml";
+    home.shellAliases.repomix = "repomix -o '${config.home.homeDirectory}/Documents/repomixes/'\"$(basename \"$PWD\" | sed 's/^\\.//')\".xml";
   };
 }

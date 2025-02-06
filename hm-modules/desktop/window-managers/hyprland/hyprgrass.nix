@@ -1,8 +1,9 @@
-{ lib
-, inputs
-, config
-, pkgs
-, ...
+{
+  lib,
+  inputs,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.desktop.hyprland.hyprgrass;

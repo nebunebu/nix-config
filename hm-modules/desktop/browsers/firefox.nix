@@ -1,8 +1,9 @@
-{ lib
-, config
-, inputs
-, pkgs
-, ...
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.desktop.browsers.firefox;
@@ -22,40 +23,38 @@ in
         nebu = {
           isDefault = true;
           id = 0;
-          extensions =
-            with inputs.firefox-addons.packages."x86_64-linux";
-            [
-              i-dont-care-about-cookies
-              new-tab-override
-              old-reddit-redirect
-              reddit-enhancement-suite
-              stylebot-web
-              stylus
-              tridactyl
-              ublock-origin
-              aw-watcher-web
-              link-gopher
-              # gopass-bridge
-              # vide-downloadhelper
-              # hoarder
-              # keepa
-              # obsidan?
-              # greasemonkey
-              # tampermonkey
-              # violentmkey
-              # wakatimes
-              # passff
-              # bukubrow
-              # bulkurlopener
-              # sponsorblock
-              # sidebery
-              # Get RSS Feed URL
-              # Private Internet Access
-              # firefox-color
-              # shyfox
-              # textfox
-              # ff2mpv
-            ];
+          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+            i-dont-care-about-cookies
+            new-tab-override
+            old-reddit-redirect
+            reddit-enhancement-suite
+            stylebot-web
+            stylus
+            tridactyl
+            ublock-origin
+            aw-watcher-web
+            link-gopher
+            # gopass-bridge
+            # vide-downloadhelper
+            # hoarder
+            # keepa
+            # obsidan?
+            # greasemonkey
+            # tampermonkey
+            # violentmkey
+            # wakatimes
+            # passff
+            # bukubrow
+            # bulkurlopener
+            # sponsorblock
+            # sidebery
+            # Get RSS Feed URL
+            # Private Internet Access
+            # firefox-color
+            # shyfox
+            # textfox
+            # ff2mpv
+          ];
           settings = {
             "ui.key.menuAccessKeyFocuses" = false;
             "browser.startup.homepage" = "http://192.168.1.177:3000/";

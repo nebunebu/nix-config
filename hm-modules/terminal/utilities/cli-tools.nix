@@ -1,7 +1,8 @@
-{ lib
-, config
-, pkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.terminal.utilities.cli-tools;
@@ -12,16 +13,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages =
-      builtins.attrValues {
-        inherit (pkgs)
-          nerdfix
-          usbutils
-          pup
-          # bottom
-          # ffmpeg
-          # distrobox
-          ;
-      };
+    home.packages = builtins.attrValues {
+      inherit (pkgs)
+        nerdfix
+        usbutils
+        pup
+        # bottom
+        # ffmpeg
+        # distrobox
+        ;
+    };
   };
 }

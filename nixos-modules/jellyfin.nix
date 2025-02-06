@@ -1,7 +1,8 @@
-{ lib
-, config
-, pkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.jellyfin;
@@ -11,7 +12,6 @@ in
   options.neb.jellyfin = {
     enable = lib.mkEnableOption "enable jellyfin";
   };
-
 
   config = lib.mkIf cfg.enable {
 
@@ -26,7 +26,10 @@ in
         jellyfin = {
           isSystemUser = true;
           group = "jellyfin";
-          extraGroups = [ "video" "render" ];
+          extraGroups = [
+            "video"
+            "render"
+          ];
         };
       };
       groups.jellyfin = { };

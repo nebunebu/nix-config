@@ -3,7 +3,8 @@ let
   cfg = config.neb.desktop.window-managers.hyprland.pyprland.claude;
 in
 {
-  options.neb.desktop.window-managers.hyprland.pyprland.claude.enable = lib.mkEnableOption "enable pyprland claude dropdown";
+  options.neb.desktop.window-managers.hyprland.pyprland.claude.enable =
+    lib.mkEnableOption "enable pyprland claude dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {

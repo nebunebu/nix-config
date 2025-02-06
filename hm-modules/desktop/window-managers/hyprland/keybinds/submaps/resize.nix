@@ -2,7 +2,7 @@
   # NOTE: set keybinds to move focused window to screen region
   # NOTE: set keybinds to pin window
   # NOTE: set keybinds to return splits if messing with tiling size of windows
-  # NOTE: should probably move mouse off windows 
+  # NOTE: should probably move mouse off windows
   wayland.windowManager.hyprland.extraConfig = ''
     bind = ALT_L, R, exec, hyprctl keyword input:follow_mouse 3
     bind = ALT_L, R, submap, resize

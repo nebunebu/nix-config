@@ -3,7 +3,8 @@ let
   cfg = config.neb.desktop.window-managers.hyprland.pyprland.noogle;
 in
 {
-  options.neb.desktop.window-managers.hyprland.pyprland.noogle.enable = lib.mkEnableOption "enable pyprland noogle dropdown";
+  options.neb.desktop.window-managers.hyprland.pyprland.noogle.enable =
+    lib.mkEnableOption "enable pyprland noogle dropdown";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."pyprland.toml" = {
