@@ -9,7 +9,6 @@
       allowed-users = [ "@wheel" ];
       trusted-users = [ "@wheel" ];
 
-
       builders-use-substitutes = true;
       extra-substituters = [
         "https://anyrun.cachix.org"

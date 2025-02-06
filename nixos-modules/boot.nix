@@ -6,8 +6,7 @@
       enable = true;
       theme = lib.mkForce "hexagon_2";
       themePackages = [
-        (pkgs.adi1090x-plymouth-themes.override
-          { selected_themes = [ "hexagon_2" ]; })
+        (pkgs.adi1090x-plymouth-themes.override { selected_themes = [ "hexagon_2" ]; })
       ];
     };
     loader = {

@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.desktop.productivity.keycombiner;
 in
@@ -25,7 +30,10 @@ in
           genericName = "Keyboard Shortcut Training";
           exec = "keycombiner";
           terminal = false;
-          categories = [ "Application" "Education" ];
+          categories = [
+            "Application"
+            "Education"
+          ];
           icon = "keycombier";
           comment = "Learn and practice keyboar shortcuts";
         };

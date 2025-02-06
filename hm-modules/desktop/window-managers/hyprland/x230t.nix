@@ -1,9 +1,10 @@
-{ self
-, lib
-, inputs
-, config
-, pkgs
-, ...
+{
+  self,
+  lib,
+  inputs,
+  config,
+  pkgs,
+  ...
 }:
 let
   cfg = config.neb.desktop.window-managers.hyprland.x230t;
@@ -21,7 +22,8 @@ let
 in
 {
   options = {
-    neb.desktop.window-managers.hyprland.x230t.enable = lib.mkEnableOption "enable hyprland settings for x230t";
+    neb.desktop.window-managers.hyprland.x230t.enable =
+      lib.mkEnableOption "enable hyprland settings for x230t";
   };
 
   config = lib.mkIf cfg.enable {

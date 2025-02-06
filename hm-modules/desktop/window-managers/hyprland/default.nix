@@ -1,8 +1,9 @@
-{ inputs
-, pkgs
-, lib
-, config
-, ...
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 let
   cfg = config.neb.desktop.window-managers.hyprland;

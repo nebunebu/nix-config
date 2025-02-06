@@ -3,14 +3,20 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = [ "dashboard" "workspaces" ];
+          left = [
+            "dashboard"
+            "workspaces"
+          ];
           middle = [ "media" ];
           right = [ "notifications" ];
         };
         "1" = {
           left = [ "workspaces" ];
           middle = [ "clock" ];
-          right = [ "volume" "systray" ];
+          right = [
+            "volume"
+            "systray"
+          ];
         };
       };
     };

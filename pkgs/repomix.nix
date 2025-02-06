@@ -1,7 +1,10 @@
-{ lib, buildNpmPackage, fetchFromGitHub }:
+{
+  lib,
+  buildNpmPackage,
+  fetchFromGitHub,
+}:
 
-buildNpmPackage
-rec {
+buildNpmPackage rec {
   pname = "repomix";
   version = "0.2.6";
 

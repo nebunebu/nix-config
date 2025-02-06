@@ -1,13 +1,13 @@
-{ electron
-, fetchFromGitHub
-, imagemagick
-, lib
-, makeDesktopItem
-, makeWrapper
-, nodejs
-, pnpm
-, stdenv
-,
+{
+  electron,
+  fetchFromGitHub,
+  imagemagick,
+  lib,
+  makeDesktopItem,
+  makeWrapper,
+  nodejs,
+  pnpm,
+  stdenv,
 }:
 stdenv.mkDerivation rec {
   pname = "follow";

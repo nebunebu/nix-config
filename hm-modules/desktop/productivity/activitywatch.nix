@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.neb.desktop.productivity.activitywatch;
 in
@@ -8,7 +13,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # NOTE: 
+    # NOTE:
     # - aw-watcher-window wayland does no explictly support hyprland
     # - aw-watcher-web is broswer extension, needs to be added to
     #   firefox profile in configs

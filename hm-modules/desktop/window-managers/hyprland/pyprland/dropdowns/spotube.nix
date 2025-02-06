@@ -1,14 +1,16 @@
-{ lib
-, pkgs
-, config
-, ...
+{
+  lib,
+  pkgs,
+  config,
+  ...
 }:
 let
   cfg = config.neb.desktop.window-managers.hyprland.pyprland.spotube;
   spotubePkg = pkgs.callPackage ../../../../../../pkgs/spotube.nix { };
 in
 {
-  options.neb.desktop.window-managers.hyprland.pyprland.spotube.enable = lib.mkEnableOption "enable pyprland spotube dropdown";
+  options.neb.desktop.window-managers.hyprland.pyprland.spotube.enable =
+    lib.mkEnableOption "enable pyprland spotube dropdown";
 
   config = lib.mkIf cfg.enable {
 
