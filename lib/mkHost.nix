@@ -15,7 +15,6 @@ inputs.nixpkgs.lib.nixosSystem {
     inherit
       inputs
       system
-      pkgs
       ;
     inherit (inputs) self;
   };
