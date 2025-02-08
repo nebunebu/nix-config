@@ -17,33 +17,15 @@
         "col.active_border" = lib.mkForce "rgb(${config.rosePine.main.gold})";
       };
 
-      decoration = lib.mkForce (
-        removeAttrs {
-          col.shadow = null;
-          shadow = {
-            enabled = false;
-            range = 1;
-            render_power = 4;
-            sharp = true;
-            # color = "rgba(${config.stylix.base16Scheme.palette.base00}), 0.9"; # base
-            # color = "rgb(${config.stylix.base16Scheme.palette.base00})"; # base
-            # color = "rgb(${config.stylix.base16Scheme.palette.base02})"; # overlay
-            # color = "rgb(${config.stylix.base16Scheme.palette.base0F})"; # highlight medium
-            color = "rgb(33,32,46)"; # highlight low
-            ignore_window = false;
-            offset = "8 8"; # shadow offset
-          };
-
-          rounding = "1";
-          "active_opacity" = "1";
-          "inactive_opacity" = "1";
-        } [ "col" ]
-      );
+      decoration = {
+        rounding = 2;
+        rounding_power = 5.0;
+      };
 
       windowrulev2 = lib.mkForce [
         # NOTE: Border Colors
-        # "bordercolor rgb(${iris}), floating:1"
-        # "bordercolor rgb(${pine}), fullscreen:1"
+        "bordercolor rgb(${config.rosePine.main.iris}), floating:1"
+        "bordercolor rgb(${config.rosePine.main.pine}), fullscreen:1"
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"
