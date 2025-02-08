@@ -43,9 +43,9 @@ in
         copy-on-select = true;
         confirm-close-surface = false;
       };
-      themes = {
+      themes = lib.mkForce {
         custom-rose-pine = {
-          background = "191724";
+          background = "${config.rosePine.main.base}";
           cursor-color = "908caa";
           foreground = "e0def4";
           palette = [
@@ -59,13 +59,12 @@ in
             "7=#e0def4"
             "8=#6e6a86"
             "9=#eb6f92"
-            "10=#26233a"
+            "10=#${config.rosePine.main.pine}"
             "11=#ebbcba"
             "12=#9ccfd8"
             "13=#908caa"
             "14=#c4a7e7"
             "15=#524f67"
-            # "0=#FF6600"
           ];
           selection-background = "353749";
           selection-foreground = "f6c177";

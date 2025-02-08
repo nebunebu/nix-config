@@ -6,16 +6,7 @@
 }:
 let
   cfg = config.neb.terminal.shell.tmux;
-
-  getBase16 = b: config.stylix.base16Scheme.palette.${b};
-  removeOctothrope = s: builtins.substring 1 6 s;
-  mkColorFromBase = base: base |> getBase16 |> removeOctothrope;
-  base = mkColorFromBase "base00";
-  love = mkColorFromBase "base08";
-  gold = mkColorFromBase "base09";
-  foam = mkColorFromBase "base0C";
 in
-
 {
   options.neb.terminal.shell.tmux = {
     enable = lib.mkEnableOption "enable tmux";
@@ -32,7 +23,6 @@ in
       mouse = true;
       newSession = true;
       sensibleOnTop = true;
-      # terminal = "xterm-kitty"; # maybe set with term???
       # terminal = "xterm-ghostty"; # maybe set with term???
       extraConfig =
         lib.mkForce # tmux
@@ -43,8 +33,8 @@ in
             set -g status-position top
             set -g status-interval 1
 
-            set -g status-bg "#${base}"
-            set-option -g pane-active-border-style fg='#${gold}'
+            set -g status-bg "#${config.rosePine.main.base}"
+            set-option -g pane-active-border-style fg='#${config.rosePine.main.gold}'
 
             bind r source-file ~/.config/tmux/tmux.conf
 
@@ -134,9 +124,9 @@ in
             set -g @mode_indicator_copy_prompt ' COPY '
             set -g @mode_indicator_sync_prompt ' SYNC '
             set -g @mode_indicator_empty_prompt ' TMUX '
-            # set -g @mode_indicator_copy_mode_style 'bg=#${base},fg=#${gold}'
-            # set -g @mode_indicator_sync_mode_style 'bg=#${base},fg=#${love}'
-            set -g @mode_indicator_empty_mode_style 'bg=#${base},fg=#${foam}'
+            # set -g @mode_indicator_copy_mode_style 'bg=#${config.rosePine.main.base},fg=#${config.rosePine.main.gold}'
+            # set -g @mode_indicator_sync_mode_style 'bg=#${config.rosePine.main.base},fg=#${config.rosePine.main.love}'
+            set -g @mode_indicator_empty_mode_style 'bg=#${config.rosePine.main.base},fg=#${config.rosePine.main.foam}'
           '')
           (usePlugin "extrakto" ''
             set -g @extrakto_clip_tool wl-copy
