@@ -24,7 +24,6 @@ in
           # FIX: incorrect orientation on vertical screen
           columns = 3;
           gap_size = 2;
-          # bg_col = "0x${config.stylix.base16Scheme.palette.base00}";
           workspace_method = "first 1";
           # enable_gesture = true; # laptop touchpad
           # gesture_fingers = 3; # 3 or 4
