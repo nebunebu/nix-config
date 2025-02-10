@@ -50,6 +50,11 @@ in
                 display-popup -d "#{pane_current_path}" -w 90% -h 90% -E -x C -y C "tmux new -A -s popup"
             }
 
+            bind-key -T copy-mode-vi n send-keys -X next-prompt
+            bind-key -T copy-mode-vi p send-keys -X previous-prompt
+
+
+                
             # Ctrl+Alt  vim keys to resize panes
             bind-key -n C-M-k resize-pane -U 5
             bind-key -n C-M-j resize-pane -D 5
