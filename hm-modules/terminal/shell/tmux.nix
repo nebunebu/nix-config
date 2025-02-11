@@ -53,6 +53,9 @@ in
             bind-key -T copy-mode-vi n send-keys -X next-prompt
             bind-key -T copy-mode-vi p send-keys -X previous-prompt
 
+            bind-key -T copy-mode-vi ']' send -X search-forward '\.\.\. :::'
+            bind-key -T copy-mode-vi '[' send -X search-backward '\.\.\. :::'
+
 
                 
             # Ctrl+Alt  vim keys to resize panes
