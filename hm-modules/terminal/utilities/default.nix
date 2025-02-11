@@ -24,7 +24,7 @@ in
     ./nix-index.nix
     ./nix-tools.nix
     ./ripgrep.nix
-    ./television.nix
+    ./television
     ./tealdeer.nix
     ./yazi.nix
     ./yt-dlp.nix
