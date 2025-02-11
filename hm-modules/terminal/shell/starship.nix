@@ -26,10 +26,10 @@ in
             lib.mkForce {
               success_symbol = "[](bold green)${nbsp}";
               error_symbol = "[](bold red)${nbsp}";
-              vimcmd_symbol = "[](bold yellow)";
-              vimcmd_replace_one_symbol = "[](bold magenta)";
-              vimcmd_replace_symbol = "[](bold cyan)";
-              vimcmd_visual_symbol = "[](bold blue)";
+              vimcmd_symbol = "[](bold yellow) ";
+              vimcmd_replace_one_symbol = "[](bold magenta) ";
+              vimcmd_replace_symbol = "[](bold cyan) ";
+              vimcmd_visual_symbol = "[](bold blue) ";
             };
           aws = {
             disabled = true;
