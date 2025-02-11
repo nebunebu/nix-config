@@ -12,6 +12,7 @@ in
       enable = true;
       config = {
         # theme = "ansi";
+        pager = "never";
         style = "plain";
       };
       # extraPackages = [];
