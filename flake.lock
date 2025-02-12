@@ -1473,11 +1473,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1738737300,
-        "narHash": "sha256-ef21ukW5Y/Re2ZynRnBUoWmrPAu7hZIOVC8zd3raD2w=",
+        "lastModified": 1739364350,
+        "narHash": "sha256-ks+7YGHwFvYAqsus2yDBKWBMEOrSF+DawUqgIFnsxnw=",
         "owner": "nebunebu",
         "repo": "rosepine-flake",
-        "rev": "10dbb2ca3295b259ac89ba9c0e8099ad0ac12878",
+        "rev": "909f0fdd909f89f729044743c3b0e2146d271a05",
         "type": "github"
       },
       "original": {

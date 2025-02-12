@@ -20,7 +20,6 @@ in
       ];
       sessionVariables = {
         BAT_THEME = "base16-stylix";
-        # BAT_THEME = "ansi";
       };
     };
 
@@ -30,35 +29,34 @@ in
         inherit (config.rosePine.main)
           base
           text
-          love
           gold
           subtle
           pine
-          rose
           foam
           iris
+          overlay
           ;
       in
       ''
         # general
         background = '#${base}'
-        border_fg = '#${subtle}'
+        border_fg = '#${overlay}'
         text_fg = '#${text}'
         dimmed_text_fg = '#${subtle}'
         # input
-        input_text_fg = '#${love}'
-        result_count_fg = '#${love}'
+        input_text_fg = '#${pine}'
+        result_count_fg = '#${pine}'
         # results
         result_name_fg = '#${iris}'
         result_line_number_fg = '#${gold}'
-        result_value_fg = '#b4befe'
+        result_value_fg = '#${iris}'
         selection_fg = '#${pine}'
-        selection_bg = '#313244'
-        match_fg = '#${love}'
+        selection_bg = '#${overlay}'
+        match_fg = '#${pine}'
         # preview
-        preview_title_fg = '#fab387'
+        preview_title_fg = '#${iris}'
         # modes
-        channel_mode_fg = '#${rose}'
+        channel_mode_fg = '#${pine}'
         remote_control_mode_fg = '#${pine}'
         send_to_channel_mode_fg = '#${foam}'
       '';
