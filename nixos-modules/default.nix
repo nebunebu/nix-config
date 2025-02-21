@@ -12,6 +12,7 @@
     ./freshrss.nix
     ./hyprland.nix
     ./jellyfin.nix
+    ./linkding.nix
     ./networking.nix
     ./nix.nix
     ./ollama.nix
