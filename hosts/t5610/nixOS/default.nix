@@ -47,6 +47,7 @@
     dumbkan.enable = true;
     freshrss.enable = true;
     jellyfin.enable = true;
+    linkding.enable = true;
     ollama.enable = true;
     stylix.enable = true;
     taskchampion.enable = true;
