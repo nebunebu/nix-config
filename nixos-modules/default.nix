@@ -10,6 +10,7 @@
     ./documentation.nix
     ./dumbkan.nix
     ./freshrss.nix
+    ./glance
     ./hyprland.nix
     ./jellyfin.nix
     ./linkding.nix
