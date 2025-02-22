@@ -8,8 +8,6 @@ let
 in
 {
   imports = [
-    ./follow.nix
-    ./glance.nix
     ./mpv.nix
     ./obs-studio.nix
     ./sioyek.nix
@@ -22,8 +20,6 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.desktop.media = {
-      follow.enable = false;
-      # glance.enable = true;
       mpv.enable = true;
       obs-studio.enable = false;
       sioyek.enable = true;
