@@ -27,6 +27,37 @@
             "linux"
           ];
         }
+        {
+          type = "reddit";
+          subreddit = "NixOS";
+          show-thumbnails = true;
+          sort-by = "top";
+          top-period = "day";
+        }
+        {
+          type = "repository";
+          repository = "NixOS/nixpkgs";
+          issues-limit = 3;
+          commits-limit = 3;
+        }
+        {
+          type = "repository";
+          repository = "nix-community/home-manager";
+          issues-limit = 3;
+          commits-limit = 3;
+        }
+        {
+          type = "repository";
+          repository = "danth/stylix";
+          issues-limit = 3;
+          commits-limit = 3;
+        }
+        {
+          type = "repository";
+          repository = "nix-community/nixvim";
+          issues-limit = 3;
+          commits-limit = 3;
+        }
       ];
     }
   ];
