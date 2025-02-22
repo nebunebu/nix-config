@@ -23,7 +23,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop.media = {
       follow.enable = false;
-      glance.enable = true;
+      # glance.enable = true;
       mpv.enable = true;
       obs-studio.enable = false;
       sioyek.enable = true;
