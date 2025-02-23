@@ -18,6 +18,7 @@
     gvfs.enable = true;
     # NOTE: required for spotube
     gnome.at-spi2-core.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 
   environment.systemPackages = [
