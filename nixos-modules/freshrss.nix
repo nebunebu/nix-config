@@ -74,7 +74,7 @@ in
             owner = "Siphalor";
             repo = "FreshRSS-Extensions";
             rev = "c2d7f195b68075116984a141a59cfeecff4c7ae1";
-            hash = "sha256-HfZBzZxYv4zbgoBzViGm/KhrY1o7PVBeCNj80/inaw4=";
+            hash = "sha256-voIPu8EGb/5Q2nFNTOQR7IEnbl8SCmtt7GXsgmCRs1U=";
             sparseCheckout = [ "xExtension-CustomCSS" ];
           };
         })
