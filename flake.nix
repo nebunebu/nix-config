@@ -121,7 +121,7 @@
                         rev = "c532d14b0b59d92c4fab156fc8acd0565a0836af";
                         sha256 = "sha256-Uo+4/be6rT0W8Z1dvCRXOANvoct6gJ4714flhyFzmKU=";
                       };
-                      cargoHash = "sha256-ey8nXMCFnDSlJl+2uYYFm1YrhJ+r0sq48qtCwhqI0mo=";
+                      cargoHash = "sha256-FTrKdOuXTOqr7on4RzYl/UxgUJqh+Rk3KJXqsW0fuo0=";
                     }
                   );
               };
