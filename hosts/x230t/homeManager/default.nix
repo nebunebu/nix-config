@@ -11,6 +11,7 @@
     pkgs.aichat
     pkgs.libnotify
     pkgs.jellyfin-media-player
+    pkgs.openpomodoro-cli
   ];
 
   neb = {
