@@ -24,7 +24,7 @@ in
       awscli.enable = false;
       claude.enable = true;
       git.enable = true;
-      go.enable = false;
+      go.enable = true;
       repomix.enable = true;
     };
   };
