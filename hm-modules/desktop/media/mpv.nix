@@ -39,6 +39,7 @@ in
         osc = "no";
         osd-level = 0;
         border = "no";
+        ytdl-format = "bestvideo[height<=720]+bestaudio/best[height<=720]";
         watch-later-directory = "~/.config/mpv/watch_later/";
       };
       scriptOpts = {
