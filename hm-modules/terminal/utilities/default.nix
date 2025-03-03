@@ -8,7 +8,7 @@ let
 in
 {
   imports = [
-    ./aichat.nix
+    ./aichat
     ./bat.nix
     ./bottom.nix
     ./cava.nix
