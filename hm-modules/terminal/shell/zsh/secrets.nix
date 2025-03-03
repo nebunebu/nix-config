@@ -14,7 +14,7 @@ in
       mode = "0500";
       content = # bash
         ''
-          export ANTHROPIC_API_KEY=${config.sops.placeholder.anthropic_api_key}
+          export CLAUDE_API_KEY=${config.sops.placeholder.anthropic_api_key}
           export GEMINI_API_KEY=${config.sops.placeholder.gemini_api_key}
         '';
     };
