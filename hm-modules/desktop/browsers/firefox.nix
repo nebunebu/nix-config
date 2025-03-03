@@ -23,7 +23,7 @@ in
         nebu = {
           isDefault = true;
           id = 0;
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             i-dont-care-about-cookies
             new-tab-override
             old-reddit-redirect
