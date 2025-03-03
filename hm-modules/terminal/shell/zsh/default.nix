@@ -9,7 +9,10 @@ let
   cfg = config.neb.terminal.shell.zsh;
 in
 {
-  imports = [ ./completions ];
+  imports = [
+    ./completions
+    ./secrets.nix
+  ];
 
   options = {
     neb.terminal.shell.zsh.enable = lib.mkEnableOption "enable zsh";
