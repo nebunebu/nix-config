@@ -39,6 +39,7 @@
           pyprland = {
             enable = true;
             # btm.enable = true;
+            crib.enable = true;
             spotube.enable = true;
           };
         };

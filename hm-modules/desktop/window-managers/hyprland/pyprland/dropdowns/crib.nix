@@ -18,7 +18,7 @@ in
       text = # toml
         ''
           [scratchpads.crib]
-          command = "foot -e ${lib.getExe cribPkg}"
+          command = "${pkgs.foot}/bin/foot -e ${lib.getExe cribPkg}"
           # command = "hyprctl dispatch exec \"[float; size 90% 90%] foot -e ${lib.getExe cribPkg}\""
           animation = "fromTop"
           class = "crib"
@@ -30,7 +30,7 @@ in
     wayland.windowManager.hyprland = {
       settings = {
         windowrulev2 = [ "float, class:^(foot)$" ];
-        bind = [ "ALT_L, h, exec, pypr toggle crib" ];
+        bind = [ "ALT_L, c, exec, pypr toggle crib" ];
       };
     };
   };
