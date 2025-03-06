@@ -20,12 +20,12 @@ in
     xdg.configFile."crib/bindings.yaml".source = pkgs.writers.writeYAML "crib-bindings.yaml" (
       (builtins.import ./hyprland.nix)
       ++ (builtins.import ./neovim.nix)
-      ++ (builtins.import ./sioyek.nix)
-      ++ (builtins.import ./tmux.nix)
-      ++ (builtins.import ./tridactyl.nix)
+      # ++ (builtins.import ./sioyek.nix)
+      # ++ (builtins.import ./tmux.nix)
+      # ++ (builtins.import ./tridactyl.nix)
       ++ (builtins.import ./vesktop.nix)
-      ++ (builtins.import ./yazi.nix)
-      ++ (builtins.import ./zsh.nix)
+      # ++ (builtins.import ./yazi.nix)
+      # ++ (builtins.import ./zsh.nix)
     );
   };
 }
