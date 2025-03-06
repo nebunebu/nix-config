@@ -1165,11 +1165,11 @@
         "tool-suites": "tool-suites"
       },
       "locked": {
-        "lastModified": 1741268461,
-        "narHash": "sha256-kkAHKW1p0ry+5ciYVRz+BLyQvwze0EjvJCilt5vaPE4=",
+        "lastModified": 1741268843,
+        "narHash": "sha256-TeadQoLCXld/TwkH8xK0bcJq1cfI8n2qIt+7GmwkpZ4=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "bed1a6da1361deff5ca8f79c1de41a3873ca52a1",
+        "rev": "20211819df4ff094c140c12d03181eb4586d06d6",
         "type": "github"
       },
       "original": {
