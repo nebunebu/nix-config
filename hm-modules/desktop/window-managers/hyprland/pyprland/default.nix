@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./dropdowns/btm.nix
+    ./dropdowns/crib.nix
     ./dropdowns/claude.nix
     ./dropdowns/hmOptions.nix
     ./dropdowns/nixpkgs.nix
