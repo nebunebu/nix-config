@@ -12,6 +12,7 @@ in
     ./bat.nix
     ./bottom.nix
     ./cava.nix
+    ./crib
     ./cli-tools.nix
     ./direnv.nix
     ./eza.nix
@@ -42,6 +43,7 @@ in
       bottom.enable = true;
       cava.enable = true;
       cli-tools.enable = true;
+      crib.enable = true;
       direnv.enable = true;
       eza.enable = true;
       fastfetch.enable = true;

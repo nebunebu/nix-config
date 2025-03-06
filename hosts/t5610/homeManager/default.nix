@@ -56,6 +56,7 @@
             # noogle.enable = true;
             obsidian.enable = true;
             spotube.enable = true;
+            crib.enable = true;
           };
         };
       };
