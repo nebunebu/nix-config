@@ -23,7 +23,7 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.desktop.utilities = {
-      foot.enable = false;
+      foot.enable = true;
       fuzzel.enable = true;
       ghostty.enable = true;
       kitty.enable = false;
