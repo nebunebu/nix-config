@@ -2,10 +2,10 @@
   {
     name = "neovim";
     bindings = [
-      {
-        name = "one";
-        key = "shift + c";
-      }
+      # {
+      #   name = "one";
+      #   key = "shift + c";
+      # }
     ];
     children = [
       {
