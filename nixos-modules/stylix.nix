@@ -43,6 +43,7 @@ in
       cursor = {
         package = pkgs.rose-pine-cursor;
         name = "BreezeX-RosePineDawn-Linux";
+        size = 32;
       };
 
       fonts = {

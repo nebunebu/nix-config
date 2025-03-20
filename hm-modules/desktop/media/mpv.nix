@@ -49,20 +49,20 @@ in
           output_template = "%F-%S-%E";
           twopass = "no";
         };
-        uosc = {
-          color =
-            let
-              foreground = "f6c177";
-              foreground_text = "eb6f92";
-              background = "191724";
-              background_text = "908caa";
-              curtain = "26233a";
-              success = "31748f";
-              error = "eb6f92";
-              colors = "${foreground},${foreground_text},${background},${background_text},${curtain},${success},${error}";
-            in
-            colors;
-        };
+        # uosc = {
+        #   color =
+        #     let
+        #       foreground = "f6c177";
+        #       foreground_text = "eb6f92";
+        #       background = "191724";
+        #       background_text = "908caa";
+        #       curtain = "26233a";
+        #       success = "31748f";
+        #       error = "eb6f92";
+        #       colors = "${foreground},${foreground_text},${background},${background_text},${curtain},${success},${error}";
+        #     in
+        #     colors;
+        # };
       };
     };
   };
