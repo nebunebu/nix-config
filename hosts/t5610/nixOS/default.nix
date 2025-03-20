@@ -52,7 +52,7 @@
     linkding.enable = true;
     ollama.enable = true;
     stylix.enable = true;
-    taskchampion.enable = true;
+    # taskchampion.enable = true;
     desktop = {
       sddm.enable = true;
       hyprland.enable = true;
