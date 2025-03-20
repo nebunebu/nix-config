@@ -18,6 +18,7 @@ in
     environment.systemPackages = [
       pkgs.glaze
       pkgs.hyprgraphics
+      # pkgs.aquamarine
     ];
 
     nix = {
@@ -41,7 +42,7 @@ in
     programs.hyprland = {
       enable = true;
       # withUWSM = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
 
     xdg.portal = {
