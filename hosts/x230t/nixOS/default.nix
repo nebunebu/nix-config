@@ -11,7 +11,7 @@
     "${self}/nixos-modules"
     ../../../sops
     ./hardware-configuration.nix
-    ./remoteBuilder.nix
+    # ./remoteBuilder.nix
   ];
 
   # sops.enable = true;
