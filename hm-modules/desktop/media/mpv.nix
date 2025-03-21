@@ -14,7 +14,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     home.packages = builtins.attrValues { inherit (pkgs) jellyfin-mpv-shim; };
+
     programs.mpv = {
       enable = true;
       scripts = builtins.attrValues {
