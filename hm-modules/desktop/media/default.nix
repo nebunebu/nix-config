@@ -21,7 +21,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop.media = {
       mpv.enable = true;
-      obs-studio.enable = false;
+      obs-studio.enable = true;
       sioyek.enable = true;
       spotube.enable = false;
     };
