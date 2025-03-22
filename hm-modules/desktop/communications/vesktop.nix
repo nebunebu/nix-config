@@ -17,30 +17,61 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       # CREDIT: https://github.com/raidenovich/OuterHeaven/blob/850546a45382efd76a1776a988e278dc4c7fac3b/modules/home-manager/gui/vesktop.nix#L4
-      (pkgs.vesktop.overrideAttrs {
-        # withSystemVencord = true;
-        desktopItems = [
-          (pkgs.makeDesktopItem {
-            name = "vesktop";
-            desktopName = "Vesktop";
-            exec = "vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
-            icon = "vesktop";
-            startupWMClass = "VencordDesktop";
-            genericName = "Internet Messenger";
-            keywords = [
-              "discord"
-              "vencord"
-              "electron"
-              "chat"
-            ];
-            categories = [
-              "Network"
-              "InstantMessaging"
-              "Chat"
-            ];
-          })
-        ];
-      })
+
+      (
+        (pkgs.vesktop.override {
+          electron = pkgs.electron_33;
+        }).overrideAttrs
+        (_: {
+          # withSystemVencord = true;
+          desktopItems = [
+            (pkgs.makeDesktopItem {
+              name = "vesktop";
+              desktopName = "Vesktop";
+              exec = "vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
+              icon = "vesktop";
+              startupWMClass = "VencordDesktop";
+              genericName = "Internet Messenger";
+              keywords = [
+                "discord"
+                "vencord"
+                "electron"
+                "chat"
+              ];
+              categories = [
+                "Network"
+                "InstantMessaging"
+                "Chat"
+              ];
+            })
+          ];
+        })
+      )
+
+      # (pkgs.vesktop.overrideAttrs {
+      #   # withSystemVencord = true;
+      #   desktopItems = [
+      #     (pkgs.makeDesktopItem {
+      #       name = "vesktop";
+      #       desktopName = "Vesktop";
+      #       # exec = "vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
+      #       icon = "vesktop";
+      #       startupWMClass = "VencordDesktop";
+      #       genericName = "Internet Messenger";
+      #       keywords = [
+      #         "discord"
+      #         "vencord"
+      #         "electron"
+      #         "chat"
+      #       ];
+      #       categories = [
+      #         "Network"
+      #         "InstantMessaging"
+      #         "Chat"
+      #       ];
+      #     })
+      #   ];
+      # })
     ];
 
     xdg.configFile."vesktop/themes/rose-pine.theme.css".text = # css
