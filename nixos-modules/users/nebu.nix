@@ -13,6 +13,7 @@
       extraGroups = [
         "wheel"
         "video"
+        "pipewire"
         "render"
       ];
       # initialPassword = "password";
