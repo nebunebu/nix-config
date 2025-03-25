@@ -30,7 +30,7 @@ in
     wayland.windowManager.hyprland = {
       settings = {
         windowrulev2 = [ "float, class:^(foot)$" ];
-        bind = [ "ALT_L, c, exec, pypr toggle crib" ];
+        bind = [ "ALT_L, H, exec, pypr toggle crib" ];
       };
     };
   };
