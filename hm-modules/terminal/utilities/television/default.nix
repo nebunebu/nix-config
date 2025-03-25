@@ -75,45 +75,23 @@ in
         # Note that setting the BAT_THEME environment variable will override this setting.
         theme = "TwoDark"
 
-        [keybindings.Channel]
-        quit = ["esc", "ctrl-c"]
-        select_next_entry = ["down", "ctrl-n", "ctrl-j"]
-        select_prev_entry = ["up", "ctrl-p", "ctrl-k"]
-        select_next_page = "pagedown"
-        select_prev_page = "pageup"
-        scroll_preview_half_page_down = "ctrl-d"
-        scroll_preview_half_page_up = "ctrl-u"
-        toggle_selection_down = "tab"
-        toggle_selection_up = "backtab"
+        [keybindings]
         confirm_selection = "enter"
         copy_entry_to_clipboard = "ctrl-y"
-        toggle_remote_control = "ctrl-r"
-        toggle_send_to_channel = "ctrl-s"
-        toggle_help = "ctrl-g"
-        toggle_preview = "ctrl-o"
-
-        [keybindings.RemoteControl]
-        quit = "esc"
-        select_next_entry = ["down", "ctrl-n", "ctrl-j"]
-        select_prev_entry = ["up", "ctrl-p", "ctrl-k"]
-        select_next_page = "pagedown"
-        select_prev_page = "pageup"
+        quit = ["esc", "ctrl-c"]
+        scroll_preview_half_page_down = "ctrl-d"
+        scroll_preview_half_page_up = "ctrl-u"
         select_entry = "enter"
-        toggle_remote_control = "ctrl-r"
-        toggle_help = "ctrl-g"
-        toggle_preview = "ctrl-o"
-
-        [keybindings.SendToChannel]
-        quit = "esc"
         select_next_entry = ["down", "ctrl-n", "ctrl-j"]
-        select_prev_entry = ["up", "ctrl-p", "ctrl-k"]
         select_next_page = "pagedown"
+        select_prev_entry = ["up", "ctrl-p", "ctrl-k"]
         select_prev_page = "pageup"
-        select_entry = "enter"
-        toggle_send_to_channel = "ctrl-s"
         toggle_help = "ctrl-g"
         toggle_preview = "ctrl-o"
-
+        toggle_remote_control = "ctrl-r"
+        toggle_selection_down = "tab"
+        toggle_selection_up = "backtab"
+        toggle_send_to_channel = "ctrl-s"
 
         [shell_integration.commands]
         # Add your commands here. Each key is a command that will trigger tv with the
