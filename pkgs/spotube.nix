@@ -20,7 +20,7 @@
 
 let
   pname = "spotube";
-  version = "3.9.0";
+  version = "4.0.2";
 
   meta = {
     description = "Open source, cross-platform Spotify client compatible across multiple platforms";
