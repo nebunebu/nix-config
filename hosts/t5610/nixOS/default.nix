@@ -42,6 +42,7 @@
       pass.enable = true;
     };
     # pinchflat.enable = true;
+    obs.enable = true;
     amdgpu.enable = true;
     anki-sync.enable = true;
     beaverhabits.enable = true;
