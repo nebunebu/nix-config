@@ -16,6 +16,7 @@
     ./linkding.nix
     ./networking.nix
     ./nix.nix
+    ./obs.nix
     ./ollama.nix
     ./pinchflat.nix
     ./pipewire.nix
