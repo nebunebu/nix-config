@@ -23,7 +23,7 @@ in
       mouse = true;
       newSession = true;
       sensibleOnTop = true;
-      # terminal = "xterm-ghostty"; # maybe set with term???
+      terminal = "xterm-ghostty"; # maybe set with term???
       extraConfig =
         lib.mkForce # tmux
           ''
@@ -57,7 +57,7 @@ in
             bind-key -T copy-mode-vi '[' send -X search-backward '\.\.\. :::'
 
 
-                
+
             # Ctrl+Alt  vim keys to resize panes
             bind-key -n C-M-k resize-pane -U 5
             bind-key -n C-M-j resize-pane -D 5
