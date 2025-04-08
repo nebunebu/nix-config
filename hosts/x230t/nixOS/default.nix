@@ -2,6 +2,7 @@
   self,
   pkgs,
   inputs,
+  config,
   ...
 }:
 
@@ -20,6 +21,7 @@
 
   neb = {
     stylix.enable = true;
+    obs.enable = true;
     desktop = {
       sddm.enable = true;
       hyprland.enable = true;

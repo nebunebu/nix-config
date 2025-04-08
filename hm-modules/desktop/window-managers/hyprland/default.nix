@@ -15,6 +15,7 @@ in
     ./plugins
     ./pyprland
     ./hypridle.nix
+    ./hyprpolkitagent.nix
     # ./hyprlock.nix
     ./hyprgrass.nix
     ./hyprpicker.nix
@@ -31,6 +32,7 @@ in
       pkgs.wl-clipboard
       pkgs.wf-recorder
       pkgs.grim
+      # pkgs.hyprpolkitagent
       pkgs.slurp
       pkgs.wev
       pkgs.cliphist
