@@ -14,7 +14,8 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      (pkgs.callPackage ../../pkgs/claude-code/package.nix { })
+      # (pkgs.callPackage ../../pkgs/claude-code/package.nix { })
+      pkgs.claude-code
     ];
   };
 }
