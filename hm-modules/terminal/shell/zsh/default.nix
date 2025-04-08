@@ -61,7 +61,7 @@ in
           ''
             # Function to use nvim as manpager
             function nman() {
-              man "$1" 2>/dev/null | sed 's/\x1B\[[0-9;]*m//g' | ${inputs.nebvim.packages.x86_64-linux.manvim} -- -c 'set ft=man' -
+              man "$1" 2>/dev/null | sed 's/\x1B\[[0-9;]*m//g' | nix run github:nebunebu/nebvim#manvim -- -c 'set ft=man' -
             }
 
             function nfd() {
