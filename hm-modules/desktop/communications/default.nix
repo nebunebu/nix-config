@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }:
@@ -8,7 +9,9 @@ let
 in
 {
   imports = [
-    ./vesktop.nix
+    # ./vesktop.nix
+    ./discord.nix
+    # ./discover-overlay.nix
     # ./element
     # ./telegram
     # something irc
@@ -19,8 +22,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.discover-overlay ];
     neb.desktop.communications = {
-      vesktop.enable = true;
+      # vesktop.enable = true;
+      discord.enable = true;
+      # discover-overlay = true;
     };
   };
 }
