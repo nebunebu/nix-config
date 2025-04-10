@@ -29,7 +29,7 @@ in
               name = "vesktop";
               desktopName = "Vesktop";
               exec = "vesktop --disable-gpu-memory-buffer-video-frames --disable-gpu-compositing --enable-features=WebRTCPipeWireCapturer --ozone-platform-hint=auto --use-gl=egl";
-             # exec = "vesktop --disable-gpu-memory-buffer-video-frames --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo"; icon = "vesktop";
+              # exec = "vesktop --disable-gpu-memory-buffer-video-frames --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo"; icon = "vesktop";
               startupWMClass = "VencordDesktop";
               genericName = "Internet Messenger";
               keywords = [
@@ -47,31 +47,6 @@ in
           ];
         })
       )
-
-      # (pkgs.vesktop.overrideAttrs {
-      #   # withSystemVencord = true;
-      #   desktopItems = [
-      #     (pkgs.makeDesktopItem {
-      #       name = "vesktop";
-      #       desktopName = "Vesktop";
-      #       # exec = "vesktop --enable-features=VaapiIgnoreDriverChecks,VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,UseMultiPlaneFormatForHardwareVideo";
-      #       icon = "vesktop";
-      #       startupWMClass = "VencordDesktop";
-      #       genericName = "Internet Messenger";
-      #       keywords = [
-      #         "discord"
-      #         "vencord"
-      #         "electron"
-      #         "chat"
-      #       ];
-      #       categories = [
-      #         "Network"
-      #         "InstantMessaging"
-      #         "Chat"
-      #       ];
-      #     })
-      #   ];
-      # })
     ];
 
     xdg.configFile."vesktop/themes/rose-pine.theme.css".text = # css
