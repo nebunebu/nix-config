@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  pkgs,
+  masterPkgs,
   ...
 }:
 let
@@ -14,7 +14,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      (pkgs.callPackage ../../../pkgs/spotube.nix { })
+      masterPkgs.spotube
     ];
   };
 }

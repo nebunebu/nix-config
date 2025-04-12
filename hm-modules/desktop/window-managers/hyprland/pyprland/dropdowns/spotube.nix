@@ -1,12 +1,11 @@
 {
   lib,
-  pkgs,
+  masterPkgs,
   config,
   ...
 }:
 let
   cfg = config.neb.desktop.window-managers.hyprland.pyprland.spotube;
-  spotubePkg = pkgs.callPackage ../../../../../../pkgs/spotube.nix { };
 in
 {
   options.neb.desktop.window-managers.hyprland.pyprland.spotube.enable =
@@ -19,7 +18,7 @@ in
       text = # toml
         ''
           [scratchpads.spotube]
-          command = "${lib.getExe spotubePkg}"
+          command = "${masterPkgs.spotube}/bin/spotube"
           animation = "fromTop"
           class = "spotube"
           lazy = true
