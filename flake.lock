@@ -1256,6 +1256,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1744489708,
+        "narHash": "sha256-UfHYyfloZPuqGMYaLqH6ZRjxy+RrvkapJHz554ykdn4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0c6cf1f8d768aef3b0faa9bd8790e8e365afd911",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1743076231,
@@ -1451,6 +1467,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-master": "nixpkgs-master",
         "pre-commit-hooks": "pre-commit-hooks_2",
         "pyprland": "pyprland",
         "rosepine": "rosepine",
