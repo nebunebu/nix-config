@@ -11,7 +11,7 @@ in
     # TODO: make this an option
     wayland.windowManager.hyprland.settings.bind = [
       "$mainMod, Return, exec, ghostty -e tmux new-session -A -s main"
-      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; dimaround; animation slide] ghostty\""
+      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ghostty\""
     ];
 
     # TODO: make this an option

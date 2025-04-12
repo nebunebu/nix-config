@@ -23,7 +23,7 @@ in
       mpv.enable = true;
       obs-studio.enable = true;
       sioyek.enable = true;
-      spotube.enable = false;
+      spotube.enable = true;
     };
   };
 }

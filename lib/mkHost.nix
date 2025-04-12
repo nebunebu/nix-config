@@ -2,6 +2,7 @@
   inputs,
   system,
   pkgs,
+  masterPkgs,
 }:
 
 {
@@ -15,6 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inherit
       inputs
       system
+      masterPkgs
       ;
     inherit (inputs) self;
   };
@@ -39,6 +41,7 @@ inputs.nixpkgs.lib.nixosSystem {
                 inherit
                   inputs
                   pkgs
+                  masterPkgs
                   ;
                 inherit (inputs) self;
               };
