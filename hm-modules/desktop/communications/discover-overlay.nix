@@ -24,7 +24,6 @@ in
 # ~/.config/discover_overlay/config.ini
 # may need to dynamically get access token
 # [cache]
-# access_token = 755mZVCHO8jtsFqJpsvCEj5x19o7jA
 #
 # [main]
 # monitor = HDMI-A-1
