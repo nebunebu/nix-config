@@ -14,6 +14,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
+      # pkgs.openasar
       (pkgs.discord.overrideAttrs (_: rec {
         version = "0.0.90";
         src = pkgs.fetchurl {
