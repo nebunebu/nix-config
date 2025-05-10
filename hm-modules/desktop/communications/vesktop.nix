@@ -17,10 +17,10 @@ in
       # CREDIT: https://github.com/raidenovich/OuterHeaven/blob/850546a45382efd76a1776a988e278dc4c7fac3b/modules/home-manager/gui/vesktop.nix#L4
 
       (
-        (pkgs.vesktop.override {
-          electron = pkgs.electron_33;
-        }).overrideAttrs
-        (_: {
+        # (pkgs.vesktop.override {
+        #   electron = pkgs.electron_33;
+        # }).overrideAttrs
+        pkgs.vesktop.overrideAttrs (_: {
           # withSystemVencord = true;
           desktopItems = [
             (pkgs.makeDesktopItem {
