@@ -25,7 +25,7 @@ in
     (lib.mkIf cfg.t5610.enable common)
     (lib.mkIf cfg.t5610.enable t5610)
     # x230t
-    # (lib.mkIf cfg.x230t.enable common)
-    # (lib.mkIf cfg.x230t.enable x230t)
+    (lib.mkIf cfg.x230t.enable common)
+    (lib.mkIf cfg.x230t.enable x230t)
   ];
 }
