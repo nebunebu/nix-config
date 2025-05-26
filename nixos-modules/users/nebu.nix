@@ -13,6 +13,7 @@
       extraGroups = [
         "wheel"
         "video"
+        "networkmanager"
         "pipewire"
         "render"
       ];

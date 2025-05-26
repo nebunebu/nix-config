@@ -24,6 +24,7 @@ in
     environment.systemPackages = [
       pkgs.rose-pine-icon-theme # needs to be updated
       pkgs.morewaita-icon-theme
+      pkgs.adwaita-icon-theme
     ];
 
     fonts.packages = [
