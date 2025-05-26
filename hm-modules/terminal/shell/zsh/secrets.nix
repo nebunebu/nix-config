@@ -22,7 +22,7 @@ in
     };
   };
 
-  programs.zsh.initExtra =
+  programs.zsh.initContent =
     lib.mkAfter # bash
       ''
         if [ -f "${secretPath}" ]; then

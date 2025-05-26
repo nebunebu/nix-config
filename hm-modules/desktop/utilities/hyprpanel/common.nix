@@ -8,7 +8,7 @@
     enable = true;
     hyprland.enable = true;
     overwrite.enable = true;
-    theme = "rose_pine";
+    # theme = "rose_pine";
 
     override = {
       "theme.bar.buttons.dashboard.icon" = "#30738f";

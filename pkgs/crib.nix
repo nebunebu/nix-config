@@ -4,17 +4,12 @@
   fetchFromGitHub,
 }:
 
-# warning: Git tree '/home/nebu/.nix-config' is dirty
-# evaluation warning: rustPlatform.fetchCargoTarball is deprecated in favor of rustPlatform.fetchCargoVendor.
-#                     If you are using buildRustPackage, try setting useFetchCargoVendor = true and regenerating cargoHash.
-#                     See the 25.05 release notes for more information.
-# evaluation warning: rustPlatform.fetchCargoTarball is deprecated in favor of rustPlatform.fetchCargoVendor.
-#                     If you are using buildRustPackage, try setting useFetchCargoVendor = true and regenerating cargoHash.
-#                     See the 25.05 release notes for more information.
+# specified: sha256-6Bq4JltNg49Aw0/tQdq3RwmTC7kl5W8vperranubTh4=
+#            got:    sha256-kG9nmoDtdCNRfC7epJxgVgtUxXqGVmEl+CI0m5oTVGs=
 
 rustPlatform.buildRustPackage {
   pname = "crib";
-  version = "unstable-2025-03-04";
+  version = "unstable-2025-05-10";
 
   src = fetchFromGitHub {
     owner = "noelzubin";
@@ -23,7 +18,7 @@ rustPlatform.buildRustPackage {
     hash = "sha256-kuNBjkh4saB3plCIPHHoWOJNf8KS3ABfq+RzTUNMX94=";
   };
 
-  cargoHash = "sha256-6Bq4JltNg49Aw0/tQdq3RwmTC7kl5W8vperranubTh4=";
+  cargoHash = "sha256-kG9nmoDtdCNRfC7epJxgVgtUxXqGVmEl+CI0m5oTVGs=";
 
   meta = {
     description = "Create and view custom hotkey cheatsheets in the terminal";

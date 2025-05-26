@@ -13,7 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.sessionVariables = {
-      FLAKE = lib.mkDefault "/home/nebu/.nix-config";
+      NH_FLAKE = lib.mkDefault "/home/nebu/.nix-config";
     };
     programs = {
       nh.enable = true;
