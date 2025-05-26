@@ -57,7 +57,7 @@ in
           }/scripts/completions
         '';
 
-        initExtra = # bash
+        initContent = # bash
           ''
             # Function to use nvim as manpager
             function nman() {
