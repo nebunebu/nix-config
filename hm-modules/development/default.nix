@@ -12,7 +12,7 @@ in
     ./claude.nix
     ./git.nix
     ./go.nix
-    ./repomix.nix
+    # ./repomix.nix
   ];
 
   options.neb.profile.development = {
@@ -25,7 +25,7 @@ in
       claude.enable = true;
       git.enable = true;
       go.enable = true;
-      repomix.enable = true;
+      # repomix.enable = true;
     };
   };
 }
