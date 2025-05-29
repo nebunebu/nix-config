@@ -14,7 +14,6 @@ in
     ./dropdowns/nixpkgs.nix
     ./dropdowns/noogle.nix
     ./dropdowns/obsidian.nix
-    ./dropdowns/spotube.nix
   ];
 
   options.neb.desktop.window-managers.hyprland.pyprland.enable = lib.mkEnableOption "enable pyprland";

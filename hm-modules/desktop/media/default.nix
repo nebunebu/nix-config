@@ -11,7 +11,6 @@ in
     ./mpv.nix
     ./obs-studio.nix
     ./sioyek.nix
-    ./spotube.nix
   ];
 
   options.neb.desktop.media = {
@@ -23,7 +22,6 @@ in
       mpv.enable = true;
       obs-studio.enable = true;
       sioyek.enable = true;
-      spotube.enable = true;
     };
   };
 }
