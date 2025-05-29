@@ -3,7 +3,6 @@
 {
   imports = [
     ./amdgpu.nix
-    ./anki-sync.nix
     ./beaverhabits.nix
     ./boot.nix
     ./console.nix
