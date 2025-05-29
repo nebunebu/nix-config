@@ -21,7 +21,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.development = {
       awscli.enable = false;
-      claude-code = true;
+      claude-code.enable = true;
       git.enable = true;
       go.enable = true;
     };
