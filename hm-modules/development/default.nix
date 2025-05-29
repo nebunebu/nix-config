@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./awscli.nix
+    ./claude-code.nix
     ./git.nix
     ./go.nix
   ];
@@ -20,6 +21,7 @@ in
   config = lib.mkIf cfg.enable {
     neb.development = {
       awscli.enable = false;
+      claude-code = true;
       git.enable = true;
       go.enable = true;
     };
