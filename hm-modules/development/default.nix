@@ -9,10 +9,8 @@ in
 {
   imports = [
     ./awscli.nix
-    ./claude.nix
     ./git.nix
     ./go.nix
-    ./repomix.nix
   ];
 
   options.neb.profile.development = {
@@ -22,10 +20,8 @@ in
   config = lib.mkIf cfg.enable {
     neb.development = {
       awscli.enable = false;
-      claude.enable = true;
       git.enable = true;
       go.enable = true;
-      repomix.enable = true;
     };
   };
 }

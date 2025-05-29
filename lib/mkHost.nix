@@ -36,7 +36,7 @@ inputs.nixpkgs.lib.nixosSystem {
             home-manager = {
               useGlobalPkgs = true;
               backupFileExtension = "backup";
-              users.nebu = import (inputs.self + "/hosts/${hostName}/homeManager/default.nix");
+              users.nebu = import (inputs.self + "/hosts/${hostName}/hm/default.nix");
               extraSpecialArgs = {
                 inherit
                   inputs
