@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  masterPkgs,
   ...
 }:
 let
@@ -16,7 +17,10 @@ in
       NH_FLAKE = lib.mkDefault "/home/nebu/.nix-config";
     };
     programs = {
-      nh.enable = true;
+      nh = {
+        enable = true;
+        package = masterPkgs.nh;
+      };
     };
   };
 }
