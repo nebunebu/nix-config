@@ -18,6 +18,7 @@ in
         nerdfix
         usbutils
         pup
+        caligula
         # bottom
         # ffmpeg
         # distrobox
