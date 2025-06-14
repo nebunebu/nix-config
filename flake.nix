@@ -148,6 +148,10 @@
     in
     {
       nixosConfigurations = {
+        iso = mkHost {
+          hostName = "iso";
+          disableHomeManager = true;
+        };
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost {
           hostName = "x230t";
