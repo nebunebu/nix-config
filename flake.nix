@@ -152,6 +152,7 @@
           hostName = "iso";
           disableHomeManager = true;
         };
+        m715q = mkHost { hostName = "m715q"; };
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost {
           hostName = "x230t";
