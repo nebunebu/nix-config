@@ -10,7 +10,7 @@ in
   imports = [
     ./buku.nix
     ./pyradio.nix
-    ./newsboat
+    # ./newsboat
     ./tuir
   ];
 
@@ -22,7 +22,7 @@ in
     neb.terminal.media = {
       buku.enable = true;
       pyradio.enable = true;
-      newsboat.enable = true;
+      # newsboat.enable = true;
       tuir.enable = true;
     };
   };

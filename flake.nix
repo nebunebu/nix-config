@@ -11,6 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
@@ -43,10 +52,6 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    impermanence = {
-      url = "github:nix-community/impermanence";
     };
 
     firefox-addons = {
@@ -152,7 +157,15 @@
           hostName = "iso";
           disableHomeManager = true;
         };
-        m715q = mkHost { hostName = "m715q"; };
+        m715q = mkHost {
+          hostName = "m715q";
+          extraModules = [
+            inputs.nixos-facter-modules.nixosModules.facter
+            { config.facter.reportPath = ./hosts/m715q/nixOS/facter.json; }
+            inputs.disko.nixosModules.disko
+            # inputs.impermanence.nixosModules.impermanence
+          ];
+        };
         t5610 = mkHost { hostName = "t5610"; };
         x230t = mkHost {
           hostName = "x230t";
@@ -170,6 +183,5 @@
           checks = inputs.self.checks.${system};
         };
       }) inputs.nixpkgs.legacyPackages;
-
     };
 }

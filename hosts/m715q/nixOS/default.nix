@@ -1,7 +1,6 @@
 {
-  self,
-  pkgs,
   inputs,
+  pkgs,
   config,
   ...
 }:
@@ -9,9 +8,10 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
-    "${self}/nixos-modules"
+    # ./persistence.nix
+    ./disko.nix
+    "${inputs.self}/nixos-modules"
     ../../../sops
-    ./hardware-configuration.nix
   ];
 
   neb = {
@@ -25,9 +25,9 @@
     };
   };
 
-  boot.kernelParams = [
-    "i915.enable_fbc=1" # Enable frame buffer compression
-    "i915.enable_psr=2" # Enable panel self-refresh
-    "i915.fastboot=1" # Enable fast boot
-  ];
+  # boot.kernelParams = [
+  #   "i915.enable_fbc=1" # Enable frame buffer compression
+  #   "i915.enable_psr=2" # Enable panel self-refresh
+  #   "i915.fastboot=1" # Enable fast boot
+  # ];
 }

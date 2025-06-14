@@ -1,11 +1,14 @@
 {
-  self,
+  inputs,
   pkgs,
   ...
 }:
 
 {
-  imports = [ "${self}/hm-modules" ];
+  imports = [
+    "${inputs.self}/hm-modules"
+    # ./persistence.nix
+  ];
 
   home.packages = [
   ];

@@ -47,6 +47,7 @@ inputs.nixpkgs.lib.nixosSystem {
               };
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
+                inputs.impermanence.homeManagerModules.impermanence
               ];
             };
           }
