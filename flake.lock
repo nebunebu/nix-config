@@ -1091,11 +1091,11 @@
         "tolerable": "tolerable"
       },
       "locked": {
-        "lastModified": 1748273285,
-        "narHash": "sha256-kFd0eUJ0aNpM+csv2kI6fFuKKRZt0VuEljpAfItC5E8=",
+        "lastModified": 1749417390,
+        "narHash": "sha256-Npfqmj2cEsh+RqmFoDdEy3Yl1teJn2NR7a2eiEZz9CE=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "e6d87df5510e33aec91725c9d8d3dfad15841f04",
+        "rev": "2edbe2fe1717cfad652681dc44cb52e3398af72e",
         "type": "github"
       },
       "original": {
