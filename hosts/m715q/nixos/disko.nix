@@ -22,7 +22,6 @@
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = [ "-f" ]; # Use with caution, this will format the partition
                 mountOptions = [
                   "compress=zstd"
                   "noatime"
