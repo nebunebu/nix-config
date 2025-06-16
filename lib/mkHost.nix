@@ -22,7 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
   };
   modules =
     [
-      (inputs.self + "/hosts/${hostName}/nixOS/default.nix")
+      (inputs.self + "/hosts/${hostName}/nixos/default.nix")
       inputs.stylix.nixosModules.stylix
       inputs.sops-nix.nixosModules.sops
     ]

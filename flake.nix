@@ -161,7 +161,7 @@
           hostName = "m715q";
           extraModules = [
             inputs.nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./hosts/m715q/nixOS/facter.json; }
+            { config.facter.reportPath = ./hosts/m715q/nixos/facter.json; }
             inputs.disko.nixosModules.disko
             # inputs.impermanence.nixosModules.impermanence
           ];
@@ -170,7 +170,7 @@
           hostName = "t5610";
           extraModules = [
             inputs.nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./hosts/t5610/nixOS/facter.json; }
+            { config.facter.reportPath = ./hosts/t5610/nixos/facter.json; }
           ];
         };
         x230t = mkHost {
