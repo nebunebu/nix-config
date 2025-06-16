@@ -27,7 +27,6 @@
     pkgs.calibre
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
-    # (pkgs.callPackage ../../../pkgs/super-productivity.nix { })
   ];
   programs.river.enable = true;
 
@@ -87,9 +86,6 @@
       "raid=noautodetect"
       "quiet"
       "plymouth.enable-quit-progress=1"
-      "video=DP-1:1920x1080@60"
-      "video=HDMI-A-1:1920x1080@60"
-      "tsc=reliable"
     ];
     extraModprobeConfig = ''
       options hid_apple fnmode=1
