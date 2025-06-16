@@ -32,6 +32,7 @@
 
   # sops.enable = true;
   neb = {
+    udisks2.enable = true;
     sops = {
       enable = true;
       taskwarrior.enable = true;

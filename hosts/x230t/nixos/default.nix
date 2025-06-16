@@ -16,13 +16,14 @@
   services.upower.enable = true;
 
   neb = {
-    stylix.enable = true;
-    obs.enable = true;
     desktop = {
-      sddm.enable = true;
       hyprland.enable = true;
       pipewire.enable = true;
+      sddm.enable = true;
     };
+    obs.enable = true;
+    stylix.enable = true;
+    udisks2.enable = true;
   };
 
   networking.hostName = "x230t";

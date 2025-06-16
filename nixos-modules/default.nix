@@ -22,6 +22,7 @@
     ./stylix.nix
     ./system.nix
     ./taskchampion.nix
+    ./udisks2.nix
     ./users
     ./virtualisation
   ];
