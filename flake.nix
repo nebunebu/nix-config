@@ -166,7 +166,13 @@
             # inputs.impermanence.nixosModules.impermanence
           ];
         };
-        t5610 = mkHost { hostName = "t5610"; };
+        t5610 = mkHost {
+          hostName = "t5610";
+          extraModules = [
+            inputs.nixos-facter-modules.nixosModules.facter
+            { config.facter.reportPath = ./hosts/t5610/nixOS/facter.json; }
+          ];
+        };
         x230t = mkHost {
           hostName = "x230t";
           extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230 ];

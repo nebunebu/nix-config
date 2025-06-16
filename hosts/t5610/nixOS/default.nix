@@ -43,7 +43,7 @@
     };
     # pinchflat.enable = true;
     obs.enable = true;
-    amdgpu.enable = true;
+    # amdgpu.enable = true;
     beaverhabits.enable = true;
     dumbkan.enable = true;
     freshrss.enable = true;
