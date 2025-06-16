@@ -8,7 +8,7 @@
       in
       {
         enable = true;
-        createDirectories = true;
+        # createDirectories = true;
         desktop = null;
         documents = "${homeDir}/Documents";
         download = "${homeDir}/Downloads";
