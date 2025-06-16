@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./amdgpu.nix
     ./beaverhabits.nix
     ./boot.nix
     ./console.nix
