@@ -20,10 +20,6 @@
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
-
     ags = {
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -175,7 +171,10 @@
         };
         x230t = mkHost {
           hostName = "x230t";
-          extraModules = [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230 ];
+          extraModules = [
+            inputs.nixos-facter-modules.nixosModules.facter
+            { config.facter.reportPath = ./hosts/x230t/nixos/facter.json; }
+          ];
         };
       };
 
