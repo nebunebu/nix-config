@@ -12,7 +12,7 @@ in
     ./foot.nix
     ./fuzzel
     ./ghostty.nix
-    ./hyprpanel
+    # ./hyprpanel
     ./kitty.nix
     ./pavucontrol.nix
   ];
