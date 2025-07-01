@@ -43,7 +43,6 @@ This is my personal flake for my NixOS configurations.
 |                        | [xournalpp](https://github.com/xournalpp/xournalpp)                            |
 | **WM:**                | [hyprland](https://github.com/hyprwm/Hyprland)                                 |
 | **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                     |
-| **Bar**          | [hyprpanel](https://hyprpanel.com/)                                     |
 | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)                                  |
 
 ## Structure

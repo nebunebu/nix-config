@@ -27,9 +27,6 @@
 
     # NOTE: not sure what I want to do with this
     desktop = {
-      # astal.x230t.enable = true;
-      # hyprpanel.x230t.enable = true;
-
       window-managers = {
         hyprland = {
           enable = true;

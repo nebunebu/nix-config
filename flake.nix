@@ -65,11 +65,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprwayland-scanner = {
       url = "github:hyprwm/hyprwayland-scanner";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,30 +107,6 @@
         config = {
           allowUnfree = true;
         };
-        overlays = [
-          inputs.hyprpanel.overlay
-          (_: prev: {
-            manix = prev.manix.override (old: {
-              rustPlatform = old.rustPlatform // {
-                buildRustPackage =
-                  args:
-                  old.rustPlatform.buildRustPackage (
-                    args
-                    // {
-                      version = "0.8.0-pr20";
-                      src = prev.fetchFromGitHub {
-                        owner = "nix-community";
-                        repo = "manix";
-                        rev = "c532d14b0b59d92c4fab156fc8acd0565a0836af";
-                        sha256 = "sha256-Uo+4/be6rT0W8Z1dvCRXOANvoct6gJ4714flhyFzmKU=";
-                      };
-                      cargoHash = "sha256-FTrKdOuXTOqr7on4RzYl/UxgUJqh+Rk3KJXqsW0fuo0=";
-                    }
-                  );
-              };
-            });
-          })
-        ];
       };
 
       mkHost = import ./lib/mkHost.nix {

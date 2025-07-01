@@ -12,7 +12,6 @@ in
     ./foot.nix
     ./fuzzel
     ./ghostty.nix
-    # ./hyprpanel
     ./kitty.nix
     ./pavucontrol.nix
   ];

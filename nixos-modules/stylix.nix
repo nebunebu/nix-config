@@ -31,7 +31,6 @@ in
       pkgs.ibm-plex
       pkgs.nerd-fonts.im-writing
       pkgs.nerd-fonts.blex-mono
-      pkgs.nerd-fonts.jetbrains-mono # needed for hyprpanel
     ];
 
     stylix = {

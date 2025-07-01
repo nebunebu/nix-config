@@ -37,7 +37,6 @@
     };
 
     desktop = {
-      hyprpanel.t5610.enable = true;
 
       window-managers = {
         river.enable = true;
