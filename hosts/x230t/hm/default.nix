@@ -12,6 +12,7 @@
     pkgs.libnotify
     pkgs.jellyfin-media-player
     pkgs.openpomodoro-cli
+    pkgs.blobp
   ];
 
   neb = {
