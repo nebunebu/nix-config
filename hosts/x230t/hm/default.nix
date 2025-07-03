@@ -12,6 +12,8 @@
     pkgs.libnotify
     pkgs.jellyfin-media-player
     pkgs.openpomodoro-cli
+    pkgs.calcure
+    pkgs.taskwarrior
   ];
 
   neb = {
