@@ -1,4 +1,5 @@
 {
+  inputs,
   self,
   pkgs,
   ...
@@ -8,6 +9,7 @@
   imports = [ "${self}/hm-modules" ];
 
   home.packages = [
+    inputs.gemini-cli.packages."${pkgs.system}".default
     pkgs.aichat
     pkgs.libnotify
     pkgs.jellyfin-media-player

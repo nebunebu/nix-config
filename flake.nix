@@ -13,6 +13,8 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    gemini-cli.url = "github:rishabh5321/gemini-cli-flake";
+
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
