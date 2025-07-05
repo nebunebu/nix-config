@@ -35,7 +35,7 @@
     udisks2.enable = true;
     sops = {
       enable = true;
-      taskwarrior.enable = true;
+      # taskwarrior.enable = true;
       gpg = {
         enable = true;
       };

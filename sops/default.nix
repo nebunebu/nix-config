@@ -4,7 +4,7 @@
     ./gpg.nix
     ./pass.nix
     ./sops.nix
-    ./taskwarrior
+    # ./taskwarrior
 
     # TODO:
     # add ssh
