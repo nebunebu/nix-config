@@ -75,10 +75,6 @@
     sessionVariables = {
       HOSTNAME = "t5610";
     };
-    etc."machine-id" = {
-      text = "4d1db5f3ed1d4094993faef0f4926a74";
-      mode = "0444";
-    };
   };
 
   boot = {
