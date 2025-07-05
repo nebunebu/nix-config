@@ -9,6 +9,7 @@
 {
   imports = [
     "${self}/hm-modules"
+    ./hyprpanel.nix
   ];
 
   home = {
