@@ -19,6 +19,9 @@ in
         enable = true;
         enableZshIntegration = true;
         settings = {
+          username = {
+            show_always = true;
+          };
           character =
             let
               nbsp = " ";

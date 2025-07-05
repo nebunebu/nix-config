@@ -21,7 +21,8 @@
       pkgs.libnotify
       pkgs.openpomodoro-cli
       pkgs.calcure
-      pkgs.taskwarrior
+      pkgs.taskwarrior3
+      pkgs.cowsay
     ];
   };
 
