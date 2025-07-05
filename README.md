@@ -61,10 +61,6 @@ This is my personal flake for my NixOS configurations.
 └── secrets
 ```
 
-Each host is defined in `./flake.nix` with the function `./lib/mkHost.nix`. Each
-host follows the same pattern of having its specific configurations under
-`./hosts/[hostname]`.
-
 The directory `./modules` contains the bulk of the configurations. It contains
 subdirectories for homeManager and nixOS modules. I then import them into `hosts/[host]/homeManager`
 and `hosts/[host]/nixOS` to make most of them. There are still some places where
