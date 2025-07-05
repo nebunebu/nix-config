@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  masterPkgs,
+  pkgs,
   ...
 }:
 let
@@ -19,7 +19,6 @@ in
     programs = {
       nh = {
         enable = true;
-        package = masterPkgs.nh;
       };
     };
   };

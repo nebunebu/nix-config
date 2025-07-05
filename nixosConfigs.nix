@@ -3,7 +3,6 @@
   inputs,
   system,
   pkgs,
-  masterPkgs,
   ...
 }:
 {
@@ -13,7 +12,6 @@
       inherit
         inputs
         system
-        masterPkgs
         ;
       inherit (inputs) self;
     };
@@ -30,7 +28,6 @@
       inherit
         inputs
         system
-        masterPkgs
         ;
       inherit (inputs) self;
     };
@@ -50,7 +47,6 @@
             inherit
               inputs
               pkgs
-              masterPkgs
               ;
             inherit (inputs) self;
           };
@@ -69,7 +65,6 @@
       inherit
         inputs
         system
-        masterPkgs
         ;
       inherit (inputs) self;
     };
@@ -90,7 +85,6 @@
             inherit
               inputs
               pkgs
-              masterPkgs
               ;
             inherit (inputs) self;
           };
@@ -109,7 +103,6 @@
       inherit
         inputs
         system
-        masterPkgs
         ;
       inherit (inputs) self;
     };
@@ -131,7 +124,6 @@
             inherit
               inputs
               pkgs
-              masterPkgs
               ;
             inherit (inputs) self;
           };
@@ -144,3 +136,4 @@
     ];
   };
 }
+

@@ -2,7 +2,6 @@
   description = "nebu's NixOS configs";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     rosepine.url = "github:nebunebu/rosepine-flake";
 
@@ -98,12 +97,6 @@
     inputs:
     let
       system = "x86_64-linux";
-      masterPkgs = import inputs.nixpkgs-master {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
       pkgs = import inputs.nixpkgs {
         inherit system;
         config = {
@@ -116,7 +109,6 @@
           inputs
           system
           pkgs
-          masterPkgs
           ;
       };
     in
