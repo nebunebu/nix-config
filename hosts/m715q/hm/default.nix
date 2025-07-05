@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   ...
 }:
 
@@ -10,8 +9,9 @@
     # ./persistence.nix
   ];
 
-  home.packages = [
-  ];
+  home = {
+    stateVersion = "23.11";
+  };
 
   neb = {
     services.syncthing.enable = true;

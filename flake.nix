@@ -111,45 +111,17 @@
         };
       };
 
-      mkHost = import ./lib/mkHost.nix {
+      nixosConfigs = import ./nixosConfigs.nix {
         inherit
           inputs
-          masterPkgs
           system
           pkgs
+          masterPkgs
           ;
       };
     in
     {
-      nixosConfigurations = {
-        iso = mkHost {
-          hostName = "iso";
-          disableHomeManager = true;
-        };
-        m715q = mkHost {
-          hostName = "m715q";
-          extraModules = [
-            inputs.nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./hosts/m715q/nixos/facter.json; }
-            inputs.disko.nixosModules.disko
-            # inputs.impermanence.nixosModules.impermanence
-          ];
-        };
-        t5610 = mkHost {
-          hostName = "t5610";
-          extraModules = [
-            inputs.nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./hosts/t5610/nixos/facter.json; }
-          ];
-        };
-        x230t = mkHost {
-          hostName = "x230t";
-          extraModules = [
-            inputs.nixos-facter-modules.nixosModules.facter
-            { config.facter.reportPath = ./hosts/x230t/nixos/facter.json; }
-          ];
-        };
-      };
+      nixosConfigurations = nixosConfigs;
 
       checks = builtins.mapAttrs (
         system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }

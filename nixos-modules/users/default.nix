@@ -1,1 +1,6 @@
-{ imports = [ ./nebu.nix ]; }
+{
+  imports = [
+    ./nebu.nix
+    ./acgp.nix
+  ];
+}

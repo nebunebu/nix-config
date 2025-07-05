@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  lib,
   ...
 }:
 
@@ -10,20 +9,24 @@
     "${inputs.self}/hm-modules"
   ];
 
-  home.packages = [
-    (pkgs.writeShellApplication {
-      name = "roseify";
-      runtimeInputs = [ pkgs.lutgen ];
-      text = # sh
-        ''
-          lutgen apply "$1" -o "roseified-$1" -p rose-pine
-        '';
-    })
+  home = {
+    stateVersion = "23.11";
+    packages = [
+      (pkgs.writeShellApplication {
+        name = "roseify";
+        runtimeInputs = [ pkgs.lutgen ];
+        text = # sh
+          ''
+            lutgen apply "$1" -o "roseified-$1" -p rose-pine
+          '';
+      })
 
-    # pkgs.drawio
-    pkgs.texlivePackages.latexmk
-    pkgs.libnotify
-  ];
+      # pkgs.drawio
+      pkgs.texlivePackages.latexmk
+      pkgs.libnotify
+    ];
+
+  };
 
   neb = {
     services.syncthing.enable = true;
