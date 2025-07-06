@@ -12,7 +12,7 @@
     ./persistence.nix
     ./disko.nix
     "${inputs.self}/nixos-modules"
-    # ../../../sops
+    ../../../sops
   ];
 
   neb = {
