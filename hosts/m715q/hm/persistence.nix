@@ -4,10 +4,10 @@
       "Downloads"
       "Documents"
       ".ssh"
-      # {
-      #   directory = ".local/share/Steam";
-      #   method = "symlink";
-      # }
+      ".gpupg"
+      ".nix-config"
+      "Downloads"
+      "Documents"
     ];
     files = [
       ".screenrc"

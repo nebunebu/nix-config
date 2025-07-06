@@ -6,7 +6,8 @@
 {
   imports = [
     "${inputs.self}/hm-modules"
-    # ./persistence.nix
+    ./persistence.nix
+    ./nebu.nix
   ];
 
   home = {
