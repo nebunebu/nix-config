@@ -1,21 +1,16 @@
 {
-  home.persistence."/persistent/home/nebu" = {
+  home.persistence."/persist/home/nebu" = {
+    allowOther = true;
     directories = [
       "Downloads"
       "Documents"
       ".ssh"
-      ".gpupg"
+      ".gnupg"
       ".nix-config"
-      "Downloads"
-      "Documents"
+      ".config/sops/age"
     ];
     files = [
       ".screenrc"
     ];
-    # NOTE:
-    # Useful for sudo operations, Docker, etc.
-    # Requires the NixOS configuration
-    # programs.fuse.userAllowOther = true.
-    allowOther = true;
   };
 }

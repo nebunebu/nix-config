@@ -7,11 +7,12 @@
 
 {
   imports = [
+    inputs.impermanence.nixosModules.impermanence
     inputs.home-manager.nixosModules.default
-    # ./persistence.nix
+    ./persistence.nix
     ./disko.nix
     "${inputs.self}/nixos-modules"
-    ../../../sops
+    # ../../../sops
   ];
 
   neb = {
