@@ -10,6 +10,7 @@
       ".ssh"
       ".local/share/keyrings"
       ".local/share/direnv"
+      ".nix-config"
     ];
     allowOther = true;
   };

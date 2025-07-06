@@ -6,7 +6,6 @@
       "Documents"
       ".ssh"
       ".gnupg"
-      ".nix-config"
       ".config/sops/age"
     ];
     files = [
