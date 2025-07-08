@@ -9,6 +9,7 @@
 {
   imports = [
     "${self}/hm-modules"
+    ./hyprpanel.nix
   ];
 
   home = {
@@ -32,6 +33,7 @@
     };
     bash.enable = true;
     zsh.enable = true;
+    abook.enable = true;
   };
 
   systemd.user.startServices = "sd-switch";
