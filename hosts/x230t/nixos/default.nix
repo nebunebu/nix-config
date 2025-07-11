@@ -15,6 +15,16 @@
   ];
   services.upower.enable = true;
 
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.brlaser ];
+  };
+  services.ipp-usb.enable = true;
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.sane-airscan ];
+  };
+
   neb = {
     desktop = {
       hyprland.enable = true;
