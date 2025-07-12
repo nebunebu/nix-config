@@ -24,6 +24,8 @@
       pkgs.calcure
       pkgs.taskwarrior3
       pkgs.cowsay
+      pkgs.libreoffice
+      pkgs.gimp3-with-plugins
     ];
   };
 

@@ -42,4 +42,15 @@
       HOSTNAME = "x230t";
     };
   };
+
+  users.users = {
+    nebu = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "lp" "scanner" ];
+    };
+    acgp = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "lp" "scanner" ];
+    };
+  };
 }
