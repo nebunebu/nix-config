@@ -1117,11 +1117,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1751733917,
-        "narHash": "sha256-3duWxLH9yfYbiyH0hS3wBo/DNuPvUZwVML69KAhNeik=",
+        "lastModified": 1753222531,
+        "narHash": "sha256-xrVhkG71Tj9qqE1gNSSNCnzDEuGg1WsywuXICOsv7z0=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "4ee71012c1a62e49f6b5d9537743e28f17b4c638",
+        "rev": "21c413b686d21a36ad0095e2204ab586eeae96ea",
         "type": "github"
       },
       "original": {
