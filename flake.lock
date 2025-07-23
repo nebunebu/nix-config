@@ -1117,11 +1117,19 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1751748388,
         "narHash": "sha256-O+krfQ7XXLtAKqov/yScmILQWd8A7cLEE+GNsBNBK7Y=",
         "owner": "nebunebu",
         "repo": "nebvim",
         "rev": "21ee545b11f12b533020f73474e210ca3ce206fd",
+=======
+        "lastModified": 1753222531,
+        "narHash": "sha256-xrVhkG71Tj9qqE1gNSSNCnzDEuGg1WsywuXICOsv7z0=",
+        "owner": "nebunebu",
+        "repo": "nebvim",
+        "rev": "21c413b686d21a36ad0095e2204ab586eeae96ea",
+>>>>>>> hyprpanel
         "type": "github"
       },
       "original": {

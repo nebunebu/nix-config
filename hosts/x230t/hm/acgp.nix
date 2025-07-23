@@ -9,6 +9,7 @@
 {
   imports = [
     "${self}/hm-modules"
+    ./hyprpanel.nix
   ];
 
   home = {
@@ -23,6 +24,8 @@
       pkgs.calcure
       pkgs.taskwarrior3
       pkgs.cowsay
+      pkgs.libreoffice
+      pkgs.gimp3-with-plugins
     ];
   };
 
@@ -32,6 +35,7 @@
     };
     bash.enable = true;
     zsh.enable = true;
+    abook.enable = true;
   };
 
   systemd.user.startServices = "sd-switch";
