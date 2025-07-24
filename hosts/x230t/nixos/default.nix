@@ -19,10 +19,21 @@
     enable = true;
     drivers = [ pkgs.brlaser ];
   };
+
   services.ipp-usb.enable = true;
   hardware.sane = {
     enable = true;
     extraBackends = [ pkgs.sane-airscan ];
+  };
+
+  programs.thunar = {
+    enable = true;
+    plugins = [
+      pkgs.xfce.thunar-archive-plugin
+      pkgs.xfce.thunar-volman
+      pkgs.xfce.thunar-media-tags-plugin
+      pkgs.xfce.thunar-vcs-plugin
+    ];
   };
 
   neb = {
@@ -46,11 +57,19 @@
   users.users = {
     nebu = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "lp" "scanner" ];
+      extraGroups = [
+        "wheel"
+        "lp"
+        "scanner"
+      ];
     };
     acgp = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "lp" "scanner" ];
+      extraGroups = [
+        "wheel"
+        "lp"
+        "scanner"
+      ];
     };
   };
 }
