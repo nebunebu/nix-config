@@ -46,6 +46,8 @@ in
         size = 32;
       };
 
+      icon.package = pkgs.rose-pine-icon-theme;
+
       fonts = {
         serif = {
           package = pkgs.ibm-plex;
