@@ -13,7 +13,7 @@
     ./hardware-configuration.nix
   ];
 
-  service = {
+  services = {
     gvfs.enable = true;
     upower.enable = true;
     printing = {
