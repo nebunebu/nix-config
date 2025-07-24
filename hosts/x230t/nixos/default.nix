@@ -2,7 +2,6 @@
   self,
   pkgs,
   inputs,
-  config,
   ...
 }:
 
@@ -13,14 +12,17 @@
     ../../../sops
     ./hardware-configuration.nix
   ];
-  services.upower.enable = true;
 
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.brlaser ];
+  service = {
+    gvfs.enable = true;
+    upower.enable = true;
+    printing = {
+      enable = true;
+      drivers = [ pkgs.brlaser ];
+    };
+    ipp-usb.enable = true;
   };
 
-  services.ipp-usb.enable = true;
   hardware.sane = {
     enable = true;
     extraBackends = [ pkgs.sane-airscan ];
