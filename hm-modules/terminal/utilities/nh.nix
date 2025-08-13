@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -14,7 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.sessionVariables = {
-      NH_FLAKE = lib.mkDefault "/home/nebu/.nix-config";
+      NH_FLAKE = lib.mkDefault "${config.home.homeDirectory}/.nix-config";
     };
     programs = {
       nh = {
