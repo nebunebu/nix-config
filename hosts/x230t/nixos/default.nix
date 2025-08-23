@@ -11,6 +11,7 @@
     "${self}/nixos-modules"
     ../../../sops
     ./hardware-configuration.nix
+    # ./nextcloud.nix
   ];
 
   services = {

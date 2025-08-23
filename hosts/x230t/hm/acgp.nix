@@ -11,6 +11,7 @@
     "${self}/hm-modules"
     ./hyprpanel.nix
     ./thunderbird.nix
+    ../../../hm-modules/desktop/communications/vesktop.nix
   ];
 
   home = {
