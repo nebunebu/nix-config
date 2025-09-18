@@ -12,21 +12,13 @@
     ../../../sops
     ./hardware-configuration.nix
     # ./nextcloud.nix
+    ./hp_envy.nix
+    ./ads_1300.nix
   ];
 
   services = {
     gvfs.enable = true;
     upower.enable = true;
-    printing = {
-      enable = true;
-      drivers = [ pkgs.brlaser ];
-    };
-    ipp-usb.enable = true;
-  };
-
-  hardware.sane = {
-    enable = true;
-    extraBackends = [ pkgs.sane-airscan ];
   };
 
   programs.thunar = {
@@ -62,16 +54,12 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
-        "lp"
-        "scanner"
       ];
     };
     acgp = {
       isNormalUser = true;
       extraGroups = [
         "wheel"
-        "lp"
-        "scanner"
       ];
     };
   };

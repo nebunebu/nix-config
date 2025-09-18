@@ -30,6 +30,8 @@
       pkgs.gimp3-with-plugins
       pkgs.stripe-cli
       pkgs.hledger
+      pkgs.krita
+      pkgs.drawio
     ];
   };
 
