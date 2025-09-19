@@ -19,7 +19,7 @@
       inputs.gemini-cli.packages."${pkgs.system}".default
       pkgs.aichat
       pkgs.libnotify
-      pkgs.jellyfin-media-player
+      # pkgs.jellyfin-media-player
       pkgs.openpomodoro-cli
       pkgs.calcure
       pkgs.taskwarrior3

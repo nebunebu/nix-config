@@ -28,7 +28,7 @@
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
   ];
-  programs.river.enable = true;
+  # programs.river.enable = false;
 
   # sops.enable = true;
   neb = {
@@ -45,9 +45,9 @@
     obs.enable = true;
     beaverhabits.enable = true;
     dumbkan.enable = true;
-    freshrss.enable = true;
+    freshrss.enable = false;
     glance.enable = true;
-    jellyfin.enable = true;
+    jellyfin.enable = false;
     linkding.enable = true;
     ollama.enable = true;
     stylix.enable = true;
