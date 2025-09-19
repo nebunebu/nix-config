@@ -15,12 +15,12 @@
         intel-media-driver
         intel-vaapi-driver
         libvdpau-va-gl
-        mesa.drivers
+        mesa
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-vaapi-driver
         libvdpau-va-gl
-        mesa.drivers
+        mesa
       ];
     };
   };
