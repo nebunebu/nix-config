@@ -1,11 +1,30 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }:
 
 {
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        intel-vaapi-driver
+        libvdpau-va-gl
+        mesa.drivers
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-vaapi-driver
+        libvdpau-va-gl
+        mesa.drivers
+      ];
+    };
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/5b45ae49-7f6e-455c-a93b-8b2ea08a158d";
     fsType = "btrfs";
@@ -36,27 +55,3 @@
   swapDevices = [ ];
 
 }
-# fileSystems = {
-#   "/" = {
-#     device = "/dev/disk/by-uuid/79ed30ed-9f0d-452f-b6c8-37e98f87264d";
-#     fsType = "btrfs";
-#     options = [ "subvol=root" ];
-#   };
-#
-#   "/nix" = {
-#     device = "/dev/disk/by-uuid/79ed30ed-9f0d-452f-b6c8-37e98f87264d";
-#     fsType = "btrfs";
-#     options = [ "subvol=nix" ];
-#   };
-#
-#   "/boot" = {
-#     device = "/dev/disk/by-uuid/C773-DA73";
-#     fsType = "vfat";
-#   };
-#
-#   "/persist" = {
-#     device = "/dev/disk/by-uuid/79ed30ed-9f0d-452f-b6c8-37e98f87264d";
-#     fsType = "btrfs";
-#     options = [ "subvol=persist" ];
-#   };
-# };

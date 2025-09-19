@@ -7,6 +7,11 @@ in
     enable = lib.mkEnableOption "enable kitty";
   };
   config = lib.mkIf cfg.enable {
+
+    wayland.windowManager.hyprland.settings.bind = [
+      "$mainMod, Return, exec, kitty -e tmux new-session -A -s main"
+      # "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ghostty\""
+    ];
     home.sessionVariables = {
       KITTY_DISABLE_WAYLAND = "0";
     };

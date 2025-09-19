@@ -1,4 +1,10 @@
-{ lib, config, ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 let
   cfg = config.neb.desktop.utilities.ghostty;
 in
@@ -9,10 +15,10 @@ in
   config = lib.mkIf cfg.enable {
 
     # TODO: make this an option
-    wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, Return, exec, ghostty -e tmux new-session -A -s main"
-      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ghostty\""
-    ];
+    # wayland.windowManager.hyprland.settings.bind = [
+    #   "$mainMod, Return, exec, ghostty -e tmux new-session -A -s main"
+    #   "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ghostty\""
+    # ];
 
     # TODO: make this an option
     programs.tmux.terminal = "xterm-ghostty";

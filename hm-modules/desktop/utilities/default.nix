@@ -25,7 +25,7 @@ in
       foot.enable = true;
       fuzzel.enable = true;
       ghostty.enable = true;
-      kitty.enable = false;
+      kitty.enable = true;
       pavucontrol.enable = true;
     };
   };
