@@ -1,6 +1,5 @@
 {
   lib,
-  inputs,
   pkgs,
   config,
   ...
@@ -11,16 +10,30 @@ in
 {
   options.neb.desktop.utilities.ghostty = {
     enable = lib.mkEnableOption "enable ghostty";
+
+    # If true, run Ghostty with GL 4.3 advertised (fixes GTK context issue).
+    forceGL43 = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Wrap ghostty with MESA_GL_VERSION_OVERRIDE=4.3 and MESA_GLSL_VERSION_OVERRIDE=430.";
+    };
+
+    # Name of the wrapper binary (so you can keep the original `ghostty` intact if you want).
+    wrapperName = lib.mkOption {
+      type = lib.types.str;
+      default = "ghostty-ogl43";
+      description = "Name of the wrapped launcher binary.";
+    };
+
+    # Also install a desktop entry that uses the wrapper.
+    desktopEntry = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Install an xdg desktop entry that launches the wrapped Ghostty.";
+    };
   };
+
   config = lib.mkIf cfg.enable {
-
-    # TODO: make this an option
-    # wayland.windowManager.hyprland.settings.bind = [
-    #   "$mainMod, Return, exec, ghostty -e tmux new-session -A -s main"
-    #   "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ghostty\""
-    # ];
-
-    # TODO: make this an option
     programs.tmux.terminal = "xterm-ghostty";
 
     programs.ghostty = {
@@ -30,9 +43,8 @@ in
       clearDefaultKeybinds = true;
       installBatSyntax = true;
       installVimSyntax = true;
-      settings = lib.mkForce {
-        # TODO: add keybinds
 
+      settings = lib.mkForce {
         theme = "custom-rose-pine";
         font-family = "IBM Plex Mono";
         font-style = "Medium";
@@ -42,13 +54,13 @@ in
         window-decoration = false;
         adjust-cursor-thickness = 1;
 
-        # Clipboard
         clipboard-read = "allow";
         clipboard-write = "allow";
         clipboard-trim-trailing-spaces = true;
         copy-on-select = true;
         confirm-close-surface = false;
       };
+
       themes = lib.mkForce {
         custom-rose-pine = {
           background = "${config.rosePine.main.base}";
@@ -77,5 +89,41 @@ in
         };
       };
     };
+
+    # Wrapper that sets the Mesa overrides (GPU path, not llvmpipe).
+    home.packages = lib.mkIf cfg.forceGL43 [
+      (pkgs.writeShellScriptBin cfg.wrapperName ''
+        #!${pkgs.runtimeShell}
+        exec env \
+          MESA_GL_VERSION_OVERRIDE=4.3 \
+          MESA_GLSL_VERSION_OVERRIDE=430 \
+          ghostty "$@"
+      '')
+    ];
+
+    # Optional desktop entry pointing to the wrapper (keeps the original entry untouched).
+    xdg.desktopEntries = lib.mkIf (cfg.forceGL43 && cfg.desktopEntry) {
+      ghostty-ogl43 = {
+        name = "Ghostty (OpenGL 4.3)";
+        genericName = "Terminal";
+        comment = "Ghostty launched with GL 4.3 override";
+        exec = "${cfg.wrapperName}";
+        terminal = false;
+        type = "Application";
+        categories = [
+          "System"
+          "TerminalEmulator"
+        ];
+        icon = "ghostty";
+        # If you like tmux auto-attach:
+        # exec = "${cfg.wrapperName} -e tmux new-session -A -s main";
+      };
+    };
+
+    # If you want Hyprland binds to the wrapper (uncomment your TODO and swap command):
+    wayland.windowManager.hyprland.settings.bind = [
+      "$mainMod, Return, exec, ${cfg.wrapperName} -e tmux new-session -A -s main"
+      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ${cfg.wrapperName}\""
+    ];
   };
 }

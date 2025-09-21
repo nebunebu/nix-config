@@ -60,6 +60,7 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
+        "render"
       ];
     };
   };
