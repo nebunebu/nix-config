@@ -7,10 +7,8 @@
 
 {
   imports = [
-    inputs.impermanence.nixosModules.impermanence
     inputs.home-manager.nixosModules.default
-    ./persistence.nix
-    ./disko.nix
+    ./hardware-configuration.nix
     "${inputs.self}/nixos-modules"
     ../../../sops
   ];

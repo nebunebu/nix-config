@@ -20,7 +20,6 @@
       inputs.sops-nix.nixosModules.sops
       inputs.nixos-facter-modules.nixosModules.facter
       { config.facter.reportPath = inputs.self + "/hosts/m715q/nixos/facter.json"; }
-      inputs.disko.nixosModules.disko
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -35,7 +34,6 @@
           };
           sharedModules = [
             inputs.sops-nix.homeManagerModules.sops
-            inputs.impermanence.homeManagerModules.impermanence
           ];
         };
       }
