@@ -12,6 +12,7 @@
     ./hyprland.nix
     ./jellyfin.nix
     ./linkding.nix
+    ./manpager.nix
     ./networking.nix
     ./nix.nix
     ./obs.nix
@@ -29,6 +30,5 @@
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.system}".default
-    inputs.nebvim.packages."${pkgs.system}".manvim
   ];
 }
