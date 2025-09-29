@@ -54,7 +54,7 @@ in
       nix-tools.enable = true;
       ripgrep.enable = true;
       tealdeer.enable = true;
-      television.enable = true;
+      # television.enable = true;
       yazi.enable = true;
       yt-dlp.enable = true;
       zoxide.enable = true;
