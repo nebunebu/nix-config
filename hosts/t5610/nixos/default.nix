@@ -56,7 +56,7 @@
     beaverhabits.enable = true;
     dumbkan.enable = true;
     freshrss.enable = false;
-    glance.enable = true;
+    # glance.enable = true;
     jellyfin.enable = false;
     linkding.enable = true;
     ollama.enable = true;
