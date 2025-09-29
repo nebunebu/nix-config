@@ -27,6 +27,7 @@
     glance.enable = true;
     pinchflat.enable = true;
     jellyfin.enable = true;
+    qbittorrent.enable = true;
     # beaverhabits.enable = true;
     # dumbkan.enable = true;
     # freshrss.enable = false;

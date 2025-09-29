@@ -10,5 +10,6 @@
     # ./ollama.nix
     ./pinchflat.nix
     # ./taskchampion.nix
+    ./qbittorrent.nix
   ];
 }
