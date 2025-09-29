@@ -16,8 +16,8 @@ in
   config = lib.mkIf cfg.enable {
 
     environment.systemPackages = [
-      pkgs.jellyfin-media-player
-      pkgs.jellyfin-mpv-shim
+      # pkgs.jellyfin-media-player
+      # pkgs.jellyfin-mpv-shim
     ];
 
     users = {

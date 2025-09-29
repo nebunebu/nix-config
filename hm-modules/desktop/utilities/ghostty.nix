@@ -7,25 +7,25 @@
 let
   cfg = config.neb.desktop.utilities.ghostty;
 
-  smear_fade_src = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/KroneCorylus/ghostty-shader-playground/refs/heads/main/shaders/cursor_smear_fade.glsl";
-    hash = "sha256-2XGq3qIGT7LGsHiFZbGmci/M8CkTGNBDHGImGkKnoCk=";
-  };
-  smear_fade_patched_text =
-    lib.replaceStrings
-      [
-        "const vec4 TRAIL_COLOR = vec4(1., 1., 0., 1.0);"
-      ]
-      [
-        # NOTE: foam (works)
-        # "const vec4 TRAIL_COLOR = vec4(0.612, 0.812, 0.847, 1.0);"
-        # NOTE: iris
-        "const vec4 TRAIL_COLOR = vec4(0.769, 0.655, 0.906, 1.0);"
-      ]
-      (builtins.readFile smear_fade_src);
-
-  smear_fade_patched = pkgs.writeText "cursor_smear_fade.glsl" smear_fade_patched_text;
-
+  # smear_fade_src = pkgs.fetchurl {
+  #   url = "https://raw.githubusercontent.com/KroneCorylus/ghostty-shader-playground/refs/heads/main/shaders/cursor_smear_fade.glsl";
+  #   hash = "sha256-2XGq3qIGT7LGsHiFZbGmci/M8CkTGNBDHGImGkKnoCk=";
+  # };
+  # smear_fade_patched_text =
+  #   lib.replaceStrings
+  #     [
+  #       "const vec4 TRAIL_COLOR = vec4(1., 1., 0., 1.0);"
+  #     ]
+  #     [
+  #       # NOTE: foam (works)
+  #       # "const vec4 TRAIL_COLOR = vec4(0.612, 0.812, 0.847, 1.0);"
+  #       # NOTE: iris
+  #       "const vec4 TRAIL_COLOR = vec4(0.769, 0.655, 0.906, 1.0);"
+  #     ]
+  #     (builtins.readFile smear_fade_src);
+  #
+  # smear_fade_patched = pkgs.writeText "cursor_smear_fade.glsl" smear_fade_patched_text;
+  #
 in
 {
   options.neb.desktop.utilities.ghostty = {
@@ -79,9 +79,9 @@ in
         clipboard-trim-trailing-spaces = true;
         copy-on-select = true;
         confirm-close-surface = false;
-        custom-shader = [
-          "${smear_fade_patched}"
-        ];
+        # custom-shader = [
+        #   "${smear_fade_patched}"
+        # ];
         custom-shader-animation = "always";
       };
 

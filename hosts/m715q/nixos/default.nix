@@ -26,10 +26,10 @@
     # karakeep.enable = true;
     glance.enable = true;
     pinchflat.enable = true;
+    jellyfin.enable = true;
     # beaverhabits.enable = true;
     # dumbkan.enable = true;
     # freshrss.enable = false;
-    # jellyfin.enable = false;
     # linkding.enable = true;
     # ollama.enable = true;
   };
