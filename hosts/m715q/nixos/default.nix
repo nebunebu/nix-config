@@ -28,6 +28,7 @@
     # dumbkan.enable = true;
     # freshrss.enable = false;
     glance.enable = true;
+    pinchflat.enable = true;
     # jellyfin.enable = false;
     # linkding.enable = true;
     # ollama.enable = true;
