@@ -2,27 +2,19 @@
 
 {
   imports = [
-    ./beaverhabits.nix
     ./boot.nix
     ./console.nix
     ./documentation.nix
-    ./dumbkan.nix
-    ./freshrss.nix
-    ./glance
     ./hyprland.nix
-    ./jellyfin.nix
-    ./linkding.nix
     ./manpager.nix
     ./networking.nix
     ./nix.nix
     ./obs.nix
-    ./ollama.nix
-    ./pinchflat.nix
+    # ./ollama.nix
     ./pipewire.nix
     ./sddm.nix
     ./stylix.nix
     ./system.nix
-    ./taskchampion.nix
     ./udisks2.nix
     ./users
     ./virtualisation

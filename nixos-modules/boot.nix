@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 {
-  stylix.targets.grub.useImage = true;
+  stylix.targets.grub.useWallpaper = true;
   boot = {
     plymouth = {
       enable = true;

@@ -1,7 +1,5 @@
 {
   inputs,
-  pkgs,
-  config,
   ...
 }:
 
@@ -10,6 +8,7 @@
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     "${inputs.self}/nixos-modules"
+    "${inputs.self}/serve"
     ../../../sops
   ];
 
@@ -24,11 +23,12 @@
       };
       pass.enable = true;
     };
+    # karakeep.enable = true;
+    glance.enable = true;
+    pinchflat.enable = true;
     # beaverhabits.enable = true;
     # dumbkan.enable = true;
     # freshrss.enable = false;
-    glance.enable = true;
-    pinchflat.enable = true;
     # jellyfin.enable = false;
     # linkding.enable = true;
     # ollama.enable = true;
