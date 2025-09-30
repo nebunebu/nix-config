@@ -17,13 +17,13 @@
     stylix.enable = true;
     sops = {
       enable = true;
-      # taskwarrior.enable = true;
       gpg = {
         enable = true;
       };
       pass.enable = true;
     };
     # karakeep.enable = true;
+    cloudflared.enable = true;
     glance.enable = true;
     pinchflat.enable = true;
     jellyfin.enable = true;

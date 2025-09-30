@@ -14,6 +14,7 @@ in
       extraConfig = {
         YT_DLP_WORKER_CONCURRENCY = 1;
       };
+      # secretsFile = "/run/secrets/pinchflat";
       openFirewall = true;
       selfhosted = true;
     };

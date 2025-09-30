@@ -27,52 +27,52 @@
           sites = [
             {
               title = "Glance";
-              url = "http://192.168.1.177:3000";
-              icon = "si:goodreads";
+              url = "https://glance.nebunebu.xyz";
+              icon = "sh:glance-light";
               same-tab = true;
             }
-            {
-              title = "Syncthing";
-              url = "http://localhost:8384";
-              icon = "si:syncthing";
-              same-tab = true;
-            }
+            # {
+            #   title = "Syncthing";
+            #   url = "http://localhost:8384";
+            #   icon = "si:syncthing";
+            #   same-tab = true;
+            # }
             {
               title = "Jellyfin";
-              url = "http://192.168.1.177:8096";
-              icon = "si:jellyfin";
+              url = "https://jellyfin.nebunebu.xyz";
+              icon = "sh:jellyfin-light";
               same-tab = true;
             }
-            {
-              title = "FresshRSS";
-              url = "http://192.168.1.177:80";
-              icon = "si:rss";
-              same-tab = true;
-            }
-            {
-              title = "BeaverHabits";
-              url = "http://192.168.1.177:8081";
-              icon = "si:dbeaver";
-              same-tab = true;
-            }
-            {
-              title = "linkding";
-              url = "http://192.168.1.177:9090";
-              icon = "si:linkfire";
-              same-tab = true;
-            }
-            {
-              title = "DumbKan";
-              url = "http://192.168.1.177:8082";
-              icon = "si:pinboard";
-              same-tab = true;
-            }
-            {
-              title = "TaskChampion";
-              url = "http://192.168.1.177:10222";
-              icon = "si:codefactor";
-              same-tab = true;
-            }
+            # {
+            #   title = "FresshRSS";
+            #   url = "http://192.168.1.177:80";
+            #   icon = "si:rss";
+            #   same-tab = true;
+            # }
+            # {
+            #   title = "BeaverHabits";
+            #   url = "http://192.168.1.177:8081";
+            #   icon = "si:dbeaver";
+            #   same-tab = true;
+            # }
+            # {
+            #   title = "linkding";
+            #   url = "http://192.168.1.177:9090";
+            #   icon = "si:linkfire";
+            #   same-tab = true;
+            # }
+            # {
+            #   title = "DumbKan";
+            #   url = "http://192.168.1.177:8082";
+            #   icon = "si:pinboard";
+            #   same-tab = true;
+            # }
+            # {
+            #   title = "TaskChampion";
+            #   url = "http://192.168.1.177:10222";
+            #   icon = "si:codefactor";
+            #   same-tab = true;
+            # }
             # {
             #   title = "PinchFlat";
             #   url = "http:192.168.177:8945";
