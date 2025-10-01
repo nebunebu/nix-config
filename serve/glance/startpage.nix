@@ -43,6 +43,12 @@
               icon = "sh:jellyfin-light";
               same-tab = true;
             }
+            {
+              title = "13ft";
+              url = "https://13ft.nebunebu.xyz";
+              icon = "di:pinchflat";
+              same-tab = true;
+            }
             # {
             #   title = "FresshRSS";
             #   url = "http://192.168.1.177:80";

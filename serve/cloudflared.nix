@@ -23,12 +23,12 @@ in
       enable = true;
       certificateFile = "/home/nebu/.cloudflared/cert.pem";
       tunnels = {
-        # Glance
         "cbd1b808-d80c-4afc-bc94-8c0838deae3e" = {
           credentialsFile = "/home/nebu/.cloudflared/cbd1b808-d80c-4afc-bc94-8c0838deae3e.json";
           ingress = {
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
+            "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
           };
           default = "http_status:404";
         };

@@ -14,6 +14,7 @@
 
   neb = {
     udisks2.enable = true;
+    thirteenft.enable = true;
     stylix.enable = true;
     sops = {
       enable = true;

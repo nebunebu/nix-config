@@ -5,6 +5,7 @@
     # ./dumbkan.nix
     # ./freshrss.nix
     ./glance
+    ./thirteenft.nix
     ./jellyfin.nix
     # ./karakeep.nix
     # ./linkding.nix
