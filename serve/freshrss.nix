@@ -31,17 +31,6 @@ in
         pkgs.freshrss-extensions.title-wrap
         pkgs.freshrss-extensions.reddit-image
         (pkgs.freshrss-extensions.buildFreshRssExtension {
-          FreshRssExtUniqueId = "StarToPocket";
-          pname = "star-to-pocket";
-          version = "1.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "huffstler";
-            repo = "xExtension-StarToPocket";
-            rev = "5ebea221243a2fff4f5c7af49d8f2c0f363c040f";
-            hash = "sha256-vQWk0wKO4rAGERuFTtEJuRLmK7h2NVPtCXtNnqPu7EQ=";
-          };
-        })
-        (pkgs.freshrss-extensions.buildFreshRssExtension {
           FreshRssExtUniqueId = "ClickableLinks";
           pname = "clickable-links";
           version = "1.01";
