@@ -23,7 +23,6 @@
       };
       pass.enable = true;
     };
-    # karakeep.enable = true;
     linkding.enable = true;
     cloudflared.enable = true;
     glance.enable = true;
