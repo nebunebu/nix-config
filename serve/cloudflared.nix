@@ -33,6 +33,7 @@ in
             "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
             "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
             "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
+            "n8n.nebunebu.xyz".service = "http://127.0.0.1:5678";
           };
           default = "http_status:404";
         };

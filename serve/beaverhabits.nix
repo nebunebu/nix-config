@@ -22,7 +22,6 @@ in
       autoStart = true;
 
       ports = [ "8081:8080" ];
-      # user = "";
 
       volumes = [ "/var/lib/beaverhabits:/app/.user" ];
 

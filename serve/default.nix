@@ -4,6 +4,7 @@
     # ./beaverhabits.nix
     # ./dumbkan.nix
     ./freshrss.nix
+    ./n8n.nix
     ./glance
     ./thirteenft.nix
     ./jellyfin.nix

@@ -53,6 +53,12 @@
               same-tab = true;
             }
             {
+              title = "n8n";
+              url = "https://n8n.nebunebu.xyz";
+              icon = "sh:n8n-light";
+              same-tab = true;
+            }
+            {
               title = "Linkding";
               url = "https://linkding.nebunebu.xyz";
               icon = "sh:linkding-light";
