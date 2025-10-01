@@ -31,12 +31,6 @@
               icon = "sh:glance-light";
               same-tab = true;
             }
-            # {
-            #   title = "Syncthing";
-            #   url = "http://localhost:8384";
-            #   icon = "si:syncthing";
-            #   same-tab = true;
-            # }
             {
               title = "Jellyfin";
               url = "https://jellyfin.nebunebu.xyz";
