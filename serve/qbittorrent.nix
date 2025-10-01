@@ -12,19 +12,16 @@ in
     services.qbittorrent = {
       enable = true;
       extraArgs = [ "--confirm-legal-notice" ];
-      # webuiPort = ;
-      # torrentingPort = ;
       serverConfig = {
         LegalNotice.Accepted = true;
         Preferences = {
           WebUI = {
             Username = "nebu";
-            Password_PBKDF2 = "@ByteArray(ARQ77eY1NUZaQsuDHbIMCA==:0WMRkYTUWVT9wVvdDtHAjU9b3b7uB8NR1Gur2hmQCvCDpm39Q+PsJRJPaCU51dEiz+dTzh8qbPsL8WkFljQYFQ==)";
+            Password_PBKDF2 = "@ByteArray(wjC3vvvP57soIdmWnf+xEw==:OQuug/YIzZd7Hpg2b5HXq2NrNB9yss0jU47qicoeO3Nlih60yvW/VdfX2xQuy0TSmB7+WBfiLWga+Cy7lsf6+w==)";
           };
           General.Locale = "en";
         };
       };
-      openFirewall = true;
     };
   };
 }
