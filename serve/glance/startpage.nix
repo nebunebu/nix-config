@@ -44,6 +44,15 @@
               same-tab = true;
             }
             {
+              title = "Pinchflat";
+              url = "https://pinchflat.nebunebu.xyz";
+              icon = "di:pinchflat";
+              alt-status-codes = [
+                401
+              ];
+              same-tab = true;
+            }
+            {
               title = "13ft";
               url = "https://13ft.nebunebu.xyz";
               icon = "di:pinchflat";
@@ -55,6 +64,18 @@
               icon = "sh:linkding-light";
               same-tab = true;
             }
+            {
+              title = "Qbittorrent";
+              url = "https://qbittorrent.nebunebu.xyz";
+              icon = "sh:qbittorrent-light";
+              same-tab = true;
+            }
+            # {
+            #   title = "Syncthing";
+            #   url = "http://localhost:8384";
+            #   icon = "si:syncthing";
+            #   same-tab = true;
+            # }
             # {
             #   title = "FresshRSS";
             #   url = "http://192.168.1.177:80";
@@ -83,12 +104,6 @@
             #   title = "TaskChampion";
             #   url = "http://192.168.1.177:10222";
             #   icon = "si:codefactor";
-            #   same-tab = true;
-            # }
-            # {
-            #   title = "PinchFlat";
-            #   url = "http:192.168.177:8945";
-            #   icon = "si:trillertv";
             #   same-tab = true;
             # }
             # {

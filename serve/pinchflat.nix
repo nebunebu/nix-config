@@ -9,14 +9,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
+    sops.secrets.pinchflat = { };
+
     services.pinchflat = {
       enable = true;
       extraConfig = {
         YT_DLP_WORKER_CONCURRENCY = 1;
       };
-      # secretsFile = "/run/secrets/pinchflat";
-      openFirewall = true;
-      selfhosted = true;
+      secretsFile = config.sops.secrets.pinchflat.path;
     };
 
     # ensure dir exists with right perms

@@ -28,6 +28,7 @@ in
           ingress = {
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
+            "pinchflat.nebunebu.xyz".service = "http://127.0.0.1:8945";
             "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
             "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
           };
