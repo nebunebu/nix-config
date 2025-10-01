@@ -31,7 +31,7 @@
     qbittorrent.enable = true;
     # beaverhabits.enable = true;
     # dumbkan.enable = true;
-    # freshrss.enable = false;
+    freshrss.enable = true;
     # linkding.enable = true;
     # ollama.enable = true;
   };

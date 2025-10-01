@@ -70,12 +70,12 @@
             #   icon = "si:syncthing";
             #   same-tab = true;
             # }
-            # {
-            #   title = "FresshRSS";
-            #   url = "http://192.168.1.177:80";
-            #   icon = "si:rss";
-            #   same-tab = true;
-            # }
+            {
+              title = "FresshRSS";
+              url = "https://freshrss.nebunebu.xyz";
+              icon = "sh:freshrss-light";
+              same-tab = true;
+            }
             # {
             #   title = "BeaverHabits";
             #   url = "http://192.168.1.177:8081";
