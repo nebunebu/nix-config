@@ -40,7 +40,7 @@
             {
               title = "Pinchflat";
               url = "https://pinchflat.nebunebu.xyz";
-              icon = "di:pinchflat";
+              icon = "sh:ackee-light";
               alt-status-codes = [
                 401
               ];
@@ -49,7 +49,7 @@
             {
               title = "13ft";
               url = "https://13ft.nebunebu.xyz";
-              icon = "di:pinchflat";
+              icon = "sh:ackee-light";
               same-tab = true;
             }
             {
