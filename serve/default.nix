@@ -8,7 +8,7 @@
     ./thirteenft.nix
     ./jellyfin.nix
     # ./karakeep.nix
-    # ./linkding.nix
+    ./linkding.nix
     # ./ollama.nix
     ./pinchflat.nix
     # ./taskchampion.nix

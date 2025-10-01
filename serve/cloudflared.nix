@@ -29,6 +29,7 @@ in
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
             "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
+            "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
           };
           default = "http_status:404";
         };

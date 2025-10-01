@@ -49,6 +49,12 @@
               icon = "di:pinchflat";
               same-tab = true;
             }
+            {
+              title = "Linkding";
+              url = "https://linkding.nebunebu.xyz";
+              icon = "sh:linkding-light";
+              same-tab = true;
+            }
             # {
             #   title = "FresshRSS";
             #   url = "http://192.168.1.177:80";
