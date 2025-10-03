@@ -31,7 +31,7 @@
       pkgs.stripe-cli
       pkgs.hledger
       pkgs.krita
-      pkgs.drawio
+      # pkgs.drawio
     ];
   };
 
