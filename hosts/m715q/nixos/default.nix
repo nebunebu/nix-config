@@ -31,7 +31,7 @@
     n8n.enable = true;
     pinchflat.enable = true;
     qbittorrent.enable = true;
-    # beaverhabits.enable = true;
+    beaverhabits.enable = true;
     # dumbkan.enable = true;
     # linkding.enable = true;
     # ollama.enable = true;

@@ -8,7 +8,7 @@ let
 in
 {
   options.neb.beaverhabits = {
-    enable = lib.mkEnableOption "enable beaverhabits";
+    enable = lib.mkEnableOption "enable beaver habit tracker";
   };
 
   config = lib.mkIf cfg.enable {
@@ -23,7 +23,9 @@ in
 
       ports = [ "8081:8080" ];
 
-      volumes = [ "/var/lib/beaverhabits:/app/.user" ];
+      volumes = [
+        "/var/lib/beaverhabits:/app/.user"
+      ];
 
       user = "nobody:nogroup";
 
@@ -33,11 +35,8 @@ in
         MAX_USER_COUNT = "1";
         ENABLE_IOS_STANDALONE = "false";
         INDEX_SHOW_HABIT_COUNT = "true";
+        INDEX_SHOW_HABIT_STREAK = "true";
       };
-
-      # extraOptions = [ "--restart=unless-stopped" ];
     };
-
-    # networking.firewall.allowedTCPPorts = [ 8080 ];
   };
 }

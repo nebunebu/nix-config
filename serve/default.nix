@@ -1,7 +1,7 @@
 {
   imports = [
     ./cloudflared.nix
-    # ./beaverhabits.nix
+    ./beaverhabits.nix
     # ./dumbkan.nix
     ./freshrss.nix
     ./n8n.nix

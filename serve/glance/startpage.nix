@@ -82,18 +82,12 @@
               icon = "sh:freshrss-light";
               same-tab = true;
             }
-            # {
-            #   title = "BeaverHabits";
-            #   url = "http://192.168.1.177:8081";
-            #   icon = "si:dbeaver";
-            #   same-tab = true;
-            # }
-            # {
-            #   title = "linkding";
-            #   url = "http://192.168.1.177:9090";
-            #   icon = "si:linkfire";
-            #   same-tab = true;
-            # }
+            {
+              title = "Beaver Habit Tracker";
+              url = "https://beaverhabit.nebunebu.xyz";
+              icon = "sh:beaver-habit-tracker-light";
+              same-tab = true;
+            }
             # {
             #   title = "DumbKan";
             #   url = "http://192.168.1.177:8082";

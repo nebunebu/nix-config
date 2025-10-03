@@ -26,14 +26,15 @@ in
         "cbd1b808-d80c-4afc-bc94-8c0838deae3e" = {
           credentialsFile = "/home/nebu/.cloudflared/cbd1b808-d80c-4afc-bc94-8c0838deae3e.json";
           ingress = {
+            "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
+            "beaverhabit.nebunebu.xyz".service = "http://127.0.0.1:8081";
+            "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
+            "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
+            "n8n.nebunebu.xyz".service = "http://127.0.0.1:5678";
             "pinchflat.nebunebu.xyz".service = "http://127.0.0.1:8945";
             "qbittorrent.nebunebu.xyz".service = "http://127.0.0.1:8080";
-            "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
-            "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
-            "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
-            "n8n.nebunebu.xyz".service = "http://127.0.0.1:5678";
           };
           default = "http_status:404";
         };
