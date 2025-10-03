@@ -171,11 +171,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1759403080,
-        "narHash": "sha256-EteyL8KyG9R5xzqyOBzyag4n2cSemu61VFrl3opJSqE=",
+        "lastModified": 1759464207,
+        "narHash": "sha256-wy15H4AbfQpTWes4aoFaIxkvK6e9p0lyvypOsTMt5f0=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "8af6dfcbcbf1115a4f5aeed77ff0db5d3c02caf0",
+        "rev": "df243385cb4a2263b4888687961ec1f2b5f641f3",
         "type": "gitlab"
       },
       "original": {
@@ -1482,12 +1482,12 @@
         "owner": "Zhaith-Izaliel",
         "repo": "sddm-sugar-candy-nix",
         "rev": "271fd2e8186f9c5d5571adaf61978342c40dd8c4",
-        "type": "gitlab"
+        "type": "github"
       },
       "original": {
         "owner": "Zhaith-Izaliel",
         "repo": "sddm-sugar-candy-nix",
-        "type": "gitlab"
+        "type": "github"
       }
     },
     "sops-nix": {

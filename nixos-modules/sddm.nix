@@ -20,12 +20,16 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.libsForQt5.qt5.qtgraphicaleffects ];
+
+    environment.systemPackages = [
+      # pkgs.kdePackages.sddm
+      pkgs.libsForQt5.qt5.qtgraphicaleffects
+    ];
+
     services = {
       displayManager.sddm = {
         enable = true;
         wayland.enable = true;
-        theme = "sddm-sugar-candy-nix";
         sugarCandyNix = {
           enable = true;
           settings = {
