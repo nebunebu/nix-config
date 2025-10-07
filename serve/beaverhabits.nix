@@ -1,10 +1,18 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 let
   cfg = config.neb.beaverhabits;
+  css =
+    pkgs.writeText "custom.css" # css
+      ''
+        body {
+        background-color: #191724 !important;
+        }
+      '';
 in
 {
   options.neb.beaverhabits = {
@@ -25,9 +33,13 @@ in
 
       volumes = [
         "/var/lib/beaverhabits:/app/.user"
+        # "${css}:/app/statics/custom.css:ro"
       ];
 
       user = "nobody:nogroup";
+      # cmd = [
+      #   "--pull=always"
+      # ];
 
       environment = {
         HABITS_STORAGE = "USER_DISK";
