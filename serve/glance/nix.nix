@@ -4,7 +4,7 @@
   center-vertically = true;
   columns = [
     {
-      size = "small";
+      size = "full";
       widgets = [
         {
           type = "repository";
@@ -20,18 +20,6 @@
           commits-limit = 5;
           pull-requests-limit = 5;
         }
-      ];
-    }
-    {
-      size = "full";
-      widgets = [
-        {
-          type = "reddit";
-          subreddit = "NixOS";
-          show-thumbnails = true;
-          sort-by = "hot";
-          limit = 10;
-        }
         {
           type = "repository";
           repository = "danth/stylix";
@@ -45,24 +33,19 @@
           commits-limit = 3;
         }
         {
+          type = "reddit";
+          subreddit = "NixOS";
+          show-thumbnails = true;
+          sort-by = "hot";
+          limit = 10;
+        }
+        {
           type = "lobsters";
           subreddit = "hot";
           tags = [
             "nix"
             "linux"
           ];
-        }
-      ];
-    }
-    {
-      size = "small";
-      widgets = [
-        {
-          type = "repository";
-          repository = "nix-community/home-manager";
-          issues-limit = 5;
-          commits-limit = 5;
-          pull-requests-limit = 5;
         }
       ];
     }

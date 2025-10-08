@@ -27,6 +27,9 @@ in
           negative-color = "343 76 68";
           contrast-multiplier = 1.2;
         };
+        branding = {
+          hide-footer = true;
+        };
         pages = [
           (import ./startpage.nix)
           (import ./nix.nix)
