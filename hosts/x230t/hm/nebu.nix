@@ -24,7 +24,7 @@
       # pkgs.jellyfin-media-player
       pkgs.openpomodoro-cli
       pkgs.calcure
-      pkgs.taskwarrior3
+      # pkgs.taskwarrior3
       pkgs.nemo
     ];
   };

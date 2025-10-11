@@ -23,8 +23,8 @@
       pkgs.aichat
       pkgs.libnotify
       pkgs.openpomodoro-cli
-      pkgs.calcure
-      pkgs.taskwarrior3
+      # pkgs.calcure
+      # pkgs.taskwarrior3
       pkgs.cowsay
       pkgs.libreoffice
       pkgs.gimp3-with-plugins
