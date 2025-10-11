@@ -49,19 +49,5 @@
     };
   };
 
-  users.users = {
-    nebu = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-      ];
-    };
-    acgp = {
-      isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "render"
-      ];
-    };
-  };
+  
 }
