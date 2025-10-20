@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    # ./super-productivity.nix
     ./activitywatch.nix
   ];
 
