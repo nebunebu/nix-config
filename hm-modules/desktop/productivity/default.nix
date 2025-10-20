@@ -10,7 +10,6 @@ in
   imports = [
     # ./super-productivity.nix
     # ./pomodoro-logger.nix
-    ./keycombiner.nix
     ./activitywatch.nix
   ];
 
@@ -21,7 +20,6 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop.productivity = {
       activitywatch.enable = false;
-      keycombiner.enable = false;
     };
   };
 }
