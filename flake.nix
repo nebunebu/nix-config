@@ -21,11 +21,6 @@
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix = {
       url = "github:danth/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";

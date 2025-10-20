@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    ./astal.nix
     ./foot.nix
     ./fuzzel
     ./ghostty.nix

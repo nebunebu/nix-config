@@ -195,9 +195,6 @@
 #                 - title: Pyprland Web
 #                   url: https://hyprland-community.github.io/pyprland/
 #                   same-tab: true
-#                 - title: astal
-#                   url: https://aylur.github.io/astal/guide/libraries/references
-#                   same-tab: true
 #                 - title: stylix
 #                   url: https://stylix.danth.me/
 #                   same-tab: true
