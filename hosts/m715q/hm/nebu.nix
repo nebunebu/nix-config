@@ -1,6 +1,5 @@
 {
   inputs,
-  self,
   pkgs,
   lib,
   ...
@@ -8,7 +7,10 @@
 
 {
   imports = [
-    "${self}/hm-modules"
+    # ../../../hm-modules/terminal/shell/default.nix
+    ../../../hm-modules/development/git.nix
+    ../../../hm-modules/desktop/utilities/ghostty.nix
+    ../../../hm-modules/development/git.nix
   ];
 
   home = {
@@ -18,11 +20,12 @@
     packages = [
       inputs.gemini-cli.packages."${pkgs.system}".default
       pkgs.aichat
-      pkgs.libnotify
-      pkgs.openpomodoro-cli
-      # pkgs.calcure
-      # pkgs.taskwarrior3
     ];
+  };
+
+  neb = {
+    desktop.utilities.ghostty.enable = true;
+    development.git.enable = true;
   };
 
   programs = {
@@ -35,15 +38,4 @@
 
   # nixpkgs.config = { allowUnfree = true; };
   systemd.user.startServices = "sd-switch";
-
-  neb = {
-    services.syncthing.enable = true;
-    profile = {
-      desktop = {
-        enable = true;
-      };
-      development.enable = true;
-      terminal.enable = true;
-    };
-  };
 }

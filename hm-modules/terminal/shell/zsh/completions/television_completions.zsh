@@ -1,1 +1,1 @@
-eval "$(tv init zsh)"
+# eval "$(tv init zsh)"
