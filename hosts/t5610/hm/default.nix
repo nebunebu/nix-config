@@ -43,7 +43,6 @@
     desktop = {
 
       window-managers = {
-        river.enable = true;
         hyprland = {
           enable = true;
           t5610.enable = true;

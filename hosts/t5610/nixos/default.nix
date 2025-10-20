@@ -38,7 +38,6 @@
     # https://flozz.github.io/rivalcfg/devices/rival3.html
     pkgs.rivalcfg
   ];
-  # programs.river.enable = false;
 
   # sops.enable = true;
   neb = {
