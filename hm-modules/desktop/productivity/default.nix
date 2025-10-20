@@ -10,7 +10,6 @@ in
   imports = [
     # ./super-productivity.nix
     # ./pomodoro-logger.nix
-    ./obsidian.nix
     ./keycombiner.nix
     ./activitywatch.nix
   ];
@@ -23,7 +22,6 @@ in
     neb.desktop.productivity = {
       activitywatch.enable = false;
       keycombiner.enable = false;
-      obsidian.enable = true;
     };
   };
 }

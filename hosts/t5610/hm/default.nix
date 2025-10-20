@@ -55,7 +55,6 @@
             # hmOptions.enable = true;
             # nixpkgs.enable = true;
             # noogle.enable = true;
-            obsidian.enable = true;
           };
         };
       };
