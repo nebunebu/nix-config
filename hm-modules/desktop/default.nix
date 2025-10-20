@@ -11,7 +11,6 @@ in
     ./browsers
     ./communications
     ./media
-    ./productivity
     ./utilities
     ./window-managers
   ];
@@ -25,7 +24,6 @@ in
       browsers.enable = true;
       communications.enable = true;
       media.enable = true;
-      productivity.enable = true;
       utilities.enable = true;
       # window-managers.enable = true;
     };
