@@ -9,7 +9,6 @@ in
 {
   imports = [
     # ./super-productivity.nix
-    # ./pomodoro-logger.nix
     ./activitywatch.nix
   ];
 
