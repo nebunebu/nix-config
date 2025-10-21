@@ -12,29 +12,38 @@ in
   config = lib.mkIf cfg.enable {
     # NOTE: def lot could be added for qol
     programs = {
-      git = {
+      delta = {
         enable = true;
-        userEmail = "nebu.nebuchadnezzar@gmail.com";
-        userName = "nebunebu";
-        delta.enable = true;
-
-        # signing = {
-        #   key = lib.mkIf gpgCfg.enable gpgCfg.key;
-        #   signByDefault = true;
-        # };
-
-        extraConfig = {
-          init.defaultBranch = "main";
+        enableGitIntegration = true;
+      };
+      git = {
+        ignores = [
+          ".direnv"
+        ];
+        enable = true;
+        settings = {
+          user = {
+            email = "nebu.nebuchadnezzar@gmail.com";
+            name = "nebunebu";
+          };
+          # signing = {
+          #   key = lib.mkIf gpgCfg.enable gpgCfg.key;
+          #   signByDefault = true;
+          # };
+          extraConfig = {
+            init.defaultBranch = "main";
+          };
+          aliases = {
+            st = "status";
+            ap = "add -p";
+            p = "push";
+            b = "branch";
+            sw = "switch";
+            # git rm --cached $(git ls-files --deleted)
+            rma = "rm --cached $(git ls-file --deleted)";
+          };
         };
-        aliases = {
-          st = "status";
-          ap = "add -p";
-          p = "push";
-          b = "branch";
-          sw = "switch";
-          # git rm --cached $(git ls-files --deleted)
-          rma = "rm --cached $(git ls-file --deleted)";
-        };
+
       };
       gh = {
         enable = true;
