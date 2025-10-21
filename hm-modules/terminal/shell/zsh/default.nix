@@ -59,6 +59,8 @@ in
 
         initContent = # bash
           ''
+            eval "$(direnv-instant hook zsh)"
+
             function nfd() {
               nvim $(fd "$1" | fzf)
             }

@@ -26,6 +26,7 @@
       pkgs.calcure
       # pkgs.taskwarrior3
       pkgs.nemo
+      inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 

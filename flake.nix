@@ -12,6 +12,8 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    direnv-instant.url = "github:Mic92/direnv-instant";
+
     gemini-cli.url = "github:rishabh5321/gemini-cli-flake";
 
     disko = {
