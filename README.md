@@ -30,7 +30,7 @@ This is my personal flake for my NixOS configurations.
 | **Theme:**             | [rose-pine](https://rosepinetheme.com)                                         |
 | **Theming:**           | [stylix](https://rosepinetheme.com)                                            |
 |                        |                                                                                |
-| **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) |
+<!-- | **Display Manager:**   | [sddm-sugar-candy-nix](https://gitlab.com/Zhaith-Izaliel/sddm-sugar-candy-nix) | -->
 |                        |                                                                                |
 | **Shell:**             | [zsh](https://www.zsh.org)                                                     |
 | **Terminal:**          | [ghostty](https://ghostty.org/)                                   |

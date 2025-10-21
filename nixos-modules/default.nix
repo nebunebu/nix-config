@@ -12,7 +12,6 @@
     ./obs.nix
     # ./ollama.nix
     ./pipewire.nix
-    ./sddm.nix
     ./stylix.nix
     ./system.nix
     ./udisks2.nix

@@ -62,7 +62,6 @@
     stylix.enable = true;
     # taskchampion.enable = true;
     desktop = {
-      sddm.enable = true;
       hyprland.enable = true;
       pipewire.enable = true;
     };

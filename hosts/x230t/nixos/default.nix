@@ -35,7 +35,6 @@
     desktop = {
       hyprland.enable = true;
       pipewire.enable = true;
-      sddm.enable = true;
     };
     obs.enable = true;
     stylix.enable = true;
