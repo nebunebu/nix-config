@@ -48,37 +48,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # NOTE: Hyprland
-    # {{{
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   ref = "refs/tags/v0.47.1";
-    #   submodules = true;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # hyprwayland-scanner = {
-    #   url = "github:hyprwm/hyprwayland-scanner";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
-    # hyprgrass = {
-    #   url = "github:horriblename/hyprgrass?ref=v0.7.0";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-    #
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-    #
-    # pyprland = {
-    #   url = "github:hyprland-community/pyprland";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # }}}
-
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
