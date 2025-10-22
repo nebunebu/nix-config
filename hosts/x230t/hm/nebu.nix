@@ -31,6 +31,8 @@
     ];
   };
 
+  news.display = "show";
+
   programs = {
     home-manager = {
       enable = true;
