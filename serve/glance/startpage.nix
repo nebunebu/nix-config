@@ -29,18 +29,21 @@
               title = "Glance";
               url = "https://glance.nebunebu.xyz";
               icon = "sh:glance-light";
+              timeout = "5s";
               same-tab = true;
             }
             {
               title = "Jellyfin";
               url = "https://jellyfin.nebunebu.xyz";
               icon = "sh:jellyfin-light";
+              timeout = "5s";
               same-tab = true;
             }
             {
               title = "Pinchflat";
               url = "https://pinchflat.nebunebu.xyz";
               icon = "sh:ackee-light";
+              timeout = "5s";
               alt-status-codes = [
                 401
               ];
@@ -50,24 +53,42 @@
               title = "13ft";
               url = "https://13ft.nebunebu.xyz";
               icon = "sh:ackee-light";
+              timeout = "5s";
               same-tab = true;
             }
             {
               title = "n8n";
               url = "https://n8n.nebunebu.xyz";
               icon = "sh:n8n-light";
+              timeout = "5s";
               same-tab = true;
             }
             {
               title = "Linkding";
               url = "https://linkding.nebunebu.xyz";
               icon = "sh:linkding-light";
+              timeout = "5s";
               same-tab = true;
             }
             {
               title = "Qbittorrent";
               url = "https://qbittorrent.nebunebu.xyz";
               icon = "sh:qbittorrent-light";
+              timeout = "5s";
+              same-tab = true;
+            }
+            {
+              title = "FresshRSS";
+              url = "https://freshrss.nebunebu.xyz";
+              icon = "sh:freshrss-light";
+              timeout = "5s";
+              same-tab = true;
+            }
+            {
+              title = "Beaver Habit Tracker";
+              url = "https://beaverhabit.nebunebu.xyz";
+              icon = "sh:beaver-habit-tracker-light";
+              timeout = "5s";
               same-tab = true;
             }
             # {
@@ -76,18 +97,6 @@
             #   icon = "si:syncthing";
             #   same-tab = true;
             # }
-            {
-              title = "FresshRSS";
-              url = "https://freshrss.nebunebu.xyz";
-              icon = "sh:freshrss-light";
-              same-tab = true;
-            }
-            {
-              title = "Beaver Habit Tracker";
-              url = "https://beaverhabit.nebunebu.xyz";
-              icon = "sh:beaver-habit-tracker-light";
-              same-tab = true;
-            }
             # {
             #   title = "DumbKan";
             #   url = "http://192.168.1.177:8082";
