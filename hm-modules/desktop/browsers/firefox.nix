@@ -27,14 +27,15 @@ in
           extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             i-dont-care-about-cookies
             new-tab-override
-            old-reddit-redirect
-            reddit-enhancement-suite
+            # old-reddit-redirect
+            # reddit-enhancement-suite
             stylebot-web
             stylus
             tridactyl
             ublock-origin
             aw-watcher-web
             link-gopher
+            linkding
             # gopass-bridge
             # vide-downloadhelper
             # hoarder
@@ -51,11 +52,13 @@ in
             # sidebery
             # Get RSS Feed URL
             # Private Internet Access
-            # firefox-color
-            # shyfox
-            # textfox
             # ff2mpv
           ];
+
+          # policies = {
+          #   ExtensionsSettins = {
+          #   };
+          # };
           settings = {
             "ui.key.menuAccessKeyFocuses" = false;
             "browser.startup.homepage" = "https://glance.nebunebu.xyz";
