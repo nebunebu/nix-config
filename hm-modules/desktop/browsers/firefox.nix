@@ -35,7 +35,7 @@ in
             ublock-origin
             aw-watcher-web
             link-gopher
-            linkding
+            linkding-extension
             # gopass-bridge
             # vide-downloadhelper
             # hoarder
