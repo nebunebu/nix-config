@@ -12,12 +12,12 @@ in
   imports = [
     ./keybinds
     ./theme.nix
-    ./plugins
-    ./pyprland
-    ./hypridle.nix
+    # ./plugins
+    # ./pyprland
+    # ./hypridle.nix
     ./hyprpolkitagent.nix
     # ./hyprlock.nix
-    ./hyprgrass.nix
+    # ./hyprgrass.nix
     ./hyprpicker.nix
     ./t5610.nix
     ./x230t.nix
@@ -28,7 +28,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      inputs.hyprwayland-scanner.packages."${pkgs.system}".default
+      # inputs.hyprwayland-scanner.packages."${pkgs.system}".default
       pkgs.wl-clipboard
       pkgs.wf-recorder
       pkgs.grim
