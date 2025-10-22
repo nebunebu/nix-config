@@ -58,7 +58,7 @@ in
           ];
           settings = {
             "ui.key.menuAccessKeyFocuses" = false;
-            "browser.startup.homepage" = "http://192.168.1.177:3000/";
+            "browser.startup.homepage" = "https://glance.nebunebu.xyz";
             "browser.startup.page" = 1;
           };
         };
