@@ -10,6 +10,7 @@
   imports = [
     "${self}/hm-modules"
     ./thunderbird.nix
+    ../../../hm-modules/bars/hyprpanel.nix
   ];
 
   home = {
