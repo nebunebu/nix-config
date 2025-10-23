@@ -19,6 +19,7 @@
   services = {
     gvfs.enable = true;
     upower.enable = true;
+    blueman.enable = true;
   };
 
   programs.thunar = {

@@ -9,8 +9,9 @@
 {
   imports = [
     "${self}/hm-modules"
-    ./hyprpanel.nix
+    # ./hyprpanel.nix
     ./thunderbird.nix
+    ../../../hm-modules/bars/ashell.nix
   ];
 
   home = {
@@ -32,6 +33,8 @@
   };
 
   news.display = "show";
+
+  desktop.bars.ashell.enable = true;
 
   programs = {
     home-manager = {
