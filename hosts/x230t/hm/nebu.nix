@@ -11,6 +11,7 @@
     "${self}/hm-modules"
     ./thunderbird.nix
     ../../../hm-modules/bars/hyprpanel.nix
+    ../../../hm-modules/bars/dms.nix
   ];
 
   home = {
@@ -34,7 +35,8 @@
   news.display = "show";
 
   # desktop.bars.ashell.enable = true;
-  desktop.bars.hyprpanel.enable = true;
+  # desktop.bars.hyprpanel.enable = true;
+  desktop.bars.dms.enable = true;
 
   programs = {
     home-manager = {
