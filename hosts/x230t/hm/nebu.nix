@@ -10,7 +10,6 @@
   imports = [
     "${self}/hm-modules"
     ./thunderbird.nix
-    ../../../hm-modules/bars/hyprpanel.nix
     ../../../hm-modules/bars/dms.nix
   ];
 
@@ -34,7 +33,6 @@
 
   news.display = "show";
 
-  # desktop.bars.hyprpanel.enable = true;
   desktop.bars.dms.enable = true;
 
   programs = {
