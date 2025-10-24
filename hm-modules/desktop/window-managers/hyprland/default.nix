@@ -14,7 +14,6 @@ in
     ./theme.nix
     # ./plugins
     # ./pyprland
-    # ./hypridle.nix
     ./hyprpolkitagent.nix
     # ./hyprlock.nix
     # ./hyprgrass.nix
