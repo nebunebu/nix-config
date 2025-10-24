@@ -15,7 +15,6 @@ in
     # ./plugins
     # ./pyprland
     ./hyprpolkitagent.nix
-    # ./hyprlock.nix
     # ./hyprgrass.nix
     ./hyprpicker.nix
     ./t5610.nix
