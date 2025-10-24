@@ -42,7 +42,6 @@ This is my personal flake for my NixOS configurations.
 | **Pdf Viewer:**        | [sioyek](https://sioyek.info)                                                  |
 |                        | [xournalpp](https://github.com/xournalpp/xournalpp)                            |
 | **WM:**                | [hyprland](https://github.com/hyprwm/Hyprland)                                 |
-| **Launcher:**          | [fuzzel](https://codeberg.org/dnkl/fuzzel)                                     |
 | **Secrets provision:** | [sops-nix](https://github.com/Mic92/sops-nix)                                  |
 
 ## Structure

@@ -24,7 +24,6 @@ in
             long_press_delay = 400
 
             hyprgrass-bind = , edge:d:u, exec, firefox
-            hyprgrass-bind = , edge:d:l, exec, fuzzel
             hyprgrass-bind = , edge:u:d, exec, [float; noanim; center] kitty
             hyprgrass-bind = , edge:r:l, workspace, +1
             hyprgrass-bind = , edge:l:r, workspace, -1

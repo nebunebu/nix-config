@@ -9,7 +9,6 @@ in
 {
   imports = [
     ./foot.nix
-    ./fuzzel
     ./ghostty.nix
     ./kitty.nix
     ./pavucontrol.nix
@@ -22,7 +21,6 @@ in
   config = lib.mkIf cfg.enable {
     neb.desktop.utilities = {
       foot.enable = true;
-      fuzzel.enable = true;
       ghostty.enable = true;
       kitty.enable = true;
       pavucontrol.enable = true;

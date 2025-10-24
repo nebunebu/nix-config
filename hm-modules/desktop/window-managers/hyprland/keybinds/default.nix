@@ -42,7 +42,6 @@
 
       "$mainMod, I, exec, firefox"
       # "$mainMod, R, layoutmsg, movetoroot active"
-      "$mainMod, P, exec, fuzzel"
 
       "$mainMod, H, movefocus, l"
       "$mainMod, L, movefocus, r"
