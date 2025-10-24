@@ -26,17 +26,12 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       # inputs.hyprwayland-scanner.packages."${pkgs.system}".default
-      pkgs.wl-clipboard
       pkgs.wf-recorder
       pkgs.grim
       # pkgs.hyprpolkitagent
       pkgs.slurp
       pkgs.wev
       pkgs.cliphist
-      (pkgs.writeShellScriptBin "hypr-start" ''
-        ${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store &
-        ${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store &
-      '')
     ];
 
     home.sessionVariables = {

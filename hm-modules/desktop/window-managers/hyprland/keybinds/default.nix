@@ -38,7 +38,6 @@
       "$mainMod, M, fullscreen, 2"
       "$mainMod + SHIFT, M, fullscreen, 1"
       "$mainMod, F, togglefloating"
-      "$mainMod, V, exec, cliphist-menu"
 
       "$mainMod, I, exec, firefox"
       # "$mainMod, R, layoutmsg, movetoroot active"

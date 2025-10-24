@@ -23,6 +23,7 @@ in
       # pkgs.material-design-icons
       pkgs.material-symbols
       pkgs.cava
+      pkgs.wl-clipboard
     ];
 
     programs.dankMaterialShell = {
@@ -36,7 +37,7 @@ in
 
     wayland.windowManager.hyprland.settings = {
       exec-once = [
-        # "wl-paste" add
+        "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""
         # "polkit" add
         # exec-once = /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
         "dms run"
