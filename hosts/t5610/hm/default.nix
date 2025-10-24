@@ -46,7 +46,6 @@
         hyprland = {
           enable = true;
           t5610.enable = true;
-          hyprpaper.t5610.enable = true;
           hyprpicker.enable = true;
           # pyprland = {
           #   enable = true;

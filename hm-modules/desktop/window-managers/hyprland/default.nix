@@ -21,7 +21,6 @@ in
     ./hyprpicker.nix
     ./t5610.nix
     ./x230t.nix
-    ./hyprpaper.nix
   ];
 
   options.neb.desktop.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";

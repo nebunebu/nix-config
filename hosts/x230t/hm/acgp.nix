@@ -60,7 +60,6 @@
         hyprland = {
           enable = true;
           x230t.enable = true;
-          hyprpaper.x230t.enable = true;
           hyprpicker.enable = true;
           # pyprland = {
           #   enable = true;
