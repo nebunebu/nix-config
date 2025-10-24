@@ -32,6 +32,9 @@ in
       pkgs.slurp
       pkgs.wev
       pkgs.cliphist
+      # # Starts DankShell
+      # exec-once = dms run
+      #
     ];
 
     home.sessionVariables = {

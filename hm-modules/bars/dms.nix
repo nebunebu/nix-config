@@ -37,8 +37,6 @@ in
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""
-        # "polkit" add
-        # exec-once = /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
         "dms run"
       ];
       bind = [
