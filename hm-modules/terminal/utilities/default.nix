@@ -24,7 +24,6 @@ in
     ./nix-index.nix
     ./nix-tools.nix
     ./ripgrep.nix
-    # ./television
     ./tealdeer.nix
     ./yazi.nix
     ./yt-dlp.nix
@@ -54,7 +53,6 @@ in
       nix-tools.enable = true;
       ripgrep.enable = true;
       tealdeer.enable = true;
-      # television.enable = true;
       yazi.enable = true;
       yt-dlp.enable = true;
       zoxide.enable = true;

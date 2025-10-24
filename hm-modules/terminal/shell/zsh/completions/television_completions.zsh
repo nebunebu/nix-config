@@ -1,1 +1,0 @@
-# eval "$(tv init zsh)"
