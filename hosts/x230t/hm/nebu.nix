@@ -34,7 +34,6 @@
 
   news.display = "show";
 
-  # desktop.bars.ashell.enable = true;
   # desktop.bars.hyprpanel.enable = true;
   desktop.bars.dms.enable = true;
 
