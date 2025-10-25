@@ -2,6 +2,7 @@
   imports = [
     ./desktop
     ./development
+    ./hyprshot.nix
     ./tablet
     ./terminal
     ./xdg.nix
