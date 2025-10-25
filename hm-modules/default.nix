@@ -7,5 +7,6 @@
     ./xdg.nix
     ./syncthing.nix
     ./sops.nix
+    ./dms.nix
   ];
 }

@@ -10,7 +10,6 @@
   imports = [
     "${self}/hm-modules"
     ./thunderbird.nix
-    ../../../hm-modules/bars/dms.nix
   ];
 
   home = {
@@ -33,7 +32,10 @@
 
   news.display = "show";
 
-  desktop.bars.dms.enable = true;
+  desktop = {
+    dms.enable = true;
+    hyprshot.enable = true;
+  };
 
   programs = {
     home-manager = {
