@@ -81,17 +81,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1761245189,
-        "narHash": "sha256-TzvWwQZ5ryoVVsqHKO1cTeVQ0AQQiMBwhRCoKWNn1E0=",
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "rev": "a650a79dfc326f0a321287b80c0c16d1d7e37d11",
-        "type": "github"
+        "lastModified": 1761444970,
+        "narHash": "sha256-rxlsGm6OVOpdzT0yM66oKhGFhVThJDZLedlNFhSJXY4=",
+        "path": "/home/nebu/DankMaterialShell",
+        "type": "path"
       },
       "original": {
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "type": "github"
+        "path": "/home/nebu/DankMaterialShell",
+        "type": "path"
       }
     },
     "dgop": {
