@@ -20,6 +20,7 @@ in
   config = lib.mkIf cfg.enable {
 
     home.packages = [
+      pkgs.python3
       pkgs.material-symbols
       pkgs.cava
       pkgs.wl-clipboard
