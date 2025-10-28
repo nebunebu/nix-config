@@ -81,14 +81,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1761444970,
-        "narHash": "sha256-rxlsGm6OVOpdzT0yM66oKhGFhVThJDZLedlNFhSJXY4=",
-        "path": "/home/nebu/DankMaterialShell",
-        "type": "path"
+        "lastModified": 1761432884,
+        "narHash": "sha256-OXkRXtwIEmvtB9sdPVbs0O9B9wWLFAswplmNz4XYg4Q=",
+        "owner": "nebunebu",
+        "repo": "DankMaterialShell",
+        "rev": "e18c84614633a72b939bff0522cae3cd776a3983",
+        "type": "github"
       },
       "original": {
-        "path": "/home/nebu/DankMaterialShell",
-        "type": "path"
+        "owner": "nebunebu",
+        "ref": "dev",
+        "repo": "DankMaterialShell",
+        "type": "github"
       }
     },
     "dgop": {
