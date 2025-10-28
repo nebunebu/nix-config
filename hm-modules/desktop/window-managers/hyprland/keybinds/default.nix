@@ -18,6 +18,10 @@
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"
     ];
 
+    bindd = [
+      "$mainMod, F, Toggle floating window, togglefloating"
+    ];
+
     bind = [
       # "$mainMod + Shift, W, exec, wshowkeys -b #31748f -f #e0def4 -s #f6c177 -a bottom -F \"Droid Sans Mono 24\""
 
@@ -32,12 +36,12 @@
       ",XF86KbdBrightnessDown, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 
-      "$mainMod, ALT_R, exec, screen-capture"
+      # "$mainMod, ALT_R, exec, screen-capture"
 
       "$mainMod, X, killactive"
       "$mainMod, M, fullscreen, 2"
       "$mainMod + SHIFT, M, fullscreen, 1"
-      "$mainMod, F, togglefloating"
+      # "$mainMod, F, togglefloating"
 
       "$mainMod, I, exec, firefox"
       # "$mainMod, R, layoutmsg, movetoroot active"
