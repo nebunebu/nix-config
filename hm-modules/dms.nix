@@ -51,8 +51,6 @@ in
         "$mainMod, W, Toggle notepad, exec, dms ipc call notepad toggle"
         "$mainMod, O, Toggle hyproveriew, exec, dms ipc call hypr toggleOverview"
         "$mainMod, ESCAPE, Lock screen, exec, dms ipc call lock lock"
-        "$mainMod, INSERT, Open power menu, exec, dms ipc call powermenu"
-        "$mainMod, B, Open wallpaper manager, exec, dms ipc call dankdash wallpaper"
 
         # Audio Controls
         ", XF86AudioRaiseVolume, Increase Volume, exec, dms ipc call audio increment 3"
