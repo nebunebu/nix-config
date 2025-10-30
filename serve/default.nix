@@ -10,6 +10,7 @@
     ./jellyfin.nix
     ./linkding.nix
     # ./ollama.nix
+    ./pia-vpn.nix
     ./pinchflat.nix
     # ./taskchampion.nix
     ./qbittorrent.nix
