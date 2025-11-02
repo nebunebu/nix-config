@@ -20,6 +20,7 @@
     gvfs.enable = true;
     upower.enable = true;
     blueman.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   programs.thunar = {
@@ -49,5 +50,4 @@
     };
   };
 
-  
 }
