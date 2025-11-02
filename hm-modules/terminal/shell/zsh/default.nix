@@ -90,6 +90,15 @@ in
 
         plugins = [
           {
+            name = "zsh-auto-notify";
+            src = pkgs.fetchFromGitHub {
+              owner = "MichaelAquilina";
+              repo = "zsh-auto-notify";
+              rev = "b51c934d88868e56c1d55d0a2a36d559f21cb2ee";
+              hash = "sha256-s3TBAsXOpmiXMAQkbaS5de0t0hNC1EzUUb0ZG+p9keE=";
+            };
+          }
+          {
             name = "nix-zsh-completions";
             src = pkgs.fetchFromGitHub {
               owner = "nix-community";
