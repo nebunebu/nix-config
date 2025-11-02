@@ -8,6 +8,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.dankMaterialShell.nixosModules.greeter
     "${self}/nixos-modules"
     ../../../sops
     ./hardware-configuration.nix
@@ -15,6 +16,17 @@
     ./hp_envy.nix
     ./ads_1300.nix
   ];
+
+  programs.dankMaterialShell.greeter = {
+    enable = true;
+    compositor = {
+      name = "hyprland";
+      # customConfig = '''';
+      # configFiles = '''';
+      # configHome = ;
+    };
+
+  };
 
   services = {
     gvfs.enable = true;
