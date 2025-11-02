@@ -33,6 +33,7 @@ in
 
     home.sessionVariables = {
       "DMS_DISABLE_MATUGEN" = "1";
+      "DMS_DANKBAR_LAYER" = "bottom";
     };
 
     wayland.windowManager.hyprland.settings = {
