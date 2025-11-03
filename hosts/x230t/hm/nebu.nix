@@ -20,6 +20,7 @@
       inputs.gemini-cli.packages."${pkgs.system}".default
       pkgs.aichat
       pkgs.spotube
+      pkgs.freecad
       pkgs.libnotify
       # pkgs.jellyfin-media-player
       pkgs.openpomodoro-cli
