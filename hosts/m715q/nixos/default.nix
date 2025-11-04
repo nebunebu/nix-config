@@ -12,6 +12,7 @@
     ../../../sops
   ];
 
+  serve.navidrome.enable = true;
   neb = {
     udisks2.enable = true;
     thirteenft.enable = true;
@@ -41,7 +42,6 @@
       pipewire.enable = true;
     };
   };
-
 
   networking.hostName = "m715q";
   environment = {
