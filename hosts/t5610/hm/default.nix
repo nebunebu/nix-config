@@ -41,7 +41,6 @@
     };
 
     desktop = {
-
       window-managers = {
         hyprland = {
           enable = true;
@@ -49,10 +48,10 @@
           hyprpicker.enable = true;
           # pyprland = {
           #   enable = true;
-            # btm.enable = true;
-            # hmOptions.enable = true;
-            # nixpkgs.enable = true;
-            # noogle.enable = true;
+          # btm.enable = true;
+          # hmOptions.enable = true;
+          # nixpkgs.enable = true;
+          # noogle.enable = true;
           # };
         };
       };

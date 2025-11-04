@@ -35,7 +35,13 @@
     # dumbkan.enable = true;
     # linkding.enable = true;
     # ollama.enable = true;
+
+    desktop = {
+      hyprland.enable = true;
+      pipewire.enable = true;
+    };
   };
+
 
   networking.hostName = "m715q";
   environment = {
