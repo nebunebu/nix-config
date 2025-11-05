@@ -12,7 +12,11 @@
     ../../../sops
   ];
 
-  serve.navidrome.enable = true;
+  serve = {
+    navidrome.enable = true;
+    invidious.enable = true;
+  };
+
   neb = {
     udisks2.enable = true;
     thirteenft.enable = true;

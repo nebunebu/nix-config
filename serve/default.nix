@@ -7,6 +7,7 @@
     ./n8n.nix
     ./glance
     ./thirteenft.nix
+    ./invidious.nix
     ./jellyfin.nix
     ./linkding.nix
     ./navidrome.nix
