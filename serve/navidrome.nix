@@ -13,9 +13,10 @@ in
       enable = true;
       # environmentFile = ;
       openFirewall = true;
-      # settings = {
-      #   MusicFolder = "/mnt/music";
-      # };
+      settings = {
+        Address = "0.0.0.0";
+        MusicFolder = "/srv/music";
+      };
     };
   };
 }
