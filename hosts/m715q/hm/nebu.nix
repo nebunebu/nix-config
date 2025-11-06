@@ -11,6 +11,7 @@
     ../../../hm-modules/development/git.nix
     ../../../hm-modules/desktop/utilities/ghostty.nix
     ../../../hm-modules/development/git.nix
+    ./beets.nix
   ];
 
   home = {

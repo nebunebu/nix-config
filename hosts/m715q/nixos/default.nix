@@ -14,7 +14,7 @@
 
   serve = {
     navidrome.enable = true;
-    invidious.enable = true;
+    # invidious.enable = true;
   };
 
   neb = {
