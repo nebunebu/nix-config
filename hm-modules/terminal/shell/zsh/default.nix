@@ -20,6 +20,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    
     programs = {
       zsh = {
         enable = true;
@@ -90,7 +91,7 @@ in
 
         plugins = [
           {
-            name = "zsh-auto-notify";
+            name = "auto-notify";
             src = pkgs.fetchFromGitHub {
               owner = "MichaelAquilina";
               repo = "zsh-auto-notify";
