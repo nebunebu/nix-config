@@ -1,5 +1,8 @@
 {
-  imports = [ ./submaps ];
+  imports = [
+    ./submaps
+    ./temp.nix
+  ];
 
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
