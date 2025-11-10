@@ -9,5 +9,7 @@
     ./syncthing.nix
     ./sops.nix
     ./dms.nix
+
+    ./web-browsers
   ];
 }

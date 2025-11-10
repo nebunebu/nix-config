@@ -8,7 +8,6 @@ let
 in
 {
   imports = [
-    ./browsers
     ./communications
     ./media
     ./utilities
@@ -21,7 +20,6 @@ in
 
   config = lib.mkIf cfg.enable {
     neb.desktop = {
-      browsers.enable = true;
       communications.enable = true;
       media.enable = true;
       utilities.enable = true;
