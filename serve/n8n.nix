@@ -16,8 +16,6 @@ in
       enable = true;
       openFirewall = true;
       # webhookUrl = "";
-      settings = {
-      };
     };
   };
 }
