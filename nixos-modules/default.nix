@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./avahi.nix
     ./boot.nix
     ./console.nix
     ./documentation.nix
@@ -18,16 +19,6 @@
     ./users
     ./virtualisation
   ];
-
-  services.avahi = {
-    enable = true;
-    nssmdns = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      workstation = true;
-    };
-  };
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.system}".default
