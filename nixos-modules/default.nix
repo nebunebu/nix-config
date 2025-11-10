@@ -21,7 +21,7 @@
   ];
 
   environment.systemPackages = [
-    inputs.nebvim.packages."${pkgs.system}".default
+    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
     inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

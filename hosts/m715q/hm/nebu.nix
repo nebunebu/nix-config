@@ -18,7 +18,7 @@
     username = "nebu";
     homeDirectory = lib.mkForce "/home/nebu";
     packages = [
-      inputs.gemini-cli.packages."${pkgs.system}".default
+      inputs.gemini-cli.packages."${pkgs.stdenv.hostPlatform.system}".default
       pkgs.aichat
     ];
   };

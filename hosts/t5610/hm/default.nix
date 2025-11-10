@@ -12,7 +12,7 @@
   home = {
     stateVersion = "23.11";
     packages = [
-      inputs.gemini-cli.packages."${pkgs.system}".default
+      inputs.gemini-cli.packages."${pkgs.stdenv.hostPlatform.system}".default
       (pkgs.writeShellApplication {
         name = "roseify";
         runtimeInputs = [ pkgs.lutgen ];

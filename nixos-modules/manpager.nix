@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  nvimPkg = inputs.nebvim.packages."${pkgs.system}".manvim;
+  nvimPkg = inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".manvim;
   nvimBin = "${nvimPkg}/bin/nvim";
 
   nvimPager = pkgs.writeShellScriptBin "nvim-man-pager" ''

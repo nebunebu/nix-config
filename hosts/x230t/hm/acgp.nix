@@ -18,7 +18,7 @@
     username = "acgp";
     homeDirectory = lib.mkForce "/home/acgp";
     packages = [
-      inputs.gemini-cli.packages."${pkgs.system}".default
+      inputs.gemini-cli.packages."${pkgs.stdenv.hostPlatform.system}".default
       pkgs.aichat
       pkgs.libnotify
       pkgs.openpomodoro-cli

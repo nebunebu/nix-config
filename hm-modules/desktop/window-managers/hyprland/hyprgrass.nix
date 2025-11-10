@@ -13,7 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      plugins = [ inputs.hyprgrass.packages."${pkgs.system}".default ];
+      plugins = [ inputs.hyprgrass.packages."${pkgs.stdenv.hostPlatform.system}".default ];
 
       extraConfig = # hyprlang
         ''

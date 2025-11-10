@@ -17,7 +17,7 @@ in
     # NOTE: needs modification to work on
     # NOTE: rotated screen
     wayland.windowManager.hyprland = {
-      plugins = [ inputs.hyprland-plugins.packages."${pkgs.system}".hyprexpo ];
+      plugins = [ inputs.hyprland-plugins.packages."${pkgs.stdenv.hostPlatform.system}".hyprexpo ];
       settings = {
         bind = [ "$mainMod, e, hyprexpo:expo, toggle" ];
         "plugin:hyprexpo" = {

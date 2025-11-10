@@ -25,7 +25,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      # inputs.hyprwayland-scanner.packages."${pkgs.system}".default
+      # inputs.hyprwayland-scanner.packages."${pkgs.stdenv.hostPlatform.system}".default
       pkgs.wf-recorder
       pkgs.grim
       # pkgs.hyprpolkitagent
@@ -46,7 +46,7 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
-      # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      # package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
       xwayland.enable = true;
       systemd = {
         enable = true;
