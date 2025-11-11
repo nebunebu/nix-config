@@ -12,7 +12,6 @@ in
   imports = [
     ./keybinds
     ./theme.nix
-    # ./plugins
     # ./pyprland
     ./hyprpolkitagent.nix
     # ./hyprgrass.nix
