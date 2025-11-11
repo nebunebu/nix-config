@@ -8,9 +8,6 @@
     enable = true;
     compositor = {
       name = "hyprland";
-      # customConfig = '''';
-      # configFiles = '''';
-      # configHome = ;
     };
   };
 }
