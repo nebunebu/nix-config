@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.browsers.firefox;
+  cfg = config.desktop.web-browsers.firefox;
 in
 {
-  options.neb.desktop.browsers.firefox = {
+  options.desktop.web-browsers.firefox = {
     enable = lib.mkEnableOption "enable firefox";
   };
 

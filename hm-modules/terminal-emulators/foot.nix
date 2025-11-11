@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.desktop.utilities.foot;
+  cfg = config.desktop.terminal-emulators.foot;
 in
 {
-  options.neb.desktop.utilities.foot = {
+  options.desktop.terminal-emulators.foot = {
     enable = lib.mkEnableOption "enable foot";
   };
   config = lib.mkIf cfg.enable {

@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.neb.desktop.browsers.firefoxpwa;
+  cfg = config.desktop.web-browsers.firefoxpwa;
 in
 {
-  options.neb.desktop.browsers.firefoxpwa = {
+  options.desktop.web-browsers.firefoxpwa = {
     enable = lib.mkEnableOption "enable firefoxpwa";
   };
 

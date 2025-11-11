@@ -9,7 +9,6 @@
 {
   imports = [
     "${self}/hm-modules"
-    ./thunderbird.nix
   ];
 
   home = {
@@ -52,26 +51,17 @@
   neb = {
     services.syncthing.enable = true;
     profile = {
-      desktop = {
-        enable = true;
-      };
       development.enable = true;
       terminal.enable = true;
-      # tablet.enable = false;
     };
+  };
 
-    # NOTE: not sure what I want to do with this
-    desktop = {
-      browsers.enable = true;
-      window-managers = {
-        hyprland = {
-          enable = true;
-          x230t.enable = true;
-          hyprpicker.enable = true;
-          # pyprland = {
-          #   enable = true;
-          # };
-        };
+  desktop = {
+    window-managers = {
+      hyprland = {
+        enable = true;
+        # x230t.enable = true;
+        # hyprpicker.enable = true;
       };
     };
   };

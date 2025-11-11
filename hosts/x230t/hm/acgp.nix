@@ -9,8 +9,6 @@
 {
   imports = [
     "${self}/hm-modules"
-    ./thunderbird.nix
-    ../../../hm-modules/desktop/communications/vesktop.nix
   ];
 
   home = {
@@ -47,23 +45,20 @@
 
   neb = {
     profile = {
-      desktop = {
-        enable = true;
-      };
       development.enable = true;
       terminal.enable = true;
     };
+  };
 
-    desktop = {
-      window-managers = {
-        hyprland = {
-          enable = true;
-          x230t.enable = true;
-          hyprpicker.enable = true;
-          # pyprland = {
-          #   enable = true;
-          # };
-        };
+  desktop = {
+    window-managers = {
+      hyprland = {
+        enable = true;
+        # x230t.enable = true;
+        # hyprpicker.enable = true;
+        # pyprland = {
+        #   enable = true;
+        # };
       };
     };
   };

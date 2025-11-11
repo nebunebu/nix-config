@@ -5,40 +5,18 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.utilities.ghostty;
-
-  # smear_fade_src = pkgs.fetchurl {
-  #   url = "https://raw.githubusercontent.com/KroneCorylus/ghostty-shader-playground/refs/heads/main/shaders/cursor_smear_fade.glsl";
-  #   hash = "sha256-2XGq3qIGT7LGsHiFZbGmci/M8CkTGNBDHGImGkKnoCk=";
-  # };
-  # smear_fade_patched_text =
-  #   lib.replaceStrings
-  #     [
-  #       "const vec4 TRAIL_COLOR = vec4(1., 1., 0., 1.0);"
-  #     ]
-  #     [
-  #       # NOTE: foam (works)
-  #       # "const vec4 TRAIL_COLOR = vec4(0.612, 0.812, 0.847, 1.0);"
-  #       # NOTE: iris
-  #       "const vec4 TRAIL_COLOR = vec4(0.769, 0.655, 0.906, 1.0);"
-  #     ]
-  #     (builtins.readFile smear_fade_src);
-  #
-  # smear_fade_patched = pkgs.writeText "cursor_smear_fade.glsl" smear_fade_patched_text;
-  #
+  cfg = config.desktop.terminal-emulators.ghostty;
 in
 {
-  options.neb.desktop.utilities.ghostty = {
+  options.desktop.terminal-emulators.ghostty = {
     enable = lib.mkEnableOption "enable ghostty";
 
-    # If true, run Ghostty with GL 4.3 advertised (fixes GTK context issue).
     forceGL43 = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Wrap ghostty with MESA_GL_VERSION_OVERRIDE=4.3 and MESA_GLSL_VERSION_OVERRIDE=430.";
     };
 
-    # Name of the wrapper binary (so you can keep the original `ghostty` intact if you want).
     wrapperName = lib.mkOption {
       type = lib.types.str;
       default = "ghostty-ogl43";

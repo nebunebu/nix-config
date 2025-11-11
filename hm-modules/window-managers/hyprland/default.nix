@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.window-managers.hyprland;
+  cfg = config.desktop.window-managers.hyprland;
 in
 {
   imports = [
@@ -20,7 +20,7 @@ in
     ./x230t.nix
   ];
 
-  options.neb.desktop.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";
+  options.desktop.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf cfg.enable {
     home.packages = [

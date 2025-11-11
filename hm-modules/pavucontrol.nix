@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.utilities.pavucontrol;
+  cfg = config.desktop.pavucontrol;
 in
 
 {
-  options.neb.desktop.utilities.pavucontrol = {
+  options.desktop.pavucontrol = {
     enable = lib.mkEnableOption "enable pavucontrol";
   };
 
