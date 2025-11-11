@@ -11,5 +11,6 @@
     ./dms.nix
 
     ./web-browsers
+    ./window-managers
   ];
 }

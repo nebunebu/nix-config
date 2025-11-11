@@ -11,7 +11,6 @@ in
     ./communications
     ./media
     ./utilities
-    ./window-managers
   ];
 
   options.neb.profile.desktop = {
@@ -23,7 +22,6 @@ in
       communications.enable = true;
       media.enable = true;
       utilities.enable = true;
-      # window-managers.enable = true;
     };
   };
 }
