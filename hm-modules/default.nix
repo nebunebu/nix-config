@@ -1,8 +1,7 @@
 {
   imports = [
-    ./development
     ./hyprshot.nix
-    ./terminal
+    # ./terminal
     ./xdg.nix
     ./syncthing.nix
     ./sops.nix
@@ -17,6 +16,36 @@
     ./obs-studio.nix
     ./pavucontrol.nix
     ./sioyek.nix
+
+    ./awscli.nix
+    ./claude-code.nix
+    ./fzf.nix
+    ./git.nix
+    ./go.nix
+    ./starship.nix
+    ./tmux.nix
+    ./shells/zsh
+
+    # ./aichat
+    # ./bat.nix
+    # ./bottom.nix
+    # ./cava.nix
+    # ./cli-tools.nix
+    # ./direnv.nix
+    # ./eza.nix
+    # ./fastfetch.nix
+    # ./fd.nix
+    # ./jq.nix
+    # ./lazygit.nix
+    # ./manix.nix
+    # ./nh.nix
+    # ./nix-index.nix
+    # ./nix-tools.nix
+    # ./ripgrep.nix
+    # ./tealdeer.nix
+    # ./yazi.nix
+    # ./yt-dlp.nix
+    # ./zoxide.nix
   ];
 
   desktop = {
@@ -40,5 +69,12 @@
       firefox.enable = true;
       firefoxpwa.enable = true;
     };
+  };
+
+  development = {
+    awscli.enable = false;
+    claude-code.enable = true;
+    git.enable = true;
+    go.enable = true;
   };
 }

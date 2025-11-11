@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.development.claude-code;
+  cfg = config.development.claude-code;
 in
 {
-  options.neb.development.claude-code = {
+  options.development.claude-code = {
     enable = lib.mkEnableOption "enable claude-code";
 
   };

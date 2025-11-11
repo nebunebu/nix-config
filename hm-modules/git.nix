@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.development.git;
+  cfg = config.development.git;
 in
 # gpgCfg = config.neb.security.gpg;
 {
-  options.neb.development.git = {
+  options.development.git = {
     enable = lib.mkEnableOption "enable git";
 
   };

@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.development.awscli;
+  cfg = config.development.awscli;
 in
 {
-  options.neb.development.awscli = {
+  options.development.awscli = {
     enable = lib.mkEnableOption "enable awsclie";
   };
 

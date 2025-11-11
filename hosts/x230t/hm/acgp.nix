@@ -45,7 +45,6 @@
 
   neb = {
     profile = {
-      development.enable = true;
       terminal.enable = true;
     };
   };
