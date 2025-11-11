@@ -2,7 +2,6 @@
   imports = [
     ./development
     ./hyprshot.nix
-    ./tablet
     ./terminal
     ./xdg.nix
     ./syncthing.nix
