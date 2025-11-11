@@ -5,6 +5,7 @@
     ./avahi.nix
     ./boot.nix
     ./console.nix
+    ./dms-greeter.nix
     ./documentation.nix
     ./hyprland.nix
     ./manpager.nix
