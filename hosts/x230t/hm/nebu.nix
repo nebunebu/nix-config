@@ -62,6 +62,7 @@
 
     # NOTE: not sure what I want to do with this
     desktop = {
+      browsers.enable = true;
       window-managers = {
         hyprland = {
           enable = true;

@@ -10,6 +10,7 @@ in
   imports = [
     ./chromium.nix
     ./firefox.nix
+    ./firefoxpwa.nix
   ];
 
   options.neb.desktop.browsers = {
@@ -20,6 +21,7 @@ in
     neb.desktop.browsers = {
       chromium.enable = true;
       firefox.enable = true;
+      firefoxpwa.enable = true;
     };
   };
 }
