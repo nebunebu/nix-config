@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nix-tools;
+  cfg = config.neb.terminal.utilities.nix-inspect;
 in
 {
-  options.neb.terminal.utilities.nix-tools = {
+  options.neb.terminal.utilities.nix-inspect = {
     enable = lib.mkEnableOption "enable nix-tools";
   };
 
@@ -16,12 +16,7 @@ in
     home = {
       packages = builtins.attrValues {
         inherit (pkgs)
-          nixpkgs-fmt
-          nurl
-          statix
-          vimPluginsUpdater
           nix-inspect
-          nvd
           ;
       };
     };

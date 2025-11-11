@@ -25,7 +25,6 @@
       pkgs.openpomodoro-cli
       pkgs.calcure
       # pkgs.taskwarrior3
-      pkgs.nemo
       inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
@@ -50,9 +49,6 @@
 
   neb = {
     services.syncthing.enable = true;
-    profile = {
-      terminal.enable = true;
-    };
   };
 
   desktop = {

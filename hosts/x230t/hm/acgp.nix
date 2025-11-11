@@ -43,12 +43,6 @@
 
   systemd.user.startServices = "sd-switch";
 
-  neb = {
-    profile = {
-      terminal.enable = true;
-    };
-  };
-
   desktop = {
     window-managers = {
       hyprland = {

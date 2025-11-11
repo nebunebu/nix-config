@@ -5,23 +5,17 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.cli-tools;
+  cfg = config.utilities.caligula;
 in
 {
-  options.neb.terminal.utilities.cli-tools = {
+  options.utilities.caligula = {
     enable = lib.mkEnableOption "enable cli-tools";
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = builtins.attrValues {
       inherit (pkgs)
-        nerdfix
-        usbutils
-        pup
         caligula
-        # bottom
-        # ffmpeg
-        # distrobox
         ;
     };
   };
