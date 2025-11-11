@@ -1,7 +1,23 @@
+{ pkgs, ... }:
 {
   imports = [
+    # NOTE: add
+    # taskwarrior3
+    # jellyfin-media-player
+    # openpomodoro-cli
+    # calcure
+    # libreoffice
+    # gimp3-with-plugins
+    # abook
+    # stripe-cli
+    # hledger
+    # krita
+    # drawio
+    # latexmk
+
     ./ai/claude-code.nix
     ./ai/aichat
+    ./ai/gemini-cli.nix
 
     ./communications
 
@@ -41,14 +57,17 @@
     ./caligula.nix
     ./cava.nix
     ./direnv.nix
+    ./direnv-instant.nix
     ./dms.nix
     ./fastfetch.nix
+    ./freecad.nix
     ./fzf.nix
     ./git.nix
     ./go.nix
     ./hyprshot.nix
     ./jq.nix
     ./lazygit.nix
+    ./libnotify.nix
     ./mpv.nix
     ./newsboat.nix
     ./obs-studio.nix
@@ -57,6 +76,7 @@
     ./pyradio.nix
     ./sioyek.nix
     ./sops.nix # not wrapped with option
+    ./spotube.nix
     ./syncthing.nix
     ./tealdeer.nix
     ./tmux.nix
@@ -67,12 +87,25 @@
     ./yt-dlp.nix
   ];
 
+  home.packages = [
+    (pkgs.writeShellApplication {
+      name = "roseify";
+      runtimeInputs = [ pkgs.lutgen ];
+      text = # sh
+        ''
+          lutgen apply "$1" -o "roseified-$1" -p rose-pine
+        '';
+    })
+  ];
+
   desktop = {
     communications = {
       vesktop.enable = true;
       thunderbird.enable = true;
     };
     dms.enable = true;
+    spotube.enable = true;
+    freecad.enable = true;
     hyprshot.enable = true;
     media = {
       mpv.enable = true;
@@ -97,6 +130,7 @@
 
   utilities = {
     caligula.enable = true;
+    libnotify.enable = true;
   };
 
   development = {
@@ -104,6 +138,7 @@
     claude-code.enable = true;
     git.enable = true;
     go.enable = true;
+    gemini-cli.enable = true;
   };
 
   tablet = {
@@ -111,6 +146,7 @@
   };
 
   neb = {
+    direnv-instant.enable = true;
     services.syncthing.enable = true;
     desktop = {
       window-managers = {
