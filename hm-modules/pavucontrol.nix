@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.desktop.pavucontrol;
+  cfg = config.opts.pavucontrol;
 in
 
 {
-  options.desktop.pavucontrol = {
+  options.opts.pavucontrol = {
     enable = lib.mkEnableOption "enable pavucontrol";
   };
 

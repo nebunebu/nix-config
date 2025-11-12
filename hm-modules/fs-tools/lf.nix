@@ -5,19 +5,19 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.lf;
+  cfg = config.opts.fs-tools.lf;
 in
 {
 
   options = {
-    neb.terminal.utilities.lf.enable = lib.mkEnableOption "enable lf";
+    opts.fs-tools.lf.enable = lib.mkEnableOption "enable lf";
   };
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       ctpv
       file
-      poppler_utils
+      poppler-utils
       ffmpegthumbnailer
       atool
     ];

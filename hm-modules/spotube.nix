@@ -5,11 +5,13 @@
   ...
 }:
 let
-  cfg = config.desktop.spotube;
+  cfg = config.opts.spotube;
 in
 {
-  options.desktop.spotube = {
-    enable = lib.mkEnableOption "enable spotube";
+  options = {
+    opts.spotube = {
+      enable = lib.mkEnableOption "enable spotube";
+    };
   };
 
   config = lib.mkIf cfg.enable {

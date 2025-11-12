@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.desktop.web-browsers.chromium;
+  cfg = config.opts.web-browsers.chromium;
 in
 {
-  options.desktop.web-browsers.chromium = {
+  options.opts.web-browsers.chromium = {
     enable = lib.mkEnableOption "enable chromium";
   };
 

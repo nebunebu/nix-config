@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.desktop.freecad;
+  cfg = config.opts.freecad;
 in
 {
-  options.desktop.freecad = {
+  options.opts.freecad = {
     enable = lib.mkEnableOption "enable freecad";
   };
 

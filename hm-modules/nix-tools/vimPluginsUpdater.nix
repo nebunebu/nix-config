@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.vimPluginsUpdater;
+  cfg = config.opts.nix-tools.vimPluginsUpdater;
 in
 {
-  options.neb.terminal.utilities.vimPluginsUpdater = {
+  options.opts.nix-tools.vimPluginsUpdater = {
     enable = lib.mkEnableOption "enable vimPluginsUpdater";
   };
 

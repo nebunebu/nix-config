@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.neb.direnv-instant;
+  cfg = config.opts.direnv-instant;
 in
 {
-  options.neb.direnv-instant = {
+  options.opts.direnv-instant = {
     enable = lib.mkEnableOption "enable direnv-instant";
   };
 

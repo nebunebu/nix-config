@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.pup;
+  cfg = config.opts.pup;
 in
 {
-  options.neb.terminal.utilities.pup = {
+  options.opts.pup = {
     enable = lib.mkEnableOption "enable pup";
   };
 

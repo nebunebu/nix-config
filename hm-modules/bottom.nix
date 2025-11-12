@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.bottom;
+  cfg = config.opts.bottom;
 in
 {
-  options.neb.terminal.utilities.bottom = {
+  options.opts.bottom = {
     enable = lib.mkEnableOption "enable bottom";
   };
 

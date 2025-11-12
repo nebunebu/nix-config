@@ -2,31 +2,25 @@
   inputs,
   pkgs,
   lib,
+  self,
   ...
 }:
 
 {
   imports = [
-    # ../../../hm-modules/terminal/shell/default.nix
-    ../../../hm-modules/development/git.nix
-    ../../../hm-modules/desktop/utilities/ghostty.nix
-    ../../../hm-modules/development/git.nix
+    "${self}/hm-modules"
   ];
 
   home = {
     stateVersion = "23.11";
     username = "nebu";
     homeDirectory = lib.mkForce "/home/nebu";
-    packages = [
-      inputs.gemini-cli.packages."${pkgs.stdenv.hostPlatform.system}".default
-      pkgs.aichat
-    ];
   };
 
-  neb = {
-    desktop.utilities.ghostty.enable = true;
-    development.git.enable = true;
-  };
+  # opts = {
+  #   terminal-emulators.ghostty.enable = true;
+  #   git.enable = true;
+  # };
 
   programs = {
     home-manager = {
@@ -36,6 +30,5 @@
     zsh.enable = true;
   };
 
-  # nixpkgs.config = { allowUnfree = true; };
   systemd.user.startServices = "sd-switch";
 }

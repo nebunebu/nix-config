@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.services.syncthing;
+  cfg = config.opts.services.syncthing;
 in
 {
-  options.neb.services.syncthing = {
+  options.opts.services.syncthing = {
     enable = lib.mkEnableOption "enable syncthing";
   };
 

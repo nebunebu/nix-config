@@ -999,7 +999,7 @@
          </dict>
          <dict>
           <key>Name</key>
-          <string>Markdown linebreak</string>
+          <string>Markdown lioptreak</string>
           <key>scope</key>
           <string>meta.paragraph.markdown meta.dummy.line-break</string>
           <key>settings</key>

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.desktop.communications.discord;
+  cfg = config.opts.communications.discord;
 in
 {
-  options.desktop.communications.discord = {
+  options.opts.communications.discord = {
     enable = lib.mkEnableOption "enable discord";
   };
 

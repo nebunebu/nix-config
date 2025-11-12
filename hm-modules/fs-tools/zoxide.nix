@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.zoxide;
+  cfg = config.opts.fs-tools.zoxide;
 in
 {
-  options.neb.terminal.utilities.zoxide = {
+  options.opts.fs-tools.zoxide = {
     enable = lib.mkEnableOption "enable zoxide";
   };
 

@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.bat;
+  cfg = config.opts.fs-tools.bat;
 in
 {
-  options.neb.terminal.utilities.bat = {
+  options.opts.fs-tools.bat = {
     enable = lib.mkEnableOption "enable bat";
   };
 

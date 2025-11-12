@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nix-inspect;
+  cfg = config.opts.nix-tools.nix-inspect;
 in
 {
-  options.neb.terminal.utilities.nix-inspect = {
-    enable = lib.mkEnableOption "enable nix-tools";
+  options.opts.nix-tools.nix-inspect = {
+    enable = lib.mkEnableOption "enable nix-inspect";
   };
 
   config = lib.mkIf cfg.enable {

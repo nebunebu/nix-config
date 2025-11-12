@@ -14,38 +14,18 @@
     # krita
     # drawio
     # latexmk
-
-    ./ai/claude-code.nix
-    ./ai/aichat
-    ./ai/gemini-cli.nix
-
-    ./communications
-
-    ./fs-tools/bat.nix
-    ./fs-tools/eza.nix
-    ./fs-tools/fd.nix
-    ./fs-tools/lf.nix
-    ./fs-tools/ripgrep.nix
-    ./fs-tools/yazi.nix
-    ./fs-tools/zoxide.nix
-
-    ./nix-tools/manix.nix
-    ./nix-tools/nh.nix
-    ./nix-tools/nix-index.nix
-    ./nix-tools/nix-inspect.nix
-    ./nix-tools/nixpkgs-fmt.nix
-    ./nix-tools/nurl.nix
-    ./nix-tools/nvd.nix
-    ./nix-tools/statix.nix
-    ./nix-tools/vimPluginsUpdater.nix
     # add ./nix-tools/nixpkgs-hammering.nix
     # add ./nix-tools/nix-alien.nix
     # add ./nix-tools/deadnix.nix
 
+    ./ai
+    ./communications
+    ./fs-tools
+    ./nix-tools
+    ./terminal-emulators
+
     ./shells/zsh
     ./shells/starship.nix
-
-    ./terminal-emulators
 
     ./web-browsers
 
@@ -98,110 +78,62 @@
     })
   ];
 
-  desktop = {
-    communications = {
-      vesktop.enable = true;
-      thunderbird.enable = true;
-    };
-    dms.enable = true;
-    spotube.enable = true;
-    freecad.enable = true;
-    hyprshot.enable = true;
-    media = {
-      mpv.enable = true;
-      obs-studio.enable = true;
-      sioyek.enable = true;
-    };
-    pavucontrol.enable = true;
-    terminal-emulators = {
-      foot.enable = true;
-      ghostty.enable = true;
-      kitty.enable = true;
-    };
-    web-browsers = {
-      chromium.enable = true;
-      firefox.enable = true;
-      firefoxpwa.enable = true;
-    };
-    window-managers = {
-      hyprland.enable = true;
-    };
-  };
+  opts = {
+    ai.enable = true;
+    communications.enable = true;
+    fs-tools.enable = true;
+    nix-tools.enable = true;
+    terminal-emulators.enable = true;
+    web-browsers.enable = true;
 
-  utilities = {
+    dev.awscli.enable = true;
+    bottom.enable = true;
+    buku.enable = true;
     caligula.enable = true;
-    libnotify.enable = true;
-  };
-
-  development = {
-    # awscli.enable = true;
-    claude-code.enable = true;
-    git.enable = true;
-    go.enable = true;
-    gemini-cli.enable = true;
-  };
-
-  tablet = {
-    wvkbd.enable = true;
-  };
-
-  neb = {
+    cava.enable = true;
     direnv-instant.enable = true;
+    direnv.enable = true;
+    dms.enable = true;
+    fastfetch.enable = true;
+    freecad.enable = true;
+    fzf.enable = true;
+    git.enable = true;
+    dev.go.enable = true;
+    hyprshot.enable = true;
+    jq.enable = true;
+    lazygit.enable = true;
+    libnotify.enable = true;
+    mpv.enable = true;
+    newsboat.enable = true;
+    obs-studio.enable = true;
+    pavucontrol.enable = true;
+    pup.enable = true;
+    pyradio.enable = true;
+    sioyek.enable = true;
+    spotube.enable = true;
     services.syncthing.enable = true;
-    desktop = {
-      window-managers = {
-        hyprland = {
-          x230t.enable = true;
-          # t5610.enable = true;
-          # hyprpicker.enable = true;
-          # hyprgrass.enable = true;
-          # pyprland.enable = true;
-          # hyprpolkitagent.enable = true;
-        };
+    tealdeer.enable = true;
+    tmux.enable = true;
+    tuir.enable = true;
+    usbutils.enable = true;
+    wvkbd.enable = true;
+    yt-dlp.enable = true;
+
+    window-managers = {
+      hyprland = {
+        enable = true;
+        x230t.enable = true;
+        # t5610.enable = true;
+        # hyprpicker.enable = true;
+        # hyprgrass.enable = true;
+        # pyprland.enable = true;
+        # hyprpolkitagent.enable = true;
       };
     };
-    terminal = {
-      shell = {
-        starship.enable = true;
-        zsh.enable = true;
-        tmux.enable = true;
-        fzf.enable = true;
-      };
-      media = {
-        newsboat.enable = true;
-        pyradio.enable = true;
-        tuir.enable = true;
-      };
-      utilities = {
-        # buku.enable = true;
-        aichat.enable = true;
-        bat.enable = true;
-        bottom.enable = true;
-        cava.enable = true;
-        direnv.enable = true;
-        eza.enable = true;
-        fastfetch.enable = true;
-        fd.enable = true;
-        jq.enable = true;
-        lazygit.enable = true;
-        # lf.enable = true;
-        manix.enable = true;
-        nh.enable = true;
-        nix-index.enable = true;
-        nix-inspect.enable = true;
-        nixpkgs-fmt.enable = true;
-        nurl.enable = true;
-        nvd.enable = true;
-        pup.enable = true;
-        ripgrep.enable = true;
-        statix.enable = true;
-        tealdeer.enable = true;
-        usbutils.enable = true;
-        vimPluginsUpdater.enable = true;
-        yazi.enable = true;
-        yt-dlp.enable = true;
-        zoxide.enable = true;
-      };
+
+    shell = {
+      zsh.enable = true;
+      starship.enable = true;
     };
   };
 }

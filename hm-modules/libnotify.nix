@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.utilities.libnotify;
+  cfg = config.opts.libnotify;
 in
 {
-  options.utilities.libnotify = {
+  options.opts.libnotify = {
     enable = lib.mkEnableOption "enable libnotify";
   };
 

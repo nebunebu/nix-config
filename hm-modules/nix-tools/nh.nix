@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nh;
+  cfg = config.opts.nix-tools.nh;
 in
 {
-  options.neb.terminal.utilities.nh = {
+  options.opts.nix-tools.nh = {
     enable = lib.mkEnableOption "enable nh";
   };
 

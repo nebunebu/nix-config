@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.media.newsboat;
+  cfg = config.opts.newsboat;
 in
 {
   options = {
-    neb.terminal.media.newsboat.enable = lib.mkEnableOption "enable newsboat";
+    opts.newsboat.enable = lib.mkEnableOption "enable newsboat";
   };
 
   config = lib.mkIf cfg.enable {

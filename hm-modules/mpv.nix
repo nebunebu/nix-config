@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.desktop.media.mpv;
+  cfg = config.opts.mpv;
 in
 {
 
   options = {
-    desktop.media.mpv.enable = lib.mkEnableOption "enable mpv";
+    opts.mpv.enable = lib.mkEnableOption "enable mpv";
   };
 
   config = lib.mkIf cfg.enable {

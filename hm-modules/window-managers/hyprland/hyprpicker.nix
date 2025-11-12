@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.window-managers.hyprland.hyprpicker;
+  cfg = config.opts.window-managers.hyprland.hyprpicker;
 in
 {
-  options.neb.desktop.window-managers.hyprland.hyprpicker.enable =
+  options.opts.window-managers.hyprland.hyprpicker.enable =
     lib.mkEnableOption "enable hyprpicker";
 
   config = lib.mkIf cfg.enable {

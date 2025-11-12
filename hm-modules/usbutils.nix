@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.usbutils;
+  cfg = config.opts.usbutils;
 in
 {
-  options.neb.terminal.utilities.usbutils = {
+  options.opts.usbutils = {
     enable = lib.mkEnableOption "enable usbutils";
   };
 

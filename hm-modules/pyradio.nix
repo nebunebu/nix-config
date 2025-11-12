@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.media.pyradio;
+  cfg = config.opts.pyradio;
 in
 {
   options = {
-    neb.terminal.media.pyradio.enable = lib.mkEnableOption "enable pyradio";
+    opts.pyradio.enable = lib.mkEnableOption "enable pyradio";
   };
 
   config = lib.mkIf cfg.enable {
@@ -28,7 +28,7 @@ in
           default_playlist = stations
           default_station = False
           enable_mouse = False
-          recording_dir = /home/nebu/.pyradio-recordings
+          recording_dir = /home/optu/.pyradio-recordings
           resource_opener = auto
           enable_notifications = -1
           use_station_icon = False

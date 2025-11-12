@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.tablet.wvkbd;
+  cfg = config.opts.wvkbd;
 in
 {
   options = {
-    tablet.wvkbd.enable = lib.mkEnableOption "enable wvkbd";
+    opts.wvkbd.enable = lib.mkEnableOption "enable wvkbd";
   };
 
   config = lib.mkIf cfg.enable {

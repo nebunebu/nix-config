@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.aichat;
+  cfg = config.opts.ai.aichat;
 in
 {
   imports = [
@@ -14,7 +14,7 @@ in
     ./theme.nix
   ];
 
-  options.neb.terminal.utilities.aichat = {
+  options.opts.ai.aichat = {
     enable = lib.mkEnableOption "enable aichat";
   };
 

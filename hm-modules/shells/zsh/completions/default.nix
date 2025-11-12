@@ -6,11 +6,11 @@
 }:
 
 let
-  cfg = config.neb.terminal.shell.zsh.completions;
+  cfg = config.opt.shell.zsh.completions;
 in
 {
   options = {
-    neb.terminal.shell.zsh.completions.enable = lib.mkEnableOption "enable completions";
+    opt.shell.zsh.completions.enable = lib.mkEnableOption "enable completions";
   };
 
   config = lib.mkIf cfg.enable {

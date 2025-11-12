@@ -5,12 +5,12 @@
 }:
 
 let
-  cfg = config.neb.terminal.shell.starship;
+  cfg = config.opts.shell.starship;
 in
 {
 
   options = {
-    neb.terminal.shell.starship.enable = lib.mkEnableOption "enable starship";
+    opts.shell.starship.enable = lib.mkEnableOption "enable starship";
   };
 
   config = lib.mkIf cfg.enable {

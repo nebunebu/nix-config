@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.yt-dlp;
+  cfg = config.opts.yt-dlp;
 in
 {
-  options.neb.terminal.utilities.yt-dlp = {
+  options.opts.yt-dlp = {
     enable = lib.mkEnableOption "enable yt-dlp";
   };
 

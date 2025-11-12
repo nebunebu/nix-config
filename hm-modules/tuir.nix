@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.media.tuir;
+  cfg = config.opts.tuir;
 in
 {
   options = {
-    neb.terminal.media.tuir.enable = lib.mkEnableOption "enable tuir";
+    opts.tuir.enable = lib.mkEnableOption "enable tuir";
   };
 
   config = lib.mkIf cfg.enable {

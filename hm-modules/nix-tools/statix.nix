@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.statix;
+  cfg = config.opts.nix-tools.statix;
 in
 {
-  options.neb.terminal.utilities.statix = {
+  options.opts.nix-tools.statix = {
     enable = lib.mkEnableOption "enable statix";
   };
 

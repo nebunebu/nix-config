@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.ripgrep;
+  cfg = config.opts.fs-tools.ripgrep;
 in
 {
-  options.neb.terminal.utilities.ripgrep = {
+  options.opts.fs-tools.ripgrep = {
     enable = lib.mkEnableOption "enable ripgrep";
   };
 

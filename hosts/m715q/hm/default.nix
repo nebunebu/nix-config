@@ -13,11 +13,7 @@
     stateVersion = "23.11";
   };
 
-  neb = {
+  opts = {
     services.syncthing.enable = true;
-    profile = {
-      # development.enable = true;
-      terminal.enable = true;
-    };
   };
 }

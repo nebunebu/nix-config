@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.shell.tmux;
+  cfg = config.opts.tmux;
 in
 {
-  options.neb.terminal.shell.tmux = {
+  options.opts.tmux = {
     enable = lib.mkEnableOption "enable tmux";
   };
 

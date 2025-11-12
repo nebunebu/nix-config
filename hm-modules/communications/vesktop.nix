@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.desktop.communications.vesktop;
+  cfg = config.opts.communications.vesktop;
 in
 {
-  options.desktop.communications.vesktop = {
+  options.opts.communications.vesktop = {
     enable = lib.mkEnableOption "enable vesktop";
   };
 

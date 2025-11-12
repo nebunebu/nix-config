@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.fastfetch;
+  cfg = config.opts.fastfetch;
 in
 {
-  options.neb.terminal.utilities.fastfetch = {
+  options.opts.fastfetch = {
     enable = lib.mkEnableOption "enable fastfetch";
   };
 

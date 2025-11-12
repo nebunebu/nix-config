@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.eza;
+  cfg = config.opts.fs-tools.eza;
 in
 {
-  options.neb.terminal.utilities.eza = {
+  options.opts.fs-tools.eza = {
     enable = lib.mkEnableOption "enable eza";
   };
 

@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.development.go;
+  cfg = config.opts.dev.go;
 in
 {
-  options.development.go = {
+  options.opts.dev.go = {
     enable = lib.mkEnableOption "enable go";
   };
 

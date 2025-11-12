@@ -2,12 +2,11 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 
 let
-  cfg = config.neb.terminal.shell.zsh;
+  cfg = config.opts.shell.zsh;
 in
 {
   imports = [
@@ -16,11 +15,11 @@ in
   ];
 
   options = {
-    neb.terminal.shell.zsh.enable = lib.mkEnableOption "enable zsh";
+    opts.shell.zsh.enable = lib.mkEnableOption "enable zsh";
   };
 
   config = lib.mkIf cfg.enable {
-    
+
     programs = {
       zsh = {
         enable = true;
@@ -36,7 +35,7 @@ in
         };
 
         shellAliases = {
-          nt = "nix run ${config.home.homeDirectory}/.nebvim"; # nebvim test
+          nt = "nix run ${config.home.homeDirectory}/.optvim"; # optvim test
           svim = "sudo -Es nvim";
           grep = "grep --color=\"auto\"";
           ip = "ip --color=\"auto\"";

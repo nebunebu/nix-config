@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nixpkgs-fmt;
+  cfg = config.opts.nix-tools.nixpkgs-fmt;
 in
 {
-  options.neb.terminal.utilities.nixpkgs-fmt = {
-    enable = lib.mkEnableOption "enable nix-tools";
+  options.opts.nix-tools.nixpkgs-fmt = {
+    enable = lib.mkEnableOption "enable nixpkgs-fmt";
   };
 
   config = lib.mkIf cfg.enable {

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.manix;
+  cfg = config.opts.nix-tools.manix;
 in
 {
-  options.neb.terminal.utilities.manix = {
+  options.opts.nix-tools.manix = {
     enable = lib.mkEnableOption "enable manix";
   };
 

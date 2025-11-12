@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.development.git;
+  cfg = config.opts.git;
 in
-# gpgCfg = config.neb.security.gpg;
+# gpgCfg = config.opt.security.gpg;
 {
-  options.development.git = {
+  options.opts.git = {
     enable = lib.mkEnableOption "enable git";
 
   };
@@ -23,8 +23,8 @@ in
         enable = true;
         settings = {
           user = {
-            email = "nebu.nebuchadnezzar@gmail.com";
-            name = "nebunebu";
+            email = "optu.optuchadnezzar@gmail.com";
+            name = "optuoptu";
           };
           # signing = {
           #   key = lib.mkIf gpgCfg.enable gpgCfg.key;

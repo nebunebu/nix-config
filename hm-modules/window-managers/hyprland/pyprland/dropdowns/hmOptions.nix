@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.desktop.window-managers.hyprland.pyprland.hmOptions;
+  cfg = config.opts.window-managers.hyprland.pyprland.hmOptions;
 in
 {
-  options.neb.desktop.window-managers.hyprland.pyprland.hmOptions.enable =
+  options.opts.window-managers.hyprland.pyprland.hmOptions.enable =
     lib.mkEnableOption "enable pyprland hm-options dropdown";
 
   config = lib.mkIf cfg.enable {

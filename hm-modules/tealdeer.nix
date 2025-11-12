@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.tealdeer;
+  cfg = config.opts.tealdeer;
 in
 {
-  options.neb.terminal.utilities.tealdeer = {
+  options.opts.tealdeer = {
     enable = lib.mkEnableOption "enable tealdeer";
   };
 

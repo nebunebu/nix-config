@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.desktop.window-managers.hyprland.t5610;
+  cfg = config.opts.window-managers.hyprland.t5610;
 in
 {
   options = {
-    neb.desktop.window-managers.hyprland.t5610.enable =
+    opts.window-managers.hyprland.t5610.enable =
       lib.mkEnableOption "enable hyprland settings for t5610";
   };
 

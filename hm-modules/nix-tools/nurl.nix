@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nurl;
+  cfg = config.opts.nix-tools.nurl;
 in
 {
-  options.neb.terminal.utilities.nurl = {
+  options.opts.nix-tools.nurl = {
     enable = lib.mkEnableOption "enable nurl";
   };
 

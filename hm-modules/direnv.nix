@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.direnv;
+  cfg = config.opts.direnv;
 in
 {
-  options.neb.terminal.utilities.direnv = {
+  options.opts.direnv = {
     enable = lib.mkEnableOption "enable direnv";
   };
 

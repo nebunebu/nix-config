@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.hyprland.hyprgrass;
+  cfg = config.opt.desktop.hyprland.hyprgrass;
 in
 {
-  options.neb.desktop.hyprland.hyprgrass.enable = lib.mkEnableOption "enable hyprgrass";
+  options.opt.desktop.hyprland.hyprgrass.enable = lib.mkEnableOption "enable hyprgrass";
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {

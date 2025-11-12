@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.desktop.communications.discover-overlay;
+  cfg = config.opts.communications.discover-overlay;
 in
 {
-  options.desktop.communications.discover-overlay = {
+  options.opts.communications.discover-overlay = {
     enable = lib.mkEnableOption "enable discover-overlay";
   };
 

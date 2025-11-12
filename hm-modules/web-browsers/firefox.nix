@@ -6,22 +6,22 @@
   ...
 }:
 let
-  cfg = config.desktop.web-browsers.firefox;
+  cfg = config.opts.web-browsers.firefox;
 in
 {
-  options.desktop.web-browsers.firefox = {
+  options.opts.web-browsers.firefox = {
     enable = lib.mkEnableOption "enable firefox";
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.targets.firefox.profileNames = [ "nebu" ];
+    stylix.targets.firefox.profileNames = [ "optu" ];
     programs.firefox = {
       enable = true;
       nativeMessagingHosts = [
         pkgs.tridactyl-native
       ];
       profiles = {
-        nebu = {
+        optu = {
           isDefault = true;
           id = 0;
           extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
@@ -61,7 +61,7 @@ in
           # };
           settings = {
             "ui.key.menuAccessKeyFocuses" = false;
-            "browser.startup.homepage" = "https://glance.nebunebu.xyz";
+            "browser.startup.homepage" = "https://glance.optuoptu.xyz";
             "browser.startup.page" = 1;
           };
         };

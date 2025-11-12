@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.jq;
+  cfg = config.opts.jq;
 in
 {
-  options.neb.terminal.utilities.jq = {
+  options.opts.jq = {
     enable = lib.mkEnableOption "enable jq";
   };
 

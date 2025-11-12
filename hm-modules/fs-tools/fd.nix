@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.fd;
+  cfg = config.opts.fs-tools.fd;
 in
 {
-  options.neb.terminal.utilities.fd = {
+  options.opts.fs-tools.fd = {
     enable = lib.mkEnableOption "enable fd";
   };
 

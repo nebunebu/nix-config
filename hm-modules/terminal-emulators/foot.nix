@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.desktop.terminal-emulators.foot;
+  cfg = config.opts.terminal-emulators.foot;
 in
 {
-  options.desktop.terminal-emulators.foot = {
+  options.opts.terminal-emulators.foot = {
     enable = lib.mkEnableOption "enable foot";
   };
   config = lib.mkIf cfg.enable {

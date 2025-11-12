@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.cava;
+  cfg = config.opts.cava;
 in
 {
-  options.neb.terminal.utilities.cava = {
+  options.opts.cava = {
     enable = lib.mkEnableOption "enable cava";
   };
 

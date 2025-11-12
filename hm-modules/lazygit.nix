@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.terminal.utilities.lazygit;
+  cfg = config.opts.lazygit;
 in
 {
-  options.neb.terminal.utilities.lazygit = {
+  options.opts.lazygit = {
     enable = lib.mkEnableOption "enable lazygit";
   };
 

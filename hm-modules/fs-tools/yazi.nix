@@ -4,12 +4,12 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.yazi;
+  cfg = config.opts.fs-tools.yazi;
 in
 {
 
   options = {
-    neb.terminal.utilities.yazi.enable = lib.mkEnableOption "enable yazi";
+    opts.fs-tools.yazi.enable = lib.mkEnableOption "enable yazi";
   };
 
   config = lib.mkIf cfg.enable {

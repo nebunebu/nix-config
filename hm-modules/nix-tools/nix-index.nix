@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nix-index;
+  cfg = config.opts.nix-tools.nix-index;
 in
 {
-  options.neb.terminal.utilities.nix-index = {
+  options.opts.nix-tools.nix-index = {
     enable = lib.mkEnableOption "enable nix-index";
   };
 

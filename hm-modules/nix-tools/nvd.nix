@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.neb.terminal.utilities.nvd;
+  cfg = config.opts.nix-tools.nvd;
 in
 {
-  options.neb.terminal.utilities.nvd = {
+  options.opts.nix-tools.nvd = {
     enable = lib.mkEnableOption "enable nvd";
   };
 

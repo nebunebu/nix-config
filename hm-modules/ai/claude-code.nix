@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.development.claude-code;
+  cfg = config.opts.ai.claude-code;
 in
 {
-  options.development.claude-code = {
+  options.opts.ai.claude-code = {
     enable = lib.mkEnableOption "enable claude-code";
 
   };
