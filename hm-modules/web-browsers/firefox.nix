@@ -14,14 +14,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.targets.firefox.profileNames = [ "optu" ];
+    stylix.targets.firefox.profileNames = [ "nebu" ];
     programs.firefox = {
       enable = true;
       nativeMessagingHosts = [
         pkgs.tridactyl-native
       ];
       profiles = {
-        optu = {
+        nebu = {
           isDefault = true;
           id = 0;
           extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
@@ -61,7 +61,7 @@ in
           # };
           settings = {
             "ui.key.menuAccessKeyFocuses" = false;
-            "browser.startup.homepage" = "https://glance.optuoptu.xyz";
+            "browser.startup.homepage" = "https://glance.nebunebu.xyz";
             "browser.startup.page" = 1;
           };
         };
