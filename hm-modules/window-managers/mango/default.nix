@@ -20,8 +20,7 @@ in
     wayland.windowManager.mango = {
       enable = true;
       settings =
-        # conf
-
+        # ini
         ''
           xkb_rules_options=caps:swapescape
           new_is_master=false
@@ -32,10 +31,10 @@ in
           bind=SUPER,p,spawn, dms ipc call spotlight toggle
           bind=SUPER,v,spawn, dms ipc call clipboard toggle
 
-          bind=,XF86AudioRaiseVolume, spawn, dms ipc call audio increment 3
-          bind=,XF86AudioLowerVolume, spawn, dms ipc call audio decrement 3
-          bind=,XF86AudioMute, spawn, dms ipc call audio mute
-          bind=,XF86AudioMicMute, spawn, dms ipc call audio micmute
+          bind=none,XF86AudioRaiseVolume, spawn, dms ipc call audio increment 3
+          bind=none,XF86AudioLowerVolume, spawn, dms ipc call audio decrement 3
+          bind=none,XF86AudioMute, spawn, dms ipc call audio mute
+          bind=none,XF86AudioMicMute, spawn, dms ipc call audio micmute
 
           gesturebind=down,2,toggleoverview
         '';
@@ -55,12 +54,6 @@ in
 # "$mainMod, W, Toggle notepad, exec, dms ipc call notepad toggle"
 # "$mainMod, O, Toggle hyproveriew, exec, dms ipc call hypr toggleOverview"
 # "$mainMod, ESCAPE, Lock screen, exec, dms ipc call lock lock"
-#
-# # Audio Controls
-# ", XF86AudioRaiseVolume, Increase Volume, exec, dms ipc call audio increment 3"
-# ", XF86AudioLowerVolume, Decrease Volume, exec, dms ipc call audio decrement 3"
-# ", XF86AudioMute, Mute audio, exec, dms ipc call audio mute"
-# ", XF86AudioMicMute, Mute Mic, exec, dms ipc call audio micmute"
 #
 # "$mainMod, INSERT, Open power menu, exec, dms ipc call powermenu"
 # "$mainMod, B, Open wallpaper manager, exec, dms ipc call dankdash wallpaper"
