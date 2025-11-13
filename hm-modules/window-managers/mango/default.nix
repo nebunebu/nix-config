@@ -23,9 +23,78 @@ in
         # ini
         ''
           xkb_rules_options=caps:swapescape
-          new_is_master=false
 
-          bind=SUPER,Return,spawn,kitty
+
+          # Window Effects
+          # Animations
+
+          # Scroller Layout
+          scroller_focus_center=1
+
+          # Master-Stack Layout
+          new_is_master=0
+
+          # Overview Settings
+          ov_tab_mode=1
+
+          # Miscellaneous
+
+          # Appearance
+          borderpx=2
+          # rootcolor=
+          # bordercolor=0xff6e6a86
+          # focuscolor=0xfff6c177
+          # maximizescreencolor=
+          # urgentcolor=0xeb6f92
+          # scratchpadcolor=
+          # globalcolor=
+          # overlaycolor=
+
+
+          # Tag Rules
+          layout_name=tile
+
+          # Layer Rules
+
+          # Window Rules
+
+          # Monitor Rules
+
+          # Key Bindings
+
+          bind=SUPER,r,reload_config
+
+
+          # Focus
+          bind=SUPER,h,focusdir,left
+          bind=SUPER,j,focusdir,down
+          bind=SUPER,k,focusdir,up
+          bind=SUPER,l,focusdir,right
+
+          bind=SUPER+SHIFT,h,exchange_client,left
+          bind=SUPER+SHIFT,j,exchange_client,down
+          bind=SUPER+SHIFT,k,exchange_client,up
+          bind=SUPER+SHIFT,l,exchange_client,right
+
+          bind=SUPER,0,toggleoverview
+
+          bind=SUPER,f,togglefloating
+          bind=SUPER,o,toggleoverlay
+          bind=SUPER,m,togglemaximizescreen
+          bind=SUPER,n,togglefullscreen
+          # bind=SUPER,b,togglefakefullscreen
+          bind=SUPER,-,toggleminimized
+          bind=Super,=,restore_minimzed
+          bind=Super,s,toggle_scratchpad
+          bind=Super,z,zoom
+          bind=Super,Tab,switch_layout
+          bind=Super,t,toggleview
+
+
+          # bind=SUPER,Return,spawn,kitty
+          # bind=SUPER,Return,spawn,ghostty-ogl43
+          bind=SUPER,Return,spawn,ghostty-ogl43 -e tmux new-session -A -s main
+
           bind=SUPER,i,spawn,firefox
           bind=SUPER,x,killclient
           bind=SUPER,p,spawn, dms ipc call spotlight toggle
@@ -35,8 +104,6 @@ in
           bind=none,XF86AudioLowerVolume, spawn, dms ipc call audio decrement 3
           bind=none,XF86AudioMute, spawn, dms ipc call audio mute
           bind=none,XF86AudioMicMute, spawn, dms ipc call audio micmute
-
-          gesturebind=down,2,toggleoverview
         '';
       autostart_sh = # sh
         ''

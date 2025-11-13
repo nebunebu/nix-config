@@ -122,7 +122,6 @@ in
       };
     };
 
-    # If you want Hyprland binds to the wrapper (uncomment your TODO and swap command):
     wayland.windowManager.hyprland.settings.bind = [
       "$mainMod, Return, exec, ${cfg.wrapperName} -e tmux new-session -A -s main"
       "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ${cfg.wrapperName}\""
