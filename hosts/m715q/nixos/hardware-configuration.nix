@@ -1,6 +1,6 @@
 # NOTE: This is a generated file from the disko configuration.
 # You should verify the device paths and UUIDs before using.
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, lib, modulesPath, ... }:
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];

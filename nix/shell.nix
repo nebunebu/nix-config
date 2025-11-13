@@ -1,4 +1,4 @@
-{ pkgs, checks }:
+{ pkgs }:
 
 pkgs.mkShell {
   name = "nix-config";

@@ -1,18 +1,10 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
   cfg = config.neb.beaverhabits;
-  css =
-    pkgs.writeText "custom.css" # css
-      ''
-        body {
-        background-color: #191724 !important;
-        }
-      '';
 in
 {
   options.neb.beaverhabits = {
