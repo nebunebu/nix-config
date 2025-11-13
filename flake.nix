@@ -24,7 +24,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         dgop.follows = "dgop";
-        dms-cli.follows = "dms-cli";
+        # dms-cli.follows = "dms-cli";
       };
     };
 
