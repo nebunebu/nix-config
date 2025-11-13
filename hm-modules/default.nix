@@ -36,8 +36,9 @@
     ./buku.nix
     ./caligula.nix
     ./cava.nix
-    ./direnv.nix
     ./direnv-instant.nix
+    ./direnv.nix
+    ./distrobox.nix
     ./dms.nix
     ./fastfetch.nix
     ./freecad.nix
@@ -93,6 +94,7 @@
     cava.enable = true;
     direnv-instant.enable = true;
     direnv.enable = true;
+    distrobox.enable = true;
     dms.enable = true;
     fastfetch.enable = true;
     freecad.enable = true;

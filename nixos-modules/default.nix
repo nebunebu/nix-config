@@ -8,6 +8,7 @@
     ./dms-greeter.nix
     ./documentation.nix
     ./hyprland.nix
+    ./mango.nix
     ./manpager.nix
     ./networking.nix
     ./nix.nix
@@ -20,6 +21,8 @@
     ./users
     ./virtualisation
   ];
+
+  opts.window-managers.mango.enable = true;
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default

@@ -41,6 +41,11 @@
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:danth/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
