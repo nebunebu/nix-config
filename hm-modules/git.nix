@@ -23,8 +23,8 @@ in
         enable = true;
         settings = {
           user = {
-            email = "optu.optuchadnezzar@gmail.com";
-            name = "optuoptu";
+            email = "nebu.nebuchadnezzar@gmail.com";
+            name = "nebunebu";
           };
           # signing = {
           #   key = lib.mkIf gpgCfg.enable gpgCfg.key;

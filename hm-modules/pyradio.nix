@@ -28,7 +28,7 @@ in
           default_playlist = stations
           default_station = False
           enable_mouse = False
-          recording_dir = /home/optu/.pyradio-recordings
+          recording_dir = /home/nebu/.pyradio-recordings
           resource_opener = auto
           enable_notifications = -1
           use_station_icon = False

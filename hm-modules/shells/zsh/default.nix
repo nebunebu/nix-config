@@ -35,7 +35,7 @@ in
         };
 
         shellAliases = {
-          nt = "nix run ${config.home.homeDirectory}/.optvim"; # optvim test
+          nt = "nix run ${config.home.homeDirectory}/.nebvim"; # nebvim test
           svim = "sudo -Es nvim";
           grep = "grep --color=\"auto\"";
           ip = "ip --color=\"auto\"";
