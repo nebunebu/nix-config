@@ -12,6 +12,9 @@
     ../../../sops
   ];
 
+  networking.firewall.allowedTCPPorts = [
+    8384
+  ];
   serve = {
     navidrome.enable = true;
     # invidious.enable = true;
