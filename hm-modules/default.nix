@@ -18,6 +18,8 @@
     # add ./nix-tools/nix-alien.nix
     # add ./nix-tools/deadnix.nix
 
+    # ./winboat.nix
+
     ./ai
     ./communications
     ./fs-tools
