@@ -10,6 +10,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-ai-tools = {
+      url = "github:numtide/nix-ai-tools";
+    };
+
+    claude-desktop = {
+      url = "github:k3d3/claude-desktop-linux-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dgop = {
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,21 +27,18 @@
       url = "github:AvengeMedia/danklinux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
-      # url = "github:nebunebu/DankMaterialShell?ref=dev";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         dgop.follows = "dgop";
-        # dms-cli.follows = "dms-cli";
       };
     };
 
     impermanence.url = "github:nix-community/impermanence";
 
     direnv-instant.url = "github:Mic92/direnv-instant";
-
-    gemini-cli.url = "github:rishabh5321/gemini-cli-flake";
 
     disko = {
       url = "github:nix-community/disko/latest";
