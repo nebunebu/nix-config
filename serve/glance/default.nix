@@ -32,6 +32,7 @@ in
         };
         pages = [
           (import ./startpage.nix)
+          (import ./repos.nix)
           (import ./nix.nix)
           (import ./feeds.nix)
           (import ./links.nix)
