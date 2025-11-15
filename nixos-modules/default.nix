@@ -22,6 +22,7 @@
     ./virtualisation
   ];
 
+  qt.enable = true;
   virtualisation.docker.enable = true;
   opts.window-managers.mango.enable = true;
 
@@ -29,5 +30,6 @@
     inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
     inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.winboat
+    pkgs.quickshell
   ];
 }
