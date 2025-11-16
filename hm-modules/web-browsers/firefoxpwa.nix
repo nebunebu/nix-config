@@ -17,11 +17,11 @@ in
     programs.firefoxpwa = {
       enable = true;
       profiles = {
-        # `nix run nixpkgs#ulid --command ulid`
+        # `nix run nixpkgs#ulid`
         "01K9R0QNJ5FMK7PBPYN5Y331QV" = {
           name = "Default";
           sites = {
-            # `nix run nixpkgs#ulid --command ulid`
+            # `nix run nixpkgs#ulid`
             "01K9R0ZKNWAWX0YRKKPC8Q5849" = {
               name = "Monkey Type";
               url = "https://monkeytype.com/";
@@ -30,6 +30,7 @@ in
                 url = "https://monkeytype.com/images/icons/general_icon_x512.png";
                 sha256 = "sha256-5N7+WLS2o5ISVaiCScAfn3K44linz2YTQpWzP8L0Dl4=";
               };
+              # https://kairu.app/
             };
           };
         };
