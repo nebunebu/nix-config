@@ -10,7 +10,7 @@ in
 {
 
   options = {
-    neb.sops.pass = {
+    nos.sops.pass = {
       enable = lib.mkEnableOption "enable taskwarrior";
     };
   };
