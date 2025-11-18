@@ -9,11 +9,8 @@ pkgs.mkShell {
     pkgs.statix
   ];
 
-  # Enable pre-commit hooks
-  inherit (checks.pre-commit-check) shellHook;
   buildInputs = checks.pre-commit-check.enabledPackages;
 
-  # Custom shell hook additions
   shellHook =
     let
       cowWarn = pkgs.writeShellApplication {
