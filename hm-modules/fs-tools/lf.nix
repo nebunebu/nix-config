@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.fs-tools.lf;
+  cfg = config.hm.fs-tools.lf;
 in
 {
 

@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.jq;
+  cfg = config.hm.jq;
 in
 {
-  options.opts.jq = {
+  options.hm.jq = {
     enable = lib.mkEnableOption "enable jq";
   };
 

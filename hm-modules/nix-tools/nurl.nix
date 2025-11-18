@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nurl;
+  cfg = config.hm.nix-tools.nurl;
 in
 {
-  options.opts.nix-tools.nurl = {
+  options.hm.nix-tools.nurl = {
     enable = lib.mkEnableOption "enable nurl";
   };
 

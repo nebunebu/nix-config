@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.opts.services.syncthing;
+  cfg = config.hm.services.syncthing;
 in
 {
-  options.opts.services.syncthing = {
+  options.hm.services.syncthing = {
     enable = lib.mkEnableOption "enable syncthing";
   };
 

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.window-managers.hyprland.x230t;
+  cfg = config.hm.window-managers.hyprland.x230t;
   hypr-tab = pkgs.writeShellScript "hypr-tab" ''
     if [ "$(hyprctl monitors -j | jq '.[].transform')" = "0" ]; then
       hyprctl keyword input:touchdevice:transform 1

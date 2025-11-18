@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.opts.window-managers.mango;
+  cfg = config.hm.window-managers.mango;
 in
 {
   imports = [
     inputs.mango.hmModules.mango
   ];
 
-  options.opts.window-managers.mango = {
+  options.hm.window-managers.mango = {
     enable = lib.mkEnableOption "enable mango";
   };
 

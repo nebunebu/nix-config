@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.opts.ai.gemini-cli;
+  cfg = config.hm.ai.gemini-cli;
 in
 {
-  options.opts.ai.gemini-cli = {
+  options.hm.ai.gemini-cli = {
     enable = lib.mkEnableOption "enable gemini-cli";
   };
 

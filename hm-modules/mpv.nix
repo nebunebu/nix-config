@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.mpv;
+  cfg = config.hm.mpv;
 in
 {
 

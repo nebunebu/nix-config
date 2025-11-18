@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.tmux;
+  cfg = config.hm.tmux;
 in
 {
-  options.opts.tmux = {
+  options.hm.tmux = {
     enable = lib.mkEnableOption "enable tmux";
   };
 

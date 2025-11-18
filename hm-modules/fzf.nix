@@ -4,7 +4,7 @@
   ...
 }:
 let
-  cfg = config.opts.fzf;
+  cfg = config.hm.fzf;
 in
 {
 

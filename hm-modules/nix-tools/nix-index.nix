@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nix-index;
+  cfg = config.hm.nix-tools.nix-index;
 in
 {
-  options.opts.nix-tools.nix-index = {
+  options.hm.nix-tools.nix-index = {
     enable = lib.mkEnableOption "enable nix-index";
   };
 

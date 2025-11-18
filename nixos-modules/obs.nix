@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.obs;
+  cfg = config.nos.obs;
 in
 {
-  options.neb.obs = {
+  options.nos.obs = {
     enable = lib.mkEnableOption "enable obs";
   };
 

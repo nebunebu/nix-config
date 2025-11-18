@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools.ripgrep;
+  cfg = config.hm.fs-tools.ripgrep;
 in
 {
-  options.opts.fs-tools.ripgrep = {
+  options.hm.fs-tools.ripgrep = {
     enable = lib.mkEnableOption "enable ripgrep";
   };
 

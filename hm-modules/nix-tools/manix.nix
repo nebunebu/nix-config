@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.manix;
+  cfg = config.hm.nix-tools.manix;
 in
 {
-  options.opts.nix-tools.manix = {
+  options.hm.nix-tools.manix = {
     enable = lib.mkEnableOption "enable manix";
   };
 

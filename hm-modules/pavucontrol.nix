@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.opts.pavucontrol;
+  cfg = config.hm.pavucontrol;
 in
 
 {
-  options.opts.pavucontrol = {
+  options.hm.pavucontrol = {
     enable = lib.mkEnableOption "enable pavucontrol";
   };
 

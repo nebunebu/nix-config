@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.neb.ollama;
+  cfg = config.nos.ollama;
 in
 {
 
-  options.neb.ollama = {
+  options.nos.ollama = {
     enable = lib.mkEnableOption "enable ollama";
   };
 

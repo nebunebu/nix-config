@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.neb.sops.gpg;
+  cfg = config.nos.sops.gpg;
 in
 
 {
-  options.neb.sops.gpg = {
+  options.nos.sops.gpg = {
     enable = lib.mkEnableOption "enable gpg";
   };
 

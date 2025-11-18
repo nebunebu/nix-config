@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.cava;
+  cfg = config.hm.cava;
 in
 {
-  options.opts.cava = {
+  options.hm.cava = {
     enable = lib.mkEnableOption "enable cava";
   };
 

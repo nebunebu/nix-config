@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.opts.hyprshot;
+  cfg = config.hm.hyprshot;
 in
 {
-  options.opts.hyprshot = {
+  options.hm.hyprshot = {
     enable = lib.mkEnableOption "enable hyprshot";
   };
 

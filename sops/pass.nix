@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.neb.sops.pass;
+  cfg = config.nos.sops.pass;
 in
 {
 

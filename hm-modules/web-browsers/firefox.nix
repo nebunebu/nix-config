@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.opts.web-browsers.firefox;
+  cfg = config.hm.web-browsers.firefox;
 in
 {
-  options.opts.web-browsers.firefox = {
+  options.hm.web-browsers.firefox = {
     enable = lib.mkEnableOption "enable firefox";
   };
 

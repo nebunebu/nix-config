@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.terminal-emulators.kitty;
+  cfg = config.hm.terminal-emulators.kitty;
 in
 {
-  options.opts.terminal-emulators.kitty = {
+  options.hm.terminal-emulators.kitty = {
     enable = lib.mkEnableOption "enable kitty";
   };
 

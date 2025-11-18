@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.obs-studio;
+  cfg = config.hm.obs-studio;
 in
 {
 

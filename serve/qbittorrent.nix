@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.qbittorrent;
+  cfg = config.nos.qbittorrent;
 in
 {
-  options.neb.qbittorrent = {
+  options.nos.qbittorrent = {
     enable = lib.mkEnableOption "Qbittorent";
   };
 

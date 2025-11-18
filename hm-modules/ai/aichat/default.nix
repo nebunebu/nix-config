@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.ai.aichat;
+  cfg = config.hm.ai.aichat;
 in
 {
   imports = [
@@ -14,7 +14,7 @@ in
     ./theme.nix
   ];
 
-  options.opts.ai.aichat = {
+  options.hm.ai.aichat = {
     enable = lib.mkEnableOption "enable aichat";
   };
 

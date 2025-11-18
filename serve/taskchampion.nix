@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.taskchampion;
+  cfg = config.nos.taskchampion;
 in
 {
-  options.neb.taskchampion = {
+  options.nos.taskchampion = {
     enable = lib.mkEnableOption "enable taskchampion sync server";
   };
 

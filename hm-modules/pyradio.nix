@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.pyradio;
+  cfg = config.hm.pyradio;
 in
 {
   options = {

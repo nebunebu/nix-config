@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.distrobox;
+  cfg = config.hm.distrobox;
 in
 {
-  options.opts.distrobox = {
+  options.hm.distrobox = {
     enable = lib.mkEnableOption "enable distrobox";
   };
 

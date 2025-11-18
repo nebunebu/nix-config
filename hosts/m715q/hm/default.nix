@@ -13,7 +13,7 @@
     stateVersion = "23.11";
   };
 
-  opts = {
+  hm = {
     services.syncthing.enable = true;
   };
 }

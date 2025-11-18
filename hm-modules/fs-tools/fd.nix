@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools.fd;
+  cfg = config.hm.fs-tools.fd;
 in
 {
-  options.opts.fs-tools.fd = {
+  options.hm.fs-tools.fd = {
     enable = lib.mkEnableOption "enable fd";
   };
 

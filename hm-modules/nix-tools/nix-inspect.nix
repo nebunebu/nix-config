@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nix-inspect;
+  cfg = config.hm.nix-tools.nix-inspect;
 in
 {
-  options.opts.nix-tools.nix-inspect = {
+  options.hm.nix-tools.nix-inspect = {
     enable = lib.mkEnableOption "enable nix-inspect";
   };
 

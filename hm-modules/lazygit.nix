@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.lazygit;
+  cfg = config.hm.lazygit;
 in
 {
-  options.opts.lazygit = {
+  options.hm.lazygit = {
     enable = lib.mkEnableOption "enable lazygit";
   };
 

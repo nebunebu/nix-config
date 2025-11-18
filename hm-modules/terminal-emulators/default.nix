@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.terminal-emulators;
+  cfg = config.hm.terminal-emulators;
 in
 {
   imports = [
@@ -9,7 +9,7 @@ in
     ./kitty.nix
   ];
 
-  options.opts.terminal-emulators = {
+  options.hm.terminal-emulators = {
     enable = lib.mkEnableOption "enable terminal emulators";
   };
 

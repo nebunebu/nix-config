@@ -56,8 +56,8 @@ This is a **flake-based NixOS configuration** repository managing multiple hosts
 │   ├── m715q/                # Mini PC
 │   └── iso/                  # Installation media
 │
-├── hm-modules/               # Home Manager modules (opts.* namespace)
-│   ├── default.nix           # Master import with default opts
+├── hm-modules/               # Home Manager modules (hm.* namespace)
+│   ├── default.nix           # Master import with default hm
 │   ├── ai/                   # AI tools (claude-code, aichat, etc.)
 │   ├── communications/       # Discord, Thunderbird, etc.
 │   ├── fs-tools/             # Bat, eza, fd, ripgrep, yazi, etc.
@@ -69,7 +69,7 @@ This is a **flake-based NixOS configuration** repository managing multiple hosts
 │   ├── window-managers/      # Hyprland, Mango
 │   └── [standalone].nix      # Git, lazygit, tmux, fzf, etc.
 │
-├── nixos-modules/            # NixOS system modules (neb.* namespace)
+├── nixos-modules/            # NixOS system modules (nos.* namespace)
 │   ├── default.nix           # Master import
 │   ├── boot.nix              # GRUB, Plymouth theming
 │   ├── hyprland.nix          # System-level Hyprland
@@ -112,7 +112,7 @@ This is a **flake-based NixOS configuration** repository managing multiple hosts
 
 This repository uses a **two-namespace system** for clear separation:
 
-### 1. `opts.*` Namespace (Home Manager)
+### 1. `hm.*` Namespace (Home Manager)
 
 Used for **user-space** configurations in `hm-modules/`
 
@@ -120,10 +120,10 @@ Used for **user-space** configurations in `hm-modules/`
 ```nix
 # File: hm-modules/git.nix
 let
-  cfg = config.opts.git;
+  cfg = config.hm.git;
 in
 {
-  options.opts.git = {
+  options.hm.git = {
     enable = lib.mkEnableOption "enable git";
     # Additional options...
   };
@@ -140,14 +140,14 @@ in
 **Enable in host config:**
 ```nix
 # File: hosts/t5610/hm/default.nix
-opts = {
+hm = {
   git.enable = true;
   lazygit.enable = true;
   tmux.enable = true;
 };
 ```
 
-### 2. `neb.*` Namespace (NixOS)
+### 2. `nos.*` Namespace (NixOS)
 
 Used for **system-level** configurations in `nixos-modules/`
 
@@ -155,10 +155,10 @@ Used for **system-level** configurations in `nixos-modules/`
 ```nix
 # File: nixos-modules/stylix.nix
 let
-  cfg = config.neb.stylix;
+  cfg = config.nos.stylix;
 in
 {
-  options.neb.stylix.enable = lib.mkEnableOption "enable stylix";
+  options.nos.stylix.enable = lib.mkEnableOption "enable stylix";
 
   config = lib.mkIf cfg.enable {
     stylix = {
@@ -172,7 +172,7 @@ in
 **Enable in host config:**
 ```nix
 # File: hosts/t5610/nixos/default.nix
-neb = {
+nos = {
   stylix.enable = true;
   boot.enable = true;
   hyprland.enable = true;
@@ -188,10 +188,10 @@ Modules grouped by function have parent enable options:
 {
   imports = [ ./bat.nix ./eza.nix ./fd.nix /* ... */ ];
 
-  options.opts.fs-tools.enable = lib.mkEnableOption "enable fs-tools";
+  options.hm.fs-tools.enable = lib.mkEnableOption "enable fs-tools";
 
   config = lib.mkIf cfg.enable {
-    opts.fs-tools = {
+    hm.fs-tools = {
       bat.enable = true;
       eza.enable = true;
       fd.enable = true;
@@ -419,12 +419,12 @@ somePackage = {
 
 ### 6. Service Module Pattern
 
-**Services live in `serve/` and use `neb.*` namespace:**
+**Services live in `serve/` and use `nos.*` namespace:**
 
 ```nix
 # File: serve/jellyfin.nix
 {
-  options.neb.jellyfin.enable = lib.mkEnableOption "enable jellyfin";
+  options.nos.jellyfin.enable = lib.mkEnableOption "enable jellyfin";
 
   config = lib.mkIf cfg.enable {
     services.jellyfin.enable = true;
@@ -445,10 +445,10 @@ somePackage = {
 # File: hm-modules/newtool.nix
 { config, lib, pkgs, ... }:
 let
-  cfg = config.opts.newtool;
+  cfg = config.hm.newtool;
 in
 {
-  options.opts.newtool = {
+  options.hm.newtool = {
     enable = lib.mkEnableOption "enable newtool";
   };
 
@@ -480,7 +480,7 @@ imports = [
 
 ```nix
 # File: hosts/t5610/hm/default.nix
-opts = {
+hm = {
   newtool.enable = true;
 };
 ```
@@ -493,10 +493,10 @@ opts = {
 # File: nixos-modules/newservice.nix
 { config, lib, pkgs, ... }:
 let
-  cfg = config.neb.newservice;
+  cfg = config.nos.newservice;
 in
 {
-  options.neb.newservice = {
+  options.nos.newservice = {
     enable = lib.mkEnableOption "enable newservice";
   };
 
@@ -523,7 +523,7 @@ imports = [
 
 ```nix
 # File: hosts/t5610/nixos/default.nix
-neb = {
+nos = {
   newservice.enable = true;
 };
 ```
@@ -572,7 +572,7 @@ mkdir -p hosts/newhost/{nixos,hm}
 
   networking.hostName = "newhost";
 
-  neb = {
+  nos = {
     stylix.enable = true;
     # Enable modules as needed
   };
@@ -587,7 +587,7 @@ mkdir -p hosts/newhost/{nixos,hm}
 {
   imports = [ "${inputs.self}/hm-modules" ];
 
-  opts = {
+  hm = {
     git.enable = true;
     # Enable modules as needed
   };
@@ -622,10 +622,10 @@ sops sops/secrets/secrets.yaml
 # File: sops/newsecret.nix
 { config, lib, ... }:
 let
-  cfg = config.neb.newsecret;
+  cfg = config.nos.newsecret;
 in
 {
-  options.neb.newsecret.enable = lib.mkEnableOption "enable newsecret";
+  options.nos.newsecret.enable = lib.mkEnableOption "enable newsecret";
 
   config = lib.mkIf cfg.enable {
     sops.secrets.new_secret = {
@@ -650,7 +650,7 @@ imports = [
 
 ```nix
 # In host config
-neb.newsecret.enable = true;
+nos.newsecret.enable = true;
 
 # Reference secret path
 config.sops.secrets.new_secret.path  # -> /run/secrets/new_secret
@@ -664,10 +664,10 @@ config.sops.secrets.new_secret.path  # -> /run/secrets/new_secret
 # File: serve/newapp.nix
 { config, lib, pkgs, ... }:
 let
-  cfg = config.neb.newapp;
+  cfg = config.nos.newapp;
 in
 {
-  options.neb.newapp.enable = lib.mkEnableOption "enable newapp";
+  options.nos.newapp.enable = lib.mkEnableOption "enable newapp";
 
   config = lib.mkIf cfg.enable {
     services.newapp = {
@@ -700,7 +700,7 @@ imports = [
 
 ```nix
 # File: hosts/t5610/nixos/default.nix
-neb = {
+nos = {
   newapp.enable = true;
 };
 ```
@@ -888,7 +888,7 @@ nix run .#nixosConfigurations.iso.config.system.build.vm -- \
 
 **Overriding theme for specific apps:**
 ```nix
-opts.mytool = {
+hm.mytool = {
   enable = true;
   theme = "rose-pine";  # Match stylix
 };
@@ -974,21 +974,21 @@ git commit -m "feat(scope): description"       # Conventional commit
 
 ```nix
 # Home Manager (in hosts/[host]/hm/[user].nix)
-opts = {
+hm = {
   git.enable = true;
   tmux.enable = true;
   fs-tools.enable = true;  # Enables category
 };
 
 # NixOS (in hosts/[host]/nixos/default.nix)
-neb = {
+nos = {
   stylix.enable = true;
   hyprland.enable = true;
   boot.enable = true;
 };
 
 # Services (in hosts/[host]/nixos/default.nix)
-neb = {
+nos = {
   jellyfin.enable = true;
   glance.enable = true;
   ollama.enable = true;
@@ -1003,7 +1003,7 @@ neb = {
 
 When an AI assistant works on this codebase:
 
-1. **Always check the namespace** - `opts.*` for HM, `neb.*` for NixOS
+1. **Always check the namespace** - `hm.*` for HM, `nos.*` for NixOS
 2. **Follow the module pattern** - Use the standard structure shown above
 3. **Add to master imports** - Don't forget `hm-modules/default.nix` or `nixos-modules/default.nix`
 4. **Maintain Rose Pine theme** - Keep theming consistent
@@ -1018,7 +1018,7 @@ When an AI assistant works on this codebase:
 
 **"Add support for [tool]":**
 1. Create module in `hm-modules/[tool].nix` or `nixos-modules/[tool].nix`
-2. Use appropriate namespace (`opts.*` or `neb.*`)
+2. Use appropriate namespace (`hm.*` or `nos.*`)
 3. Add to master import
 4. Document in this file if significant
 
@@ -1030,7 +1030,7 @@ When an AI assistant works on this codebase:
 
 **"Add service for [app]":**
 1. Create in `serve/[app].nix`
-2. Use `neb.*` namespace
+2. Use `nos.*` namespace
 3. Set up users, directories, firewall
 4. Add to `serve/default.nix`
 

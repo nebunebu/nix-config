@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.opts.shell.zsh;
+  cfg = config.hm.shell.zsh;
 in
 {
   imports = [

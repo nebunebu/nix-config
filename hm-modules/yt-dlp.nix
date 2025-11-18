@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.opts.yt-dlp;
+  cfg = config.hm.yt-dlp;
 in
 {
-  options.opts.yt-dlp = {
+  options.hm.yt-dlp = {
     enable = lib.mkEnableOption "enable yt-dlp";
   };
 

@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.neb.jellyfin;
+  cfg = config.nos.jellyfin;
 in
 {
 
-  options.neb.jellyfin = {
+  options.nos.jellyfin = {
     enable = lib.mkEnableOption "enable jellyfin";
   };
 

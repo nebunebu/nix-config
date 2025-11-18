@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.window-managers.hyprland.pyprland.btm;
+  cfg = config.hm.window-managers.hyprland.pyprland.btm;
 in
 {
-  options.opts.window-managers.hyprland.pyprland.btm.enable =
+  options.hm.window-managers.hyprland.pyprland.btm.enable =
     lib.mkEnableOption "enable pyprland btm dropdown";
 
   config = lib.mkIf cfg.enable {

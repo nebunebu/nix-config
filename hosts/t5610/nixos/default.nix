@@ -40,7 +40,7 @@
   ];
 
   # sops.enable = true;
-  neb = {
+  nos = {
     udisks2.enable = true;
     sops = {
       enable = true;

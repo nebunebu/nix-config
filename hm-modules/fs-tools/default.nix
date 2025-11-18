@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools;
+  cfg = config.hm.fs-tools;
 in
 {
   imports = [
@@ -13,7 +13,7 @@ in
     ./zoxide.nix
   ];
 
-  options.opts.fs-tools = {
+  options.hm.fs-tools = {
     enable = lib.mkEnableOption "enable fs-tools";
   };
 

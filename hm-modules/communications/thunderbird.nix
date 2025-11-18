@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.opts.communications.thunderbird;
+  cfg = config.hm.communications.thunderbird;
 in
 {
-  options.opts.communications.thunderbird = {
+  options.hm.communications.thunderbird = {
     enable = lib.mkEnableOption "enable thunderbird";
   };
 

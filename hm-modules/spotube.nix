@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.spotube;
+  cfg = config.hm.spotube;
 in
 {
   options = {

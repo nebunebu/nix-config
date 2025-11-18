@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.neb.linkding;
+  cfg = config.nos.linkding;
 in
 {
-  options.neb.linkding.enable = lib.mkEnableOption "enable linkding";
+  options.nos.linkding.enable = lib.mkEnableOption "enable linkding";
 
   config = lib.mkIf cfg.enable {
     virtualisation.podman.enable = true;

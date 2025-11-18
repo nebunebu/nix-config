@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.neb.sops;
+  cfg = config.nos.sops;
 in
 {
   options = {
