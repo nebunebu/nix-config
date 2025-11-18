@@ -10,7 +10,7 @@ in
 {
 
   options = {
-    opts.shell.starship.enable = lib.mkEnableOption "enable starship";
+    hm.shell.starship.enable = lib.mkEnableOption "enable starship";
   };
 
   config = lib.mkIf cfg.enable {

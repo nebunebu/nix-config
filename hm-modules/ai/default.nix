@@ -27,7 +27,7 @@ in
       # inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".qwen-code
       inputs.claude-desktop.packages."${pkgs.stdenv.hostPlatform.system}".claude-desktop
     ];
-    opts.ai = {
+    hm.ai = {
       aichat.enable = true;
       # claude-code.enable = true;
       # gemini-cli.enable = true;

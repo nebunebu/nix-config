@@ -82,7 +82,7 @@
     })
   ];
 
-  opts = {
+  hm = {
     ai.enable = true;
     communications.enable = true;
     fs-tools.enable = true;

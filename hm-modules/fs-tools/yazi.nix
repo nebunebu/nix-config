@@ -9,7 +9,7 @@ in
 {
 
   options = {
-    opts.fs-tools.yazi.enable = lib.mkEnableOption "enable yazi";
+    hm.fs-tools.yazi.enable = lib.mkEnableOption "enable yazi";
   };
 
   config = lib.mkIf cfg.enable {

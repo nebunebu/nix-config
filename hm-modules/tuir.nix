@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.tuir.enable = lib.mkEnableOption "enable tuir";
+    hm.tuir.enable = lib.mkEnableOption "enable tuir";
   };
 
   config = lib.mkIf cfg.enable {

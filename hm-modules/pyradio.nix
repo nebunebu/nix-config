@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.pyradio.enable = lib.mkEnableOption "enable pyradio";
+    hm.pyradio.enable = lib.mkEnableOption "enable pyradio";
   };
 
   config = lib.mkIf cfg.enable {

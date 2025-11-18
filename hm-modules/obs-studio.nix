@@ -10,7 +10,7 @@ in
 {
 
   options = {
-    opts.obs-studio.enable = lib.mkEnableOption "enable obs-studio";
+    hm.obs-studio.enable = lib.mkEnableOption "enable obs-studio";
   };
 
   config = lib.mkIf cfg.enable {

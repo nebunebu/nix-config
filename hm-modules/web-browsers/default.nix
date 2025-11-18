@@ -14,7 +14,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    opts.web-browsers = {
+    hm.web-browsers = {
       chromium.enable = true;
       firefox.enable = true;
       firefoxpwa.enable = true;

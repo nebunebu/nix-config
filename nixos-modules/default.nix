@@ -24,7 +24,7 @@
 
   qt.enable = true;
   virtualisation.docker.enable = true;
-  opts.window-managers.mango.enable = true;
+  nos.window-managers.mango.enable = true;
 
   environment.systemPackages = [
     inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default

@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.wvkbd.enable = lib.mkEnableOption "enable wvkbd";
+    hm.wvkbd.enable = lib.mkEnableOption "enable wvkbd";
   };
 
   config = lib.mkIf cfg.enable {

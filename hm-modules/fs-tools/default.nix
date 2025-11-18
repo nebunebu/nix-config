@@ -18,7 +18,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    opts.fs-tools = {
+    hm.fs-tools = {
       bat.enable = true;
       eza.enable = true;
       fd.enable = true;

@@ -10,7 +10,7 @@ in
 {
 
   options = {
-    opts.fs-tools.lf.enable = lib.mkEnableOption "enable lf";
+    hm.fs-tools.lf.enable = lib.mkEnableOption "enable lf";
   };
 
   config = lib.mkIf cfg.enable {

@@ -14,7 +14,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    opts.terminal-emulators = {
+    hm.terminal-emulators = {
       foot.enable = true;
       ghostty.enable = true;
       kitty.enable = true;
