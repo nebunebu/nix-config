@@ -25,6 +25,7 @@
     ./fs-tools
     ./nix-tools
     ./terminal-emulators
+    ./taskwarrior
 
     ./shells/zsh
     ./shells/starship.nix
@@ -116,6 +117,7 @@
     sioyek.enable = true;
     spotube.enable = true;
     services.syncthing.enable = true;
+    taskwarrior.enable = true;
     tealdeer.enable = true;
     tmux.enable = true;
     tuir.enable = true;
