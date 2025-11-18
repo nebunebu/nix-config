@@ -86,6 +86,11 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -98,6 +103,8 @@
           allowUnfree = true;
         };
       };
+
+      treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs ./nix/treefmt.nix;
     in
     {
       nixosConfigurations = (
@@ -110,6 +117,8 @@
       checks = builtins.mapAttrs (
         system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }
       ) inputs.nixpkgs.legacyPackages;
+
+      formatter.${system} = treefmtEval.config.build.wrapper;
 
       devShells = builtins.mapAttrs (system: pkgs: {
         default = import ./nix/shell.nix {

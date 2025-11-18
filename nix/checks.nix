@@ -9,14 +9,20 @@
   pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
     src = ./.;
     hooks = {
-      nixpkgs-fmt.enable = false;
-      deadnix = {
+      # Use treefmt for formatting
+      treefmt = {
         enable = true;
-        settings.noLambdaPatternNames = true;
+        package = inputs.self.formatter.${system};
       };
+
+      # Linting hooks
+      statix.enable = true;
+
+      # Disabled hooks
+      nixpkgs-fmt.enable = false;
+      deadnix.enable = false; # Handled by treefmt
       nil.enable = false;
-      statix.enable = false;
-      # convco.enable = true;
+      # convco.enable = false; # User wants to wait on this
     };
   };
 }
