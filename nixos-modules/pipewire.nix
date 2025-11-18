@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.desktop.pipewire;
+  cfg = config.nos.desktop.pipewire;
 in
 {
-  options.neb.desktop.pipewire = {
+  options.nos.desktop.pipewire = {
     enable = lib.mkEnableOption "enable pipewire";
   };
 

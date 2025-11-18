@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.opts.direnv-instant;
+  cfg = config.hm.direnv-instant;
 in
 {
-  options.opts.direnv-instant = {
+  options.hm.direnv-instant = {
     enable = lib.mkEnableOption "enable direnv-instant";
   };
 

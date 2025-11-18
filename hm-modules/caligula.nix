@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.caligula;
+  cfg = config.hm.caligula;
 in
 {
-  options.opts.caligula = {
+  options.hm.caligula = {
     enable = lib.mkEnableOption "enable cli-tools";
   };
 

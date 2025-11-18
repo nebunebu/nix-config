@@ -5,7 +5,7 @@
 }:
 
 let
-  cfg = config.opts.shell.starship;
+  cfg = config.hm.shell.starship;
 in
 {
 

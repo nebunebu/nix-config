@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.communications.discord;
+  cfg = config.hm.communications.discord;
 in
 {
-  options.opts.communications.discord = {
+  options.hm.communications.discord = {
     enable = lib.mkEnableOption "enable discord";
   };
 

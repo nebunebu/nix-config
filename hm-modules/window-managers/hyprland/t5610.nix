@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.window-managers.hyprland.t5610;
+  cfg = config.hm.window-managers.hyprland.t5610;
 in
 {
   options = {

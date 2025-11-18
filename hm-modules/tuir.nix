@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.tuir;
+  cfg = config.hm.tuir;
 in
 {
   options = {

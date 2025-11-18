@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools.bat;
+  cfg = config.hm.fs-tools.bat;
 in
 {
-  options.opts.fs-tools.bat = {
+  options.hm.fs-tools.bat = {
     enable = lib.mkEnableOption "enable bat";
   };
 

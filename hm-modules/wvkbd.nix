@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.wvkbd;
+  cfg = config.hm.wvkbd;
 in
 {
   options = {

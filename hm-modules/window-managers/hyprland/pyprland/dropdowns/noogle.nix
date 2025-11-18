@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.window-managers.hyprland.pyprland.noogle;
+  cfg = config.hm.window-managers.hyprland.pyprland.noogle;
 in
 {
-  options.opts.window-managers.hyprland.pyprland.noogle.enable =
+  options.hm.window-managers.hyprland.pyprland.noogle.enable =
     lib.mkEnableOption "enable pyprland noogle dropdown";
 
   config = lib.mkIf cfg.enable {

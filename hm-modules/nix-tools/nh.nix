@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nh;
+  cfg = config.hm.nix-tools.nh;
 in
 {
-  options.opts.nix-tools.nh = {
+  options.hm.nix-tools.nh = {
     enable = lib.mkEnableOption "enable nh";
   };
 

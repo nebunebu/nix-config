@@ -1,10 +1,10 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.git;
+  cfg = config.hm.git;
 in
 # gpgCfg = config.opt.security.gpg;
 {
-  options.opts.git = {
+  options.hm.git = {
     enable = lib.mkEnableOption "enable git";
 
   };

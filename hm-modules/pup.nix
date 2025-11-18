@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.pup;
+  cfg = config.hm.pup;
 in
 {
-  options.opts.pup = {
+  options.hm.pup = {
     enable = lib.mkEnableOption "enable pup";
   };
 

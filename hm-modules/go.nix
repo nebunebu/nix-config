@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.opts.dev.go;
+  cfg = config.hm.dev.go;
 in
 {
-  options.opts.dev.go = {
+  options.hm.dev.go = {
     enable = lib.mkEnableOption "enable go";
   };
 

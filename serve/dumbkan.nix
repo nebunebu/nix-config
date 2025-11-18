@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.dumbkan;
+  cfg = config.nos.dumbkan;
 in
 {
-  options.neb.dumbkan = {
+  options.nos.dumbkan = {
     enable = lib.mkEnableOption "enable dumbkan";
   };
 

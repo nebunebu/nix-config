@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.terminal-emulators.ghostty;
+  cfg = config.hm.terminal-emulators.ghostty;
 in
 {
-  options.opts.terminal-emulators.ghostty = {
+  options.hm.terminal-emulators.ghostty = {
     enable = lib.mkEnableOption "enable ghostty";
 
     forceGL43 = lib.mkOption {

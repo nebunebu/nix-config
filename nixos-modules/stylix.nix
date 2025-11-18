@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.neb.stylix;
+  cfg = config.nos.stylix;
   fromYAML =
     file:
     let
@@ -16,7 +16,7 @@ let
     builtins.fromJSON (builtins.readFile json);
 in
 {
-  options.neb.stylix = {
+  options.nos.stylix = {
     enable = lib.mkEnableOption "enable stylix";
   };
 

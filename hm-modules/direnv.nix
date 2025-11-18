@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.opts.direnv;
+  cfg = config.hm.direnv;
 in
 {
-  options.opts.direnv = {
+  options.hm.direnv = {
     enable = lib.mkEnableOption "enable direnv";
   };
 

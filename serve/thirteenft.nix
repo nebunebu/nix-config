@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.thirteenft;
+  cfg = config.nos.thirteenft;
 in
 {
-  options.neb.thirteenft = {
+  options.nos.thirteenft = {
     enable = lib.mkEnableOption "enable 13ft";
   };
 

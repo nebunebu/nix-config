@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nvd;
+  cfg = config.hm.nix-tools.nvd;
 in
 {
-  options.opts.nix-tools.nvd = {
+  options.hm.nix-tools.nvd = {
     enable = lib.mkEnableOption "enable nvd";
   };
 

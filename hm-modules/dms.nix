@@ -6,14 +6,14 @@
   ...
 }:
 let
-  cfg = config.opts.dms;
+  cfg = config.hm.dms;
 in
 {
   imports = [
     inputs.dankMaterialShell.homeModules.dankMaterialShell.default
   ];
 
-  options.opts.dms = {
+  options.hm.dms = {
     enable = lib.mkEnableOption "enable Dank Material";
   };
 

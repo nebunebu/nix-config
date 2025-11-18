@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.udisks2;
+  cfg = config.nos.udisks2;
 in
 {
-  options.neb.udisks2 = {
+  options.nos.udisks2 = {
     enable = lib.mkEnableOption "enable udisks2";
   };
 

@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.n8n;
+  cfg = config.nos.n8n;
 in
 {
-  options.neb.n8n = {
+  options.nos.n8n = {
     enable = lib.mkEnableOption "enable n8n";
   };
 

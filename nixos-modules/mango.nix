@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.window-managers.mango;
+  cfg = config.nos.window-managers.mango;
 in
 {
 
@@ -13,7 +13,7 @@ in
     inputs.mango.nixosModules.mango
   ];
 
-  options.opts.window-managers.mango = {
+  options.nos.window-managers.mango = {
     enable = lib.mkEnableOption "enable mango";
   };
 

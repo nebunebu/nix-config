@@ -4,7 +4,7 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools;
+  cfg = config.hm.nix-tools;
 in
 {
   imports = [
@@ -20,7 +20,7 @@ in
     ./vimPluginsUpdater.nix
   ];
 
-  options.opts.nix-tools = {
+  options.hm.nix-tools = {
     enable = lib.mkEnableOption "enable nix-tools";
   };
 

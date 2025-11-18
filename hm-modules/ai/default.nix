@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.opts.ai;
+  cfg = config.hm.ai;
 in
 {
   imports = [
@@ -15,7 +15,7 @@ in
     # ./gemini-cli.nix
   ];
 
-  options.opts.ai = {
+  options.hm.ai = {
     enable = lib.mkEnableOption "enable ai";
   };
 

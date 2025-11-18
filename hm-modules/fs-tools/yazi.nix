@@ -4,7 +4,7 @@
   ...
 }:
 let
-  cfg = config.opts.fs-tools.yazi;
+  cfg = config.hm.fs-tools.yazi;
 in
 {
 

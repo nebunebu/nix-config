@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.glance;
+  cfg = config.nos.glance;
 in
 {
-  options.neb.glance = {
+  options.nos.glance = {
     enable = lib.mkEnableOption "enable glance";
   };
 

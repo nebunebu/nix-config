@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.vimPluginsUpdater;
+  cfg = config.hm.nix-tools.vimPluginsUpdater;
 in
 {
-  options.opts.nix-tools.vimPluginsUpdater = {
+  options.hm.nix-tools.vimPluginsUpdater = {
     enable = lib.mkEnableOption "enable vimPluginsUpdater";
   };
 

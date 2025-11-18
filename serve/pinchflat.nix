@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.pinchflat;
+  cfg = config.nos.pinchflat;
 in
 {
-  options.neb.pinchflat = {
+  options.nos.pinchflat = {
     enable = lib.mkEnableOption "Pinchflat YouTube downloader";
   };
 

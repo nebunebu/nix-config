@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.newsboat;
+  cfg = config.hm.newsboat;
 in
 {
   options = {

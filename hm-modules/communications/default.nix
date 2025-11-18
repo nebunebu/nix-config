@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.communications;
+  cfg = config.hm.communications;
 in
 {
   imports = [
@@ -10,7 +10,7 @@ in
     ./vesktop.nix
   ];
 
-  options.opts.communications = {
+  options.hm.communications = {
     enable = lib.mkEnableOption "enable communications";
   };
 

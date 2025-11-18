@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fastfetch;
+  cfg = config.hm.fastfetch;
 in
 {
-  options.opts.fastfetch = {
+  options.hm.fastfetch = {
     enable = lib.mkEnableOption "enable fastfetch";
   };
 

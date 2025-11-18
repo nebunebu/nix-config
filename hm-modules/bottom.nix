@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.bottom;
+  cfg = config.hm.bottom;
 in
 {
-  options.opts.bottom = {
+  options.hm.bottom = {
     enable = lib.mkEnableOption "enable bottom";
   };
 

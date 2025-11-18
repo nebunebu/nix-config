@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.taskwarrior;
+  cfg = config.hm.taskwarrior;
 in
 {
 

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.usbutils;
+  cfg = config.hm.usbutils;
 in
 {
-  options.opts.usbutils = {
+  options.hm.usbutils = {
     enable = lib.mkEnableOption "enable usbutils";
   };
 

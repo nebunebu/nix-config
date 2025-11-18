@@ -5,14 +5,12 @@
   ...
 }:
 let
-  cfg = config.neb.sops.pass;
+  cfg = config.nos.sops.pass;
 in
 {
 
-  options = {
-    neb.sops.pass = {
-      enable = lib.mkEnableOption "enable taskwarrior";
-    };
+  options.nos.sops.pass = {
+    enable = lib.mkEnableOption "enable taskwarrior";
   };
 
   config = lib.mkIf cfg.enable {

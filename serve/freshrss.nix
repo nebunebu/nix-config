@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.neb.freshrss;
+  cfg = config.nos.freshrss;
 in
 {
 
-  options.neb.freshrss = {
+  options.nos.freshrss = {
     enable = lib.mkEnableOption "enable freshrss";
   };
 

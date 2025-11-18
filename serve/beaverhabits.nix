@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.neb.beaverhabits;
+  cfg = config.nos.beaverhabits;
 in
 {
-  options.neb.beaverhabits = {
+  options.nos.beaverhabits = {
     enable = lib.mkEnableOption "enable beaver habit tracker";
   };
 

@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools.zoxide;
+  cfg = config.hm.fs-tools.zoxide;
 in
 {
-  options.opts.fs-tools.zoxide = {
+  options.hm.fs-tools.zoxide = {
     enable = lib.mkEnableOption "enable zoxide";
   };
 

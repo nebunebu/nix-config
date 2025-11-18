@@ -33,7 +33,7 @@
     ];
   };
 
-  neb = {
+  nos = {
     desktop = {
       hyprland.enable = true;
       pipewire.enable = true;

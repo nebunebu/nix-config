@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.fs-tools.eza;
+  cfg = config.hm.fs-tools.eza;
 in
 {
-  options.opts.fs-tools.eza = {
+  options.hm.fs-tools.eza = {
     enable = lib.mkEnableOption "enable eza";
   };
 

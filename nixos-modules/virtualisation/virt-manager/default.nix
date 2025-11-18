@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.neb.virtualisation.virt-manager;
+  cfg = config.nos.virtualisation.virt-manager;
 in
 {
-  options.neb.virtualisation.virt-manager = {
+  options.nos.virtualisation.virt-manager = {
     enable = lib.mkEnableOption "enable virt-manager";
   };
 

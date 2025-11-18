@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.neb.cloudflared;
+  cfg = config.nos.cloudflared;
 in
 {
-  options.neb.cloudflared = {
+  options.nos.cloudflared = {
     enable = lib.mkEnableOption "cloudflared";
   };
 

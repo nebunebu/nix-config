@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.web-browsers;
+  cfg = config.hm.web-browsers;
 in
 {
   imports = [
@@ -9,7 +9,7 @@ in
     ./firefoxpwa.nix
   ];
 
-  options.opts.web-browsers = {
+  options.hm.web-browsers = {
     enable = lib.mkEnableOption "enable web-browsers";
   };
 

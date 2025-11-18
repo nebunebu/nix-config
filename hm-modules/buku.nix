@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.opts.buku;
+  cfg = config.hm.buku;
 in
 {
   options = {

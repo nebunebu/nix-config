@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.nixpkgs-fmt;
+  cfg = config.hm.nix-tools.nixpkgs-fmt;
 in
 {
-  options.opts.nix-tools.nixpkgs-fmt = {
+  options.hm.nix-tools.nixpkgs-fmt = {
     enable = lib.mkEnableOption "enable nixpkgs-fmt";
   };
 

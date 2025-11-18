@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.window-managers.hyprland.pyprland.nixpkgs;
+  cfg = config.hm.window-managers.hyprland.pyprland.nixpkgs;
 in
 {
-  options.opts.window-managers.hyprland.pyprland.nixpkgs.enable =
+  options.hm.window-managers.hyprland.pyprland.nixpkgs.enable =
     lib.mkEnableOption "enable pyprland nipkgs dropdown";
 
   config = lib.mkIf cfg.enable {

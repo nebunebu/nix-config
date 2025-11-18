@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.nix-tools.statix;
+  cfg = config.hm.nix-tools.statix;
 in
 {
-  options.opts.nix-tools.statix = {
+  options.hm.nix-tools.statix = {
     enable = lib.mkEnableOption "enable statix";
   };
 

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.opts.ai.claude-code;
+  cfg = config.hm.ai.claude-code;
 in
 {
-  options.opts.ai.claude-code = {
+  options.hm.ai.claude-code = {
     enable = lib.mkEnableOption "enable claude-code";
 
   };

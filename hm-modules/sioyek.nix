@@ -1,6 +1,6 @@
 { lib, config, ... }:
 let
-  cfg = config.opts.sioyek;
+  cfg = config.hm.sioyek;
 in
 {
   options = {
