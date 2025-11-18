@@ -1,0 +1,27 @@
+name: Format Check
+
+on:
+  push:
+    branches:
+      - main
+      - claude/**
+  pull_request:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+        with:
+          extra-conf: |
+            extra-experimental-features = pipe-operators
+
+      - name: Setup Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v8
+
+      - name: Check formatting
+        run: nix fmt -- --ci

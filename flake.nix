@@ -86,6 +86,11 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -107,15 +112,8 @@
         // (import ./hosts/x230t { inherit inputs system pkgs; })
       );
 
-      checks = builtins.mapAttrs (
-        system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }
-      ) inputs.nixpkgs.legacyPackages;
-
-      devShells = builtins.mapAttrs (system: pkgs: {
-        default = import ./nix/shell.nix {
-          inherit pkgs;
-          checks = inputs.self.checks.${system};
-        };
-      }) inputs.nixpkgs.legacyPackages;
+      checks = import ./nix/checks.nix { inherit inputs; };
+      formatter = import ./nix/formatter.nix { inherit inputs; };
+      devShells = import ./nix/shell.nix { inherit inputs; };
     };
 }
