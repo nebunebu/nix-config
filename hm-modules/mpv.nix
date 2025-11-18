@@ -10,7 +10,7 @@ in
 {
 
   options = {
-    opts.mpv.enable = lib.mkEnableOption "enable mpv";
+    hm.mpv.enable = lib.mkEnableOption "enable mpv";
   };
 
   config = lib.mkIf cfg.enable {

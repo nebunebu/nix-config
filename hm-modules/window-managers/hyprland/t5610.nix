@@ -4,7 +4,7 @@ let
 in
 {
   options = {
-    opts.window-managers.hyprland.t5610.enable =
+    hm.window-managers.hyprland.t5610.enable =
       lib.mkEnableOption "enable hyprland settings for t5610";
   };
 

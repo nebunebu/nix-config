@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    opts.communications = {
+    hm.communications = {
       thunderbird.enable = true;
       vesktop.enable = true;
     };

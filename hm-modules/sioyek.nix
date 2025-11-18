@@ -4,7 +4,7 @@ let
 in
 {
   options = {
-    opts.sioyek.enable = lib.mkEnableOption "enable sioyek";
+    hm.sioyek.enable = lib.mkEnableOption "enable sioyek";
   };
 
   config = lib.mkIf cfg.enable {

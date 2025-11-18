@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.spotube = {
+    hm.spotube = {
       enable = lib.mkEnableOption "enable spotube";
     };
   };

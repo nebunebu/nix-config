@@ -4,5 +4,5 @@
     ./mango
   ];
 
-  opts.window-managers.mango.enable = true;
+  hm.window-managers.mango.enable = true;
 }

@@ -15,7 +15,7 @@
     homeDirectory = lib.mkForce "/home/nebu";
   };
 
-  # opts = {
+  # hm = {
   #   terminal-emulators.ghostty.enable = true;
   #   git.enable = true;
   # };

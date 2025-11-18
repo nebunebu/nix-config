@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.buku.enable = lib.mkEnableOption "enable buku";
+    hm.buku.enable = lib.mkEnableOption "enable buku";
   };
 
   config = lib.mkIf cfg.enable {

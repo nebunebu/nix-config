@@ -20,7 +20,7 @@ let
 in
 {
   options = {
-    opts.window-managers.hyprland.x230t.enable =
+    hm.window-managers.hyprland.x230t.enable =
       lib.mkEnableOption "enable hyprland settings for x230t";
   };
 

@@ -9,7 +9,7 @@ let
 in
 {
   options = {
-    opts.newsboat.enable = lib.mkEnableOption "enable newsboat";
+    hm.newsboat.enable = lib.mkEnableOption "enable newsboat";
   };
 
   config = lib.mkIf cfg.enable {

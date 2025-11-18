@@ -15,7 +15,7 @@ in
   ];
 
   options = {
-    opts.shell.zsh.enable = lib.mkEnableOption "enable zsh";
+    hm.shell.zsh.enable = lib.mkEnableOption "enable zsh";
   };
 
   config = lib.mkIf cfg.enable {

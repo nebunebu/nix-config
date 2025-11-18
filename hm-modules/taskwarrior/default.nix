@@ -12,7 +12,7 @@ in
   # imports = [ ./theme.nix ];
 
   options = {
-    opts.taskwarrior = {
+    hm.taskwarrior = {
       enable = lib.mkEnableOption "enable taskwarrior";
       recurrence.disable = lib.mkOption {
         type = lib.types.bool;

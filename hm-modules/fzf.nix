@@ -9,7 +9,7 @@ in
 {
 
   options = {
-    opts.fzf.enable = lib.mkEnableOption "enable fzf";
+    hm.fzf.enable = lib.mkEnableOption "enable fzf";
   };
 
   config = lib.mkIf cfg.enable {
