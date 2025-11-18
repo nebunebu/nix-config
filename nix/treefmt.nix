@@ -4,7 +4,7 @@
   programs = {
     nixfmt.enable = true;
     deadnix.enable = true;
-    statix.enable = true;
+    statix.enable = false; # Disabled: doesn't support pipe operators yet
   };
 
   settings = {
