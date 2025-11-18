@@ -1,6 +1,6 @@
 {
   # networking.wireless.enable = true;
-  networking.networkmanager =  {
+  networking.networkmanager = {
     enable = true;
   };
   programs = {
