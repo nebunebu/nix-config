@@ -9,10 +9,8 @@ let
 in
 {
 
-  options = {
-    nos.sops.pass = {
-      enable = lib.mkEnableOption "enable taskwarrior";
-    };
+  options.nos.sops.pass = {
+    enable = lib.mkEnableOption "enable taskwarrior";
   };
 
   config = lib.mkIf cfg.enable {
