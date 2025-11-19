@@ -1,8 +1,4 @@
 {
-  ...
-}:
-
-{
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/545637e7-7726-4f19-8c14-426a085a2535";

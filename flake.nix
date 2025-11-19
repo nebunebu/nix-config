@@ -100,12 +100,11 @@
       };
     in
     {
-      nixosConfigurations = (
+      nixosConfigurations =
         (import ./hosts/iso { inherit inputs system pkgs; })
         // (import ./hosts/m715q { inherit inputs system pkgs; })
         // (import ./hosts/t5610 { inherit inputs system pkgs; })
-        // (import ./hosts/x230t { inherit inputs system pkgs; })
-      );
+        // (import ./hosts/x230t { inherit inputs system pkgs; });
 
       checks = builtins.mapAttrs (
         system: pkgs: import ./nix/checks.nix { inherit inputs system pkgs; }
