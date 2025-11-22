@@ -7,6 +7,7 @@
     ./console.nix
     ./dms-greeter.nix
     ./documentation.nix
+    ./dotool.nix
     ./hyprland.nix
     ./mango.nix
     ./manpager.nix
@@ -21,6 +22,17 @@
     ./users
     ./virtualisation
   ];
+
+  # Enable core system modules
+  nos = {
+    avahi.enable = true;
+    boot.enable = true;
+    console.enable = true;
+    documentation.enable = true;
+    networking.enable = true;
+    nix.enable = true;
+    system.enable = true;
+  };
 
   qt.enable = true;
   virtualisation.docker.enable = true;

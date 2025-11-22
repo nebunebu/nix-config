@@ -1,14 +1,24 @@
+{ config, lib, ... }:
+let
+  cfg = config.nos.networking;
+in
 {
-  # networking.wireless.enable = true;
-  networking.networkmanager = {
-    enable = true;
+  options.nos.networking = {
+    enable = lib.mkEnableOption "enable networking configuration";
   };
-  programs = {
-    zsh.enable = true;
-    mtr.enable = true;
-    gnupg.agent = {
+
+  config = lib.mkIf cfg.enable {
+    # networking.wireless.enable = true;
+    networking.networkmanager = {
       enable = true;
-      enableSSHSupport = true;
+    };
+    programs = {
+      zsh.enable = true;
+      mtr.enable = true;
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
     };
   };
 }

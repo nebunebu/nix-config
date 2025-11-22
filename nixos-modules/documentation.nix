@@ -1,13 +1,23 @@
+{ config, lib, ... }:
+let
+  cfg = config.nos.documentation;
+in
 {
-  documentation = {
-    enable = true;
-    dev = {
+  options.nos.documentation = {
+    enable = lib.mkEnableOption "enable documentation configuration";
+  };
+
+  config = lib.mkIf cfg.enable {
+    documentation = {
       enable = true;
-    };
-    info.enable = true;
-    man = {
-      enable = true;
-      generateCaches = true;
+      dev = {
+        enable = true;
+      };
+      info.enable = true;
+      man = {
+        enable = true;
+        generateCaches = true;
+      };
     };
   };
 }

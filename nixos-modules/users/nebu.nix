@@ -1,26 +1,40 @@
-{ pkgs, ... }:
-
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.nos.users.nebu;
+in
 {
 
-  # sops.secrets.nebu-password.neededForUsers = true;
+  options.nos.users.nebu = {
+    enable = lib.mkEnableOption "enable nebu user";
+  };
 
-  users = {
-    mutableUsers = false;
-    users.nebu = {
-      name = "nebu";
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = [
-        "wheel"
-        "video"
-        "networkmanager"
-        "pipewire"
-        "render"
-        "docker"
-      ];
-      # initialPassword = "password";
-      hashedPassword = "$y$j9T$BrkDt/ClWWO.T/9z5EHYM0$uzInWXBqPfgUZgdM0JWQuHV7aIT.857sysLoz872Hl3";
-      # hashedPasswordFile = config.sops.secrets.nebu-password.path;
+  config = lib.mkIf cfg.enable {
+
+    # sops.secrets.nebu-password.neededForUsers = true;
+
+    users = {
+      mutableUsers = false;
+      users.nebu = {
+        name = "nebu";
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        extraGroups = [
+          "wheel"
+          "video"
+          "networkmanager"
+          "pipewire"
+          "render"
+          "docker"
+        ];
+        # initialPassword = "password";
+        hashedPassword = "$y$j9T$BrkDt/ClWWO.T/9z5EHYM0$uzInWXBqPfgUZgdM0JWQuHV7aIT.857sysLoz872Hl3";
+        # hashedPasswordFile = config.sops.secrets.nebu-password.path;
+      };
     };
   };
 }

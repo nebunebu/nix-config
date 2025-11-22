@@ -1,45 +1,59 @@
-{ pkgs, lib, ... }:
 {
-
-  environment.systemPackages = [ pkgs.dotool ];
-
-  users.groups = {
-    input = { };
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  cfg = config.nos.dotool;
+in
+{
+  options.nos.dotool = {
+    enable = lib.mkEnableOption "enable dotool configuration";
   };
 
-  users.users.nebu = {
-    extraGroups = [
-      "input"
-      "uinput"
-    ];
-  };
+  config = lib.mkIf cfg.enable {
 
-  # makes dotool work
-  services.udev.extraRules = ''
-    KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
-  '';
+    environment.systemPackages = [ pkgs.dotool ];
 
-  home-manager.users.nebu = {
-    systemd.user.services.dotoold = {
-      Unit = {
-        Description = "dotool - uinput tool";
-        Documentation = "https://git.sr.ht/~geb/dotool/tree/HEAD/doc/dotool.1.scd";
-      };
-      Service = {
-        Environment = [
-          "PATH=$PATH:${
-            lib.makeBinPath [
-              pkgs.coreutils
-              pkgs.procps
-            ]
-          }"
-        ];
-        ExecStart = "${pkgs.dotool}/bin/dotoold";
-        Restart = "always";
-        RestartSec = 10;
-      };
-      Install = {
-        WantedBy = [ "default.target" ];
+    users.groups = {
+      input = { };
+    };
+
+    users.users.nebu = {
+      extraGroups = [
+        "input"
+        "uinput"
+      ];
+    };
+
+    # makes dotool work
+    services.udev.extraRules = ''
+      KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+    '';
+
+    home-manager.users.nebu = {
+      systemd.user.services.dotoold = {
+        Unit = {
+          Description = "dotool - uinput tool";
+          Documentation = "https://git.sr.ht/~geb/dotool/tree/HEAD/doc/dotool.1.scd";
+        };
+        Service = {
+          Environment = [
+            "PATH=$PATH:${
+              lib.makeBinPath [
+                pkgs.coreutils
+                pkgs.procps
+              ]
+            }"
+          ];
+          ExecStart = "${pkgs.dotool}/bin/dotoold";
+          Restart = "always";
+          RestartSec = 10;
+        };
+        Install = {
+          WantedBy = [ "default.target" ];
+        };
       };
     };
   };
