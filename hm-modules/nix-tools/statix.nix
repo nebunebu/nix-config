@@ -1,9 +1,11 @@
 {
+  inputs,
   lib,
   config,
   pkgs,
   ...
 }:
+
 let
   cfg = config.hm.nix-tools.statix;
 in
@@ -14,11 +16,9 @@ in
 
   config = lib.mkIf cfg.enable {
     home = {
-      packages = builtins.attrValues {
-        inherit (pkgs)
-          statix
-          ;
-      };
+      packages = [
+        inputs.statix.packages."${pkgs.stdenv.hostPlatform.system}".default
+      ];
     };
   };
 }

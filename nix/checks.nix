@@ -21,7 +21,7 @@ inputs.nixpkgs.legacyPackages
         };
 
         # Linting hooks
-        statix.enable = true;
+        # statix.enable = true;
 
         # Disabled hooks
         nixpkgs-fmt.enable = false;

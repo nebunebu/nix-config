@@ -41,6 +41,8 @@
       };
     };
 
+    statix.url = "github:oppiliappan/statix";
+
     impermanence.url = "github:nix-community/impermanence";
 
     direnv-instant.url = "github:Mic92/direnv-instant";

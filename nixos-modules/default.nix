@@ -30,7 +30,7 @@
     inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
     inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.anki.packages.${pkgs.stdenv.hostPlatform.system}.default
-    pkgs.winboat
+    # pkgs.winboat
     pkgs.quickshell
   ];
 }

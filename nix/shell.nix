@@ -12,7 +12,7 @@ inputs.nixpkgs.legacyPackages
         pkgs.convco
         pkgs.nixfmt-rfc-style
         pkgs.deadnix
-        pkgs.statix
+        # pkgs.statix
       ];
 
       buildInputs = checks.pre-commit-check.enabledPackages;
