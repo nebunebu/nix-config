@@ -16,7 +16,7 @@ inputs.nixpkgs.legacyPackages
       hooks = {
         # Use treefmt for formatting
         treefmt = {
-          enable = true;
+          enable = false;
           package = inputs.self.formatter.${system};
         };
 

@@ -8,8 +8,7 @@ let
   cfg = config.hm.window-managers.hyprland.hyprpicker;
 in
 {
-  options.hm.window-managers.hyprland.hyprpicker.enable =
-    lib.mkEnableOption "enable hyprpicker";
+  options.hm.window-managers.hyprland.hyprpicker.enable = lib.mkEnableOption "enable hyprpicker";
 
   config = lib.mkIf cfg.enable {
     home.packages = [
