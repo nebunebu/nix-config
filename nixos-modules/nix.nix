@@ -1,29 +1,44 @@
-{ inputs, ... }:
-
 {
-  nix = {
-    settings = {
-
-      experimental-features = [ "nix-command flakes pipe-operators" ];
-      auto-optimise-store = true;
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "@wheel" ];
-
-      builders-use-substitutes = true;
-      extra-substituters = [
-        # "https://anyrun.cachix.org"
-      ];
-
-      extra-trusted-public-keys = [
-        # "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-      ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  inputs,
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.nos.nix;
+in
+{
+  options.nos.nix = {
+    enable = lib.mkEnableOption "enable nix configuration";
   };
-  nixpkgs.config.allowUnfree = true;
+
+  config = lib.mkIf cfg.enable {
+    nix = {
+      settings = {
+
+        experimental-features = [
+          "nix-command flakes pipe-operators"
+        ];
+        auto-optimise-store = true;
+        allowed-users = [ "@wheel" ];
+        trusted-users = [ "@wheel" ];
+
+        builders-use-substitutes = true;
+        extra-substituters = [
+          # "https://anyrun.cachix.org"
+        ];
+
+        extra-trusted-public-keys = [
+          # "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+        ];
+      };
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+      };
+      nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    };
+    nixpkgs.config.allowUnfree = true;
+  };
 }

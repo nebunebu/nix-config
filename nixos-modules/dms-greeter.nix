@@ -1,13 +1,25 @@
-{ inputs, ... }:
 {
-  imports = [
-    inputs.dankMaterialShell.nixosModules.greeter
-  ];
+  inputs,
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.nos.dms-greeter;
+in
+{
+  imports = [ inputs.dankMaterialShell.nixosModules.greeter ];
 
-  programs.dankMaterialShell.greeter = {
-    enable = true;
-    compositor = {
-      name = "hyprland";
+  options.nos.dms-greeter = {
+    enable = lib.mkEnableOption "enable dms-greeter configuration";
+  };
+
+  config = lib.mkIf cfg.enable {
+    programs.dankMaterialShell.greeter = {
+      enable = true;
+      compositor = {
+        name = "hyprland";
+      };
     };
   };
 }

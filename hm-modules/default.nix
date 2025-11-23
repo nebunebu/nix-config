@@ -18,8 +18,6 @@
     # add ./nix-tools/nix-alien.nix
     # add ./nix-tools/deadnix.nix
 
-    # ./winboat.nix
-
     ./ai
     ./communications
     ./fs-tools
@@ -59,7 +57,7 @@
     ./pup.nix
     ./pyradio.nix
     ./sioyek.nix
-    ./sops.nix # not wrapped with option
+    ./sops.nix
     ./spotube.nix
     ./syncthing.nix
     ./tealdeer.nix
@@ -67,7 +65,7 @@
     ./tuir.nix
     ./usbutils.nix
     ./wvkbd.nix
-    ./xdg.nix # not wrapped with option
+    ./xdg.nix
     ./yt-dlp.nix
   ];
 
@@ -115,6 +113,7 @@
     pup.enable = true;
     pyradio.enable = true;
     sioyek.enable = true;
+    sops.enable = true;
     spotube.enable = true;
     services.syncthing.enable = true;
     taskwarrior.enable = true;
@@ -123,6 +122,7 @@
     tuir.enable = true;
     usbutils.enable = true;
     wvkbd.enable = true;
+    xdg.enable = true;
     yt-dlp.enable = true;
 
     window-managers = {

@@ -41,6 +41,7 @@
     obs.enable = true;
     stylix.enable = true;
     udisks2.enable = true;
+    users.acgp.enable = true;
   };
 
   networking.hostName = "x230t";
