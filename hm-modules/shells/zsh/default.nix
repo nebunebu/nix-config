@@ -36,6 +36,7 @@ in
 
         shellAliases = {
           nt = "nix run ${config.home.homeDirectory}/.nebvim"; # nebvim test
+          ank = "nix run ${config.home.homeDirectory}/Projects/.anki-flake";
           svim = "sudo -Es nvim";
           grep = "grep --color=\"auto\"";
           ip = "ip --color=\"auto\"";
