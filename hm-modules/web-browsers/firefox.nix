@@ -7,6 +7,8 @@
 }:
 let
   cfg = config.hm.web-browsers.firefox;
+
+
 in
 {
   options.hm.web-browsers.firefox = {
@@ -15,6 +17,7 @@ in
 
   config = lib.mkIf cfg.enable {
     stylix.targets.firefox.profileNames = [ "nebu" ];
+
     programs.firefox = {
       enable = true;
       nativeMessagingHosts = [

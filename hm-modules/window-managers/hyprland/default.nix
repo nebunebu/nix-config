@@ -63,6 +63,10 @@ in
           "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Add)$"
           "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Anki)$"
           "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Import File)$"
+          "float, size 90% 90%, center 1, title:(.*blob:https://canary.discord.com/.*)"
+          "float, size 90% 90%, center 1, title:(.*HyperTTS.*)"
+          "float, size 90% 90%, center 1, initialClass:^(anki)$, Title:(.*HyperTTS.*)"
+          "float, size 90% 90%, center 1, initialClass:^(anki)$, Title:(.*Browse.*)"
         ];
 
         dwindle = {

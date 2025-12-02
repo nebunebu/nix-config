@@ -38,11 +38,13 @@
   virtualisation.docker.enable = true;
   nos.window-managers.mango.enable = true;
 
-  environment.systemPackages = [
-    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
-    inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.anki.packages.${pkgs.stdenv.hostPlatform.system}.default
-    # pkgs.winboat
-    pkgs.quickshell
-  ];
+  environment = {
+    systemPackages = [
+      inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
+      inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.anki.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # pkgs.winboat
+      pkgs.quickshell
+    ];
+  };
 }
