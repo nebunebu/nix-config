@@ -19,6 +19,7 @@
     # add ./nix-tools/deadnix.nix
 
     ./ai
+    # ./anki.nix
     ./communications
     ./fs-tools
     ./nix-tools
@@ -70,6 +71,10 @@
   ];
 
   home.packages = [
+  (pkgs.writeShellScriptBin "anki-bin" ''
+    ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
+  '')
+
     (pkgs.writeShellApplication {
       name = "roseify";
       runtimeInputs = [ pkgs.lutgen ];

@@ -14,10 +14,10 @@
       url = "github:numtide/nix-ai-tools";
     };
 
-    # anki = {
-    #   url = "github:nebunebu/anki-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    anki = {
+      url = "github:nebunebu/anki-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     claude-desktop = {
       url = "github:k3d3/claude-desktop-linux-flake";
