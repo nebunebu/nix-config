@@ -18,6 +18,7 @@ in
     programs = {
       nh = {
         enable = true;
+        flake = lib.mkDefault "${config.home.homeDirectory}/.nix-config";
       };
     };
   };
