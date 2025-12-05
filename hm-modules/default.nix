@@ -38,6 +38,7 @@
     ./buku.nix
     ./caligula.nix
     ./cava.nix
+    ./davinci-resolve.nix
     ./direnv-instant.nix
     ./direnv.nix
     ./distrobox.nix
@@ -100,6 +101,7 @@
     buku.enable = true;
     caligula.enable = true;
     cava.enable = true;
+    davinci-resolve.enable = true;
     direnv-instant.enable = true;
     direnv.enable = true;
     distrobox.enable = true;
