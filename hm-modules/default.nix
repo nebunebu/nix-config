@@ -48,6 +48,7 @@
     ./git.nix
     ./go.nix
     ./hyprshot.nix
+    ./inkscape.nix
     ./jq.nix
     ./lazygit.nix
     ./libnotify.nix
@@ -109,6 +110,7 @@
     git.enable = true;
     dev.go.enable = true;
     hyprshot.enable = true;
+    inkscape.enable = true;
     jq.enable = true;
     lazygit.enable = true;
     libnotify.enable = true;
