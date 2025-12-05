@@ -27,7 +27,7 @@ in
   config = lib.mkIf cfg.enable {
     hm.nix-tools = {
       manix.enable = true;
-      nh.enable = true;
+      # nh.enable = true;
       nix-index.enable = true;
       nix-inspect.enable = true;
       nixpkgs-fmt.enable = true;
