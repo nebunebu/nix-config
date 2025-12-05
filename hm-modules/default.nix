@@ -57,6 +57,7 @@
     ./pavucontrol.nix
     ./pup.nix
     ./pyradio.nix
+    ./qgis.nix
     ./sioyek.nix
     ./sops.nix
     ./spotube.nix
@@ -71,9 +72,9 @@
   ];
 
   home.packages = [
-  (pkgs.writeShellScriptBin "anki-bin" ''
-    ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
-  '')
+    (pkgs.writeShellScriptBin "anki-bin" ''
+      ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
+    '')
 
     (pkgs.writeShellApplication {
       name = "roseify";
@@ -117,6 +118,7 @@
     pavucontrol.enable = true;
     pup.enable = true;
     pyradio.enable = true;
+    qgis.enable = true;
     sioyek.enable = true;
     sops.enable = true;
     spotube.enable = true;
