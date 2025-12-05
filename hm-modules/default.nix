@@ -57,6 +57,7 @@
     ./newsboat.nix
     ./obs-studio.nix
     ./pavucontrol.nix
+    ./pinta.nix
     ./pup.nix
     ./pyradio.nix
     ./qgis.nix
@@ -120,6 +121,7 @@
     newsboat.enable = true;
     obs-studio.enable = true;
     pavucontrol.enable = true;
+    pinta.enable = true;
     pup.enable = true;
     pyradio.enable = true;
     qgis.enable = true;
