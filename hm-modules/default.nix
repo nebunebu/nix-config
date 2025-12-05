@@ -46,6 +46,7 @@
     ./fastfetch.nix
     ./freecad.nix
     ./fzf.nix
+    ./gimp.nix
     ./git.nix
     ./go.nix
     ./hyprshot.nix
@@ -110,6 +111,7 @@
     fastfetch.enable = true;
     freecad.enable = true;
     fzf.enable = true;
+    gimp.enable = true;
     git.enable = true;
     dev.go.enable = true;
     hyprshot.enable = true;
