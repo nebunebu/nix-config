@@ -767,6 +767,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764850362,
+        "narHash": "sha256-XkZftFC8uyTaB3CJo4+/Lhuzsr4vAP82+LSZscvuB7Q=",
+        "owner": "nix-community",
+        "repo": "nh",
+        "rev": "57dafca50f4c1c5a7eed68cffb0a864319deeec5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nightly": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -1175,6 +1195,7 @@
         "impermanence": "impermanence",
         "mango": "mango",
         "nebvim": "nebvim",
+        "nh": "nh",
         "nix-ai-tools": "nix-ai-tools",
         "nix-index-database": "nix-index-database",
         "nixos-facter-modules": "nixos-facter-modules",

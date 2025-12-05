@@ -1,4 +1,6 @@
 {
+  inputs,
+  pkgs,
   lib,
   config,
   ...
@@ -12,12 +14,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # home.sessionVariables = {
-    # NH_FLAKE = lib.mkDefault "${config.home.homeDirectory}/.nix-config";
-    # };
     programs = {
       nh = {
         enable = true;
+        package = inputs.nh.packages."${pkgs.stdenv.hostPlatform.system}".default;
+
         flake = lib.mkDefault "${config.home.homeDirectory}/.nix-config";
       };
     };

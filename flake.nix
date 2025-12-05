@@ -14,6 +14,11 @@
       url = "github:numtide/nix-ai-tools";
     };
 
+    nh = {
+      url = "github:nix-community/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     anki = {
       url = "github:nebunebu/anki-flake";
       inputs.nixpkgs.follows = "nixpkgs";
