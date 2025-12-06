@@ -6,8 +6,6 @@
     # jellyfin-media-player
     # openpomodoro-cli
     # calcure
-    # libreoffice
-    # gimp3-with-plugins
     # abook
     # stripe-cli
     # hledger
@@ -53,6 +51,7 @@
     ./inkscape.nix
     ./jq.nix
     ./lazygit.nix
+    ./libreoffice.nix
     ./libnotify.nix
     ./mpv.nix
     ./newsboat.nix
