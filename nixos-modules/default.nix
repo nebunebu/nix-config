@@ -28,6 +28,7 @@
     avahi.enable = true;
     boot.enable = true;
     console.enable = true;
+    dms-greeter.enable = true;
     documentation.enable = true;
     networking.enable = true;
     nix.enable = true;
