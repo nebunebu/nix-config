@@ -26,5 +26,6 @@
     pkgs.git
     pkgs.ripgrep
     pkgs.fd
+    pkgs.ghostty
   ];
 }
