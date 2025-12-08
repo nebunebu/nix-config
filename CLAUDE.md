@@ -22,7 +22,7 @@ This document provides comprehensive guidance for AI assistants working with thi
 This is a **flake-based NixOS configuration** repository managing multiple hosts with extensive modularization:
 
 - **173+ Nix files** totaling ~2,626 lines of code
-- **4 hosts**: t5610 (desktop), x230t (laptop), m715q (mini PC), iso (installation media)
+- **4 hosts**: t5610 (desktop), x230t (laptop), m715q (mini PC), pepys (installation media)
 - **68+ Home Manager modules** for user-space configuration
 - **20+ NixOS modules** for system-level configuration
 - **14 service modules** for self-hosted applications
@@ -54,7 +54,7 @@ This is a **flake-based NixOS configuration** repository managing multiple hosts
 │   ├── t5610/                # Desktop (main workstation)
 │   ├── x230t/                # Laptop (ThinkPad X230 Tablet)
 │   ├── m715q/                # Mini PC
-│   └── iso/                  # Installation media
+│   └── pepys/                  # Installation media
 │
 ├── hm-modules/               # Home Manager modules (hm.* namespace)
 │   ├── default.nix           # Master import with default hm
@@ -117,6 +117,7 @@ This repository uses a **two-namespace system** for clear separation:
 Used for **user-space** configurations in `hm-modules/`
 
 **Pattern:**
+
 ```nix
 # File: hm-modules/git.nix
 let
@@ -138,6 +139,7 @@ in
 ```
 
 **Enable in host config:**
+
 ```nix
 # File: hosts/t5610/hm/default.nix
 hm = {
@@ -152,6 +154,7 @@ hm = {
 Used for **system-level** configurations in `nixos-modules/`
 
 **Pattern:**
+
 ```nix
 # File: nixos-modules/stylix.nix
 let
@@ -170,6 +173,7 @@ in
 ```
 
 **Enable in host config:**
+
 ```nix
 # File: hosts/t5610/nixos/default.nix
 nos = {
@@ -227,11 +231,13 @@ hosts/<hostname>/
 ### Host-Specific Files
 
 **t5610 (Desktop):**
+
 - `hosts/t5610/nixos/impermanence/` - Ephemeral root setup
 - `hosts/t5610/nixos/builder.nix` - Remote builder configuration
 - `hm-modules/window-managers/hyprland/t5610.nix` - Desktop Hyprland config
 
 **x230t (Laptop):**
+
 - `hosts/x230t/hm/nebu.nix` - Main user
 - `hosts/x230t/hm/acgp.nix` - Secondary user
 - `hosts/x230t/nixos/rotate.nix` - Tablet rotation script
@@ -281,6 +287,7 @@ cd /home/user/nix-config
 ```
 
 **Available tools** (see `nix/shell.nix:1`):
+
 - `convco` - Conventional commits validation
 - `nixfmt-rfc-style` - Nix code formatter
 - `deadnix` - Dead code detection
@@ -314,14 +321,17 @@ nix flake check
 **Location:** `nix/checks.nix:1`
 
 **Enabled hooks:**
+
 - `deadnix` - With `noLambdaPatternNames = true`
 
 **Disabled hooks** (can be enabled):
+
 - `nixpkgs-fmt`
 - `nil`
 - `statix`
 
 **Update hooks:**
+
 ```bash
 nix develop  # Activates pre-commit hooks
 ```
@@ -410,6 +420,7 @@ somePackage = {
 - Taskwarrior: `hm-modules/taskwarrior/theme.nix:1`
 
 **Rose Pine colors:**
+
 - Base: `#191724`
 - Surface: `#1f1d2e`
 - Overlay: `#26233a`
@@ -750,6 +761,7 @@ The desktop uses **ephemeral root** on btrfs:
 - Home Manager integration for user data
 
 **When adding system state:**
+
 ```nix
 # Add to persistence list
 environment.persistence."/persist/system" = {
@@ -769,6 +781,7 @@ environment.persistence."/persist/system" = {
 The laptop supports two users: **nebu** and **acgp**
 
 **Configuration:**
+
 ```nix
 # File: hosts/x230t/default.nix
 home-manager.users = {
@@ -778,6 +791,7 @@ home-manager.users = {
 ```
 
 **When adding features for specific users:**
+
 - Create separate HM configs per user
 - Enable different module sets per user
 
@@ -789,6 +803,7 @@ Hyprland has per-host overrides:
 - `hm-modules/window-managers/hyprland/x230t.nix` - Laptop settings (includes rotation)
 
 **Pattern:**
+
 ```nix
 # File: hm-modules/window-managers/hyprland/default.nix
 config = lib.mkIf cfg.enable {
@@ -810,6 +825,7 @@ config = lib.mkIf cfg.enable {
 - Trusted for nix operations
 
 **Using from another machine:**
+
 ```nix
 nix.buildMachines = [{
   hostName = "t5610";
@@ -839,6 +855,7 @@ home.packages = [
 ```
 
 **When creating inline tools:**
+
 - Use `pkgs.writeShellApplication` for scripts
 - Add `runtimeInputs` for dependencies
 - Keep it in the relevant module
@@ -852,11 +869,13 @@ home.packages = [
 - Secrets file: `sops/secrets/secrets.yaml`
 
 **Secret paths at runtime:**
+
 ```nix
 config.sops.secrets.name.path  # -> /run/secrets/name
 ```
 
 **Editing secrets:**
+
 ```bash
 sops sops/secrets/secrets.yaml
 ```
@@ -864,18 +883,20 @@ sops sops/secrets/secrets.yaml
 ### 7. Installation ISO
 
 **Build ISO:**
+
 ```bash
 nix run nixpkgs#nixos-generators -- \
-  --format iso --flake ~/.nix-config#iso -o iso
+  --format iso --flake ~/.nix-config#pepys -o iso
 ```
 
 **Test in VM:**
+
 ```bash
-nix run .#nixosConfigurations.iso.config.system.build.vm -- \
+nix run .#nixosConfigurations.pepys.config.system.build.vm -- \
   -device virtio-vga
 ```
 
-**Location:** `hosts/iso/nixos/default.nix:1`
+**Location:** `hosts/pepys/nixos/default.nix:1`
 
 ### 8. Theming with Stylix
 
@@ -887,6 +908,7 @@ nix run .#nixosConfigurations.iso.config.system.build.vm -- \
 - Fonts: IBM Plex family
 
 **Overriding theme for specific apps:**
+
 ```nix
 hm.mytool = {
   enable = true;
@@ -897,11 +919,13 @@ hm.mytool = {
 ### 9. Git Workflow
 
 **Commit message format:**
+
 - Use conventional commits (enforced by `convco`)
 - Format: `type(scope): description`
 - Types: feat, fix, docs, style, refactor, test, chore
 
 **Example:**
+
 ```bash
 git commit -m "feat(hm-modules): add newtool module"
 git commit -m "fix(hyprland): correct x230t rotation script"
@@ -914,6 +938,7 @@ git commit -m "fix(hyprland): correct x230t rotation script"
 > The README notes it may not accurately reflect the codebase
 
 **When making significant changes:**
+
 - Update this CLAUDE.md file
 - Consider updating README.md if structure changes
 - Document breaking changes in commit messages
@@ -1017,24 +1042,28 @@ When an AI assistant works on this codebase:
 ### Common AI Tasks
 
 **"Add support for [tool]":**
+
 1. Create module in `hm-modules/[tool].nix` or `nixos-modules/[tool].nix`
 2. Use appropriate namespace (`hm.*` or `nos.*`)
 3. Add to master import
 4. Document in this file if significant
 
 **"Configure Hyprland to [do something]":**
+
 1. Check if host-specific: `hm-modules/window-managers/hyprland/{t5610,x230t}.nix`
 2. Or common: `hm-modules/window-managers/hyprland/default.nix`
 3. Maintain Rose Pine colors
 4. Test on correct host
 
 **"Add service for [app]":**
+
 1. Create in `serve/[app].nix`
 2. Use `nos.*` namespace
 3. Set up users, directories, firewall
 4. Add to `serve/default.nix`
 
 **"Fix [something] on [host]":**
+
 1. Navigate to `hosts/[host]/`
 2. Identify if NixOS or HM issue
 3. Modify appropriate config
@@ -1053,6 +1082,7 @@ This NixOS configuration is a mature, well-architected system with:
 - **Developer-friendly** workflow (direnv, pre-commit, formatters)
 
 When working with this codebase:
+
 - Follow the established patterns
 - Maintain the namespace conventions
 - Keep theming consistent (Rose Pine)

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  iso = inputs.nixpkgs.lib.nixosSystem {
+  pepys = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {
       inherit

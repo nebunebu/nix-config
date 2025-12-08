@@ -7,9 +7,9 @@
 
 # NOTE: Build with:
 # NOTE: nix run nixpkgs#nixos-generators --\
-# NOTE: --format iso --flake ~/.nix-config#iso -o iso
+# NOTE: --format iso --flake ~/.nix-config#pepys -o iso
 
-# nix run .#nixosConfigurations.iso.config.system.build.vm -- -device virtio-vga
+# nix run .#nixosConfigurations.pepys.config.system.build.vm -- -device virtio-vga
 
 {
   imports = [
