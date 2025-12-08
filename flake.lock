@@ -738,11 +738,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1764036545,
-        "narHash": "sha256-0G64TrKCPdbAtka1Pt748ssUNzz/OUdPmqNz7pkOs68=",
+        "lastModified": 1765024933,
+        "narHash": "sha256-B47PCTD7Auw2drB8yhDupikWG+hn6xjhO8PwAFmA06c=",
         "owner": "nebunebu",
         "repo": "nebvim",
-        "rev": "3db4bd7cfc38982c4e3b84f07881a40a1c186c14",
+        "rev": "4d991c9d1ccc0edd990bc31e94c1917a6fc32e89",
         "type": "github"
       },
       "original": {
