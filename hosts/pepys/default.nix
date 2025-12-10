@@ -14,7 +14,7 @@
       inherit (inputs) self;
     };
     modules = [
-      (inputs.self + "/hosts/iso/nixos/default.nix")
+      (inputs.self + "/hosts/pepys/nixos/default.nix")
       inputs.stylix.nixosModules.stylix
       inputs.sops-nix.nixosModules.sops
     ];

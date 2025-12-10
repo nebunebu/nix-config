@@ -21,11 +21,15 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  environment.systemPackages = [
-    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
-    pkgs.git
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.ghostty
-  ];
+  isoImage.squashfsCompression = "gzip";
+
+  environment = {
+    systemPackages = [
+      inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
+      pkgs.git
+      pkgs.ripgrep
+      pkgs.fd
+      pkgs.ghostty.terminfo
+    ];
+  };
 }
