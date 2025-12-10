@@ -68,9 +68,8 @@ in
           "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Leech Toolkit.*)$"
           "float, size 90% 90%, center 1, title:(.*HyperTTS.*)"
           "float, size 90% 90%, center 1, title:(.*Browse.*)"
+          "float, size 90% 90%, center 1, initialClass:^(electron)$, initialTitle:^(Open Files)$"
         ];
-
-
 
         dwindle = {
           preserve_split = true;
