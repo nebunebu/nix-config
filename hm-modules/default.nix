@@ -47,6 +47,7 @@
     ./gimp.nix
     ./git.nix
     ./go.nix
+    ./gtk.nix
     ./hyprshot.nix
     ./inkscape.nix
     ./jq.nix
@@ -90,6 +91,8 @@
   ];
 
   hm = {
+
+    gtk.enable = true;
     ai.enable = true;
     communications.enable = true;
     fs-tools.enable = true;
