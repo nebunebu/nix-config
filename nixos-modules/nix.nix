@@ -15,7 +15,6 @@ in
   config = lib.mkIf cfg.enable {
     nix = {
       settings = {
-
         experimental-features = [
           "nix-command flakes pipe-operators"
         ];

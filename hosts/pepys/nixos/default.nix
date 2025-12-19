@@ -32,4 +32,8 @@
       pkgs.ghostty.terminfo
     ];
   };
+
+  nos = {
+    nix.enable = true;
+  };
 }
