@@ -35,5 +35,7 @@
 
   nos = {
     nix.enable = true;
+    console.enable = true;
+    system.enable = true;
   };
 }
