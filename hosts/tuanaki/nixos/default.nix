@@ -7,19 +7,22 @@
 
 # NOTE: Build with:
 # NOTE: nix run nixpkgs#nixos-generators --\
-# NOTE: --format iso --flake ~/.nix-config#pepys -o iso
+# NOTE: --format iso --flake ~/.nix-config#tuanaki -o iso
 
-# nix run .#nixosConfigurations.pepys.config.system.build.vm -- -device virtio-vga
+# nix run .#nixosConfigurations.tuanaki.config.system.build.vm -- -device virtio-vga
 
 {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     "${inputs.self}/nixos-modules/console.nix"
+    "${inputs.self}/nixos-modules/networking.nix"
     "${inputs.self}/nixos-modules/system.nix"
     "${inputs.self}/nixos-modules/nix.nix"
+    "${inputs.self}/users/guest"
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
+  networking.hostName = "tuanaki";
 
   isoImage.squashfsCompression = "gzip";
 
@@ -37,5 +40,6 @@
     nix.enable = true;
     console.enable = true;
     system.enable = true;
+    networking.enable = true;
   };
 }

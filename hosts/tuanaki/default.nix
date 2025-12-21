@@ -4,7 +4,7 @@
   ...
 }:
 {
-  pepys = inputs.nixpkgs.lib.nixosSystem {
+  tuanaki = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {
       inherit
@@ -14,7 +14,7 @@
       inherit (inputs) self;
     };
     modules = [
-      (inputs.self + "/hosts/pepys/nixos/default.nix")
+      (inputs.self + "/hosts/tuanaki/nixos/default.nix")
       inputs.stylix.nixosModules.stylix
       inputs.sops-nix.nixosModules.sops
     ];

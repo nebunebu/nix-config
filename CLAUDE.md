@@ -22,7 +22,7 @@ This document provides comprehensive guidance for AI assistants working with thi
 This is a **flake-based NixOS configuration** repository managing multiple hosts with extensive modularization:
 
 - **173+ Nix files** totaling ~2,626 lines of code
-- **4 hosts**: t5610 (desktop), x230t (laptop), m715q (mini PC), pepys (installation media)
+- **4 hosts**: t5610 (desktop), x230t (laptop), m715q (mini PC), tuanaki (installation media)
 - **68+ Home Manager modules** for user-space configuration
 - **20+ NixOS modules** for system-level configuration
 - **14 service modules** for self-hosted applications
@@ -54,7 +54,7 @@ This is a **flake-based NixOS configuration** repository managing multiple hosts
 │   ├── t5610/                # Desktop (main workstation)
 │   ├── x230t/                # Laptop (ThinkPad X230 Tablet)
 │   ├── m715q/                # Mini PC
-│   └── pepys/                  # Installation media
+│   └── tuanaki/              # Installation media
 │
 ├── hm-modules/               # Home Manager modules (hm.* namespace)
 │   ├── default.nix           # Master import with default hm
