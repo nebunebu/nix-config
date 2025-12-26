@@ -44,6 +44,8 @@
     users.acgp.enable = true;
   };
 
+  programs.zsh.enable = true;
+
   networking.hostName = "x230t";
   environment = {
     sessionVariables = {

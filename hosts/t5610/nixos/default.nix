@@ -71,6 +71,8 @@
     };
   };
 
+  programs.zsh.enable = true;
+
   networking = {
     hostName = "t5610";
     firewall = {

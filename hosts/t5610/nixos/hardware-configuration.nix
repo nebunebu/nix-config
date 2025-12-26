@@ -24,5 +24,9 @@
     };
   };
 
+  boot.loader.grub.enable = true;
+  # NOTE: you should check if this is the correct boot device
+  boot.loader.grub.devices = [ "/dev/sda" ];
+
   swapDevices = [ ];
 }
