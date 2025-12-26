@@ -17,12 +17,12 @@
   ];
   serve = {
     navidrome.enable = true;
-    invidious.enable = true;
   };
 
-  neb = {
+  nos = {
     udisks2.enable = true;
     thirteenft.enable = true;
+    invidious.enable = false;
     stylix.enable = true;
     sops = {
       enable = true;
@@ -40,8 +40,8 @@
     pinchflat.enable = true;
     qbittorrent.enable = true;
     beaverhabits.enable = true;
-    dumbkan.enable = true;
-    ollama.enable = true;
+    # dumbkan.enable = true;
+    # ollama.enable = true;
 
     desktop = {
       hyprland.enable = true;

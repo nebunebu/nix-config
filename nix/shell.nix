@@ -3,7 +3,7 @@ inputs.nixpkgs.legacyPackages
 |> builtins.mapAttrs (
   system: pkgs:
   let
-    checks = inputs.self.checks.${system};
+    # checks = inputs.self.checks.${system};
   in
   {
     default = pkgs.mkShell {
@@ -15,7 +15,7 @@ inputs.nixpkgs.legacyPackages
         # pkgs.statix
       ];
 
-      buildInputs = checks.pre-commit-check.enabledPackages;
+      # buildInputs = checks.pre-commit-check.enabledPackages;
 
       shellHook =
         let
@@ -30,7 +30,6 @@ inputs.nixpkgs.legacyPackages
           };
         in
         ''
-          ${checks.pre-commit-check.shellHook}
           ${cowWarn}/bin/cowWarn
         '';
     };

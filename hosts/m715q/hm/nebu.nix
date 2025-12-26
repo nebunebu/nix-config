@@ -8,9 +8,9 @@
   imports = [
     "${self}/hm-modules"
     # ../../../hm-modules/terminal/shell/default.nix
-    ../../../hm-modules/development/git.nix
-    ../../../hm-modules/desktop/utilities/ghostty.nix
-    ./beets.nix
+    # ../../../hm-modules/development/git.nix
+    # ../../../hm-modules/desktop/utilities/ghostty.nix
+    # ./beets.nix
   ];
 
   home = {
@@ -20,7 +20,7 @@
   };
 
   hm = {
-    terminal-emulators.ghostty.enable = true;
+    # terminal-emulators.ghostty.enable = true;
     git.enable = true;
   };
 

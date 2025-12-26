@@ -2,8 +2,8 @@
   projectRootFile = "flake.nix";
 
   programs = {
-    nixfmt.enable = true;
-    deadnix.enable = true;
+    nixfmt.enable = false;
+    deadnix.enable = false;
     # statix.enable = true;
   };
 

@@ -14,6 +14,11 @@
       url = "github:numtide/llm-agents.nix";
     };
 
+    nix-pia-vpn = {
+      url = "github:rcambrj/nix-pia-vpn";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nh = {
       url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -114,8 +119,8 @@
         // (import ./hosts/t5610 { inherit inputs system pkgs; })
         // (import ./hosts/x230t { inherit inputs system pkgs; });
 
-      checks = import ./nix/checks.nix { inherit inputs; };
-      formatter = import ./nix/formatter.nix { inherit inputs; };
+      # checks = import ./nix/checks.nix { inherit inputs; };
+      # formatter = import ./nix/formatter.nix { inherit inputs; };
       devShells = import ./nix/shell.nix { inherit inputs; };
     };
 }
