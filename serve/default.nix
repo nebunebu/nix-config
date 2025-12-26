@@ -7,9 +7,12 @@
     ./n8n.nix
     ./glance
     ./thirteenft.nix
+    # ./invidious.nix
     ./jellyfin.nix
     ./linkding.nix
+    ./navidrome.nix
     # ./ollama.nix
+    ./pia-vpn.nix
     ./pinchflat.nix
     # ./taskchampion.nix
     ./qbittorrent.nix

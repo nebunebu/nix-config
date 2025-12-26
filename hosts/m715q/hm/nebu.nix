@@ -7,6 +7,10 @@
 {
   imports = [
     "${self}/hm-modules"
+    # ../../../hm-modules/terminal/shell/default.nix
+    ../../../hm-modules/development/git.nix
+    ../../../hm-modules/desktop/utilities/ghostty.nix
+    ./beets.nix
   ];
 
   home = {
@@ -15,10 +19,10 @@
     homeDirectory = lib.mkForce "/home/nebu";
   };
 
-  # hm = {
-  #   terminal-emulators.ghostty.enable = true;
-  #   git.enable = true;
-  # };
+  hm = {
+    terminal-emulators.ghostty.enable = true;
+    git.enable = true;
+  };
 
   programs = {
     home-manager = {

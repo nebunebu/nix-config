@@ -12,7 +12,15 @@
     ../../../sops
   ];
 
-  nos = {
+  networking.firewall.allowedTCPPorts = [
+    8384
+  ];
+  serve = {
+    navidrome.enable = true;
+    invidious.enable = true;
+  };
+
+  neb = {
     udisks2.enable = true;
     thirteenft.enable = true;
     stylix.enable = true;
@@ -32,9 +40,14 @@
     pinchflat.enable = true;
     qbittorrent.enable = true;
     beaverhabits.enable = true;
-    # dumbkan.enable = true;
-    # linkding.enable = true;
-    # ollama.enable = true;
+    dumbkan.enable = true;
+    linkding.enable = true;
+    ollama.enable = true;
+
+    desktop = {
+      hyprland.enable = true;
+      pipewire.enable = true;
+    };
   };
 
   networking.hostName = "m715q";
