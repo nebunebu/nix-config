@@ -43,10 +43,10 @@
     # dumbkan.enable = true;
     # ollama.enable = true;
 
-    desktop = {
-      hyprland.enable = true;
-      pipewire.enable = true;
-    };
+    # desktop = {
+    #   hyprland.enable = true;
+    #   pipewire.enable = true;
+    # };
   };
 
   networking.hostName = "bermeja";
