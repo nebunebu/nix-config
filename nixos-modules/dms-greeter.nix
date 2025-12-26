@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    programs.dankMaterialShell.greeter = {
+    services.displayManager.dms-greeter = {
       enable = true;
       compositor = {
         name = "hyprland";
