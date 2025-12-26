@@ -20,9 +20,9 @@ in
   config = lib.mkIf cfg.enable {
 
     home.packages = [
-      inputs.nix-ai-tools.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
-      inputs.nix-ai-tools.packages."${pkgs.stdenv.hostPlatform.system}".gemini-cli
-      inputs.nix-ai-tools.packages."${pkgs.stdenv.hostPlatform.system}".codex
+      inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
+      inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".gemini-cli
+      inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".codex
       inputs.claude-desktop.packages."${pkgs.stdenv.hostPlatform.system}".claude-desktop
     ];
     hm.ai = {

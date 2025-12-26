@@ -11,7 +11,7 @@
     };
 
     nix-ai-tools = {
-      url = "github:numtide/nix-ai-tools";
+      url = "github:numtide/llm-agents.nix";
     };
 
     nh = {
