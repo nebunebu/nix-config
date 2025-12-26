@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-ai-tools = {
+    llm-agents = {
       url = "github:numtide/llm-agents.nix";
     };
 
