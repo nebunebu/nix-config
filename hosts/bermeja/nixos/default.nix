@@ -49,10 +49,5 @@
     };
   };
 
-  networking.hostName = "m715q";
-  environment = {
-    sessionVariables = {
-      HOSTNAME = "m715q";
-    };
-  };
+  networking.hostName = "bermeja";
 }

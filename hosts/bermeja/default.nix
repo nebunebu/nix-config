@@ -5,7 +5,7 @@
   ...
 }:
 {
-  m715q = inputs.nixpkgs.lib.nixosSystem {
+  bermeja = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {
       inherit
@@ -15,16 +15,16 @@
       inherit (inputs) self;
     };
     modules = [
-      (inputs.self + "/hosts/m715q/nixos/default.nix")
+      (inputs.self + "/hosts/bermeja/nixos/default.nix")
       inputs.stylix.nixosModules.stylix
       inputs.sops-nix.nixosModules.sops
       inputs.nixos-facter-modules.nixosModules.facter
-      { config.facter.reportPath = inputs.self + "/hosts/m715q/nixos/facter.json"; }
+      { config.facter.reportPath = inputs.self + "/hosts/bermeja/nixos/facter.json"; }
       {
         home-manager = {
           useGlobalPkgs = true;
           backupFileExtension = "backup";
-          users.nebu = import (inputs.self + "/hosts/m715q/hm/default.nix");
+          users.nebu = import (inputs.self + "/hosts/bermeja/hm/default.nix");
           extraSpecialArgs = {
             inherit
               inputs
