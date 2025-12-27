@@ -33,7 +33,6 @@ in
           # gfxmodeEfi = "1366x768";
           gfxpayloadEfi = "keep";
           efiSupport = true;
-          device = "nodev";
         };
       };
     };

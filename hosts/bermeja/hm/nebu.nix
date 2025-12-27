@@ -1,12 +1,12 @@
 {
   lib,
-  self,
+  # self,
   ...
 }:
 
 {
   imports = [
-    "${self}/hm-modules"
+    # "${self}/hm-modules"
     # ../../../hm-modules/terminal/shell/default.nix
     # ../../../hm-modules/development/git.nix
     # ../../../hm-modules/desktop/utilities/ghostty.nix
@@ -20,7 +20,6 @@
   };
 
   hm = {
-    # terminal-emulators.ghostty.enable = true;
     git.enable = true;
   };
 

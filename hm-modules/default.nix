@@ -78,7 +78,6 @@
   home.packages = [
     pkgs.jellyfin-media-player
 
-
     (pkgs.writeShellScriptBin "anki-bin" ''
       ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
     '')
@@ -94,7 +93,6 @@
   ];
 
   hm = {
-
     gtk.enable = true;
     ai.enable = true;
     communications.enable = true;

@@ -19,6 +19,7 @@
       ];
       kernelModules = [ ];
     };
+    loader.grub.devices = [ "/dev/nvme0n1" ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
   };

@@ -15,32 +15,24 @@
 
   hm = {
     services.syncthing.enable = true;
+    # ai.enable = true;
+    fs-tools.enable = true;
+    nix-tools = {
+      nh.enable = true;
+      nix-index.enable = true;
+      nix-inspect.enable = true;
+      nixpkgs-fmt.enable = true;
+      nurl.enable = true;
+      nvd.enable = true;
+      statix.enable = true;
+    };
+    direnv-instant.enable = true;
+    direnv.enable = true;
+    fastfetch.enable = true;
+    bottom.enable = true;
+    git.enable = true;
+    yt-dlp.enable = true;
+    usbutils.enable = true;
+    sops.enable = true;
   };
-
-  # neb = {
-  #   services.syncthing.enable = true;
-  #   profile = {
-  #     development.enable = true;
-  #     terminal.enable = true;
-  #     desktop = {
-  #       enable = true;
-  #     };
-  #   };
-  #   desktop = {
-  #     window-managers = {
-  #       hyprland = {
-  #         enable = true;
-  #         t5610.enable = true;
-  #         hyprpicker.enable = true;
-  #         # pyprland = {
-  #         #   enable = true;
-  #         # btm.enable = true;
-  #         # hmOptions.enable = true;
-  #         # nixpkgs.enable = true;
-  #         # noogle.enable = true;
-  #         # };
-  #       };
-  #     };
-  #   };
-  # };
 }

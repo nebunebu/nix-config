@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }:
 
@@ -12,14 +13,30 @@
     ../../../sops
   ];
 
+  environment.systemPackages = [
+    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
+    inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
+    pkgs.ghostty.terminfo
+    pkgs.kitty.terminfo
+  ];
+
   networking.firewall.allowedTCPPorts = [
     8384
   ];
-  serve = {
-    navidrome.enable = true;
-  };
+
+  # serve = {
+  #   navidrome.enable = true;
+  # };
 
   nos = {
+    avahi.enable = true;
+    boot.enable = true;
+    console.enable = true;
+    documentation.enable = true;
+    networking.enable = true;
+    nix.enable = true;
+    system.enable = true;
+
     udisks2.enable = true;
     thirteenft.enable = true;
     invidious.enable = false;
@@ -48,6 +65,8 @@
     #   pipewire.enable = true;
     # };
   };
+
+  virtualisation.docker.enable = true;
 
   networking.hostName = "bermeja";
 }
