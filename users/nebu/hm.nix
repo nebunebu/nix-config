@@ -1,16 +1,12 @@
 {
+  self,
   lib,
-  # self,
   ...
 }:
 
 {
   imports = [
-    # "${self}/hm-modules"
-    # ../../../hm-modules/terminal/shell/default.nix
-    # ../../../hm-modules/development/git.nix
-    # ../../../hm-modules/desktop/utilities/ghostty.nix
-    # ./beets.nix
+    "${self}/hm-modules"
   ];
 
   home = {

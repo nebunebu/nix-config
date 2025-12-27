@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ../../../sops
     "${self}/nixos-modules"
+    "${self}/users/nebu"
     # ./builder.nix
   ];
 
@@ -63,6 +64,7 @@
     # linkding.enable = true;
     # ollama.enable = true;
     stylix.enable = true;
+    users.nebu.enable = true;
     # taskchampion.enable = true;
     desktop = {
       hyprland.enable = true;

@@ -1,4 +1,5 @@
 {
+  self,
   inputs,
   pkgs,
   ...
@@ -9,6 +10,7 @@
     inputs.home-manager.nixosModules.default
     ./hardware-configuration.nix
     "${inputs.self}/nixos-modules"
+    "${self}/users/nebu"
     ../../../sops
   ];
 
@@ -36,6 +38,7 @@
     system.enable = true;
     udisks2.enable = true;
     stylix.enable = true;
+    users.nebu.enable = true;
     sops = {
       enable = true;
       gpg = {

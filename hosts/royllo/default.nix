@@ -25,8 +25,8 @@
           useGlobalPkgs = true;
           backupFileExtension = "backup";
           users = {
-            nebu = import (inputs.self + "/hosts/royllo/hm/nebu.nix");
-            acgp = import (inputs.self + "/hosts/royllo/hm/acgp.nix");
+            nebu = import (inputs.self + "/users/nebu/hm.nix");
+            acgp = import (inputs.self + "/users/acgp/hm.nix");
           };
           extraSpecialArgs = {
             inherit

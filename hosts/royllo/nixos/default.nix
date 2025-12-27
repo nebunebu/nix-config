@@ -9,6 +9,8 @@
   imports = [
     inputs.home-manager.nixosModules.default
     "${self}/nixos-modules"
+    "${self}/users/acgp"
+    "${self}/users/nebu"
     ../../../sops
     ./hardware-configuration.nix
     # ./nextcloud.nix
@@ -52,6 +54,7 @@
     stylix.enable = true;
     udisks2.enable = true;
     users.acgp.enable = true;
+    users.nebu.enable = true;
   };
 
   programs.zsh.enable = true;

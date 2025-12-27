@@ -19,7 +19,6 @@
     ./stylix.nix
     ./system.nix
     ./udisks2.nix
-    ./users
     ./virtualisation
     ./self-hosted
   ];
