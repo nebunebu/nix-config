@@ -1,24 +1,24 @@
 {
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/545637e7-7726-4f19-8c14-426a085a2535";
+      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/6512-19D0";
+      device = "/dev/disk/by-uuid/C708-E996";
       fsType = "vfat";
     };
 
     "/nix" = {
-      device = "/dev/disk/by-uuid/545637e7-7726-4f19-8c14-426a085a2535";
+      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
     "/persist" = {
-      device = "/dev/disk/by-uuid/545637e7-7726-4f19-8c14-426a085a2535";
+      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
