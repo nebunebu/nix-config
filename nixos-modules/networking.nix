@@ -12,6 +12,8 @@ in
     networking.networkmanager = {
       enable = true;
     };
+    # NetworkManager handles connectivity; avoid failing when networkd has no links.
+    systemd.services."systemd-networkd-wait-online".enable = lib.mkForce false;
     programs = {
       zsh.enable = true;
       mtr.enable = true;

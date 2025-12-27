@@ -24,6 +24,10 @@
     ./self-hosted
   ];
 
+  environment.systemPackages = [
+    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
+  ];
+
   # Enable core system modules
   # nos = {
   #   avahi.enable = true;

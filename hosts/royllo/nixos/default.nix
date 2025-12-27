@@ -56,11 +56,6 @@
 
   programs.zsh.enable = true;
 
-  networking.hostName = "x230t";
-  environment = {
-    sessionVariables = {
-      HOSTNAME = "x230t";
-    };
-  };
+  networking.hostName = "royllo";
 
 }
