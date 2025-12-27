@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.nos.jellyfin;
+  cfg = config.nos.self-hosted.jellyfin;
 in
 {
 
-  options.nos.jellyfin = {
+  options.nos.self-hosted.jellyfin = {
     enable = lib.mkEnableOption "enable jellyfin";
   };
 

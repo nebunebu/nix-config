@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.nos.ollama;
+  cfg = config.nos.self-hosted.ollama;
 in
 {
 
-  options.nos.ollama = {
+  options.nos.self-hosted.ollama = {
     enable = lib.mkEnableOption "enable ollama";
   };
 

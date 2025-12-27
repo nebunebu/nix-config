@@ -4,11 +4,11 @@
   ...
 }:
 let
-  cfg = config.nos.freshrss;
+  cfg = config.nos.self-hosted.freshrss;
 in
 {
 
-  options.nos.freshrss = {
+  options.nos.self-hosted.freshrss = {
     enable = lib.mkEnableOption "enable freshrss";
   };
 

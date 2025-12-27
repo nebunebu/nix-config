@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.nos.cloudflared;
+  cfg = config.nos.self-hosted.cloudflared;
 in
 {
-  options.nos.cloudflared = {
+  options.nos.self-hosted.cloudflared = {
     enable = lib.mkEnableOption "cloudflared";
   };
 

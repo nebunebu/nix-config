@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.nos.n8n;
+  cfg = config.nos.self-hosted.n8n;
 in
 {
-  options.nos.n8n = {
+  options.nos.self-hosted.n8n = {
     enable = lib.mkEnableOption "enable n8n";
   };
 

@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.nos.qbittorrent;
+  cfg = config.nos.self-hosted.qbittorrent;
 in
 {
-  options.nos.qbittorrent = {
+  options.nos.self-hosted.qbittorrent = {
     enable = lib.mkEnableOption "Qbittorent";
   };
 

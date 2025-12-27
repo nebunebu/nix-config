@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.nos.pinchflat;
+  cfg = config.nos.self-hosted.pinchflat;
 in
 {
-  options.nos.pinchflat = {
+  options.nos.self-hosted.pinchflat = {
     enable = lib.mkEnableOption "Pinchflat YouTube downloader";
   };
 

@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.nos.dumbkan;
+  cfg = config.nos.self-hosted.dumbkan;
 in
 {
-  options.nos.dumbkan = {
+  options.nos.self-hosted.dumbkan = {
     enable = lib.mkEnableOption "enable dumbkan";
   };
 

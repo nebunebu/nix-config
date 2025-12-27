@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.nos.thirteenft;
+  cfg = config.nos.self-hosted.thirteenft;
 in
 {
-  options.nos.thirteenft = {
+  options.nos.self-hosted.thirteenft = {
     enable = lib.mkEnableOption "enable 13ft";
   };
 

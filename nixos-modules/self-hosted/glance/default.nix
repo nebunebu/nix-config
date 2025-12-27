@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.nos.glance;
+  cfg = config.nos.self-hosted.glance;
 in
 {
-  options.nos.glance = {
+  options.nos.self-hosted.glance = {
     enable = lib.mkEnableOption "enable glance";
   };
 

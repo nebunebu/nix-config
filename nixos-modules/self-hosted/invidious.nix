@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 let
-  cfg = config.nos.invidious;
+  cfg = config.nos.self-hosted.invidious;
 in
 {
-  options.nos.invidious = {
+  options.nos.self-hosted.invidious = {
     enable = lib.mkEnableOption "Enable invidious";
   };
 
