@@ -21,6 +21,7 @@
     ./udisks2.nix
     ./users
     ./virtualisation
+    ./self-hosted
   ];
 
   # Enable core system modules
