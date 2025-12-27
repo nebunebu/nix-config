@@ -116,7 +116,7 @@
       nixosConfigurations =
         (import ./hosts/tuanaki { inherit inputs system pkgs; })
         // (import ./hosts/bermeja { inherit inputs system pkgs; })
-        // (import ./hosts/t5610 { inherit inputs system pkgs; })
+        // (import ./hosts/antillia { inherit inputs system pkgs; })
         // (import ./hosts/royllo { inherit inputs system pkgs; });
 
       # checks = import ./nix/checks.nix { inherit inputs; };

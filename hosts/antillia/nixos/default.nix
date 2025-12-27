@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
     ../../../sops
     "${self}/nixos-modules"
-    ./builder.nix
+    # ./builder.nix
   ];
 
   programs.thunar = {
