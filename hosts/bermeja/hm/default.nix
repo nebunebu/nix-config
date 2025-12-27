@@ -15,7 +15,7 @@
 
   hm = {
     services.syncthing.enable = true;
-    # ai.enable = true;
+    ai.enable = true;
     fs-tools.enable = true;
     nix-tools = {
       nh.enable = true;
