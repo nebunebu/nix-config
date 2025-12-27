@@ -42,6 +42,7 @@
 
   # sops.enable = true;
   nos = {
+    boot.enable = true;
     system.enable = true;
     nix.enable = true;
     networking.enable = true;

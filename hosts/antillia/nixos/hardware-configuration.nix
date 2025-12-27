@@ -1,35 +1,38 @@
 {
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
+      device = "/dev/mapper/root_vg-root";
       fsType = "btrfs";
       options = [ "subvol=root" ];
+    };
+
+    "/nix" = {
+      device = "/dev/mapper/root_vg-root";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+    "/persist" = {
+      device = "/dev/mapper/root_vg-root";
+      fsType = "btrfs";
+      options = [ "subvol=persist" ];
     };
 
     "/boot" = {
       device = "/dev/disk/by-uuid/C708-E996";
       fsType = "vfat";
     };
-
-    "/nix" = {
-      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
-
-    "/persist" = {
-      device = "/dev/disk/by-uuid/697d245d-bfc8-49d6-990e-16c921b51d17";
-      fsType = "btrfs";
-      options = [ "subvol=persist" ];
-    };
   };
 
-  boot.loader = {
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
+  boot = {
+    initrd.enable = true;
+    loader = {
+      grub = {
+        enable = true;
+        devices = [ "nodev" ];
+      };
+      efi.efiSysMountPoint = "/boot";
     };
-    efi.efiSysMountPoint = "/boot";
   };
 
   swapDevices = [ ];
