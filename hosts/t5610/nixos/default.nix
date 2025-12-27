@@ -41,6 +41,9 @@
 
   # sops.enable = true;
   nos = {
+    system.enable = true;
+    nix.enable = true;
+    networking.enable = true;
     udisks2.enable = true;
     sops = {
       enable = true;

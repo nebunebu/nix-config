@@ -34,6 +34,16 @@
   };
 
   nos = {
+    boot.enable = true;
+    console.enable = true;
+    networking.enable = true;
+    nix.enable = true;
+    system.enable = true;
+    sops = {
+      enable = true;
+      gpg.enable = true;
+      pass.enable = true;
+    };
     desktop = {
       hyprland.enable = true;
       pipewire.enable = true;
