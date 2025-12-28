@@ -1,7 +1,6 @@
 {
   imports = [
-    ./acgp.nix
-    ./nebu.nix
+    ../../../users/acgp/hm.nix
+    ../../../users/nebu/hm.nix
   ];
-
 }

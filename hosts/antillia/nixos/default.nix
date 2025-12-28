@@ -12,7 +12,6 @@
     ../../../sops
     "${self}/nixos-modules"
     "${self}/users/nebu"
-    # ./builder.nix
   ];
 
   programs.thunar = {
@@ -49,24 +48,14 @@
     udisks2.enable = true;
     sops = {
       enable = true;
-      # taskwarrior.enable = true;
       gpg = {
         enable = true;
       };
       pass.enable = true;
     };
-    # pinchflat.enable = true;
     obs.enable = true;
-    # beaverhabits.enable = true;
-    # dumbkan.enable = true;
-    # freshrss.enable = false;
-    # glance.enable = true;
-    # jellyfin.enable = false;
-    # linkding.enable = true;
-    # ollama.enable = true;
     stylix.enable = true;
     users.nebu.enable = true;
-    # taskchampion.enable = true;
     desktop = {
       hyprland.enable = true;
       pipewire.enable = true;
@@ -80,16 +69,10 @@
   programs.zsh.enable = true;
 
   networking = {
-    hostName = "t5610";
+    hostName = "antillia";
     firewall = {
       enable = true;
       allowedTCPPorts = [ 3000 ];
-    };
-  };
-
-  environment = {
-    sessionVariables = {
-      HOSTNAME = "t5610";
     };
   };
 

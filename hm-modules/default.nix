@@ -146,7 +146,7 @@
     window-managers = {
       hyprland = {
         enable = true;
-        x230t.enable = true;
+        # x230t.enable = true;
         # t5610.enable = true;
         # hyprpicker.enable = true;
         # hyprgrass.enable = true;
