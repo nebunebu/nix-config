@@ -39,9 +39,9 @@
     pkgs.rivalcfg
   ];
 
-  # sops.enable = true;
   nos = {
     boot.enable = true;
+    console.enable = true;
     system.enable = true;
     nix.enable = true;
     networking.enable = true;
