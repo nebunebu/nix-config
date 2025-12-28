@@ -3,19 +3,19 @@
     "/" = {
       device = "/dev/mapper/root_vg-root";
       fsType = "btrfs";
-      options = [ "subvol=root" ];
+      options = [ "subvol=@root" ];
     };
 
     "/nix" = {
       device = "/dev/mapper/root_vg-root";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=@nix" ];
     };
 
     "/persist" = {
       device = "/dev/mapper/root_vg-root";
       fsType = "btrfs";
-      options = [ "subvol=persist" ];
+      options = [ "subvol=@persist" ];
     };
 
     "/boot" = {
@@ -31,7 +31,10 @@
         enable = true;
         devices = [ "nodev" ];
       };
-      efi.efiSysMountPoint = "/boot";
+      efi = {
+        efiSysMountPoint = "/boot";
+        canTouchEfiVariables = true;
+      };
     };
   };
 
