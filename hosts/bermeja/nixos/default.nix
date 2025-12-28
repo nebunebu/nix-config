@@ -56,7 +56,7 @@
       jellyfin.enable = true;
       linkding.enable = true;
       n8n.enable = true;
-      pinchflat.enable = true;
+      pinchflat.enable = false;
       qbittorrent.enable = true;
       beaverhabits.enable = true;
     };
