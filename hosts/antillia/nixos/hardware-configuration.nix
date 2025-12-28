@@ -1,3 +1,4 @@
+{lib, ...}:
 {
   fileSystems = {
     "/" = {
@@ -25,15 +26,20 @@
   };
 
   boot = {
-    initrd.enable = true;
+    initrd = {
+      enable = true;
+      systemd.enable = true;
+    };
     loader = {
       grub = {
+        efiSupport = true;
+        efiInstallAsRemovable = true;
         enable = true;
         devices = [ "nodev" ];
       };
       efi = {
         efiSysMountPoint = "/boot";
-        canTouchEfiVariables = true;
+        canTouchEfiVariables = lib.mkForce false;
       };
     };
   };
