@@ -51,11 +51,13 @@ in
         # variables = [ "-all" ];
       };
 
-      extraConfig = ''
-        exec-once = hypr-start
-        exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
-        debug:disable_logs = false
-      '';
+      extraConfig =
+        # toml
+        ''
+          exec-once = hypr-start
+          exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
+          # debug:disable_logs = false
+        '';
 
       settings = {
 
