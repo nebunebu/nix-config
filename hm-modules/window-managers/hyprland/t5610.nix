@@ -1,6 +1,8 @@
 { lib, config, ... }:
 let
   cfg = config.hm.window-managers.hyprland.t5610;
+  primaryMonitor = "DP-1";
+  secondaryMonitor = "HDMI-A-1";
 in
 {
   options = {
@@ -10,20 +12,20 @@ in
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {
       monitor = [
-        "DP-1, 1920x1080, 0x0, 1"
-        "HDMI-A-1, 1920x1080, 1920x0, 1"
+        "${primaryMonitor}, 1920x1080, 0x0, 1"
+        "${secondaryMonitor}, 1920x1080, 1920x0, 1"
       ];
 
       workspace = [
-        "1, monitor:DP-1"
-        "2, monitor:DP-1"
-        "3, monitor:DP-1"
-        "4, monitor:DP-1"
-        "5, monitor:DP-1"
-        "6, monitor:HDMI-A-1"
-        "7, monitor:HDMI-A-1"
-        "8, monitor:HDMI-A-1"
-        "9, monitor:HDMI-A-1"
+        "1, monitor:${primaryMonitor}, persistent:true"
+        "2, monitor:${primaryMonitor}, persistent:true"
+        "3, monitor:${primaryMonitor}, persistent:true"
+        "4, monitor:${primaryMonitor}, persistent:true"
+        "5, monitor:${primaryMonitor}, persistent:true"
+        "6, monitor:${secondaryMonitor}, persistent:true"
+        "7, monitor:${secondaryMonitor}, persistent:true"
+        "8, monitor:${secondaryMonitor}, persistent:true"
+        "9, monitor:${secondaryMonitor}, persistent:true"
       ];
     };
   };

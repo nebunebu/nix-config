@@ -5,7 +5,7 @@ in
 {
   imports = [
     ./chromium.nix
-    ./firefox.nix
+    ./firefox
     ./firefoxpwa.nix
   ];
 
