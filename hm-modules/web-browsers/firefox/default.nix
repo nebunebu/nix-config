@@ -33,8 +33,6 @@ in
           extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             i-dont-care-about-cookies
             new-tab-override
-            # old-reddit-redirect
-            # reddit-enhancement-suite
             stylebot-web
             stylus
             tridactyl
@@ -45,8 +43,11 @@ in
           ];
 
           settings = {
-            # enable userChrome.css + userContent.css
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            "devtools.chrome.enabled" = true;
+            "devtools.debugger.remote-enabled" = true;
+            "devtools.debugger.prompt-connection" = false;
+            "devtools.selfxss.count" = 100;
             "ui.key.menuAccessKeyFocuses" = false;
             "browser.startup.homepage" = "https://glance.nebunebu.xyz";
             "browser.startup.page" = 1;
