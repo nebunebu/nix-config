@@ -14,7 +14,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.vesktop
+      # pkgs.vesktop
 
       (pkgs.writeShellScriptBin "vesktop" ''
         exec ${lib.getExe pkgs.vesktop} \
