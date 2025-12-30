@@ -62,9 +62,17 @@ in
         "$mainMod, INSERT, Open power menu, exec, dms ipc call powermenu"
         "$mainMod, B, Open wallpaper manager, exec, dms ipc call dankdash wallpaper"
 
-        ", XF86MonBrightnessUp, Increase screen brightness, exec, dms ipc call brightness increment 5 "
-        ", XF86MonBrightnessDown, Decrease screen brightness, exec, dms ipc call brightness decrement 5 "
-        # "$mainMod, N, exec, dms ipc call night toggle"
+        ", XF86MonBrightnessUp, Increase screen brightness, exec, dms ipc call brightness increment 5"
+        ", XF86MonBrightnessDown, Decrease screen brightness, exec, dms ipc call brightness decrement 5"
+
+        # Cheat Sheet
+        "$mainMod + CONTROL, H, Toggle hyprland keybind popup, exec, dms ipc keybinds toggle hyprland"
+        "$mainMod + CONTROL, L, Toggle lazygit keybind popup, exec, dms ipc keybinds toggle lazygit"
+        "$mainMod + CONTROL, M, Toggle mpv keybind popup, exec, dms ipc keybinds toggle mpv"
+        "$mainMod + CONTROL, S, Toggle sioyek keybind popup, exec, dms ipc keybinds toggle sioyek"
+        "$mainMod + CONTROL, T, Toggle tmux keybind popup, exec, dms ipc keybinds toggle tmux"
+        "$mainMod + CONTROL, V, Toggle vesktop keybind popup, exec, dms ipc keybinds toggle vesktop"
+        "$mainMod + CONTROL, Y, Toggle yazi keybind popup, exec, dms ipc keybinds toggle yazi"
       ];
     };
   };
