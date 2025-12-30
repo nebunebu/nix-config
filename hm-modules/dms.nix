@@ -41,6 +41,11 @@ in
         "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""
         "dms run"
       ];
+
+      wayland.windowManager.hyprland.settings.windowrulev2 = lib.mkForce [
+        "float, size 90% 90%, center 1, initialClass:^(org.quickshell)$, initialTitle:^(Settings)$"
+      ];
+
       bindd = [
         "$mainMod, P, Toggle launcher, exec, dms ipc call spotlight toggle"
         "$mainMod, V, Toggle clipboard menu, exec, dms ipc call clipboard toggle"
