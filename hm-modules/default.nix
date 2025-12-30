@@ -1,23 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    # NOTE: add
-    # taskwarrior3
-    # jellyfin-media-player
-    # openpomodoro-cli
-    # calcure
-    # abook
-    # stripe-cli
-    # hledger
-    # krita
-    # drawio
-    # latexmk
-    # add ./nix-tools/nixpkgs-hammering.nix
-    # add ./nix-tools/nix-alien.nix
-    # add ./nix-tools/deadnix.nix
-
-    ./ai
-    # ./anki.nix
     ./communications
     ./fs-tools
     ./nix-tools
@@ -54,6 +37,7 @@
     ./lazygit.nix
     ./libreoffice.nix
     ./libnotify.nix
+    ./llm-agents.nix
     ./mpv.nix
     ./newsboat.nix
     ./obs-studio.nix
