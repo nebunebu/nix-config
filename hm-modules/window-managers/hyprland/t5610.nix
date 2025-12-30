@@ -2,7 +2,7 @@
 let
   cfg = config.hm.window-managers.hyprland.t5610;
   primaryMonitor = "DP-1";
-  secondaryMonitor = "HDMI-A-1";
+  secondaryMonitor = "DP-2";
 in
 {
   options = {
