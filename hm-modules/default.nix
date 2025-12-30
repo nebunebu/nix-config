@@ -6,6 +6,7 @@
     ./nix-tools
     ./terminal-emulators
     ./taskwarrior
+    ./jellyfin-desktop.nix
 
     ./shells/zsh
     ./shells/starship.nix
@@ -60,8 +61,6 @@
   ];
 
   home.packages = [
-    pkgs.jellyfin-media-player
-
     (pkgs.writeShellApplication {
       name = "roseify";
       runtimeInputs = [ pkgs.lutgen ];
@@ -80,6 +79,7 @@
     terminal-emulators.enable = true;
     web-browsers.enable = true;
     communications.enable = true;
+    jellyfin-desktop.enable = true;
 
     dev.awscli.enable = true;
     bottom.enable = true;
