@@ -14,6 +14,7 @@
 
     ./window-managers
 
+    ./anki.nix
     ./awscli.nix
     ./bottom.nix
     ./buku.nix
@@ -61,10 +62,6 @@
 
   home.packages = [
     pkgs.jellyfin-media-player
-
-    (pkgs.writeShellScriptBin "anki-bin" ''
-      ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
-    '')
 
     (pkgs.writeShellApplication {
       name = "roseify";
