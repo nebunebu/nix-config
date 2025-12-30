@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -13,15 +12,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      # pkgs.vesktop
-
-      (pkgs.writeShellScriptBin "vesktop" ''
-        exec ${lib.getExe pkgs.vesktop} \
-          --disable-gpu-video-decode \
-          --disable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecoder,AcceleratedVideoDecodeLinuxZeroCopyGL \
-          "$@"
-      '')
-    ];
+    programs.vesktop = {
+      enable = true;
+      # settings = { };
+      # vencord = {
+      #   settings = { };
+      #   themes = {};
+      # };
+    };
   };
 }
