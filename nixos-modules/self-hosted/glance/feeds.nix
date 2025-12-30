@@ -11,7 +11,6 @@
           subreddit = "unixporn";
           style = "horizontal-cards";
           show-thumbnails = true;
-          # comments-url-template = "https://reddit.com/{POST-PATH}";
           sort-by = "top";
           top-period = "day";
         }
@@ -22,7 +21,6 @@
             "jellyfin/jellyfin"
             "glanceapp/glance"
             "hyprwm/Hyprland"
-            # "Jas-SinghFSU/HyprPanel"
           ];
         }
         {
