@@ -8,7 +8,7 @@ let
   cfg = config.hm.jellyfin-desktop;
 in
 {
-  options.hm.jq = {
+  options.hm.jellyfin-desktop = {
     enable = lib.mkEnableOption "enable jellyfin-desktop";
   };
 
