@@ -74,12 +74,12 @@
 
   hm = {
     gtk.enable = true;
-    ai.enable = true;
-    communications.enable = true;
+    llm-agents.enable = true;
     fs-tools.enable = true;
     nix-tools.enable = true;
     terminal-emulators.enable = true;
     web-browsers.enable = true;
+    communications.enable = true;
 
     dev.awscli.enable = true;
     bottom.enable = true;
