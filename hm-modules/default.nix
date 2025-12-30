@@ -51,7 +51,6 @@
     ./sops.nix
     ./spotube.nix
     ./syncthing.nix
-    ./tealdeer.nix
     ./tmux.nix
     ./tuir.nix
     ./usbutils.nix
@@ -116,7 +115,6 @@
     spotube.enable = false;
     services.syncthing.enable = true;
     taskwarrior.enable = true;
-    tealdeer.enable = true;
     tmux.enable = true;
     tuir.enable = true;
     usbutils.enable = true;
