@@ -10,12 +10,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.fastfetch = {
       enable = true;
-      # settings = {
-      #   logo = {
-      #     source = "nixos_small";
-      #   };
-      #   display = { };
-      # };
     };
   };
 }

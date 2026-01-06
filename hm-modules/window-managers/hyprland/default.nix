@@ -60,15 +60,8 @@ in
         '';
 
       settings = {
-
         windowrulev2 = lib.mkForce [
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Edit Current)$"
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Add)$"
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Anki)$"
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Import File)$"
           "float, size 90% 90%, center 1, title:(.*blob:https://canary.discord.com/.*)"
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Add-ons)$"
-          "float, size 90% 90%, center 1, initialClass:^(anki)$, initialTitle:^(Leech Toolkit.*)$"
           "float, size 90% 90%, center 1, title:(.*HyperTTS.*)"
           "float, size 90% 90%, center 1, title:(.*Browse.*)"
           "float, size 90% 90%, center 1, initialClass:^(electron)$, initialTitle:^(Open Files)$"

@@ -1,28 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    # NOTE: add
-    # taskwarrior3
-    # jellyfin-media-player
-    # openpomodoro-cli
-    # calcure
-    # abook
-    # stripe-cli
-    # hledger
-    # krita
-    # drawio
-    # latexmk
-    # add ./nix-tools/nixpkgs-hammering.nix
-    # add ./nix-tools/nix-alien.nix
-    # add ./nix-tools/deadnix.nix
-
-    ./ai
-    # ./anki.nix
     ./communications
     ./fs-tools
     ./nix-tools
     ./terminal-emulators
     ./taskwarrior
+    ./jellyfin-desktop.nix
 
     ./shells/zsh
     ./shells/starship.nix
@@ -31,6 +15,7 @@
 
     ./window-managers
 
+    ./anki.nix
     ./awscli.nix
     ./bottom.nix
     ./buku.nix
@@ -54,6 +39,7 @@
     ./lazygit.nix
     ./libreoffice.nix
     ./libnotify.nix
+    ./llm-agents.nix
     ./mpv.nix
     ./newsboat.nix
     ./obs-studio.nix
@@ -66,7 +52,6 @@
     ./sops.nix
     ./spotube.nix
     ./syncthing.nix
-    ./tealdeer.nix
     ./tmux.nix
     ./tuir.nix
     ./usbutils.nix
@@ -76,12 +61,6 @@
   ];
 
   home.packages = [
-    pkgs.jellyfin-media-player
-
-    (pkgs.writeShellScriptBin "anki-bin" ''
-      ANKI_WAYLAND=1 exec ${pkgs.anki-bin}/bin/anki "$@"
-    '')
-
     (pkgs.writeShellApplication {
       name = "roseify";
       runtimeInputs = [ pkgs.lutgen ];
@@ -94,12 +73,13 @@
 
   hm = {
     gtk.enable = true;
-    ai.enable = true;
-    communications.enable = true;
+    llm-agents.enable = true;
     fs-tools.enable = true;
     nix-tools.enable = true;
     terminal-emulators.enable = true;
     web-browsers.enable = true;
+    communications.enable = true;
+    jellyfin-desktop.enable = true;
 
     dev.awscli.enable = true;
     bottom.enable = true;
@@ -135,7 +115,6 @@
     spotube.enable = false;
     services.syncthing.enable = true;
     taskwarrior.enable = true;
-    tealdeer.enable = true;
     tmux.enable = true;
     tuir.enable = true;
     usbutils.enable = true;
