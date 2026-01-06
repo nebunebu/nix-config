@@ -28,7 +28,7 @@ in
           ingress = {
             "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
             "beaverhabit.nebunebu.xyz".service = "http://127.0.0.1:8081";
-            "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
+            # "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
             "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
