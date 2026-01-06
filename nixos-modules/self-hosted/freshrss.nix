@@ -17,11 +17,13 @@ in
       owner = "freshrss";
       group = "freshrss";
       mode = "0400";
+      restartUnits = [ "freshrss.service" ];
     };
     services.freshrss = {
       enable = true;
       authType = "form";
       baseUrl = "https://freshrss.nebunebu.xyz";
+      defaultUser = "admin";
       passwordFile = config.sops.secrets.freshrss.path;
       # extensions = [
       #   pkgs.freshrss-extensions.youtube
