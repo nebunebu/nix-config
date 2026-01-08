@@ -56,6 +56,7 @@
     ./libnotify.nix
     ./mpv.nix
     ./newsboat.nix
+    ./newsraft.nix
     ./obs-studio.nix
     ./pavucontrol.nix
     ./pinta.nix
@@ -124,6 +125,7 @@
     libnotify.enable = true;
     mpv.enable = true;
     newsboat.enable = true;
+    newsraft.enable = true;
     obs-studio.enable = true;
     pavucontrol.enable = true;
     pinta.enable = true;
