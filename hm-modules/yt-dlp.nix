@@ -23,8 +23,9 @@ in
         throttled-rate = "100k";
         extractor-args = "youtube:player_client=tv";
         format = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best";
-        # cookies = "~/.cookies-youtube-com.txt";
-        # output = "\"~/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s\"";
+        # Don't use on bermeja
+        cookies-from-browser = "firefox";
+        output = "\"~/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s\"";
       };
     };
   };
