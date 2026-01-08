@@ -13,14 +13,17 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.pdftk ];
+    home.packages = [
+      pkgs.pdftk
+      pkgs.python3
+    ];
     programs.sioyek = {
       enable = true;
       bindings = {
         "move_up" = "k";
         "move_down" = "j";
         "move_left" = "h";
-        "move_right" = "k";
+        "move_right" = "l";
 
         "new_window" = "<C-t>";
       };
@@ -29,8 +32,13 @@ in
         "dark_mode_background_color" = "#191724";
         "background_color" = "#1f1d2e";
 
-        # pdftk "$1" cat $2-$3 output "${1%.pdf}_pages_${2}-${3}.pdf"
-        # new_command _extract_pages /path/to/extract_pages.sh "%{file_path}" [start] [end]
+        "new_command _dual_panelify" = ''
+          python -m sioyek.dual_panelify "%{sioyek_path}" "%{file_path}" "%{command_text}"
+        '';
+
+        "new_command _extract_highlights" = ''
+          python -m sioyek.extract_highlights "%{sioyek_path}" "%{local_database}" "%{shared_database}" "%1" %{zoom_level}
+        '';
       };
     };
   };
