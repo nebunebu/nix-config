@@ -15,7 +15,6 @@ let
     installPhase = ''
       mkdir -p $out/${pkgs.python3.sitePackages}/sioyek
       cp ${./dual_panelify.py} $out/${pkgs.python3.sitePackages}/sioyek/dual_panelify.py
-      cp ${./extract_highlights.py} $out/${pkgs.python3.sitePackages}/sioyek/extract_highlights.py
       cp ${./sioyek.py} $out/${pkgs.python3.sitePackages}/sioyek/sioyek.py
       touch $out/${pkgs.python3.sitePackages}/sioyek/__init__.py
     '';
@@ -59,10 +58,6 @@ in
 
         "new_command _dual_panelify" = ''
           ${pythonEnv}/bin/python -m sioyek.dual_panelify "%{sioyek_path}" "%{file_path}"
-        '';
-
-        "new_command _extract_highlights" = ''
-          ${pythonEnv}/bin/python -m sioyek.extract_highlights "%{sioyek_path}" "%{local_database}" "%{shared_database}" "%{file_path}" %{zoom_level}
         '';
       };
     };
