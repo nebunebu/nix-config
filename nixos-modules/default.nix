@@ -34,7 +34,6 @@
   # environment = {
   #   systemPackages = [
   #     inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
-  #     inputs.anki.packages.${pkgs.stdenv.hostPlatform.system}.default
   #     pkgs.poppler-utils
   #     # pkgs.winboat
   #     pkgs.quickshell

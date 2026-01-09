@@ -18,6 +18,8 @@ in
     hm.communications = {
       thunderbird.enable = true;
       vesktop.enable = true;
+      discord.enable = true;
+      discover-overlay.enable = true;
     };
   };
 }

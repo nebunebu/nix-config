@@ -41,6 +41,11 @@ in
         "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""
         "dms run"
       ];
+
+      wayland.windowManager.hyprland.settings.windowrulev2 = lib.mkForce [
+        "float, size 90% 90%, center 1, initialClass:^(org.quickshell)$, initialTitle:^(Settings)$"
+      ];
+
       bindd = [
         "$mainMod, P, Toggle launcher, exec, dms ipc call spotlight toggle"
         "$mainMod, V, Toggle clipboard menu, exec, dms ipc call clipboard toggle"
@@ -62,9 +67,17 @@ in
         "$mainMod, INSERT, Open power menu, exec, dms ipc call powermenu"
         "$mainMod, B, Open wallpaper manager, exec, dms ipc call dankdash wallpaper"
 
-        ", XF86MonBrightnessUp, Increase screen brightness, exec, dms ipc call brightness increment 5 "
-        ", XF86MonBrightnessDown, Decrease screen brightness, exec, dms ipc call brightness decrement 5 "
-        # "$mainMod, N, exec, dms ipc call night toggle"
+        ", XF86MonBrightnessUp, Increase screen brightness, exec, dms ipc call brightness increment 5"
+        ", XF86MonBrightnessDown, Decrease screen brightness, exec, dms ipc call brightness decrement 5"
+
+        # Cheat Sheet
+        "$mainMod + CONTROL, H, Toggle hyprland keybind popup, exec, dms ipc keybinds toggle hyprland"
+        "$mainMod + CONTROL, L, Toggle lazygit keybind popup, exec, dms ipc keybinds toggle lazygit"
+        "$mainMod + CONTROL, M, Toggle mpv keybind popup, exec, dms ipc keybinds toggle mpv"
+        "$mainMod + CONTROL, S, Toggle sioyek keybind popup, exec, dms ipc keybinds toggle sioyek"
+        "$mainMod + CONTROL, T, Toggle tmux keybind popup, exec, dms ipc keybinds toggle tmux"
+        "$mainMod + CONTROL, V, Toggle vesktop keybind popup, exec, dms ipc keybinds toggle vesktop"
+        "$mainMod + CONTROL, Y, Toggle yazi keybind popup, exec, dms ipc keybinds toggle yazi"
       ];
     };
   };
