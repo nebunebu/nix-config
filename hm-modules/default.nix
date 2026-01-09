@@ -48,7 +48,7 @@
     ./pup.nix
     ./pyradio.nix
     ./qgis.nix
-    ./sioyek.nix
+    ./sioyek
     ./sops.nix
     ./spotube.nix
     ./syncthing.nix
