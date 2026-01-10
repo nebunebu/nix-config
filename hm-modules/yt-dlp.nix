@@ -14,17 +14,26 @@ in
   config = lib.mkIf cfg.enable {
     programs.yt-dlp = {
       enable = true;
+      extraConfig = ''
+      # vim: set ft=conf:
+      '';
       settings = {
-        embed-thumbnail = true;
+        convert-subs = "srt";
+        cookies-from-browser = "firefox"; # Don't use on bermeja
         embed-chapters = true;
         embed-metadata = true;
-        sponsorblock-remove = "sponsor,selfpromo";
-        retries = 3;
-        throttled-rate = "100k";
+        embed-subs = true;
+        embed-thumbnail = true;
         extractor-args = "youtube:player_client=tv";
         format = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best";
-        # cookies = "~/.cookies-youtube-com.txt";
-        # output = "\"~/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s\"";
+        output = "${config.home.homeDirectory}/Videos/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s";
+        retries = 3;
+        sponsorblock-remove = "sponsor,selfpromo";
+        sub-format = "srt/vtt/best";
+        sub-langs = "en.*,-live_chat";
+        throttled-rate = "100k";
+        write-auto-subs = true;
+        write-subs = true;
       };
     };
   };

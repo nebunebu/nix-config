@@ -17,6 +17,7 @@
 
   hm = {
     git.enable = true;
+    communications.enable = true;
   };
 
   programs = {
