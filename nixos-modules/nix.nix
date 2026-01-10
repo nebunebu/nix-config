@@ -23,12 +23,13 @@ in
         trusted-users = [ "@wheel" ];
 
         builders-use-substitutes = true;
+
         extra-substituters = [
-          # "https://anyrun.cachix.org"
+          "https://cache.numtide.com"
         ];
 
         extra-trusted-public-keys = [
-          # "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
         ];
       };
       gc = {
