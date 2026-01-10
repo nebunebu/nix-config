@@ -14,6 +14,7 @@ in
       monitor = [
         "${primaryMonitor}, 1920x1080, 0x0, 1"
         "${secondaryMonitor}, 1920x1080, 1920x0, 1"
+        "${secondaryMonitor}, addreserved, 0, 0, 50, 0"
       ];
 
       workspace = [
