@@ -11,7 +11,6 @@
     settings = {
       general = {
         "gaps_in" = "4";
-        # "gaps_out" = "0,12,12,10"; #top,right,bottom,left
         "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
         "col.active_border" = lib.mkForce "rgb(${config.rosePine.main.gold})";
@@ -26,6 +25,7 @@
         # NOTE: Border Colors
         "bordercolor rgb(${config.rosePine.main.iris}), floating:1"
         "bordercolor rgb(${config.rosePine.main.pine}), fullscreen:1"
+        "bordercolor rgb(${config.rosePine.main.rose}) rgb(${config.rosePine.main.rose}), pinned:1, "
 
         "center,floating:1"
         "maxsize 70% 70%, floating:1"
