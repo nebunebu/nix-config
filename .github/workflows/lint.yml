@@ -1,45 +1,36 @@
 name: Lint
-
 on:
   push:
     branches:
       - main
       - claude/**
   pull_request:
-
 jobs:
   deadnix:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v14
         with:
           extra-conf: |
             extra-experimental-features = pipe-operators
-
       - name: Setup Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
-
       - name: Run deadnix
         run: nix develop --command deadnix --fail .
-
   statix:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v14
         with:
           extra-conf: |
             extra-experimental-features = pipe-operators
-
       - name: Setup Magic Nix Cache
         uses: DeterminateSystems/magic-nix-cache-action@v8
-
       - name: Run statix
         run: nix develop --command statix check .

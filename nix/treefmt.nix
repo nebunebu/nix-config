@@ -10,6 +10,7 @@
       excludes = [ ".envrc" ];
     };
     statix.enable = true;
+    yamlfmt.enable = true;
   };
 
   settings = {
