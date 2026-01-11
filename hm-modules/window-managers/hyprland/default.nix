@@ -62,6 +62,7 @@ in
       settings = {
         windowrulev2 = lib.mkForce [
           "float, size 90% 90%, center 1, title:(.*blob:https://canary.discord.com/.*)"
+          "float, size 90% 90%, center 1, initialClass:^(Discord)$, title:(Save File)"
           "float, size 90% 90%, center 1, title:(.*HyperTTS.*)"
           "float, size 90% 90%, center 1, title:(.*Browse.*)"
           "float, size 90% 90%, center 1, initialClass:^(electron)$, initialTitle:^(Open Files)$"
