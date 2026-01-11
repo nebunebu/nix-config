@@ -1,11 +1,7 @@
 { inputs, ... }:
 inputs.nixpkgs.legacyPackages
 |> builtins.mapAttrs (
-  system: pkgs:
-  let
-    # checks = inputs.self.checks.${system};
-  in
-  {
+  _system: pkgs: {
     default = pkgs.mkShell {
       name = "nix-config";
       packages = [

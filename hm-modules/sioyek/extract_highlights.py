@@ -27,6 +27,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from .sioyek import Sioyek
 
+
 def clean_path(path: str) -> str:
     if not path:
         return ""
@@ -71,7 +72,9 @@ def table_exists(conn: sqlite3.Connection, table: str) -> bool:
 
 def table_columns(conn: sqlite3.Connection, table: str) -> List[str]:
     cols = []
-    for cid, name, ctype, notnull, dflt, pk in conn.execute(f"PRAGMA table_info({table})"):
+    for cid, name, ctype, notnull, dflt, pk in conn.execute(
+        f"PRAGMA table_info({table})"
+    ):
         cols.append(name)
     return cols
 
@@ -95,13 +98,17 @@ def md5_file(path: str, chunk_size: int = 1024 * 1024) -> str:
     return h.hexdigest()
 
 
-def find_db_paths(args_local: Optional[str], args_shared: Optional[str]) -> Tuple[str, str]:
+def find_db_paths(
+    args_local: Optional[str], args_shared: Optional[str]
+) -> Tuple[str, str]:
     if args_local and args_shared:
         return (expand_user(args_local), expand_user(args_shared))
 
     base = default_sioyek_data_dir()
     local_db = expand_user(args_local) if args_local else os.path.join(base, "local.db")
-    shared_db = expand_user(args_shared) if args_shared else os.path.join(base, "shared.db")
+    shared_db = (
+        expand_user(args_shared) if args_shared else os.path.join(base, "shared.db")
+    )
 
     if not os.path.exists(local_db) or not os.path.exists(shared_db):
         # Fallback: some setups might use a single DB file (older/packaged variants).
@@ -249,7 +256,9 @@ def try_add_page_numbers(pdf_path: str, highlights: List[Highlight]) -> List[Hig
     return new_list
 
 
-def render_markdown(pdf_path: str, highlights: List[Highlight], group_by_page: bool) -> str:
+def render_markdown(
+    pdf_path: str, highlights: List[Highlight], group_by_page: bool
+) -> str:
     lines: List[str] = []
     lines.append(f"# Highlights: {os.path.basename(pdf_path)}")
     lines.append("")
@@ -265,7 +274,11 @@ def render_markdown(pdf_path: str, highlights: List[Highlight], group_by_page: b
         for h in highlights:
             if h.page != current_page:
                 current_page = h.page
-                lines.append(f"## Page {current_page}" if current_page is not None else "## (Unknown page)")
+                lines.append(
+                    f"## Page {current_page}"
+                    if current_page is not None
+                    else "## (Unknown page)"
+                )
             tag = f" ({h.htype})" if h.htype else ""
             txt = h.text if h.text else "_(empty highlight text)_"
             lines.append(f"-{tag} {txt}")
@@ -290,7 +303,9 @@ def render_text(highlights: List[Highlight], group_by_page: bool) -> str:
         for h in highlights:
             if h.page != current_page:
                 current_page = h.page
-                out.append(f"\n=== Page {current_page if current_page is not None else '?'} ===")
+                out.append(
+                    f"\n=== Page {current_page if current_page is not None else '?'} ==="
+                )
             tag = f"[{h.htype}] " if h.htype else ""
             out.append(f"- {tag}{h.text}".rstrip())
         return "\n".join(out).lstrip() + "\n"
@@ -304,11 +319,22 @@ def render_text(highlights: List[Highlight], group_by_page: bool) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Extract Sioyek highlights for a single PDF.")
-    ap.add_argument("pdf", help="Path to the PDF file (the one you highlighted in Sioyek).")
-    ap.add_argument("-o", "--output", help="Write output to this file (default: stdout).")
-    ap.add_argument("--local-db", help="Path to local.db (default: XDG_DATA_HOME/sioyek/local.db).")
-    ap.add_argument("--shared-db", help="Path to shared.db (default: XDG_DATA_HOME/sioyek/shared.db).")
+    ap = argparse.ArgumentParser(
+        description="Extract Sioyek highlights for a single PDF."
+    )
+    ap.add_argument(
+        "pdf", help="Path to the PDF file (the one you highlighted in Sioyek)."
+    )
+    ap.add_argument(
+        "-o", "--output", help="Write output to this file (default: stdout)."
+    )
+    ap.add_argument(
+        "--local-db", help="Path to local.db (default: XDG_DATA_HOME/sioyek/local.db)."
+    )
+    ap.add_argument(
+        "--shared-db",
+        help="Path to shared.db (default: XDG_DATA_HOME/sioyek/shared.db).",
+    )
     ap.add_argument(
         "--format",
         choices=["md", "text", "json"],
@@ -342,7 +368,9 @@ def main() -> int:
     if args.sioyek_path:
         try:
             sioyek = Sioyek(clean_path(args.sioyek_path))
-            sioyek.set_status_string(f"Extracting highlights for {os.path.basename(pdf_path)}...")
+            sioyek.set_status_string(
+                f"Extracting highlights for {os.path.basename(pdf_path)}..."
+            )
         except Exception as e:
             print(f"warning: failed to connect to sioyek: {e}", file=sys.stderr)
 

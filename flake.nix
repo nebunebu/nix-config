@@ -120,7 +120,7 @@
         // (import ./hosts/royllo { inherit inputs system pkgs; });
 
       # checks = import ./nix/checks.nix { inherit inputs; };
-      # formatter = import ./nix/formatter.nix { inherit inputs; };
+      formatter = import ./nix/formatter.nix { inherit inputs; };
       devShells = import ./nix/shell.nix { inherit inputs; };
       packages = import ./pkgs { inherit inputs; };
     };

@@ -13,42 +13,44 @@ from PyQt5.QtCore import QByteArray, QDataStream, QIODevice
 
 import fitz
 
-COLOR_MAP = {'a': (0.94, 0.64, 1.00),
-            'b': (0.00, 0.46, 0.86),
-            'c': (0.60, 0.25, 0.00),
-            'd': (0.30, 0.00, 0.36),
-            'e': (0.10, 0.10, 0.10),
-            'f': (0.00, 0.36, 0.19),
-            'g': (0.17, 0.81, 0.28),
-            'h': (1.00, 0.80, 0.60),
-            'i': (0.50, 0.50, 0.50),
-            'j': (0.58, 1.00, 0.71),
-            'k': (0.56, 0.49, 0.00),
-            'l': (0.62, 0.80, 0.00),
-            'm': (0.76, 0.00, 0.53),
-            'n': (0.00, 0.20, 0.50),
-            'o': (1.00, 0.64, 0.02),
-            'p': (1.00, 0.66, 0.73),
-            'q': (0.26, 0.40, 0.00),
-            'r': (1.00, 0.00, 0.06),
-            's': (0.37, 0.95, 0.95),
-            't': (0.00, 0.60, 0.56),
-            'u': (0.88, 1.00, 0.40),
-            'v': (0.45, 0.04, 1.00),
-            'w': (0.60, 0.00, 0.00),
-            'x': (1.00, 1.00, 0.50),
-            'y': (1.00, 1.00, 0.00),
-            'z': (1.00, 0.31, 0.02)
+COLOR_MAP = {
+    "a": (0.94, 0.64, 1.00),
+    "b": (0.00, 0.46, 0.86),
+    "c": (0.60, 0.25, 0.00),
+    "d": (0.30, 0.00, 0.36),
+    "e": (0.10, 0.10, 0.10),
+    "f": (0.00, 0.36, 0.19),
+    "g": (0.17, 0.81, 0.28),
+    "h": (1.00, 0.80, 0.60),
+    "i": (0.50, 0.50, 0.50),
+    "j": (0.58, 1.00, 0.71),
+    "k": (0.56, 0.49, 0.00),
+    "l": (0.62, 0.80, 0.00),
+    "m": (0.76, 0.00, 0.53),
+    "n": (0.00, 0.20, 0.50),
+    "o": (1.00, 0.64, 0.02),
+    "p": (1.00, 0.66, 0.73),
+    "q": (0.26, 0.40, 0.00),
+    "r": (1.00, 0.00, 0.06),
+    "s": (0.37, 0.95, 0.95),
+    "t": (0.00, 0.60, 0.56),
+    "u": (0.88, 1.00, 0.40),
+    "v": (0.45, 0.04, 1.00),
+    "w": (0.60, 0.00, 0.00),
+    "x": (1.00, 1.00, 0.50),
+    "y": (1.00, 1.00, 0.00),
+    "z": (1.00, 0.31, 0.02),
 }
 
 
 def color_distance(color1, color2):
-    return sum([(x-y)**2 for (x,y) in zip(color1, color2)])
+    return sum([(x - y) ** 2 for (x, y) in zip(color1, color2)])
+
 
 def find_highlight_type_with_color(color, color_map):
 
-    min_dist = color_distance(color, color_map['a'])
-    min_type = 'a'
+    min_dist = color_distance(color, color_map["a"])
+    min_type = "a"
 
     for highlight_type, type_color in color_map.items():
         dist = color_distance(color, type_color)
@@ -57,6 +59,7 @@ def find_highlight_type_with_color(color, color_map):
             min_type = highlight_type
 
     return min_type
+
 
 def clean_path(path):
     if len(path) > 0:
@@ -68,18 +71,25 @@ def clean_path(path):
     else:
         return ""
 
+
 def get_pdf_highlight_text(pdf_highlight, page):
     return page.get_text_selection(pdf_highlight.rect.tl, pdf_highlight.rect.br)
 
+
 def are_highlights_same(pdf_highlight, sioyek_highlight, pdf_highlight_text):
     sioyek_highlight_document_pos = sioyek_highlight.get_begin_document_pos()
-    return abs(sioyek_highlight_document_pos.offset_y - pdf_highlight.rect[1]) < 50 and is_text_close_fuzzy(pdf_highlight_text, sioyek_highlight.text)
+    return abs(
+        sioyek_highlight_document_pos.offset_y - pdf_highlight.rect[1]
+    ) < 50 and is_text_close_fuzzy(pdf_highlight_text, sioyek_highlight.text)
+
 
 def are_bookmarks_same(pdf_bookmark, sioyek_bookmark):
-    pdf_bookmark_text = pdf_bookmark.info['content']
+    pdf_bookmark_text = pdf_bookmark.info["content"]
     pdf_bookmark_location_y = pdf_bookmark.rect.top_left.y
     docpos = sioyek_bookmark.get_document_position()
-    return ((docpos[1] - pdf_bookmark_location_y) < 50) and is_text_close_fuzzy(pdf_bookmark_text, sioyek_bookmark.description)
+    return ((docpos[1] - pdf_bookmark_location_y) < 50) and is_text_close_fuzzy(
+        pdf_bookmark_text, sioyek_bookmark.description
+    )
 
 
 def is_text_close_fuzzy(str1, str2):
@@ -88,23 +98,27 @@ def is_text_close_fuzzy(str1, str2):
     if max(len1, len2) < 10:
         l = min(len(str1), len(str2))
         num_errors = int(l * 0.2)
-        #todo: this is *extremely* slow, do something better, e.g. levenshtein distance
-        match1 = regex.search('(' + regex.escape(str1) + '){e<=' + str(num_errors) +'}', str2)
-        match2 = regex.search('(' + regex.escape(str1) + '){e<=' + str(num_errors) +'}', str1)
+        # todo: this is *extremely* slow, do something better, e.g. levenshtein distance
+        match1 = regex.search(
+            "(" + regex.escape(str1) + "){e<=" + str(num_errors) + "}", str2
+        )
+        match2 = regex.search(
+            "(" + regex.escape(str1) + "){e<=" + str(num_errors) + "}", str1
+        )
         if match1 and match2:
             return True
         else:
             return False
     else:
         # return True
-        ratio = min(len1 / len2, len2/ len1)
+        ratio = min(len1 / len2, len2 / len1)
         return ratio > 0.8
 
 
 def merge_rects(rects):
-    '''
+    """
     Merge close rectangles in a line (e.g. rectangles corresponding to a single character or word)
-    '''
+    """
     if len(rects) == 0:
         return []
 
@@ -123,8 +137,10 @@ def merge_rects(rects):
             resulting_rects.append(rect)
     return resulting_rects
 
+
 def point_distance(p1, p2):
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
+
 
 def rect_distance(rect, point):
     if rect.contains(point):
@@ -132,6 +148,7 @@ def rect_distance(rect, point):
     else:
         center = rect.x0 + rect.width / 2, rect.y0 + rect.height / 2
         return point_distance(center, point)
+
 
 def get_closest_rect_to_point(rects, point):
     closest_rect = None
@@ -142,6 +159,7 @@ def get_closest_rect_to_point(rects, point):
             closest_distance = distance
             closest_rect = rect
     return closest_rect
+
 
 def get_bounding_box(rects):
     if len(rects) == 0:
@@ -157,16 +175,24 @@ def get_bounding_box(rects):
         ur_y = max(ur_y, rect[3])
 
     return fitz.Rect(ll_x, ll_y, ur_x, ur_y)
+
+
 class Sioyek:
 
-    def __init__(self, sioyek_path, local_database_path=None, shared_database_path=None, force_binary=False):
+    def __init__(
+        self,
+        sioyek_path,
+        local_database_path=None,
+        shared_database_path=None,
+        force_binary=False,
+    ):
         self.path = sioyek_path
         self.is_dummy_mode = False
 
         self.local_database = None
         self.shared_database = None
         self.cached_path_hash_map = None
-        self.highlight_embed_method = 'fitz'
+        self.highlight_embed_method = "fitz"
         # run the binary sioyek command instead of using local sockets
         # it is much slower and is kept only for possible backward incompatibilities
         self.force_binary = force_binary
@@ -175,7 +201,7 @@ class Sioyek:
 
         if not force_binary:
             self.socket = QLocalSocket()
-            self.socket.connectToServer('sioyek')
+            self.socket.connectToServer("sioyek")
             if self.socket.waitForConnected(1000):
                 self.connected = True
 
@@ -186,7 +212,7 @@ class Sioyek:
         if shared_database_path != None:
             self.shared_database_path = shared_database_path
             self.shared_database = sqlite3.connect(self.shared_database_path)
-    
+
     def should_use_local_socket(self):
         return (not self.force_binary) and (self.connected)
 
@@ -200,15 +226,15 @@ class Sioyek:
         return self.shared_database
 
     def set_dummy_mode(self, mode):
-        '''
+        """
         dummy mode prints commands instead of executing them on sioyek
-        '''
+        """
         self.is_dummy_mode = mode
-    
+
     def get_path_hash_map(self):
 
         if self.cached_path_hash_map == None:
-            query = 'SELECT * from document_hash'
+            query = "SELECT * from document_hash"
             cursor = self.get_local_database().execute(query)
             results = cursor.fetchall()
             res = dict()
@@ -220,15 +246,21 @@ class Sioyek:
 
     def run_command(self, command_name, text=None, focus=False):
         if text == None:
-            params = [self.path, '--execute-command', command_name]
+            params = [self.path, "--execute-command", command_name]
         else:
-            params = [self.path, '--execute-command', command_name, '--execute-command-data', str(text)]
-        
+            params = [
+                self.path,
+                "--execute-command",
+                command_name,
+                "--execute-command-data",
+                str(text),
+            ]
+
         if focus == False:
-            params.append('--nofocus')
-        
+            params.append("--nofocus")
+
         if self.is_dummy_mode:
-            print('dummy mode, executing: ', params)
+            print("dummy mode, executing: ", params)
         else:
             if self.should_use_local_socket():
                 data = QByteArray()
@@ -239,7 +271,7 @@ class Sioyek:
                 self.socket.write(data)
                 self.socket.flush()
                 self.socket.waitForBytesWritten(1000)
-                
+
             else:
                 subprocess.run(params)
 
@@ -638,14 +670,13 @@ class Sioyek:
 
     def goto_selected_text(self, focus=False):
         self.run_command("goto_selected_text", None, focus=focus)
-    
+
     def get_document(self, path):
         return Document(path, self)
-    
+
     def close(self):
         self.local_database.close()
         self.shared_database.close()
-
 
     def statusbar_output(self):
 
@@ -653,17 +684,20 @@ class Sioyek:
             def __init__(self, sioyek):
                 self.old_stdout = sys.stdout
                 self.sioyek = sioyek
-            
+
             def write(self, text):
-                if text.strip() != '':
+                if text.strip() != "":
                     self.sioyek.set_status_string(text)
+
         return redirect_stdout(StatusBarOutput(self))
+
 
 @dataclass
 class DocumentPos:
     page: int
     offset_x: float
     offset_y: float
+
 
 @dataclass
 class AbsoluteDocumentPos:
@@ -683,41 +717,45 @@ class Highlight:
     def insert(self, document):
         INSERT_QUERY = "INSERT INTO highlights (document_path, desc, type, begin_x, begin_y, end_x, end_y) VALUES (?, ?, ?, ?, ?, ?, ?)"
         path_hash_map = document.sioyek.get_path_hash_map()
-        document_hash = path_hash_map[document.path.replace('\\', '/')]
+        document_hash = path_hash_map[document.path.replace("\\", "/")]
 
         begin_abs_pos = self.get_begin_abs_pos()
         end_abs_pos = self.get_end_abs_pos()
 
         cursor = self.doc.sioyek.shared_database.cursor()
-        cursor.execute(INSERT_QUERY, (
-            document_hash,
-            self.text,
-            self.highlight_type,
-            begin_abs_pos.offset_x,
-            begin_abs_pos.offset_y,
-            end_abs_pos.offset_x,
-            end_abs_pos.offset_y
-        ))
+        cursor.execute(
+            INSERT_QUERY,
+            (
+                document_hash,
+                self.text,
+                self.highlight_type,
+                begin_abs_pos.offset_x,
+                begin_abs_pos.offset_y,
+                end_abs_pos.offset_x,
+                end_abs_pos.offset_y,
+            ),
+        )
         cursor.close()
 
-    
     def get_begin_document_pos(self):
-        begin_page, begin_offset_y = self.doc.absolute_to_document_y(self.selection_begin[1])
+        begin_page, begin_offset_y = self.doc.absolute_to_document_y(
+            self.selection_begin[1]
+        )
         return DocumentPos(begin_page, self.selection_begin[0], begin_offset_y)
 
     def get_end_document_pos(self):
         end_page, end_offset_y = self.doc.absolute_to_document_y(self.selection_end[1])
         return DocumentPos(end_page, self.selection_end[0], end_offset_y)
-    
+
     def get_begin_abs_pos(self):
         return AbsoluteDocumentPos(self.selection_begin[0], self.selection_begin[1])
 
     def get_end_abs_pos(self):
         return AbsoluteDocumentPos(self.selection_end[0], self.selection_end[1])
 
-    
     def __repr__(self):
         return f"Highlight of type {self.highlight_type}: {self.text}"
+
 
 class Bookmark:
 
@@ -727,21 +765,23 @@ class Bookmark:
         self.y_offset = y_offset
 
     def insert(self, document):
-        INSERT_QUERY = "INSERT INTO bookmarks (document_path, desc, offset_y) VALUES (?, ?, ?)"
+        INSERT_QUERY = (
+            "INSERT INTO bookmarks (document_path, desc, offset_y) VALUES (?, ?, ?)"
+        )
         path_hash_map = document.sioyek.get_path_hash_map()
-        document_hash = path_hash_map[document.path.replace('\\', '/')]
+        document_hash = path_hash_map[document.path.replace("\\", "/")]
 
         cursor = self.doc.sioyek.shared_database.cursor()
         cursor.execute(INSERT_QUERY, (document_hash, self.description, self.y_offset))
         cursor.close()
-    
+
     @lru_cache(maxsize=None)
     def get_document_position(self):
         return self.doc.absolute_to_document_y(self.y_offset)
-    
 
     def __repr__(self):
         return f"Bookmark at {self.y_offset}: {self.description}"
+
 
 class Document:
 
@@ -756,7 +796,6 @@ class Document:
         offset_x = document_pos.offset_x
         offset_y = document_pos.offset_y + self.cum_page_heights[document_pos.page]
         return AbsoluteDocumentPos(offset_x, offset_y)
-        
 
     def absolute_to_document_y(self, offset_y):
         page = 0
@@ -768,15 +807,18 @@ class Document:
     def to_document(self, absolute_document_pos, pypdf=False):
         page, offset_y = self.absolute_to_document_y(absolute_document_pos.offset_y)
         if pypdf:
-            return DocumentPos(page, absolute_document_pos.offset_x + self.page_widths[page] / 2, offset_y)
+            return DocumentPos(
+                page,
+                absolute_document_pos.offset_x + self.page_widths[page] / 2,
+                offset_y,
+            )
         else:
             return DocumentPos(page, absolute_document_pos.offset_x, offset_y)
 
-    
     @lru_cache(maxsize=None)
     def get_page(self, page_number):
         return self.doc.load_page(page_number)
-    
+
     @lru_cache(maxsize=None)
     def get_page_pdf_annotations(self, page_number):
         page = self.get_page(page_number)
@@ -791,14 +833,24 @@ class Document:
     @lru_cache(maxsize=None)
     def get_page_pdf_bookmarks(self, page_number):
         def is_bookmark(annot):
-            return annot.type[1] in ['Text', 'FreeText']
-        return [annot for annot in self.get_page_pdf_annotations(page_number) if is_bookmark(annot)]
+            return annot.type[1] in ["Text", "FreeText"]
+
+        return [
+            annot
+            for annot in self.get_page_pdf_annotations(page_number)
+            if is_bookmark(annot)
+        ]
 
     @lru_cache(maxsize=None)
     def get_page_pdf_highlights(self, page_number):
         def is_highlight(annot):
-            return annot.type[1] == 'Highlight'
-        return [annot for annot in self.get_page_pdf_annotations(page_number) if is_highlight(annot)]
+            return annot.type[1] == "Highlight"
+
+        return [
+            annot
+            for annot in self.get_page_pdf_annotations(page_number)
+            if is_highlight(annot)
+        ]
 
     def remove_annotations(self, page_number, rect):
         annots = self.get_page_pdf_annotations(page_number)
@@ -810,7 +862,7 @@ class Document:
         for annot in annots:
             if annot.rect.intersects(rect):
                 annots_to_delete.append(annot)
-        
+
         for annot in annots_to_delete:
             page.delete_annot(annot)
         self.save_changes()
@@ -838,13 +890,21 @@ class Document:
         docpos = highlight.get_begin_document_pos()
         page = self.get_page(docpos.page)
         # quads = page.search_for(highlight.text, flags=fitz.TEXT_PRESERVE_WHITESPACE, hit_max=50)
-        if method == 'fitz':
-            quads = self.get_best_selection_rects(docpos.page, highlight.text, merge=True)
+        if method == "fitz":
+            quads = self.get_best_selection_rects(
+                docpos.page, highlight.text, merge=True
+            )
         else:
-            selection_begin_abs = AbsoluteDocumentPos(highlight.selection_begin[0], highlight.selection_begin[1])
-            selection_end_abs = AbsoluteDocumentPos(highlight.selection_end[0], highlight.selection_end[1])
+            selection_begin_abs = AbsoluteDocumentPos(
+                highlight.selection_begin[0], highlight.selection_begin[1]
+            )
+            selection_end_abs = AbsoluteDocumentPos(
+                highlight.selection_end[0], highlight.selection_end[1]
+            )
 
-            selected_words = self.get_selected_words(selection_begin_abs, selection_end_abs)
+            selected_words = self.get_selected_words(
+                selection_begin_abs, selection_end_abs
+            )
             selected_rects = [fitz.Rect(*word[:4]) for word in selected_words[0]]
             merged_rects = merge_rects(selected_rects)
             quads = [rect.quad for rect in merged_rects]
@@ -861,17 +921,17 @@ class Document:
         page = self.get_page(page_number)
         # print((0, offset_y), bookmark.description)
         page.add_text_annot((0, offset_y), bookmark.description)
-    
+
     def embed_new_bookmarks(self):
         new_bookmarks = self.get_non_embedded_bookmarks()
         for bookmark in new_bookmarks:
             self.embed_bookmark(bookmark)
-    
+
     def embed_new_highlights(self, colormap=None):
         new_highlights = self.get_non_embedded_highlights()
         for highlight in new_highlights:
             self.embed_highlight(highlight, colormap)
-    
+
     def embed_new_annotations(self, save=False, colormap=None):
         self.embed_new_bookmarks()
         self.embed_new_highlights(colormap=colormap)
@@ -879,7 +939,6 @@ class Document:
         if save:
             self.save_changes()
 
-    
     def save_changes(self):
         self.doc.saveIncr()
 
@@ -887,12 +946,14 @@ class Document:
         document_pos = DocumentPos(page, 0, bookmark.rect.top_left.y)
         absolute_pos = self.to_absolute(document_pos)
         # self.to_absolute(bookmark.)
-        new_bookmark = Bookmark(self, bookmark.info['content'], absolute_pos.offset_y)
+        new_bookmark = Bookmark(self, bookmark.info["content"], absolute_pos.offset_y)
         new_bookmark.insert(self)
 
-    def add_imported_highlight(self, page, begin_pos, end_pos, highlight_text, highlight_type):
+    def add_imported_highlight(
+        self, page, begin_pos, end_pos, highlight_text, highlight_type
+    ):
 
-        highlight_text = highlight_text.replace('\n', '')
+        highlight_text = highlight_text.replace("\n", "")
         begin_document_pos = DocumentPos(page, begin_pos[0], begin_pos[1])
         end_document_pos = DocumentPos(page, end_pos[0], end_pos[1])
 
@@ -904,8 +965,8 @@ class Document:
             self,
             highlight_text,
             highlight_type,
-            (begin_abs_pos.offset_x - page_width/2, begin_abs_pos.offset_y),
-            (end_abs_pos.offset_x - page_width/2, end_abs_pos.offset_y)
+            (begin_abs_pos.offset_x - page_width / 2, begin_abs_pos.offset_y),
+            (end_abs_pos.offset_x - page_width / 2, end_abs_pos.offset_y),
         )
         new_highlight.insert(self)
 
@@ -917,11 +978,11 @@ class Document:
         new_bookmarks = self.get_non_sioyek_bookmarks()
 
         for page, text, hl in new_highlights:
-            color = hl.colors['stroke']
+            color = hl.colors["stroke"]
             if colormap:
                 highlight_type = find_highlight_type_with_color(color, colormap)
             else:
-                highlight_type = 'a'
+                highlight_type = "a"
 
             begin_rect = hl.vertices[:4]
             end_rect = hl.vertices[-4:]
@@ -986,7 +1047,6 @@ class Document:
                     new_highlights.append((page_number, pdf_highlight_text, pdf_hl))
         return new_highlights
 
-
     def get_non_embedded_highlights(self):
 
         candidate_highlights = self.get_highlights()
@@ -994,11 +1054,13 @@ class Document:
 
         for highlight in candidate_highlights:
             highlight_document_pos = highlight.get_begin_document_pos()
-            pdf_page_highlights = self.get_page_pdf_highlights(highlight_document_pos.page)
+            pdf_page_highlights = self.get_page_pdf_highlights(
+                highlight_document_pos.page
+            )
             document_page = self.get_page(highlight_document_pos.page)
             found = False
             for pdf_highlight in pdf_page_highlights:
-                #todo: swap the order of for loops so we don't compute highlight_text every iteration
+                # todo: swap the order of for loops so we don't compute highlight_text every iteration
                 highlight_text = get_pdf_highlight_text(pdf_highlight, document_page)
                 if are_highlights_same(pdf_highlight, highlight, highlight_text):
                     found = True
@@ -1013,19 +1075,21 @@ class Document:
         new_bookmarks = []
 
         for bookmark in candidate_bookmarks:
-            pdf_page_bookmarks = self.get_page_pdf_bookmarks(bookmark.get_document_position()[0])
+            pdf_page_bookmarks = self.get_page_pdf_bookmarks(
+                bookmark.get_document_position()[0]
+            )
             found = False
             for pdf_bookmark in pdf_page_bookmarks:
-                if bookmark.description == pdf_bookmark.info['content']:
+                if bookmark.description == pdf_bookmark.info["content"]:
                     found = True
                     break
             if not found:
                 new_bookmarks.append(bookmark)
         return new_bookmarks
-            
+
     def get_page_text_and_rects(self, page_number):
         page = self.get_page(page_number)
-        word_data = page.get_text('words')
+        word_data = page.get_text("words")
 
         word_texts = []
         word_rects = []
@@ -1037,19 +1101,19 @@ class Document:
             block_no = word_data[i][5]
             line_no = word_data[i][6]
             if i > 0:
-                if block_no != word_data[i-1][5]:
-                    word_text = word_text + '\n'
+                if block_no != word_data[i - 1][5]:
+                    word_text = word_text + "\n"
             word_texts.append(word_text)
             word_rects.append(fitz.Rect(word_data[i][0:4]))
 
             additional_string = word_text
 
-            if word_text[-1] != '\n':
-                additional_string += ' '
-            
+            if word_text[-1] != "\n":
+                additional_string += " "
+
             resulting_string += additional_string
             string_rects.extend([fitz.Rect(word_data[i][0:4])] * len(additional_string))
-        
+
         return resulting_string, string_rects, word_texts, word_rects
 
     def set_page_dimensions(self):
@@ -1061,7 +1125,7 @@ class Document:
         for i in range(self.doc.page_count):
             page = self.doc.load_page(i)
             # can't simply use the page's mediabox because some documents have non-zero origin
-            # see https://github.com/ahrm/sioyek-python-extensions/issues/2#issuecomment-1578255778 
+            # see https://github.com/ahrm/sioyek-python-extensions/issues/2#issuecomment-1578255778
             # width, height = page.mediabox_size
             cropbox = page.cropbox
             width = cropbox[2] - cropbox[0]
@@ -1071,7 +1135,7 @@ class Document:
             self.page_widths.append(width)
             self.cum_page_heights.append(cum_height)
             cum_height += height
-    
+
     def get_best_selection_rects(self, page_number, text, merge=False):
         for i in range(10):
             rects = self.get_text_selection_rects(page_number, text, num_errors=i)
@@ -1095,12 +1159,14 @@ class Document:
             return rects
         else:
             page_text, page_rects, _, _ = self.get_page_text_and_rects(page_number)
-            match = regex.search('(' + regex.escape(text) + '){e<=' + str(num_errors) +'}', page_text)
+            match = regex.search(
+                "(" + regex.escape(text) + "){e<=" + str(num_errors) + "}", page_text
+            )
             if match:
                 match_begin, match_end = match.span()
                 # print('match: ')
                 # print(page_text[match_begin + 1: match_end+1])
-                rects = page_rects[match_begin + 1: match_end+1]
+                rects = page_rects[match_begin + 1 : match_end + 1]
                 return list(dict.fromkeys(rects))
             else:
                 return []
@@ -1114,33 +1180,44 @@ class Document:
         else:
             return (None, None), (None, None)
 
-    def highlight_selection(self, page_number, selection_begin, selection_end, focus=False):
-        highlight_string = '{},{},{} {},{},{}'.format(
+    def highlight_selection(
+        self, page_number, selection_begin, selection_end, focus=False
+    ):
+        highlight_string = "{},{},{} {},{},{}".format(
             page_number,
-            selection_begin[0], selection_begin[1],
+            selection_begin[0],
+            selection_begin[1],
             page_number,
-            selection_end[0], selection_end[1])
+            selection_end[0],
+            selection_end[1],
+        )
 
         self.sioyek.keyboard_select(highlight_string, focus=focus)
 
     def highlight_page_text(self, page_number, text, focus=False):
-        (begin_x, begin_y), (end_x, end_y) = self.get_text_selection_begin_and_end(page_number, text)
+        (begin_x, begin_y), (end_x, end_y) = self.get_text_selection_begin_and_end(
+            page_number, text
+        )
         if begin_x:
-            self.highlight_selection(page_number, (begin_x, begin_y), (end_x, end_y), focus=focus)
+            self.highlight_selection(
+                page_number, (begin_x, begin_y), (end_x, end_y), focus=focus
+            )
 
     def highlight_page_text_fault_tolerant(self, page_number, text, focus=False):
         best_selection = self.get_best_selection(page_number, text)
         if best_selection:
-            self.highlight_selection(page_number, best_selection[0], best_selection[1], focus=focus)
-    
+            self.highlight_selection(
+                page_number, best_selection[0], best_selection[1], focus=focus
+            )
+
     def get_sentences(self):
         res = []
         for i in range(self.doc.page_count):
             page = self.doc.load_page(i)
-            sentences = page.get_text().replace('\n', '').split('.')
+            sentences = page.get_text().replace("\n", "").split(".")
             res.extend([(s, i) for s in sentences])
         return res
-    
+
     def get_hash(self):
         path_hash_map = self.sioyek.get_path_hash_map()
 
@@ -1148,18 +1225,24 @@ class Document:
             if os.path.normpath(self.path) == os.path.normpath(path):
                 self.cached_hash = hash_
         return self.cached_hash
-    
+
     def get_bookmarks(self):
         doc_hash = self.get_hash()
-        BOOKMARK_SELECT_QUERY = "select * from bookmarks where document_path='{}'".format(doc_hash)
+        BOOKMARK_SELECT_QUERY = (
+            "select * from bookmarks where document_path='{}'".format(doc_hash)
+        )
         shared_database = self.sioyek.get_shared_database()
         cursor = shared_database.execute(BOOKMARK_SELECT_QUERY)
-        bookmarks = [Bookmark(self, desc, y_offset) for _, _, desc, y_offset in cursor.fetchall()]
+        bookmarks = [
+            Bookmark(self, desc, y_offset) for _, _, desc, y_offset in cursor.fetchall()
+        ]
         return bookmarks
 
     def get_highlights(self):
         doc_hash = self.get_hash()
-        HIGHLIGHT_SELECT_QUERY = "select * from highlights where document_path='{}'".format(doc_hash)
+        HIGHLIGHT_SELECT_QUERY = (
+            "select * from highlights where document_path='{}'".format(doc_hash)
+        )
 
         shared_database = self.sioyek.get_shared_database()
         cursor = shared_database.execute(HIGHLIGHT_SELECT_QUERY)
@@ -1173,7 +1256,7 @@ class Document:
                 if idx is not None:
                     return row[idx]
             return default
-        
+
         def coerce_float(value):
             if value is None:
                 return None
@@ -1184,8 +1267,12 @@ class Document:
 
         highlights = []
         for row in rows:
-            begin_x = coerce_float(get_col(row, ["begin_x", "selection_begin_x", "start_x"]))
-            begin_y = coerce_float(get_col(row, ["begin_y", "selection_begin_y", "start_y"]))
+            begin_x = coerce_float(
+                get_col(row, ["begin_x", "selection_begin_x", "start_x"])
+            )
+            begin_y = coerce_float(
+                get_col(row, ["begin_y", "selection_begin_y", "start_y"])
+            )
             end_x = coerce_float(get_col(row, ["end_x", "selection_end_x", "end_x"]))
             end_y = coerce_float(get_col(row, ["end_y", "selection_end_y", "end_y"]))
             if None in (begin_x, begin_y, end_x, end_y):
@@ -1193,19 +1280,32 @@ class Document:
             text = get_col(row, ["text", "desc", "content", "selection_text"], "")
             highlight_type = get_col(row, ["highlight_type", "type", "color"], "a")
             highlights.append(
-                Highlight(self, text, highlight_type, (begin_x, begin_y), (end_x, end_y))
+                Highlight(
+                    self, text, highlight_type, (begin_x, begin_y), (end_x, end_y)
+                )
             )
         return highlights
-    
-    def get_page_selection(self, page_number, selection_begin_x, selection_begin_y, selection_end_x, selection_end_y):
+
+    def get_page_selection(
+        self,
+        page_number,
+        selection_begin_x,
+        selection_begin_y,
+        selection_end_x,
+        selection_end_y,
+    ):
         in_range = False
         page = self.get_page(page_number)
         words = page.get_text_words()
 
         selected_words = []
         word_rects = [fitz.Rect(*word[:4]) for word in words]
-        start_closest_rect = get_closest_rect_to_point(word_rects, (selection_begin_x, selection_begin_y))
-        end_closest_rect = get_closest_rect_to_point(word_rects, (selection_end_x, selection_end_y))
+        start_closest_rect = get_closest_rect_to_point(
+            word_rects, (selection_begin_x, selection_begin_y)
+        )
+        end_closest_rect = get_closest_rect_to_point(
+            word_rects, (selection_end_x, selection_end_y)
+        )
 
         for word_item, word_rect in zip(words, word_rects):
             if start_closest_rect == word_rect:
@@ -1223,11 +1323,13 @@ class Document:
         selection_end_doc = self.to_document(selection_end, pypdf=True)
 
         if selection_begin_doc.page == selection_end_doc.page:
-            return self.get_page_selection(selection_begin_doc.page,
-                                           selection_begin_doc.offset_x,
-                                           selection_begin_doc.offset_y,
-                                           selection_end_doc.offset_x,
-                                           selection_end_doc.offset_y)
+            return self.get_page_selection(
+                selection_begin_doc.page,
+                selection_begin_doc.offset_x,
+                selection_begin_doc.offset_y,
+                selection_end_doc.offset_x,
+                selection_end_doc.offset_y,
+            )
         return [], -1
 
     def get_highlight_bounding_box(self, selection_begin, selection_end):
@@ -1236,5 +1338,6 @@ class Document:
         word_bounding_boxes = [fitz.Rect(*x[:4]) for x in words]
         highlight_bounding_box = get_bounding_box(word_bounding_boxes)
         return highlight_bounding_box, page_number
+
     def close(self):
         self.doc.close()
