@@ -37,7 +37,6 @@
           };
           sharedModules = [
             inputs.sops-nix.homeManagerModules.sops
-            inputs.impermanence.homeManagerModules.impermanence
           ];
         };
       }
