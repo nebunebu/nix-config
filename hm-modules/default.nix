@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./communications
@@ -62,14 +62,9 @@
   ];
 
   home.packages = [
-    (pkgs.writeShellApplication {
-      name = "roseify";
-      runtimeInputs = [ pkgs.lutgen ];
-      text = # sh
-        ''
-          lutgen apply "$1" -o "roseified-$1" -p rose-pine
-        '';
-    })
+    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".generate_password
+    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".compress4discord
+    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".discord_dumper
   ];
 
   hm = {

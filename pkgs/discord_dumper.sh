@@ -227,7 +227,8 @@ post_file() {
 
   if [[ "$NO_SIZE_LIMIT" != "1" ]]; then
     if ((size > MAX_BYTES)); then
-      local msg="SKIP (too large): $path ($(bytes_human "$size")) > limit $(bytes_human "$MAX_BYTES")"
+      local msg
+      msg="SKIP (too large): $path ($(bytes_human "$size")) > limit $(bytes_human "$MAX_BYTES")"
       if [[ "$ON_LARGE" == "fail" ]]; then
         err "$msg"
         return 3
@@ -429,7 +430,11 @@ if [[ -n "$DIR" ]]; then
   }
 
   note "Batch upload from: $DIR"
-  [[ "$RECURSIVE" == "1" ]] && note "Mode: recursive" || note "Mode: non-recursive"
+  if [[ "$RECURSIVE" == "1" ]]; then
+    note "Mode: recursive"
+  else
+    note "Mode: non-recursive"
+  fi
   [[ "$NO_SIZE_LIMIT" == "1" ]] || note "Max size: $MAX_SIZE_SPEC (filter mode: $ON_LARGE)"
 
   find_args=(-- "$DIR")
