@@ -154,26 +154,6 @@
         "type": "github"
       }
     },
-    "dgop": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1768170655,
-        "narHash": "sha256-qIMudnKlVnEE1nfKIRWuZ5ABveRolQXWiXYaHJLKg3g=",
-        "owner": "AvengeMedia",
-        "repo": "dgop",
-        "rev": "b19e0c0e9f0a51c0f27afaa8b875c041aecebe4a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AvengeMedia",
-        "repo": "dgop",
-        "type": "github"
-      }
-    },
     "direnv-instant": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -1169,7 +1149,6 @@
         "anki": "anki",
         "claude-desktop": "claude-desktop",
         "dankMaterialShell": "dankMaterialShell",
-        "dgop": "dgop",
         "direnv-instant": "direnv-instant",
         "disko": "disko",
         "firefox-addons": "firefox-addons",
