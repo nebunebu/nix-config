@@ -15,7 +15,7 @@ in
     programs.yt-dlp = {
       enable = true;
       extraConfig = ''
-      # vim: set ft=conf:
+        # vim: set ft=conf:
       '';
       settings = {
         convert-subs = "srt";
@@ -26,7 +26,7 @@ in
         embed-thumbnail = true;
         extractor-args = "youtube:player_client=tv";
         format = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best";
-        output = "${config.home.homeDirectory}/Videos/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s";
+        # output = "${config.home.homeDirectory}/Videos/YTDLP/%(channel)s/Season %(upload_date>%Y)s/s%(upload_date>%Y)se%(upload_date>%m)s%(upload_date>%d)s - %(title)s (%(id)s).%(ext)s";
         retries = 3;
         sponsorblock-remove = "sponsor,selfpromo";
         sub-format = "srt/vtt/best";
