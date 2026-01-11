@@ -23,13 +23,13 @@ in
     programs = {
       zsh = {
         enable = true;
-        dotDir = "${config.xdg.configHome/zsh}";
         autosuggestion.enable = true;
         enableCompletion = true;
         zprof.enable = false;
         enableVteIntegration = true;
         localVariables.CLIPBOARD = "wlp";
         history.path = "${config.xdg.configHome}/zsh/zsh_history";
+        dotDir = "${config.xdg.configHome}/zsh";
         sessionVariables = {
           FUNCNEST = 100000;
           EDITOR = "nvim";
