@@ -44,7 +44,6 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
-      # package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
       xwayland.enable = true;
       systemd = {
         enable = true;
@@ -60,12 +59,35 @@ in
         '';
 
       settings = {
-        windowrulev2 = lib.mkForce [
-          "float, size 90% 90%, center 1, title:(.*blob:https://canary.discord.com/.*)"
-          "float, size 90% 90%, center 1, initialClass:^(Discord)$, title:(Save File)"
-          "float, size 90% 90%, center 1, title:(.*HyperTTS.*)"
-          "float, size 90% 90%, center 1, title:(.*Browse.*)"
-          "float, size 90% 90%, center 1, initialClass:^(electron)$, initialTitle:^(Open Files)$"
+        windowrule = lib.mkForce [
+          "float on, size 90% 90%, center on, match:title (.*blob:https://canary.discord.com/.*)"
+          "float on, size 90% 90%, center on, match:initial_class ^(Discord)$, match:title (Save File)"
+          "float on, size 90% 90%, center on, match:title (.*HyperTTS.*)"
+          "float on, size 90% 90%, center on, match:title (.*Browse.*)"
+          "float on, size 90% 90%, center on, match:initial_class ^(electron)$, match:initial_title ^(Open Files)$"
+
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Edit Current)$"
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Add)$"
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Anki)$"
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Import File)$"
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Add-ons)$"
+          "float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Leech Toolkit.*)$"
+
+          "float on, size 90% 90%, center on, match:initial_class ^(org.quickshell)$, match:initial_title ^(Settings)$"
+
+          "border_color rgb(${config.rosePine.main.iris}), match:float true"
+          "border_color rgb(${config.rosePine.main.pine}), match:fullscreen true"
+          "border_color rgb(${config.rosePine.main.rose}) rgb(${config.rosePine.main.rose}), match:pin true"
+
+          "center on, match:float true"
+
+          "max_size 70% 70%, match:float true"
+
+          "float on, center on, size 70% 70%, match:class ^(firefox)$, match:initial_title ^(Sign in - Google Accounts.*)$"
+
+          "float on, center on, size 90% 70%, match:class ^(firefox)$, match:initial_title ^(Library)$"
+
+          "float on, center on, size 38% 87%, move 60% 5%, match:class ^(tridactyl)$"
         ];
 
         dwindle = {

@@ -28,7 +28,7 @@ in
 
     wayland.windowManager.hyprland = {
       settings = {
-        windowrulev2 = [ "float, class:^(kitty-btm)$" ];
+        # windowrulev2 = [ "float, class:^(kitty-btm)$" ];
         bind = [ "ALT_L, b, exec, pypr toggle btm" ];
       };
     };

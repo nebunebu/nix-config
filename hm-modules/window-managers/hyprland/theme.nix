@@ -20,32 +20,6 @@
         rounding = 2;
         rounding_power = 5.0;
       };
-
-      windowrulev2 = lib.mkForce [
-        # NOTE: Border Colors
-        "bordercolor rgb(${config.rosePine.main.iris}), floating:1"
-        "bordercolor rgb(${config.rosePine.main.pine}), fullscreen:1"
-        "bordercolor rgb(${config.rosePine.main.rose}) rgb(${config.rosePine.main.rose}), pinned:1, "
-
-        "center,floating:1"
-        "maxsize 70% 70%, floating:1"
-
-        # NOTE: Firefox Google Sign In
-        "float, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
-        "center 1, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
-        "size 70% 70%, class:^(firefox)$, initialTitle:^(Sign in - Google Accounts.*)$"
-
-        # NOTE: Firefox history manager and others
-        "float, class:^(firefox)$, initialTitle:^(Library)$"
-        "center 1, class:^(firefox)$, initialTitle:^(Library)$"
-        "size 90% 70%, class:^(firefox)$, initialTitle:^(Library)$"
-
-        # NOTE: Tridactyl Editor
-        "float, class:^(tridactyl)$"
-        "center 1, class:^(tridactyl)$"
-        "size 38% 87%, class:^(tridactyl)$"
-        "move 60% 5%, class:^(tridactyl)$"
-      ];
     };
   };
 }
