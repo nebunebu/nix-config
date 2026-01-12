@@ -11,7 +11,6 @@
     settings = {
       general = {
         "gaps_in" = "4";
-        "gaps_out" = "0,2,2,2"; # top,right,bottom,left
         "border_size" = "3";
         "col.active_border" = lib.mkForce "rgb(${config.rosePine.main.gold})";
       };
