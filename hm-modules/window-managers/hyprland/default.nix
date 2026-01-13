@@ -37,8 +37,6 @@ in
 
     home.sessionVariables = {
       NIXOS_OZONE_WL = "1";
-      HYPRLAND_TRACE = "1";
-      AQ_TRACE = "1";
       AQ_DRM_DEVICES = "/dev/dri/card1";
     };
 
@@ -55,7 +53,7 @@ in
         ''
           exec-once = hypr-start
           exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
-          # debug:disable_logs = false
+          debug:disable_logs = true
         '';
 
       settings = {

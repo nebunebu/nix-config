@@ -109,7 +109,6 @@
     qgis.enable = true;
     sioyek.enable = true;
     sops.enable = true;
-    spotube.enable = false;
     services.syncthing.enable = true;
     taskwarrior.enable = true;
     tmux.enable = true;

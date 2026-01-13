@@ -6,5 +6,6 @@
 
   hm = {
     window-managers.hyprland.t5610.enable = true;
+    spotube.enable = true;
   };
 }
