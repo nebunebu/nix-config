@@ -14,6 +14,8 @@
     "${self}/users/nebu"
   ];
 
+  services.accounts-daemon.enable = true; # for dms to persist profile
+
   programs.thunar = {
     enable = true;
     plugins = [

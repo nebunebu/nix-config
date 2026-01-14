@@ -24,6 +24,8 @@ in
       pkgs.material-symbols
       pkgs.cava
       pkgs.wl-clipboard
+      pkgs.i2c-tools
+      pkgs.khal
     ];
 
     programs.dank-material-shell = {
