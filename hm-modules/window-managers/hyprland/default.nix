@@ -48,13 +48,70 @@ in
         # variables = [ "-all" ];
       };
 
-      extraConfig =
-        # toml
-        ''
-          exec-once = hypr-start
-          exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
-          debug:disable_logs = true
-        '';
+      extraConfig = ''
+        source = ~/.config/hypr/dms/layout.conf
+        source = ~/.config/hypr/dms/outputs.conf
+
+        env = QT_QPA_PLATFORM,wayland
+        env = ELECTRON_OZONE_PLATFORM_HINT,auto
+        env = QT_QPA_PLATFORMTHEME,gtk3
+        env = QT_QPA_PLATFORMTHEME_QT6,gtk3
+
+        # layerrule = noanim, ^(dms)$
+
+        decoration {
+            shadow {
+                enabled = false
+                range = 30
+                render_power = 5
+                offset = 0 5
+                color = rgba(00000070)
+            }
+        }
+
+        # Opacity for inactive windows
+        windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
+
+        # GNOME apps
+        windowrulev2 = rounding 12, class:^(org\.gnome\.)
+        windowrulev2 = noborder, class:^(org\.gnome\.)
+
+        # Terminal apps - no borders
+        windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
+        windowrulev2 = noborder, class:^(Alacritty)$
+        windowrulev2 = noborder, class:^(zen)$
+        windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
+        windowrulev2 = noborder, class:^(kitty)$
+
+
+
+        # Floating windows
+        windowrulev2 = float, class:^(gnome-calculator)$
+        windowrulev2 = float, class:^(blueman-manager)$
+        windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
+
+        # Open DMS windows as floating by default
+        windowrulev2 = float, class:^(org.quickshell)$
+
+        # Animations
+        # layerrule = animation slide right, dms:control-center
+        # layerrule = animation slide top, dms:workspace-overview
+        # You can find all available animations here: https://wiki.hypr.land/Configuring/Animations/#animation-tree
+
+        # Blur
+        # You can use regex like so to apply a rule to multiple layer
+        # You can also use variables
+        # $blur_layer = dms:(color-picker|clipboard|spotlight|settings)
+        # layerrule = blur, $blur_layer 
+
+        # Dim (if you prefer a dim instead of a blur effect)
+        # layerrule = dimaround, $blur_layer
+
+
+        exec-once = hypr-start
+        exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
+        debug:disable_logs = true
+      '';
 
       settings = {
         windowrule = lib.mkForce [
