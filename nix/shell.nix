@@ -6,7 +6,7 @@ inputs.nixpkgs.legacyPackages
       name = "nix-config";
       packages = [
         pkgs.convco
-        pkgs.nixfmt-rfc-style
+        pkgs.nixfmt
         pkgs.deadnix
         # pkgs.statix
       ];
