@@ -50,7 +50,7 @@ in
 
       extraConfig = ''
         source = ~/.config/hypr/dms/layout.conf
-        source = ~/.config/hypr/dms/outputs.conf
+        # source = ~/.config/hypr/dms/outputs.conf
 
         env = QT_QPA_PLATFORM,wayland
         env = ELECTRON_OZONE_PLATFORM_HINT,auto
