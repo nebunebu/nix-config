@@ -10,25 +10,6 @@ in
 {
   options.hm.terminal-emulators.ghostty = {
     enable = lib.mkEnableOption "enable ghostty";
-
-    forceGL43 = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Wrap ghostty with MESA_GL_VERSION_OVERRIDE=4.3 and MESA_GLSL_VERSION_OVERRIDE=430.";
-    };
-
-    wrapperName = lib.mkOption {
-      type = lib.types.str;
-      default = "ghostty-ogl43";
-      description = "Name of the wrapped launcher binary.";
-    };
-
-    # Also install a desktop entry that uses the wrapper.
-    desktopEntry = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Install an xdg desktop entry that launches the wrapped Ghostty.";
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -92,39 +73,9 @@ in
       };
     };
 
-    # Wrapper that sets the Mesa overrides (GPU path, not llvmpipe).
-    home.packages = lib.mkIf cfg.forceGL43 [
-      (pkgs.writeShellScriptBin cfg.wrapperName ''
-        #!${pkgs.runtimeShell}
-        exec env \
-          MESA_GL_VERSION_OVERRIDE=4.3 \
-          MESA_GLSL_VERSION_OVERRIDE=430 \
-          ghostty "$@"
-      '')
-    ];
-
-    # Optional desktop entry pointing to the wrapper (keeps the original entry untouched).
-    xdg.desktopEntries = lib.mkIf (cfg.forceGL43 && cfg.desktopEntry) {
-      ghostty-ogl43 = {
-        name = "Ghostty (OpenGL 4.3)";
-        genericName = "Terminal";
-        comment = "Ghostty launched with GL 4.3 override";
-        exec = "${cfg.wrapperName}";
-        terminal = false;
-        type = "Application";
-        categories = [
-          "System"
-          "TerminalEmulator"
-        ];
-        icon = "ghostty";
-        # If you like tmux auto-attach:
-        # exec = "${cfg.wrapperName} -e tmux new-session -A -s main";
-      };
-    };
-
     wayland.windowManager.hyprland.settings.bind = [
-      "$mainMod, Return, exec, ${cfg.wrapperName} -e tmux new-session -A -s main"
-      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ${cfg.wrapperName}\""
+      "$mainMod, Return, exec, ${pkgs.ghostty}/bin/ghostty -e tmux new-session -A -s main"
+      "$mainMod + SHIFT, Return, exec, hyprctl dispatch exec \"[float; size 80% 80%; center 1; animation slide] ${pkgs.ghostty}/bin/ghostty\""
     ];
   };
 }
