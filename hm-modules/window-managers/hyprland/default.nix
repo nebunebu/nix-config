@@ -56,6 +56,8 @@ in
         env = ELECTRON_OZONE_PLATFORM_HINT,auto
         env = QT_QPA_PLATFORMTHEME,gtk3
         env = QT_QPA_PLATFORMTHEME_QT6,gtk3
+        env = MESA_GL_VERSION_OVERRIDE,4.3
+        env = MESA_GLSL_VERSION_OVERRIDE,430
 
         # layerrule = noanim, ^(dms)$
 
