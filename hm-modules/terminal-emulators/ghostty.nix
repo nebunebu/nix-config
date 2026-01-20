@@ -11,7 +11,6 @@ in
   options.hm.terminal-emulators.ghostty = {
     enable = lib.mkEnableOption "enable ghostty";
   };
-
   config = lib.mkIf cfg.enable {
     programs.tmux.terminal = "xterm-ghostty";
 
@@ -38,9 +37,7 @@ in
         clipboard-trim-trailing-spaces = true;
         copy-on-select = true;
         confirm-close-surface = false;
-        # custom-shader = [
-        #   "${smear_fade_patched}"
-        # ];
+        custom-shader = "${./shader.glsl}";
         custom-shader-animation = "always";
       };
 
