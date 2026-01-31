@@ -30,17 +30,38 @@ in
           isDefault = true;
           id = 0;
 
-          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-            i-dont-care-about-cookies
-            new-tab-override
-            stylebot-web
-            stylus
-            tridactyl
-            ublock-origin
-            aw-watcher-web
-            link-gopher
-            linkding-extension
-          ];
+          extensions = {
+            force = true;
+            packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+              i-dont-care-about-cookies
+              # new-tab-override
+              stylebot-web
+              stylus
+              tridactyl
+              ublock-origin
+              # aw-watcher-web
+              link-gopher
+              linkding-extension
+              # private-grammar-checker-harper
+            ];
+
+            settings = {
+              # "newtaboverride@agenedia.com" = {
+              #   force = true;
+              #   settings = {
+              #     "mode" = 0;
+              #     "focus" = "webpage";
+              #   };
+              # };
+              "tridactyl.vim@cmcaine.co.uk" = {
+                force = true;
+                settings = {
+                  # Replace with your desired URL, e.g., your Glance dashboard
+                  "newtab" = "https://glance.nebunebu.xyz";
+                };
+              };
+            };
+          };
 
           settings = {
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
