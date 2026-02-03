@@ -50,6 +50,9 @@ in
         "move_right" = "l";
 
         "new_window" = "<C-t>";
+
+        "select_next_char" = "l";
+        "unselect_last_char" = "h";
       };
       config = {
         "default_dark_mode" = "0";

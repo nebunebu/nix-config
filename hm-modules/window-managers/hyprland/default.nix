@@ -71,30 +71,30 @@ in
             }
         }
 
-        # Opacity for inactive windows
-        windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
-
-        # GNOME apps
-        windowrulev2 = rounding 12, class:^(org\.gnome\.)
-        windowrulev2 = noborder, class:^(org\.gnome\.)
-
-        # Terminal apps - no borders
-        windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
-        windowrulev2 = noborder, class:^(Alacritty)$
-        windowrulev2 = noborder, class:^(zen)$
-        windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
-        windowrulev2 = noborder, class:^(kitty)$
-
-
-
-        # Floating windows
-        windowrulev2 = float, class:^(gnome-calculator)$
-        windowrulev2 = float, class:^(blueman-manager)$
-        windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
-
-        # Open DMS windows as floating by default
-        windowrulev2 = float, class:^(org.quickshell)$
-
+        # # Opacity for inactive windows
+        # # windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
+        #
+        # # GNOME apps
+        # # windowrulev2 = rounding 12, class:^(org\.gnome\.)
+        # # windowrulev2 = noborder, class:^(org\.gnome\.)
+        #
+        # # Terminal apps - no borders
+        # windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
+        # windowrulev2 = noborder, class:^(Alacritty)$
+        # windowrulev2 = noborder, class:^(zen)$
+        # windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
+        # windowrulev2 = noborder, class:^(kitty)$
+        #
+        #
+        #
+        # # Floating windows
+        # windowrulev2 = float, class:^(gnome-calculator)$
+        # windowrulev2 = float, class:^(blueman-manager)$
+        # windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
+        #
+        # # Open DMS windows as floating by default
+        # windowrulev2 = float, class:^(org.quickshell)$
+        #
         # Animations
         # layerrule = animation slide right, dms:control-center
         # layerrule = animation slide top, dms:workspace-overview
