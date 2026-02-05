@@ -25,18 +25,9 @@
     power-profiles-daemon.enable = true;
   };
 
-  programs.thunar = {
-    enable = true;
-    plugins = [
-      pkgs.xfce.thunar-archive-plugin
-      pkgs.xfce.thunar-volman
-      pkgs.xfce.thunar-media-tags-plugin
-      pkgs.xfce.thunar-vcs-plugin
-    ];
-  };
-
   nos = {
     boot.enable = true;
+    thunar.enable = true;
     console.enable = true;
     networking.enable = true;
     nix.enable = true;

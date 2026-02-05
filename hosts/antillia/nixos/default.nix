@@ -16,16 +16,6 @@
 
   services.accounts-daemon.enable = true; # for dms to persist profile
 
-  programs.thunar = {
-    enable = true;
-    plugins = [
-      pkgs.xfce.thunar-archive-plugin
-      pkgs.xfce.thunar-volman
-      pkgs.xfce.thunar-media-tags-plugin
-      pkgs.xfce.thunar-vcs-plugin
-    ];
-  };
-
   services = {
     gvfs.enable = true;
     # NOTE: required for spotube
@@ -45,6 +35,7 @@
     boot.enable = true;
     console.enable = true;
     system.enable = true;
+    thunar.enable = true;
     nix.enable = true;
     networking.enable = true;
     udisks2.enable = true;
