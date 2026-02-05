@@ -23,7 +23,7 @@
         --lwt-toolbar-field-background-color: var(--rp-field) !important;
         --lwt-toolbar-field-color: var(--rp-toolbar-text) !important;
 
-        --tab-selected-bgcolor: var(--rp-toolbar) !important;
+        --tab-selected-bgcolor: var(--rp-field) !important;
         --tab-selected-textcolor: var(--rp-toolbar-text) !important;
 
         --toolbarbutton-icon-fill: var(--rp-icons) !important;
