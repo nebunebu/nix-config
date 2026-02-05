@@ -24,5 +24,5 @@
     environmentFile = config.sops.secrets.pia.path;
   };
 
-  networking.firewall.checkReversePath = "loose";
+  # networking.firewall.checkReversePath = "loose";
 }

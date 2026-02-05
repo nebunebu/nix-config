@@ -60,6 +60,6 @@
   programs.zsh.enable = true;
 
   networking.hostName = "royllo";
-  networking.firewall.checkReversePath = "loose";
+  # networking.firewall.checkReversePath = "loose";
 
 }
