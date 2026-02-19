@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noogle-search.url = "github:argosnothing/noogle-search";
+
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
     };

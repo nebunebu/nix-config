@@ -14,6 +14,7 @@ in
     ./nix-inspect.nix
     ./nixpkgs-fmt.nix
     # ./nixpkgs-hammering.nix
+    ./noogle-search.nix
     ./nurl.nix
     ./nvd.nix
     ./statix.nix
@@ -31,6 +32,7 @@ in
       nix-index.enable = true;
       nix-inspect.enable = true;
       nixpkgs-fmt.enable = true;
+      noogle-search.enable = true;
       nurl.enable = true;
       nvd.enable = true;
       statix.enable = true;
