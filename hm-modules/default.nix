@@ -68,6 +68,7 @@
   ];
 
   hm = {
+    anki.enable = true;
     gtk.enable = true;
     llm-agents.enable = true;
     fs-tools.enable = true;
