@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 let
@@ -15,11 +16,16 @@ in
   config = lib.mkIf cfg.enable {
     services.ollama = {
       enable = true;
+      package = pkgs.ollama-rocm;
+      rocmOverrideGfx = "9.0.0";
       host = "0.0.0.0";
       loadModels = [
-        "qwen2.5:7b"
-        "dolphin-mixtral:8x7b"
+        "minstral-3:14b"
       ];
+
+      environmentVariables = {
+        HSA_ENABLE_SDMA = "0";
+      };
       openFirewall = true;
     };
   };

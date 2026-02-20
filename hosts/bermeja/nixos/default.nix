@@ -48,17 +48,18 @@
     };
 
     self-hosted = {
-      thirteenft.enable = true;
-      invidious.enable = false;
+      beaverhabits.enable = true;
       cloudflared.enable = true;
       freshrss.enable = true;
       glance.enable = true;
+      invidious.enable = false;
       jellyfin.enable = true;
       linkding.enable = true;
       n8n.enable = true;
+      ollama.enable = true;
       pinchflat.enable = false;
       qbittorrent.enable = true;
-      beaverhabits.enable = true;
+      thirteenft.enable = true;
     };
   };
 
