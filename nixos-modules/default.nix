@@ -5,7 +5,7 @@
     ./avahi.nix
     ./boot.nix
     ./console.nix
-    ./dms-greeter.nix
+    # ./dms-greeter.nix
     ./documentation.nix
     ./dotool.nix
     ./hyprland.nix

@@ -24,7 +24,7 @@
         home-manager = {
           useGlobalPkgs = true;
           backupFileExtension = "backup";
-          users.nebu = import (inputs.self + "/users/nebu/hm.nix");
+          users.nebu = import (inputs.self + "/hosts/bermeja/hm/default.nix");
           extraSpecialArgs = {
             inherit
               inputs

@@ -55,7 +55,7 @@
       invidious.enable = false;
       jellyfin.enable = true;
       linkding.enable = true;
-      n8n.enable = true;
+      # n8n.enable = true;
       ollama.enable = true;
       pinchflat.enable = false;
       qbittorrent.enable = true;
