@@ -11,7 +11,7 @@
     ./jellyfin.nix
     ./linkding.nix
     ./navidrome.nix
-    # ./ollama.nix
+    ./ollama.nix
     ./pia-vpn.nix
     ./pinchflat.nix
     # ./taskchampion.nix
