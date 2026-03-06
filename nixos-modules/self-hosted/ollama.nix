@@ -14,14 +14,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
+    networking.firewall.allowedTCPPorts = [ 11434 ];
+
     services.ollama = {
       enable = true;
       package = pkgs.ollama-rocm;
       rocmOverrideGfx = "9.0.0";
       host = "0.0.0.0";
-      loadModels = [
-        "minstral-3:14b"
-      ];
 
       environmentVariables = {
         HSA_ENABLE_SDMA = "0";
