@@ -56,8 +56,8 @@ in
       };
       config = {
         "default_dark_mode" = "0";
-        "dark_mode_background_color" = "#191724";
-        "background_color" = "#1f1d2e";
+        "dark_mode_background_color" = lib.mkForce "#191724";
+        "background_color" = lib.mkForce "#1f1d2e";
         "debug" = "1";
 
         "new_command _dual_panelify" = ''
