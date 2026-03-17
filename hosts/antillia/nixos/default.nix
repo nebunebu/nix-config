@@ -54,9 +54,9 @@
       pipewire.enable = true;
     };
 
-    virtualisation = {
-      virt-manager.enable = true;
-    };
+    # virtualisation = {
+    #   virt-manager.enable = true;
+    # };
   };
 
   programs.zsh.enable = true;

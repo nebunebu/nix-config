@@ -1,6 +1,6 @@
 {
   imports = [
-    ./virt-manager
-    ./vmVariant.nix
+    # ./virt-manager
+    # ./vmVariant.nix
   ];
 }
