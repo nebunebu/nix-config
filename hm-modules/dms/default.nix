@@ -30,7 +30,44 @@ in
 
     programs.dank-material-shell = {
       enable = true;
-      enableDynamicTheming = false;
+
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+
+      session = {
+        isLightMode = false;
+        showThirdPartyPlugins = true;
+        perMonitorWallpaper = true;
+        monitorWallpapers = {
+          "DP-1" = builtins.fetchurl {
+            url = "https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/wallpapers/roseified-wallhaven-l81kkr.jpg";
+            sha256 = "05pbqa6dd0xzzx60q6fq56j6zzrga85vlfycnq7ng86zbd2kp5xc";
+          };
+          "DP-2" = builtins.fetchurl {
+            url = "https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/wallpapers/roseified-wallhaven-vq6yy5.jpg";
+            sha256 = "173d02fmwd2w0jvih35z889dhqxqjwv4j9lchr7calmybvhpv1gr";
+          };
+        };
+      };
+
+      # settings = {
+      # };
+
+      # https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/pfp-blue.png
+
+      # image = builtins.fetchurl {
+      #   url = "https://github.com/nebunebu/imgs/raw/main/wallpapers/nixos-rose-pine.png";
+      #   sha256 = "084qgbicqiqwprb9m6l5jwij26rv8r73h76vba523z6q9rz0snlw";
+      # };
+
+      enableSystemMonitoring = true; # System monitoring widgets (dgop)
+      enableVPN = true; # VPN management widget
+      enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+      enableAudioWavelength = true; # Audio visualizer (cava)
+      enableCalendarEvents = true; # Calendar integration (khal)
+      enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
     };
 
     home.sessionVariables = {
@@ -49,6 +86,7 @@ in
         "$mainMod, V, Toggle clipboard menu, exec, dms ipc call clipboard toggle"
         "$mainMod, R, Toggle process list, exec, dms ipc call processlist toggle"
         "$mainMod, N, Toggle notification, exec, dms ipc call notifications toggle"
+        "$mainMod, K, Toggle hyprland keybind popup, exec, dms ipc keybinds toggle hyprland"
         "$mainMod, COMMA, Toggle dms settings, exec, dms ipc call settings toggle"
         "$mainMod, SLASH, Toggle hyprland binds, exec, dms ipc call hypr toggleBinds"
         "$mainMod, PERIOD, Restart dms, exec, dms restart"

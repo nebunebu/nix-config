@@ -25,7 +25,7 @@
     ./direnv-instant.nix
     ./direnv.nix
     ./distrobox.nix
-    ./dms.nix
+    ./dms
     ./fastfetch.nix
     ./freecad.nix
     ./fzf.nix
