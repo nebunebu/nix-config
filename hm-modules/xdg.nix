@@ -22,10 +22,10 @@ in
           download = "${homeDir}/Downloads";
           extraConfig = {
             # XDG_ARCHIVE_DIR = "${homeDir}/Archive";
-            XDG_CLONES_DIR = "${homeDir}/Projects/Clones";
-            XDG_PROJECTS_DIR = "${homeDir}/Projects";
+            CLONES = "${homeDir}/Projects/Clones";
+            PROJECTS = "${homeDir}/Projects";
             # XDG_REPOMIX_DIR = "${homeDir}/Documents/Repomix";
-            XDG_SCREENSHOTS_DIR = "${homeDir}/Media/Screenshots";
+            SCREENSHOTS = "${homeDir}/Media/Screenshots";
             # XDG_SPOTUBE_DIR = "${homeDir}/Media/Music/Spotube";
             # XDG_WIKIS_DIR = "${homeDir}/Documents/Wikis";
           };
