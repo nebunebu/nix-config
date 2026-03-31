@@ -10,7 +10,9 @@ let
 in
 {
   imports = [
-    inputs.dankMaterialShell.homeModules.dank-material-shell
+    inputs.dms.homeModules.dank-material-shell
+    inputs.dms-plugin-registry.modules.default
+    ./settings.nix
   ];
 
   options.hm.dms = {
@@ -27,6 +29,15 @@ in
       pkgs.i2c-tools
       pkgs.khal
     ];
+
+    xdg.configFile."DankMaterialShell/cheatsheets" = {
+      source = ./cheatsheets;
+      recursive = true;
+    };
+
+    # xdg.configFile."DankMaterialShell/themes" = {
+    #   recursive = true;
+    # };
 
     programs.dank-material-shell = {
       enable = true;
@@ -52,9 +63,6 @@ in
         };
       };
 
-      # settings = {
-      # };
-
       # https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/pfp-blue.png
 
       # image = builtins.fetchurl {
@@ -68,6 +76,14 @@ in
       enableAudioWavelength = true; # Audio visualizer (cava)
       enableCalendarEvents = true; # Calendar integration (khal)
       enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
+
+      plugins = {
+        desktopCommand.enable = true;
+        taskwarrior.enable = true;
+        dankPomodoroTimer.enable = true;
+        hyprlandSubmap.enable = true;
+        dankHooks.enable = true;
+      };
     };
 
     home.sessionVariables = {

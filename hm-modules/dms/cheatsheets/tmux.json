@@ -1,0 +1,401 @@
+{
+  "title": "Tmux Binds",
+  "provider": "tmux",
+  "binds": {
+    "Window": [
+      {
+        "key": "Ctrl+Space c",
+        "desc": "Create a new window",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space ,",
+        "desc": "Rename the current window",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space n",
+        "desc": "Next window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space p",
+        "desc": "Previous window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space w",
+        "desc": "Choose window from a list/tree",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space b",
+        "desc": "Last active window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space l",
+        "desc": "Last active window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space &",
+        "desc": "Kill the current window",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space '",
+        "desc": "Prompt to select window by index",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space f",
+        "desc": "Find window by name or content",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space .",
+        "desc": "Prompt to move the current window to a different index/session",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space <",
+        "desc": "Show window menu",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space M-n",
+        "desc": "Next window, including across sessions",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space M-p",
+        "desc": "Previous window, including across sessions",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space C-n",
+        "desc": "Next window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space C-p",
+        "desc": "Previous window",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space C-o",
+        "desc": "Rotate window contents (select next pane)",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space M-o",
+        "desc": "Rotate window contents in reverse",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space 0-9",
+        "desc": "Select window 0 through 9",
+        "subcat": "Navigation"
+      }
+    ],
+    "Pane": [
+      {
+        "key": "Ctrl+Space {",
+        "desc": "Swap pane upward",
+        "subcat": "Swaps"
+      },
+      {
+        "key": "Ctrl+Space }",
+        "desc": "Swap pane downward",
+        "subcat": "Swaps"
+      },
+      {
+        "key": "Ctrl+Space %",
+        "desc": "Split pane vertically",
+        "subcat": "Splitting"
+      },
+      {
+        "key": "Ctrl+Space \"",
+        "desc": "Split pane horizontally",
+        "subcat": "Splitting"
+      },
+      {
+        "key": "Ctrl+Space o",
+        "desc": "Switch to next pane",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space ;",
+        "desc": "Switch to last active pane",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space x",
+        "desc": "Kill the current pane",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space Up",
+        "desc": "Select pane upward",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space Down",
+        "desc": "Select pane downward",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space Left",
+        "desc": "Select pane to the left",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space Right",
+        "desc": "Select pane to the right",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space !",
+        "desc": "Break pane into a new window",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space >",
+        "desc": "Show pane menu",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space z",
+        "desc": "Zoom current pane",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space M",
+        "desc": "Toggle mouse mode for the current pane",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space C-Up",
+        "desc": "Resize pane up by one cell",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space C-Down",
+        "desc": "Resize pane down by one cell",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space C-Left",
+        "desc": "Resize pane left by one cell",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space C-Right",
+        "desc": "Resize pane right by one cell",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space M-Up",
+        "desc": "Resize pane up by 5 cells",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space M-Down",
+        "desc": "Resize pane down by 5 cells",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space M-Left",
+        "desc": "Resize pane left by 5 cells",
+        "subcat": "Resizing"
+      },
+      {
+        "key": "Ctrl+Space M-Right",
+        "desc": "Resize pane right by 5 cells",
+        "subcat": "Resizing"
+      }
+    ],
+    "Session": [
+      {
+        "key": "Ctrl+Space d",
+        "desc": "Detach the client from the session",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space $",
+        "desc": "Prompt to rename the current session",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space s",
+        "desc": "Choose session from a tree",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space (",
+        "desc": "Switch to the previous session",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space )",
+        "desc": "Switch to the next session",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space L",
+        "desc": "Switch to the last attached client",
+        "subcat": "Navigation"
+      },
+      {
+        "key": "Ctrl+Space D",
+        "desc": "Choose a client to detach",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space C-z",
+        "desc": "Suspend the attached client",
+        "subcat": "Management"
+      }
+    ],
+    "Copy Mode": [
+      {
+        "key": "Ctrl+Space [",
+        "desc": "Enter copy mode",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space ]",
+        "desc": "Paste from the default buffer (yank)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space PPage",
+        "desc": "Enter copy mode and scroll up (Emacs-style)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space #",
+        "desc": "List paste buffers",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space =",
+        "desc": "Choose paste buffer interactively",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space -",
+        "desc": "Delete the most recent paste buffer",
+        "subcat": "Management"
+      }
+    ],
+    "Miscellaneous": [
+      {
+        "key": "Ctrl+Space t",
+        "desc": "Show clock mode in the current pane",
+        "subcat": "Display"
+      },
+      {
+        "key": "Ctrl+Space ?",
+        "desc": "List all key bindings",
+        "subcat": "Help"
+      },
+      {
+        "key": "Ctrl+Space /",
+        "desc": "Prompt to list keys for a command",
+        "subcat": "Help"
+      },
+      {
+        "key": "Ctrl+Space i",
+        "desc": "Display tmux environment messages",
+        "subcat": "Display"
+      },
+      {
+        "key": "Ctrl+Space R",
+        "desc": "Reload tmux configuration file (soft)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space r",
+        "desc": "Reload tmux configuration file (hard)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space C-r",
+        "desc": "Restore sessions from disk (Resurrect plugin)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space C-s",
+        "desc": "Save sessions to disk (Resurrect plugin)",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space ~",
+        "desc": "Show server messages",
+        "subcat": "Display"
+      },
+      {
+        "key": "Ctrl+Space Tab",
+        "desc": "Open extrakto search tool",
+        "subcat": "Tool"
+      },
+      {
+        "key": "Ctrl+Space Space",
+        "desc": "Toggle popup session",
+        "subcat": "Management"
+      },
+      {
+        "key": "Ctrl+Space M-1",
+        "desc": "Select 'even-horizontal' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-2",
+        "desc": "Select 'even-vertical' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-3",
+        "desc": "Select 'main-horizontal' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-4",
+        "desc": "Select 'main-vertical' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-5",
+        "desc": "Select 'tiled' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-6",
+        "desc": "Select 'main-horizontal-mirrored' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space M-7",
+        "desc": "Select 'main-vertical-mirrored' layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space E",
+        "desc": "Select next layout",
+        "subcat": "Layout"
+      },
+      {
+        "key": "Ctrl+Space Y",
+        "desc": "Copy current pane's path to the clipboard (Yank plugin)",
+        "subcat": "Yank"
+      },
+      {
+        "key": "Ctrl+Space y",
+        "desc": "Copy the current line to the clipboard (Yank plugin)",
+        "subcat": "Yank"
+      }
+    ]
+  }
+}

@@ -170,27 +170,6 @@
         "type": "github"
       }
     },
-    "dankMaterialShell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "quickshell": "quickshell"
-      },
-      "locked": {
-        "lastModified": 1774898324,
-        "narHash": "sha256-gTKi6jdemsfnuPCD8I+lGNakx5dK/IbFmFTYcQWUVVQ=",
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "rev": "e9aeb9ac6063494d028c2254f4b98369d8f06879",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "type": "github"
-      }
-    },
     "direnv-instant": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -229,6 +208,47 @@
         "owner": "nix-community",
         "ref": "latest",
         "repo": "disko",
+        "type": "github"
+      }
+    },
+    "dms": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1774898324,
+        "narHash": "sha256-gTKi6jdemsfnuPCD8I+lGNakx5dK/IbFmFTYcQWUVVQ=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "e9aeb9ac6063494d028c2254f4b98369d8f06879",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
+      }
+    },
+    "dms-plugin-registry": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774889006,
+        "narHash": "sha256-MxwbnArO9AS/zSCoJyxkt5YeTUVNUQkMJtkrs4fwfkw=",
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
+        "rev": "b661a44b6ecd1e95557980938e312fd581713919",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dms-plugin-registry",
         "type": "github"
       }
     },
@@ -1254,7 +1274,7 @@
     "quickshell": {
       "inputs": {
         "nixpkgs": [
-          "dankMaterialShell",
+          "dms",
           "nixpkgs"
         ]
       },
@@ -1277,9 +1297,10 @@
       "inputs": {
         "anki": "anki",
         "claude-desktop": "claude-desktop",
-        "dankMaterialShell": "dankMaterialShell",
         "direnv-instant": "direnv-instant",
         "disko": "disko",
+        "dms": "dms",
+        "dms-plugin-registry": "dms-plugin-registry",
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
