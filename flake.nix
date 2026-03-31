@@ -1,19 +1,43 @@
 {
   description = "nebu's NixOS configs";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
 
-    rosepine.url = "github:nebunebu/rosepine-flake";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+
+    rosepine = {
+      url = "github:nebunebu/rosepine-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noogle-search.url = "github:argosnothing/noogle-search";
+    noogle-search = {
+      url = "github:argosnothing/noogle-search";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
 
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
     };
 
     nix-pia-vpn = {
@@ -28,7 +52,11 @@
 
     anki = {
       url = "github:nebunebu/anki-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        pre-commit-hooks.follows = "pre-commit-hooks";
+        treefmt-nix.follows = "treefmt-nix";
+      };
     };
 
     claude-desktop = {
@@ -49,11 +77,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    statix.url = "github:oppiliappan/statix";
+    statix = {
+      url = "github:oppiliappan/statix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
-    direnv-instant.url = "github:Mic92/direnv-instant";
+    direnv-instant = {
+      url = "github:Mic92/direnv-instant";
+      inputs = {
+        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     disko = {
       url = "github:nix-community/disko/latest";
@@ -64,12 +110,18 @@
 
     mango = {
       url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
 
     stylix = {
       url = "github:danth/stylix/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
 
     nix-index-database = {
@@ -77,9 +129,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+
+    nixneovimplugins = {
+      url = "github:NixNeovim/NixNeovimPlugins";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     nebvim = {
       url = "github:nebunebu/nebvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-utils.follows = "flake-utils";
+        flake-parts.follows = "flake-parts";
+        nightly.follows = "nightly";
+        nixneovimplugins.follows = "nixneovimplugins";
+      };
     };
 
     sops-nix = {
@@ -89,7 +164,9 @@
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     pre-commit-hooks = {
