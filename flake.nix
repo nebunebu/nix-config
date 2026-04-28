@@ -129,32 +129,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nightly = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
-    nixneovimplugins = {
-      url = "github:NixNeovim/NixNeovimPlugins";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-
     nebvim = {
       url = "github:nebunebu/nebvim";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-        flake-utils.follows = "flake-utils";
-        flake-parts.follows = "flake-parts";
-        nightly.follows = "nightly";
-        nixneovimplugins.follows = "nixneovimplugins";
-      };
+      # inputs = {
+      #   nixpkgs.follows = "nixpkgs";
+      #   treefmt-nix.follows = "treefmt-nix";
+      #   flake-utils.follows = "flake-utils";
+      #   flake-parts.follows = "flake-parts";
+      #   nightly.follows = "nightly";
+      #   nixneovimplugins.follows = "nixneovimplugins";
+      # };
     };
 
     sops-nix = {
