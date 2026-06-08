@@ -22,7 +22,7 @@ let
     propagatedBuildInputs = with pkgs.python3Packages; [
       numpy
       pymupdf
-      pypdf2
+      # pypdf2
       pyqt5
       regex
     ];

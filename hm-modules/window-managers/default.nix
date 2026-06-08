@@ -1,8 +1,8 @@
 {
   imports = [
     ./hyprland
-    ./mango
+    # ./mango
   ];
 
-  hm.window-managers.mango.enable = true;
+  # hm.window-managers.mango.enable = true;
 }
