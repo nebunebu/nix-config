@@ -29,8 +29,8 @@
     "$mainMod, BRACKETLEFT, focuscurrentorlast,"
 
     # Window Geometry
-    "$mainMod, EQUALS, splitratio, +0.1"
-    "$mainMod, MINUS, splitratio, -0.1"
+    # "$mainMod, EQUALS, splitratio, +0.1"
+    # "$mainMod, MINUS, splitratio, -0.1"
     "$mainMod, F6, alterzorder, top"
     "$mainMod, F7, fullscreenstate, 2 2 set" # Set true fullscreen for app and hyprland
     "$mainMod + SHIFT, E, resizewindowpixel, 10 10, ^(kitty)$"
