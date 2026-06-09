@@ -42,6 +42,7 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
+      # configType = "lua";
       xwayland.enable = true;
       systemd = {
         enable = true;
