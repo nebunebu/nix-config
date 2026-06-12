@@ -1,9 +1,9 @@
 { lib, ... }:
 {
   programs.dank-material-shell.settings = lib.mkForce {
-    currentThemeName = "custom";
-    currentThemeCategory = "registry";
-    customThemeFile = "/home/nebu/.config/DankMaterialShell/themes/rosePine/theme.json";
+    # currentThemeName = "custom";
+    # currentThemeCategory = "registry";
+    # customThemeFile = "/home/nebu/.config/DankMaterialShell/themes/rosePine/theme.json";
     registryThemeVariants = { };
     matugenScheme = "scheme-tonal-spot";
     runUserMatugenTemplates = false;
