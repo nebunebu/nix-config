@@ -47,7 +47,7 @@
     ./pavucontrol.nix
     ./pinta.nix
     ./pup.nix
-    ./pyradio.nix
+    # ./pyradio.nix
     ./qgis.nix
     ./sioyek
     ./sops.nix
@@ -106,7 +106,7 @@
     pavucontrol.enable = true;
     pinta.enable = true;
     pup.enable = true;
-    pyradio.enable = true;
+    # pyradio.enable = true;
     qgis.enable = true;
     sioyek.enable = true;
     sops.enable = true;
