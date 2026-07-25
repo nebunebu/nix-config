@@ -30,10 +30,23 @@ in
       pkgs.khal
     ];
 
-    xdg.configFile."DankMaterialShell/cheatsheets" = {
-      source = ./cheatsheets;
-      recursive = true;
-    };
+    # Stylix auto-targets DMS (fonts/opacity/theme colors/wallpaper) by writing
+    # programs.dank-material-shell.settings/.session itself, independent of
+    # ./settings.nix. That would put us right back to a read-only, clobbered
+    # settings.json/session.json, so it's disabled here too.
+    stylix.targets."dank-material-shell".enable = false;
+
+    # Seeded once into a real, writable file/dir below instead of a read-only
+    # xdg.configFile symlink, so DMS (and the user) can edit them at runtime
+    # without home-manager clobbering the changes on the next switch.
+    home.activation.dmsCheatsheetsSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      target="$HOME/.config/DankMaterialShell/cheatsheets"
+      if [[ ! -e "$target" ]]; then
+        run mkdir -p $VERBOSE_ARG "$HOME/.config/DankMaterialShell"
+        run cp -r $VERBOSE_ARG ${./cheatsheets} "$target"
+        run chmod -R u+w $VERBOSE_ARG "$target"
+      fi
+    '';
 
     # xdg.configFile."DankMaterialShell/themes" = {
     #   recursive = true;
@@ -47,21 +60,10 @@ in
         restartIfChanged = true;
       };
 
-      session = {
-        isLightMode = false;
-        showThirdPartyPlugins = true;
-        perMonitorWallpaper = true;
-        monitorWallpapers = {
-          "DP-1" = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/wallpapers/roseified-wallhaven-l81kkr.jpg";
-            sha256 = "05pbqa6dd0xzzx60q6fq56j6zzrga85vlfycnq7ng86zbd2kp5xc";
-          };
-          "DP-2" = builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/wallpapers/roseified-wallhaven-vq6yy5.jpg";
-            sha256 = "173d02fmwd2w0jvih35z889dhqxqjwv4j9lchr7calmybvhpv1gr";
-          };
-        };
-      };
+      # session.json (light/dark mode, per-monitor wallpaper) is also written by DMS at
+      # runtime, so it's left unset here and seeded once from a mutable backup instead
+      # (see ./settings.nix) rather than forced through `programs.dank-material-shell.session`,
+      # which would make it a read-only Nix-store symlink like settings.json was.
 
       # https://raw.githubusercontent.com/nebunebu/imgs/refs/heads/main/pfp-blue.png
 
@@ -94,7 +96,6 @@ in
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""
-        "dms run"
       ];
 
       bindd = [
