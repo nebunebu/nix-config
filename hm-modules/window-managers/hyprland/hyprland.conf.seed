@@ -1,0 +1,268 @@
+exec-once = dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target
+$mainMod=SUPER
+bind=$mainMod, Q, focuswindow, ^(firefox)$
+bind=$mainMod, G, togglegroup,
+bind=$mainMod, U, focusurgentorlast,
+bind=$mainMod + SHIFT, X, forcekillactive,
+bind=$mainMod + SHIFT, C, closewindow, ^(kitty)$
+bind=$mainMod + SHIFT, K, killwindow, ^(spotify)$
+bind=$mainMod + SHIFT, B, pin,
+bind=$mainMod + SHIFT, F, setfloating,
+bind=$mainMod + SHIFT, T, settiled,
+bind=$mainMod, GRAVE, togglespecialworkspace,
+bind=$mainMod + SHIFT, P, movetoworkspacesilent, 10
+bind=$mainMod, F1, focusmonitor, DP-1
+bind=$mainMod, F2, movecurrentworkspacetomonitor, DP-2
+bind=$mainMod, F3, moveworkspacetomonitor, 4 DP-1
+bind=$mainMod, F4, swapactiveworkspaces, DP-1 DP-2
+bind=$mainMod, F5, focusworkspaceoncurrentmonitor, 3
+bind=$mainMod, TAB, cyclenext,
+bind=$mainMod + SHIFT, TAB, swapnext,
+bind=$mainMod, D, swapwindow, r
+bind=$mainMod, BRACKETLEFT, focuscurrentorlast,
+bind=$mainMod, F6, alterzorder, top
+bind=$mainMod, F7, fullscreenstate, 2 2 set
+bind=$mainMod + SHIFT, E, resizewindowpixel, 10 10, ^(kitty)$
+bind=$mainMod + SHIFT, W, movewindowpixel, 10 10, ^(kitty)$
+bind=$mainMod + CONTROL, L, lockgroups, toggle
+bind=$mainMod + CONTROL, G, lockactivegroup, toggle
+bind=$mainMod + CONTROL, H, moveintogroup, l
+bind=$mainMod + CONTROL, O, moveoutofgroup,
+bind=$mainMod + CONTROL, J, movewindoworgroup, d
+bind=$mainMod + CONTROL, K, movegroupwindow, b
+bind=$mainMod + CONTROL, D, denywindowfromgroup, toggle
+bind=$mainMod + CONTROL, I, setignoregrouplock, toggle
+bind=$mainMod, A, execr, kitty
+bind=$mainMod, E, pass, ^(firefox)$
+bind=$mainMod, F8, forcerendererreload,
+bind=$mainMod, F9, renameworkspace, 1, WWW
+bind=$mainMod, F10, tagwindow, +testtag
+bind=$mainMod, F11, toggleswallow,
+bind=$mainMod, F12, setprop, ^(kitty)$, alpha, 0.8
+bind=$mainMod + SHIFT, D, dpms, toggle
+bind=$mainMod + SHIFT, Z, signal, 9
+bind=$mainMod, HOME, movecursortocorner, 2
+bind=$mainMod, END, movecursor, 0 0
+bind=$mainMod + SHIFT, S, sendshortcut, SHIFT_ALT, S, ^(gimp)$
+bind=$mainMod + SHIFT, K, sendkeystate, CONTROL, C, down, ^(kitty)$
+bind=$mainMod + SHIFT, G, global, test.global.shortcut
+bind=$mainMod + SHIFT, E, event, mycustomevent:somedata
+bind=$mainMod + CONTROL, N, changegroupactive, f
+bind=$mainMod + CONTROL, P, changegroupactive, b
+bind=$mainMod, C, exec, hyprpicker-wl-copy
+bind=$mainMod, S, layoutmsg, swapsplit
+bind=$mainMod, T, layoutmsg, togglesplit
+bind=$mainMod + Shift, Q, exec, hyprctl dispatch exit
+bind=$mainMod + SHIFT, N, movewindow, mon:DP-1
+bind=$mainMod + SHIFT, M, movewindow, mon:DP-2
+bind=,XF86KbdBrightnessDown, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bind=$mainMod, X, killactive
+bind=$mainMod, M, fullscreen, 2
+bind=$mainMod + SHIFT, M, fullscreen, 1
+bind=$mainMod, I, exec, firefox
+bind=$mainMod, H, movefocus, l
+bind=$mainMod, L, movefocus, r
+bind=$mainMod, K, movefocus, u
+bind=$mainMod, J, movefocus, d
+bind=$mainMod + SHIFT, H, movewindow, l
+bind=$mainMod + SHIFT, L, movewindow, r
+bind=$mainMod + SHIFT, K, movewindow, u
+bind=$mainMod + SHIFT, J, movewindow, d
+bind=$mainMod, 1, workspace, 1
+bind=$mainMod, 2, workspace, 2
+bind=$mainMod, 3, workspace, 3
+bind=$mainMod, 4, workspace, 4
+bind=$mainMod, 5, workspace, 5
+bind=$mainMod, 6, workspace, 6
+bind=$mainMod, 7, workspace, 7
+bind=$mainMod, 8, workspace, 8
+bind=$mainMod, 9, workspace, 9
+bind=$mainMod SHIFT, 1, movetoworkspace, 1
+bind=$mainMod SHIFT, 2, movetoworkspace, 2
+bind=$mainMod SHIFT, 3, movetoworkspace, 3
+bind=$mainMod SHIFT, 4, movetoworkspace, 4
+bind=$mainMod SHIFT, 5, movetoworkspace, 5
+bind=$mainMod SHIFT, 6, movetoworkspace, 6
+bind=$mainMod SHIFT, 7, movetoworkspace, 7
+bind=$mainMod SHIFT, 8, movetoworkspace, 8
+bind=$mainMod SHIFT, 9, movetoworkspace, 9
+bind=$mainMod, Return, exec, ghostty -e tmux new-session -A -s main
+bind=$mainMod + SHIFT, Return, exec, hyprctl dispatch exec "[float; size 80% 80%; center 1; animation slide] ghostty"
+bind=,XF86TaskPane, exec, pkill -SIGRTMIN wvkbd-mobintl
+bind=$mainMod, ALT_R, exec, hyprshot -m region
+
+bindd=$mainMod, F, Toggle floating window, togglefloating
+bindd=$mainMod, P, Toggle launcher, exec, dms ipc call spotlight toggle
+bindd=$mainMod, V, Toggle clipboard menu, exec, dms ipc call clipboard toggle
+bindd=$mainMod, R, Toggle process list, exec, dms ipc call processlist toggle
+bindd=$mainMod, N, Toggle notification, exec, dms ipc call notifications toggle
+bindd=$mainMod, K, Toggle hyprland keybind popup, exec, dms ipc keybinds toggle hyprland
+bindd=$mainMod, COMMA, Toggle dms settings, exec, dms ipc call settings toggle
+bindd=$mainMod, SLASH, Toggle hyprland binds, exec, dms ipc call hypr toggleBinds
+bindd=$mainMod, PERIOD, Restart dms, exec, dms restart
+bindd=$mainMod, W, Toggle notepad, exec, dms ipc call notepad toggle
+bindd=$mainMod, O, Toggle hyproveriew, exec, dms ipc call hypr toggleOverview
+bindd=$mainMod, ESCAPE, Lock screen, exec, dms ipc call lock lock
+bindd=, XF86AudioRaiseVolume, Increase Volume, exec, dms ipc call audio increment 3
+bindd=, XF86AudioLowerVolume, Decrease Volume, exec, dms ipc call audio decrement 3
+bindd=, XF86AudioMute, Mute audio, exec, dms ipc call audio mute
+bindd=, XF86AudioMicMute, Mute Mic, exec, dms ipc call audio micmute
+bindd=$mainMod, INSERT, Open power menu, exec, dms ipc call powermenu
+bindd=$mainMod, B, Open wallpaper manager, exec, dms ipc call dankdash wallpaper
+bindd=, XF86MonBrightnessUp, Increase screen brightness, exec, dms ipc call brightness increment 5
+bindd=, XF86MonBrightnessDown, Decrease screen brightness, exec, dms ipc call brightness decrement 5
+bindd=$mainMod + CONTROL, H, Toggle hyprland keybind popup, exec, dms ipc keybinds toggle hyprland
+bindd=$mainMod + CONTROL, L, Toggle lazygit keybind popup, exec, dms ipc keybinds toggle lazygit
+bindd=$mainMod + CONTROL, M, Toggle mpv keybind popup, exec, dms ipc keybinds toggle mpv
+bindd=$mainMod + CONTROL, S, Toggle sioyek keybind popup, exec, dms ipc keybinds toggle sioyek
+bindd=$mainMod + CONTROL, T, Toggle tmux keybind popup, exec, dms ipc keybinds toggle tmux
+bindd=$mainMod + CONTROL, V, Toggle vesktop keybind popup, exec, dms ipc keybinds toggle vesktop
+bindd=$mainMod + CONTROL, Y, Toggle yazi keybind popup, exec, dms ipc keybinds toggle yazi
+
+bindmd=$mainMod, mouse:272, Move Window, movewindow
+bindmd=$mainMod, mouse:273, Resize Window, resizewindow
+
+decoration {
+  shadow {
+    color=rgba(19172499)
+  }
+  rounding=2
+  rounding_power=5.000000
+}
+
+dwindle {
+  force_split=2
+  preserve_split=true
+}
+
+exec-once=systemctl --user start hyprpolkitagent
+exec-once=wvkbd-start
+exec-once=bash -c "wl-paste --watch cliphist store &"
+
+general {
+  border_size=3
+  col.active_border=rgb(f6c177)
+  col.inactive_border=rgb(6e6a86)
+  gaps_in=4
+}
+
+group {
+  groupbar {
+    col.active=rgb(c4a7e7)
+    col.inactive=rgb(6e6a86)
+    text_color=rgb(e0def4)
+  }
+  col.border_active=rgb(c4a7e7)
+  col.border_inactive=rgb(6e6a86)
+  col.border_locked_active=rgb(9ccfd8)
+}
+
+input {
+  follow_mouse=1
+  kb_layout=us
+  kb_options=caps:escape
+}
+
+misc {
+  swallow_regex=kitty
+  background_color=rgb(191724)
+  disable_hyprland_logo=true
+  disable_splash_rendering=true
+  enable_swallow=true
+  key_press_enables_dpms=false
+  mouse_move_enables_dpms=true
+}
+
+windowrule=float on, size 90% 90%, center on, match:title (.*blob:https://canary.discord.com/.*)
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(Discord)$, match:title (Save File)
+windowrule=float on, size 90% 90%, center on, match:title (.*HyperTTS.*)
+windowrule=float on, size 90% 90%, center on, match:title (.*Browse.*)
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(electron)$, match:initial_title ^(Open Files)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Edit Current)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Add)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Anki)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Import File)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Add-ons)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(anki)$, match:initial_title ^(Leech Toolkit.*)$
+windowrule=float on, size 90% 90%, center on, match:initial_class ^(org.quickshell)$, match:initial_title ^(Settings)$
+windowrule=border_color rgb(c4a7e7), match:float true
+windowrule=border_color rgb(31748f), match:fullscreen true
+windowrule=border_color rgb(ebbcba) rgb(ebbcba), match:pin true
+windowrule=center on, match:float true
+windowrule=max_size 70% 70%, match:float true
+windowrule=float on, center on, size 70% 70%, match:class ^(firefox)$, match:initial_title ^(Sign in - Google Accounts.*)$
+windowrule=float on, center on, size 90% 70%, match:class ^(firefox)$, match:initial_title ^(Library)$
+windowrule=float on, center on, size 38% 87%, move 60% 5%, match:class ^(tridactyl)$
+bind = ALT_L, V, submap, passkey
+submap = passkey
+bind = ALT_L, V, submap, reset
+submap = reset
+
+bind = ALT_L, R, exec, hyprctl keyword input:follow_mouse 3
+bind = ALT_L, R, submap, resize
+submap = resize
+binde = , H, resizeactive, -10 0
+binde = , J, resizeactive, 0 10
+binde = , K, resizeactive, 0 -10
+binde = , L, resizeactive, 10 0
+
+binde = SHIFT, H, moveactive, -10 0
+binde = SHIFT, J, moveactive, 0 10
+binde = SHIFT, K, moveactive, 0 -10
+binde = SHIFT, L, moveactive, 10 0
+
+bind = , SPACE, centerwindow
+
+bind = , escape, exec, hyprctl keyword input:follow_mouse 0
+bind = , escape, submap, reset
+submap = reset
+
+env = QT_QPA_PLATFORM,wayland
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
+env = QT_QPA_PLATFORMTHEME,gtk3
+env = QT_QPA_PLATFORMTHEME_QT6,gtk3
+env = MESA_GL_VERSION_OVERRIDE,4.3
+env = MESA_GLSL_VERSION_OVERRIDE,430
+decoration {
+    shadow {
+        enabled = false
+        range = 30
+        render_power = 5
+        offset = 0 5
+        color = rgba(00000070)
+    }
+}
+
+# # Opacity for inactive windows
+# # windowrulev2 = opacity 0.9 0.9, floating:0, focus:0
+#
+# # GNOME apps
+# # windowrulev2 = rounding 12, class:^(org\.gnome\.)
+# # windowrulev2 = noborder, class:^(org\.gnome\.)
+#
+# # Terminal apps - no borders
+# windowrulev2 = noborder, class:^(org\.wezfurlong\.wezterm)$
+# windowrulev2 = noborder, class:^(Alacritty)$
+# windowrulev2 = noborder, class:^(zen)$
+# windowrulev2 = noborder, class:^(com\.mitchellh\.ghostty)$
+# windowrulev2 = noborder, class:^(kitty)$
+#
+#
+#
+# # Floating windows
+# windowrulev2 = float, class:^(gnome-calculator)$
+# windowrulev2 = float, class:^(blueman-manager)$
+# windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
+
+# Blur
+# You can use regex like so to apply a rule to multiple layer
+# You can also use variables
+# layerrule = blur, $blur_layer
+
+# Dim (if you prefer a dim instead of a blur effect)
+# layerrule = dimaround, $blur_layer
+
+
+exec-once = hypr-start
+exec-once = tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"
+debug:disable_logs = true
