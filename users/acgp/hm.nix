@@ -6,7 +6,7 @@
 
 {
   imports = [
-    "${self}/hm-modules"
+    # "${self}/hm-modules"
   ];
 
   home = {
