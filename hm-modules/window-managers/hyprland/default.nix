@@ -30,9 +30,6 @@ in
       pkgs.slurp
       pkgs.wev
       pkgs.cliphist
-      # # Starts DankShell
-      # exec-once = dms run
-      #
     ];
 
     home.sessionVariables = {
@@ -50,18 +47,12 @@ in
       };
 
       extraConfig = ''
-        # source = ~/.config/hypr/dms/layout.conf
-        # source = ~/.config/hypr/dms/outputs.conf
-
         env = QT_QPA_PLATFORM,wayland
         env = ELECTRON_OZONE_PLATFORM_HINT,auto
         env = QT_QPA_PLATFORMTHEME,gtk3
         env = QT_QPA_PLATFORMTHEME_QT6,gtk3
         env = MESA_GL_VERSION_OVERRIDE,4.3
         env = MESA_GLSL_VERSION_OVERRIDE,430
-
-        # layerrule = noanim, ^(dms)$
-
         decoration {
             shadow {
                 enabled = false
@@ -92,19 +83,10 @@ in
         # windowrulev2 = float, class:^(gnome-calculator)$
         # windowrulev2 = float, class:^(blueman-manager)$
         # windowrulev2 = float, class:^(org\.gnome\.Nautilus)$
-        #
-        # # Open DMS windows as floating by default
-        # windowrulev2 = float, class:^(org.quickshell)$
-        #
-        # Animations
-        # layerrule = animation slide right, dms:control-center
-        # layerrule = animation slide top, dms:workspace-overview
-        # You can find all available animations here: https://wiki.hypr.land/Configuring/Animations/#animation-tree
 
         # Blur
         # You can use regex like so to apply a rule to multiple layer
         # You can also use variables
-        # $blur_layer = dms:(color-picker|clipboard|spotlight|settings)
         # layerrule = blur, $blur_layer 
 
         # Dim (if you prefer a dim instead of a blur effect)

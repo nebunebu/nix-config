@@ -25,7 +25,6 @@
     ./direnv-instant.nix
     ./direnv.nix
     ./distrobox.nix
-    ./dms
     ./fastfetch.nix
     ./freecad.nix
     ./fzf.nix
@@ -87,7 +86,7 @@
     direnv-instant.enable = true;
     direnv.enable = true;
     distrobox.enable = true;
-    dms.enable = true;
+    # dms.enable = true;
     fastfetch.enable = true;
     freecad.enable = false;
     fzf.enable = true;
