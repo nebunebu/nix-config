@@ -21,32 +21,39 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    home.packages = [
-      pkgs.python3
-      pkgs.material-symbols
-      pkgs.cava
-      pkgs.wl-clipboard
-      pkgs.i2c-tools
-      pkgs.khal
-    ];
+    home = {
+      packages = [
+        pkgs.python3
+        pkgs.material-symbols
+        pkgs.cava
+        pkgs.wl-clipboard
+        pkgs.i2c-tools
+        pkgs.khal
+      ];
+
+      sessionVariables = {
+        "DMS_DISABLE_MATUGEN" = "1";
+        "DMS_DANKBAR_LAYER" = "bottom";
+      };
+
+      # Seeded once into a real, writable file/dir below instead of a read-only
+      # xdg.configFile symlink, so DMS (and the user) can edit them at runtime
+      # without home-manager clobbering the changes on the next switch.
+      activation.dmsCheatsheetsSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        target="$HOME/.config/DankMaterialShell/cheatsheets"
+        if [[ ! -e "$target" ]]; then
+          run mkdir -p $VERBOSE_ARG "$HOME/.config/DankMaterialShell"
+          run cp -r $VERBOSE_ARG ${./cheatsheets} "$target"
+          run chmod -R u+w $VERBOSE_ARG "$target"
+        fi
+      '';
+    };
 
     # Stylix auto-targets DMS (fonts/opacity/theme colors/wallpaper) by writing
     # programs.dank-material-shell.settings/.session itself, independent of
     # ./settings.nix. That would put us right back to a read-only, clobbered
     # settings.json/session.json, so it's disabled here too.
     stylix.targets."dank-material-shell".enable = false;
-
-    # Seeded once into a real, writable file/dir below instead of a read-only
-    # xdg.configFile symlink, so DMS (and the user) can edit them at runtime
-    # without home-manager clobbering the changes on the next switch.
-    home.activation.dmsCheatsheetsSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      target="$HOME/.config/DankMaterialShell/cheatsheets"
-      if [[ ! -e "$target" ]]; then
-        run mkdir -p $VERBOSE_ARG "$HOME/.config/DankMaterialShell"
-        run cp -r $VERBOSE_ARG ${./cheatsheets} "$target"
-        run chmod -R u+w $VERBOSE_ARG "$target"
-      fi
-    '';
 
     # xdg.configFile."DankMaterialShell/themes" = {
     #   recursive = true;
@@ -86,11 +93,6 @@ in
         hyprlandSubmap.enable = true;
         dankHooks.enable = true;
       };
-    };
-
-    home.sessionVariables = {
-      "DMS_DISABLE_MATUGEN" = "1";
-      "DMS_DANKBAR_LAYER" = "bottom";
     };
 
     wayland.windowManager.hyprland.settings = {

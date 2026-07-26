@@ -1,6 +1,7 @@
 { inputs }:
 
 inputs.nixpkgs.legacyPackages
+|> inputs.nixpkgs.lib.getAttrs (import ../nix/systems.nix).linux
 |> builtins.mapAttrs (
   _system: pkgs: {
     compress4discord = pkgs.writeShellApplication {

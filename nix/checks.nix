@@ -1,5 +1,6 @@
 { inputs, ... }:
 inputs.nixpkgs.legacyPackages
+|> inputs.nixpkgs.lib.getAttrs (import ./systems.nix).all
 |> builtins.mapAttrs (
   system: pkgs:
   let

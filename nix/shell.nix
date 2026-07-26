@@ -1,5 +1,6 @@
 { inputs, ... }:
 inputs.nixpkgs.legacyPackages
+|> inputs.nixpkgs.lib.getAttrs (import ./systems.nix).all
 |> builtins.mapAttrs (
   _system: pkgs: {
     default = pkgs.mkShell {
@@ -8,7 +9,7 @@ inputs.nixpkgs.legacyPackages
         pkgs.convco
         pkgs.nixfmt
         pkgs.deadnix
-        # pkgs.statix
+        pkgs.statix
       ];
 
       # buildInputs = checks.pre-commit-check.enabledPackages;

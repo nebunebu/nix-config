@@ -1,11 +1,11 @@
 {
-  self,
   lib,
   ...
 }:
 
 {
   imports = [
+    # NOTE: needs `self` back in the argument set to re-enable
     # "${self}/hm-modules"
   ];
 

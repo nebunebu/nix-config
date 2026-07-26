@@ -3,31 +3,58 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-  build:
+  # Derive the host list from the flake so a rename can never desync CI.
+  hosts:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        host:
-          - t5610
-          - x230t
-          - m715q
-          - iso
+    outputs:
+      names: ${{ steps.list.outputs.names }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
+        uses: cachix/install-nix-action@v31
         with:
-          extra-conf: |
-            extra-experimental-features = pipe-operators
-      - name: Setup Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
-      - name: Build ${{ matrix.host }}
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+      - name: List nixosConfigurations
+        id: list
         run: |
-          nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel \
+          names=$(nix eval --json .#nixosConfigurations --apply builtins.attrNames)
+          echo "$names"
+          echo "names=$names" >>"$GITHUB_OUTPUT"
+  build:
+    needs: hosts
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        host: ${{ fromJSON(needs.hosts.outputs.names) }}
+    steps:
+      # /nix lives on the ~14 GB root volume; a full NixOS closure does not fit.
+      # Bind-mount it onto the ~65 GB volume before Nix is installed.
+      - name: Relocate the Nix store onto the large volume
+        run: |
+          sudo mkdir -p /mnt/nix /nix
+          sudo mount --bind /mnt/nix /nix
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+      # No store cache here on purpose: the Actions cache is 10 GB per repo and
+      # a single host closure can approach that on its own.
+      - name: Build ${{ matrix.host }}
+        env:
+          HOST: ${{ matrix.host }}
+        run: |
+          # Installer-ISO hosts expose isoImage; everything else builds toplevel.
+          attr=$(nix eval --raw ".#nixosConfigurations.$HOST.config.system.build" \
+            --apply 'b: if b ? isoImage then "isoImage" else "toplevel"')
+          echo "Building $HOST ($attr)"
+          nix build ".#nixosConfigurations.$HOST.config.system.build.$attr" \
             --print-build-logs \
             --show-trace
       - name: Check closure size
-        run: |
-          nix path-info -Sh .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel
+        run: nix path-info -Sh ./result

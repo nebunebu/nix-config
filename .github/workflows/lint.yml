@@ -6,31 +6,27 @@ on:
       - claude/**
   pull_request:
 jobs:
-  deadnix:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
+        uses: cachix/install-nix-action@v31
         with:
-          extra-conf: |
-            extra-experimental-features = pipe-operators
-      - name: Setup Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+      - name: Nix store cache
+        uses: nix-community/cache-nix-action@v7
+        with:
+          primary-key: nix-${{ runner.os }}-lint-${{ hashFiles('flake.lock') }}
+          restore-prefixes-first-match: nix-${{ runner.os }}-lint-
+          gc-max-store-size-linux: 2G
+          purge: true
+          purge-prefixes: nix-${{ runner.os }}-lint-
+          purge-created: 0
+          purge-primary-key: never
       - name: Run deadnix
         run: nix develop --command deadnix --fail .
-  statix:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
-        with:
-          extra-conf: |
-            extra-experimental-features = pipe-operators
-      - name: Setup Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
       - name: Run statix
         run: nix develop --command statix check .

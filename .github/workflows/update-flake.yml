@@ -7,21 +7,31 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v14
+        uses: cachix/install-nix-action@v31
         with:
-          extra-conf: |
-            extra-experimental-features = pipe-operators
-      - name: Setup Magic Nix Cache
-        uses: DeterminateSystems/magic-nix-cache-action@v8
+          extra_nix_config: |
+            experimental-features = nix-command flakes pipe-operators
+      # No store cache here: this job only rewrites flake.lock, it builds nothing.
       - name: Update flake inputs
-        uses: DeterminateSystems/update-flake-lock@v24
+        run: nix flake update
+      # NOTE: PRs opened with the default GITHUB_TOKEN do not trigger workflow
+      # runs. Set a PAT as the FLAKE_UPDATE_TOKEN secret so the update PR gets
+      # checked by build/lint/format.
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v8
         with:
-          pr-title: "chore(deps): update flake inputs"
-          pr-labels: |
+          token: ${{ secrets.FLAKE_UPDATE_TOKEN || secrets.GITHUB_TOKEN }}
+          branch: update-flake-lock
+          delete-branch: true
+          title: "chore(deps): update flake inputs"
+          commit-message: "chore(deps): update flake.lock"
+          labels: |
             dependencies
             automated
-          commit-msg: "chore(deps): update flake.lock"

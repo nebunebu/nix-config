@@ -22,19 +22,53 @@ in
   options.hm.window-managers.hyprland.enable = lib.mkEnableOption "enable hyprland";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      # inputs.hyprwayland-scanner.packages."${pkgs.stdenv.hostPlatform.system}".default
-      pkgs.wf-recorder
-      pkgs.grim
-      # pkgs.hyprpolkitagent
-      pkgs.slurp
-      pkgs.wev
-      pkgs.cliphist
-    ];
+    home = {
+      packages = [
+        # inputs.hyprwayland-scanner.packages."${pkgs.stdenv.hostPlatform.system}".default
+        pkgs.wf-recorder
+        pkgs.grim
+        # pkgs.hyprpolkitagent
+        pkgs.slurp
+        pkgs.wev
+        pkgs.cliphist
+      ];
 
-    home.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      AQ_DRM_DEVICES = "/dev/dri/card1";
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+        AQ_DRM_DEVICES = "/dev/dri/card1";
+      };
+
+      # One-shot seeds for the hand-edited configs below; see the
+      # xdg.configFile / hyprpaper comments further down for why they are
+      # copied out of the store instead of symlinked into it.
+      activation = {
+        hyprlandConfigSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          target="$HOME/.config/hypr/hyprland.conf"
+          if [[ ! -e "$target" ]]; then
+            run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
+            run cp $VERBOSE_ARG ${./hyprland.conf.seed} "$target"
+            run chmod u+w $VERBOSE_ARG "$target"
+          fi
+        '';
+
+        hyprlandLuaSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          target="$HOME/.config/hypr/hyprland.lua"
+          if [[ ! -e "$target" ]]; then
+            run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
+            run cp $VERBOSE_ARG ${./hyprland.lua.seed} "$target"
+            run chmod u+w $VERBOSE_ARG "$target"
+          fi
+        '';
+
+        hyprlandKeybindsSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          target="$HOME/.config/hypr/keybinds.lua"
+          if [[ ! -e "$target" ]]; then
+            run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
+            run cp $VERBOSE_ARG ${./keybinds.lua.seed} "$target"
+            run chmod u+w $VERBOSE_ARG "$target"
+          fi
+        '';
+      };
     };
 
     wayland.windowManager.hyprland = {
@@ -173,32 +207,5 @@ in
     # ~/.config/hypr/hyprpaper.conf at all. Left inert on purpose (no seed) -
     # set it up by hand if/when you want hyprpaper managing the wallpaper.
     services.hyprpaper.enable = lib.mkForce false;
-
-    home.activation.hyprlandConfigSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      target="$HOME/.config/hypr/hyprland.conf"
-      if [[ ! -e "$target" ]]; then
-        run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
-        run cp $VERBOSE_ARG ${./hyprland.conf.seed} "$target"
-        run chmod u+w $VERBOSE_ARG "$target"
-      fi
-    '';
-
-    home.activation.hyprlandLuaSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      target="$HOME/.config/hypr/hyprland.lua"
-      if [[ ! -e "$target" ]]; then
-        run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
-        run cp $VERBOSE_ARG ${./hyprland.lua.seed} "$target"
-        run chmod u+w $VERBOSE_ARG "$target"
-      fi
-    '';
-
-    home.activation.hyprlandKeybindsSeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      target="$HOME/.config/hypr/keybinds.lua"
-      if [[ ! -e "$target" ]]; then
-        run mkdir -p $VERBOSE_ARG "$HOME/.config/hypr"
-        run cp $VERBOSE_ARG ${./keybinds.lua.seed} "$target"
-        run chmod u+w $VERBOSE_ARG "$target"
-      fi
-    '';
   };
 }
