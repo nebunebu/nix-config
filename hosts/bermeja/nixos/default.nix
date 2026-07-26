@@ -57,6 +57,7 @@
       linkding.enable = true;
       # n8n.enable = true;
       ollama.enable = true;
+      pia-vpn.enable = true;
       pinchflat.enable = false;
       qbittorrent.enable = true;
       thirteenft.enable = true;
