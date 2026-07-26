@@ -1,0 +1,167 @@
+-------------------------------
+---- ENVIRONMENT VARIABLES ----
+-------------------------------
+
+hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
+hl.env("MESA_GL_VERSION_OVERRIDE", "4.3")
+hl.env("MESA_GLSL_VERSION_OVERRIDE", "430")
+
+-------------------
+---- AUTOSTART ----
+-------------------
+
+hl.on("hyprland.start", function()
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("wvkbd-start")
+    hl.exec_cmd('bash -c "wl-paste --watch cliphist store &"')
+    hl.exec_cmd("hypr-start")
+    hl.exec_cmd('tmux setenv -g HYPRLAND_INSTANCE_SIGNATURE "$HYPRLAND_INSTANCE_SIGNATURE"')
+end)
+
+-----------------------
+---- LOOK AND FEEL ----
+-----------------------
+
+-- Rose Pine (main) palette
+local rp = {
+    base = "191724",
+    muted = "6e6a86",
+    text = "e0def4",
+    gold = "f6c177",
+    rose = "ebbcba",
+    pine = "31748f",
+    foam = "9ccfd8",
+    iris = "c4a7e7",
+}
+
+hl.config({
+    general = {
+        gaps_in = 4,
+        border_size = 3,
+        col = {
+            active_border = "rgb(" .. rp.gold .. ")",
+            inactive_border = "rgb(" .. rp.muted .. ")",
+        },
+    },
+
+    decoration = {
+        rounding = 2,
+        rounding_power = 5.0,
+
+        shadow = {
+            enabled = false,
+            range = 30,
+            render_power = 5,
+            offset = { 0, 5 },
+            color = "rgba(00000070)",
+        },
+    },
+
+    group = {
+        col = {
+            border_active = "rgb(" .. rp.iris .. ")",
+            border_inactive = "rgb(" .. rp.muted .. ")",
+            border_locked_active = "rgb(" .. rp.foam .. ")",
+        },
+        groupbar = {
+            col = {
+                active = "rgb(" .. rp.iris .. ")",
+                inactive = "rgb(" .. rp.muted .. ")",
+                text_color = "rgb(" .. rp.text .. ")",
+            },
+        },
+    },
+
+    misc = {
+        background_color = "rgb(" .. rp.base .. ")",
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        enable_swallow = true,
+        swallow_regex = "kitty",
+        key_press_enables_dpms = false,
+        mouse_move_enables_dpms = true,
+    },
+
+    dwindle = {
+        force_split = 2,
+        preserve_split = true,
+    },
+
+    debug = {
+        disable_logs = true,
+    },
+})
+
+---------------
+---- INPUT ----
+---------------
+
+hl.config({
+    input = {
+        kb_layout = "us",
+        kb_options = "caps:swapescape",
+        follow_mouse = 1,
+    },
+})
+
+--------------------------------
+---- WINDOWS AND WORKSPACES ----
+--------------------------------
+
+local function floatCentered(match, size)
+    hl.window_rule({ match = match, float = true, center = true, size = size })
+end
+
+floatCentered({ title = ".*blob:https://canary.discord.com/.*" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(Discord)$", title = "(Save File)" }, { "90%", "90%" })
+floatCentered({ title = ".*HyperTTS.*" }, { "90%", "90%" })
+floatCentered({ title = ".*Browse.*" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(electron)$", initial_title = "^(Open Files)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Edit Current)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Add)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Anki)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Import File)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Add-ons)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(anki)$", initial_title = "^(Leech Toolkit.*)$" }, { "90%", "90%" })
+floatCentered({ initial_class = "^(org.quickshell)$", initial_title = "^(Settings)$" }, { "90%", "90%" })
+
+hl.window_rule({ match = { float = true }, border_color = "rgb(" .. rp.iris .. ")" })
+hl.window_rule({ match = { fullscreen = true }, border_color = "rgb(" .. rp.pine .. ")" })
+hl.window_rule({ match = { pin = true }, border_color = "rgb(" .. rp.rose .. ") rgb(" .. rp.rose .. ")" })
+
+hl.window_rule({ match = { float = true }, center = true })
+-- NOTE: legacy `max_size 70% 70%` was per-axis percentage; the new `max_size`
+-- effect is documented as a literal-pixel vec2 (unlike size/move, which
+-- support "N%"/expression strings). Left as percentages here since Hyprland's
+-- vec2 parser has historically accepted "%" tokens on most size-like fields --
+-- verify with `hyprctl reload` that floating windows actually get capped.
+hl.window_rule({ match = { float = true }, max_size = { "70%", "70%" } })
+
+hl.window_rule({
+    match = { class = "^(firefox)$", initial_title = "^(Sign in - Google Accounts.*)$" },
+    float = true,
+    center = true,
+    size = { "70%", "70%" },
+})
+hl.window_rule({
+    match = { class = "^(firefox)$", initial_title = "^(Library)$" },
+    float = true,
+    center = true,
+    size = { "90%", "70%" },
+})
+hl.window_rule({
+    match = { class = "^(tridactyl)$" },
+    float = true,
+    center = true,
+    size = { "38%", "87%" },
+    move = { "60%", "5%" },
+})
+
+------------------
+---- KEYBINDS ----
+------------------
+
+require("keybinds")

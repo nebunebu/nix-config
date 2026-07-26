@@ -1,0 +1,207 @@
+local mainMod = "SUPER"
+
+------------------------
+---- BASE KEYBINDS -----
+------------------------
+
+hl.bind(mainMod .. " + Q", hl.dsp.focus({ window = "^(firefox)$" }))
+hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
+hl.bind(mainMod .. " + U", hl.dsp.focus({ urgent_or_last = true }))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.kill())
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.close({ window = "^(kitty)$" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.kill({ window = "^(spotify)$" }))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.window.pin())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "set" }))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.window.float({ action = "unset" }))
+hl.bind(mainMod .. " + GRAVE", hl.dsp.workspace.toggle_special())
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.move({ workspace = 10, follow = false }))
+hl.bind(mainMod .. " + F1", hl.dsp.focus({ monitor = "DP-1" }))
+hl.bind(mainMod .. " + F2", hl.dsp.workspace.move({ monitor = "DP-2" }))
+hl.bind(mainMod .. " + F3", hl.dsp.workspace.move({ workspace = 4, monitor = "DP-1" }))
+hl.bind(mainMod .. " + F4", hl.dsp.workspace.swap_monitors({ monitor1 = "DP-1", monitor2 = "DP-2" }))
+hl.bind(mainMod .. " + F5", hl.dsp.focus({ workspace = 3, on_current_monitor = true }))
+hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.window.swap({ next = true }))
+hl.bind(mainMod .. " + D", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(mainMod .. " + BRACKETLEFT", hl.dsp.focus({ last = true }))
+hl.bind(mainMod .. " + F6", hl.dsp.window.alter_zorder({ mode = "top" }))
+hl.bind(mainMod .. " + F7", hl.dsp.window.fullscreen_state({ internal = 2, client = 2, action = "set" }))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.window.resize({ x = 10, y = 10, relative = true, window = "^(kitty)$" }))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.window.move({ x = 10, y = 10, relative = true, window = "^(kitty)$" }))
+hl.bind(mainMod .. " + CONTROL + L", hl.dsp.group.lock({ action = "toggle" }))
+hl.bind(mainMod .. " + CONTROL + G", hl.dsp.group.lock_active({ action = "toggle" }))
+hl.bind(mainMod .. " + CONTROL + H", hl.dsp.window.move({ into_group = "left" }))
+hl.bind(mainMod .. " + CONTROL + O", hl.dsp.window.move({ out_of_group = true }))
+hl.bind(mainMod .. " + CONTROL + J", hl.dsp.window.move({ direction = "down", group_aware = true }))
+hl.bind(mainMod .. " + CONTROL + K", hl.dsp.group.move_window({ forward = false }))
+hl.bind(mainMod .. " + CONTROL + D", hl.dsp.window.deny_from_group({ action = "toggle" }))
+-- NOTE: mainMod + CONTROL + I was bound to `setignoregrouplock, toggle` in the old
+-- config. There is no Lua dispatcher equivalent (dropped from Config::Actions
+-- entirely), so this bind has been omitted per user confirmation.
+hl.bind(mainMod .. " + A", hl.dsp.exec_raw("kitty"))
+hl.bind(mainMod .. " + E", hl.dsp.pass({ window = "^(firefox)$" }))
+hl.bind(mainMod .. " + F8", hl.dsp.force_renderer_reload())
+hl.bind(mainMod .. " + F9", hl.dsp.workspace.rename({ workspace = 1, name = "WWW" }))
+hl.bind(mainMod .. " + F10", hl.dsp.window.tag({ tag = "+testtag" }))
+hl.bind(mainMod .. " + F11", hl.dsp.window.toggle_swallow())
+hl.bind(mainMod .. " + F12", hl.dsp.window.set_prop({ prop = "alpha", value = "0.8", window = "^(kitty)$" }))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.dpms({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + Z", hl.dsp.window.signal({ signal = 9 }))
+hl.bind(mainMod .. " + HOME", hl.dsp.cursor.move_to_corner({ corner = 2 }))
+hl.bind(mainMod .. " + END", hl.dsp.cursor.move({ x = 0, y = 0 }))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.send_shortcut({ mods = "SHIFT_ALT", key = "S", window = "^(gimp)$" }))
+hl.bind(
+	mainMod .. " + SHIFT + K",
+	hl.dsp.send_key_state({ mods = "CONTROL", key = "C", state = "down", window = "^(kitty)$" })
+)
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.global("test.global.shortcut"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.event("mycustomevent:somedata"))
+hl.bind(mainMod .. " + CONTROL + N", hl.dsp.group.next())
+hl.bind(mainMod .. " + CONTROL + P", hl.dsp.group.prev())
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker-wl-copy"))
+hl.bind(mainMod .. " + S", hl.dsp.layout("swapsplit"))
+hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.window.move({ monitor = "DP-1" }))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.move({ monitor = "DP-2" }))
+hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
+hl.bind(mainMod .. " + X", hl.dsp.window.close())
+hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen_state({ internal = 2, client = 0, action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+
+for i = 1, 9 do
+	hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+end
+
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("ghostty -e tmux new-session -A -s main"))
+hl.bind(
+	mainMod .. " + SHIFT + Return",
+	hl.dsp.exec_cmd('hyprctl dispatch exec "[float; size 80% 80%; center 1; animation slide] ghostty"')
+)
+hl.bind("XF86TaskPane", hl.dsp.exec_cmd("pkill -SIGRTMIN wvkbd-mobintl"))
+hl.bind(mainMod .. " + ALT_R", hl.dsp.exec_cmd("hyprshot -m region"))
+
+------------------------------
+---- DESCRIBED KEYBINDS ------
+------------------------------
+
+hl.bind(mainMod .. " + F", hl.dsp.window.float(), { description = "Toggle floating window" })
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("dms ipc call spotlight toggle"), { description = "Toggle launcher" })
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("dms ipc call clipboard toggle"), { description = "Toggle clipboard menu" })
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("dms ipc call processlist toggle"), { description = "Toggle process list" })
+hl.bind(
+	mainMod .. " + N",
+	hl.dsp.exec_cmd("dms ipc call notifications toggle"),
+	{ description = "Toggle notification" }
+)
+hl.bind(
+	mainMod .. " + K",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle hyprland"),
+	{ description = "Toggle hyprland keybind popup" }
+)
+hl.bind(mainMod .. " + COMMA", hl.dsp.exec_cmd("dms ipc call settings toggle"), { description = "Toggle dms settings" })
+hl.bind(
+	mainMod .. " + SLASH",
+	hl.dsp.exec_cmd("dms ipc call hypr toggleBinds"),
+	{ description = "Toggle hyprland binds" }
+)
+hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd("dms restart"), { description = "Restart dms" })
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("dms ipc call notepad toggle"), { description = "Toggle notepad" })
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"), { description = "Toggle hyproveriew" })
+hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("dms ipc call lock lock"), { description = "Lock screen" })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("dms ipc call audio increment 3"), { description = "Increase Volume" })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("dms ipc call audio decrement 3"), { description = "Decrease Volume" })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("dms ipc call audio mute"), { description = "Mute audio" })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("dms ipc call audio micmute"), { description = "Mute Mic" })
+hl.bind(mainMod .. " + INSERT", hl.dsp.exec_cmd("dms ipc call powermenu"), { description = "Open power menu" })
+hl.bind(
+	mainMod .. " + B",
+	hl.dsp.exec_cmd("dms ipc call dankdash wallpaper"),
+	{ description = "Open wallpaper manager" }
+)
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("dms ipc call brightness increment 5"),
+	{ description = "Increase screen brightness" }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("dms ipc call brightness decrement 5"),
+	{ description = "Decrease screen brightness" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + H",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle hyprland"),
+	{ description = "Toggle hyprland keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + L",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle lazygit"),
+	{ description = "Toggle lazygit keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + M",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle mpv"),
+	{ description = "Toggle mpv keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + S",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle sioyek"),
+	{ description = "Toggle sioyek keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + T",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle tmux"),
+	{ description = "Toggle tmux keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + V",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle vesktop"),
+	{ description = "Toggle vesktop keybind popup" }
+)
+hl.bind(
+	mainMod .. " + CONTROL + Y",
+	hl.dsp.exec_cmd("dms ipc keybinds toggle yazi"),
+	{ description = "Toggle yazi keybind popup" }
+)
+
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { description = "Move Window", mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { description = "Resize Window", mouse = true })
+
+------------------
+---- SUBMAPS -----
+------------------
+
+hl.bind("ALT + V", hl.dsp.submap("passkey"))
+hl.define_submap("passkey", function()
+	hl.bind("ALT + V", hl.dsp.submap("reset"))
+end)
+
+hl.bind("ALT + R", hl.dsp.exec_cmd("hyprctl keyword input:follow_mouse 3"))
+hl.bind("ALT + R", hl.dsp.submap("resize"))
+hl.define_submap("resize", function()
+	hl.bind("H", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+	hl.bind("J", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+	hl.bind("K", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+	hl.bind("L", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+
+	hl.bind("SHIFT + H", hl.dsp.window.move({ x = -10, y = 0, relative = true }), { repeating = true })
+	hl.bind("SHIFT + J", hl.dsp.window.move({ x = 0, y = 10, relative = true }), { repeating = true })
+	hl.bind("SHIFT + K", hl.dsp.window.move({ x = 0, y = -10, relative = true }), { repeating = true })
+	hl.bind("SHIFT + L", hl.dsp.window.move({ x = 10, y = 0, relative = true }), { repeating = true })
+
+	hl.bind("SPACE", hl.dsp.window.center())
+
+	hl.bind("escape", hl.dsp.exec_cmd("hyprctl keyword input:follow_mouse 0"))
+	hl.bind("escape", hl.dsp.submap("reset"))
+end)
