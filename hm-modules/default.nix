@@ -57,7 +57,6 @@
     ./spotube.nix
     ./syncthing.nix
     ./tmux.nix
-    ./tuir.nix
     ./usbutils.nix
     ./wvkbd.nix
     ./xdg.nix
@@ -118,7 +117,6 @@
     services.syncthing.enable = true;
     taskwarrior.enable = true;
     tmux.enable = true;
-    tuir.enable = true;
     usbutils.enable = true;
     wvkbd.enable = true;
     xdg.enable = true;
