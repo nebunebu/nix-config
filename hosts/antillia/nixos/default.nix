@@ -61,8 +61,9 @@
 
   programs.zsh.enable = true;
 
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   networking = {
-    hostName = "antillia";
     firewall = {
       enable = true;
       allowedTCPPorts = [ 3000 ];

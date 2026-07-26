@@ -50,7 +50,7 @@
 
   programs.zsh.enable = true;
 
-  networking.hostName = "royllo";
+  nixpkgs.hostPlatform = "x86_64-linux";
   # networking.firewall.checkReversePath = "loose";
 
 }

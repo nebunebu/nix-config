@@ -65,6 +65,4 @@
   };
 
   virtualisation.docker.enable = true;
-
-  networking.hostName = "bermeja";
 }

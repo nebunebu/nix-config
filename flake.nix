@@ -167,20 +167,32 @@
   outputs =
     inputs:
     let
-      system = "x86_64-linux";
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
+      hostLib = import ./nix/lib.nix { inherit inputs; };
     in
     {
-      nixosConfigurations =
-        (import ./hosts/tuanaki { inherit inputs system pkgs; })
-        // (import ./hosts/bermeja { inherit inputs system pkgs; })
-        // (import ./hosts/antillia { inherit inputs system pkgs; })
-        // (import ./hosts/royllo { inherit inputs system pkgs; });
+      lib = hostLib;
+
+      nixosConfigurations = {
+        tuanaki = hostLib.mkHost {
+          name = "tuanaki";
+          facter = false;
+        };
+        bermeja = hostLib.mkHost {
+          name = "bermeja";
+          users.nebu = import ./hosts/bermeja/hm;
+        };
+        antillia = hostLib.mkHost {
+          name = "antillia";
+          users.nebu = import ./hosts/antillia/hm;
+        };
+        royllo = hostLib.mkHost {
+          name = "royllo";
+          users = {
+            nebu = import ./users/nebu/hm.nix;
+            acgp = import ./users/acgp/hm.nix;
+          };
+        };
+      };
 
       # checks = import ./nix/checks.nix { inherit inputs; };
       formatter = import ./nix/formatter.nix { inherit inputs; };
