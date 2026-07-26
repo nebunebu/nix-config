@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(timeout 500 nix eval --raw .#nixosConfigurations.royllo.config.system.build.toplevel.drvPath)",
-      "Bash(timeout 300 nix eval --raw .#nixosConfigurations.tuanaki.config.system.build.toplevel.drvPath)",
-      "Bash(timeout 300 nix eval --raw '.#nixosConfigurations.royllo.config.home-manager.users.nebu.xdg.configFile.\"git/config\".text')"
-    ]
-  }
-}
