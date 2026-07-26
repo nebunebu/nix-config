@@ -16,7 +16,9 @@ in
     nix = {
       settings = {
         experimental-features = [
-          "nix-command flakes pipe-operators"
+          "nix-command"
+          "flakes"
+          "pipe-operators"
         ];
         auto-optimise-store = true;
         allowed-users = [ "@wheel" ];
