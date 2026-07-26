@@ -32,6 +32,7 @@
     ./gimp.nix
     ./git.nix
     ./go.nix
+    ./gpg.nix
     ./gtk.nix
     ./hyprshot.nix
     ./inkscape.nix
@@ -44,6 +45,7 @@
     ./newsboat.nix
     ./newsraft.nix
     ./obs-studio.nix
+    ./pass.nix
     ./pavucontrol.nix
     ./pinta.nix
     ./pup.nix
@@ -95,6 +97,7 @@
     gimp.enable = false;
     git.enable = true;
     dev.go.enable = true;
+    gpg.enable = true;
     hyprshot.enable = true;
     inkscape.enable = false;
     jq.enable = true;
@@ -104,6 +107,7 @@
     newsboat.enable = true;
     newsraft.enable = true;
     obs-studio.enable = true;
+    pass.enable = true;
     pavucontrol.enable = true;
     pinta.enable = true;
     pup.enable = true;

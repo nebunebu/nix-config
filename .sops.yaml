@@ -1,7 +1,19 @@
+# `primary` is nebu's personal age key (~/.config/sops/age/keys.txt); the three
+# host keys are derived from each machine's /etc/ssh/ssh_host_ed25519_key with
+# ssh-to-age, which is what sops-nix's default `age.sshKeyPaths` already reads.
+# Adding them lets system secrets decrypt without depending on a user's home.
+#
+# After changing this file: sops updatekeys sops/secrets/secrets.yaml
 keys:
   - &primary age1x7gejztgkupj7kn8t2ppn3vj7gk9qvysxdtkkq8cxnejlnewgutsnk5eyu
+  - &antillia age1z8fh9qzcdulq0peq6j6tkj7lrc43df0xvvssfamtvx4dznz73yzs9rn0pr
+  - &bermeja age17jjushz57jc7vnt3qatpwdplhc2e5jvknqhjk20evsy6wnp4rc6s40s5ct
+  - &royllo age145xjd7pn47r58m28dhsrj983u5nyveqad42e7wsjyey8c064fdhqr9s9fw
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
           - *primary
+          - *antillia
+          - *bermeja
+          - *royllo

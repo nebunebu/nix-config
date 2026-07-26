@@ -10,6 +10,17 @@ in
 {
   options.nos.dotool = {
     enable = lib.mkEnableOption "enable dotool configuration";
+
+    users = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      example = [ "nebu" ];
+      description = ''
+        Users to put in the input/uinput groups and to run a dotoold user
+        service for. dotool needs both to work, so a user left out here gets
+        the package but no working daemon.
+      '';
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -20,19 +31,19 @@ in
       input = { };
     };
 
-    users.users.nebu = {
+    users.users = lib.genAttrs cfg.users (_: {
       extraGroups = [
         "input"
         "uinput"
       ];
-    };
+    });
 
     # makes dotool work
     services.udev.extraRules = ''
       KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
     '';
 
-    home-manager.users.nebu = {
+    home-manager.users = lib.genAttrs cfg.users (_: {
       systemd.user.services.dotoold = {
         Unit = {
           Description = "dotool - uinput tool";
@@ -55,6 +66,6 @@ in
           WantedBy = [ "default.target" ];
         };
       };
-    };
+    });
   };
 }

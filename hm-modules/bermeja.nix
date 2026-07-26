@@ -7,10 +7,12 @@
     ./fzf.nix
     ./git.nix
     ./go.nix
+    ./gpg.nix
     ./gtk.nix
     ./jq.nix
     ./lazygit.nix
     ./nix-tools
+    ./pass.nix
     ./shells/starship.nix
     ./shells/zsh
     ./sops.nix
@@ -28,9 +30,11 @@
     fs-tools.enable = true;
     fzf.enable = true;
     git.enable = true;
+    gpg.enable = true;
     jq.enable = true;
     lazygit.enable = true;
     nix-tools.enable = true;
+    pass.enable = true;
     services.syncthing.enable = true;
     shell = {
       zsh.enable = true;

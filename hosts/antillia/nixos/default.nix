@@ -40,13 +40,7 @@
     nix.enable = true;
     networking.enable = true;
     udisks2.enable = true;
-    sops = {
-      enable = true;
-      gpg = {
-        enable = true;
-      };
-      pass.enable = true;
-    };
+    sops.enable = true;
     obs.enable = true;
     stylix.enable = true;
     users.nebu.enable = true;

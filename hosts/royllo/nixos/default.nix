@@ -32,11 +32,7 @@
     manpager.enable = true;
     nix.enable = true;
     system.enable = true;
-    sops = {
-      enable = true;
-      gpg.enable = true;
-      pass.enable = true;
-    };
+    sops.enable = true;
     desktop = {
       hyprland.enable = true;
       pipewire.enable = true;

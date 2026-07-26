@@ -1,7 +1,5 @@
 {
   imports = [
-    ./gpg.nix
-    ./pass.nix
     ./sops.nix
     # ./taskwarrior
 

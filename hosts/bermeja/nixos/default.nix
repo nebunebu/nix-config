@@ -39,13 +39,7 @@
     udisks2.enable = true;
     stylix.enable = true;
     users.nebu.enable = true;
-    sops = {
-      enable = true;
-      gpg = {
-        enable = true;
-      };
-      pass.enable = true;
-    };
+    sops.enable = true;
 
     self-hosted = {
       beaverhabits.enable = true;
