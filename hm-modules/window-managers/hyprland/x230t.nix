@@ -24,6 +24,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # NOTE: inert -- Hyprland's config is hand-edited and home-manager's
+    # rendered output is disabled (see ./default.nix).
     wayland.windowManager.hyprland = {
       settings = {
         monitor = [ "LVDS-1, 1366x768, 0x0, 1" ];

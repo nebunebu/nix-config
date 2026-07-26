@@ -17,10 +17,14 @@ in
     # credentials out of a user's home is fragile: it depends on that user
     # existing, on home permissions, and on nobody deleting the directory.
     #
+    # The service runs with DynamicUser and pulls both files in via
+    # LoadCredential, which systemd reads as root before dropping privileges --
+    # so root-owned 0600 is what these want, not a service-user chown.
+    #
     # MIGRATION: move the files once, on the host, before deploying:
     #   sudo mkdir -p /var/lib/cloudflared
     #   sudo mv /home/nebu/.cloudflared/{cert.pem,<tunnel>.json} /var/lib/cloudflared/
-    #   sudo chown -R cloudflared:cloudflared /var/lib/cloudflared
+    #   sudo chown -R root:root /var/lib/cloudflared
     #   sudo chmod 0600 /var/lib/cloudflared/*
     stateDir = lib.mkOption {
       type = lib.types.path;
@@ -36,7 +40,7 @@ in
     ];
 
     systemd.tmpfiles.rules = [
-      "d ${cfg.stateDir} 0700 cloudflared cloudflared -"
+      "d ${cfg.stateDir} 0700 root root -"
     ];
 
     services.cloudflared = {
