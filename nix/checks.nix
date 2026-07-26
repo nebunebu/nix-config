@@ -13,7 +13,7 @@ inputs.nixpkgs.legacyPackages
 
     # NOTE: run `nix develop` to update hooks
     pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
-      src = ./.;
+      src = ../.;
       hooks = {
         treefmt = {
           enable = true;

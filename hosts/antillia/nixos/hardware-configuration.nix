@@ -1,5 +1,4 @@
-_:
-{
+_: {
   fileSystems = {
     "/" = {
       device = "/dev/mapper/root_vg-root";
