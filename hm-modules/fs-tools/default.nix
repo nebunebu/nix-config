@@ -19,13 +19,13 @@ in
 
   config = lib.mkIf cfg.enable {
     hm.fs-tools = {
-      bat.enable = true;
-      eza.enable = true;
-      fd.enable = true;
-      lf.enable = true;
-      ripgrep.enable = true;
-      yazi.enable = true;
-      zoxide.enable = true;
+      bat.enable = lib.mkDefault true;
+      eza.enable = lib.mkDefault true;
+      fd.enable = lib.mkDefault true;
+      lf.enable = lib.mkDefault true;
+      ripgrep.enable = lib.mkDefault true;
+      yazi.enable = lib.mkDefault true;
+      zoxide.enable = lib.mkDefault true;
     };
   };
 }

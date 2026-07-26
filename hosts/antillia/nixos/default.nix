@@ -36,6 +36,7 @@
     console.enable = true;
     system.enable = true;
     thunar.enable = true;
+    manpager.enable = true;
     nix.enable = true;
     networking.enable = true;
     udisks2.enable = true;

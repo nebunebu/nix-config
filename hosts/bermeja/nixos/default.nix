@@ -15,7 +15,6 @@
   ];
 
   environment.systemPackages = [
-    inputs.nebvim.packages."${pkgs.stdenv.hostPlatform.system}".default
     inputs.direnv-instant.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.ghostty.terminfo
     pkgs.kitty.terminfo
@@ -34,6 +33,7 @@
     console.enable = true;
     documentation.enable = true;
     networking.enable = true;
+    manpager.enable = true;
     nix.enable = true;
     system.enable = true;
     udisks2.enable = true;

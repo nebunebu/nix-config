@@ -21,6 +21,9 @@ in
 
     programs.firefox = {
       enable = true;
+      # Pinned: the default moves to $XDG_CONFIG_HOME/mozilla/firefox at
+      # stateVersion 26.05, but the profile on disk lives under ~/.mozilla.
+      configPath = ".mozilla/firefox";
       nativeMessagingHosts = [
         pkgs.tridactyl-native
       ];

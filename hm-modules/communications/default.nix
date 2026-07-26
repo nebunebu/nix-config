@@ -16,10 +16,10 @@ in
 
   config = lib.mkIf cfg.enable {
     hm.communications = {
-      thunderbird.enable = true;
-      vesktop.enable = true;
-      discord.enable = true;
-      discover-overlay.enable = true;
+      thunderbird.enable = lib.mkDefault true;
+      vesktop.enable = lib.mkDefault true;
+      discord.enable = lib.mkDefault true;
+      discover-overlay.enable = lib.mkDefault true;
     };
   };
 }

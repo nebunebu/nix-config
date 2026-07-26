@@ -1,5 +1,4 @@
 {
-  lib,
   ...
 }:
 
@@ -12,7 +11,6 @@
   home = {
     stateVersion = "23.11";
     username = "acgp";
-    homeDirectory = lib.mkForce "/home/acgp";
   };
 
   programs = {

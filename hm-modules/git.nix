@@ -30,17 +30,19 @@ in
           #   key = lib.mkIf gpgCfg.enable gpgCfg.key;
           #   signByDefault = true;
           # };
-          extraConfig = {
-            init.defaultBranch = "main";
-          };
-          aliases = {
+          init.defaultBranch = "main";
+          # `settings` is the freeform gitconfig tree, so these are the real
+          # section names -- nesting them under `aliases`/`extraConfig` (the old
+          # sibling options) writes [aliases] and [extraConfig "init"], which git
+          # ignores.
+          alias = {
             st = "status";
             ap = "add -p";
             p = "push";
             b = "branch";
             sw = "switch";
-            # git rm --cached $(git ls-files --deleted)
-            rma = "rm --cached $(git ls-file --deleted)";
+            # `!` prefix: needs a shell for the command substitution.
+            rma = "!git rm --cached $(git ls-files --deleted)";
           };
         };
 

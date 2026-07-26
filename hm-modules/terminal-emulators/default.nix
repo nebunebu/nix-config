@@ -15,9 +15,9 @@ in
 
   config = lib.mkIf cfg.enable {
     hm.terminal-emulators = {
-      foot.enable = true;
-      ghostty.enable = true;
-      kitty.enable = true;
+      foot.enable = lib.mkDefault true;
+      ghostty.enable = lib.mkDefault true;
+      kitty.enable = lib.mkDefault true;
     };
   };
 }

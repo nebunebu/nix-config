@@ -29,6 +29,7 @@
     thunar.enable = true;
     console.enable = true;
     networking.enable = true;
+    manpager.enable = true;
     nix.enable = true;
     system.enable = true;
     sops = {

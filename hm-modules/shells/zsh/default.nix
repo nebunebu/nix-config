@@ -20,6 +20,8 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    hm.shell.zsh.completions.enable = lib.mkDefault true;
+
     programs = {
       zsh = {
         enable = true;
@@ -45,19 +47,6 @@ in
           tree = "eza --tree";
           cat = "bat";
         };
-
-        completionInit = ''
-          # Add aichat completion to fpath
-          fpath+=${
-            pkgs.fetchFromGitHub {
-              owner = "sigoden";
-              repo = "aichat";
-              rev = "v0.26.0";
-              sha256 = "sha256-02v4nnQTKkX7ssZ2it7YfDtx6w/vVWG5crMhwdv3tmM=";
-              sparseCheckout = [ "scripts/completions" ];
-            }
-          }/scripts/completions
-        '';
 
         initContent = # bash
           ''
@@ -119,13 +108,11 @@ in
             };
           }
           {
+            # From nixpkgs rather than a raw fetchFromGitHub: the previous pin
+            # was `rev = "HEAD"`, which is not a revision and breaks as soon as
+            # the fixed-output isn't already in the store.
             name = "fzf-tab";
-            src = pkgs.fetchFromGitHub {
-              owner = "Aloxaf";
-              repo = "fzf-tab";
-              rev = "HEAD";
-              sha256 = "sha256-gvZp8P3quOtcy1Xtt1LAW1cfZ/zCtnAmnWqcwrKel6w=";
-            };
+            src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
           }
           {
             name = "zsh-completions";

@@ -16,7 +16,7 @@ in
       info.enable = true;
       man = {
         enable = true;
-        generateCaches = true;
+        cache.enable = true;
       };
     };
   };

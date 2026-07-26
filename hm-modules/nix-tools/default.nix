@@ -27,16 +27,16 @@ in
 
   config = lib.mkIf cfg.enable {
     hm.nix-tools = {
-      manix.enable = true;
-      nh.enable = true;
-      nix-index.enable = true;
-      nix-inspect.enable = true;
-      nixpkgs-fmt.enable = true;
-      noogle-search.enable = true;
-      nurl.enable = true;
-      nvd.enable = true;
-      statix.enable = true;
-      vimPluginsUpdater.enable = true;
+      manix.enable = lib.mkDefault true;
+      nh.enable = lib.mkDefault true;
+      nix-index.enable = lib.mkDefault true;
+      nix-inspect.enable = lib.mkDefault true;
+      nixpkgs-fmt.enable = lib.mkDefault true;
+      noogle-search.enable = lib.mkDefault true;
+      nurl.enable = lib.mkDefault true;
+      nvd.enable = lib.mkDefault true;
+      statix.enable = lib.mkDefault true;
+      vimPluginsUpdater.enable = lib.mkDefault true;
     };
   };
 }

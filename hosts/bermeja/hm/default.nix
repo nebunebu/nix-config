@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   ...
 }:
 
@@ -12,7 +11,6 @@
   home = {
     stateVersion = "23.11";
     username = "nebu";
-    homeDirectory = lib.mkForce "/home/nebu";
   };
 
   programs = {

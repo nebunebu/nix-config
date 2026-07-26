@@ -16,6 +16,9 @@ in
         in
         {
           enable = true;
+          # Pinned: the default flips to `false` at stateVersion 26.05, which
+          # would silently drop the CLONES/PROJECTS/SCREENSHOTS exports below.
+          setSessionVariables = true;
           # createDirectories = true;
           desktop = null;
           documents = "${homeDir}/Documents";
