@@ -7,10 +7,6 @@
       url = "github:hercules-ci/flake-parts";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
-
     rosepine = {
       url = "github:nebunebu/rosepine-flake";
       inputs = {
@@ -57,12 +53,6 @@
         pre-commit-hooks.follows = "pre-commit-hooks";
         treefmt-nix.follows = "treefmt-nix";
       };
-    };
-
-    claude-desktop = {
-      url = "github:k3d3/claude-desktop-linux-flake";
-
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dms = {
@@ -122,11 +112,6 @@
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
       };
-    };
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nebvim = {

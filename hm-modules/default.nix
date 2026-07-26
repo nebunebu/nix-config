@@ -49,6 +49,7 @@
     ./pup.nix
     # ./pyradio.nix
     ./qgis.nix
+    ./rosepine.nix
     ./sioyek
     ./sops.nix
     ./spotube.nix
@@ -125,8 +126,6 @@
         # x230t.enable = true;
         # t5610.enable = true;
         # hyprpicker.enable = true;
-        # hyprgrass.enable = true;
-        # pyprland.enable = true;
         # hyprpolkitagent.enable = true;
       };
     };

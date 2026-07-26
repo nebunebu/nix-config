@@ -95,6 +95,10 @@ in
       };
     };
 
+    # NOTE: inert. hyprland/default.nix disables both rendered config files
+    # (hyprland.conf and hyprland.lua) because Hyprland's config is hand-edited,
+    # so nothing below reaches disk. Kept as the record of the DMS keybind set,
+    # which now lives in ~/.config/hypr/keybinds.lua.
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "bash -c \"${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store &\""

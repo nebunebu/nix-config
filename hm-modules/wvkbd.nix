@@ -14,6 +14,8 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    # NOTE: inert -- Hyprland's config is hand-edited and home-manager's
+    # rendered output is disabled (see window-managers/hyprland/default.nix).
     wayland.windowManager.hyprland.settings = {
       exec-once = [ "wvkbd-start" ];
       bind = [ ",XF86TaskPane, exec, pkill -SIGRTMIN wvkbd-mobintl" ];
