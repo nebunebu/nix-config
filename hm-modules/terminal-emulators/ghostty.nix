@@ -12,6 +12,9 @@ in
     enable = lib.mkEnableOption "enable ghostty";
   };
   config = lib.mkIf cfg.enable {
+    # Themed by hand below; stylix's target would fight the settings here.
+    stylix.targets.ghostty.enable = false;
+
     programs.tmux.terminal = "xterm-ghostty";
 
     programs.ghostty = {
@@ -22,7 +25,7 @@ in
       installBatSyntax = true;
       installVimSyntax = true;
 
-      settings = lib.mkForce {
+      settings = {
         theme = "custom-rose-pine";
         font-family = "IBM Plex Mono";
         font-style = "Medium";
@@ -41,7 +44,7 @@ in
         custom-shader-animation = "always";
       };
 
-      themes = lib.mkForce {
+      themes = {
         custom-rose-pine = {
           background = "${config.rosePine.main.base}";
           cursor-color = "908caa";

@@ -1,4 +1,4 @@
-{ lib, ... }:
+_:
 {
   fileSystems = {
     "/" = {
@@ -39,7 +39,7 @@
       };
       efi = {
         efiSysMountPoint = "/boot";
-        canTouchEfiVariables = lib.mkForce false;
+        canTouchEfiVariables = false;
       };
     };
   };

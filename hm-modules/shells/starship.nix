@@ -14,6 +14,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # Themed by hand below; stylix's target would fight the settings here.
+    stylix.targets.starship.enable = false;
+
     programs = {
       starship = {
         enable = true;
@@ -26,7 +29,7 @@ in
             let
               nbsp = " ";
             in
-            lib.mkForce {
+            {
               success_symbol = "[](bold green)${nbsp}";
               error_symbol = "[](bold red)${nbsp}";
               vimcmd_symbol = "[](bold yellow) ";

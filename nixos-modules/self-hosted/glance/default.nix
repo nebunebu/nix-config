@@ -12,6 +12,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # Themed by hand below; stylix's target would fight the settings here.
+    stylix.targets.glance.enable = false;
+
     services.glance = {
       enable = true;
       openFirewall = true;
@@ -20,7 +23,7 @@ in
           host = "0.0.0.0";
           port = 3000;
         };
-        theme = lib.mkForce {
+        theme = {
           background-color = "249 22 12";
           primary-color = "267 57 78";
           positive-color = "197 49 38";

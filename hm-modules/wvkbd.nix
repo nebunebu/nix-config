@@ -26,20 +26,24 @@ in
       pkgs.clickclack
       # NOTE: not in nixpkgs
       # https://git.sr.ht/~earboxer/swipeGuess
+      # Colors come from the rosé pine palette rather than `config.stylix.*`:
+      # the reads here were guarded only by hm.wvkbd.enable, so with
+      # `nos.stylix.enable = false` base16Scheme has no value and .palette
+      # threw at eval time. One theme dependency, no stylix guard needed.
       (pkgs.writeShellScriptBin "wvkbd-start" ''
         wvkbd-mobintl\
           -R 3\
           --hidden\
-          --fn "${config.stylix.fonts.monospace.name}"\
-          --bg ${config.stylix.base16Scheme.palette.base00}\
-          --fg ${config.stylix.base16Scheme.palette.base0C}\
-          --fg-sp ${config.stylix.base16Scheme.palette.base0B}\
-          --press ${config.stylix.base16Scheme.palette.base05}\
-          --press-sp ${config.stylix.base16Scheme.palette.base04}\
-          --swipe ${config.stylix.base16Scheme.palette.base09}\
-          --swipe-sp ${config.stylix.base16Scheme.palette.base09}\
-          --text ${config.stylix.base16Scheme.palette.base02}\
-          --text-sp ${config.stylix.base16Scheme.palette.base05}\
+          --fn "IBM Plex Mono"\
+          --bg ${config.rosePine.main.base}\
+          --fg ${config.rosePine.main.foam}\
+          --fg-sp ${config.rosePine.main.pine}\
+          --press ${config.rosePine.main.text}\
+          --press-sp ${config.rosePine.main.subtle}\
+          --swipe ${config.rosePine.main.gold}\
+          --swipe-sp ${config.rosePine.main.gold}\
+          --text ${config.rosePine.main.overlay}\
+          --text-sp ${config.rosePine.main.text}\
       '')
     ];
   };

@@ -19,7 +19,11 @@ in
       pkgs.webp-pixbuf-loader # WebP image thumbnails
     ];
 
-    gtk = lib.mkForce {
+    # Plain assignments, not `gtk = mkForce { ... }`: forcing the whole attrset
+    # discarded everything stylix's gtk target contributes (theme, font, cursor)
+    # along with any other module's gtk.* settings. These extraConfig attrsets
+    # merge with stylix's, so the target stays enabled.
+    gtk = {
       enable = true;
 
       gtk3.extraConfig = {

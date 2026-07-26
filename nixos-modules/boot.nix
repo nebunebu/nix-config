@@ -13,23 +13,32 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.targets.grub.useWallpaper = true;
+    # The boot theming here is owned by hand, so the stylix targets are off
+    # rather than overridden -- previously both fought (grub.useWallpaper was
+    # set two lines above a forced backgroundColor), and forced base values
+    # would also beat any future light-theme specialisation.
+    stylix.targets = {
+      grub.enable = false;
+      plymouth.enable = false;
+    };
+
     boot = {
       plymouth = {
         enable = true;
-        theme = lib.mkForce "hexagon_2";
+        theme = "hexagon_2";
         themePackages = [
           (pkgs.adi1090x-plymouth-themes.override { selected_themes = [ "hexagon_2" ]; })
         ];
       };
       loader = {
-        efi.canTouchEfiVariables = true;
+        # mkDefault: hosts state their own (antillia's firmware needs false).
+        efi.canTouchEfiVariables = lib.mkDefault true;
         grub = {
           enable = true;
-          backgroundColor = lib.mkForce "#191724";
+          backgroundColor = "#191724";
           # TODO: use a different font
-          # font = lib.mkForce "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexMono-Text.otf";
-          fontSize = lib.mkForce 16;
+          # font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexMono-Text.otf";
+          fontSize = 16;
           # gfxmodeEfi = "1366x768";
           gfxpayloadEfi = "keep";
           efiSupport = true;
