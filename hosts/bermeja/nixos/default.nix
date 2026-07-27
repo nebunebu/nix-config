@@ -44,13 +44,16 @@
     self-hosted = {
       beaverhabits.enable = true;
       cloudflared.enable = true;
+      filewizard.enable = false;
       freshrss.enable = true;
       glance.enable = true;
       invidious.enable = false;
       jellyfin.enable = true;
       linkding.enable = true;
+      mediawiki.enable = true;
       # n8n.enable = true;
       ollama.enable = true;
+      ollama-ui.enable = true;
       pia-vpn.enable = true;
       pinchflat.enable = false;
       qbittorrent.enable = true;

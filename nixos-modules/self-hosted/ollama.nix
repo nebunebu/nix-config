@@ -15,6 +15,10 @@ in
 
   config = lib.mkIf cfg.enable {
 
+    environment.variables = {
+      HSA_OVERRIDE_GFX_VERSION = "9.0.0";
+    };
+
     networking.firewall.allowedTCPPorts = [ 11434 ];
 
     services.ollama = {

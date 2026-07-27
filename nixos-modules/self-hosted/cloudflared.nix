@@ -43,6 +43,11 @@ in
       "d ${cfg.stateDir} 0700 root root -"
     ];
 
+    networking.nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+
     services.cloudflared = {
       enable = true;
       certificateFile = "${cfg.stateDir}/cert.pem";
@@ -52,13 +57,15 @@ in
           ingress = {
             "13ft.nebunebu.xyz".service = "http://127.0.0.1:3001";
             "beaverhabit.nebunebu.xyz".service = "http://127.0.0.1:8081";
-            # "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
+            "freshrss.nebunebu.xyz".service = "http://127.0.0.1:80";
             "glance.nebunebu.xyz".service = "http://127.0.0.1:3000";
             "jellyfin.nebunebu.xyz".service = "http://127.0.0.1:8096";
             "linkding.nebunebu.xyz".service = "http://127.0.0.1:9090";
             "n8n.nebunebu.xyz".service = "http://127.0.0.1:5678";
             "pinchflat.nebunebu.xyz".service = "http://127.0.0.1:8945";
             "qbittorrent.nebunebu.xyz".service = "http://127.0.0.1:8080";
+            "verybad.wiki".service = "http://192.168.100.2:80";
+            "www.verybad.wiki".service = "http://192.168.100.2:80";
           };
           default = "http_status:404";
         };
