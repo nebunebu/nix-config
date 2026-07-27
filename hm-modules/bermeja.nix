@@ -24,6 +24,8 @@
     ./yt-dlp.nix
   ];
 
+  home.pointerCursor.enable = true;
+
   hm = {
     direnv-instant.enable = true;
     direnv.enable = true;

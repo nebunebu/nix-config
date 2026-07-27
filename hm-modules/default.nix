@@ -63,11 +63,14 @@
     ./yt-dlp.nix
   ];
 
-  home.packages = [
-    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".generate_password
-    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".compress4discord
-    inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".discord_dumper
-  ];
+  home = {
+    pointerCursor.enable = true;
+    packages = [
+      inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".generate_password
+      inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".compress4discord
+      inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".discord_dumper
+    ];
+  };
 
   hm = {
     anki.enable = true;
