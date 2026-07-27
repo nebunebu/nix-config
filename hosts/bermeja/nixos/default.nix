@@ -24,6 +24,10 @@
     8384
   ];
 
+  # Keep the user's systemd instance (and thus syncthing) running even
+  # when not SSH'd in, since bermeja is a server.
+  users.users.nebu.linger = true;
+
   # serve = {
   #   navidrome.enable = true;
   # };

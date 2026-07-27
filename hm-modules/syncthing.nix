@@ -13,7 +13,7 @@ in
       enable = true;
       guiAddress = "0.0.0.0:8384";
       tray = {
-        enable = true;
+        enable = false;
       };
     };
   };
