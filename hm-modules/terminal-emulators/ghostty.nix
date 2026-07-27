@@ -39,6 +39,13 @@ in
         clipboard-write = "allow";
         clipboard-trim-trailing-spaces = true;
         copy-on-select = true;
+
+        keybind = [
+          "ctrl+shift+c=copy_to_clipboard:mixed"
+          "ctrl+shift+v=paste_from_clipboard"
+          "ctrl+insert=copy_to_clipboard:mixed"
+          "shift+insert=paste_from_selection"
+        ];
         confirm-close-surface = false;
         custom-shader = "${./shader.glsl}";
         custom-shader-animation = "always";
