@@ -2,7 +2,11 @@
 inputs.nixpkgs.legacyPackages
 |> inputs.nixpkgs.lib.getAttrs (import ./systems.nix).all
 |> builtins.mapAttrs (
-  _system: pkgs: {
+  system: pkgs:
+  let
+    preCommitCheck = import ./pre-commit-hooks.nix { inherit inputs system; };
+  in
+  {
     default = pkgs.mkShell {
       name = "nix-config";
       packages = [
@@ -10,9 +14,8 @@ inputs.nixpkgs.legacyPackages
         pkgs.nixfmt
         pkgs.deadnix
         pkgs.statix
-      ];
-
-      # buildInputs = checks.pre-commit-check.enabledPackages;
+      ]
+      ++ preCommitCheck.enabledPackages;
 
       shellHook =
         let
@@ -27,6 +30,7 @@ inputs.nixpkgs.legacyPackages
           };
         in
         ''
+          ${preCommitCheck.shellHook}
           ${cowWarn}/bin/cowWarn
         '';
     };

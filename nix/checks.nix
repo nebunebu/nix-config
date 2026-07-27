@@ -11,16 +11,6 @@ inputs.nixpkgs.legacyPackages
   {
     formatting = treefmtEval.config.build.check ../.;
 
-    # NOTE: run `nix develop` to update hooks
-    pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
-      src = ../.;
-      hooks = {
-        treefmt = {
-          enable = true;
-          package = inputs.self.formatter.${system};
-        };
-        # convco.enable = false;
-      };
-    };
+    pre-commit-check = import ./pre-commit-hooks.nix { inherit inputs system; };
   }
 )
