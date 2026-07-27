@@ -1,6 +1,4 @@
 {
-  inputs,
-  pkgs,
   lib,
   config,
   ...
@@ -17,7 +15,6 @@ in
     programs = {
       nh = {
         enable = true;
-        package = inputs.nh.packages."${pkgs.stdenv.hostPlatform.system}".default;
 
         flake = lib.mkDefault "${config.home.homeDirectory}/.nix-config";
       };

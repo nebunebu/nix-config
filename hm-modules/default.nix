@@ -111,7 +111,9 @@
     pinta.enable = true;
     pup.enable = true;
     # pyradio.enable = true;
-    qgis.enable = true;
+    # qgis 4.0 has no cache.nixos.org build yet (nixpkgs e2587ca); building it
+    # locally takes ~1h on this host. Re-enable once it's substitutable.
+    qgis.enable = false;
     sioyek.enable = true;
     sops.enable = true;
     services.syncthing.enable = true;

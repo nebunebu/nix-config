@@ -8,7 +8,6 @@
     ./documentation.nix
     ./dotool.nix
     ./hyprland.nix
-    ./mango.nix
     ./manpager.nix
     ./networking.nix
     ./nix.nix

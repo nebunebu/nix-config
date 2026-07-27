@@ -41,11 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nh = {
-      url = "github:nix-community/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     anki = {
       url = "github:nebunebu/anki-flake";
       inputs = {
@@ -67,22 +62,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    statix = {
-      url = "github:oppiliappan/statix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
-    impermanence = {
-      url = "github:nix-community/impermanence";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
-
     direnv-instant = {
       url = "github:Mic92/direnv-instant";
       inputs = {
@@ -97,14 +76,6 @@
     };
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
-
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
 
     stylix = {
       url = "github:danth/stylix/master";

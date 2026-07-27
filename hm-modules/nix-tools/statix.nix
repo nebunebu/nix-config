@@ -1,5 +1,4 @@
 {
-  inputs,
   lib,
   config,
   pkgs,
@@ -17,7 +16,7 @@ in
   config = lib.mkIf cfg.enable {
     home = {
       packages = [
-        inputs.statix.packages."${pkgs.stdenv.hostPlatform.system}".default
+        pkgs.statix
       ];
     };
   };
