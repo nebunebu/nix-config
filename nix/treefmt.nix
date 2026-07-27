@@ -10,7 +10,10 @@
       excludes = [ ".envrc" ];
     };
     statix.enable = true;
-    yamlfmt.enable = true;
+    yamlfmt = {
+      enable = true;
+      excludes = [ "sops/secrets/*.yaml" ];
+    };
   };
 
   settings = {

@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -37,7 +36,7 @@ in
       };
 
       config =
-        { _, pkgs, ... }:
+        { pkgs, ... }:
         {
 
           systemd.services.mediawiki-jobrunner = {
