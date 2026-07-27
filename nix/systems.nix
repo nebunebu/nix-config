@@ -10,8 +10,9 @@ rec {
     "aarch64-linux"
   ];
 
+  # x86_64-darwin is deliberately absent: nixpkgs 26.11 dropped support for it,
+  # so evaluating any output there throws.
   darwin = [
-    "x86_64-darwin"
     "aarch64-darwin"
   ];
 
