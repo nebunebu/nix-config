@@ -10,7 +10,7 @@ jobs:
       names: ${{ steps.list.outputs.names }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Nix
         uses: cachix/install-nix-action@v31
         with:
@@ -37,7 +37,7 @@ jobs:
           sudo mkdir -p /mnt/nix /nix
           sudo mount --bind /mnt/nix /nix
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Install Nix
         uses: cachix/install-nix-action@v31
         with:
