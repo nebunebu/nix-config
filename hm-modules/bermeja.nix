@@ -11,6 +11,7 @@
     ./gtk.nix
     ./jq.nix
     ./lazygit.nix
+    ./llm-agents.nix
     ./nix-tools
     ./pass.nix
     ./shells/starship.nix
@@ -33,6 +34,7 @@
     gpg.enable = true;
     jq.enable = true;
     lazygit.enable = true;
+    llm-agents.enable = true;
     nix-tools.enable = true;
     pass.enable = true;
     services.syncthing.enable = true;
