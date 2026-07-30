@@ -17,6 +17,7 @@
     ./stylix.nix
     ./system.nix
     ./thunar.nix
+    ./tlp.nix
     ./udisks2.nix
     ./self-hosted
   ];

@@ -148,6 +148,14 @@
             acgp = import ./users/acgp/hm.nix;
           };
         };
+        fonseca = hostLib.mkHost {
+          name = "fonseca";
+          users = {
+            nebu = import ./users/nebu/hm.nix;
+            acgp = import ./users/acgp/hm.nix;
+          };
+          extraModules = [ inputs.disko.nixosModules.disko ];
+        };
       };
 
       checks = import ./nix/checks.nix { inherit inputs; };
