@@ -24,8 +24,14 @@
     grub = {
       enable = true;
       devices = [ "nodev" ];
+      # This firmware only offers generic NVMe0/NVMe1 entries, which boot the
+      # removable fallback path. Requires canTouchEfiVariables = false.
+      efiInstallAsRemovable = true;
     };
-    efi.efiSysMountPoint = "/boot";
+    efi = {
+      efiSysMountPoint = "/boot";
+      canTouchEfiVariables = false;
+    };
   };
 
   swapDevices = [ ];

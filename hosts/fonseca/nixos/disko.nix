@@ -1,7 +1,7 @@
 {
   disko.devices.disk.main = {
-    # Set by install.sh before running disko; see install.sh.
-    device = "/dev/disk/by-id/CHANGE_ME";
+    # Must match DISK_ID in install.sh, which verifies it before wiping anything.
+    device = "/dev/disk/by-id/nvme-INTEL_SSDPEKKF256G8L_BTHH82340X2N256B";
     type = "disk";
     content = {
       type = "gpt";
