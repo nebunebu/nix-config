@@ -67,10 +67,10 @@ echo "==> Writing disk id into $DISKO_FILE"
 sed -i "s#/dev/disk/by-id/CHANGE_ME#${DISK_ID}#" "$DISKO_FILE"
 
 echo "==> Probing hardware with nixos-facter (writes $FACTER_FILE)"
-nix run github:nix-community/nixos-facter -- -o "$FACTER_FILE"
+nix run --extra-experimental-features "nix-command flakes" github:nix-community/nixos-facter -- -o "$FACTER_FILE"
 
 echo "==> Partitioning and formatting with disko"
-nix run github:nix-community/disko/latest -- \
+nix run --extra-experimental-features "nix-command flakes" github:nix-community/disko/latest -- \
   --mode disko \
   --flake "$REPO_DIR#$HOST"
 
@@ -84,7 +84,7 @@ cat <<EOF
 
 ==> Manual follow-up (cannot be scripted from the live ISO):
     1. On fonseca, get its host age key:
-         nix run nixpkgs#ssh-to-age -- -i /etc/ssh/ssh_host_ed25519_key.pub
+         nix run --extra-experimental-features "nix-command flakes" nixpkgs#ssh-to-age -- -i /etc/ssh/ssh_host_ed25519_key.pub
     2. Add it to .sops.yaml (repo root) as a new "&fonseca" anchor, both
        under 'keys:' and in 'creation_rules[0].key_groups[0].age'.
     3. From a machine that can already decrypt secrets, run:
