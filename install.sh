@@ -243,13 +243,34 @@ check() {
 
 exists() { [[ -e "$1" ]]; }
 
+# Like exists(), but for paths under /mnt whose symlink chain may end in an
+# *absolute* /nix/store/... target (nix profiles are set this way). A plain
+# `[[ -e ]]` would resolve that absolute target against the live ISO's own /,
+# not /mnt, and report a false failure even though the target exists correctly
+# under /mnt/nix/store. Walk the chain by hand, rebasing absolute targets onto
+# /mnt.
+exists_under_mnt() {
+  local path="$1" hops=0
+  while [[ -L "$path" ]]; do
+    (( hops++ > 20 )) && return 1 # symlink loop guard
+    local target
+    target="$(readlink "$path")"
+    if [[ "$target" == /* ]]; then
+      path="/mnt$target"
+    else
+      path="$(dirname "$path")/$target"
+    fi
+  done
+  [[ -e "$path" ]]
+}
+
 # With efiInstallAsRemovable the binary lands at EFI/BOOT/BOOTX64.EFI; without
 # it, at EFI/NixOS/grubx64.efi. Either is a successfully installed bootloader.
 have_boot_efi() {
   [[ -n "$(find /mnt/boot/EFI \( -iname 'grub*.efi' -o -iname 'bootx64.efi' \) -print -quit 2>/dev/null)" ]]
 }
 
-check "system profile exists" exists /mnt/nix/var/nix/profiles/system
+check "system profile exists" exists_under_mnt /mnt/nix/var/nix/profiles/system
 check "/etc/NIXOS exists" exists /mnt/etc/NIXOS
 check "bootloader EFI binary present on the ESP" have_boot_efi
 check "grub.cfg present on the ESP" exists /mnt/boot/grub/grub.cfg
