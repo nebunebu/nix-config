@@ -11,7 +11,7 @@ in
     i18n.defaultLocale = "en_US.UTF-8";
     time.timeZone = "US/Eastern";
     services = {
-      openssh.enable = true;
+      openssh.enable = false;
       xserver = {
         xkb = {
           layout = "us";
