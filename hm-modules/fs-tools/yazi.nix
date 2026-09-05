@@ -32,7 +32,7 @@ in
         plugin = {
           prepend_previewers = [
             {
-              name = "*.srt";
+              url = "*.srt";
               run = "code";
             }
           ];
