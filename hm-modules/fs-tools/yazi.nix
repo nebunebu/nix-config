@@ -29,6 +29,14 @@ in
           max_height = 1080;
           image_filter = "triangel";
         };
+        plugin = {
+          prepend_previewers = [
+            {
+              name = "*.srt";
+              run = "code";
+            }
+          ];
+        };
       };
       theme = {
         filetype = {
