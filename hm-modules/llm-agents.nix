@@ -17,6 +17,7 @@ in
   config = lib.mkIf cfg.enable {
 
     home.packages = [
+      pkgs.codexbar
       inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".claude-code
       inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".codex
       inputs.llm-agents.packages."${pkgs.stdenv.hostPlatform.system}".antigravity-cli
